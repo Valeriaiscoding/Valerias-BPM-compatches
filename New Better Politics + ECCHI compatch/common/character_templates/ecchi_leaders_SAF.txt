@@ -36,7 +36,8 @@ ecchi_saf_sprigg_character_template = {
     last_name = Sprigg
     historical = yes
     culture = cu:british
-    female = no
+    home_region = STATE_EAST_ANGLIA
+
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_conservatives
@@ -67,7 +68,8 @@ ecchi_saf_botha_character_template = {
     last_name = Botha
     historical = yes
     culture = cu:boer
-    female = no
+    home_region = STATE_ZULULAND
+
     religion = rel:protestant
     ideology = ideology_pacifist
     interest_group = ig_conservatives
@@ -101,7 +103,8 @@ ecchi_saf_smuts_character_template = {
     last_name = ecchi_Smuts
     historical = yes
     culture = cu:boer
-    female = no
+    home_region = STATE_CAPE_COLONY
+
     religion = rel:protestant
     ideology = ideology_jingoist_leader
     interest_group = ig_armed_forces
@@ -135,7 +138,8 @@ ecchi_saf_hertzog_character_template = {
     last_name = ecchi_Hertzog
     historical = yes
     culture = cu:boer
-    female = no
+    home_region = STATE_CAPE_COLONY
+
     religion = rel:protestant
     ideology = ideology_ethno_nationalist
     interest_group = ig_conservatives

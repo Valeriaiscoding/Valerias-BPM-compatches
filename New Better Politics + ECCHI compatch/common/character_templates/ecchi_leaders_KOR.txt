@@ -30,9 +30,10 @@ ecchi_kor_daewongun_character_template = {
     last_name = Yi
     historical = yes
     culture = cu:korean
-    female = no
-    ideology = ideology_royalist
-    interest_group = ig_reactionaries
+    home_region = STATE_SEOUL
+
+    ideology = ideology_moderate
+    interest_group = ig_landowners
 	dna = ecchi_dna_daewongun
     birth_date = 1820.12.21
     traits = { cruel cautious romantic experienced_political_operator }
@@ -60,7 +61,7 @@ ecchi_kor_daewongun_character_template = {
 #    last_name = ecchi_Jeon
 #    historical = yes
 #    culture = cu:korean
-#    female = no
+#    
 #    ideology = ideology_traditionalist
 #    interest_group = ig_rural_folk
 #	dna = ecchi_dna_jeon_bongjun
@@ -90,8 +91,9 @@ ecchi_kor_son_byonghi_character_template = {
     last_name = ecchi_Son
     historical = yes
     culture = cu:korean
-    female = no
-    ideology = ideology_reformer
+    home_region = STATE_SARIWON
+
+    ideology = ideology_theocrat
     interest_group = ig_devout
 	dna = ecchi_dna_song_byong_hi
     birth_date = 1861.4.8
@@ -118,13 +120,14 @@ ecchi_kor_son_byonghi_character_template = {
 ## Ho Hon
 
 ecchi_kor_ho_hon_character_template = {
-    first_name = ecchi_Ho_1
-    last_name = ecchi_Hon
+    first_name = ecchi_Hon
+    last_name = ecchi_Ho_1
     historical = yes
     culture = cu:korean
-    female = no
-    ideology = ideology_vanguardist
-    interest_group = ig_revolutionist_socialists
+    home_region = STATE_SEOUL
+
+    ideology = ideology_humanitarian
+    interest_group = ig_intelligentsia
     dna = ecchi_dna_ho_hon
     birth_date = 1885.7.22
     traits = { pious ambitious }
@@ -149,6 +152,7 @@ ecchi_kor_hang_ro_character_template = {
     last_name = ecchi_Hang_ro
     historical = yes
     culture = cu:korean
+    home_region = STATE_SARIWON
 
     ideology = ideology_theocrat
     interest_group = ig_devout
@@ -176,6 +180,7 @@ ecchi_kor_hak_yu_character_template = {
     last_name = ecchi_Hak_yu
     historical = yes
     culture = cu:korean
+    home_region = STATE_BUSAN
 
     ideology = ideology_moderate
     interest_group = ig_rural_folk

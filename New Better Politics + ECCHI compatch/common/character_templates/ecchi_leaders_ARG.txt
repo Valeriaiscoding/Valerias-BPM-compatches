@@ -5,7 +5,8 @@ ecchi_arg_de_san_martin_character_template = {
     last_name = ecchi_de_San_Martin
     historical = yes
     culture = cu:platinean
-    female = no
+    home_region = STATE_RIO_NEGRO
+
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_armed_forces
@@ -46,7 +47,7 @@ ecchi_arg_de_san_martin_character_template = {
 #    last_name = de_Urquiza
 #    historical = yes
 #    culture = cu:platinean
-#    female = no
+#    
 #    religion = rel:catholic
 #    ideology = ideology_reformer
 #    interest_group = ig_rural_folk
@@ -77,7 +78,7 @@ ecchi_arg_de_san_martin_character_template = {
 #    last_name = Mitre
 #    historical = yes
 #    culture = cu:platinean
-#    female = no
+#    
 #    religion = rel:catholic
 #    ideology = ideology_humanitarian
 #    interest_group = ig_liberals
@@ -108,7 +109,7 @@ ecchi_arg_de_san_martin_character_template = {
 #    last_name = ecchi_Sarmiento
 #    historical = yes
 #    culture = cu:platinean
-#    female = no
+#    home_region = STATE_TUCUMAN
 #    religion = rel:catholic
 #    ideology = ideology_reformer
 #    interest_group = ig_liberals
@@ -139,7 +140,7 @@ ecchi_arg_de_san_martin_character_template = {
 #    last_name = Roca
 #    historical = yes
 #    culture = cu:platinean
-#    female = no
+#    home_region = STATE_RIO_NEGRO
 #    religion = rel:catholic
 #    ideology = ideology_jingoist_leader
 #    interest_group = ig_reactionaries
@@ -161,15 +162,16 @@ ecchi_arg_de_san_martin_character_template = {
 #
 ## Juan Perón
 
-ecchi_arg_peron_character_template = {
+ecchi_arg_peron_character_template = { # TODO he is in bpm already
     first_name = Juan
     last_name = ecchi_Peron
     historical = yes
     culture = cu:platinean
-    female = no
+    home_region = STATE_BUENOS_AIRES
+
     religion = rel:catholic
     ideology = ideology_modernizer_leader
-    interest_group = ig_nationa_liberals
+    interest_group = ig_national_liberals
     dna = ecchi_dna_juan_peron
     birth_date = 1895.10.8
     traits = { charismatic ambitious imperious }
@@ -199,7 +201,8 @@ ecchi_arg_yrigoyen_character_template = {
     last_name = Yrigoyen
     historical = yes
     culture = cu:platinean
-    female = no
+    home_region = STATE_BUENOS_AIRES
+
     religion = rel:catholic
     ideology = ideology_humanitarian
     interest_group = ig_radicals
@@ -216,7 +219,7 @@ ecchi_arg_yrigoyen_character_template = {
 			bpm_interest_group_is_activated = yes
             OR = {
                 is_interest_group_type = ig_radicals
-                is_interest_group_type = ig_intelligentsia
+                #is_interest_group_type = ig_intelligentsia
             }
         }
         earliest_usage_date = 1869.1.1

@@ -1,42 +1,11 @@
 ﻿# Japan - politicians
 
-ecchi_jap_sakamoto_character_template = {
-    first_name = ecchi_Ryoma
-    last_name = ecchi_Sakamoto
-    historical = yes
-    culture = cu:japanese
-    female = no
-    religion = rel:shinto
-    ideology = ideology_reformer
-    interest_group = ig_rural_folk
-	dna = ecchi_dna_sakamoto_ryoma
-    birth_date = 1836.1.3
-    traits = { innovative romantic charismatic celebrity_commander }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:JAP
-            this = c:JAP
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_intelligentsia
-            }
-        }
-        earliest_usage_date = 1864.1.1
-        latest_usage_date = 1867.12.10
-        chance = 65
-    }
-}
-
 ecchi_jap_enomoto_character_template = {
     first_name = Takeaki
     last_name = Enomoto
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANTO
     religion = rel:shinto
     ideology = ideology_royalist
     interest_group = ig_petty_bourgeoisie
@@ -77,7 +46,7 @@ ecchi_jap_katsu_character_template = {
     last_name = Katsu
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANTO
     religion = rel:shinto
     ideology = ideology_reformer
     interest_group = ig_conservatives
@@ -101,8 +70,9 @@ ecchi_jap_matsudaira_character_template = {
     first_name = ecchi_Katamori
     last_name = Matsudaira
     historical = yes
+	noble = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANTO
     religion = rel:shinto
     ideology = ideology_traditionalist
     interest_group = ig_landowners
@@ -127,7 +97,7 @@ ecchi_jap_kondo_character_template = {
     last_name = Kondo
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANTO
     religion = rel:shinto
     ideology = ideology_traditionalist
     interest_group = ig_rural_folk
@@ -152,7 +122,7 @@ ecchi_jap_hijikata_character_template = {
     last_name = ecchi_Hijikata
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANTO
     religion = rel:shinto
     ideology = ideology_traditionalist
     interest_group = ig_rural_folk
@@ -186,7 +156,7 @@ ecchi_jap_omura_character_template = {
     last_name = Omura
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_CHUGOKU
     religion = rel:shinto
     ideology = ideology_reformer
     interest_group = ig_armed_forces
@@ -211,7 +181,7 @@ ecchi_jap_itagaki_character_template = {
     last_name = Itagaki
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_SHIKOKU
     religion = rel:shinto
     ideology = ideology_radical
     interest_group = ig_national_liberals
@@ -237,7 +207,9 @@ ecchi_jap_yoshihisa_character_template = {
     last_name = ecchi_Kitashirakawa
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KYUSHU
+    noble = yes
+    noble = yes
     religion = rel:shinto
     ideology = ideology_royalist
     interest_group = ig_landowners
@@ -262,7 +234,7 @@ ecchi_jap_yoshihisa_character_template = {
 #    last_name = ecchi_Ito
 #    historical = yes
 #    culture = cu:japanese
-#    female = no
+#    
 #    religion = rel:shinto
 #    ideology = ideology_reformer
 #    interest_group = ig_conservatives
@@ -294,7 +266,7 @@ ecchi_jap_yoshihisa_character_template = {
 #    last_name = ecchi_Saionji
 #    historical = yes
 #    culture = cu:japanese
-#    female = no
+#    
 #    religion = rel:shinto
 #    ideology = ideology_reformer
 #    interest_group = ig_national_liberals
@@ -326,7 +298,7 @@ ecchi_jap_shibusawa_character_template = {
     last_name = ecchi_Shibusawa
     historical = yes
     culture = cu:japanese
-    female = no
+    
     religion = rel:shinto
     ideology = ideology_market_liberal
     interest_group = ig_industrialists
@@ -352,7 +324,7 @@ ecchi_jap_fukuba_character_template = {
     last_name = ecchi_Fukuba
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_SHIKOKU
     religion = rel:shinto
     ideology = ideology_theocrat
     interest_group = ig_devout
@@ -462,7 +434,7 @@ ecchi_jap_okubo_toshimichi_character_template = {
     last_name = ecchi_Okubo
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KYUSHU
     religion = rel:shinto
     ideology = ideology_reformer
     interest_group = ig_national_liberals
@@ -494,6 +466,7 @@ ecchi_jap_ito_noe_character_template = {
     religion = rel:shinto
     ideology = ideology_feminist
     interest_group = ig_anarchists
+	home_region = STATE_KYUSHU
     dna = ecchi_dna_ito_noe
     birth_date = 1895.1.21
     traits = {
@@ -523,7 +496,8 @@ ecchi_jap_kido_takayoshi_character_template = {
     last_name = ecchi_Kido
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_CHUGOKU
+    noble = yes
     religion = rel:shinto
     ideology = ideology_reformer
     interest_group = ig_national_liberals
@@ -546,59 +520,59 @@ ecchi_jap_kido_takayoshi_character_template = {
 
 ## Shimazu Nariakira
 
-ecchi_jap_shimazu_nariakira_character_template = {
-    first_name = ecchi_Nariakira
-    last_name = ecchi_Shimazu
-    historical = yes
-    culture = cu:japanese
-    female = no
-    religion = rel:shinto
-    ideology = ideology_humanitarian
-    interest_group = ig_conservatives
-	dna = ecchi_dna_shimazu_nariakira
-    birth_date = 1809.4.28
-    traits = { persistent ambitious }
-    agitator_usage = {
-        country_trigger = {
-            exists = c:JAP
-            this = c:JAP
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
-        }
-        earliest_usage_date = 1850.1.1
-        latest_usage_date = 1858.8.24
-        chance = 70
-    }
-}
+# ecchi_jap_shimazu_nariakira_character_template = {
+#     first_name = ecchi_Nariakira
+#     last_name = ecchi_Shimazu
+#     historical = yes
+#     culture = cu:japanese
+    
+#     religion = rel:shinto
+#     ideology = ideology_humanitarian
+#     interest_group = ig_conservatives
+# 	dna = ecchi_dna_shimazu_nariakira
+#     birth_date = 1809.4.28
+#     traits = { persistent ambitious }
+#     agitator_usage = {
+#         country_trigger = {
+#             exists = c:JAP
+#             this = c:JAP
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_conservatives
+#         }
+#         earliest_usage_date = 1850.1.1
+#         latest_usage_date = 1858.8.24
+#         chance = 70
+#     }
+# }
 
-## Suzuki Bunji
+# ## Suzuki Bunji
 
-ecchi_jap_suzuki_bunji_character_template = {
-    first_name = ecchi_Bunji
-    last_name = Suzuki
-    historical = yes
-    culture = cu:japanese
-    female = no
-    religion = rel:protestant
-    ideology = ideology_social_democrat
-    interest_group = ig_trade_unions
-	dna = ecchi_dna_suzuki_bunji
-    birth_date = 1885.9.4
-    traits = { persistent reserved cautious }
-    agitator_usage = {
-        country_trigger = {
-            exists = c:JAP
-            this = c:JAP
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_trade_unions
-        }
-        earliest_usage_date = 1912.1.1
-        latest_usage_date = 1946.3.12
-        chance = 60
-    }
-}
+# ecchi_jap_suzuki_bunji_character_template = {
+#     first_name = ecchi_Bunji
+#     last_name = Suzuki
+#     historical = yes
+#     culture = cu:japanese
+    
+#     religion = rel:protestant
+#     ideology = ideology_social_democrat
+#     interest_group = ig_trade_unions
+# 	dna = ecchi_dna_suzuki_bunji
+#     birth_date = 1885.9.4
+#     traits = { persistent reserved cautious }
+#     agitator_usage = {
+#         country_trigger = {
+#             exists = c:JAP
+#             this = c:JAP
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_trade_unions
+#         }
+#         earliest_usage_date = 1912.1.1
+#         latest_usage_date = 1946.3.12
+#         chance = 60
+#     }
+# }
 
 ## Yasunari Kawabata
 
@@ -607,7 +581,7 @@ ecchi_jap_yasunari_kawabata_character_template = {
     last_name = ecchi_Kawabata
     historical = yes
     culture = cu:japanese
-    female = no
+    home_region = STATE_KANSAI
 	dna = ecchi_dna_yasunari_kawabata
     ideology = ideology_reformer
     interest_group = ig_intelligentsia
@@ -631,28 +605,28 @@ ecchi_jap_yasunari_kawabata_character_template = {
 
 ## Ninomiya Sontoku
 
-ecchi_jap_sontoku_character_template = {
-    first_name = ecchi_Ninomiya
-    last_name = ecchi_Sontoku
-    historical = yes
-    culture = cu:japanese
+# ecchi_jap_sontoku_character_template = {
+#     first_name = ecchi_Ninomiya
+#     last_name = ecchi_Sontoku
+#     historical = yes
+#     culture = cu:japanese
 
-    religion = rel:shinto
-    ideology = ideology_land_reformer
-    interest_group = ig_rural_folk
-    #dna = ecchi_dna_ho_hon
-    birth_date = 1787.9.4
-    traits = { persistent meticulous innovative }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:JAP
-            this = c:JAP
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1856.11.17
-        chance = 100
-    }
-}
+#     religion = rel:shinto
+#     ideology = ideology_land_reformer
+#     interest_group = ig_rural_folk
+#     #dna = ecchi_dna_ho_hon
+#     birth_date = 1787.9.4
+#     traits = { persistent meticulous innovative }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             exists = c:JAP
+#             this = c:JAP
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_rural_folk
+#         }
+#         earliest_usage_date = 1836.1.1
+#         latest_usage_date = 1856.11.17
+#         chance = 100
+#     }
+# }

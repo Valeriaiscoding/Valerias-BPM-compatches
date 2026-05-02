@@ -5,7 +5,8 @@ ecchi_swe_nobel_character_template = {
     last_name = ecchi_Nobel
     historical = yes
     culture = cu:swedish
-    female = no
+    home_region = STATE_SVEALAND
+
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_industrialists
@@ -38,7 +39,8 @@ ecchi_swe_branting_character_template = {
     last_name = ecchi_Branting
     historical = yes
     culture = cu:swedish
-    female = no
+    home_region = STATE_SVEALAND
+
     ideology = ideology_social_democrat
     interest_group = ig_reformist_socialists
     dna = mr_swe_branting_hjalmar
@@ -67,7 +69,9 @@ ecchi_swe_wallenberg_character_template = {
     last_name = ecchi_Wallenberg
     historical = yes
     culture = cu:swedish
-    female = no
+    home_region = STATE_SVEALAND
+
+
     ideology = ideology_humanitarian
     interest_group = ig_petty_bourgeoisie
     dna = ecchi_dna_raoul_wallenberg
@@ -96,7 +100,8 @@ ecchi_swe_hedin_character_template = {
     last_name = ecchi_Hedin
     historical = yes
     culture = cu:swedish
-    female = no
+    home_region = STATE_SVEALAND
+
     ideology = ideology_humanitarian
     interest_group = ig_intelligentsia
     dna = ecchi_dna_sven_hedin

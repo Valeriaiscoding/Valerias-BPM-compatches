@@ -5,7 +5,7 @@
 #     last_name = de_Borbon
 #     historical = yes
 #     culture = cu:spanish
-#     female = no
+#     
 #     religion = rel:catholic
 #     ideology = ideology_royalist
 #     interest_group = ig_reactionaries
@@ -165,7 +165,8 @@ ecchi_spa_franco_character_template = {
     last_name = Franco
     historical = yes
     culture = cu:spanish
-    female = no
+    home_region = STATE_GALICIA
+
     religion = rel:catholic
     ideology = ideology_fascist
     interest_group = ig_reactionaries
@@ -199,7 +200,8 @@ ecchi_spa_picasso_character_template = {
     last_name = ecchi_Picasso
     historical = yes
     culture = cu:spanish
-    female = no
+    home_region = STATE_LOWER_ANDALUSIA
+
     religion = rel:catholic
     ideology = ideology_socialist_leader
     interest_group = ig_intelligentsia
@@ -354,7 +356,8 @@ ecchi_spa_silvela_character_template = {
     last_name = ecchi_Silvela
     historical = yes
     culture = cu:spanish
-    female = no
+    home_region = STATE_NEW_CASTILE
+
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_conservatives

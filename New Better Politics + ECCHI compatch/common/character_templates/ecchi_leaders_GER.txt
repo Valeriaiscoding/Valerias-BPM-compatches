@@ -4,7 +4,7 @@ ecchi_ger_hitler_character_template = {
 	first_name = Adolf
 	last_name = ecchi_Hitler
 	culture = cu:south_german
-	female = no
+	
 	religion = rel:protestant
 	ideology = ideology_fascist
 	interest_group = ig_fascists
@@ -55,7 +55,7 @@ ecchi_ger_hitler_character_template = {
 #	first_name = Alfred
 #	last_name = ecchi_Hugenberg
 #	culture = cu:north_german
-#	female = no
+#	
 #	religion = rel:protestant
 #	ideology = ideology_authoritarian
 #	interest_group = ig_reactionaries
@@ -97,7 +97,7 @@ ecchi_ger_engels_character_template = {
 	first_name = Friedrich
 	last_name = Engels
 	culture = cu:north_german
-	female = no
+	
 	religion = rel:protestant
 	ideology = ideology_communist
 	interest_group = ig_revolutionist_socialists
@@ -145,7 +145,7 @@ ecchi_ger_engels_character_template = {
 #    last_name = ecchi_Liebknecht
 #    historical = yes
 #    culture = cu:north_german
-#    female = no
+#    
 #    religion = rel:protestant
 #    ideology = ideology_communist
 #    interest_group = ig_revolutionist_socialists
@@ -193,7 +193,7 @@ ecchi_ger_einstein_character_template = {
     last_name = ecchi_Einstein
     historical = yes
     culture = cu:south_german
-    female = no
+    
     religion = rel:jewish
     ideology = ideology_pacifist
     interest_group = ig_intelligentsia
@@ -280,7 +280,7 @@ ecchi_ger_friedrich_krupp_character_template = {
     last_name = ecchi_Krupp
     historical = yes
     culture = cu:north_german
-    female = no
+    
     religion = rel:protestant
     ideology = ideology_jingoist_leader
     interest_group = ig_industrialists
@@ -323,7 +323,7 @@ ecchi_ger_wagner_character_template = {
     last_name = Wagner
     historical = yes
     culture = cu:north_german
-    female = no
+    
     religion = rel:protestant
     ideology = ideology_traditionalist
     interest_group = ig_intelligentsia
@@ -367,7 +367,7 @@ ecchi_ger_schopenhauer_character_template = {
     last_name = ecchi_Schopenhauer
     historical = yes
     culture = cu:north_german
-    female = no
+    
     religion = rel:protestant
     ideology = ideology_nihilist
     interest_group = ig_intelligentsia
@@ -410,7 +410,7 @@ ecchi_ger_nietzsche_character_template = {
     last_name = ecchi_Nietzsche
     historical = yes
     culture = cu:north_german
-    female = no
+    
     religion = rel:protestant
     ideology = ideology_nihilist
     interest_group = ig_intelligentsia
@@ -455,7 +455,7 @@ ecchi_ger_schweitzer_character_template = {
 	last_name = ecchi_Schweitzer
 	historical = yes
 	culture = cu:south_german
-	female = no
+	
     religion = rel:protestant
 	ideology = ideology_pacifist
 	interest_group = ig_devout
@@ -500,7 +500,7 @@ ecchi_ger_hahn_character_template = {
 	last_name = ecchi_Hahn
 	historical = yes
 	culture = cu:south_german
-	female = no
+	
 	religion = rel:protestant
 	ideology = ideology_integralist
 	interest_group = ig_intelligentsia
@@ -546,7 +546,7 @@ ecchi_ger_benz_carl_character_template = {
 	last_name = ecchi_benz
 	culture = cu:south_german
 	religion = rel:protestant
-	female = no
+	
 	interest_group = ig_industrialists
 	birth_date = 1844.11.25
 	historical = yes
@@ -596,7 +596,7 @@ ecchi_ger_grimm_character_template = {
 	culture = cu:north_german
 	religion = rel:protestant
 	historical = yes
-	female = no
+	
 	ideology = ideology_corporatist_leader
 	interest_group = ig_national_liberals
 	dna = ecchi_dna_jacob_grimm

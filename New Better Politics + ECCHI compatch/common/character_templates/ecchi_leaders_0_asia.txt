@@ -4,7 +4,7 @@ ecchi_joh_aw_character_template = {
 	last_name = ecchi_Aw
 	historical = yes
 	culture = cu:hakka
-	female = no
+	
 	religion = rel:mahayana
 	ideology = ideology_market_liberal
 	interest_group = ig_industrialists
@@ -46,7 +46,7 @@ ecchi_kaz_bukeikhanov_character_template = {
 	last_name = Bukeikhanov
 	historical = yes
 	culture = cu:kazak
-	female = no
+	
 	religion = rel:sunni
 	ideology = ideology_republican_leader
 	interest_group = ig_national_liberals
@@ -83,7 +83,7 @@ ecchi_geo_chavchavadze_character_template = {
 	last_name = ecchi_Chavchavadze
 	historical = yes
 	culture = cu:georgian
-	female = no
+	
 	religion = rel:orthodox
 	ideology = ideology_republican_leader
 	interest_group = ig_radicals
@@ -115,7 +115,7 @@ ecchi_geo_cholokashvili_character_template = {
 	last_name = Cholokashvili
 	historical = yes
 	culture = cu:georgian
-	female = no
+	
 	religion = rel:orthodox
 	ideology = ideology_republican_leader
 	interest_group = ig_radicals
@@ -144,7 +144,7 @@ ecchi_tur_ataturk_character_template = {
 	last_name = ecchi_Ataturk
 	historical = yes
 	culture = cu:turkish
-	female = no
+	
 	religion = rel:sunni
 	ideology = ideology_atheist
 	interest_group = ig_national_liberals
@@ -212,7 +212,7 @@ ecchi_tur_talaat_pasha_character_template = {
 	last_name = ecchi_Talaat
 	historical = yes
 	culture = cu:turkish
-	female = no
+	
 	religion = rel:sunni
 	ideology = ideology_liberal_leader
 	interest_group = ig_armed_forces
@@ -244,7 +244,7 @@ ecchi_tur_talaat_pasha_character_template = {
 # 	last_name = ecchi_Enver
 # 	historical = yes
 # 	culture = cu:albanian
-# 	female = no
+# 	
 # 	religion = rel:sunni
 # 	ideology = ideology_jingoist_leader
 # 	interest_group = ig_armed_forces
@@ -277,7 +277,7 @@ ecchi_tur_djemal_pasha_character_template = {
 	last_name = ecchi_Djemal
 	historical = yes
 	culture = cu:turkish
-	female = no
+	
 	religion = rel:sunni
 	ideology = ideology_jingoist_leader
 	interest_group = ig_armed_forces
@@ -337,7 +337,7 @@ ecchi_pal_trumpeldor_character_template = {
 	last_name = ecchi_Trumpeldor
 	historical = yes
 	culture = cu:ashkenazi
-	female = no
+	
 	religion = rel:jewish
 	ideology = ideology_radical
 	interest_group = ig_national_liberals
@@ -380,7 +380,7 @@ ecchi_pal_sholem_aleichem_character_template = {
 	last_name = ecchi_Aleichem
 	historical = yes
 	culture = cu:ashkenazi
-	female = no
+	
 	religion = rel:jewish
 	ideology = ideology_pacifist
 	interest_group = ig_intelligentsia
@@ -422,7 +422,7 @@ ecchi_pal_kahlil_gibran_character_template = {
 	last_name = ecchi_Gibran
 	historical = yes
 	culture = cu:mashriqi
-	female = no
+	
 	religion = rel:catholic
 	interest_group = ig_intelligentsia
 	dna = ecchi_dna_kahlil_gibran
@@ -491,7 +491,7 @@ ecchi_afg_mahmud_tarzi_character_template = {
 	last_name = ecchi_Tarzi
 	historical = yes
 	culture = cu:pashtun
-	female = no
+	
 	religion = rel:sunni
 	ideology = ideology_nihilist
 	interest_group = ig_national_liberals
@@ -528,7 +528,7 @@ ecchi_lan_gu_liubo_character_template = {
 	last_name = ecchi_Gu_1
 	historical = yes
 	culture = cu:hakka
-	female = no
+	
 	religion = rel:mahayana
 	interest_group = ig_intelligentsia
 	birth_date = 1811.1.1
@@ -556,7 +556,7 @@ ecchi_lan_xie_guifang_character_template = {
 	last_name = ecchi_Xie
 	historical = yes
 	culture = cu:hakka
-	female = no
+	
 	religion = rel:mahayana
 	interest_group = ig_petty_bourgeoisie
 	age = 40
@@ -583,7 +583,7 @@ ecchi_lan_ye_tenghui_character_template = {
 	last_name = ecchi_Ye
 	historical = yes
 	culture = cu:hakka
-	female = no
+	
 	religion = rel:mahayana
 	interest_group = ig_armed_forces
 	age = 40

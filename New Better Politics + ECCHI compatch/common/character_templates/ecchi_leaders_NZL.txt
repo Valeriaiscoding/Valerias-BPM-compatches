@@ -5,7 +5,8 @@ ecchi_nzl_sewell_character_template = {
     last_name = ecchi_Sewell
     historical = yes
     culture = cu:british
-    female = no
+    home_region = STATE_HOME_COUNTIES
+
     religion = rel:protestant
     ideology = ideology_pacifist
     interest_group = ig_liberals
@@ -36,7 +37,8 @@ ecchi_nzl_fox_character_template = {
     last_name = Fox
     historical = yes
     culture = cu:british
-    female = no
+    home_region = STATE_HOME_COUNTIES
+
     religion = rel:protestant
     ideology = ideology_republican_leader
     interest_group = ig_liberals
@@ -67,7 +69,8 @@ ecchi_nzl_savage_character_template = {
     last_name = ecchi_Savage
     historical = yes
     culture = cu:australian
-    female = no
+    home_region = STATE_VICTORIA
+
     religion = rel:protestant
     ideology = ideology_social_democrat
     interest_group = ig_reformist_socialists
@@ -98,7 +101,8 @@ ecchi_nzl_seddon_character_template = {
     last_name = ecchi_Seddon
     historical = yes
     culture = cu:british
-    female = no
+    home_region = STATE_LANCASHIRE
+
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_liberals
@@ -129,7 +133,8 @@ ecchi_nzl_ballance_character_template = {
     last_name = ecchi_Ballance
     historical = yes
     culture = cu:irish
-    female = no
+    home_region = STATE_ULSTER
+
     religion = rel:protestant
     ideology = ideology_humanitarian
     interest_group = ig_liberals
@@ -163,7 +168,8 @@ ecchi_aot_heke_character_template = {
     last_name = Heke
     historical = yes
     culture = cu:maori
-    female = no
+    home_region = STATE_NORTH_ISLAND
+
     religion = rel:animist
     ideology = ideology_jingoist_leader
     interest_group = ig_armed_forces
@@ -211,7 +217,8 @@ ecchi_aot_kawiti_character_template = {
     last_name = ecchi_Kawiti
     historical = yes
     culture = cu:maori
-    female = no
+    home_region = STATE_NORTH_ISLAND
+
     religion = rel:animist
     ideology = ideology_traditionalist
     interest_group = ig_armed_forces
@@ -253,7 +260,8 @@ ecchi_aot_o_rongomai_character_template = {
     last_name = ecchi_o_Rongomai
     historical = yes
     culture = cu:maori
-    female = no
+    home_region = STATE_NORTH_ISLAND
+
     religion = rel:animist
     ideology = ideology_pacifist
     interest_group = ig_devout
@@ -303,7 +311,8 @@ ecchi_aot_solomon_character_template = {
     last_name = Solomon
     historical = yes
     culture = cu:polynesian
-    female = no
+    home_region = STATE_SOUTH_ISLAND
+
     religion = rel:animist
     ideology = ideology_pacifist
     interest_group = ig_rural_folk
@@ -348,6 +357,7 @@ ecchi_nzl_katherine_mansfield_character_template = {
     last_name = ecchi_Mansfield
     historical = yes
     culture = cu:british
+    home_region = STATE_NORTH_ISLAND
     female = yes
     religion = rel:protestant
     interest_group = ig_intelligentsia

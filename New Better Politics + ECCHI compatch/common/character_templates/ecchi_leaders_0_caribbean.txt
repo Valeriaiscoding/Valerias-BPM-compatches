@@ -5,7 +5,7 @@ ecchi_cub_de_cespedes_character_template = {
     last_name = de_Cespedes
     historical = yes
     culture = cu:caribeno
-    female = no
+    
     religion = rel:catholic
     ideology = ideology_abolitionist
     interest_group = ig_radicals
@@ -36,7 +36,7 @@ ecchi_cub_marti_character_template = {
     last_name = ecchi_Marti
     historical = yes
     culture = cu:caribeno
-    female = no
+    
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_radicals
@@ -314,7 +314,7 @@ ecchi_hai_soulouque_character_template = {
     last_name = Soulouque
     historical = yes
     culture = cu:afro_caribeno
-    female = no
+    
     religion = rel:animist #Vodou
     ideology = ideology_royalist
     interest_group = ig_reactionaries
@@ -345,7 +345,7 @@ ecchi_hai_pierrot_character_template = {
     last_name = Pierrot
     historical = yes
     culture = cu:caribeno
-    female = no
+    
     religion = rel:catholic
     ideology = ideology_jingoist_leader
     interest_group = ig_conservatives
@@ -372,7 +372,7 @@ ecchi_jam_garvey_character_template = {
     last_name = ecchi_Garvey
     historical = yes
     culture = cu:afro_caribbean
-    female = no
+    
     religion = rel:catholic
     ideology = ideology_ethno_nationalist
     interest_group = ig_national_liberals
@@ -403,7 +403,7 @@ ecchi_jam_bogle_character_template = {
     last_name = ecchi_Bogle
     historical = yes
     culture = cu:afro_caribbean
-    female = no
+    
     religion = rel:protestant
     ideology = ideology_radical
     interest_group = ig_radicals
