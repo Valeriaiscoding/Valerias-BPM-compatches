@@ -1,0 +1,65 @@
+bmp_ultra_cd_conservatives_ideology_effect = {
+	save_scope_as = recently_unified
+
+	ig:ig_conservatives ?= {
+		if = {
+			limit = {
+				trigger_if = {
+					limit = { owner_multiethinc_nationalist_unification = yes }
+					OR = {
+						has_ideology = ideology:ideology_cit_traditional_culture
+						has_ideology = ideology:ideology_cit_nationalist
+					}
+				}
+				trigger_else = {
+					#limit = { owner_nationalist_unification = yes }
+					has_ideology = ideology:ideology_cit_traditional_culture
+				}
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_cit_traditional_culture
+				}
+				i:ideology_cit_traditional_culture = {
+					save_scope_as = former_ideology_cons
+				}
+			}
+			else_if = {
+				limit = {
+					has_ideology = ideology:ideology_cit_nationalist
+				}
+				i:ideology_cit_nationalist = {
+					save_scope_as = former_ideology_cons
+				}
+			}
+			bpm_remove_all_cit_ideologies = yes
+			if = {
+				limit = { owner_multiethinc_nationalist_unification = yes  }
+				add_ideology = ideology_cit_multiethnic_nationalist
+			}
+			else = {	
+				#limit = { owner_nationalist_unification = yes  }
+				add_ideology = ideology_cit_nationalist
+			}
+			
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_cit_multiethnic_nationalist
+				}
+				i:ideology_cit_multiethnic_nationalist = {
+					save_scope_as = new_ideology_cons
+				}
+			}
+			else_if = {
+				limit = {
+					has_ideology = ideology:ideology_cit_nationalist
+				}
+				i:ideology_cit_nationalist = {
+					save_scope_as = new_ideology_cons
+				}
+			}
+
+		}
+	}
+	post_notification = bpm_ultra_cd_unification_ideology
+}

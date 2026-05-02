@@ -1,0 +1,14 @@
+INJECT:pan-nationalism = {
+	on_researched = {
+		ig:ig_conservatives ?= {
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_cit_traditional_culture
+				}
+				bpm_remove_all_cit_ideologies = yes
+				add_ideology = ideology_cit_nationalist
+				bpm_reorder_ideologies = yes
+			}
+		}
+	}
+}

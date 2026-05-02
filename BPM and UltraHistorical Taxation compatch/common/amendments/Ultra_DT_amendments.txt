@@ -1,0 +1,465 @@
+﻿INJECT:amendment_economic_regeneration_1 = {
+	modifier = {
+		country_loan_interest_rate_add = -0.05
+	}
+}
+
+INJECT:amendment_economic_regeneration_2 = {
+	modifier = {
+		country_loan_interest_rate_add = -0.025
+	}
+}
+
+amendment_temporary_income_tax = {
+	parent = law_proportional_taxation
+
+	allowed_laws = {
+		law_per_capita_based_taxation
+		law_land_based_taxation
+	}
+
+	possible = {
+		has_technology_researched = currency_standards
+	}
+
+	modifier = {
+		interest_group_in_government_attraction_mult = -0.25
+	}
+
+	tax_modifier_very_low = {
+		tax_income_add = 0.05
+	}
+
+	tax_modifier_low = {
+		tax_income_add = 0.075
+	}
+
+	tax_modifier_medium = {
+		tax_income_add = 0.10
+	}
+
+	tax_modifier_high = {
+		tax_income_add = 0.125
+	}
+
+	tax_modifier_very_high = {
+		tax_income_add = 0.15
+	}
+
+	would_sponsor = {
+		OR = {
+			#is_interest_group_type = ig_landowners
+			#is_interest_group_type = ig_trade_unions
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_armed_forces
+
+			has_ideology = ideology:ideology_eco_interventionist
+			has_ideology = ideology:ideology_eco_autarky
+			has_ideology = ideology:ideology_eco_modern_agrarian
+			has_ideology = ideology:ideology_eco_american_system
+
+			has_ideology = ideology:ideology_eco_distributist_economy
+			has_ideology = ideology:ideology_eco_modern_interventionist
+			has_ideology = ideology:ideology_eco_centralized_economy
+			has_ideology = ideology:ideology_eco_modernizer
+			has_ideology = ideology:ideology_eco_socialist_mixed_economy
+			
+		}
+	}
+
+	ai_will_revoke = {
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_land_based_taxation
+				value > neutral
+			}
+		}
+		AND = {
+			gold_reserves > 0
+			taking_loans = no
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+		AND = {
+			gold_reserves > 0
+			taking_loans = no
+		}
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_preserved_traditional_taxation = {
+
+	parent = law_per_capita_based_taxation
+
+	allowed_laws = {
+		law_proportional_taxation
+	}
+
+	tax_modifier_very_low = {
+		tax_land_add = 0.15
+		tax_per_capita_add = 0.15
+		tax_income_add = -0.025
+	}
+
+	tax_modifier_low = {
+		tax_land_add = 0.2
+		tax_per_capita_add = 0.2
+		tax_income_add = -0.05
+	}
+
+	tax_modifier_medium = {
+		tax_land_add = 0.25
+		tax_per_capita_add = 0.25
+		tax_income_add = -0.075
+	}
+
+	tax_modifier_high = {
+		tax_land_add = 0.375
+		tax_per_capita_add = 0.5
+		tax_income_add = -0.15
+	}
+
+	tax_modifier_very_high = {
+		tax_land_add = 0.5
+		tax_per_capita_add = 0.75
+		tax_income_add = -0.225
+	}
+
+	possible = {
+		always = yes
+	}
+
+	would_sponsor = {
+		OR = {
+			#is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_petty_bourgeoisie
+			#is_interest_group_type = ig_armed_forces
+
+			has_ideology = ideology:ideology_eco_conservative_agrarian
+			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
+			has_ideology = ideology:ideology_eco_antebellum_economy
+			has_ideology = ideology:ideology_eco_slave_economy
+			has_ideology = ideology:ideology_eco_colonialist
+			has_ideology = ideology:ideology_eco_slave_colonialist
+			has_ideology = ideology:ideology_eco_laissez_faire
+			#has_ideology = ideology:ideology_eco_artisan
+		}
+	}
+
+	ai_will_revoke = {
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value > neutral
+			}
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.75
+}
+
+amendment_dividend_tax_exemption = {
+
+	parent = law_per_capita_based_taxation
+
+	allowed_laws = {
+		law_proportional_taxation
+	}
+
+	tax_modifier_very_low = {
+		tax_dividends_add = -0.025
+	}
+
+	tax_modifier_low = {
+		tax_dividends_add = -0.05
+	}
+
+	tax_modifier_medium = {
+		tax_dividends_add = -0.1
+	}
+
+	tax_modifier_high = {
+		tax_dividends_add = -0.15
+
+		state_machinists_investment_pool_contribution_add = 0.015
+		state_farmers_investment_pool_contribution_add = 0.015
+		state_engineers_investment_pool_contribution_add = 0.0225
+		state_bureaucrats_investment_pool_contribution_add = 0.0225
+		state_shopkeepers_investment_pool_contribution_add = 0.03
+		state_clergymen_investment_pool_contribution_add = 0.03
+		state_aristocrats_investment_pool_contribution_add = 0.03
+		state_capitalists_investment_pool_contribution_add = 0.045
+	}
+
+	tax_modifier_very_high = {
+		tax_dividends_add = -0.20
+
+		state_machinists_investment_pool_contribution_add = 0.02
+		state_farmers_investment_pool_contribution_add = 0.02
+		state_engineers_investment_pool_contribution_add = 0.03
+		state_bureaucrats_investment_pool_contribution_add = 0.03
+		state_shopkeepers_investment_pool_contribution_add = 0.04
+		state_clergymen_investment_pool_contribution_add = 0.04
+		state_aristocrats_investment_pool_contribution_add = 0.04
+		state_capitalists_investment_pool_contribution_add = 0.06
+	}
+
+	possible = {
+		always = yes
+	}
+
+	would_sponsor = {
+		OR = {
+			is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_landowners
+			#is_interest_group_type = ig_petty_bourgeoisie
+			#is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_rural_folk
+
+			has_ideology = ideology:ideology_eco_laissez_faire
+			has_ideology = ideology:ideology_eco_artisan
+			has_ideology = ideology:ideology_eco_antebellum_economy
+			has_ideology = ideology:ideology_eco_conservative_agrarian
+			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
+		}
+	}
+
+	ai_will_revoke = {
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value > neutral
+			}
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_dividend_tax_reduction = {
+
+	parent = law_proportional_taxation
+
+	allowed_laws = {
+		law_graduated_taxation
+	}
+
+	tax_modifier_very_low = {
+		tax_dividends_add = -0.05
+	}
+
+	tax_modifier_low = {
+		tax_dividends_add = -0.05
+	}
+
+	tax_modifier_medium = {
+		tax_dividends_add = -0.05
+	}
+
+	tax_modifier_high = {
+		tax_dividends_add = -0.1
+
+		state_machinists_investment_pool_contribution_add = 0.01
+		state_farmers_investment_pool_contribution_add = 0.01
+		state_engineers_investment_pool_contribution_add = 0.015
+		state_bureaucrats_investment_pool_contribution_add = 0.015
+		state_shopkeepers_investment_pool_contribution_add = 0.02
+		state_clergymen_investment_pool_contribution_add = 0.02
+		state_aristocrats_investment_pool_contribution_add = 0.02
+		state_capitalists_investment_pool_contribution_add = 0.03
+	}
+
+	tax_modifier_very_high = {
+		tax_dividends_add = -0.15
+
+		state_machinists_investment_pool_contribution_add = 0.03
+		state_farmers_investment_pool_contribution_add = 0.03
+		state_engineers_investment_pool_contribution_add = 0.0225
+		state_bureaucrats_investment_pool_contribution_add = 0.0225
+		state_shopkeepers_investment_pool_contribution_add = 0.03
+		state_clergymen_investment_pool_contribution_add = 0.03
+		state_aristocrats_investment_pool_contribution_add = 0.03
+		state_capitalists_investment_pool_contribution_add = 0.045
+	}
+
+	possible = {
+		always = yes
+	}
+
+	would_sponsor = {
+		OR = {
+			is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_landowners
+			#is_interest_group_type = ig_petty_bourgeoisie
+			#is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_rural_folk
+
+			has_ideology = ideology:ideology_eco_laissez_faire
+			has_ideology = ideology:ideology_eco_artisan
+			has_ideology = ideology:ideology_eco_antebellum_economy
+			has_ideology = ideology:ideology_eco_conservative_agrarian
+			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
+		}
+	}
+
+	ai_will_revoke = {
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value > neutral
+			}
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
+	parent = law_command_economy
+
+	allowed_laws = {
+		law_graduated_taxation
+	}
+
+	modifier = {
+		interest_group_in_government_attraction_mult = -0.25
+	}
+
+	tax_modifier_very_low = {
+		tax_dividends_add = 0.05
+	}
+
+	tax_modifier_low = {
+		tax_dividends_add = 0.15
+
+		state_machinists_investment_pool_contribution_add = -0.025
+		state_farmers_investment_pool_contribution_add = -0.025
+		state_engineers_investment_pool_contribution_add = -0.0375
+		state_bureaucrats_investment_pool_contribution_add = -0.0375
+		state_shopkeepers_investment_pool_contribution_add = -0.05
+		state_clergymen_investment_pool_contribution_add = -0.05
+		state_aristocrats_investment_pool_contribution_add = -0.05
+		state_capitalists_investment_pool_contribution_add = -0.075
+	}
+
+	tax_modifier_medium = {
+		tax_dividends_add = 0.35
+
+		state_machinists_investment_pool_contribution_add = -0.05
+		state_farmers_investment_pool_contribution_add = -0.05
+		state_engineers_investment_pool_contribution_add = -0.075
+		state_bureaucrats_investment_pool_contribution_add = -0.075
+		state_shopkeepers_investment_pool_contribution_add = -0.1
+		state_clergymen_investment_pool_contribution_add = -0.1
+		state_aristocrats_investment_pool_contribution_add = -0.1
+		state_capitalists_investment_pool_contribution_add = -0.15
+	}
+
+	tax_modifier_high = {
+		tax_dividends_add = 0.45
+
+		state_machinists_investment_pool_contribution_add = -0.045
+		state_farmers_investment_pool_contribution_add = -0.045
+		state_engineers_investment_pool_contribution_add = -0.0675
+		state_bureaucrats_investment_pool_contribution_add = -0.0675
+		state_shopkeepers_investment_pool_contribution_add = -0.09
+		state_clergymen_investment_pool_contribution_add = -0.09
+		state_aristocrats_investment_pool_contribution_add = -0.09
+		state_capitalists_investment_pool_contribution_add = -0.135
+	}
+
+	tax_modifier_very_high = {
+		tax_dividends_add = 0.5
+
+		state_machinists_investment_pool_contribution_add = -0.05
+		state_farmers_investment_pool_contribution_add = -0.05
+		state_engineers_investment_pool_contribution_add = -0.075
+		state_bureaucrats_investment_pool_contribution_add = -0.075
+		state_shopkeepers_investment_pool_contribution_add = -0.1
+		state_clergymen_investment_pool_contribution_add = -0.1
+		state_aristocrats_investment_pool_contribution_add = -0.1
+		state_capitalists_investment_pool_contribution_add = -0.15
+	}
+
+	possible = {
+		has_technology_researched = central_planning
+		OR = {
+			AND = {
+				scaled_gold_reserves <= 0
+				taking_loans = yes
+			}
+			any_interest_group = {
+				is_in_government = yes
+				law_stance = {
+					law = law_type:law_command_economy
+					value > neutral
+				}
+			}
+		}
+	}
+
+	would_sponsor = {
+		OR = {
+			#is_interest_group_type = ig_trade_unions
+			#is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_armed_forces
+
+			has_ideology = ideology:ideology_eco_centralized_economy
+			has_ideology = ideology:ideology_eco_modern_interventionist
+			has_ideology = ideology:ideology_eco_distributist_economy
+			has_ideology = ideology:ideology_eco_interventionist
+			has_ideology = ideology:ideology_eco_socialist_mixed_economy
+			has_ideology = ideology:ideology_eco_agrarian_socialist
+			has_ideology = ideology:ideology_eco_socialist_autarky
+			has_ideology = ideology:ideology_eco_proletarian_economy
+		}
+	}
+
+	ai_will_revoke = {
+		AND = {
+			scaled_gold_reserves >= 0
+			taking_loans = no
+		}
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value < neutral
+			}
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+		AND = {
+			scaled_gold_reserves >= 0
+			taking_loans = no
+		}
+	}
+
+	amendment_activism_multiplier = 0.5
+}

@@ -1,0 +1,7 @@
+﻿INJECT:prestige_ranking = {
+	country_loan_interest_rate_add = -0.015
+}
+
+INJECT:top_prestige_ranking = {
+	country_loan_interest_rate_add = -0.015
+}

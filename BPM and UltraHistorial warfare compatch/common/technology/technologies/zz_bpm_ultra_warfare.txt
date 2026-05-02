@@ -1,0 +1,5 @@
+INJECT:mandatory_service = {
+	modifier = {
+		country_institution_conscription_max_investment_add = -1 # moved to laws
+	}
+}

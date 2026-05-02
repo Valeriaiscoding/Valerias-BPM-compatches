@@ -1,0 +1,261 @@
+REPLACE:bpm_reload_institution_modifiers = {
+    every_interest_group = {
+        remove_modifier = bpm_colonial_affairs_attraction_modifier
+        remove_modifier = bpm_social_security_attraction_modifier
+        remove_modifier = bpm_workplace_safety_attraction_modifier
+        remove_modifier = bpm_schools_attraction_modifier
+        remove_modifier = bpm_conscription_attraction_modifier
+        remove_modifier = bpm_home_affairs_attraction_modifier
+        remove_modifier = bpm_centralization_attraction_modifier
+        remove_modifier = bpm_culture_attraction_modifier
+        remove_modifier = bpm_health_system_attraction_modifier
+        remove_modifier = bpm_suffrage_attraction_modifier
+        remove_modifier = bpm_diplomacy_attraction_modifier
+        remove_modifier = bpm_economy_attraction_modifier
+        remove_modifier = bpm_economy_cr_attraction_modifier
+        remove_modifier = bpm_conscription_attraction_modifier
+        remove_modifier = bpm_number_of_cabinet_picks
+        remove_modifier = bpm_expected_a_cabinet_pick
+        remove_modifier = bpm_hog_attraction_modifier
+        set_variable = {
+            name = bpm_number_of_cabpicks
+            value = 0
+        }
+    }
+    remove_modifier = bpm_cabinet_change_speed_from_full_cabinet
+
+    bpm_reload_institution_modifiers_colonial_affairs = yes
+    bpm_reload_institution_modifiers_social_security = yes
+    bpm_reload_institution_modifiers_workplace_safety = yes
+    bpm_reload_institution_modifiers_schools = yes
+    bpm_reload_institution_modifiers_conscription = yes
+    bpm_reload_institution_modifiers_home_affairs = yes
+    bpm_reload_institution_modifiers_centralization = yes
+    bpm_reload_institution_modifiers_culture = yes
+    bpm_reload_institution_modifiers_health_system = yes
+    bpm_reload_institution_modifiers_suffrage = yes
+    bpm_reload_institution_modifiers_diplomacy = yes
+    if = {
+        limit = {
+            bpm_has_unfilled_cabinet_positions = no
+            bpm_cab_synergy_value > 40
+            has_variable = bpm_recent_election
+        }
+        add_modifier = {
+            name = bpm_cabinet_change_speed_from_full_cabinet
+        }
+    }
+    else = {}
+    if = {
+        limit = {
+            has_law = law_type:law_council_republic
+        }
+        bpm_reload_institution_modifiers_economy_cr = yes
+    }
+    else = {
+        bpm_reload_institution_modifiers_economy_noncr = yes
+    }
+    bpm_reload_institution_modifiers_hog = yes
+    every_interest_group = {
+        remove_modifier = bpm_hog_attraction_modifier
+    }
+    var:bpm_headofgov ?= {
+        interest_group ?= {
+            add_modifier = { name = bpm_hog_attraction_modifier }
+        }
+    }
+
+    every_interest_group = {
+        limit = { has_variable = bpm_number_of_cabpicks }
+        if = {
+            limit = { 
+                var:bpm_number_of_cabpicks > 0
+            }
+            add_modifier = {
+                name = bpm_number_of_cabinet_picks
+            }
+        }
+        # if = {
+        #     limit = {
+        #         var:bpm_number_of_cabpicks ?= 0
+        #         is_in_government = yes
+        #     }
+        #     add_modifier = bpm_expected_a_cabinet_pick
+        # }
+    }
+
+    bpm_reload_cabinet_max_level_from_skill = yes
+
+    # trigger_event = { id = BPM_CAB_DEBUG_UTILS.2 days = 1 }
+}
+
+bpm_reload_institution_modifiers_conscription = {
+    institution:institution_conscription ?= {
+        bpm_remove_institution_modifiers_conscription = yes
+    }
+    if = {
+        limit = {
+            var:bpm_minister_of_conscription ?= {
+                OR = {
+                    is_character_alive = no
+                    NOT = { exists = interest_group } 
+                }
+            }
+        }
+        remove_variable = bpm_minister_of_conscription
+    }
+    if = {
+        limit = {
+            has_variable = bpm_minister_of_conscription
+            has_institution = institution_conscription
+            exists = var:bpm_minister_of_conscription.interest_group
+        }
+        var:bpm_minister_of_conscription.interest_group = {
+            bpm_reload_modifier_inst_singlet = {
+                IG1 = reactionaries
+                INST = conscription
+                MOD = bpm_conscription_reacts_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = conservatives
+                INST = conscription
+                MOD = bpm_conscription_cons_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = fascists
+                INST = conscription
+                MOD = bpm_conscription_fash_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = national_liberals
+                INST = conscription
+                MOD = bpm_conscription_natlibs_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = radicals
+                INST = conscription
+                MOD = bpm_conscription_radlibs_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = christian_democrats
+                INST = conscription
+                MOD = bpm_conscription_christdem_modifier
+            }
+
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = petty_bourgeoisie
+                INST = conscription
+                MOD = bpm_conscription_pb_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = armed_forces
+                INST = conscription
+                MOD = bpm_conscription_army_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = devout
+                INST = conscription
+                MOD = bpm_conscription_devout_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = industrialists
+                INST = conscription
+                MOD = bpm_conscription_capis_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = landowners
+                INST = conscription
+                MOD = bpm_conscription_landies_modifier
+            }
+			bpm_reload_modifier_inst_triplet = {
+                IG1 = rural_folk
+                IG2 = ig_agrarian_populists
+				IG3 = trade_unions
+                INST = conscription
+                MOD = bpm_conscription_cons_modifier
+            }
+			bpm_reload_modifier_inst_triplet = {
+                IG1 = socialists
+                IG2 = revolutionist_socialists
+                IG3 = anarchists
+                INST = conscription
+                MOD = bpm_conscription_commies_modifier
+            }
+			bpm_reload_modifier_inst_quartet = {
+                IG1 = liberals
+                IG2 = market_liberals
+                IG3 = reformist_socialists
+                IG4 = intelligentsia
+                INST = workplace_safety
+                MOD = bpm_conscription_neutrals_modifier
+            }
+
+            owner.institution:institution_conscription = {
+                save_scope_as = inst_concs
+            }
+            switch = {
+                trigger = scope:inst_concs.investment
+                1 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 1
+                    }
+                }
+                2 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 2
+                    }
+                }
+                3 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 3
+                    }
+                }
+                4 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 4
+                    }
+                }
+                5 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 5
+                    }
+                }
+                6 = {
+                    add_modifier = {
+                        name = bpm_conscription_attraction_modifier
+                        multiplier = 6
+                    }
+                }
+            }
+            change_variable = {
+                name = bpm_number_of_cabpicks
+                add = 1
+            }
+        }
+    }
+}
+
+bpm_remove_institution_modifiers_conscription = {
+    remove_modifier = bpm_conscription_reacts_modifier
+    remove_modifier = bpm_conscription_cons_modifier
+    remove_modifier = bpm_conscription_fash_modifier
+    remove_modifier = bpm_conscription_natlibs_modifier
+    remove_modifier = bpm_conscription_radlibs_modifier
+    remove_modifier = bpm_conscription_commies_modifier
+    remove_modifier = bpm_conscription_neutrals_modifier
+    remove_modifier = bpm_conscription_pb_modifier
+    remove_modifier = bpm_conscription_armed_forces_modifier
+    remove_modifier = bpm_conscription_rurals_modifier
+    remove_modifier = bpm_conscription_devout_modifier
+    remove_modifier = bpm_conscription_christdem_modifier
+    remove_modifier = bpm_conscription_landies_modifier
+    remove_modifier = bpm_conscription_armed_forces_modifier
+    remove_modifier = bpm_conscription_capis_modifier
+	remove_modifier = bpm_conscription_capis_modifier
+ }
+ 

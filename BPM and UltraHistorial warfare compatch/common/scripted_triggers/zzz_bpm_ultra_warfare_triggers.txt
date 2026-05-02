@@ -1,0 +1,134 @@
+# -- Cabinet Register Institutions (8) (Antagonism) --
+REPLACE:bpm_is_antagonistic = {
+    trigger_if = {
+        limit = {
+            NOT = { has_variable = bpm_cabinet_minister }
+        }
+        always = no
+    }
+    trigger_else = {
+        OR = {
+            bpm_is_antagonistic_inst = { INST = colonial_affairs }
+            bpm_is_antagonistic_inst = { INST = social_security }
+            bpm_is_antagonistic_inst = { INST = workplace_safety }
+            bpm_is_antagonistic_inst = { INST = police }
+            bpm_is_antagonistic_inst = { INST = schools }
+            bpm_is_antagonistic_inst = { INST = home_affairs }
+            bpm_is_antagonistic_inst = { INST = health_system }
+            bpm_is_antagonistic_inst = { INST = centralization }
+            bpm_is_antagonistic_inst = { INST = suffrage }
+            bpm_is_antagonistic_inst = { INST = culture }
+            bpm_is_antagonistic_inst = { INST = diplomacy }
+            bpm_is_antagonistic_inst = { INST = economy }
+            bpm_is_antagonistic_inst = { INST = conscription }
+            interest_group = {
+                ig_approval <= angry
+            }
+        }
+    }
+}
+
+REPLACE:bpm_is_antagonistic_hypothetical = {
+    trigger_if = {
+        limit = {
+            NOT = { owner = { has_variable = bpm_cabinet_char_select} }
+        }
+        always = no
+    }
+    trigger_else = {
+        OR = {
+            bpm_is_antagonistic_hypothetical_inst = { INST = colonial_affairs }
+            bpm_is_antagonistic_hypothetical_inst = { INST = social_security }
+            bpm_is_antagonistic_hypothetical_inst = { INST = workplace_safety }
+            bpm_is_antagonistic_hypothetical_inst = { INST = police }
+            bpm_is_antagonistic_hypothetical_inst = { INST = schools }
+            bpm_is_antagonistic_hypothetical_inst = { INST = home_affairs }
+            bpm_is_antagonistic_hypothetical_inst = { INST = health_system }
+            bpm_is_antagonistic_hypothetical_inst = { INST = centralization }
+            bpm_is_antagonistic_hypothetical_inst = { INST = suffrage }
+            bpm_is_antagonistic_hypothetical_inst = { INST = culture }
+            bpm_is_antagonistic_hypothetical_inst = { INST = diplomacy }
+            bpm_is_antagonistic_hypothetical_inst = { INST = economy }
+            bpm_is_antagonistic_hypothetical_inst = { INST = conscription }
+            interest_group = {
+                ig_approval <= angry
+            }
+        }
+    }
+}
+
+bpm_is_antagonistic_conscription = {
+    trigger_if = {
+        limit = {
+            owner = {
+                has_law_or_variant = law_type:law_council_republic
+            }
+        }
+        interest_group = {
+            OR = {
+                is_interest_group_type = ig_industrialists
+                is_interest_group_type = ig_landowners
+                #is_interest_group_type = ig_reactionaries
+            }
+        }
+    }
+    trigger_else = {
+        interest_group = {
+            OR = {
+                is_interest_group_type = ig_revolutionist_socialists
+                is_interest_group_type = ig_anarchists
+            }
+        }
+    }
+    # trigger_else_if = {
+    #     limit = { 
+    #         interest_group.leader = {
+    #             zogy = ideology:ideology_pacifist
+    #         }
+    #     }
+    # }
+}
+
+REPLACE:bpm_cab_get_random_inst = {
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = colonial_affairs }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = social_security }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = workplace_safety }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = schools }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = police }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = health_system }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = home_affairs }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = centralization }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = suffrage }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = culture }
+    #bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = economy }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = conscription }
+    random_in_list = {
+        variable = bpm_cab_inst_list
+        save_scope_as = bpm_found_inst
+    }
+    set_variable = {
+        name = bpm_temp_out_num_to_inst
+        value = scope:bpm_found_inst
+    }
+}  
+
+
+
+# BPM Cabinet Register Institutions (13)
+REPLACE:bpm_has_unfilled_cabinet_positions = {
+    OR = {
+        bpm_has_unfilled_cabinet_positions_subp = { INST = colonial_affairs }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = social_security }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = workplace_safety }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = police }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = schools }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = home_affairs }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = health_system }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = centralization }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = suffrage }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = culture }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = diplomacy }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = economy }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = conscription }
+    }
+}

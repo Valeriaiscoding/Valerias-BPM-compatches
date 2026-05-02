@@ -1,0 +1,419 @@
+# -- Cabinet Register Institutions (5) --
+REPLACE:bpm_cab_shuffle = {
+    bpm_cab_shuffle_inst = { INST = colonial_affairs }
+    bpm_cab_shuffle_inst = { INST = social_security }
+    bpm_cab_shuffle_inst = { INST = workplace_safety }
+    bpm_cab_shuffle_inst = { INST = schools }
+    bpm_cab_shuffle_inst = { INST = police }
+    bpm_cab_shuffle_inst = { INST = health_system }
+    bpm_cab_shuffle_inst = { INST = home_affairs }
+    bpm_cab_shuffle_inst = { INST = centralization }
+    bpm_cab_shuffle_inst = { INST = suffrage }
+    bpm_cab_shuffle_inst = { INST = culture }
+    bpm_cab_shuffle_inst = { INST = diplomacy }
+    bpm_cab_shuffle_inst = { INST = economy }
+    bpm_cab_shuffle_inst = { INST = conscription }
+    bpm_cab_update_synergy = yes
+}
+
+# --Cabinet Register Institutions (3) --
+REPLACE:bpm_cab_fill_positions = {
+    bpm_cab_fill_position_inst = { INST = colonial_affairs }
+    bpm_cab_fill_position_inst = { INST = social_security }
+    bpm_cab_fill_position_inst = { INST = workplace_safety }
+    bpm_cab_fill_position_inst = { INST = schools }
+    bpm_cab_fill_position_inst = { INST = police }
+    bpm_cab_fill_position_inst = { INST = health_system }
+    bpm_cab_fill_position_inst = { INST = home_affairs }
+    bpm_cab_fill_position_inst = { INST = centralization }
+    bpm_cab_fill_position_inst = { INST = suffrage }
+    bpm_cab_fill_position_inst = { INST = culture }
+    bpm_cab_fill_position_inst = { INST = diplomacy }
+    bpm_cab_fill_position_inst = { INST = economy }
+    bpm_cab_fill_position_inst = { INST = conscription }
+    bpm_cab_update_synergy = yes
+    bpm_reload_institution_modifiers = yes
+    bpm_reload_cabinet_picks_expectation = yes
+    bpm_update_temporary_cabinet_members_list = yes
+}
+
+# -- Cabinet Register Institutions (6) (Synergy table bis) --
+
+REPLACE:bpm_fill_charset_with_cabmins = {
+    bpm_fill_charset_with_cabmins_subp = { INST = schools }
+    bpm_fill_charset_with_cabmins_subp = { INST = police }
+    bpm_fill_charset_with_cabmins_subp = { INST = health_system }
+    bpm_fill_charset_with_cabmins_subp = { INST = home_affairs }
+    bpm_fill_charset_with_cabmins_subp = { INST = centralization }
+    bpm_fill_charset_with_cabmins_subp = { INST = suffrage }
+    bpm_fill_charset_with_cabmins_subp = { INST = culture }
+    bpm_fill_charset_with_cabmins_subp = { INST = colonial_affairs }
+    bpm_fill_charset_with_cabmins_subp = { INST = social_security }
+    bpm_fill_charset_with_cabmins_subp = { INST = workplace_safety }
+    bpm_fill_charset_with_cabmins_subp = { INST = diplomacy }
+    bpm_fill_charset_with_cabmins_subp = { INST = economy }
+    bpm_fill_charset_with_cabmins_subp = { INST = conscription }
+}
+
+# -- Cabinet register institutions (12) --
+REPLACE:bpm_reload_cabinet_max_level_from_skill = {
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = colonial_affairs }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = social_security }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = workplace_safety }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = schools }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = police }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = health_system }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = home_affairs }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = centralization }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = suffrage }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = culture }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = economy }
+    bpm_reload_cabinet_max_level_from_skill_inst = { INST = diplomacy }
+	bpm_reload_cabinet_max_level_from_skill_inst = { INST = conscription }
+}
+
+# -- Cabinet Register Institutions (13) --
+REPLACE:bpm_reset_unsustainable_positions = {
+    bpm_reset_unsustainable_positions_subp = { INST = colonial_affairs }
+    bpm_reset_unsustainable_positions_subp = { INST = social_security }
+    bpm_reset_unsustainable_positions_subp = { INST = workplace_safety }
+    bpm_reset_unsustainable_positions_subp = { INST = schools }
+    bpm_reset_unsustainable_positions_subp = { INST = police }
+    bpm_reset_unsustainable_positions_subp = { INST = health_system }
+    bpm_reset_unsustainable_positions_subp = { INST = home_affairs }
+    bpm_reset_unsustainable_positions_subp = { INST = centralization }
+    bpm_reset_unsustainable_positions_subp = { INST = suffrage }
+    bpm_reset_unsustainable_positions_subp = { INST = culture }
+    bpm_reset_unsustainable_positions_subp = { INST = diplomacy }
+    bpm_reset_unsustainable_positions_subp = { INST = economy }
+    bpm_reset_unsustainable_positions_subp = { INST = conscription }
+    bpm_reset_unsustainable_pm = yes
+}
+
+# --Cabinet Register Institutions (4) --
+
+REPLACE:bpm_addrem_cabinet = {
+    var:bpm_cabinet_minister ?= {
+        bpm_addrem_cabinet_subp = { INST = schools }
+        bpm_addrem_cabinet_subp = { INST = police }
+        bpm_addrem_cabinet_subp = { INST = health_system }
+        bpm_addrem_cabinet_subp = { INST = home_affairs }
+        bpm_addrem_cabinet_subp = { INST = centralization }
+        bpm_addrem_cabinet_subp = { INST = suffrage }
+        bpm_addrem_cabinet_subp = { INST = culture }
+        bpm_addrem_cabinet_subp = { INST = colonial_affairs }
+        bpm_addrem_cabinet_subp = { INST = social_security }
+        bpm_addrem_cabinet_subp = { INST = workplace_safety }
+        bpm_addrem_cabinet_subp = { INST = diplomacy }
+        bpm_addrem_cabinet_subp = { INST = economy }
+        bpm_addrem_cabinet_subp = { INST = conscription }
+    }
+    random_country = {
+        limit = {
+            PREV.var:bpm_associated_country ?= THIS
+        }
+        bpm_reload_institution_modifiers = yes
+        bpm_cab_update_synergy = yes
+    }
+}
+
+REPLACE:bpm_cab_get_random_inst = {
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = colonial_affairs }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = social_security }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = workplace_safety }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = schools }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = police }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = health_system }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = home_affairs }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = centralization }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = suffrage }
+    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = culture }
+    random_in_list = {
+        variable = bpm_cab_inst_list
+        save_scope_as = bpm_found_inst
+    }
+    set_variable = {
+        name = bpm_temp_out_num_to_inst
+        value = scope:bpm_found_inst
+    }
+}
+
+# -- Cabinet Register Institutions (9) --
+REPLACE:bpm_get_character_in_cabinet_position = {
+    bpm_get_character_in_cabinet_position_subp = { INST = colonial_affairs }
+    bpm_get_character_in_cabinet_position_subp = { INST = social_security }
+    bpm_get_character_in_cabinet_position_subp = { INST = workplace_safety }
+    bpm_get_character_in_cabinet_position_subp = { INST = schools }
+    bpm_get_character_in_cabinet_position_subp = { INST = police }
+    bpm_get_character_in_cabinet_position_subp = { INST = health_system }
+    bpm_get_character_in_cabinet_position_subp = { INST = home_affairs }
+    bpm_get_character_in_cabinet_position_subp = { INST = centralization }
+    bpm_get_character_in_cabinet_position_subp = { INST = suffrage }
+    bpm_get_character_in_cabinet_position_subp = { INST = culture }
+    bpm_get_character_in_cabinet_position_subp = { INST = diplomacy }
+    bpm_get_character_in_cabinet_position_subp = { INST = economy }
+    bpm_get_character_in_cabinet_position_subp = { INST = conscription }
+}
+# -- Cabinet Register Institutions (10) --
+REPLACE:bpm_update_temporary_cabinet_members_list = {
+    clear_variable_list = bpm_temporary_cabinet_members_list
+    bpm_update_temporary_cabinet_members_list_subp = { INST = colonial_affairs }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = social_security }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = workplace_safety }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = schools }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = police }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = health_system }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = home_affairs }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = centralization }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = suffrage }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = culture }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = diplomacy }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = economy }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = conscription }
+}
+
+REPLACE:bpm_remove_character_from_cabinet = {
+    if = {
+        limit = {
+            has_variable = bpm_cabinet_minister
+        }
+
+        if = {
+            limit = {
+                interest_group = {
+                    NAND = {
+                        has_variable_list = bpm_saved_characters
+                        is_target_in_variable_list = {
+                            name = bpm_saved_characters
+                            target = PREV
+                        }
+                    }
+                }
+            }
+            free_character_from_void = yes
+        }
+        else = {
+            if = {
+                limit = {
+                    var:bpm_skill_rank ?= 0
+                }
+                interest_group = {
+                    change_variable = {
+                        name = bpm_unskilled_characters
+                        add = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:bpm_skill_rank ?= 1
+                }
+                interest_group = {
+                    change_variable = {
+                        name = bpm_skilled_characters
+                        add = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:bpm_skill_rank ?= 2
+                }
+                interest_group = {
+                    change_variable = {
+                        name = bpm_expert_characters
+                        add = 1
+                    }
+                }
+            }
+        }
+
+        save_scope_value_as = {
+            name = addrem
+            value = no
+        }
+        bpm_addrem_cabinet = yes
+
+        interest_group = {
+            bpm_update_mandate_used = { VALUE = prev.var:bpm_mandate_usage_neg }
+        }
+
+        remove_variable = bpm_cabinet_minister
+        remove_variable = bpm_mandate_usage_neg
+        remove_variable = bpm_mandate_usage_pos
+
+        owner = {
+            #add_to_variable_list = {
+            #    name = bpm_CAB_char_select_pool
+            #    target = prev
+            #}
+            bpm_reload_cabinet_picks_expectation = yes
+        }
+    }
+    # remove the character if they are not a cabinet minister
+    # but are somehow stuck in the cabinet
+    bpm_emergency_rem_subp = { INST = schools }
+    bpm_emergency_rem_subp = { INST = police }
+    bpm_emergency_rem_subp = { INST = health_system }
+    bpm_emergency_rem_subp = { INST = home_affairs }
+    bpm_emergency_rem_subp = { INST = centralization }
+    bpm_emergency_rem_subp = { INST = suffrage }
+    bpm_emergency_rem_subp = { INST = culture }
+    bpm_emergency_rem_subp = { INST = colonial_affairs }
+    bpm_emergency_rem_subp = { INST = social_security }
+    bpm_emergency_rem_subp = { INST = workplace_safety }
+    bpm_emergency_rem_subp = { INST = diplomacy }
+    bpm_emergency_rem_subp = { INST = economy }
+	bpm_emergency_rem_subp = { INST = conscription }
+
+    bpm_update_temporary_cabinet_members_list = yes
+}
+
+# -- Cabinet Register Institutions (14) --
+REPLACE:bpm_reset_mandate_used_counter = {
+    set_variable = {
+        name = bpm_government_mandate_used
+        value = 0
+    }
+    bpm_reset_mandate_used_counter_subp = { INST = colonial_affairs }
+    bpm_reset_mandate_used_counter_subp = { INST = social_security }
+    bpm_reset_mandate_used_counter_subp = { INST = workplace_safety }
+    bpm_reset_mandate_used_counter_subp = { INST = schools }
+    bpm_reset_mandate_used_counter_subp = { INST = police }
+    bpm_reset_mandate_used_counter_subp = { INST = health_system }
+    bpm_reset_mandate_used_counter_subp = { INST = home_affairs }
+    bpm_reset_mandate_used_counter_subp = { INST = centralization }
+    bpm_reset_mandate_used_counter_subp = { INST = suffrage }
+    bpm_reset_mandate_used_counter_subp = { INST = culture }
+    bpm_reset_mandate_used_counter_subp = { INST = diplomacy }
+    bpm_reset_mandate_used_counter_subp = { INST = economy }
+    bpm_reset_mandate_used_counter_subp = { INST = conscription }
+    bpm_reset_mandate_used_counter_pm = yes
+}
+
+# -- Cabinet Register Institutions (15) --
+REPLACE:bpm_reset_ig_mandate_used_counter = {
+    set_variable = {
+        name = bpm_ig_mandate_used
+        value = 0
+    }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = colonial_affairs }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = social_security }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = workplace_safety }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = schools }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = police }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = health_system }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = home_affairs }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = centralization }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = suffrage }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = culture }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = diplomacy }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = economy }
+    bpm_reset_ig_mandate_used_counter_subp = { INST = conscription }
+    bpm_reset_ig_mandate_used_counter_pm = yes
+}
+
+# -- Cabinet Register Institutions (9) --
+REPLACE:bpm_get_character_in_cabinet_position = {
+    bpm_get_character_in_cabinet_position_subp = { INST = colonial_affairs }
+    bpm_get_character_in_cabinet_position_subp = { INST = social_security }
+    bpm_get_character_in_cabinet_position_subp = { INST = workplace_safety }
+    bpm_get_character_in_cabinet_position_subp = { INST = schools }
+    bpm_get_character_in_cabinet_position_subp = { INST = police }
+    bpm_get_character_in_cabinet_position_subp = { INST = health_system }
+    bpm_get_character_in_cabinet_position_subp = { INST = home_affairs }
+    bpm_get_character_in_cabinet_position_subp = { INST = centralization }
+    bpm_get_character_in_cabinet_position_subp = { INST = suffrage }
+    bpm_get_character_in_cabinet_position_subp = { INST = culture }
+    bpm_get_character_in_cabinet_position_subp = { INST = diplomacy }
+    bpm_get_character_in_cabinet_position_subp = { INST = economy }
+    bpm_get_character_in_cabinet_position_subp = { INST = conscription }
+}
+# -- Cabinet Register Institutions (10) --
+REPLACE:bpm_update_temporary_cabinet_members_list = {
+    clear_variable_list = bpm_temporary_cabinet_members_list
+    bpm_update_temporary_cabinet_members_list_subp = { INST = colonial_affairs }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = social_security }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = workplace_safety }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = schools }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = police }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = health_system }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = home_affairs }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = centralization }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = suffrage }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = culture }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = diplomacy }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = economy }
+    bpm_update_temporary_cabinet_members_list_subp = { INST = conscription }
+}
+
+TRY_REPLACE:bpm_form_government_oligarchic_systems = {
+	every_interest_group = {
+		add_ruling_interest_group = yes
+	}
+	every_interest_group = {
+		limit = {
+			NOR = {
+				THIS = owner.var:bpm_minister_of_schools.interest_group
+				THIS = owner.var:bpm_miniuster_of_centralization.interest_group
+				THIS = owner.var:bpm_minister_of_police.interest_group
+				THIS = owner.var:bpm_minister_of_colonial_affairs.interest_group
+				THIS = owner.var:bpm_minister_of_social_security.interest_group
+				THIS = owner.var:bpm_minister_of_workplace_safety.interest_group
+				THIS = owner.var:bpm_minister_of_health_system.interest_group
+				THIS = owner.var:bpm_minister_of_home_affairs.interest_group
+				THIS = owner.var:bpm_minister_of_suffrage.interest_group
+				THIS = owner.var:bpm_minister_of_culture.interest_group
+				THIS = owner.var:bpm_minister_of_diplomacy.interest_group
+				THIS = owner.var:bpm_minister_of_economy.interest_group
+				THIS = owner.var:bpm_headofgov.interest_group
+                THIS = owner.var:bpm_minister_of_conscription.interest_group
+			}
+		}
+		remove_ruling_interest_group = yes
+	}
+	if = { 
+		limit = { 
+			NOT = { any_interest_group = {
+				is_in_government = yes
+			} }
+		}
+		ruler.interest_group = {
+			add_ruling_interest_group = yes
+		}
+		set_variable = bpm_caretaker_government
+	}
+}
+
+REPLACE:bpm_newcab_char_pick = {
+    bpm_reload_government_mandate = yes
+    every_interest_group = {
+        set_variable = {
+            name = bpm_cost_ig_position_var
+            value = bpm_cost_ig_position
+        }
+    }
+    set_variable = {
+        name = bpm_newcab_available_good_candidates
+        value = {
+            value = 0
+            every_interest_group = {
+                add = var:bpm_skilled_characters
+                add = var:bpm_expert_characters
+            }
+        }
+    }
+    bpm_newcab_char_pick_subp = { INST = conscription REMAINING = 13 }
+    bpm_newcab_char_pick_subp = { INST = economy REMAINING = 12 }
+    bpm_newcab_char_pick_subp = { INST = diplomacy REMAINING = 11 }
+    bpm_newcab_char_pick_subp = { INST = schools REMAINING = 10 }
+    bpm_newcab_char_pick_subp = { INST = centralization REMAINING = 9 }
+    bpm_newcab_char_pick_subp = { INST = suffrage REMAINING = 8 }
+    bpm_newcab_char_pick_subp = { INST = police REMAINING = 7 }
+    bpm_newcab_char_pick_subp = { INST = health_system REMAINING = 6 }
+    bpm_newcab_char_pick_subp = { INST = colonial_affairs REMAINING = 5 }
+    bpm_newcab_char_pick_subp = { INST = home_affairs REMAINING = 4 }
+    bpm_newcab_char_pick_subp = { INST = workplace_safety REMAINING = 3 }
+    bpm_newcab_char_pick_subp = { INST = social_security REMAINING = 2 }
+    bpm_newcab_char_pick_subp = { INST = culture REMAINING = 1 }
+}

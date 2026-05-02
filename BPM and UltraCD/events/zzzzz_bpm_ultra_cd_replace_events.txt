@@ -1,0 +1,224 @@
+natural_borders.2 = {
+	type = country_event
+	placement = root
+	title = natural_borders.2.t
+	desc = natural_borders.2.d
+	flavor = natural_borders.2.f
+
+	duration = 3
+
+	dlc = dlc004
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+
+	trigger = {
+		# triggered by je_french_natural_borders
+	}
+
+	option = { # assimilate the new states
+		name = natural_borders.2.a
+		default_option = yes
+		add_modifier = {
+			name = natural_borders_assimilation
+			days = very_long_modifier_time
+			# state_assimilation_mult
+		}
+	}
+
+	option = { # empower imperialist IG's
+		name = natural_borders.2.b
+		trigger = {
+			any_interest_group = {
+				bpm_ig_is_marginal = no
+				OR = {
+					is_interest_group_type = ig_armed_forces
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_jingoist_leader
+							has_ideology = ideology:ideology_ethno_nationalist
+							has_ideology = ideology:ideology_fascist
+							has_ideology = ideology:ideology_authoritarian
+							has_ideology = ideology:ideology_bonapartist
+						}
+					}
+				}
+			}
+		}
+		every_interest_group = {
+			limit = {
+				bpm_ig_is_marginal = no
+				OR = {
+					is_interest_group_type = ig_armed_forces
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_jingoist_leader
+							has_ideology = ideology:ideology_ethno_nationalist
+							has_ideology = ideology:ideology_fascist
+							has_ideology = ideology:ideology_authoritarian
+							has_ideology = ideology:ideology_bonapartist
+						}
+					}
+				}
+			}
+			add_modifier = {
+				name = natural_borders_achieved
+				days = long_modifier_time
+				# interest_group_approval_add
+				# interest_group_pol_str_mult
+			}
+		}
+	}
+
+	option = { # get French cultures as primary
+		name = natural_borders.2.c
+		add_primary_culture = cu:wallonian
+		add_primary_culture = cu:breton
+		add_primary_culture = cu:occitan
+		add_primary_culture = cu:francoprovencal
+		if = {
+			limit = { has_game_rule = all_extra_cultures }
+			add_primary_culture = cu:lorrain
+			add_primary_culture = cu:picard
+			add_primary_culture = cu:normand
+			add_primary_culture = cu:champenois
+			add_primary_culture = cu:bourguignon
+			add_primary_culture = cu:poitevin
+
+			add_primary_culture = cu:gallo
+		}
+	}
+}
+
+bpm_acw_events.301 = { # The Permanent Militia
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "europenorthamerica_american_civil_war"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = bpm_acw_events.301.t
+	desc = bpm_acw_events.301.d
+	flavor = bpm_acw_events.301.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = bpm_acw_events.301.a
+		default_option = yes
+		set_variable = bpm_reconstruction_13
+		add_primary_culture = cu:afro_american
+		if = {
+			limit = { has_law = law_type:law_white_universalism }
+			activate_law = law_type:law_cultural_exclusion
+		}
+		add_modifier = {
+			name = bpm_rec_permanent_militia
+		}
+	}
+}
+
+bpm_acw_events.307 = { # Citizenship Amendment
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "europenorthamerica_american_civil_war"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = bpm_amendment_1 }
+				} 
+				desc = bpm_acw_events.307.t1
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = bpm_amendment_2 }
+				} 
+				desc = bpm_acw_events.307.t2
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = { has_variable = bpm_amendment_3 }
+				} 
+				desc = bpm_acw_events.307.t3
+			}
+		}
+	}
+	desc = bpm_acw_events.307.d
+	flavor = bpm_acw_events.307.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	trigger = {
+		has_law_or_variant = law_type:law_cultural_exclusion
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = bpm_acw_events.307.a
+		default_option = yes
+		set_variable = bpm_rec_307_passed
+		change_variable = {
+			name = bpm_reconstruction_progress_var
+			add = 1
+		}
+		je:je_bpm_second_revolution = {
+			add_progress = { value = 1 name = bpm_reconstruction_progress_progress_bar }
+		}
+		custom_tooltip = bpm_rec_307.tt
+		if = {
+			limit = { 
+				NOT = { has_variable = bpm_amendment_3 }
+				has_variable = bpm_amendment_2
+			}
+			set_variable = bpm_amendment_3
+		}
+		if = {
+			limit = { 
+				NOT = { has_variable = bpm_amendment_2 }
+				has_variable = bpm_amendment_1
+			}
+			set_variable = bpm_amendment_2
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = bpm_amendment_1 }
+			}
+			set_variable = bpm_amendment_1
+		}
+	}
+}

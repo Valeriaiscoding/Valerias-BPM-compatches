@@ -1,0 +1,391 @@
+# --Cabinet Register Institutions (1)--
+REPLACE:bpm_institution_type = {
+	type = institution
+	random_valid = no
+	
+    text = {
+        trigger = {
+            NOT = { exists = type }
+        }
+        localization_key = bpm_minister_of_unknown
+    }
+
+	text = {
+		trigger = {
+			owner.institution:institution_conscription.type ?= type
+		}
+		localization_key = bpm_minister_of_conscription
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_schools.type ?= type
+		}
+		localization_key = bpm_minister_of_schools
+	}
+
+    text = {
+		trigger = {
+			owner.institution:institution_centralization.type ?= type
+		}
+		localization_key = bpm_minister_of_centralization
+	}
+
+    text = {
+		trigger = {
+			owner.institution:institution_police.type ?= type
+		}
+		localization_key = bpm_minister_of_police
+	}
+	
+	text = {
+		trigger = {
+			owner.institution:institution_colonial_affairs.type ?= type
+		}
+		localization_key = bpm_minister_of_colonial_affairs
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_social_security.type ?= type
+		}
+		localization_key = bpm_minister_of_social_security
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_workplace_safety.type ?= type
+		}
+		localization_key = bpm_minister_of_workplace_safety
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_health_system.type ?= type
+		}
+		localization_key = bpm_minister_of_health_system
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_home_affairs.type ?= type
+		}
+		localization_key = bpm_minister_of_home_affairs
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_suffrage.type ?= type
+		}
+		localization_key = bpm_minister_of_suffrage
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_culture.type ?= type
+		}
+		localization_key = bpm_minister_of_culture
+	}
+
+    text = {
+        trigger = {
+            owner.institution:institution_diplomacy.type ?= type
+        }
+        localization_key = bpm_minister_of_diplomacy
+    }
+
+    text = {
+        trigger = {
+            owner.institution:institution_economy.type ?= type
+        }
+        localization_key = bpm_minister_of_economy
+    }
+    text = {
+        trigger = {
+            owner.institution:institution_conscription.type ?= type
+        }
+        localization_key = bpm_minister_of_conscription
+        
+    }
+
+    text = {
+        trigger = {
+            always = no
+        }
+        fallback = yes
+        localization_key = bpm_minister_of_unknown
+    }
+}
+
+# -- Cabinet Register Institutions (Modifiers) --
+# Please also modify BPM_CAB_MODIFIERS_effect.txt
+# in scripted effects. Also modify the locs in 
+# BPM_cab_modifiers_l_english.yml for the UI to stay accurate.
+bpm_minister_of_conscription_modifier = {
+	type = character
+	random_valid = no
+
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						is_interest_group_type = ig_agrarian_populists
+						is_interest_group_type = ig_rural_folk
+						is_interest_group_type = ig_trade_unions
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_rurals_modifier_desc
+	}
+
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_conservatives
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_cons_modifier_desc
+	}
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_reactionaries
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_reacts_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_fascists
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_fash_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_national_liberals
+				  }
+			   }
+			}
+			localization_key = bpm_culture_natlibs_modifier_desc
+	}
+
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_liberals
+						 is_interest_group_type = ig_market_liberals
+						 is_interest_group_type = ig_reformist_socialists
+						 is_interest_group_type = ig_intelligentsia
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_neutrals_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_radicals
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_radlibs_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_revolutionist_socialists
+						 is_interest_group_type = ig_socialists
+						 is_interest_group_type = ig_anarchists
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_commies_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_armed_forces
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_military_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_petty_bourgeoisie
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_pb_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_devout
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_devout_modifier_desc
+	}
+	
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						is_interest_group_type = ig_industrialists
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_capis_modifier_desc
+	}
+	text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						is_interest_group_type = ig_landowners
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_landies_modifier_desc
+	}
+	
+    text = {
+		trigger = {
+			interest_group = {
+				OR = {
+						 is_interest_group_type = ig_christian_democrats
+				  }
+			   }
+			}
+			localization_key = bpm_conscription_christdem_modifier_desc
+	}
+	
+
+	text = {
+		trigger = {
+			always = no
+		}
+		fallback = yes
+		localization_key = bpm_conscription_fallback_modifier_desc
+	}
+}
+
+
+
+## --END OF CABGENSCRIPT--
+
+REPLACE:bpm_institution_grid_data = {
+	type = institution
+	random_valid = no
+	
+	text = {
+		trigger = {
+			owner.institution:institution_schools.type ?= type
+		}
+		localization_key = bpm_schools_grid
+	}
+
+    text = {
+		trigger = {
+			owner.institution:institution_centralization.type ?= type
+		}
+		localization_key = bpm_centralization_grid
+	}
+
+    text = {
+		trigger = {
+			owner.institution:institution_police.type ?= type
+		}
+		localization_key = bpm_police_grid
+	}
+	
+	text = {
+		trigger = {
+			owner.institution:institution_colonial_affairs.type ?= type
+		}
+		localization_key = bpm_colonial_affairs_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_social_security.type ?= type
+		}
+		localization_key = bpm_social_security_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_workplace_safety.type ?= type
+		}
+		localization_key = bpm_workplace_safety_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_health_system.type ?= type
+		}
+		localization_key = bpm_health_system_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_home_affairs.type ?= type
+		}
+		localization_key = bpm_home_affairs_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_suffrage.type ?= type
+		}
+		localization_key = bpm_suffrage_grid
+	}
+
+	text = {
+		trigger = {
+			owner.institution:institution_culture.type ?= type
+		}
+		localization_key = bpm_culture_grid
+	}
+
+	# text = {
+	# 	trigger = {
+	# 		owner.institution:institution_conscription.type ?= type
+	# 	}
+	# 	localization_key = bpm_conscription_grid
+	# }
+
+    text = {
+        trigger = {
+            always = no
+        }
+        fallback = yes
+        localization_key = bpm_unknown_grid
+    }
+}
+
+

@@ -1,0 +1,103 @@
+
+
+bpm_conscription_reacts_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = -0.03
+	country_officers_pol_str_mult = 0.03
+	unit_experience_gain_mult = 0.02
+}
+
+bpm_conscription_cons_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = -0.02
+	country_officers_pol_str_mult = 0.03
+	unit_experience_gain_mult = 0.02
+}
+
+bpm_conscription_fash_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = 0.04
+	unit_army_offense_mult = 0.02
+	unit_defense_mult = -0.02
+	unit_morale_loss_mult = 0.02
+}
+
+bpm_conscription_natlibs_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = 0.02
+}
+
+bpm_conscription_radlibs_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = 0.015
+	unit_morale_loss_mult = -0.01
+}
+
+bpm_conscription_commies_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = 0.01
+	unit_morale_loss_mult = -0.015
+}
+
+bpm_conscription_neutrals_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+}
+
+
+bpm_conscription_pb_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = -0.02
+	unit_army_offense_mult = 0.01
+	unit_defense_mult = 0.01
+	unit_morale_loss_mult = -0.01
+}
+
+bpm_conscription_armed_forces_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = 0.02
+	unit_army_offense_mult = 0.01
+	unit_defense_mult = 0.01
+	unit_morale_loss_mult = -0.02
+}
+
+bpm_conscription_rurals_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_conscription_rate_mult = -0.01
+	battle_casualties_mult = -0.015
+}
+
+bpm_conscription_devout_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_infamy_decay_mult = -0.02
+	unit_morale_loss_mult = -0.01
+	country_war_exhaustion_casualties_mult = -0.01
+}
+
+bpm_conscription_christdem_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	
+	battle_casualties_mult = -0.015
+	country_war_exhaustion_casualties_mult = -0.01
+}
+
+bpm_conscription_landies_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_from_army_power_projection_mult = 0.02
+	country_prestige_from_navy_power_projection_mult = 0.02
+}
+
+bpm_conscription_capis_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	building_group_bg_military_industry_throughput_add = 0.02
+
+}
+
+bpm_cabinet_max_level_from_skill_conscription = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_institution_conscription_max_investment_add = 1
+}
+
+bpm_conscription_attraction_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    interest_group_pol_str_mult = 0.03
+}

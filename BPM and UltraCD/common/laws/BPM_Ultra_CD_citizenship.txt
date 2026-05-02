@@ -1,0 +1,37 @@
+﻿INJECT:law_multicultural = {
+	progressiveness = 50
+
+	modifier = {
+		country_acceptance_no_shared_language_trait_add = -5
+
+	}
+}
+
+INJECT:law_multicultural_upgraded = {
+	progressiveness = 100
+
+	modifier = {
+
+		country_acceptance_shared_heritage_trait_add = -10
+		country_acceptance_shared_heritage_trait_group_add = -10
+		#country_acceptance_no_shared_heritage_trait_add = -10
+
+		country_acceptance_shared_language_trait_add = -10
+		country_acceptance_shared_language_trait_group_add = -5
+		country_acceptance_no_shared_language_trait_add = -5
+
+	}
+
+	acceptance_modifier = {
+
+		country_wage_cultural_erasure_mult = -0.05
+		country_wage_open_prejudice_mult = -0.05
+		country_wage_second_rate_citizen_mult = -0.05
+
+		country_assimilation_open_prejudice_mult = 0.1
+		country_assimilation_second_rate_citizen_mult = 0.25
+		country_assimilation_full_acceptance_mult = 0.1
+
+	}
+
+}

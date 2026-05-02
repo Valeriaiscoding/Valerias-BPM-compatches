@@ -1,0 +1,3 @@
+﻿l_french:
+ notification_bpm_ultra_cd_unification_ideology_name: "[GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] changed citizenship ideology due to unifcation of [SCOPE.sCountry('recently_unified').GetName]"
+ notification_bpm_ultra_cd_unification_ideology_desc: "Due to recent unification of [SCOPE.sCountry('recently_unified').GetName], [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] have abandoned [SCOPE.sIdeology('former_ideology_cons').GetName] and adopted [SCOPE.sIdeology('new_ideology_cons').GetName] instead." 

@@ -1,0 +1,17 @@
+on_game_started = {
+	on_actions = {
+		bpm_ultra_cd_on_game_start 
+	}
+}
+
+bpm_ultra_cd_on_game_start = {
+	effect = {
+		c:USA = {
+			ig:ig_landowners = {
+				bpm_remove_all_cit_ideologies = yes
+				add_ideology = ideology_cit_nationalist
+				bpm_reorder_ideologies = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,186 @@
+REPLACE:officers = {
+	texture = "gfx/interface/icons/pops_icons/officers.dds"
+	color = hsv{ 0.12 0.51 0.36 }
+	military = yes
+	start_quality_of_life = 10
+	wage_weight = 5
+	paid_private_wage = yes
+	literacy_target = 0.50
+	dependent_wage = 0.5	# per year
+	unemployment = yes
+	ignores_employment_proportionality = yes
+
+	# 70% - 100% politically engaged
+	political_engagement_base = 0.7
+	political_engagement_literacy_factor = 0.3
+
+	political_engagement_mult = {
+		value = 1
+
+		add = {
+			desc = "POP_STARVATION"
+
+			if = {
+				limit = {
+					is_in_mild_starvation = yes
+				}
+				value = 0.5
+			}
+			else_if = {
+				limit = {
+					is_in_severe_starvation = yes
+				}
+				value = 1.5
+			}
+		}
+	}
+
+	qualifications_growth_desc = "OFFICERS_QUALIFICATIONS_DESC"
+	qualifications = {
+		if = {
+			limit = {
+				is_peasant_under_serfdom = no
+				OR = {
+					state = {
+						state_cultural_acceptance = {
+							target = PREV.culture
+						   	value > acceptance_status_4
+					   	}
+					}
+					is_pop_type = soldiers
+				}
+				
+				literacy_rate > 0.05 #was none
+			}
+			# baseline: ( literacy - 0.2 ) * 10, norm 2 for Soldiers with Literacy 30%
+			add = {
+				value = literacy_rate
+				subtract = 0.1 # was 0.2
+				min = 0
+				multiply = 5 #was 10
+				desc = "QUALIFICATIONS_LITERACY_FACTOR"
+			}
+			if = {
+				limit = {
+					owner = { has_law_or_variant = law_type:law_purchased_officers }
+				}
+				add = {
+					desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS"
+					value = wealth
+					subtract = 20
+					multiply = 0.1
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					NOT = { owner = { has_law_or_variant = law_type:law_elected_officers } }
+				}
+				
+				if = {
+					limit = { owner = { has_law_or_variant = law_type:law_noble_officers } }
+					multiply = {
+						value = 15 
+						desc = "QUALIFICATIONS_OFFICERS_ARISTOCRATIC_OFFICERS_ARISTOCRATS"
+					}
+				}
+				else_if = {
+					limit = {
+						owner = {
+							has_law_or_variant = law_type:law_purchased_officers
+						}
+					}
+					multiply = {
+						value = 8 
+						desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS_ARISTOCRATS"
+					}
+				}
+				else = {
+					multiply = {
+						value = 5 #was 10 in ULTRA RE
+						desc = "QUALIFICATIONS_FAVORED_TYPE"
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = soldiers
+					owner = {
+						is_at_war = yes
+					}
+					is_employed = yes
+					workplace = {
+						has_deployed_units = yes
+					}
+				}
+				multiply = {
+					value = 5
+					desc = "QUALIFICATIONS_DEPLOYED_SERVICEMEN"
+				}
+			}
+			if = {
+				limit = { owner = { has_law_or_variant = law_type:law_political_officers } }
+				if = {
+					limit = {
+						OR = {
+								is_pop_type = aristocrats
+								is_pop_type = capitalists
+								is_pop_type = bureaucrats
+							}
+					}
+					multiply = {
+						desc = "QUALIFICATIONS_LAW_POLITICAL_OFFICERS"
+						value = 3
+					}
+				}
+				else = {
+					multiply = {
+						desc = "QUALIFICATIONS_LAW_POLITICAL_OFFICERS"
+						value = 0.6
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					owner = {
+						#has_law_or_variant = law_type:law_peasant_levies
+						has_law_or_variant = law_type:law_noble_officers
+					}
+					NOT = { is_pop_type = aristocrats }
+				}
+				multiply = {
+					value = 0.1
+					desc = "QUALIFICATIONS_OFFICERS_PEASANT_LEVIES"
+				}
+			}
+			if = {
+				limit = {
+					has_pop_religion = jewish
+				}
+				multiply = {
+					value = 0.5
+					desc = "jewish"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_peasant_under_serfdom = yes
+			}
+			value = {
+				desc = "QUALIFICATIONS_PEASANTS_UNDER_SERFDOM"
+				value = 0
+			}
+		}
+	}
+
+	portrait_age = {
+		integer_range = {
+			min = define:NPortrait|GRACEFUL_AGING_START
+			max = define:NPortrait|GRACEFUL_AGING_END
+		}
+	}
+	portrait_pose = { value = 0 }
+	portrait_is_female = { always = yes }
+}
