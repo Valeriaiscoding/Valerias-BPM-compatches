@@ -29,6 +29,7 @@ GLOBAL = {
 				this = c:SAR
 				this = c:PER
 				this = c:SIC
+				this = c:JAP
 			}
 		}
 		activate_law = law_type:law_oligarchy
@@ -41,15 +42,16 @@ GLOBAL = {
 					country_has_primary_culture = cu:north_german
 					country_has_primary_culture = cu:south_german
 				}
-				#exclude GPs, Saxony and city-states
-				this != c:PRU
-				#this != c:AUS
-				this != c:SAX
-				this != c:BRE
-				this != c:HAM
-				this != c:FRM
-				this != c:LUB
-				this != c:UBD
+				NOR = {  #exclude GPs, Saxony and city-states
+					this = c:PRU
+					this = c:AUS # Bpm already has it covered
+					this = c:SAX
+					this = c:BRE
+					this = c:HAM
+					this = c:FRM
+					this = c:LUB
+					this = c:UBD
+				}
             }         
 		}
 		activate_law = law_type:law_agrarianism
@@ -105,7 +107,7 @@ GLOBAL = {
 	}
 
 	c:RUS = {
-		activate_law = law_type:law_secret_police
+		#activate_law = law_type:law_secret_police
 		activate_law = law_type:law_appointed_bureaucrats
 		active_law:lawgroup_bureaucracy ?= {
 			add_amendment = {
@@ -116,7 +118,10 @@ GLOBAL = {
 	}
 
 	c:TUR = {
-		activate_law = law_type:law_appointed_bureaucrats
+		#if = {
+			#limit = { gates of bosphores compat }
+			activate_law = law_type:law_appointed_bureaucrats
+		#}
 	}
 
 	c:BIC = {
@@ -182,6 +187,10 @@ GLOBAL = {
 
 	c:SPC = {
 		#activate_law = law_type:law_peasant_levies
+	}
+
+	c:USA = {
+		activate_law = law_type:law_agrarianism
 	}
 
 	c:AUS = {
@@ -264,7 +273,7 @@ GLOBAL = {
 	}
 
 	c:TUR = {
-		#activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_tenant_farmers
 		activate_law = law_type:law_free_trade
 	}
 
@@ -282,9 +291,9 @@ GLOBAL = {
 		}
 	}
 	
-	c:USA = {
-		activate_law = law_type:law_universal_suffrage
-	}
+	# c:USA = {
+	# 	activate_law = law_type:law_universal_suffrage
+	# }
 
 	c:NSW = {
 		activate_law = law_type:law_frontier_colonization
@@ -317,7 +326,7 @@ GLOBAL = {
 	
 	C:LIB = {
 		activate_law = law_Type:law_slavery_banned
-		activate_law = law_Type:law_homesteading
+		activate_law = law_Type:law_peasant_proprietorship
 	}
 	
 	c:OMA = {
@@ -336,8 +345,7 @@ GLOBAL = {
 		activate_law = law_type:law_oligarchy
 		activate_law = law_type:law_landed_voting
 		activate_law = law_type:law_no_police
-		activate_law = law_type:law_national_militia
-		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_peasant_proprietorship
 	}
 
 	every_country = {

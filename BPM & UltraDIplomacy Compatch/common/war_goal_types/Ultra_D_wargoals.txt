@@ -1,6 +1,5 @@
 ﻿INJECT:open_market = {
 	possible = {
-		
 		OR = {
 			infamy >= infamy_threshold:pariah
 			is_country_type = unrecognized
