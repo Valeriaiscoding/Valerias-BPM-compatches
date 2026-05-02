@@ -23,7 +23,7 @@ ecchi_que_lambton_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1840.7.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -55,7 +55,7 @@ ecchi_que_nelson_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1873.3.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -87,7 +87,7 @@ ecchi_que_bowen_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1866.4.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -119,7 +119,7 @@ ecchi_que_cartier_character_template = {
         }
         earliest_usage_date = 1838.1.1
         latest_usage_date = 1873.5.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -149,7 +149,7 @@ ecchi_que_hart_character_template = {
         }
         earliest_usage_date = 1807.1.1
         latest_usage_date = 1843.9.16
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -251,7 +251,7 @@ ecchi_nvs_howe_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1873.6.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -304,7 +304,7 @@ ecchi_org_douglas_character_template = {
         }
         earliest_usage_date = 1849.1.1
         latest_usage_date = 1877.8.2
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -349,7 +349,7 @@ ecchi_org_de_cosmos_character_template = {
         }
         earliest_usage_date = 1863.1.1
         latest_usage_date = 1897.7.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -383,7 +383,7 @@ ecchi_ont_robinson_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1863.1.31
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -416,7 +416,7 @@ ecchi_ont_mowat_character_template = {
         }
         earliest_usage_date = 1857.1.1
         latest_usage_date = 1903.4.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -457,7 +457,7 @@ ecchi_ont_johnson_character_template = {
         }
         earliest_usage_date = 1836.1.2
         latest_usage_date = 1886.8.26
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -486,7 +486,7 @@ ecchi_ont_strachan_character_template = {
         }
         earliest_usage_date = 1812.1.1
         latest_usage_date = 1867.11.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -523,7 +523,7 @@ ecchi_ont_walsh_character_template = {
         earliest_usage_date = 1866.1.1
         latest_usage_date = 1905.7.25
         role = general
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -590,7 +590,7 @@ ecchi_can_macdonald_character_template = {
         }
         earliest_usage_date = 1844.1.1
         latest_usage_date = 1891.6.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -622,7 +622,7 @@ ecchi_can_laurier_character_template = {
         }
         earliest_usage_date = 1874.1.1
         latest_usage_date = 1891.6.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -654,7 +654,7 @@ ecchi_can_king_character_template = {
         }
         earliest_usage_date = 1908.1.1
         latest_usage_date = 1950.7.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -680,7 +680,7 @@ ecchi_can_king_character_template = {
 #        }
 #        earliest_usage_date = 1869.1.1
 #        latest_usage_date = 1885.11.16
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -707,7 +707,7 @@ ecchi_can_massey_character_template = {
         }
         earliest_usage_date = 1856.1.1
         latest_usage_date = 1896.2.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -734,7 +734,7 @@ ecchi_can_van_horne_character_template = {
         }
         earliest_usage_date = 1888.1.1
         latest_usage_date = 1915.9.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -765,6 +765,6 @@ ecchi_can_hughes_character_template = {
         earliest_usage_date = 1899.1.1
         latest_usage_date = 1921.8.23
         role = general
-        chance = 65
+        #chance = 65
     }
 }

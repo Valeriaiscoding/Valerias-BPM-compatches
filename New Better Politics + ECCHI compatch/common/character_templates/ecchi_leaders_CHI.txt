@@ -21,7 +21,7 @@
 #         }
 #         earliest_usage_date = 1861.1.1
 #         latest_usage_date = 1908.11.15
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -58,7 +58,7 @@ ecchi_chi_li_hongzhang_character_template = {
         }
         earliest_usage_date = 1868.1.1
         latest_usage_date = 1901.11.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -83,7 +83,7 @@ ecchi_chi_yikuang_character_template = {
         }
         earliest_usage_date = 1872.1.1
         latest_usage_date = 1917.1.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -119,7 +119,7 @@ ecchi_chi_zhang_zhidong_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1909.10.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -150,7 +150,7 @@ ecchi_chi_ronglu_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1903.4.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -179,7 +179,7 @@ ecchi_chi_zhang_jian_character_template = {
         }
         earliest_usage_date = 1874.1.1
         latest_usage_date = 1926.8.21
-        chance = 80
+        #chance = 80
     }
 }
 
@@ -237,7 +237,7 @@ ecchi_chi_zhao_sanduo_character_template = {
         }
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1902.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -267,7 +267,7 @@ ecchi_chi_wenxiang_character_template = {
         }
         earliest_usage_date = 1845.1.1
         latest_usage_date = 1876.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -297,7 +297,7 @@ ecchi_chi_zuo_zongtang_character_template = {
         role = general
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1885.9.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -372,7 +372,7 @@ ecchi_chi_shi_dakai_character_template = {
         role = general
         earliest_usage_date = 1850.1.1
         latest_usage_date = 1863.6.27
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -453,7 +453,7 @@ ecchi_chi_wang_zebang_character_template = {
         }
         earliest_usage_date = 1836.1.2
         latest_usage_date = 1883.1.1
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -488,7 +488,7 @@ ecchi_chi_liang_qichao_character_template = {
         }
         earliest_usage_date = 1891.1.1
         latest_usage_date = 1929.1.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -522,7 +522,7 @@ ecchi_chi_kang_youwei_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1927.3.31
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -560,7 +560,7 @@ ecchi_chi_chen_jiongming_character_template = {
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1933.9.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -590,7 +590,7 @@ ecchi_chi_cai_yuanpei_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1940.3.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -617,7 +617,7 @@ ecchi_chi_huang_xing_character_template = {
         }
         earliest_usage_date = 1903.1.1
         latest_usage_date = 1916.10.31
-        chance = 50
+        #chance = 50
     }
 }
 
@@ -643,7 +643,7 @@ ecchi_chi_hu_shih_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1962.2.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -678,7 +678,7 @@ ecchi_chi_chiang_kai_shek_character_template = {
         }
         earliest_usage_date = 1924.1.1
         latest_usage_date = 1975.4.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -703,7 +703,7 @@ ecchi_chi_zhang_xun_character_template = {
         role = general
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1923.9.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -744,7 +744,7 @@ ecchi_chi_zhang_zuolin_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1928.6.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -779,7 +779,7 @@ ecchi_chi_yan_xishan_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1960.7.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -820,7 +820,7 @@ ecchi_chi_xu_shicang_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1960.7.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -854,7 +854,7 @@ ecchi_chi_wu_peifu_character_template = {
         role = general
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1939.12.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -895,7 +895,7 @@ ecchi_chi_ma_fuxiang_character_template = {
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1932.8.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -927,7 +927,7 @@ ecchi_chi_li_yuanhong_character_template = {
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1928.6.3
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -961,7 +961,7 @@ ecchi_chi_feng_yuxiang_character_template = {
         role = general
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1948.9.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -996,7 +996,7 @@ ecchi_chi_feng_guozhang_character_template = {
         role = general
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1919.12.12
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1038,7 +1038,7 @@ ecchi_chi_duan_qirui_character_template = {
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1936.11.2
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1072,7 +1072,7 @@ ecchi_chi_cai_e_character_template = {
         role = general
         earliest_usage_date = 1911.1.1
         latest_usage_date = 1916.11.8
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1106,7 +1106,7 @@ ecchi_chi_long_yun_character_template = {
         role = general
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1962.6.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1149,7 +1149,7 @@ ecchi_chi_mao_zedong_character_template = {
         }
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1976.9.9
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1190,7 +1190,7 @@ ecchi_chi_li_dazhao_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1927.4.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1232,7 +1232,7 @@ ecchi_chi_chen_duxiu_character_template = {
         }
         earliest_usage_date = 1921.1.1
         latest_usage_date = 1942.5.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1266,7 +1266,7 @@ ecchi_chi_zhu_de_character_template = {
         role = general
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1976.7.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1301,7 +1301,7 @@ ecchi_tpg_hong_xiuquan_character_template = {
         }
         earliest_usage_date = 1850.1.1
         latest_usage_date = 1864.6.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1327,7 +1327,7 @@ ecchi_chi_cao_futian_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1901.12.03
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1358,7 +1358,7 @@ ecchi_chi_du_yuesheng_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1951.8.16
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1393,7 +1393,7 @@ ecchi_chi_tang_caichang_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1900.8.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1432,7 +1432,7 @@ ecchi_chi_wellington_koo_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1985.11.14
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1476,7 +1476,7 @@ ecchi_chi_wang_jingwei_character_template = {
         }
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1944.11.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1504,7 +1504,7 @@ ecchi_chi_lu_xun_character_template = {
         }   
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1936.10.19
-		chance = 80
+		#chance = 80
 	}
 }
 
@@ -1532,7 +1532,7 @@ ecchi_chi_lu_zhengxiang_character_template = {
         }
         earliest_usage_date = 1912.1.3
         latest_usage_date = 1949.1.15
-        chance = 65
+        #chance = 65
     }
 }
 

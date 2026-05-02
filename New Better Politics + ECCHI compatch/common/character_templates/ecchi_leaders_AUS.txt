@@ -42,7 +42,7 @@ ecchi_aus_lueger_character_template = {
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1910.3.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -88,7 +88,7 @@ ecchi_aus_bauer_character_template = {
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1938.7.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -134,7 +134,7 @@ ecchi_aus_von_suttner_character_template = {
         }
         earliest_usage_date = 1885.1.1
         latest_usage_date = 1914.6.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -178,7 +178,7 @@ ecchi_aus_porsche_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1951.1.30
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -215,7 +215,7 @@ ecchi_aus_dollfuss_character_template = {
         }
         earliest_usage_date = 1929.1.1
         latest_usage_date = 1934.7.25
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -251,7 +251,7 @@ ecchi_aus_von_trapp_character_template = {
         role = admiral
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1918.11.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -326,7 +326,7 @@ ecchi_aus_kudlich_character_template = {
 #         }
 #         earliest_usage_date = 1809.1.1
 #         latest_usage_date = 1859.6.11
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -405,7 +405,7 @@ ecchi_aus_herzel_character_template = {
         }
         earliest_usage_date = 1897.1.1
         latest_usage_date = 1904.7.3
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -441,7 +441,7 @@ ecchi_aus_franko_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1916.5.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -519,7 +519,7 @@ ecchi_aus_kautsky_character_template = {
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1938.10.17
-        chance = 65
+        #chance = 65
     }
 }
 

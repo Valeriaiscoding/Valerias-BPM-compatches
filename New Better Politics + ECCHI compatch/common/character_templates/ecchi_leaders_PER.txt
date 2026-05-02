@@ -27,7 +27,7 @@ ecchi_per_jalal_al_din_mirza_character_template = {
 		}
 		earliest_usage_date = 1868.1.1
 		latest_usage_date = 1872.1.1
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -57,7 +57,7 @@ ecchi_per_tahirih_qurrat_al_ayn_character_template = {
 		}
 		earliest_usage_date = 1848.1.1
 		latest_usage_date = 1852.8.16
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -88,7 +88,7 @@ ecchi_per_amin_al_soltan_character_template = {
 			}
 			earliest_usage_date = 1887.1.1
 			latest_usage_date = 1907.8.31
-			chance = 65
+			#chance = 65
 		}
 	}
 }

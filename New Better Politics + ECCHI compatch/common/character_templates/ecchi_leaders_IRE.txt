@@ -28,7 +28,7 @@ ecchi_ire_collins_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1922.8.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -60,7 +60,7 @@ ecchi_ire_griffith_character_template = {
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1922.8.12
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -87,7 +87,7 @@ ecchi_ire_larkin_character_template = {
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1947.1.30
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -125,7 +125,7 @@ ecchi_ire_guinness_character_template = {
         }
         earliest_usage_date = 1790.1.1
         latest_usage_date = 1855.6.9
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -163,7 +163,7 @@ ecchi_ire_parnell_character_template = {
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1891.10.6
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -277,7 +277,7 @@ ecchi_ire_casement_character_template = {
         }
         earliest_usage_date = 1884.1.1
         latest_usage_date = 1916.8.3
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -306,6 +306,6 @@ ecchi_ire_oconnell_character_template = {
         }
         earliest_usage_date = 1820.1.1
         latest_usage_date = 1847.5.15
-        chance = 60
+        #chance = 60
     }
 }

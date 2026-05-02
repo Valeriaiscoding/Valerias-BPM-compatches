@@ -55,7 +55,7 @@ ecchi_haw_malo_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1853.10.25
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -86,7 +86,7 @@ ecchi_haw_james_dole_character_template = {
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1958.5.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -118,6 +118,6 @@ ecchi_haw_dole_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1926.6.9
-        chance = 65
+        #chance = 65
     }
 }

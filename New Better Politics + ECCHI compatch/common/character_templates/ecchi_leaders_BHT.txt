@@ -44,7 +44,7 @@
 #         }
 #         earliest_usage_date = 1874.1.1
 #         latest_usage_date = 1904.5.19
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -93,7 +93,7 @@
 #         }
 #         earliest_usage_date = 1915.1.1
 #         latest_usage_date = 1948.1.30
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -141,7 +141,7 @@ ecchi_bht_nehru_character_template = {
         }
         earliest_usage_date = 1912.1.1
         latest_usage_date = 1964.5.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -184,7 +184,7 @@ ecchi_sin_jinnah_character_template = {
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1948.9.11
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -210,7 +210,7 @@ ecchi_gwa_rani_character_template = {
         }
         earliest_usage_date = 1855.1.1
         latest_usage_date = 1858.6.18
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -242,7 +242,7 @@ ecchi_awa_hazrat_mahal_character_template = {
         }
         earliest_usage_date = 1855.1.1
         latest_usage_date = 1879.4.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -274,7 +274,7 @@ ecchi_cey_senanayake_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1952.3.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -317,7 +317,7 @@ ecchi_bht_malaviya_character_template = {
         }					
         earliest_usage_date = 1915.1.1					
         latest_usage_date = 1946.11.12					
-        chance = 65					
+        #chance = 65					
     }  					
 }					
 
@@ -355,6 +355,6 @@ ecchi_bht_malaviya_character_template = {
 #         }
 #         earliest_usage_date = 1880.1.1
 #         latest_usage_date = 1916.5.7
-#         chance = 65
+#         #chance = 65
 #     }
 # }

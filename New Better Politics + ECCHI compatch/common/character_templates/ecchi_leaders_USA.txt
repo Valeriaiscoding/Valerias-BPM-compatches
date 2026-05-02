@@ -33,7 +33,7 @@ ecchi_usa_adams_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1848.2.23
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -60,7 +60,7 @@ ecchi_usa_van_buren_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1862.7.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -92,7 +92,7 @@ ecchi_usa_w_harrison_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1841.4.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -118,7 +118,7 @@ ecchi_usa_tyler_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1862.1.18
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -149,7 +149,7 @@ ecchi_usa_tyler_character_template = {
 #         }
 #         earliest_usage_date = 1836.1.1
 #         latest_usage_date = 1849.6.15
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -182,7 +182,7 @@ ecchi_usa_fillmore_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1874.3.8
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -218,7 +218,7 @@ ecchi_usa_pierce_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1869.10.8
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -245,7 +245,7 @@ ecchi_usa_buchanan_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1868.6.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -278,7 +278,7 @@ ecchi_usa_johnson_character_template = {
         }
         earliest_usage_date = 1853.10.17
         latest_usage_date = 1875.7.31
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -313,7 +313,7 @@ ecchi_usa_hayes_character_template = {
         }
         earliest_usage_date = 1865.3.4
         latest_usage_date = 1893.1.17
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -345,7 +345,7 @@ ecchi_usa_garfield_character_template = {
         }
         earliest_usage_date = 1863.3.4
         latest_usage_date = 1881.9.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -386,7 +386,7 @@ ecchi_usa_arthur_character_template = {
         }
         earliest_usage_date = 1871.12.1
         latest_usage_date = 1886.11.18
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -420,7 +420,7 @@ ecchi_usa_cleveland_character_template = {
         }
         earliest_usage_date = 1883.1.1
         latest_usage_date = 1908.6.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -452,7 +452,7 @@ ecchi_usa_b_harrison_character_template = {
         }
         earliest_usage_date = 1881.3.4
         latest_usage_date = 1893.3.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -485,7 +485,7 @@ ecchi_usa_mckinley_character_template = {
         }
         earliest_usage_date = 1885.3.4
         latest_usage_date = 1901.9.14
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -517,7 +517,7 @@ ecchi_usa_taft_character_template = {
         }
         earliest_usage_date = 1890.2.4
         latest_usage_date = 1930.3.8
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -548,7 +548,7 @@ ecchi_usa_wilson_character_template = {
         }
         earliest_usage_date = 1911.1.17
         latest_usage_date = 1924.2.3
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -575,7 +575,7 @@ ecchi_usa_harding_character_template = {
         }
         earliest_usage_date = 1904.1.11
         latest_usage_date = 1923.8.2
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -618,7 +618,7 @@ ecchi_usa_coolidge_character_template = {
         }
         earliest_usage_date = 1914.1.7
         latest_usage_date = 1933.1.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -645,7 +645,7 @@ ecchi_usa_hoover_character_template = {
         }
         earliest_usage_date = 1914.10.22
         latest_usage_date = 1964.10.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -677,7 +677,7 @@ ecchi_usa_f_roosevelt_character_template = {
         }
         earliest_usage_date = 1913.3.17
         latest_usage_date = 1945.4.12
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -722,7 +722,7 @@ ecchi_usa_fremont_character_template = {
         }
         earliest_usage_date = 1847.1.19
         latest_usage_date = 1890.7.13
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -765,7 +765,7 @@ ecchi_usa_long_character_template = {
         }
         earliest_usage_date = 1928.5.21
         latest_usage_date = 1935.9.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -827,7 +827,7 @@ ecchi_usa_long_character_template = {
 #        }
 #        earliest_usage_date = 1854.1.1
 #        latest_usage_date = 1859.12.2
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -858,7 +858,7 @@ ecchi_usa_macarthur_character_template = {
 		role = general
 		earliest_usage_date = 1912.1.1
 		latest_usage_date = 1964.4.5
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -885,7 +885,7 @@ ecchi_usa_custer_character_template = {
 		role = general
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1876.6.25
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -922,7 +922,7 @@ ecchi_usa_astor_character_template = {
         }
         earliest_usage_date = 1936.1.1
         latest_usage_date = 1848.3.29
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -949,7 +949,7 @@ ecchi_usa_morgan_character_template = {
         }
         earliest_usage_date = 1895.1.1
         latest_usage_date = 1913.3.31
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -975,7 +975,7 @@ ecchi_usa_rockefeller_character_template = {
         }
         earliest_usage_date = 1874.1.1
         latest_usage_date = 1937.5.23
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1018,7 +1018,7 @@ ecchi_usa_hearst_character_template = {
         }
         earliest_usage_date = 1895.1.1
         latest_usage_date = 1951.8.14
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1050,7 +1050,7 @@ ecchi_usa_edison_character_template = {
         }
         earliest_usage_date = 1877.1.1
         latest_usage_date = 1931.10.18
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1079,7 +1079,7 @@ ecchi_usa_edison_character_template = {
 #         }
 #         earliest_usage_date = 1879.1.1
 #         latest_usage_date = 1926.10.20
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -1105,7 +1105,7 @@ ecchi_usa_thomas_character_template = {
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1968.12.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1142,7 +1142,7 @@ ecchi_usa_foster_character_template = {
         }
         earliest_usage_date = 1924.1.1
         latest_usage_date = 1961.9.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1169,7 +1169,7 @@ ecchi_usa_browder_character_template = {
         }
         earliest_usage_date = 1919.1.1
         latest_usage_date = 1973.1.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1215,7 +1215,7 @@ ecchi_usa_lindbergh_character_template = {
         }
         earliest_usage_date = 1927.1.1
         latest_usage_date = 1974.8.26
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1253,7 +1253,7 @@ ecchi_usa_emerson_character_template = {
         }
         earliest_usage_date = 1852.1.1
         latest_usage_date = 1882.4.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1290,7 +1290,7 @@ ecchi_usa_putnam_character_template = {
         }
         earliest_usage_date = 1852.1.1
         latest_usage_date = 1872.12.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1322,7 +1322,7 @@ ecchi_usa_barnum_character_template = {
         }
 		earliest_usage_date = 1865.1.1
         latest_usage_date = 1891.4.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1358,7 +1358,7 @@ ecchi_usa_patton_character_template = {
         role = general
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1945.12.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1385,7 +1385,7 @@ ecchi_usa_westinghouse_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1914.3.12
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1426,7 +1426,7 @@ ecchi_usa_keller_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1968.6.1
-        chance = 65
+        #chance = 65
     }
     on_created = {
         #in the United Syndicates, Communist ideology becomes less relevant since those laws are already in power
@@ -1482,7 +1482,7 @@ ecchi_usa_hill_character_template = {
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1910.4.3
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1508,7 +1508,7 @@ ecchi_usa_twain_character_template = {
         }
         earliest_usage_date = 1865.1.1
         latest_usage_date = 1910.4.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1535,7 +1535,7 @@ ecchi_usa_chrysler_character_template = {
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1940.8.18
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1566,7 +1566,7 @@ ecchi_usa_seward_character_template = {
         }
         earliest_usage_date = 1839.1.1
         latest_usage_date = 1872.10.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1593,7 +1593,7 @@ ecchi_usa_colt_character_template = {
         }
         earliest_usage_date = 1847.1.1
         latest_usage_date = 1862.1.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1665,7 +1665,7 @@ ecchi_usa_sutter_sr_character_template = {
         }
         earliest_usage_date = 1840.1.1
         latest_usage_date = 1880.6.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1693,7 +1693,7 @@ ecchi_cal_sutter_jr_character_template = {
         }
         earliest_usage_date = 1850.1.1
         latest_usage_date = 1897.9.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1726,7 +1726,7 @@ ecchi_cal_strauss_character_template = {
         }
         earliest_usage_date = 1870.1.1
         latest_usage_date = 1902.9.26
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1764,7 +1764,7 @@ ecchi_usa_browning_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1926.11.26
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1866,7 +1866,7 @@ ecchi_usa_jefferson_davis_character_template = {
         }
         earliest_usage_date = 1862.2.22
         latest_usage_date = 1889.12.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1898,7 +1898,7 @@ ecchi_usa_stephens_character_template = {
         }
         earliest_usage_date = 1862.2.22
         latest_usage_date = 1883.3.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1925,7 +1925,7 @@ ecchi_usa_ferguson_character_template = {
 		role = general
         earliest_usage_date = 1858.1.1
         latest_usage_date = 1865.10.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1952,7 +1952,7 @@ ecchi_usa_wirz_character_template = {
 		role = general
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1865.11.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1979,7 +1979,7 @@ ecchi_usa_forrest_character_template = {
 		role = general
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1877.10.29
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2015,7 +2015,7 @@ ecchi_tex_de_zavala_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1836.11.15
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2048,7 +2048,7 @@ ecchi_tex_crockett_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1836.3.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2110,7 +2110,7 @@ ecchi_asa_delany_character_template = {
         }
         earliest_usage_date = 1852.1.1
         latest_usage_date = 1885.1.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2143,7 +2143,7 @@ ecchi_asa_singleton_character_template = {
         }
         earliest_usage_date = 1874.1.1
         latest_usage_date = 1900.2.17
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2173,7 +2173,7 @@ ecchi_asa_turner_character_template = {
         }
         earliest_usage_date = 1862.4.1
         latest_usage_date = 1915.5.8
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2206,7 +2206,7 @@ ecchi_asa_garnet_character_template = {
         }
         earliest_usage_date = 1842.1.1
         latest_usage_date = 1882.2.13
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2241,7 +2241,7 @@ ecchi_asa_garnet_character_template = {
 #         }
 #         earliest_usage_date = 1847.1.1
 #         latest_usage_date = 1895.2.20
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -2273,7 +2273,7 @@ ecchi_asa_garnet_character_template = {
 #        }
 #        earliest_usage_date = 1899.1.1
 #        latest_usage_date = 1963.8.27
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -2312,7 +2312,7 @@ ecchi_usa_moody_character_template = {
         }
         earliest_usage_date = 1871.1.1
         latest_usage_date = 1899.12.26
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2349,7 +2349,7 @@ ecchi_usa_joseph_smith_character_template = {
         }
         earliest_usage_date = 1936.1.1
         latest_usage_date = 1844.6.27
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2386,7 +2386,7 @@ ecchi_usa_brigham_young_character_template = {
         }
         earliest_usage_date = 1847.1.1
         latest_usage_date = 1877.8.29
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2455,7 +2455,7 @@ ecchi_usa_paul_character_template = {
         }
         earliest_usage_date = 1907.1.1
         latest_usage_date = 1977.7.9
-        chance = 80
+        #chance = 80
     }
 }
 
@@ -2538,7 +2538,7 @@ ecchi_usa_thoreau_character_template = {
         }
         earliest_usage_date = 1837.1.1
         latest_usage_date = 1862.5.6
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -2565,7 +2565,7 @@ ecchi_usa_bridger_character_template = {
         role = general
         earliest_usage_date = 1822.1.1
         latest_usage_date = 1881.7.17
-        chance = 60
+        #chance = 60
     }
 }
 
@@ -2592,7 +2592,7 @@ ecchi_usa_dewey_character_template = {
         }
         earliest_usage_date = 1894.1.1
         latest_usage_date = 1952.6.1
-        chance = 50
+        #chance = 50
     }
 }
 
@@ -2623,7 +2623,7 @@ ecchi_usa_london_character_template = {
         }
         earliest_usage_date = 1899.1.1
         latest_usage_date = 1916.11.22
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -2653,7 +2653,7 @@ ecchi_usa_mott_character_template = {
         } 
         earliest_usage_date = 1820.1.1
         latest_usage_date = 1880.11.11
-        chance = 65
+        #chance = 65
     }
 	on_created = {
 		if = {
@@ -2694,7 +2694,7 @@ ecchi_usa_irving_character_template = {
         } 
         earliest_usage_date = 1809.1.1
         latest_usage_date = 1859.11.28
-        chance = 65
+        #chance = 65
     }
 }
 ## Lysander Spooner
@@ -2731,7 +2731,7 @@ ecchi_usa_spooner_character_template = {
         } 
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1887.5.14
-        chance = 55
+        #chance = 55
     }
 	on_created = {
         if = {

@@ -26,7 +26,7 @@
 #         }
 #         earliest_usage_date = 1893.1.1
 #         latest_usage_date = 1924.1.24
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 #ecchi_rus_trotsky_character_template = {
@@ -61,7 +61,7 @@
 #		}
 #		earliest_usage_date = 1903.1.1
 #		latest_usage_date = 1940.8.21
-#		chance = 65
+#		#chance = 65
 #	}
 #}
 
@@ -113,7 +113,7 @@ ecchi_rus_stalin_character_template = {
 		}
 		earliest_usage_date = 1910.1.1
 		latest_usage_date = 1953.3.5
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -148,7 +148,7 @@ ecchi_rus_stalin_character_template = {
 # 		}
 # 		earliest_usage_date = 1910.1.1
 # 		latest_usage_date = 1970.6.11
-# 		chance = 65
+# 		#chance = 65
 # 	}
 # }
 # Russia - theocrats
@@ -184,7 +184,7 @@ ecchi_rus_rasputin_character_template = {
 		}
 		earliest_usage_date = 1903.1.1
 		latest_usage_date = 1916.12.30
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -225,7 +225,7 @@ ecchi_rus_rasputin_character_template = {
 # 		role = admiral
 # 		earliest_usage_date = 1900.1.1
 # 		latest_usage_date = 1920.2.7
-# 		chance = 65
+# 		#chance = 65
 # 	}
 # }
 # Don Cossack
@@ -266,7 +266,7 @@ ecchi_rus_krasnov_character_template = {
 		role = general
 		earliest_usage_date = 1915.1.1
 		latest_usage_date = 1947.1.17
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -461,7 +461,7 @@ ecchi_rus_zinoviev_character_template = {
 		}
 		earliest_usage_date = 1906.3.1
 		latest_usage_date = 1936.8.25
-		chance = 60
+		#chance = 60
 	}
 }
 
@@ -491,7 +491,7 @@ ecchi_rus_kamenev_character_template = {
 		}
 		earliest_usage_date = 1907.5.1
 		latest_usage_date = 1936.8.25
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -550,7 +550,7 @@ ecchi_rus_bukharin_character_template = {
 		}
 		earliest_usage_date = 1917.5.1
 		latest_usage_date = 1938.3.15
-		chance = 55
+		#chance = 55
 	}
 }
 
@@ -595,7 +595,7 @@ ecchi_rus_balabanoff_character_template = {
 		}
 		earliest_usage_date = 1917.1.1
 		latest_usage_date = 1965.11.25
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -625,7 +625,7 @@ ecchi_rus_dzerzhinsky_character_template = {
 		}
 		earliest_usage_date = 1917.5.1
 		latest_usage_date = 1926.7.20
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -676,7 +676,7 @@ ecchi_rus_semyonov_character_template = {
 		role = general
 		earliest_usage_date = 1917.1.1
 		latest_usage_date = 1946.8.30
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -709,7 +709,7 @@ rus_general_kornilov = {
 		role = general
 		earliest_usage_date = 1912.1.1
 		latest_usage_date = 1936.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -738,7 +738,7 @@ rus_general_alekseyev = {
 		role = general
 		earliest_usage_date = 1904.1.1
 		latest_usage_date = 1925.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -767,7 +767,7 @@ rus_anton_denikin = {
 		role = general
 		earliest_usage_date = 1904.1.1
 		latest_usage_date = 1936.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -796,7 +796,7 @@ RUS_alexander_kolchak = {
 		role = admiral
 		earliest_usage_date = 1906.1.1
 		latest_usage_date = 1936.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -835,7 +835,7 @@ RUS_boris_savinkov = {
 		}
 		earliest_usage_date = 1904.1.1
 		latest_usage_date = 1936.12.31
-		chance = 50
+		#chance = 50
 	}
 	trait_generation = {
 	}
@@ -879,7 +879,7 @@ RUS_georgy_lvov = {
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1925.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -908,7 +908,7 @@ RUS_general_markov = {
 		role = general
 		earliest_usage_date = 1917.1.1
 		latest_usage_date = 1936.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -941,7 +941,7 @@ RUS_nikolai_ostrovsky = {
 		}
 		earliest_usage_date = 1920.1.1
 		latest_usage_date = 1936.1.1
-		chance = 60
+		#chance = 60
 	}
 }
 
@@ -973,7 +973,7 @@ RUS_anton_chekhov = {
 		}
 		earliest_usage_date = 1880.1.1
 		latest_usage_date = 1904.7.15
-		chance = 55
+		#chance = 55
 	}
 }
 
@@ -1002,7 +1002,7 @@ RUS_semyon_budyonny = {
 		role = general
 		earliest_usage_date = 1917.1.1
 		latest_usage_date = 1973.1.1
-		chance = 50
+		#chance = 50
 	}
 }
 

@@ -31,7 +31,7 @@ ecchi_den_andersen_hans_christian_character_template = {
 		}
 		earliest_usage_date = 1835.1.1
 		latest_usage_date = 1875.8.4
-		chance = 60
+		#chance = 60
 	}
 }
 
@@ -61,7 +61,7 @@ ecchi_den_kierkegaard_character_template = {
 		}
         earliest_usage_date = 1835.1.1
         latest_usage_date = 1855.11.11
-        chance = 60
+        #chance = 60
     }
 }
 

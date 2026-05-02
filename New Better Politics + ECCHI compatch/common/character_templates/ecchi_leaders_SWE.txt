@@ -28,7 +28,7 @@ ecchi_swe_nobel_character_template = {
         }
         earliest_usage_date = 1867.1.1
         latest_usage_date = 1896.12.10
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -58,7 +58,7 @@ ecchi_swe_branting_character_template = {
         }
         earliest_usage_date = 1889.1.1
         latest_usage_date = 1925.2.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -89,7 +89,7 @@ ecchi_swe_wallenberg_character_template = {
         }
         earliest_usage_date = 1930.1.1
         latest_usage_date = 1952.7.31
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -118,6 +118,6 @@ ecchi_swe_hedin_character_template = {
         role = general
         earliest_usage_date = 1894.1.1
         latest_usage_date = 1952.11.26
-        chance = 65
+        #chance = 65
     }
 }

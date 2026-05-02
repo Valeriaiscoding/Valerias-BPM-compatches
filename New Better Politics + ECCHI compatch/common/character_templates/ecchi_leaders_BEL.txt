@@ -66,7 +66,7 @@ ecchi_bel_pirenne_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1935.10.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -102,7 +102,7 @@ ecchi_bel_brialmont_character_template = {
         role = general
         earliest_usage_date = 1850.1.1
         latest_usage_date = 1903.7.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -137,7 +137,7 @@ ecchi_bel_de_paepe_character_template = {
         }
         earliest_usage_date = 1865.1.1
         latest_usage_date = 1890.12.19
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -174,7 +174,7 @@ ecchi_bel_hamer_character_template = {
         }   
         earliest_usage_date = 1906.1.1
         latest_usage_date = 1951.4.28
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -210,7 +210,7 @@ ecchi_bel_la_fontaine_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1943.5.14
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -292,7 +292,7 @@ bel_jottrand_character_template = {
         }
 		earliest_usage_date = 1836.1.1
 		latest_usage_date = 1877.12.17
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -526,6 +526,6 @@ bel_daens_character_template = {
         }
 		earliest_usage_date = 1871.1.1
 		latest_usage_date = 1907.6.4
-		chance = 50
+		#chance = 50
 	}
 }

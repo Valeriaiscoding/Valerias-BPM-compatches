@@ -36,7 +36,7 @@ ecchi_joh_aw_character_template = {
 		}
 		earliest_usage_date = 1925.1.1
 		latest_usage_date = 1954.9.4
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -73,7 +73,7 @@ ecchi_kaz_bukeikhanov_character_template = {
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1937.9.27
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -106,7 +106,7 @@ ecchi_geo_chavchavadze_character_template = {
 		}
 		earliest_usage_date = 1870.1.1
 		latest_usage_date = 1907.9.12
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -134,7 +134,7 @@ ecchi_geo_cholokashvili_character_template = {
 		role = general
 		earliest_usage_date = 1910.1.1
 		latest_usage_date = 1930.6.27
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -169,7 +169,7 @@ ecchi_tur_ataturk_character_template = {
 		}
 		earliest_usage_date = 1910.1.1
 		latest_usage_date = 1938.11.10
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -201,7 +201,7 @@ ecchi_tur_halide_edib_adivar_character_template = {
         }
 		earliest_usage_date = 1910.1.1
 		latest_usage_date = 1925.1.1
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -234,7 +234,7 @@ ecchi_tur_talaat_pasha_character_template = {
 		}
 		earliest_usage_date = 1908.1.1
 		latest_usage_date = 1921.3.15
-		chance = 60
+		#chance = 60
 	}
 }
 
@@ -299,7 +299,7 @@ ecchi_tur_djemal_pasha_character_template = {
 		}
 		earliest_usage_date = 1911.1.1
 		latest_usage_date = 1922.7.21
-		chance = 60
+		#chance = 60
 	}
 }
 
@@ -370,7 +370,7 @@ ecchi_pal_trumpeldor_character_template = {
 		}
 		earliest_usage_date = 1911.1.1
 		latest_usage_date = 1920.3.1
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -411,7 +411,7 @@ ecchi_pal_sholem_aleichem_character_template = {
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1916.5.13
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -445,7 +445,7 @@ ecchi_pal_kahlil_gibran_character_template = {
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1931.4.10
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -478,7 +478,7 @@ ecchi_nep_parijat_character_template = {
 		}
 		earliest_usage_date = 1950.1.1
 		latest_usage_date = 1993.1.1
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -517,7 +517,7 @@ ecchi_afg_mahmud_tarzi_character_template = {
 		}
 		earliest_usage_date = 1901.1.1
 		latest_usage_date = 1933.11.22
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -546,7 +546,7 @@ ecchi_lan_gu_liubo_character_template = {
 		}
 		earliest_usage_date = 1830.1.1
 		latest_usage_date = 1850.1.1
-		chance = 80
+		#chance = 80
 	}
 }
 
@@ -573,7 +573,7 @@ ecchi_lan_xie_guifang_character_template = {
 		}
 		earliest_usage_date = 1840.1.1
 		latest_usage_date = 1865.1.1
-		chance = 80
+		#chance = 80
 	}
 }
 
@@ -600,6 +600,6 @@ ecchi_lan_ye_tenghui_character_template = {
 		}
 		earliest_usage_date = 1842.1.1
 		latest_usage_date = 1870.1.1
-		chance = 80
+		#chance = 80
 	}
 }

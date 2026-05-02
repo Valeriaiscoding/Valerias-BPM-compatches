@@ -67,7 +67,7 @@ ecchi_nor_nansen_fridtjof_character_template = {
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1930.5.13
-		chance = 50
+		#chance = 50
 	}
 }
 
@@ -97,7 +97,7 @@ ecchi_nor_michelsen_christian_character_template = {
 		}
 		earliest_usage_date = 1891.1.1
 		latest_usage_date = 1925.6.29
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -128,7 +128,7 @@ ecchi_nor_quisling_vidkun_character_template = {
 		}
 		earliest_usage_date = 1920.1.1
 		latest_usage_date = 1945.10.24
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -158,6 +158,6 @@ ecchi_nor_hamsun_knut_character_template = {
 		}
 		earliest_usage_date = 1890.1.1
 		latest_usage_date = 1952.2.19
-		chance = 65
+		#chance = 65
 	}
 }

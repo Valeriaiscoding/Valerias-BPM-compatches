@@ -23,7 +23,7 @@ ecchi_fra_petain_character_template = {
 		role = general
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1951.7.23
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -49,7 +49,7 @@ ecchi_fra_de_gaulle_character_template = {
 		role = general
         earliest_usage_date = 1916.1.1
         latest_usage_date = 1970.11.9
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -102,7 +102,7 @@ ecchi_fra_zola_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1902.9.29
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -220,7 +220,7 @@ ecchi_fra_passy_character_template = {
         }
         earliest_usage_date = 1870.1.1
         latest_usage_date = 1912.6.12
-        chance = 80
+        #chance = 80
     }
 }
 
@@ -249,7 +249,7 @@ ecchi_fra_durkheim_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1917.11.15
-        chance = 55
+        #chance = 55
     }
 }
 
@@ -282,7 +282,7 @@ ecchi_fra_dumas_alexandre_character_template = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1870.12.5
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -315,7 +315,7 @@ mr_fra_verne_jules_character_template = {
         }
         earliest_usage_date = 1852.1.1
         latest_usage_date = 1905.3.24
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -373,7 +373,7 @@ ecchi_fra_citroen_character_template = {
         }
         earliest_usage_date = 1908.1.1
         latest_usage_date = 1935.7.3
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -404,7 +404,7 @@ ecchi_fra_alphonse_de_lamartine_character_template = {
         }
         earliest_usage_date = 1833.1.1
         latest_usage_date = 1869.2.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -448,7 +448,7 @@ ecchi_fra_henri_barbusse_character_template = {
         }
         earliest_usage_date = 1916.1.1
         latest_usage_date = 1935.8.30
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -479,7 +479,7 @@ ecchi_fra_rene_nicod_character_template = {
         }
         earliest_usage_date = 1912.1.1
         latest_usage_date = 1950.3.14
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -508,7 +508,7 @@ ecchi_fra_blum_character_template = {
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1950.4.30
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -539,7 +539,7 @@ ecchi_fra_deloncle_character_template = {
         }
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1944.1.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -570,7 +570,7 @@ ecchi_fra_de_granier_de_cassagnac_character_template = {
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1966.9.7
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -634,7 +634,7 @@ ecchi_fra_dimier_character_template= {
         }
         earliest_usage_date = 1893.1.1
         latest_usage_date = 1943.11.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -665,7 +665,7 @@ ecchi_fra_guesde_character_template = {
         }
         earliest_usage_date = 1871.1.1
         latest_usage_date = 1922.6.28
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -696,7 +696,7 @@ ecchi_fra_grave_character_template = {
         }
         earliest_usage_date = 1880.1.1
         latest_usage_date = 1930.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -712,6 +712,8 @@ ecchi_fra_dimier_character_template = {
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_christian_democrats
+    role = character_role_magnate
+    holding_type = building_financial_district
     #dna = ecchi_dna_andre_citroen
     birth_date = 1802.5.12
     traits = { pious charismatic }
@@ -727,7 +729,7 @@ ecchi_fra_dimier_character_template = {
         }
         earliest_usage_date = 1843.3.1
         latest_usage_date = 1861.11.21
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -757,7 +759,7 @@ ecchi_fra_de_mun_character_template = {
         }
         earliest_usage_date = 1876.4.1
         latest_usage_date = 1914.10.6
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -788,7 +790,7 @@ ecchi_fra_barres_character_template = {
         }
         earliest_usage_date = 1892.1.1
         latest_usage_date = 1923.11.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -817,7 +819,7 @@ ecchi_fra_meline_character_template = {
         }
         earliest_usage_date = 1870.1.1
         latest_usage_date = 1912.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -876,7 +878,7 @@ ecchi_fra_pelletan_character_template = {
         }
         earliest_usage_date = 1850.1.1
         latest_usage_date = 1884.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -905,7 +907,7 @@ ecchi_fra_bourgeois_character_template = {
         }
         earliest_usage_date = 1887.1.1
         latest_usage_date = 1925.9.29
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -937,7 +939,7 @@ ecchi_fra_harmel_character_template = {
         }
         earliest_usage_date = 1861.1.1
         latest_usage_date = 1910.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -966,7 +968,7 @@ ecchi_fra_plichonl_character_template = {
         }
         earliest_usage_date = 1888.1.1
         latest_usage_date = 1936.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -996,7 +998,7 @@ ecchi_fra_courtot_de_cissey_character_template = {
         }
         earliest_usage_date = 1853.1.1
         latest_usage_date = 1875.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1025,7 +1027,7 @@ ecchi_fra_lyautey_character_template = {
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1930.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1055,7 +1057,7 @@ ecchi_fra_poincare_character_template = {
         }
         earliest_usage_date = 1895.1.1
         latest_usage_date = 1934.10.15
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1084,7 +1086,7 @@ ecchi_fra_capus_character_template = {
         }
         earliest_usage_date = 1919.1.1
         latest_usage_date = 1947.3.4
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1116,7 +1118,7 @@ ecchi_fra_de_vogue_character_template  = {
         }
         earliest_usage_date = 1903.1.1
         latest_usage_date = 1923.6.9
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1145,7 +1147,7 @@ ecchi_fra_capusde_baudry_d_asson_character_template = {
         }
         earliest_usage_date = 1907.1.1
         latest_usage_date = 1937.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1174,7 +1176,7 @@ ecchi_fra_de_levis_mirepoix_character_template = {
         }
         earliest_usage_date = 1934.1.1
         latest_usage_date = 1960.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1206,7 +1208,7 @@ ecchi_fra_valery_character_template  = {
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1945.6.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1236,7 +1238,7 @@ ecchi_fra_groussau_character_template = {
         }
         earliest_usage_date = 1893.1.1
         latest_usage_date = 1928.1.1
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1267,7 +1269,7 @@ ecchi_fra_claudel_character_template = {
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1955.1.23
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -1296,6 +1298,6 @@ ecchi_fra_d_audiffret_pasquier_character_template = {
         }
         earliest_usage_date = 1853.1.1
         latest_usage_date = 1895.1.1
-        chance = 65
+        #chance = 65
     }
 }

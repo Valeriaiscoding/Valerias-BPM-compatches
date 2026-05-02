@@ -36,7 +36,7 @@
 #         }
 #         earliest_usage_date = 1836.1.1
 #         latest_usage_date = 1855.3.10
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -76,7 +76,7 @@
 #         }
 #         earliest_usage_date = 1836.1.1
 #         latest_usage_date = 1878.8.22
-#         chance = 65
+#         #chance = 65
 #     }
 # }
 
@@ -116,7 +116,7 @@
 #        }
 #        earliest_usage_date = 1855.1.1
 #        latest_usage_date = 1885.11.25
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -156,7 +156,7 @@
 #        }
 #        earliest_usage_date = 1880.1.1
 #        latest_usage_date = 1925.12.9
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -191,7 +191,7 @@ ecchi_spa_franco_character_template = {
         role = general
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1975.11.20
-        chance = 65
+        #chance = 65
     }
 }
 
@@ -268,7 +268,7 @@ ecchi_spa_picasso_character_template = {
 #        }
 #        earliest_usage_date = 1854.1.1
 #        latest_usage_date = 1903.1.5
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -305,7 +305,7 @@ ecchi_spa_picasso_character_template = {
 #        role = general
 #        earliest_usage_date = 1861.1.1
 #        latest_usage_date = 1930.10.20
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -345,7 +345,7 @@ ecchi_spa_picasso_character_template = {
 #        }
 #        earliest_usage_date = 1921.1.1
 #        latest_usage_date = 1930.3.16
-#        chance = 65
+#        #chance = 65
 #    }
 #}
 
@@ -386,6 +386,6 @@ ecchi_spa_silvela_character_template = {
         }
         earliest_usage_date = 1870.1.1
         latest_usage_date = 1905.5.29
-        chance = 65
+        #chance = 65
     }
 }

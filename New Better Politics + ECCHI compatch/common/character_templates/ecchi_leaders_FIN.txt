@@ -41,7 +41,7 @@ ecchi_fin_juhani_aho_character_template = {
 		}
 		earliest_usage_date = 1884.1.1
 		latest_usage_date = 1921.8.8
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -87,7 +87,7 @@ ecchi_fin_eino_leino_character_template = {
 		}
 		earliest_usage_date = 1898.1.1
 		latest_usage_date = 1926.1.10
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -133,7 +133,7 @@ ecchi_fin_miina_sillanpaa_character_template = {
 		}
 		earliest_usage_date = 1898.1.1
 		latest_usage_date = 1952.4.3
-		chance = 65
+		#chance = 65
 	}
 }
 
@@ -168,7 +168,7 @@ ecchi_fin_risto_ryti_character_template = {
 		}
 		earliest_usage_date = 1918.1.1
 		latest_usage_date = 1956.10.25
-		chance = 65
+		#chance = 65
 	}
 }
 
