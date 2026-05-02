@@ -1,0 +1,19 @@
+foreign_policy_law_modifier = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_game_rule = game_rule_minister_appointment_switches_forpol_yes
+			}
+		}
+		localization_key = bpm_ultra_d_minister_switches_forpol
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_game_rule = game_rule_minister_appointment_switches_forpol_no
+			}
+		}
+		localization_key = bpm_ultra_d_forpol_enactment_boosted
+	}
+}

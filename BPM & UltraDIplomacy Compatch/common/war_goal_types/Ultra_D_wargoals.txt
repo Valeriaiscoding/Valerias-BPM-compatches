@@ -1,0 +1,216 @@
+﻿INJECT:open_market = {
+	possible = {
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}	
+	}
+}
+
+INJECT:regime_change = {
+	possible = {	
+		conquer_unrecognized_permited = yes	
+		conquer_china_permited = yes
+		OR = {
+			bpm_aggressive_diplomacy_permitted = yes
+			bpm_exception_regime_change_permitted = yes
+		}
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:ban_slavery = {
+	possible = {
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:conquer_state = {
+	possible = {	
+		conquer_unrecognized_permited = yes	
+		conquer_china_permited = yes
+		bpm_aggressive_diplomacy_permitted = yes
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:return_state = {
+	possible = {
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:liberate_subject = {
+	possible = {	
+		conquer_china_permited = yes
+		
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:liberate_country = {
+	possible = {
+		conquer_china_permited = yes
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:take_treaty_port = {
+	possible = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			is_country_type = unrecognized
+			country_rank = rank_value:unrecognized_major_power
+		}
+				
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}		
+	}
+}
+
+INJECT:make_tributary = {
+	possible = {
+		bpm_aggressive_diplomacy_permitted = yes
+		conquer_unrecognized_permited = yes	
+		conquer_china_permited = yes
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:make_dominion = {
+	possible = {
+		bpm_aggressive_diplomacy_permitted = yes
+		conquer_unrecognized_permited = yes	
+		conquer_china_permited = yes
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:make_protectorate = {
+	possible = {
+		bpm_aggressive_diplomacy_permitted = yes
+		conquer_china_permited = yes
+		conquer_unrecognized_permited = yes
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:transfer_subject = {
+	possible = {
+		bpm_aggressive_diplomacy_permitted = yes
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_subject = yes
+			NOT = { is_subject_of = root }
+			NOT = { is_subject_type = subject_type_personal_union }
+		}
+		conquer_unrecognized_permited = yes	
+		conquer_china_permited = yes
+		diplomatic_play_has_no_relations_blocker_with_overlord = yes
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}	
+	}
+}
+
+INJECT:contain_threat = {
+	possible = {
+		
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	}
+}
+
+INJECT:humiliation = {
+	possible = {
+		
+		OR = {
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}	
+	}
+}
