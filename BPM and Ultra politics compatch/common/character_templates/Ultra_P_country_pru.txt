@@ -1,7 +1,0 @@
-﻿
-INJECT:PRU_otto_von_bismarck = {
-	ideology = ideology_bismarckian
-}
-INJECT:pru_bismarck_character_template = {
-	ideology = ideology_bismarckian
-}

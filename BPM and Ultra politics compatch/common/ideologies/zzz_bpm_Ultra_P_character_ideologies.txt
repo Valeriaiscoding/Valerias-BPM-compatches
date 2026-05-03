@@ -1,5 +1,5 @@
 ﻿
-ideology_bismarckian = { #Bismarck needs its own ideology to allow historical bismarckian reforms
+REPLACE:ideology_bismarckian = { #Bismarck needs its own ideology to allow historical bismarckian reforms
 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/unused/ideology_leader_junker_paternalistic.dds"
 
 	character_ideology = yes
@@ -87,5 +87,16 @@ ideology_bismarckian = { #Bismarck needs its own ideology to allow historical bi
 		law_factory_councils = strongly_disapprove
 		law_socialist_labor_unions = strongly_disapprove
 		law_syndicalism = strongly_disapprove
+	}
+
+	lawgroup_foreign_policy = {
+		law_ultramilitarism = strongly_disapprove
+		law_jingoism = disapprove
+		law_flexible_foreign_policy = neutral
+		law_justum_bellum = neutral
+		law_dove_politics = approve
+		law_armed_neutrality = disapprove
+		law_disarmed_nation = strongly_disapprove
+		law_premodern_diplomacy = strongly_disapprove
 	}
 }

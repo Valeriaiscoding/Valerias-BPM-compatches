@@ -1,4 +1,4 @@
-REPLACE:amendment_3_class_franchise = {
+REPLACE:amendment_3_class_franchise = { # TODO
 	parent = law_wealth_voting
 
 	allowed_laws = {
@@ -17,11 +17,6 @@ REPLACE:amendment_3_class_franchise = {
 		state_political_strength_from_wealth_mult = 0.5
 		country_capitalists_pol_str_mult = 0.5
 		country_aristocrats_pol_str_mult = 0.5
-	}
-	institution = institution_suffrage
-	institution_modifier = {
-		#country_voting_power_wealth_threshold_add = -3
-		#country_voting_power_base_add = -4
 	}
 
 	possible = {
@@ -67,7 +62,7 @@ REPLACE:amendment_3_class_franchise = {
 	amendment_activism_multiplier = 0.5
 }
 
-REPLACE:amendment_reform_act_1832 = {
+REPLACE:amendment_reform_act_1832 = { # TODO
 	parent = law_landed_voting
 
 	allowed_laws = {

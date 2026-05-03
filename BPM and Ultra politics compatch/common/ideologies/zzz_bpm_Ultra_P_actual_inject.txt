@@ -1,0 +1,106 @@
+Slavery laws
+INJECT:ideology_dop_positivist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+INJECT:ideology_wel_laborist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+INJECT:ideology_gov_socialist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+INJECT:ideology_gov_anarchist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+INJECT:ideology_wel_utilitarian = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+INJECT:ideology_gov_reformist_socialist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+INJECT:ideology_eco_liberal = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
+
+INJECT:ideology_gov_socialist = {
+	lawgroup_childrens_rights = {
+		law_child_labor_allowed = strongly_disapprove
+		law_restricted_child_labor = disapprove
+		law_compulsory_primary_school = approve
+	}
+}
+
+
+# INJECT:ideology_gov_anarchist = {
+# 	lawgroup_army_model = {
+# 		law_national_militia = strongly_approve
+# 		law_professional_army = neutral
+# 		law_mass_conscription = disapprove
+# 		law_peasant_levies = strongly_disapprove
+# 	}
+# }
+
+INJECT:ideology_gov_radical_liberal = {
+	lawgroup_army_model = {
+		law_mass_conscription = strongly_approve
+		law_professional_army = disapprove
+		law_national_militia = approve
+		law_peasant_levies = disapprove
+	}
+}
+
+INJECT:ideology_sta_national_liberal = {
+	lawgroup_army_model = {
+		law_mass_conscription = strongly_approve
+		law_professional_army = disapprove
+		law_national_militia = approve
+		law_peasant_levies = disapprove
+	}
+}

@@ -1,1 +1,9 @@
-﻿
+﻿# This is executed last among all history
+
+# GLOBAL = {
+#     c:USA = {
+#         add_modifier = {
+#             name = american_two_party_system_modifier
+#         }
+#     }
+# }

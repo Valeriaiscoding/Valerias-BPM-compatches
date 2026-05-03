@@ -1,0 +1,14 @@
+on_character_created = {
+	on_actions = {
+		bpm_ultra_p_set_ideology
+	}
+}
+
+bpm_ultra_p_set_ideology = {
+	effect = {
+		if = {
+			limit = { has_template = PRU_otto_von_bismarck }
+			add_character_ideology = ideology_bismarckian
+		}
+	}
+}

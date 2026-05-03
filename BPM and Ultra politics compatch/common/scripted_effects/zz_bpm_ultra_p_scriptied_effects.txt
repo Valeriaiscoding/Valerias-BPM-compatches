@@ -23,12 +23,7 @@
 			if = {
 				limit = { 
 					OR = {
-						bpm_country_is_latin_american = yes
-						country_has_primary_culture = cu:yankee
-						country_has_primary_culture = cu:dixie
-						country_has_primary_culture = cu:anglo_canadian
-						country_has_primary_culture = cu:franco_canadian
-						country_has_primary_culture = cu:australian
+						bpm_country_is_in_new_world = yes
 						this ?= c:GBR
 					}
 				}

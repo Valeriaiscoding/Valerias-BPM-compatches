@@ -1,1 +1,134 @@
-﻿
+﻿# This is executed last among all history
+
+GLOBAL = {
+
+	# c:TUR = { #In the mod Ottoman have unique landowners
+	# 	ig:ig_landowners = { 
+	# 		remove_ideology = ideology_paternalistic
+	# 		add_ideology = ideology_ottoman_paternalistic
+	# 	}
+	# }
+
+	# c:PRU = {
+	# 	ig:ig_armed_forces = {
+	# 		set_interest_group_name = ig_prussian_military
+	# 		remove_ideology = ideology_jingoist
+	# 		add_ideology = ideology_prussian_military
+	# 	}
+	# }
+
+	# c:USA = {
+	# 	ig:ig_intelligentsia = {
+	# 		remove_ideology = ideology_republican
+	# 		add_ideology = ideology_american_school
+	# 	}
+	# }
+
+	# c:USA = {
+	# 	ig:ig_landowners = {
+	# 		remove_ideology = ideology_republican_paternalistic
+	# 		add_ideology = ideology_king_cotton
+	# 	}
+	# }
+
+	# c:USA = {
+	# 	ig:ig_industrialists = {
+	# 		remove_ideology = ideology_laissez_faire
+	# 		add_ideology = ideology_american_laissez_faire
+	# 	}
+	# }
+
+	# c:NET = {
+	# 	ig:ig_landowners = {
+	# 		add_ideology = ideology_pro_slavery
+	# 	}
+	# }
+	
+	c:HAW = {
+		# ig:ig_devout = { 
+		#     remove_ideology = ideology_moralist
+		#     add_ideology = ideology_missionary_moralist
+		# }
+		add_primary_culture = cu:yankee
+	}
+    
+    # every_country = {
+	# 	limit = {
+	# 		OR = {
+	# 			country_has_primary_culture = cu:yankee
+	# 			country_has_primary_culture = cu:dixie
+	# 			country_has_primary_culture = cu:north_german
+	# 			country_has_primary_culture = cu:alemannic
+	# 			country_has_primary_culture = cu:swedish
+	# 			country_has_primary_culture = cu:norwegian
+	# 			country_has_primary_culture = cu:danish
+	# 			country_has_primary_culture = cu:finnish
+	# 		}
+	# 	}
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+    
+    # c:NET = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+    # c:ORA = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+    # c:TRN = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+    # c:USA = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+	# c:USA = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_moralist
+	# 		add_ideology = ideology_moralist_american
+	# 	}
+	# }
+    # c:TEX = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }
+	c:TEX = {
+		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_republican_paternalistic
+		}
+	}	
+    # c:WUR = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }	
+	c:LIB = {
+		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_republican_paternalistic
+		}
+	}
+    # c:LIB = {
+	# 	ig:ig_devout = {
+	# 		remove_ideology = ideology_pious
+	# 		add_ideology = ideology_evangelical_pious
+	# 	}
+	# }	
+}
