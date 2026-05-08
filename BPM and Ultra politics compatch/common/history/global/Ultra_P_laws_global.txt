@@ -135,6 +135,13 @@ GLOBAL = {
 		activate_law = law_type:law_equal_inheritance
 		activate_law = law_type:law_women_in_farms
 		activate_law = law_type:law_secret_police
+
+		active_law:lawgroup_land_reform = {
+			add_amendment = {
+				type = bpm_amendment_sharecropping
+				sponsor = prev.ig:ig_landowners
+			}
+		}
 	}
 
 	c:BEL = {
@@ -155,13 +162,12 @@ GLOBAL = {
 	}
 
 	c:NET = {
-		activate_law = law_type:law_national_militia
 		activate_law = law_type:law_local_police
 		activate_law = law_type:law_laissez_faire
 	}
 
 	c:SPA = {
-		#activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_peasant_levies
 		#activate_law = law_type:law_hereditary_bureaucrats
 		active_law:lawgroup_bureaucracy = {
 			add_amendment = {
@@ -174,7 +180,7 @@ GLOBAL = {
 	}
 
 	c:POR = {
-		#activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_peasant_levies
 		#activate_law = law_type:law_hereditary_bureaucrats
 		active_law:lawgroup_bureaucracy = {
 			add_amendment = {
@@ -186,7 +192,7 @@ GLOBAL = {
 	}
 
 	c:SPC = {
-		#activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_peasant_levies
 	}
 
 	c:USA = {
@@ -291,9 +297,10 @@ GLOBAL = {
 		}
 	}
 	
-	# c:USA = {
+	# c:USA = { # alrady covered
 	# 	activate_law = law_type:law_universal_suffrage
 	# }
+	
 
 	c:NSW = {
 		activate_law = law_type:law_frontier_colonization

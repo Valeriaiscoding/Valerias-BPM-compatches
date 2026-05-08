@@ -1,4 +1,3 @@
-Slavery laws
 INJECT:ideology_dop_positivist = {
 	lawgroup_slavery = {
 		law_slavery_banned = neutral

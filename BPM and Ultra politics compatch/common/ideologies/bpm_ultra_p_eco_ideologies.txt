@@ -1,0 +1,163 @@
+# REPLACE
+
+REPLACE:ideology_eco_slave_economy = {
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
+	priority = 1000
+    lawgroup_economic_system = {
+		law_traditionalism = strongly_approve
+		law_interventionism = approve
+		law_agrarianism = strongly_approve
+		law_industry_banned = disapprove
+		law_laissez_faire = disapprove
+		law_cooperative_ownership = strongly_disapprove
+		law_command_economy = strongly_disapprove
+		law_extraction_economy = disapprove
+	}
+
+    lawgroup_trade_policy = {
+		law_free_trade = approve # disapprove
+		law_protectionism = neutral
+		law_isolationism = disapprove
+		law_mercantilism = approve
+	}
+
+    lawgroup_land_reform = {
+		law_serfdom = approve
+		law_tenant_farmers = approve
+		law_peasant_proprietorship = disapprove
+		law_commercialized_agriculture = neutral
+		law_collectivized_agriculture = strongly_disapprove
+	}
+
+    lawgroup_taxation = {
+		law_consumption_based_taxation = approve
+		law_land_based_taxation = approve
+		law_per_capita_based_taxation = approve
+		law_proportional_taxation = disapprove
+		law_graduated_taxation = strongly_disapprove
+	}
+
+    lawgroup_slavery = {
+		law_slavery_banned = strongly_disapprove
+		law_debt_slavery = neutral
+		law_slave_trade = strongly_approve
+		law_legacy_slavery = neutral
+		law_colonial_slavery = neutral
+	}
+
+	lawgroup_repeatable_economy = {
+		law_repeatable_economy_liberalization = disapprove
+		law_repeatable_economy_agricultural_investment = strongly_approve
+		law_repeatable_economy_peasant_corvee = strongly_approve
+		law_repeatable_economy_public_works = disapprove
+		law_repeatable_economy_forced_industrialization = strongly_disapprove
+	}
+}
+
+REPLACE:ideology_eco_antebellum_economy = {
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
+	priority = 1000
+    lawgroup_economic_system = {
+		law_traditionalism = neutral
+		law_agrarianism = strongly_approve
+		law_interventionism = neutral
+		law_industry_banned = disapprove
+		law_extraction_economy = approve
+		law_laissez_faire = neutral
+		law_cooperative_ownership = strongly_disapprove
+		law_command_economy = strongly_disapprove
+	}
+
+    lawgroup_trade_policy = {
+		law_isolationism = strongly_disapprove
+		law_mercantilism = neutral
+		law_protectionism = disapprove
+		law_free_trade = approve
+	}
+
+    lawgroup_land_reform = {
+		law_serfdom = approve
+		law_tenant_farmers = approve
+		law_peasant_proprietorship = disapprove
+		law_commercialized_agriculture = neutral
+		law_collectivized_agriculture = strongly_disapprove
+	}
+
+    lawgroup_taxation = {
+		law_consumption_based_taxation = approve
+		law_land_based_taxation = approve
+		law_per_capita_based_taxation = approve
+		law_proportional_taxation = disapprove
+		law_graduated_taxation = strongly_disapprove
+	}
+
+    lawgroup_slavery = {
+		law_slavery_banned = strongly_disapprove
+		law_debt_slavery = neutral
+		law_slave_trade = strongly_approve
+		law_legacy_slavery = neutral
+		law_colonial_slavery = strongly_disapprove
+	}
+	lawgroup_repeatable_economy = {
+		law_repeatable_economy_liberalization = disapprove
+		law_repeatable_economy_agricultural_investment = strongly_approve
+		law_repeatable_economy_peasant_corvee = strongly_approve
+		law_repeatable_economy_public_works = disapprove
+		law_repeatable_economy_forced_industrialization = strongly_disapprove
+	}
+
+}
+
+REPLACE:ideology_eco_artisan = {
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/artisan.dds"
+	priority = 1000
+    lawgroup_economic_system = {
+		law_traditionalism = strongly_disapprove
+		law_interventionism = disapprove
+		law_agrarianism = disapprove
+		law_laissez_faire = strongly_approve
+		law_industry_banned = neutral
+		law_cooperative_ownership = approve
+		law_command_economy = strongly_disapprove
+		law_extraction_economy = strongly_disapprove
+	}
+
+    lawgroup_trade_policy = {
+		law_free_trade = neutral
+		law_protectionism = approve
+		law_isolationism = strongly_disapprove
+		law_mercantilism = approve
+	}
+
+    lawgroup_land_reform = {
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = neutral
+		law_peasant_proprietorship = neutral
+		law_commercialized_agriculture = neutral
+		law_collectivized_agriculture = strongly_disapprove
+	}
+
+    lawgroup_taxation = {
+		law_consumption_based_taxation = neutral
+		law_land_based_taxation = disapprove
+		law_per_capita_based_taxation = approve
+		law_proportional_taxation = disapprove
+		law_graduated_taxation = strongly_disapprove
+	}
+
+    lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_debt_slavery = disapprove
+		law_slave_trade = strongly_disapprove
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+	}
+
+	lawgroup_repeatable_economy = {
+		law_repeatable_economy_liberalization = strongly_approve
+		law_repeatable_economy_agricultural_investment = neutral
+		law_repeatable_economy_peasant_corvee = disapprove
+		law_repeatable_economy_public_works = strongly_disapprove
+		law_repeatable_economy_forced_industrialization = strongly_disapprove
+	}
+}

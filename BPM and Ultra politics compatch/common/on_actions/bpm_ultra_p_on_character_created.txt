@@ -6,9 +6,11 @@ on_character_created = {
 
 bpm_ultra_p_set_ideology = {
 	effect = {
-		if = {
-			limit = { has_template = PRU_otto_von_bismarck }
-			add_character_ideology = ideology_bismarckian
+		switch = {
+			trigger = has_template
+			PRU_otto_von_bismarck = {
+				set_ideology = ideology:ideology_bismarckian
+			}
 		}
 	}
 }

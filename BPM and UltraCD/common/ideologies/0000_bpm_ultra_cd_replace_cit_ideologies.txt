@@ -1,5 +1,5 @@
 # Citizenship category
-
+# TODO japan stuff
 ideology_cit_internationalist = {
 	icon = "gfx/interface/icons/ideology_icons/cit_ideology/internationalist.dds"
 	priority = 1000
@@ -186,8 +186,8 @@ ideology_cit_segregationist = {
 	priority = 1000
     lawgroup_citizenship = {
 		law_subjecthood = disapprove
-		law_ethnostate = neutral
-		law_national_supremacy = approve
+		law_ethnostate = approve # neutral
+		law_national_supremacy = neutral # approve
 		law_racial_segregation = strongly_approve
 		law_cultural_exclusion = disapprove
 		law_multicultural = strongly_disapprove
@@ -224,7 +224,7 @@ ideology_cit_ethnonationalist = {
 		law_subjecthood = disapprove
 		law_ethnostate = strongly_approve
 		law_national_supremacy = approve
-		law_racial_segregation = disapprove
+		law_racial_segregation = neutral # disapprove
 		law_cultural_exclusion = strongly_disapprove
 		law_multicultural = strongly_disapprove
 	}

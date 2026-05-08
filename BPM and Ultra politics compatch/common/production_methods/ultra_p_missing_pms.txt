@@ -1,0 +1,5 @@
+INJECT:pm_homesteading_building_subsistence = {
+	unlocking_laws = {
+		law_equal_inheritance
+	}
+}

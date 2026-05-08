@@ -53,8 +53,8 @@ REPLACE:ideology_bismarckian = { #Bismarck needs its own ideology to allow histo
 	}
 
 	lawgroup_distribution_of_power = {
-		law_single_party_state = neutral
 		law_landed_voting = neutral
+		law_military_junta = neutral
 		law_autocracy = neutral
 		law_oligarchy = disapprove
 		law_wealth_voting = approve
@@ -83,7 +83,7 @@ REPLACE:ideology_bismarckian = { #Bismarck needs its own ideology to allow histo
 		law_combination_acts = disapprove
 		law_corporatized_unions = strongly_approve
 		law_anti_strike_laws = neutral
-		law_right_to_associate = strongly_disapprove
+		law_right_to_associate = disapprove
 		law_factory_councils = strongly_disapprove
 		law_socialist_labor_unions = strongly_disapprove
 		law_syndicalism = strongly_disapprove
@@ -99,4 +99,11 @@ REPLACE:ideology_bismarckian = { #Bismarck needs its own ideology to allow histo
 		law_disarmed_nation = strongly_disapprove
 		law_premodern_diplomacy = strongly_disapprove
 	}
+
+	# lawgroup_colonization = {
+	# 	law_no_colonial_affairs = neutral
+	# 	law_colonial_exploitation = strongly_disapprove
+	# 	law_colonial_resettlement = strongly_disapprove
+	# 	law_frontier_colonization = strongly_disapprove
+	# }
 }

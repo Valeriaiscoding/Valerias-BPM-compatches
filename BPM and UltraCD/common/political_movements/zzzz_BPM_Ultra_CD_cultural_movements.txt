@@ -1,4 +1,5 @@
-﻿REPLACE:movement_cultural_minority = {
+﻿# TODO
+REPLACE:movement_cultural_minority = {
 	category = movement_category_cultural
 
 	ideology = ideology_pluralist_movement_1

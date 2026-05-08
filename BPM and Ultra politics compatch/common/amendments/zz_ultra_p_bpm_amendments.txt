@@ -1,3 +1,40 @@
+REPLACE:bpm_amendment_sharecropping = {
+
+	parent = law_tenant_farmers
+
+	allowed_laws = {
+		law_peasant_proprietorship
+		law_homesteading
+		law_equal_inheritance
+		law_commercialized_agriculture
+	}
+
+	modifier = {
+		interest_group_ig_landowners_pol_str_mult = 0.1
+		building_group_bg_agriculture_allowed_collectivization_add = -0.2
+		building_group_bg_ranching_allowed_collectivization_add = -0.2
+		building_group_bg_plantations_allowed_collectivization_add = -0.2
+		building_subsistence_output_mult = -0.1
+		country_financial_districts_buy_farms_likelihood = -0.1
+	}
+
+	possible = {
+		always = yes
+	}
+
+	would_sponsor = {
+		is_interest_group_type = ig_landowners
+	}
+
+	ai_will_revoke = {
+		always = yes
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+}
+
 REPLACE:amendment_3_class_franchise = { # TODO
 	parent = law_wealth_voting
 
@@ -103,3 +140,4 @@ REPLACE:amendment_reform_act_1832 = { # TODO
 
 	amendment_activism_multiplier = 0.5
 }
+

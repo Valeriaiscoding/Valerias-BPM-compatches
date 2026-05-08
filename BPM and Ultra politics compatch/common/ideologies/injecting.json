@@ -113,5 +113,17 @@
             "law_homesteading" : "strongly_approve",
             "law_commercialized_agriculture" : "neutral"
         }
+    },
+    "ideology_jacksonian_democrat": {
+        "lawgroup_economic_system" : {		
+            "law_traditionalism" : "neutral",
+            "law_agrarianism" : "strongly_approve",
+            "law_interventionism" : "neutral",
+            "law_industry_banned" : "disapprove",
+            "law_extraction_economy" : "approve",
+            "law_laissez_faire" : "neutral",
+            "law_cooperative_ownership" : "strongly_disapprove",
+            "law_command_economy" : "strongly_disapprove"
+        }
     }
 }
