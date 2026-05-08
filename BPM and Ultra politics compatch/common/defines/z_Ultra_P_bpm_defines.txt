@@ -1,19 +1,23 @@
 ﻿NPolitics ={
 	#Ultra P values maybe reduce
-	IG_APPROVAL_FROM_LAW_STRONG_STANCE = 5 # 
 	APPROVAL_THRESHOLD_ANGRY = -15	#was -10	# At this or below approval, IG is considered angry
 	APPROVAL_THRESHOLD_UNHAPPY = -7 #was -5		# At this or below approval, IG is considered unhappy
 	APPROVAL_THRESHOLD_HAPPY = 10 #was 5		# At this or above approval, IG is considered happy
 	APPROVAL_THRESHOLD_LOYAL = 20 #was 10		# At this or above approval, IG is considered loyal
 
-	INCOHERENCE_FACTOR = 3 #was 5								# The amount to multiply the approval value with to get an incoherence score for legitimacy
-	INCOHERENCE_FROM_SECONDARY_PARTY_MEMBERS = 0.25 #was 0.5		# The amount to multiply the approval value with if the interest group is in a party but is not the party whip
+	IG_APPROVAL_FROM_LAW = 2 	#was 1	# IG approval/disapproval for laws that are for/against their ideologies
+	IG_APPROVAL_FROM_LAW_STRONG_STANCE = 4 # was 5 was 2		# IG approval/disapproval for laws that are strongly for/against their ideologies
+	
+	#INCOHERENCE_FROM_SECONDARY_PARTY_MEMBERS = 0.25 # was 0.25 was 0.5		# The amount to multiply the approval value with if the interest group is in a party but is not the party whip
 
 	# BPM values maybe reduce
 	IG_SUPPRESSION_COST = 300						# The amount of AUT it costs to Suppress an IG
 	IG_BOLSTER_COST = 200
 
 	# BPM values keep
+	INCOHERENCE_FACTOR = 1							# The amount to multiply the approval value with to get an incoherence score for legitimacy
+	INCOHERENCE_FROM_SECONDARY_PARTY_MEMBERS = 0.5
+
 	IG_MAX_INFLUENCING_MOVEMENTS = 6
 	POWERFUL_IG_THRESHOLD = 0.15		# Interest groups with more Clout than this are considered to be influential
 	POWERFUL_IG_CUTOFF = 0.13		# Powerful interest groups with less Clout than this will stop being influential
