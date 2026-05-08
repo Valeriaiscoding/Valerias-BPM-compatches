@@ -1,0 +1,57 @@
+GLOBAL = {
+	every_country = {
+		limit = {
+			OR = {
+				this = c:SAF
+				this = c:ORG
+				this = c:NSW
+				this = c:WAS
+			}
+		}
+		ig:ig_rural_folk = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+		ig:ig_agrarian_populists = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+		ig:ig_petty_bourgeoisie = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+	}
+	c:USA = {
+		ig:ig_devout = {
+			bpm_remove_all_cit_ideologies = yes
+			add_ideology = ideology_cit_segregationist
+		}
+		ig:ig_landowners = {
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_authoritarian_democrat
+		}
+	}
+	c:RUS = {
+		add_technology_researched = central_archives
+		every_interest_group = {
+			limit = { has_ideology = ideology:ideology_dop_autocrat }
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_meritocratic_autocrat
+		}
+	}
+	c:HAW = {
+		ig:ig_devout = {
+			bpm_remove_all_gov_ideologies = yes
+			add_ideology = ideology_gov_liberal_republican
+		}
+	}
+
+	every_country = {
+		every_interest_group = {
+			limit = {
+				bpm_ig_enabled = yes
+			}
+			bpm_reorder_ideologies = yes
+		}
+	}
+}

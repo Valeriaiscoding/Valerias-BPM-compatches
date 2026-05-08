@@ -1,4 +1,4 @@
-INJECT:pm_homesteading_building_subsistence = {
+﻿INJECT:pm_peasant_proprietorship_building_subsistence ={
 	unlocking_laws = {
 		law_equal_inheritance
 	}

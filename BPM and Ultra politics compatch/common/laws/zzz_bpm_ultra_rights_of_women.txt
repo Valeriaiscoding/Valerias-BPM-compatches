@@ -1,4 +1,0 @@
-﻿
-INJECT:law_women_in_farms = {
-	#parent = law_women_own_property # was no women rights  Inherits ideological stances from parent
-}

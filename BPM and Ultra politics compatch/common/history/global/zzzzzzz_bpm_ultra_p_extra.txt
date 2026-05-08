@@ -1,0 +1,21 @@
+GLOBAL = {
+	if = {
+		limit = { always = no }
+		c:NOR = {
+			active_law:lawgroup_land_reform = {
+				add_amendment = {
+					type = bpm_amendment_sharecropping
+					sponsor = prev.ig:ig_landowners
+				}
+			}
+		}
+		c:SWE = {
+			active_law:lawgroup_land_reform = {
+				add_amendment = {
+					type = bpm_amendment_sharecropping
+					sponsor = prev.ig:ig_landowners
+				}
+			}
+		}
+	}
+}

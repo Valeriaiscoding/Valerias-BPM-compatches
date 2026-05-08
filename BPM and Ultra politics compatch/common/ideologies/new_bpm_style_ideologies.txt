@@ -53,7 +53,7 @@
 # }
 
 # ideology_wel_public_education = {
-# 	icon = "gfx/interface/icons/ideology_icons/wel_ideology/market_welfare.dds"
+# 	icon = "gfx/interface/icons/ideology_icons/wel_ideology/social_market_welfare.dds"
 # 	priority = 1000
 #     lawgroup_education_system = {
 # 		law_no_schools = disapprove

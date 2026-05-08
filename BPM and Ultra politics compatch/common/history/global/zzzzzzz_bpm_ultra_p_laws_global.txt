@@ -1,0 +1,23 @@
+GLOBAL = {
+	c:PRG = {
+		activate_law = law_type:law_interventionism
+	}
+	c:MON = {
+		activate_law = law_type:law_tenant_farmers
+	}
+	c:FRA = {
+		active_law:lawgroup_land_reform = {
+			add_amendment = {
+				type = bpm_amendment_sharecropping
+				sponsor = prev.ig:ig_landowners
+			}
+		}
+	}
+	c:BEL = {
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_interventionism
+	}
+	c:SPC = {
+		activate_law = law_type:law_peasant_levies
+	}
+}
