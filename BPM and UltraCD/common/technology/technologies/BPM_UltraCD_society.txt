@@ -1,4 +1,4 @@
-INJECT:pan-nationalism = {
+﻿INJECT:pan-nationalism = {
 	on_researched = {
 		ig:ig_conservatives ?= {
 			if = {

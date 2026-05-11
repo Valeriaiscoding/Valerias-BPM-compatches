@@ -1,4 +1,4 @@
-# TODO - Check if it is event needed maybe INJECT will work(it wont)
+﻿# TODO - Check if it is event needed maybe INJECT will work(it wont)
 # add add injector script its so stupid
 REPLACE:law_freedom_of_conscience = {
 	group = lawgroup_church_and_state

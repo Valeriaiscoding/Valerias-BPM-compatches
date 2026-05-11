@@ -1,4 +1,4 @@
-bmp_ultra_cd_conservatives_ideology_effect = {
+﻿bmp_ultra_cd_conservatives_ideology_effect = {
 	save_scope_as = recently_unified
 
 	ig:ig_conservatives ?= {

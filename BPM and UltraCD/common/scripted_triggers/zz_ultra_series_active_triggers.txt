@@ -1,3 +1,0 @@
-Ultra_P_is_active_trigger = {
-    always = no
-}

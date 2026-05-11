@@ -1,4 +1,4 @@
-on_game_started = {
+﻿on_game_started = {
 	on_actions = {
 		bpm_ultra_cd_on_game_start 
 	}

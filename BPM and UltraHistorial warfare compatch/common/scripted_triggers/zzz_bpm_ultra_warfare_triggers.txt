@@ -60,33 +60,28 @@ REPLACE:bpm_is_antagonistic_hypothetical = {
 bpm_is_antagonistic_conscription = {
     trigger_if = {
         limit = {
+            interest_group = {
+                has_ideology = ideology:ideology_mil_antimilitarist
+            }
+        }
+        always = yes
+    }
+    trigger_else_if = {
+        limit = {
             owner = {
                 has_law_or_variant = law_type:law_council_republic
             }
         }
         interest_group = {
-            OR = {
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_landowners
-                #is_interest_group_type = ig_reactionaries
-            }
+            bpm_ig_is_upper_institutional = yes
         }
     }
     trigger_else = {
         interest_group = {
-            OR = {
-                is_interest_group_type = ig_revolutionist_socialists
-                is_interest_group_type = ig_anarchists
-            }
+            bpm_ig_is_radical_socialist = yes
         }
     }
-    # trigger_else_if = {
-    #     limit = { 
-    #         interest_group.leader = {
-    #             zogy = ideology:ideology_pacifist
-    #         }
-    #     }
-    # }
+    
 }
 
 REPLACE:bpm_cab_get_random_inst = {

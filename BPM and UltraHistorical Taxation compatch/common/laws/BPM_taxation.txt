@@ -9,41 +9,26 @@ INJECT:law_land_based_taxation = {
 	tax_modifier_very_low = {
 		#tax_consumption_add = 0.05
 		#tax_income_add = 0.04
-
 	}	
 
 	tax_modifier_low = {
 		#tax_consumption_add = 0.075	
 		#tax_income_add = 0.055
-
-		#building_subsistence_output_mult = -0.1
-		#state_construction_mult = 0.05
 	}
 
 	tax_modifier_medium = {
 		#tax_consumption_add = 0.1
 		#tax_income_add = 0.07
-
-		#building_subsistence_output_mult = -0.15
-		#state_construction_mult = 0.075
 	}	
 
 	tax_modifier_high = {
 		#tax_consumption_add = 0.125
 		#tax_income_add = 0.085
-
-		building_subsistence_output_mult = -0.2
-		#building_peasants_standard_of_living_add = -0.25
-		state_construction_mult = 0.125
 	}
 
 	tax_modifier_very_high = {
 		#tax_consumption_add = 0.15
 		#tax_income_add = 0.10
-
-		#building_subsistence_output_mult = -0.3
-		#building_peasants_standard_of_living_add = -0.5
-		#state_construction_mult = 0.2
 	}
 }
 
