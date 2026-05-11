@@ -1,0 +1,95 @@
+﻿implement_temporary_income_tax = {
+	is_shown = {
+		OR = {
+			has_law = law_type:law_per_capita_based_taxation
+			has_law = law_type:law_land_based_taxation
+		}
+		NOT = {
+			active_law:lawgroup_taxation ?= {
+				has_amendment = amendment_type:amendment_temporary_income_tax
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = currency_standards
+		scaled_gold_reserves <= 0
+		taking_loans = yes
+		NOT = {is_country_type = unrecognized}
+		any_enemy_in_war = {
+			country_rank >= root.country_rank
+		}
+		any_interest_group = {
+			is_in_government = yes
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value > neutral
+			}
+		}
+	}
+
+	when_taken = {
+		active_law:lawgroup_taxation ?= {
+			add_amendment = {
+				type = amendment_temporary_income_tax
+				sponsor = PREV.ig:ig_petty_bourgeoisie
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+implement_extra_dividend_tax = {
+	is_shown = {
+		has_law = law_type:law_graduated_taxation
+		NOT = {
+			active_law:lawgroup_taxation ?= {
+				has_amendment = amendment_type:amendment_extra_dividend_tax
+			}
+		}
+	}
+
+	possible = {
+		scaled_gold_reserves <= 0
+		taking_loans = yes
+		has_technology_researched = central_planning
+		OR = {
+			any_interest_group = {
+				is_in_government = yes
+				is_powerful = yes
+				law_stance = {
+					law = law_type:law_command_economy
+					value > neutral
+				}
+			}
+			AND = {
+				any_enemy_in_war = {
+					country_rank >= root.country_rank
+				}
+				any_interest_group = {
+					is_in_government = yes
+					law_stance = {
+						law = law_type:law_graduated_taxation
+						value > neutral
+					}
+				}
+			}
+		}
+	}
+
+	when_taken = {
+		active_law:lawgroup_taxation ?= {
+			add_amendment = {
+				type = amendment_extra_dividend_tax
+				sponsor = PREV.ig:ig_petty_bourgeoisie
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}

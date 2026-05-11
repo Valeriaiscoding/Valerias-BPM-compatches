@@ -48,8 +48,6 @@ amendment_temporary_income_tax = {
 
 	would_sponsor = {
 		OR = {
-			#is_interest_group_type = ig_landowners
-			#is_interest_group_type = ig_trade_unions
 			is_interest_group_type = ig_petty_bourgeoisie
 			is_interest_group_type = ig_armed_forces
 
@@ -57,7 +55,6 @@ amendment_temporary_income_tax = {
 			has_ideology = ideology:ideology_eco_autarky
 			has_ideology = ideology:ideology_eco_modern_agrarian
 			has_ideology = ideology:ideology_eco_american_system
-
 			has_ideology = ideology:ideology_eco_distributist_economy
 			has_ideology = ideology:ideology_eco_modern_interventionist
 			has_ideology = ideology:ideology_eco_centralized_economy
@@ -136,19 +133,12 @@ amendment_preserved_traditional_taxation = {
 
 	would_sponsor = {
 		OR = {
-			#is_interest_group_type = ig_industrialists
 			is_interest_group_type = ig_landowners
-			is_interest_group_type = ig_petty_bourgeoisie
-			#is_interest_group_type = ig_armed_forces
-
+			bpm_ig_is_colonialist = yes
+			bpm_ig_is_pro_serfdom = yes
+			bpm_ig_is_pro_slavery = yes
+			has_ideology = ideology:ideology_eco_traditional_agrarian
 			has_ideology = ideology:ideology_eco_conservative_agrarian
-			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
-			has_ideology = ideology:ideology_eco_antebellum_economy
-			has_ideology = ideology:ideology_eco_slave_economy
-			has_ideology = ideology:ideology_eco_colonialist
-			has_ideology = ideology:ideology_eco_slave_colonialist
-			has_ideology = ideology:ideology_eco_laissez_faire
-			#has_ideology = ideology:ideology_eco_artisan
 		}
 	}
 
@@ -221,15 +211,9 @@ amendment_dividend_tax_exemption = {
 
 	would_sponsor = {
 		OR = {
-			is_interest_group_type = ig_industrialists
-			is_interest_group_type = ig_landowners
-			#is_interest_group_type = ig_petty_bourgeoisie
-			#is_interest_group_type = ig_armed_forces
-			is_interest_group_type = ig_intelligentsia
-			is_interest_group_type = ig_rural_folk
-
+			bpm_ig_is_upper_institutional = yes
+			is_interest_group_type = ig_market_liberals
 			has_ideology = ideology:ideology_eco_laissez_faire
-			has_ideology = ideology:ideology_eco_artisan
 			has_ideology = ideology:ideology_eco_antebellum_economy
 			has_ideology = ideology:ideology_eco_conservative_agrarian
 			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
@@ -305,18 +289,12 @@ amendment_dividend_tax_reduction = {
 
 	would_sponsor = {
 		OR = {
-			is_interest_group_type = ig_industrialists
-			is_interest_group_type = ig_landowners
-			#is_interest_group_type = ig_petty_bourgeoisie
-			#is_interest_group_type = ig_armed_forces
-			is_interest_group_type = ig_intelligentsia
-			is_interest_group_type = ig_rural_folk
-
+			bpm_ig_is_upper_institutional = yes
 			has_ideology = ideology:ideology_eco_laissez_faire
 			has_ideology = ideology:ideology_eco_artisan
-			has_ideology = ideology:ideology_eco_antebellum_economy
 			has_ideology = ideology:ideology_eco_conservative_agrarian
-			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
+			has_ideology = ideology:ideology_eco_modern_agrarian
+			has_ideology = ideology:ideology_eco_interventionist
 		}
 	}
 
@@ -423,8 +401,6 @@ amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 
 	would_sponsor = {
 		OR = {
-			#is_interest_group_type = ig_trade_unions
-			#is_interest_group_type = ig_intelligentsia
 			is_interest_group_type = ig_petty_bourgeoisie
 			is_interest_group_type = ig_armed_forces
 

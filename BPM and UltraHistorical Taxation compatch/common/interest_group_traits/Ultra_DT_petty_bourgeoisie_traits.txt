@@ -1,0 +1,27 @@
+﻿# INJECT:ig_trait_treasury_bonds = {
+# 	modifier = {
+# 		country_loan_interest_rate_mult = 0.1
+# 		country_loan_interest_rate_add = -0.025
+# 	}
+# }
+
+# INJECT:ig_trait_haute_finance = {
+# 	modifier = {
+# 		country_loan_interest_rate_mult = 0.075
+# 		country_loan_interest_rate_add = -0.02
+# 	}
+# }
+
+# INJECT:ig_trait_old_lady_of_threadneedle_street = {
+# 	modifier = {
+# 		country_loan_interest_rate_mult = 0.15
+# 		country_loan_interest_rate_add = -0.03
+# 	}
+# }
+
+# INJECT:ig_trait_lines_of_credit = {
+# 	modifier = {
+# 		country_loan_interest_rate_mult = 0.1
+# 		country_loan_interest_rate_add = -0.025
+# 	}
+# }

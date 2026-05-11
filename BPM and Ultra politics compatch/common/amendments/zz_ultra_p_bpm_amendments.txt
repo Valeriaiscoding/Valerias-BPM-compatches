@@ -141,3 +141,8 @@ REPLACE:amendment_reform_act_1832 = { # TODO
 	amendment_activism_multiplier = 0.5
 }
 
+INJECT:amendment_cult_of_personality = {
+	allowed_laws = {
+		law_military_junta
+	}
+}
