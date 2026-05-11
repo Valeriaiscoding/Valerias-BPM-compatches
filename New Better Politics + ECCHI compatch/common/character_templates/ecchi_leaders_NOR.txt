@@ -124,7 +124,6 @@ ecchi_nor_quisling_vidkun_character_template = {
 		}
 		interest_group_trigger = {
 			is_interest_group_type = ig_armed_forces
-			is_interest_group_type = ig_intelligentsia
 		}
 		earliest_usage_date = 1920.1.1
 		latest_usage_date = 1945.10.24

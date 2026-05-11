@@ -37,10 +37,7 @@ ecchi_ger_hitler_character_template = {
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
-			OR = {
-				#is_interest_group_type = ig_rural_folk 
-				is_interest_group_type = ig_armed_forces
-			}
+			is_interest_group_type = ig_fascists
 		}
 		earliest_usage_date = 1923.1.1
 		latest_usage_date = 1945.4.30
@@ -100,10 +97,10 @@ ecchi_ger_engels_character_template = {
 	
 	religion = rel:protestant
 	ideology = ideology_communist
-	interest_group = ig_revolutionist_socialists
+	interest_group = ig_socialists
 	dna = ecchi_dna_friedrich_engels
 	birth_date = 1820.11.28
-	traits = { cancer romantic expensive_tastes }
+	traits = { romantic expensive_tastes }
 	interest_group_leader_usage = {
 		country_trigger = {
 			OR = {
@@ -130,7 +127,7 @@ ecchi_ger_engels_character_template = {
 			bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
 			OR = {
-				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_socialists
 				is_interest_group_type = ig_revolutionist_socialists
 			}
 		}
@@ -325,7 +322,7 @@ ecchi_ger_wagner_character_template = {
     culture = cu:north_german
     
     religion = rel:protestant
-    ideology = ideology_traditionalist
+    ideology = ideology_ethno_nationalist
     interest_group = ig_intelligentsia
 	dna = ecchi_dna_richard_wagner
     birth_date = 1813.5.22
