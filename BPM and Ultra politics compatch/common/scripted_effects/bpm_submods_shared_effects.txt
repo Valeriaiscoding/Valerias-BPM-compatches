@@ -54,8 +54,6 @@ bpm_remove_all_base_mod_dop_ideologies = {
 	remove_ideology = ideology_dop_metropole_loyalist
 	remove_ideology = ideology_dop_organic_power
 	remove_ideology = ideology_dop_organic_democrat
-
-	remove_ideology = ideology_dop_particularist
 }
 
 REPLACE:bpm_reorder_ideologies = {
