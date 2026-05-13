@@ -6,16 +6,15 @@ REPLACE:bpm_amendment_sharecropping = {
 		law_peasant_proprietorship
 		law_homesteading
 		law_equal_inheritance
-		law_commercialized_agriculture
+		#law_commercialized_agriculture
 	}
 
 	modifier = {
 		interest_group_ig_landowners_pol_str_mult = 0.1
-		building_group_bg_agriculture_allowed_collectivization_add = -0.2
-		building_group_bg_ranching_allowed_collectivization_add = -0.2
-		building_group_bg_plantations_allowed_collectivization_add = -0.2
+		building_group_bg_agriculture_allowed_collectivization_add = -0.15
+		building_group_bg_ranching_allowed_collectivization_add = -0.15
+		building_group_bg_plantations_allowed_collectivization_add = -0.15
 		building_subsistence_output_mult = -0.1
-		country_financial_districts_buy_farms_likelihood = -0.1
 	}
 
 	possible = {
