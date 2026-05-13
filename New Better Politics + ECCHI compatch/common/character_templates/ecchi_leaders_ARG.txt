@@ -162,7 +162,7 @@ ecchi_arg_de_san_martin_character_template = {
 #
 ## Juan Perón
 
-ecchi_arg_peron_character_template = { # TODO he is in bpm already
+ecchi_arg_peron_character_template = {
     first_name = Juan
     last_name = ecchi_Peron
     historical = yes
