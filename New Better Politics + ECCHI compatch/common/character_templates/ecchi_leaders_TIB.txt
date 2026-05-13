@@ -98,7 +98,7 @@ ecchi_tib_dorzhiev_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_petty_bourgeoisie
                 is_interest_group_type = ig_landowners

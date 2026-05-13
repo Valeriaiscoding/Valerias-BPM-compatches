@@ -65,7 +65,7 @@ ecchi_kaz_bukeikhanov_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			OR = {
 				is_interest_group_type = ig_national_liberals
 				is_interest_group_type = ig_radicals
@@ -101,7 +101,7 @@ ecchi_geo_chavchavadze_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			is_interest_group_type = ig_radicals
 		}
 		earliest_usage_date = 1870.1.1
@@ -164,7 +164,7 @@ ecchi_tur_ataturk_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			is_interest_group_type = ig_national_liberals
 		}
 		earliest_usage_date = 1910.1.1
@@ -365,7 +365,7 @@ ecchi_pal_trumpeldor_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			is_interest_group_type = ig_national_liberals
 		}
 		earliest_usage_date = 1911.1.1
@@ -511,7 +511,7 @@ ecchi_afg_mahmud_tarzi_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			is_interest_group_type = ig_national_liberals
 
 		}

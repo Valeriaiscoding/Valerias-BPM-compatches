@@ -99,7 +99,7 @@ ecchi_gbr_grey_character_template = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 # 			OR = {
 # 				is_interest_group_type = ig_conservatives
 # 				is_interest_group_type = ig_petty_bourgeoisie
@@ -140,7 +140,7 @@ ecchi_gbr_cecil_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
 				is_interest_group_type = ig_conservatives
 				#is_interest_group_type = ig_petty_bourgeoisie
@@ -181,7 +181,7 @@ ecchi_gbr_primrose_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			OR = {
 				#is_interest_group_type = ig_liberals
 				is_interest_group_type = ig_national_liberals
@@ -222,7 +222,7 @@ ecchi_gbr_primrose_character_template = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 #             OR = {
 # 				is_interest_group_type = ig_conservatives
 # 				is_interest_group_type = ig_petty_bourgeoisie
@@ -263,7 +263,7 @@ ecchi_gbr_campbell_bannerman_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			OR = {
 				is_interest_group_type = ig_liberals
 				is_interest_group_type = ig_radicals
@@ -377,7 +377,7 @@ ecchi_gbr_law_character_template = {
 		}
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
              OR = {
 				is_interest_group_type = ig_conservatives
 				is_interest_group_type = ig_petty_bourgeoisie
@@ -419,7 +419,7 @@ ecchi_gbr_baldwin_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
 				is_interest_group_type = ig_conservatives
 				is_interest_group_type = ig_petty_bourgeoisie
@@ -462,7 +462,7 @@ ecchi_gbr_macdonald_character_template = {
 		}
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			OR = {
 				#is_interest_group_type = ig_trade_unions
 				is_interest_group_type = ig_reformist_socialists
@@ -505,7 +505,7 @@ ecchi_gbr_chamberlain_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
 				is_interest_group_type = ig_conservatives
 				#is_interest_group_type = ig_petty_bourgeoisie
@@ -725,7 +725,7 @@ ecchi_gbr_livingstone_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_devout
                 is_interest_group_type = ig_armed_forces
@@ -890,7 +890,7 @@ ecchi_gbr_lionel_de_rothschild_sr_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_industrialists
         }
         earliest_usage_date = 1838.1.1
@@ -1052,7 +1052,7 @@ ecchi_gbr_stanley_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_petty_bourgeoisie
             # OR = {
             #     is_interest_group_type = ig_conservatives
@@ -1209,7 +1209,7 @@ ecchi_gbr_kipling_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_rural_folk
@@ -1241,7 +1241,7 @@ ecchi_gbr_harcourt_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_liberals
@@ -1272,7 +1272,7 @@ ecchi_gbr_harcourt_character_template = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_intelligentsia
 #                 is_interest_group_type = ig_liberals
@@ -1314,7 +1314,7 @@ ecchi_gbr_carlyle_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1836.1.1
@@ -1533,7 +1533,7 @@ ecchi_gbr_wells_hg_character_template = {
             }
         }
         interest_group_trigger = {
-            bpm_interest_group_is_activated = yes
+            bpm_ig_enabled = yes
             is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1891.1.1

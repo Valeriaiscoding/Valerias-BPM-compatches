@@ -20,7 +20,7 @@ ecchi_nzl_sewell_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
                 #is_interest_group_type = ig_rural_folk
@@ -52,7 +52,7 @@ ecchi_nzl_fox_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
                 is_interest_group_type = ig_conservatives
@@ -84,7 +84,7 @@ ecchi_nzl_savage_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_trade_unions
                 is_interest_group_type = ig_reformist_socialists
@@ -116,7 +116,7 @@ ecchi_nzl_seddon_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_liberals
@@ -148,7 +148,7 @@ ecchi_nzl_ballance_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_trade_unions
@@ -200,7 +200,7 @@ ecchi_aot_heke_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_armed_forces
                 is_interest_group_type = ig_landowners
@@ -292,7 +292,7 @@ ecchi_aot_o_rongomai_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_devout
                 is_interest_group_type = ig_intelligentsia

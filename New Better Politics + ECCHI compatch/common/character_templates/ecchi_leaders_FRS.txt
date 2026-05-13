@@ -87,7 +87,7 @@ ecchi_frs_tai_chao_chuen_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_intelligentsia

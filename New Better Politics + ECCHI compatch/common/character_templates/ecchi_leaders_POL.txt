@@ -172,7 +172,7 @@ ecchi_pol_conrad_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_landowners
@@ -230,7 +230,7 @@ ecchi_pol_conrad_character_template = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-			#bpm_interest_group_is_activated = yes
+			#bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_revolutionist_socialists
 #                 is_interest_group_type = ig_trade_unions
@@ -279,7 +279,7 @@ ecchi_pol_mroczkowski_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_revolutionist_socialists
                 #is_interest_group_type = ig_intelligentsia
@@ -383,7 +383,7 @@ ecchi_pol_sienkiewicz_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_conservatives

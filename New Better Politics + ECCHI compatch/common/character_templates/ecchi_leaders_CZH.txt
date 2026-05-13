@@ -38,7 +38,7 @@ ecchi_czh_palacky_character_template = {
         }
         interest_group_trigger = {
 	        bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1840.1.1
@@ -84,8 +84,8 @@ ecchi_czh_masaryk_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
-	    bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
+	    bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_national_liberals
                 is_interest_group_type = ig_agrarian_populists
@@ -135,7 +135,7 @@ ecchi_czh_kafka_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_trade_unions
@@ -186,7 +186,7 @@ ecchi_czh_tiso_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_fascists
                 #is_interest_group_type = ig_devout
@@ -235,7 +235,7 @@ ecchi_czh_stefanik_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_armed_forces
                 is_interest_group_type = ig_national_liberals

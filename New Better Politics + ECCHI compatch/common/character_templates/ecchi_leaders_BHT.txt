@@ -36,7 +36,7 @@
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_industrialists
 #                 is_interest_group_type = ig_landowners
@@ -85,7 +85,7 @@
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_intelligentsia
 #                 is_interest_group_type = ig_trade_unions
@@ -133,7 +133,7 @@ ecchi_bht_nehru_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_reformist_socialists
                # is_interest_group_type = ig_trade_unions
@@ -233,7 +233,7 @@ ecchi_awa_hazrat_mahal_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_petty_bourgeoisie
@@ -265,7 +265,7 @@ ecchi_cey_senanayake_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_rural_folk
                 #is_interest_group_type = ig_landowners

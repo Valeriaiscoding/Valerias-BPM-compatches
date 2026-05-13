@@ -44,7 +44,7 @@ ecchi_kor_daewongun_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 #is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_reactionaries
@@ -74,7 +74,7 @@ ecchi_kor_daewongun_character_template = {
 #        }
 #        interest_group_trigger = {
 #            bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #            OR = {
 #                is_interest_group_type = ig_rural_folk
 #                is_interest_group_type = ig_petty_bourgeoisie
@@ -105,7 +105,7 @@ ecchi_kor_son_byonghi_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_devout
                 is_interest_group_type = ig_rural_folk

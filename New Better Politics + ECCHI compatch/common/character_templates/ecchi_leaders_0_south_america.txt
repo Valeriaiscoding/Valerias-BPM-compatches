@@ -19,7 +19,7 @@ ecchi_chl_o_higgins_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_liberals
@@ -52,7 +52,7 @@ ecchi_uru_artigas_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_armed_forces
                 is_interest_group_type = ig_landowners
@@ -84,7 +84,7 @@ ecchi_uru_artigas_character_template = {
 #        }
 #        interest_group_trigger = {
 #            bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #            OR = {
 #                is_interest_group_type = ig_conservatives
 #                is_interest_group_type = ig_landowners
@@ -117,7 +117,7 @@ ecchi_uru_artigas_character_template = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_intelligentsia
 #                 is_interest_group_type = ig_liberals

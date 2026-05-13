@@ -28,7 +28,7 @@ ecchi_jap_enomoto_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_petty_bourgeoisie
                 is_interest_group_type = ig_landowners
@@ -248,7 +248,7 @@ ecchi_jap_yoshihisa_character_template = {
 #        }
 #        interest_group_trigger = {
 #            bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #            OR = {
 #                is_interest_group_type = ig_landowners
 #                is_interest_group_type = ig_conservatives
@@ -280,7 +280,7 @@ ecchi_jap_yoshihisa_character_template = {
 #        }
 #        interest_group_trigger = {
 #            bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #            OR = {
 #                is_interest_group_type = ig_landowners
 #                is_interest_group_type = ig_national_liberals
@@ -375,7 +375,7 @@ ecchi_ain_imekanu_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_devout
@@ -415,7 +415,7 @@ ecchi_ain_batchelor_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_devout

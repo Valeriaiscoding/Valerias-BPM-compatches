@@ -19,7 +19,7 @@ ecchi_mgl_bogd_khan_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_devout
                 is_interest_group_type = ig_landowners
@@ -50,7 +50,7 @@ ecchi_mgl_khanddorj_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_intelligentsia
@@ -81,7 +81,7 @@ ecchi_mgl_namnansuren_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_intelligentsia

@@ -86,7 +86,7 @@ ecchi_den_grundtvig_character_template = {
 		}
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_devout
         }
 		earliest_usage_date = 1836.1.1
@@ -116,7 +116,7 @@ ecchi_den_bajer_character_template = {
 		}
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_intelligentsia
         }
 		earliest_usage_date = 1871.1.1

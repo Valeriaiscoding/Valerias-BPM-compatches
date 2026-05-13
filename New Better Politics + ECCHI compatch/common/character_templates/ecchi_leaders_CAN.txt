@@ -47,7 +47,7 @@ ecchi_que_nelson_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_agrarian_populists
                 is_interest_group_type = ig_radicals
@@ -79,7 +79,7 @@ ecchi_que_bowen_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_conservatives
                 #is_interest_group_type = ig_landowners
@@ -111,7 +111,7 @@ ecchi_que_cartier_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_conservatives
                 is_interest_group_type = ig_liberals
@@ -242,7 +242,7 @@ ecchi_nvs_howe_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_agrarian_populists
@@ -295,7 +295,7 @@ ecchi_org_douglas_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_conservatives
                 #is_interest_group_type = ig_landowners
@@ -375,7 +375,7 @@ ecchi_ont_robinson_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_conservatives
                 is_interest_group_type = ig_landowners
@@ -407,7 +407,7 @@ ecchi_ont_mowat_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
                 #is_interest_group_type = ig_rural_folk
@@ -585,7 +585,7 @@ ecchi_can_macdonald_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1844.1.1
@@ -614,7 +614,7 @@ ecchi_can_laurier_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
                 is_interest_group_type = ig_agrarian_populists
@@ -646,7 +646,7 @@ ecchi_can_king_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
                 is_interest_group_type = ig_agrarian_populists

@@ -36,7 +36,7 @@ ecchi_lit_basanavicius_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_rural_folk
@@ -106,7 +106,7 @@ ecchi_rom_radulescu-motru_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_landowners
@@ -295,7 +295,7 @@ ecchi_bye_kalinowski_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_armed_forces
@@ -374,7 +374,7 @@ ecchi_gre_trikoupis_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_liberals
             }
@@ -444,7 +444,7 @@ ecchi_hun_lukacs_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_revolutionist_socialists
                 is_interest_group_type = ig_intelligentsia
@@ -487,7 +487,7 @@ ecchi_hun_turr_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_national_liberals
             }
@@ -729,7 +729,7 @@ ecchi_bel_wahis_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_armed_forces
                 is_interest_group_type = ig_petty_bourgeoisie

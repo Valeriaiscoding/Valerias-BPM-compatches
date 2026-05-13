@@ -18,7 +18,7 @@
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 #             OR = {
 #                 is_interest_group_type = ig_revolutionist_socialists
 #                 is_interest_group_type = ig_trade_unions
@@ -52,7 +52,7 @@
 #		}
 #		interest_group_trigger = {
 #			bpm_ig_is_marginal = no
-			#bpm_interest_group_is_activated = yes
+			#bpm_ig_enabled = yes
 #			OR = {
 #				is_interest_group_type = ig_revolutionist_socialists
 #				is_interest_group_type = ig_trade_unions
@@ -100,7 +100,7 @@ ecchi_rus_stalin_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			OR = {
 				is_interest_group_type = ig_revolutionist_socialists
 				AND = {
@@ -138,7 +138,7 @@ ecchi_rus_stalin_character_template = {
 # 		}
 # 		interest_group_trigger = {
 # 			bpm_ig_is_marginal = no
-#			bpm_interest_group_is_activated = yes
+#			bpm_ig_enabled = yes
 # 			OR = {
 # 				is_interest_group_type = ig_rural_folk
 # 				is_interest_group_type = ig_intelligentsia
@@ -181,7 +181,7 @@ ecchi_rus_rasputin_character_template = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 		}
 		earliest_usage_date = 1903.1.1
 		latest_usage_date = 1916.12.30
@@ -834,7 +834,7 @@ RUS_boris_savinkov = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			trigger_if = {
 				limit = {
 					owner = { has_technology_researched = political_agitation }
@@ -886,7 +886,7 @@ RUS_georgy_lvov = {
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
 			is_interest_group_type = ig_liberals
 		}
 		earliest_usage_date = 1900.1.1

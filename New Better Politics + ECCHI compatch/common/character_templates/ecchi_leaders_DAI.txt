@@ -19,7 +19,7 @@ ecchi_dai_truong_dinh_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_devout
@@ -51,7 +51,7 @@ ecchi_dai_nguyen_trung_truc_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_armed_forces
@@ -82,7 +82,7 @@ ecchi_dai_phan_dinh_phung_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_intelligentsia
@@ -113,7 +113,7 @@ ecchi_dai_cao_ba_quat_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_intelligentsia
@@ -144,7 +144,7 @@ ecchi_dai_ho_chi_minh_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_revolutionist_socialists
                 #is_interest_group_type = ig_trade_unions

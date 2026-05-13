@@ -19,7 +19,7 @@ ecchi_ply_gauguin_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_intelligentsia
                 is_interest_group_type = ig_petty_bourgeoisie
@@ -78,7 +78,7 @@ ecchi_haw_james_dole_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_industrialists
                 is_interest_group_type = ig_landowners
@@ -109,7 +109,7 @@ ecchi_haw_dole_character_template = {
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
-			bpm_interest_group_is_activated = yes
+			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_devout
