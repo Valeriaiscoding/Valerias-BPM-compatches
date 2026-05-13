@@ -1,4 +1,4 @@
-# on_monthly_pulse_state = {
+﻿# on_monthly_pulse_state = {
 # 	on_actions = {
 # 		bpm_ultra_p_ig_ideology_workaround_oa
 # 	}

@@ -1,4 +1,4 @@
-GLOBAL = {
+﻿GLOBAL = {
 	every_country = {
 		limit = {
 			OR = {
@@ -22,10 +22,10 @@ GLOBAL = {
 		}
 	}
 	c:USA = {
-		ig:ig_devout = {
-			bpm_remove_all_cit_ideologies = yes
-			add_ideology = ideology_cit_segregationist
-		}
+		# ig:ig_devout = {
+		# 	bpm_remove_all_cit_ideologies = yes
+		# 	add_ideology = ideology_cit_segregationist
+		# }
 		ig:ig_landowners = {
 			bpm_remove_all_dop_ideologies = yes
 			add_ideology = ideology_dop_authoritarian_democrat
@@ -43,6 +43,41 @@ GLOBAL = {
 		ig:ig_devout = {
 			bpm_remove_all_gov_ideologies = yes
 			add_ideology = ideology_gov_liberal_republican
+		}
+	}
+
+	c:SPA = {
+		ig:ig_landowners = {
+			add_ideology = ideology_moderantist
+		}
+	}
+	
+	every_country = {
+		limit = {
+			OR = {
+				bpm_country_is_in_new_world = yes
+				this ?= c:TUR
+				this ?= c:EGY
+			}
+		}
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_eco_slave_economy
+			}
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_antebellum_economy
+		}
+	}
+	every_country = {
+		limit = {
+			bpm_country_is_latin_american = yes
+		}
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_eco_conservative_agrarian
+			}
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_plantation_economy
 		}
 	}
 

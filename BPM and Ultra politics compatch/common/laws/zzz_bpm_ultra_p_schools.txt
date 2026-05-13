@@ -1,4 +1,4 @@
-INJECT:law_public_schools = {
+﻿INJECT:law_public_schools = {
 	institution_modifier = {
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.05
 	}

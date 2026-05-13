@@ -1,0 +1,84 @@
+﻿bpm_ultra_p_setup_country_eco_ideologies = {
+	ig:ig_intelligentsia = {
+		if = {
+			limit = { has_ideology = ideology:ideology_eco_placeholder }
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_artisan
+		}
+	}
+	ig:ig_conservatives = {
+		if = {
+			limit = { 
+				owner = {
+					bpm_country_is_latin_american = yes
+				} 
+				has_ideology = ideology:ideology_eco_conservative_agrarian
+			}
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_plantation_economy
+		}
+	}
+	
+}
+
+bpm_ultra_p_setup_country_wel_ideologies = {
+	if = {
+		limit = {
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:north_german
+				country_has_primary_culture = cu:alemannic
+				country_has_primary_culture = cu:swedish
+				country_has_primary_culture = cu:norwegian
+				country_has_primary_culture = cu:danish
+				country_has_primary_culture = cu:finnish
+				country_has_primary_culture = cu:boer
+				this = c:USA
+				this = c:TEX
+				this = c:LIB
+				this = c:WUR
+			}
+		}
+		ig:ig_devout = {
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_paternalistic_welfare
+		}
+	}
+	ig:ig_industrialists = {
+		if = {
+			limit = { 
+				owner = { 
+					OR = {
+						NOT = { has_technology_researched = corporatism } 
+						country_is_colonial_or_company = yes
+					}
+				}
+			}
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_market_welfare
+		}
+		else = {
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_paternalistic_welfare
+		}
+	}
+}
+
+REPLACE:bpm_setup_country_wel_ideologies = {
+	if = {
+		limit = { bpm_country_is_in_new_world = yes }
+		if = {
+			limit = { country_has_state_religion = rel:catholic }
+			ig:ig_reactionaries ?= { 
+				if = {
+					limit = { has_ideology = ideology:ideology_wel_no_welfare }
+				}
+				remove_ideology = ideology_wel_no_welfare
+				add_ideology = ideology_wel_religious_welfare
+			}
+		}
+	}
+	bpm_ultra_p_setup_country_eco_ideologies = yes
+	bpm_ultra_p_setup_country_wel_ideologies = yes
+}

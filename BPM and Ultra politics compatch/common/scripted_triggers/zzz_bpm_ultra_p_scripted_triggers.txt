@@ -1,0 +1,22 @@
+﻿REPLACE:bpm_ig_is_agrarian = {
+	custom_description = {
+		text = "bpm_ig_is_agrarian_tooltip"
+		OR = {
+			has_ideology = ideology:ideology_eco_agrarian_socialist
+			has_ideology = ideology:ideology_eco_modern_agrarian
+			has_ideology = ideology:ideology_eco_conservative_agrarian
+			has_ideology = ideology:ideology_eco_traditional_agrarian
+			has_ideology = ideology:ideology_eco_slave_economy
+			has_ideology = ideology:ideology_eco_serf_economy
+			has_ideology = ideology:ideology_eco_trad_isolationist
+			has_ideology = ideology:ideology_eco_agrarian_autarky
+			has_ideology = ideology:ideology_eco_colonialist
+			has_ideology = ideology:ideology_eco_debt_serf_economy
+			has_ideology = ideology:ideology_eco_slave_colonialist
+			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
+
+			has_ideology = ideology:ideology_eco_plantation_economy
+			has_ideology = ideology:ideology_eco_latifundismo
+		}
+	}
+}

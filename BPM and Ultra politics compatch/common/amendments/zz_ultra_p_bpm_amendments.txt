@@ -1,4 +1,4 @@
-REPLACE:bpm_amendment_sharecropping = {
+﻿REPLACE:bpm_amendment_sharecropping = {
 
 	parent = law_tenant_farmers
 

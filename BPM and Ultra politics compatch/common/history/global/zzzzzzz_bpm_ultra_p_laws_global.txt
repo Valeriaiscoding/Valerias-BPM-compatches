@@ -1,4 +1,4 @@
-GLOBAL = {
+﻿GLOBAL = {
 	c:FRA = {
 		active_law:lawgroup_land_reform = {
 			add_amendment = {

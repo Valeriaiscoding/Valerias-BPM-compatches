@@ -1,4 +1,4 @@
-namespace = bpm_radlib_utils
+﻿namespace = bpm_radlib_utils
 
 bpm_radlib_utils.1 = { # Make sure radicals become progressives
 	type = country_event
