@@ -123,10 +123,10 @@ REPLACE:officers = {
 				if = {
 					limit = {
 						OR = {
-								is_pop_type = aristocrats
-								is_pop_type = capitalists
-								is_pop_type = bureaucrats
-							}
+							is_pop_type = aristocrats
+							is_pop_type = capitalists
+							is_pop_type = bureaucrats
+						}
 					}
 					multiply = {
 						desc = "QUALIFICATIONS_LAW_POLITICAL_OFFICERS"
@@ -144,7 +144,6 @@ REPLACE:officers = {
 			if = {
 				limit = {
 					owner = {
-						#has_law_or_variant = law_type:law_peasant_levies
 						has_law_or_variant = law_type:law_noble_officers
 					}
 					NOT = { is_pop_type = aristocrats }
