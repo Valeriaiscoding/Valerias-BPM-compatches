@@ -65,6 +65,16 @@ bpm_ultra_p_setup_country_wel_ideologies = {
 	}
 }
 
+bpm_ultra_p_setup_country_dop_ideologies = {
+	ig:ig_rural_folk = {
+		if = {
+			limit = { has_ideology = ideology:ideology_dop_placeholder }
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_particularist
+		}
+	}
+}
+
 REPLACE:bpm_setup_country_wel_ideologies = {
 	if = {
 		limit = { bpm_country_is_in_new_world = yes }

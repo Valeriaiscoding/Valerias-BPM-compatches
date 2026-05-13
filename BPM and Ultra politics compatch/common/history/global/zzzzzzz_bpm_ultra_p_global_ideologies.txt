@@ -82,6 +82,23 @@
 	}
 
 	every_country = {
+		ig:ig_intelligentsia = {
+			if = {
+				limit = { has_ideology = ideology:ideology_eco_placeholder }
+				bpm_remove_all_eco_ideologies = yes
+				add_ideology = ideology_eco_artisan
+			}
+		}
+		ig:ig_rural_folk = {
+			if = {
+				limit = { has_ideology = ideology:ideology_dop_placeholder }
+				bpm_remove_all_dop_ideologies = yes
+				add_ideology = ideology_dop_particularist
+			}
+		}
+	}
+
+	every_country = {
 		every_interest_group = {
 			limit = {
 				bpm_ig_enabled = yes

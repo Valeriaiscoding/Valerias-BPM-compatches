@@ -27,12 +27,45 @@
 	remove_ideology = ideology_eco_colonial_slavery_supporter
 }
 
+bpm_remove_all_base_mod_dop_ideologies = {
+	remove_ideology = ideology_dop_placeholder
+	remove_ideology = ideology_dop_party_socialist
+	remove_ideology = ideology_dop_anarchist
+	remove_ideology = ideology_dop_anarcho_syndicalist
+	remove_ideology = ideology_dop_party_state
+	remove_ideology = ideology_dop_radical_democrat
+	remove_ideology = ideology_dop_divine_democrat
+	remove_ideology = ideology_dop_christian_democrat
+	remove_ideology = ideology_dop_conservative_democrat
+#	remove_ideology = ideology_dop_pragmatic_democrat
+	remove_ideology = ideology_dop_moderate_democrat
+	remove_ideology = ideology_dop_authoritarian_democrat
+	remove_ideology = ideology_dop_autocrat
+	remove_ideology = ideology_dop_meritocratic_autocrat
+	remove_ideology = ideology_dop_oligarch
+	remove_ideology = ideology_dop_technocrat
+	remove_ideology = ideology_dop_traditional_power
+	remove_ideology = ideology_dop_state_power
+	remove_ideology = ideology_dop_dissent
+	remove_ideology = ideology_dop_unionist
+	remove_ideology = ideology_dop_syndical_unionist
+	remove_ideology = ideology_dop_state_unionist
+	remove_ideology = ideology_dop_syndicalist
+	remove_ideology = ideology_dop_metropole_loyalist
+	remove_ideology = ideology_dop_organic_power
+	remove_ideology = ideology_dop_organic_democrat
+
+	remove_ideology = ideology_dop_particularist
+}
+
 REPLACE:bpm_reorder_ideologies = {
 	hidden_effect = {
 		bpm_remove_all_placeholder_ideologies = yes
 		bpm_re_add_gov_ideology = yes
 		bpm_re_add_exe_ideology = yes
 		bpm_re_add_dop_ideology = yes
+		bpm_ultra_p_re_add_dop_ideology = yes
+		bpm_something_re_add_dop_ideology = yes
 		bpm_re_add_sta_ideology = yes
 		bpm_re_add_eco_ideology = yes
 		bpm_ultra_p_re_add_eco_ideology = yes
@@ -51,3 +84,18 @@ REPLACE:bpm_remove_all_eco_ideologies = {
 		bpm_ultra_p_remove_all_eco_ideologies = yes
 	}
 }
+
+REPLACE:bpm_remove_all_dop_ideologies = {
+	hidden_effect = {
+		bpm_remove_all_base_mod_dop_ideologies = yes
+		bpm_something_remove_all_dop_ideologies = yes
+		bpm_ultra_p_remove_all_dop_ideologies = yes
+	}
+}
+
+bpm_ultra_p_remove_all_dop_ideologies = {}
+bpm_ultra_p_remove_all_eco_ideologies = {}
+bpm_ultra_p_re_add_dop_ideology = {}
+bpm_ultra_p_re_add_eco_ideology = {}
+bpm_something_remove_all_dop_ideologies = {}
+bpm_something_re_add_dop_ideology = {}
