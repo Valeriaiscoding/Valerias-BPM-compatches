@@ -417,3 +417,43 @@ REPLACE:bpm_newcab_char_pick = {
     bpm_newcab_char_pick_subp = { INST = social_security REMAINING = 2 }
     bpm_newcab_char_pick_subp = { INST = culture REMAINING = 1 }
 }
+
+REPLACE:bpm_appoint_minfor_effect = { # Replace with ministry of defense if it will be implimented
+	owner = {
+		if = {
+			limit = {
+				has_variable = bpm_minfor
+			}
+			var:bpm_minfor ?= {
+				remove_character_role = bpm_character_role_minister
+			}
+		}
+		set_variable = { name = bpm_minfor value = prev }
+
+		set_variable = { name = bpm_minister_of_colonial_affairs value = prev }
+		set_variable = { name = bpm_minister_of_diplomacy value = prev }
+        set_variable = { name = bpm_minister_of_conscription value = prev }
+		set_variable = { name = bpm_minfor_last_ig value = prev.interest_group }
+	}
+
+	add_character_role = bpm_character_role_minister
+	show_as_tooltip = {
+		bpm_reload_institution_modifiers_loc_minfor = yes
+	}
+	hidden_effect = {
+		owner = {
+			bpm_reload_institution_modifiers = yes
+		}
+	}
+}
+
+REPLACE:bpm_fire_minfor_effect = {
+	owner = {
+		remove_variable = bpm_minfor
+		remove_variable = bpm_minister_of_colonial_affairs
+		remove_variable = bpm_minister_of_diplomacy
+        remove_variable = bpm_minister_of_conscription
+	}
+
+	remove_character_role = bpm_character_role_minister
+}
