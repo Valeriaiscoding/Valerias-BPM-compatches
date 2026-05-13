@@ -103,11 +103,9 @@ ecchi_rus_stalin_character_template = {
 			bpm_interest_group_is_activated = yes
 			OR = {
 				is_interest_group_type = ig_revolutionist_socialists
-				trigger_if = {
-					limit = { owner = { has_law = law_type:law_council_republic } }
-					OR = {
-						is_interest_group_type = ig_petty_bourgeoisie
-					}
+				AND = {
+					owner = { has_law = law_type:law_council_republic }
+					is_interest_group_type = ig_petty_bourgeoisie
 				}
 			}
 		}
@@ -160,8 +158,8 @@ ecchi_rus_rasputin_character_template = {
 	
 	religion = rel:orthodox
 	ideology = ideology_theocrat
-	interest_group = ig_devout
-	dna = ecchi_dna_grigori_rasputin
+	interest_group = ig_devout # church hated him lol
+	dna = ecchi_dna_grigori_rasputin 
 	birth_date = 1869.1.21
 	traits = {
 		inspirational_orator
@@ -169,22 +167,28 @@ ecchi_rus_rasputin_character_template = {
 		ambitious
 		psychological_affliction
 	}
-	interest_group_leader_usage = {
+	interest_group_leader_usage = { # Realy my stupid idea he should be easter egg character and not actuall politician
 		country_trigger = {
 			exists = c:RUS
 			this = c:RUS
+			NOT = {
+				has_law = law_type:law_state_atheism
+			}
+			OR = {
+				has_law = law_type:law_monarchy
+				bpm_country_laws_no_voting = yes
+			}
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
-			OR = {
-				is_interest_group_type = ig_rural_folk
-				is_interest_group_type = ig_devout
-			}
 		}
 		earliest_usage_date = 1903.1.1
 		latest_usage_date = 1916.12.30
-		#chance = 65
+		#chance = 40
+	}
+	on_created = {
+		set_interest_group = owner.ruler.interest_group
 	}
 }
 
@@ -532,7 +536,7 @@ ecchi_rus_bukharin_character_template = {
 	culture = cu:russian
 	home_region = STATE_MOSCOW
 	female = no
-	religion = rel:orthodox
+	religion = rel:atheist
 	ideology = ideology_vanguardist
 	interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_nikolai_bukharin
@@ -812,8 +816,8 @@ RUS_boris_savinkov = {
 	culture = cu:russian
 	home_region = STATE_KHARKOV
 	religion = rel:orthodox
-	interest_group = ig_revolutionist_socialists
-	ideology = ideology_ethno_nationalist	#In his final letter written 2 days before his death, he admitted that fascism was the most “psychologically and ideologically close” to his own views
+	interest_group = ig_agrarian_populists
+	ideology = ideology_corporatist	#In his final letter written 2 days before his death, he admitted that fascism was the most “psychologically and ideologically close” to his own views
 	dna = dna_boris_savinkov
 	traits = {
 		# Terrorist, but agitator =/= bandit 
@@ -831,7 +835,15 @@ RUS_boris_savinkov = {
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
-			is_interest_group_type = ig_revolutionist_socialists
+			trigger_if = {
+				limit = {
+					owner = { has_technology_researched = political_agitation }
+				}
+				is_interest_group_type = ig_fascists
+			}
+			trigger_else = {
+				is_interest_group_type = ig_agrarian_populists
+			}
 		}
 		earliest_usage_date = 1904.1.1
 		latest_usage_date = 1936.12.31
@@ -923,7 +935,7 @@ RUS_nikolai_ostrovsky = {
 	female = no
 	religion = rel:orthodox
 	ideology = ideology_vangardist
-	interest_group = ig_trade_unions
+	interest_group = ig_intelligentsia
 	dna = dna_nikolai_ostrovsky
 	birth_date = 1904.2.29
 	traits = {
@@ -956,7 +968,7 @@ RUS_anton_chekhov = {
 	female = no
 	religion = rel:orthodox
 	ideology = ideology_liberal_leader
-	interest_group = ig_rural_folk
+	interest_group = ig_agrarian_populists
 	dna = dna_anton_chekhov
 	birth_date = 1860.1.29
 	traits = {
