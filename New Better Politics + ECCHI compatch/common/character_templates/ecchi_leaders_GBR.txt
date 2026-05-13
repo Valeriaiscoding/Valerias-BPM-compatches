@@ -525,7 +525,7 @@ ecchi_gbr_churchill_character_template = {
     home_region = STATE_HOME_COUNTIES
 
     religion = rel:protestant
-    ideology = ideology_moderate
+    ideology = ideology_center_leader
     interest_group = ig_national_liberals
     birth_date = 1874.11.30
 	dna = ecchi_dna_winston_churchill
@@ -545,7 +545,7 @@ ecchi_gbr_churchill_character_template = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1911.10.24
         latest_usage_date = 1965.1.24
@@ -844,14 +844,27 @@ ecchi_gbr_bertrand_russell_character_template = {
             }
         }
         interest_group_trigger = {
-            OR = {
-                #is_interest_group_type = ig_reformist_socialists
+            trigger_if = {
+                limit = {
+                any_country = {
+                    country_rank >= rank_value:great_power
+                    }
+                }
+                is_interest_group_type = ig_liberal
+            }
+            trigger_else = {
                 is_interest_group_type = ig_radicals
             }
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1970.2.2
         #chance = 65
+    }
+    on_created = {
+        if = {
+            limit = { is_interest_group_type = ig_liberals }
+            add_ideology = ideology:center_leader
+        }
     }
 }
 
@@ -868,6 +881,8 @@ ecchi_gbr_lionel_de_rothschild_sr_character_template = {
 	dna = ecchi_dna_lionel_de_rothschild
     birth_date = 1808.11.22
     traits = { arrogant hedonist }
+    role = character_role_magnate
+    holding_type = building_financial_district
     interest_group_leader_usage = {
         country_trigger = {
             exists = c:GBR
@@ -876,10 +891,7 @@ ecchi_gbr_lionel_de_rothschild_sr_character_template = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
-            OR = {
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_industrialists
         }
         earliest_usage_date = 1838.1.1
         latest_usage_date = 1879.6.3
@@ -1281,8 +1293,8 @@ ecchi_gbr_carlyle_character_template = {
     home_region = STATE_LOWLANDS
 
     religion = rel:protestant
-    ideology = ideology_traditionalist
-    interest_group = ig_intelligentsia
+    ideology = ideology_authoritarian
+    interest_group = ig_reactionaries
 	dna = ecchi_dna_thomas_carlyle
     birth_date = 1795.12.4
     traits = { bigoted arrogant demagogue inspirational_orator romantic }
@@ -1303,11 +1315,7 @@ ecchi_gbr_carlyle_character_template = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_interest_group_is_activated = yes
-            OR = {
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_petty_bourgeoisie
-                is_interest_group_type = ig_intelligentsia
-            }
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1881.2.5
@@ -1328,6 +1336,8 @@ ecchi_gbr_wood_character_template = {
 	dna = ecchi_dna_jemmy_wood
     birth_date = 1756.10.7
     traits = { reserved imperious cautious }
+    role = character_role_magnate
+    holding_type = building_financial_district
     interest_group_leader_usage = {
         country_trigger = {
             exists = c:GBR
@@ -1523,6 +1533,7 @@ ecchi_gbr_wells_hg_character_template = {
             }
         }
         interest_group_trigger = {
+            bpm_interest_group_is_activated = yes
             is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1891.1.1
