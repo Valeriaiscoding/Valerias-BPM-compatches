@@ -35,3 +35,22 @@ INJECT:law_multicultural_upgraded = {
 	}
 
 }
+
+
+INJECT:law_white_universalism = {
+	on_activate = {
+		if = {
+			limit = { this ?= c:BEL NOT = { country_has_primary_culture = cu:flemish } }
+			add_primary_culture = cu:flemish
+		}
+	}
+}
+
+INJECT:law_multicultural = {
+	on_activate = {
+		if = {
+			limit = { this ?= c:BEL NOT = { country_has_primary_culture = cu:flemish } }
+			add_primary_culture = cu:flemish
+		}
+	}
+}
