@@ -70,7 +70,7 @@ ecchi_chi_yikuang_character_template = {
     home_region = STATE_BEIJING
 
     ideology = ideology_moderate
-    interest_group = ig_landowners
+    interest_group = ig_reactionaries
     birth_date = 1838.11.16
     traits = { reserved grifter basic_political_operator }
 	dna = ecchi_dna_yikuang
@@ -79,7 +79,7 @@ ecchi_chi_yikuang_character_template = {
             country_has_primary_culture = cu:manchu
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1872.1.1
         latest_usage_date = 1917.1.28
@@ -1121,7 +1121,7 @@ ecchi_chi_mao_zedong_character_template = {
     culture = cu:han
     
     ideology = ideology_communist
-    interest_group = ig_rural_folk
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_mao_zedong
     birth_date = 1893.12.26
     traits = { cruel experienced_political_operator wrathful direct mountain_commander experienced_offensive_planner }
@@ -1143,8 +1143,8 @@ ecchi_chi_mao_zedong_character_template = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_trade_unions
+                is_interest_group_type = ig_agrarian_populists
+                #is_interest_group_type = ig_revolutionist_socialists
             }
         }
         earliest_usage_date = 1925.1.1
@@ -1161,7 +1161,7 @@ ecchi_chi_li_dazhao_character_template = {
     culture = cu:han
     
     ideology = ideology_communist
-    interest_group = ig_intelligentsia
+    interest_group = ig_reformist_socialists
 	dna = ecchi_dna_li_dazhao
     birth_date = 1889.10.29
     traits = { innovative tactful }
@@ -1182,11 +1182,7 @@ ecchi_chi_li_dazhao_character_template = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_trade_unions
-            }
+            is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1927.4.28
@@ -1197,13 +1193,12 @@ ecchi_chi_li_dazhao_character_template = {
 ecchi_chi_chen_duxiu_character_template = {
     first_name = ecchi_Duxiu
     home_region = STATE_NORTHERN_ANHUI
-    home_region = STATE_NORTHERN_ANHUI
     last_name = Chen
     historical = yes
     culture = cu:han
     
     ideology = ideology_communist
-    interest_group = ig_intelligentsia
+    interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_chen_duxiu
     birth_date = 1879.10.8
     traits = { arrogant persistent romantic }
@@ -1224,11 +1219,7 @@ ecchi_chi_chen_duxiu_character_template = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_trade_unions
-            }
+            is_interest_group_type = ig_revolutionist_socialists
         }
         earliest_usage_date = 1921.1.1
         latest_usage_date = 1942.5.27
@@ -1340,7 +1331,9 @@ ecchi_chi_du_yuesheng_character_template = {
     culture = cu:han
     
     ideology = ideology_protectionist
-    interest_group = ig_petty_bourgeoisie
+    interest_group = ig_national_liberals 
+    role = character_role_magnate
+    holding_type = building_manor_house
 	dna = ecchi_dna_du_yuesheng
     birth_date = 1888.8.22
     traits = { bandit pillager cruel ambitious }
@@ -1354,7 +1347,7 @@ ecchi_chi_du_yuesheng_character_template = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1951.8.16
@@ -1403,8 +1396,6 @@ ecchi_chi_tang_caichang_character_template = {
 ecchi_chi_wellington_koo_character_template = {
     first_name = ecchi_VK_Wellington
     last_name = ecchi_Koo
-    home_region = STATE_JIANGSU
-    home_region = STATE_JIANGSU
     home_region = STATE_JIANGSU
     historical = yes
     culture = cu:han
