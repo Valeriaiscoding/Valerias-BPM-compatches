@@ -1,10 +1,4 @@
 ﻿l_english:
- rule_bpm_ultra_d_forpol_law_switch:0 "Active Foreign Policy law change"
- setting_game_rule_minister_appointment_switches_forpol_yes:1 " Law can be changed by minister"
- setting_game_rule_minister_appointment_switches_forpol_yes_desc:0 "Appointing foreing minister will activate foreign policy law depending on minister's ideology and interest group."
- setting_game_rule_minister_appointment_switches_forpol_no:1 "Law can be changed only by enactment"
- setting_game_rule_minister_appointment_switches_forpol_no_desc:0 "Foreign policy laws can only be changed by enactment, foreing policy law enactment time is reduced and enactment success chance is increased"
-
  country_bpm_ultra_d_alliances_disabled:0 "Can Not Have Alliances"
  country_bpm_ultra_d_alliances_disabled_desc:0 "Country Can Not Have [Concept('concept_alliance','$concept_alliances$')] or [Concept('concept_defensive_pact','$concept_defensive_pacts$')]"
  country_bpm_ultra_d_country_considered_neutral:0 "Country Is Considered Neutral"
