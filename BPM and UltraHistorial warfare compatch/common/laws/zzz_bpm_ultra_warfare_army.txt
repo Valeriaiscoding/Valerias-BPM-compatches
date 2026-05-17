@@ -7,6 +7,15 @@ INJECT:law_peasant_levies = { # same design as with traditionalism
 	}
 }
 
+INJECT:law_warrior_caste = { # same design as with traditionalism
+	modifier = {
+		country_institution_conscription_max_investment_add = -5
+	}
+	institution = institution_conscription
+	institution_modifier = {
+	}
+}
+
 INJECT:law_professional_army = {
 	modifier = {
 		state_conscription_rate_add = -0.01

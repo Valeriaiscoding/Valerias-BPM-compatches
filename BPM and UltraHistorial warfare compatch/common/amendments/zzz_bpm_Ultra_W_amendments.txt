@@ -1,4 +1,4 @@
-﻿REPLACE:amendment_american_second_amendment = {
+﻿REPLACE_OR_CREATE:amendment_american_second_amendment = {
 
 	parent = law_national_guard
 
