@@ -1,0 +1,24 @@
+﻿GLOBAL = {
+	every_country = {
+		limit = {
+			OR = {
+				this = c:SAF
+				this = c:ORG
+				this = c:NSW
+				this = c:WAS
+			}
+		}
+		ig:ig_rural_folk = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+		ig:ig_agrarian_populists = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+		ig:ig_petty_bourgeoisie = {
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_frontier_expansion
+		}
+	}
+}

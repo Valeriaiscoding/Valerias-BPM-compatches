@@ -11,9 +11,10 @@
 
 	modifier = {
 		interest_group_ig_landowners_pol_str_mult = 0.1
-		building_group_bg_agriculture_allowed_collectivization_add = -0.15
-		building_group_bg_ranching_allowed_collectivization_add = -0.15
-		building_group_bg_plantations_allowed_collectivization_add = -0.15
+		building_group_bg_subsistence_agriculture_allowed_collectivization_add = -0.1
+		building_group_bg_subsistence_ranching_allowed_collectivization_add = -0.1
+		building_group_bg_agriculture_allowed_collectivization_add = -0.1
+		building_group_bg_ranching_allowed_collectivization_add = -0.1
 		building_subsistence_output_mult = -0.1
 	}
 
@@ -138,10 +139,4 @@ REPLACE:amendment_reform_act_1832 = { # TODO
 	}
 
 	amendment_activism_multiplier = 0.5
-}
-
-INJECT:amendment_cult_of_personality = {
-	allowed_laws = {
-		law_military_junta
-	}
 }

@@ -1,0 +1,238 @@
+﻿# file for all wargoals where [possible] block is blank. Modify directly the files using REPLACE when it is used
+
+INJECT:ban_slavery = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 1
+		}
+	}
+}
+
+INJECT:colonization_rights = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:conquer_state = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 4
+		}
+	}
+}
+
+INJECT:contain_threat = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:enforce_treaty_article = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:foreign_investment_rights = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 1
+		}
+	}
+}
+
+INJECT:humiliation = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 1
+		}
+	}
+}
+
+INJECT:increase_autonomy = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 1
+		}
+	}
+}
+
+INJECT:independence = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:join_power_bloc = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:leave_power_bloc = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:liberate_country = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 4
+		}
+	}
+}
+
+INJECT:liberate_subject = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:make_dominion = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:make_protectorate = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:make_tributary = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:open_market = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 1
+		}
+	}
+}
+
+INJECT:reduce_autonomy = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:regime_change = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 4
+		}
+	}
+}
+
+INJECT:return_state = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:revoke_all_claims = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:revoke_claim = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+	}
+}
+
+INJECT:take_treaty_port = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 2
+		}
+		scope:target_country = {
+			is_country_type = unrecognized
+		}
+	}
+}
+
+INJECT:transfer_subject = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 4
+		}
+	}
+}
+
+INJECT:unification = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}
+
+INJECT:unification_leadership = {
+	possible = {
+		has_strategic_region_interest_tier = {
+			strategic_region = scope:target_region
+			value >= 3
+		}
+	}
+}

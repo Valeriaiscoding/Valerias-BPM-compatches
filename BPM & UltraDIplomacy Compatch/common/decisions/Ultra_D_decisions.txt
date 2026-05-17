@@ -49,6 +49,12 @@
 
 	ai_chance = {
 		value = 0
+		# if = {
+		# 	limit = { 
+		# 		has_law = law_type:law_ultramilitarism 
+		# 	}
+		# 	add = 100
+		# }
 	}
 }
 

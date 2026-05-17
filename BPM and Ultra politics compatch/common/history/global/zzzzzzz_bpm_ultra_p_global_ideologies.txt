@@ -1,4 +1,4 @@
-﻿GLOBAL = {
+﻿GLOBAL = { # TODO Check for new agrarian ideologies
 	every_country = {
 		limit = {
 			OR = {

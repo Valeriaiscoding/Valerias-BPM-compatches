@@ -1,9 +1,0 @@
-bpm_ultra_d_forpol_law_switch = {
-	default = game_rule_minister_appointment_switches_forpol_yes
-
-	game_rule_minister_appointment_switches_forpol_yes = {
-	}
-
-	game_rule_minister_appointment_switches_forpol_no = {
-	}
-}
