@@ -35,7 +35,7 @@
 	}
 }
 
-REPLACE:amendment_3_class_franchise = { # TODO
+REPLACE_OR_CREATE:amendment_3_class_franchise = {
 	parent = law_wealth_voting
 
 	allowed_laws = {
@@ -45,8 +45,7 @@ REPLACE:amendment_3_class_franchise = { # TODO
 
 	modifier = {
 		country_authority_add = 50
-		#country_voting_power_base_add = -25
-		country_voting_power_mult = -0.5
+		country_voting_power_base_add = -10
 	
 		country_electoral_confidence_impact_mult = -0.1
 		country_legitimacy_ideological_incoherence_mult = 0.1
@@ -67,7 +66,6 @@ REPLACE:amendment_3_class_franchise = { # TODO
 			is_interest_group_type = ig_industrialists
 			has_ideology = ideology:ideology_dop_authoritarian_democrat
 			has_ideology = ideology:ideology_dop_oligarch
-			#is_interest_group_type = ig_armed_forces
 		}
 	}
 
@@ -99,7 +97,7 @@ REPLACE:amendment_3_class_franchise = { # TODO
 	amendment_activism_multiplier = 0.5
 }
 
-REPLACE:amendment_reform_act_1832 = { # TODO
+REPLACE_OR_CREATE:amendment_reform_act_1832 = {
 	parent = law_landed_voting
 
 	allowed_laws = {
@@ -107,8 +105,7 @@ REPLACE:amendment_reform_act_1832 = { # TODO
 	}
 
 	modifier = {
-		#country_voting_power_base_add = -10
-		country_voting_power_mult = -0.2
+		country_voting_power_base_add = -2
 		country_electoral_confidence_impact_mult = -0.1
 		country_legitimacy_ideological_incoherence_mult = 0.1
 		interest_group_ig_landowners_pol_str_mult = 0.25
@@ -139,4 +136,46 @@ REPLACE:amendment_reform_act_1832 = { # TODO
 	}
 
 	amendment_activism_multiplier = 0.5
+}
+
+REPLACE_OR_CREATE:amendment_light_migration_controls = {
+	parent = law_migration_controls
+
+	allowed_laws = {
+		law_no_migration_controls
+	}
+
+	modifier = {
+		country_migration_restrictiveness_add = 20
+	}
+
+	possible = {
+		always = yes
+	}
+
+	would_sponsor = {
+		always = yes
+	}
+
+	ai_will_revoke = {
+		NOT = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					is_interest_group_type = ig_rural_folk
+					has_ideology = ideology:ideology_cit_ethnonationalist
+					has_ideology = ideology:ideology_cit_segregationist
+					has_ideology = ideology:ideology_cit_colonial_segregationist
+					has_ideology = ideology:ideology_cit_closed_internationalist
+					has_ideology = ideology:ideology_cit_traditional_culture
+				}
+			}
+		}
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.1
 }

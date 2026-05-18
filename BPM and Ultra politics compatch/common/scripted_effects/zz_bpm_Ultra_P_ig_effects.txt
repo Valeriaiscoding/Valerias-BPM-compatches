@@ -93,7 +93,14 @@ REPLACE:bpm_make_igs_not_pro_slavery_serfdom = {
 		bpm_remove_all_eco_ideologies = yes
 		if = {
 			limit = {
-				bpm_country_is_latin_american = yes
+				is_interest_group_type = ig_landowners
+				owner = {
+					OR = {
+						bpm_country_is_latin_american = yes
+						has_law = law_type:law_latifundias
+						has_law = law_type:law_expanded_latifundias
+					}
+				}
 			}
 			add_ideology = ideology_eco_latifundismo
 		}
@@ -101,7 +108,6 @@ REPLACE:bpm_make_igs_not_pro_slavery_serfdom = {
 			limit = { 
 				OR = {
 					has_ideology = ideology:ideology_eco_antebellum_economy
-					has_ideology = ideology:ideology_moderantist
 				}
 			}
 			add_ideology = ideology_eco_plantation_economy

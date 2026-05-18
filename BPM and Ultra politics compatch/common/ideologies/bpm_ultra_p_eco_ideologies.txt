@@ -6,7 +6,7 @@ REPLACE:ideology_eco_antebellum_economy = {
 		law_agrarianism = strongly_approve
 		law_interventionism = neutral
 		law_industry_banned = disapprove
-		law_extraction_economy = approve
+		law_extraction_economy = neutral
 		law_laissez_faire = neutral
 		law_cooperative_ownership = strongly_disapprove
 		law_command_economy = strongly_disapprove
@@ -161,15 +161,15 @@ REPLACE:ideology_eco_colonial_slavery_supporter = {
 }
 
 ideology_eco_plantation_economy = {
-	icon = "gfx/interface/icons/ideology_icons/eco_ideology/conservative_agrarian.dds"
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
     lawgroup_economic_system = {
 		law_traditionalism = disapprove
 		law_agrarianism = approve
 		law_interventionism = neutral
+		law_laissez_faire = approve
 		law_industry_banned = disapprove
 		law_extraction_economy = disapprove
-		law_laissez_faire = neutral
 		law_cooperative_ownership = strongly_disapprove
 		law_command_economy = strongly_disapprove
 	}
@@ -215,7 +215,7 @@ ideology_eco_plantation_economy = {
 }
 
 ideology_eco_latifundismo = {
-	icon = "gfx/interface/icons/ideology_icons/eco_ideology/conservative_agrarian.dds"
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
     lawgroup_economic_system = {
 		law_traditionalism = disapprove
