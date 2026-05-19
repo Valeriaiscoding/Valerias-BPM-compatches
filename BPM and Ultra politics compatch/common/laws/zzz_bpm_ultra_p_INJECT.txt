@@ -1,0 +1,6 @@
+INJECT:law_repeatable_economy_peasant_corvee = {
+	disallowing_laws = {
+		law_homesteading
+		law_equal_inheritance
+	}
+}
