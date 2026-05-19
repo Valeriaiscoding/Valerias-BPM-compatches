@@ -19,6 +19,7 @@ REPLACE_OR_CREATE:law_repeatable_military_military_reform = {
 		add_radicals = {
 			value = {
 				value = root.institution:institution_centralization.investment
+				add = root.institution:institution_conscription.investment
 				multiply = 0.02
 			}
 			pop_type = officers
