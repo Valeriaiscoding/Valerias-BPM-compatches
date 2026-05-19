@@ -1,0 +1,17 @@
+﻿INJECT:bpm_repeatable_law_improve_soldier_conditions_result = {
+	unit_morale_recovery_mult = -0.25
+	unit_morale_loss_mult = -0.1
+	unit_offense_mult = 0.05
+	unit_defense_mult = 0.05
+}
+
+INJECT:bpm_repeatable_law_army_defunding_result = {
+	country_institution_impact_institution_conscription_mult = -0.5
+}
+
+INJECT:bpm_repeatable_law_improve_soldier_conditions_result_permanent = {
+	country_military_wages_mult = 0.01
+	unit_morale_recovery_mult = 0.01
+	unit_offense_mult = 0.01
+	unit_defense_mult = 0.01
+}

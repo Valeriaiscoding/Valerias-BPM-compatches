@@ -1,4 +1,5 @@
-﻿INJECT:alliance = {
+﻿# TODO Check base mod
+INJECT:alliance = {
 	visible = {
 		NOT = { is_country_type = decentralized }
 		is_revolutionary = no

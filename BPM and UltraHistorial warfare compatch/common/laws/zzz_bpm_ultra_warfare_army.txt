@@ -1,21 +1,3 @@
-INJECT:law_peasant_levies = { # same design as with traditionalism
-	modifier = {
-		country_institution_conscription_max_investment_add = -5
-	}
-	institution = institution_conscription
-	institution_modifier = {
-	}
-}
-
-INJECT:law_warrior_caste = { # same design as with traditionalism
-	modifier = {
-		country_institution_conscription_max_investment_add = -5
-	}
-	institution = institution_conscription
-	institution_modifier = {
-	}
-}
-
 INJECT:law_professional_army = {
 	modifier = {
 		state_conscription_rate_add = -0.01
@@ -25,8 +7,8 @@ INJECT:law_professional_army = {
 	}
 	institution = institution_conscription
 	institution_modifier = {
+		building_training_rate_mult = 0.05
 		state_conscription_rate_add = 0.005
-		
 		unit_morale_loss_mult = -0.015
 		unit_experience_gain_mult = 0.05
 		building_training_rate_mult = 0.05
@@ -43,8 +25,8 @@ INJECT:law_national_militia = {
 }
 
 INJECT:law_mass_mobilization = {
-	# moved from techs
 	modifier = {
+		# moved from techs
 		country_institution_conscription_max_investment_add = 1
 	}
 }

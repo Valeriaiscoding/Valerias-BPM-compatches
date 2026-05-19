@@ -1,0 +1,7 @@
+﻿l_english:
+  #Ultra W
+  institution_conscription: "Military"
+  # BPM
+  bpm_law_effect_tt_repeatable_stronger_from_professional_officers:0 "$bpm_law_effect_tt_repeatable_stronger_from_institution$ [GetInstitutionType('institution_conscription').GetName]."
+  bpm_decorative_repeatable_stronger_from_professional_officers:0 "Improved with #O [GetInstitutionType('institution_conscription').GetName]#!"
+  bpm_decorative_repeatable_stronger_from_professional_officers_desc:0 "$bpm_law_effect_tt_repeatable_stronger_from_professional_officers$"

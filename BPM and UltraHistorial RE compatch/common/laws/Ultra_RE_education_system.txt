@@ -1,4 +1,6 @@
-﻿INJECT:law_no_schools = {
+﻿# Write about this to Ultra dev if they impliment remove this file
+
+INJECT:law_no_schools = {
 	progressiveness = -25
 }
 

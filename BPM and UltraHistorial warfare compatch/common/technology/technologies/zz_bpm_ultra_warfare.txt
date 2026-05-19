@@ -1,5 +1,10 @@
-INJECT:mandatory_service = {
+INJECT:army_reserves = {
 	modifier = {
-		country_institution_conscription_max_investment_add = -1 # moved to laws
+		country_institution_conscription_max_investment_add = -1 #new
+	}
+}
+INJECT:enlistment_offices = {
+	modifier = {
+		country_institution_conscription_max_investment_add = -1 #new
 	}
 }

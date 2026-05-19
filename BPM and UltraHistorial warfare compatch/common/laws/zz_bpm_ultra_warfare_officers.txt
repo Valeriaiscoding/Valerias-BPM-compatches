@@ -5,15 +5,20 @@ REPLACE_OR_CREATE:law_purchased_officers = {
 	progressiveness = 0
 	
 	modifier = {
-		state_political_strength_from_wealth_mult = 0.25
+		state_political_strength_from_wealth_mult = 0.1
+		#country_institution_conscription_max_investment_add = 1
+		country_institution_conscription_max_investment_add = 1
 	}
 
 	on_enact = {
 		custom_tooltip = bpm_law_effect_tt_purchased_officers
 		bpm_officer_law_change_effect = yes
-
-		country_bpm_auth_authority_per_army_size_add = 2.5
-		country_bpm_auth_exhaustion_recovery_from_military_ig = 0.01
+	}
+	institution = institution_conscription 
+	institution_modifier = {
+		state_political_strength_from_wealth_mult = 0.05
+		interest_group_ig_landowners_pol_str_mult = 0.05
+		interest_group_ig_industrialists_pol_str_mult = 0.05
 	}
 
 	unlocking_technologies = {
@@ -23,6 +28,7 @@ REPLACE_OR_CREATE:law_purchased_officers = {
 
 	disallowing_laws = {
 		law_peasant_levies
+		law_warrior_caste
 		law_council_republic
 	}
 
@@ -43,11 +49,14 @@ REPLACE_OR_CREATE:law_professional_officers = {
 	progressiveness = 50
 	
 	modifier = {
-		country_officers_pol_str_mult = 0.15
-		country_military_tech_research_speed_mult = 0.25
-
-		country_bpm_auth_authority_per_army_size_add = 5
-		country_bpm_auth_exhaustion_recovery_from_military_ig = 0.015
+		country_officers_pol_str_mult = 0.1
+		country_institution_conscription_max_investment_add = 1
+	}
+	institution = institution_conscription
+	institution_modifier = {
+		country_officers_pol_str_mult = 0.05
+		interest_group_ig_armed_forces_pol_str_mult = 0.1
+		country_military_tech_research_speed_mult = 0.06
 	}
 
 	on_enact = {
@@ -61,6 +70,7 @@ REPLACE_OR_CREATE:law_professional_officers = {
 	}
 
 	disallowing_laws = {
+		law_warrior_caste
 		law_peasant_levies
 	}
 
@@ -71,5 +81,36 @@ REPLACE_OR_CREATE:law_professional_officers = {
 			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
+	}
+}
+
+INJECT:law_political_officers = {
+	disallowing_laws = {
+		law_warrior_caste
+	}
+	modifier = {
+		country_authority_add = -50
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.1
+		country_institution_conscription_max_investment_add = 1
+	}
+	institution = institution_conscription 
+	institution_modifier = {
+		country_authority_add = 20
+		interest_group_ig_armed_forces_pol_str_mult = 0.05
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.05
+	}
+}
+
+INJECT:law_elected_officers = {
+	modifier = {
+		unit_morale_recovery_mult = -0.15
+		battle_offense_owned_province_mult = -0.1
+	}
+	institution = institution_conscription 
+	institution_modifier = {
+		unit_morale_recovery_mult = 0.03
+		battle_offense_owned_province_mult = 0.03
+		country_officers_pol_str_mult = -0.1
+		country_soldiers_pol_str_mult = 0.1
 	}
 }
