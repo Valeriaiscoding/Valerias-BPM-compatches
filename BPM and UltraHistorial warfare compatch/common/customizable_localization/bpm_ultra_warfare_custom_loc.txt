@@ -1,3 +1,4 @@
+
 # --Cabinet Register Institutions (1)--
 REPLACE:bpm_institution_type = {
 	type = institution

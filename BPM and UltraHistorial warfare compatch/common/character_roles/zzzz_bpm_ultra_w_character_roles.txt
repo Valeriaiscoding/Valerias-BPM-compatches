@@ -1,0 +1,35 @@
+INJECT:bpm_character_role_minister = {
+	# Root = character
+	on_career_end = {
+		random_country = {
+			limit = { var:bpm_mineco ?= prev }
+			remove_variable = bpm_mineco
+			bpm_auto_cabinet_appoint = yes
+		}
+		random_country = {
+			limit = { var:bpm_minint ?= prev }
+			remove_variable = bpm_minint
+			bpm_auto_cabinet_appoint = yes
+		}
+		random_country = {
+			limit = { var:bpm_minsoc ?= prev }
+			remove_variable = bpm_minsoc
+			bpm_auto_cabinet_appoint = yes
+		}
+		random_country = {
+			limit = { var:bpm_minmor ?= prev }
+			remove_variable = bpm_minmor
+			bpm_auto_cabinet_appoint = yes
+		}
+		random_country = {
+			limit = { var:bpm_minfor ?= prev }
+			remove_variable = bpm_minfor
+			bpm_auto_cabinet_appoint = yes
+		}
+		random_country = {
+			limit = { var:bpm_mindef ?= prev }
+			remove_variable = bpm_minfor
+			bpm_auto_cabinet_appoint = yes
+		}
+	}					# Effect that fires when a character retires from this role
+}

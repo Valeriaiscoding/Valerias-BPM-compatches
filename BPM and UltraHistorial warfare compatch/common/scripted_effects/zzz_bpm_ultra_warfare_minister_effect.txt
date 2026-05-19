@@ -150,7 +150,7 @@ bpm_reload_institution_modifiers_conscription = {
 			bpm_reload_modifier_inst_singlet = {
                 IG1 = armed_forces
                 INST = conscription
-                MOD = bpm_conscription_army_modifier
+                MOD = bpm_conscription_armed_forces_modifier
             }
 			bpm_reload_modifier_inst_singlet = {
                 IG1 = devout
@@ -256,6 +256,5 @@ bpm_remove_institution_modifiers_conscription = {
     remove_modifier = bpm_conscription_landies_modifier
     remove_modifier = bpm_conscription_armed_forces_modifier
     remove_modifier = bpm_conscription_capis_modifier
-	remove_modifier = bpm_conscription_capis_modifier
  }
  

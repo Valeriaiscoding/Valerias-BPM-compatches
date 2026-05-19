@@ -1,0 +1,46 @@
+﻿bpm_CAB_mindef_institution = {
+	scope = institution
+	is_shown = {
+        OR = {
+            owner.institution:institution_conscription.type ?= type
+        }
+	}
+	is_valid = {
+	}
+}
+
+bpm_CAB_mindef_select = {
+	scope = country
+	is_shown = {
+        has_variable = bpm_cabinet_char_select
+        var:bpm_cabinet_char_select = flag:bpm_mindef
+	}
+	is_valid = {
+        NOT = {
+            has_law = law_type:law_bakufu
+        }
+	}
+	effect = {
+        set_variable = {
+            name = bpm_cabinet_char_select
+            value = flag:bpm_mindef
+        }
+        clear_variable_list = bpm_potential_characters
+        ordered_scope_character = {
+            limit = {
+                bpm_char_can_be_minister = yes
+            }
+            order_by = prominence
+            min = 0
+            max = 9
+            
+            prev = {
+                add_to_variable_list = {
+                    name = bpm_potential_characters
+                    target = prev
+                }
+            }
+        }            
+
+	}
+}

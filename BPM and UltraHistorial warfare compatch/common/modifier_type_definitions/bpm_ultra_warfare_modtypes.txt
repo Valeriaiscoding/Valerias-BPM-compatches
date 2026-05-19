@@ -14,3 +14,8 @@ country_institution_impact_institution_conscription_mult = {
 		ai_value=0
 	}
 }
+
+country_hog_functions_as_mindef_bool = {
+	boolean = yes
+	color = neutral
+}

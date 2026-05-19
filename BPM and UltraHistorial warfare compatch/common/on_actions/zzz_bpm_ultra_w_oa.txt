@@ -1,0 +1,21 @@
+﻿on_game_started = {
+	on_actions = {
+		bpm_ultra_w_conditions_oa
+	}
+}
+
+bpm_ultra_w_conditions_oa = {
+	effect = {
+		c:JAP = {
+			var:bpm_headofgov ?= {
+				bpm_appoint_mindef_effect = yes
+				prev = {
+					set_variable = {
+						name = mindef_locked_to
+						value = prev
+					}
+				}
+			}
+		}
+	}
+}

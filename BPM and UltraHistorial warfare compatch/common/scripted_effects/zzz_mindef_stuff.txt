@@ -1,0 +1,92 @@
+﻿bpm_appoint_mindef_effect = {
+	owner = {
+		
+		if = {
+			limit = {
+				has_variable = bpm_mindef
+			}
+			var:bpm_mindef ?= {
+				remove_character_role = bpm_character_role_minister
+			}
+		}
+		set_variable = { name = bpm_mindef value = prev }
+		set_variable = { name = bpm_minister_of_conscription value = prev }
+	}
+
+	add_character_role = bpm_character_role_minister
+	show_as_tooltip = {
+		bpm_reload_institution_modifiers_loc_mindef = yes
+	}
+	hidden_effect = {
+		owner = {
+			bpm_reload_institution_modifiers = yes
+		}
+	}
+}
+
+bpm_fire_mindef_effect = {
+	owner = {
+		remove_variable = bpm_mindef
+		remove_variable = bpm_minister_of_conscription
+	}
+
+	remove_character_role = bpm_character_role_minister
+}
+
+bpm_auto_cabinet_appoint = {
+	bpm_auto_cabinet_appoint_pm = yes
+	bpm_auto_cabinet_appoint_subp = { m = mineco }
+	bpm_auto_cabinet_appoint_subp = { m = minint }
+	bpm_auto_cabinet_appoint_subp = { m = minsoc }
+	bpm_auto_cabinet_appoint_subp = { m = minmor }
+	bpm_auto_cabinet_appoint_subp = { m = minfor }
+	bpm_auto_cabinet_appoint_subp = { m = mindef }
+}
+
+REPLACE:bpm_do_hog_transition = {
+    if = {
+        limit = {
+            var:bpm_hog_heir ?= {
+                NOT = { is_character_alive = yes}
+            }
+        }
+        remove_variable = bpm_hog_heir
+    }
+    
+    if = {
+        limit = {
+            NOT = {
+                has_variable = bpm_hog_heir
+            }
+            has_law_or_variant = law_type:law_answers_to_legislature
+            has_law = law_type:law_advisory_body
+        }
+        bpm_create_hog_heir_hook = yes
+    }
+    else_if = {
+        limit = {
+            has_variable = bpm_hog_heir
+            NAND = {
+                has_law_or_variant = law_type:law_answers_to_legislature
+                has_law = law_type:law_advisory_body
+            }
+        }
+        remove_variable = bpm_hog_heir
+        every_scope_character = {
+			limit = {has_role = bpm_character_role_protege}
+			remove_character_role = bpm_character_role_protege
+		}
+    }
+	if = {
+		limit = { has_law = law_type:law_bakufu }
+		var:bpm_headofgov = {
+			prev = {
+				set_variable = {
+					name = mindef_locked_to
+					value = prev
+				}
+			}
+			bpm_appoint_mindef_effect = yes
+		}
+	}
+}

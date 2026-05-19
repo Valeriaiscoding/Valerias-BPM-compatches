@@ -1,0 +1,197 @@
+﻿bpm_mindef_name = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			bpm_shogunate_trigger = yes
+		}
+		localization_key = bpm_mindef_name_shogunate
+	}
+	text = {
+		trigger = {
+			exists = c:USA
+			THIS ?= c:USA
+			bpm_country_is_bourgeois_republic = yes
+			OR = {
+				has_law_or_variant = law_type:law_justum_bellum
+				has_law_or_variant = law_type:law_disarmed_nation
+				has_law_or_variant = law_type:law_armed_neutrality
+			}
+		}
+		localization_key = bpm_mindef_name_usa_jb
+	}
+	text = {
+		trigger = {
+			exists = c:USA
+			THIS ?= c:USA
+			bpm_country_is_bourgeois_republic = yes
+		}
+		localization_key = bpm_mindef_name_usa
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_law_or_variant = law_type:law_justum_bellum
+				has_law_or_variant = law_type:law_disarmed_nation
+				has_law_or_variant = law_type:law_armed_neutrality
+			}
+		}
+		localization_key = bpm_mindef_name_usa_jb
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		fallback = yes
+		localization_key = bpm_mindef_name_default
+	}
+}
+
+bpm_role_mindef_country_specific = {
+	type = country
+	random_valid = no
+	text = {
+		trigger = {
+			bpm_shogunate_trigger = yes
+		}
+		localization_key = bpm_character_role_minister_mindef_shogunate
+	}
+	text = {
+		trigger = {
+			exists = c:USA
+			THIS ?= c:USA
+			bpm_country_is_bourgeois_republic = yes
+			OR = {
+				has_law_or_variant = law_type:law_justum_bellum
+				has_law_or_variant = law_type:law_disarmed_nation
+				has_law_or_variant = law_type:law_armed_neutrality
+			}
+		}
+		localization_key = bpm_character_role_minister_mindef_usa_jb
+	}
+	text = {
+		trigger = {
+			exists = c:USA
+			THIS ?= c:USA
+			bpm_country_is_bourgeois_republic = yes
+		}
+		localization_key = bpm_character_role_minister_mindef_usa
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_law_or_variant = law_type:law_justum_bellum
+				has_law_or_variant = law_type:law_disarmed_nation
+				has_law_or_variant = law_type:law_armed_neutrality
+			}
+		}
+		localization_key = bpm_character_role_minister_mindef_jb
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		fallback = yes
+		localization_key = bpm_character_role_minister_mindef_default
+	}
+}
+
+
+
+REPLACE:bpm_ministry_name = {
+	type = institution
+	random_valid = no
+	text = {
+		trigger = {
+            owner.institution:institution_diplomacy.type ?= type
+            owner.institution:institution_colonial_affairs.type ?= type
+		}
+		localization_key = bpm_minfor_name_default
+	}
+	text = {
+		trigger = {
+            owner.institution:institution_culture.type ?= type
+            owner.institution:institution_schools.type ?= type
+		}
+		localization_key = bpm_minmor_name_default
+	}
+	text = {
+		trigger = {
+			owner.institution:institution_economy.type ?= type
+		}
+		localization_key = bpm_mindef_name_default
+	}
+
+	text = {
+		trigger = {
+            owner.institution:institution_social_security.type ?= type
+            owner.institution:institution_health_system.type ?= type
+            owner.institution:institution_workplace_safety.type ?= type
+		}
+		localization_key = bpm_minsoc_name_default
+	}
+	text = {
+		trigger = {
+			owner.institution:institution_conscription.type ?= type
+		}
+		localization_key = bpm_midef_name_default
+	}
+	text = {
+		trigger = {
+            owner.institution:institution_centralization.type ?= type
+            owner.institution:institution_home_affairs.type ?= type
+            owner.institution:institution_police.type ?= type
+		}
+		fallback = yes
+		localization_key = bpm_minint_name_default
+	}
+}
+
+REPLACE:bpm_minister_custom = {
+	type = character
+	random_valid = no
+
+	text = {
+		trigger = {
+			owner.var:bpm_mindef ?= root
+		}
+		localization_key = bpm_character_role_minister_mindef
+	}
+	text = {
+		trigger = {
+			owner.var:bpm_minint ?= root
+		}
+		localization_key = bpm_character_role_minister_minint
+	}
+	text = {
+		trigger = {
+			owner.var:bpm_minmor ?= root
+		}
+		localization_key = bpm_character_role_minister_minmor
+	}
+	text = {
+		trigger = {
+			owner.var:bpm_minfor ?= root
+		}
+		localization_key = bpm_character_role_minister_minfor
+	}
+	text = {
+		trigger = {
+			owner.var:bpm_minsoc ?= root
+		}
+		localization_key = bpm_character_role_minister_minsoc
+	}
+	text = {
+		trigger = {
+			owner.var:bpm_mindef ?= root
+		}
+		localization_key = bpm_character_role_minister_mindef
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		fallback = yes
+		localization_key = bpm_character_role_minister_default
+	}
+}
