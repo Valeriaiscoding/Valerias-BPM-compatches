@@ -78,44 +78,41 @@ REPLACE:bpm_make_igs_pro_slavery = {
 }
 
 REPLACE:bpm_make_igs_not_pro_slavery_serfdom = {
+	if = {
+		limit = { 
+			OR = {
+				bpm_country_is_latin_american = yes
+				has_law = law_type:law_latifundias
+				has_law = law_type:law_expanded_latifundias
+			}
+		}
+		ig:ig_landowners = {
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_plantation_economy
+		}
+	}
+	every_interest_group = {
+		limit = {
+			has_ideology = ideology:ideology_eco_antebellum_economy
+		}
+		bpm_remove_all_eco_ideologies = yes
+		add_ideology = ideology_eco_latifundismo
+	}
 	every_interest_group = {
 		limit = {
 			OR = {
 				has_ideology = ideology:ideology_eco_slave_economy
 				has_ideology = ideology:ideology_eco_serf_economy
 				has_ideology = ideology:ideology_eco_trad_isolationist
-				has_ideology = ideology:ideology_eco_antebellum_economy
+				#has_ideology = ideology:ideology_eco_antebellum_economy
 				#has_ideology = ideology:ideology_eco_american_system
 				has_ideology = ideology:ideology_eco_debt_serf_economy
 				has_ideology = ideology:ideology_eco_colonial_slavery_supporter
 			}
 		}
 		bpm_remove_all_eco_ideologies = yes
-		if = {
-			limit = {
-				is_interest_group_type = ig_landowners
-				owner = {
-					OR = {
-						bpm_country_is_latin_american = yes
-						has_law = law_type:law_latifundias
-						has_law = law_type:law_expanded_latifundias
-					}
-				}
-			}
-			add_ideology = ideology_eco_latifundismo
-		}
-		else_if = {
-			limit = { 
-				OR = {
-					has_ideology = ideology:ideology_eco_antebellum_economy
-				}
-			}
-			add_ideology = ideology_eco_plantation_economy
-		}
-		else = {
-			add_ideology = ideology_eco_traditional_agrarian
-		}
-		bpm_reorder_ideologies = yes
+		add_ideology = ideology_eco_traditional_agrarian
+		
 	}
 	bpm_make_igs_modern_agrarian = yes
 } 

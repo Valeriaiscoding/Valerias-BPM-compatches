@@ -1,4 +1,4 @@
-INJECT:ideology_dop_positivist = {
+﻿INJECT:ideology_dop_positivist = {
 	lawgroup_slavery = {
 		law_slavery_banned = neutral
 		law_legacy_slavery = disapprove
@@ -64,6 +64,27 @@ INJECT:ideology_eco_liberal = {
 		law_colonial_slavery = disapprove
 		law_debt_slavery = strongly_disapprove
 		law_slave_trade = strongly_disapprove
+	}
+
+	lawgroup_land_reform = {
+		law_serfdom = disapprove
+		law_tenant_farmers = neutral
+		law_peasant_proprietorship = neutral
+		law_collectivized_agriculture = disapprove
+		law_commercialized_agriculture = approve
+	}
+}
+
+INJECT:ideology_gov_radical_liberal = {
+	lawgroup_land_reform = {
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = disapprove
+	}
+}
+
+INJECT:ideology_sta_national_liberal = {
+	lawgroup_land_reform = {
+		law_serfdom = disapprove
 	}
 }
 

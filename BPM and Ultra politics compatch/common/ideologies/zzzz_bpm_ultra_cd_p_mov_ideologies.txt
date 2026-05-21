@@ -1,0 +1,11 @@
+﻿# If changed copy to other mod
+INJECT:ideology_sta_national_liberal = {
+	lawgroup_citizenship = {
+		law_ethnostate = approve
+		law_national_supremacy = strongly_approve
+		law_racial_segregation = disapprove
+		law_cultural_exclusion = disapprove
+		law_multicultural = strongly_disapprove
+		law_subjecthood = strongly_disapprove
+	}
+}

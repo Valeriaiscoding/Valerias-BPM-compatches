@@ -1,4 +1,4 @@
-REPLACE:ideology_eco_antebellum_economy = {
+﻿REPLACE:ideology_eco_antebellum_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
     lawgroup_economic_system = {
@@ -167,7 +167,7 @@ ideology_eco_plantation_economy = {
 		law_traditionalism = disapprove
 		law_agrarianism = approve
 		law_interventionism = neutral
-		law_laissez_faire = approve
+		law_laissez_faire = neutral 
 		law_industry_banned = disapprove
 		law_extraction_economy = disapprove
 		law_cooperative_ownership = strongly_disapprove
@@ -175,9 +175,9 @@ ideology_eco_plantation_economy = {
 	}
 
     lawgroup_trade_policy = {
-		law_isolationism = strongly_disapprove
+		law_isolationism = disapprove
 		law_mercantilism = neutral
-		law_protectionism = disapprove
+		law_protectionism = neutral
 		law_free_trade = approve
 	}
 
@@ -251,13 +251,13 @@ ideology_eco_latifundismo = {
 		law_graduated_taxation = strongly_disapprove
 	}
 
-    # lawgroup_slavery = {
-	# 	law_slavery_banned = neutral
-	# 	law_debt_slavery = neutral
-	# 	law_slave_trade = disapprove
-	# 	law_legacy_slavery = neutral
-	# 	law_colonial_slavery = neutral
-	# }
+   	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_debt_slavery = neutral
+		law_slave_trade = disapprove
+		law_legacy_slavery = neutral
+		law_colonial_slavery = neutral
+	}
     lawgroup_repeatable_economy = {
 		law_repeatable_economy_liberalization = neutral
 		law_repeatable_economy_agricultural_investment = strongly_approve

@@ -72,12 +72,19 @@
 		limit = {
 			bpm_country_is_latin_american = yes
 		}
-		every_interest_group = {
-			limit = {
-				has_ideology = ideology:ideology_eco_conservative_agrarian
+		ig:ig_landowners = {
+			if = {
+				limit = { has_ideology = ideology:ideology_eco_conservative_agrarian }
+				bpm_remove_all_eco_ideologies = yes
+				add_ideology = ideology_eco_plantation_economy
 			}
-			bpm_remove_all_eco_ideologies = yes
-			add_ideology = ideology_eco_plantation_economy
+		}
+		ig:ig_conservatives = {
+			if = {
+				limit = { has_ideology = ideology:ideology_eco_conservative_agrarian }
+				bpm_remove_all_eco_ideologies = yes
+				add_ideology = ideology_eco_latifundismo
+			}
 		}
 	}
 
