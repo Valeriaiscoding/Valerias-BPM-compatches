@@ -12,6 +12,19 @@ REPLACE:bpm_aggressive_diplomacy_permitted = {
 	}
 }
 
+bpm_ultra_d_neutral_country_aggression_permitted = {
+	#custom_tooltip = {
+		#text = bpm_ultra_d_neutral_country_aggression_permitted_tt
+		OR = {
+			infamy >= infamy_threshold:pariah
+			is_country_type = unrecognized
+			scope:target_country = {
+				bpm_ultra_d_country_is_neutral = no
+			}
+		}
+	#}
+}
+
 bpm_ultra_d_alliance_permitted = {
 	custom_tooltip = {
 		text = bpm_ultra_d_alliance_permitted_tt

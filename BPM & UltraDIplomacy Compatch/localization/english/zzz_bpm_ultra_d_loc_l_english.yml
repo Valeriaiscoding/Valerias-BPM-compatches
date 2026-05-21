@@ -10,3 +10,4 @@
  country_bpm_ultra_d_aggressive_diplomacy_agains_recognized_disabled_desc:0 "Can not initiate a [Concept('concept_diplomatic_play', 'Diplomatic Play')] against [Concept('concept_recognized_power', 'Recognized Powers')] using most wargoals"
  country_bpm_ultra_d_agression_against_unrecognized_enabled:0 "Can Use [Concept('concept_diplomatic_play', 'Diplomatic Plays')] against [Concept('concept_unrecognized_power','Unrecognized Powers')]"
  country_bpm_ultra_d_agression_against_unrecognized_enabled_desc:0 "Can initiate a [Concept('concept_diplomatic_play', 'Diplomatic Play')] against [Concept('concept_unrecognized_power','Unrecognized Powers')]."
+  #bpm_ultra_d_neutral_country_aggression_permitted_tt:0 " "

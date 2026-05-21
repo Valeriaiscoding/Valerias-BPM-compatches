@@ -1,108 +1,35 @@
-﻿# TODO Check base mod
-INJECT:alliance = {
-	visible = {
-		NOT = { is_country_type = decentralized }
-		is_revolutionary = no
-		is_subject = no
-	}
+﻿INJECT:alliance = {
+	# visible = {
+	# 	NOT = { is_country_type = decentralized }
+	# 	is_revolutionary = no
+	# 	is_subject = no
+	# }
 
 	possible = {
 		aggressive_diplomatic_plays_permitted = yes
-		OR = {
-			AND = {
-				root = {
-					OR = {
-						is_country_type = recognized
-						country_is_colonial_or_company = yes
-					}
-				}
-				scope:other_country = {
-					OR = {
-						is_country_type = recognized
-						country_is_colonial_or_company = yes
-					}
-				}
-			}
-			AND = {
-				root = {
-					is_country_type = unrecognized
-				}
-				scope:other_country = {
-					is_country_type = unrecognized
-				}
-			}
-		}
 		root = {
 			bpm_ultra_d_alliance_permitted = yes
 		}
 		scope:other_country = {
 			bpm_ultra_d_alliance_permitted = yes
-		}
-		NOT = {
-            root = { # as in in other triggers
-                country_is_colonial_or_company = yes
-                is_subject = yes
-            }
-		}
-		NOT = {
-            scope:other_country = { 
-                country_is_colonial_or_company = yes
-                is_subject = yes
-            }
 		}
 	}
 }
 
 INJECT:defensive_pact = {
-	visible = {
-		NOT = { is_country_type = decentralized }
-		is_revolutionary = no
-		is_subject = no
-	}
+	# visible = {
+	# 	NOT = { is_country_type = decentralized }
+	# 	is_revolutionary = no
+	# 	is_subject = no
+	# }
 
 	possible = {
 		aggressive_diplomatic_plays_permitted = yes
-		OR = {
-			AND = {
-				root = {
-					OR = {
-						is_country_type = recognized
-						country_is_colonial_or_company = yes
-					}
-				}
-				scope:other_country = {
-					OR = {
-						is_country_type = recognized
-						country_is_colonial_or_company = yes
-					}
-				}
-			}
-			AND = {
-				root = {
-					is_country_type = unrecognized
-				}
-				scope:other_country = {
-					is_country_type = unrecognized
-				}
-			}
-		}
 		root = {
 			bpm_ultra_d_alliance_permitted = yes
 		}
 		scope:other_country = {
 			bpm_ultra_d_alliance_permitted = yes
-		}
-		NOT = {
-            root = { # as in in other triggers
-                country_is_colonial_or_company = yes
-                is_subject = yes
-            }
-		}
-		NOT = {
-            scope:other_country = { 
-                country_is_colonial_or_company = yes
-                is_subject = yes
-            }
 		}
 	}
 

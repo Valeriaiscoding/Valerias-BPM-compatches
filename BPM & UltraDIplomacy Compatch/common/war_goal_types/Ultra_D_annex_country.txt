@@ -27,6 +27,7 @@
 			strategic_region = scope:target_region
 			value >= 4
 		}
+		bpm_ultra_d_neutral_country_aggression_permitted = yes
 	}
 
 	valid = {
