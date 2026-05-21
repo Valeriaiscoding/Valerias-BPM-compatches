@@ -66,3 +66,5 @@
 
   country_hog_functions_as_mindef_bool:0 "[concept_bpm_head_of_government] functions as #gold;bold [Concept('concept_bpm_minister', '$bpm_character_role_minister_mindef_default$')]#!"
   country_hog_functions_as_mindef_bool_desc:0 "$country_hog_functions_as_mindef_bool$"
+
+  bpm_provisional_government_events.3.mor: "Their support ensures the next [GetPlayer.GetCustom('bpm_role_mindef_country_specific')] will be amicable to their interests."
