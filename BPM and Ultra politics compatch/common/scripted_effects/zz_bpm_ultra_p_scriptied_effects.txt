@@ -71,12 +71,12 @@ REPLACE_OR_CREATE:bpm_ultra_p_remove_all_dop_ideologies = {
 
 REPLACE_OR_CREATE:bpm_ultra_p_remove_all_eco_ideologies = {
 	remove_ideology = ideology_eco_plantation_economy
-	remove_ideology = ideology_eco_latifundismo
+	remove_ideology = ideology_eco_export_agrarian
 }
 
 REPLACE_OR_CREATE:bpm_ultra_p_re_add_eco_ideology = {
 	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_plantation_economy }
-	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_latifundismo }
+	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_export_agrarian }
 }
 
 REPLACE_OR_CREATE:bpm_ultra_p_re_add_dop_ideology = {

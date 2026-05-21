@@ -1,4 +1,4 @@
-﻿REPLACE:bpm_amendment_sharecropping = {
+﻿REPLACE_OR_CREATE:bpm_amendment_sharecropping = {
 
 	parent = law_tenant_farmers
 
@@ -6,7 +6,6 @@
 		law_peasant_proprietorship
 		law_homesteading
 		law_equal_inheritance
-		#law_commercialized_agriculture
 	}
 
 	modifier = {

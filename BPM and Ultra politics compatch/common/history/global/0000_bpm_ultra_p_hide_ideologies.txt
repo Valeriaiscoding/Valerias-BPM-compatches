@@ -1,0 +1,13 @@
+﻿GLOBAL = {
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_prussian_military }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_junker_stratocratic }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_missionary_moralist }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_japanese_imperialist }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_evangelical_pious }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_ottoman_paternalistic }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_american_school }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_king_cotton }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_american_patriotic }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_american_laissez_faire }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_moralist_american }
+}

@@ -1,1 +1,203 @@
-﻿# TODO
+﻿REPLACE_OR_CREATE:law_freedom_of_conscience = {
+	group = lawgroup_church_and_state
+
+	icon = "gfx/interface/icons/law_icons/freedom_of_conscience.dds"
+
+	progressiveness = 0
+
+	unlocking_technologies = {
+		rationalism
+	}
+
+	disallowing_laws = {
+		law_theocracy
+	}
+
+	is_visible = {
+		trigger_if = {
+			limit = {
+				Ultra_P_is_active_trigger = yes
+			}
+			NOT = {country_has_primary_culture = cu:french}
+		}
+	}
+	can_enact = {
+		trigger_if = {
+			limit = {
+				Ultra_P_is_active_trigger = yes
+			}
+			NOT = {country_has_primary_culture = cu:french}
+		}
+	}
+
+	on_activate = {
+		if = {
+			limit = {
+				country_has_state_religion = rel:atheist
+			}
+			set_state_religion = root.country_definition.religion
+		}
+		if = {
+			limit = {
+				has_modifier = antireligious_policies
+			}
+			remove_modifier = antireligious_policies
+		}
+		recalculate_pop_ig_support = yes
+	}
+
+	modifier = {
+		interest_group_ig_devout_pol_str_mult = 0.15
+		country_authority_add = 100
+		country_state_religion_wages_mult = 0.05
+		country_non_state_religion_wages_mult = -0.05
+
+		country_acceptance_state_religion_add = 20
+		country_acceptance_shared_religious_trait_add = 15
+		country_acceptance_shared_religious_trait_group_add = 5
+		country_acceptance_no_shared_religious_trait_add = 0
+
+		country_allow_conversion_violent_hostility_bool = yes
+		country_allow_conversion_cultural_erasure_bool = yes
+		country_allow_conversion_open_prejudice_bool = yes
+		country_allow_conversion_second_rate_citizen_bool = yes #no
+		country_allow_conversion_full_acceptance_bool = yes # no 
+	}
+
+	can_impose = {
+		OR = {
+			AND = {
+				is_in_same_power_bloc = scope:target_country
+				AND = {
+					modifier:country_can_impose_same_lawgroup_church_and_state_in_power_bloc_bool = yes
+					has_law = scope:law
+				}
+			}
+			can_impose_law_default = yes
+		}
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+
+		if = {
+			limit = {
+				has_journal_entry = je_sick_man_education
+				has_law_or_variant = law_type:law_state_religion
+			}
+			add = 1000
+		}
+
+		# For Japanese religion Journal Entries
+		# If Shinbutsu Bunri is active, but the Taikyo Proclamation has not been made
+		if = {
+			limit = {
+				has_journal_entry = je_shinbutsu_bunri
+				country_has_state_religion = rel:mahayana
+			}
+			add = 1000
+		}
+	}
+}
+
+REPLACE_OR_CREATE:law_total_separation = {
+	group = lawgroup_church_and_state
+
+	icon = "gfx/interface/icons/law_icons/total_separation.dds"
+
+	progressiveness = 50
+
+	unlocking_technologies = {
+		empiricism
+	}
+
+	disallowing_laws = {
+		law_theocracy
+	}
+
+	is_visible = {
+		trigger_if = {
+			limit = {
+				Ultra_P_is_active_trigger = yes
+			}
+			NOT = {country_has_primary_culture = cu:french}
+		}
+		
+		NOT = { has_law = law_type:law_total_separation_upgraded }
+	}
+
+	can_enact = {
+		trigger_if = {
+			limit = {
+				Ultra_P_is_active_trigger = yes
+			}
+			NOT = {country_has_primary_culture = cu:french}
+		}
+		OR = {
+			is_power_bloc_leader = no
+			power_bloc ?= {
+				NOT = { has_identity = identity:identity_religious }
+			}
+		}
+	}
+
+	on_activate = {
+		add_journal_entry = { type = je_bpm_total_separation_upgrade }	
+
+		if = {
+			limit = {
+				country_has_state_religion = rel:atheist
+			}
+			set_state_religion = root.country_definition.religion
+		}
+		if = {
+			limit = {
+				has_modifier = antireligious_policies
+			}
+			remove_modifier = antireligious_policies
+		}
+		recalculate_pop_ig_support = yes
+	}
+
+	modifier = {
+		bpm_decorative_upgradable_law = yes
+		country_acceptance_state_religion_add = 15
+		country_acceptance_shared_religious_trait_add = 10
+		country_acceptance_shared_religious_trait_group_add = 10
+		country_acceptance_no_shared_religious_trait_add = 5
+
+		country_allow_conversion_violent_hostility_bool = yes # no
+		country_allow_conversion_cultural_erasure_bool = yes # no
+		country_allow_conversion_open_prejudice_bool = yes # no
+		country_allow_conversion_second_rate_citizen_bool = yes #no
+		country_allow_conversion_full_acceptance_bool = no
+		
+	}
+
+	can_impose = {
+		OR = {
+			AND = {
+				is_in_same_power_bloc = scope:target_country
+				AND = {
+					modifier:country_can_impose_same_lawgroup_church_and_state_in_power_bloc_bool = yes
+					has_law = scope:law
+				}
+			}
+			can_impose_law_default = yes
+		}
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}

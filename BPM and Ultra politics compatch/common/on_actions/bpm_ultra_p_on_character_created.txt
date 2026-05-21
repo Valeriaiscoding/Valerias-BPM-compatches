@@ -11,6 +11,9 @@ bpm_ultra_p_set_ideology = {
 			PRU_otto_von_bismarck = {
 				set_ideology = ideology:ideology_bismarckian
 			}
+			pru_bismarck_character_template = {
+				set_ideology = ideology:ideology_bismarckian
+			}
 		}
 	}
 }

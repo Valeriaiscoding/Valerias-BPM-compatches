@@ -16,7 +16,21 @@
 			has_ideology = ideology:ideology_eco_colonial_slavery_supporter
 
 			has_ideology = ideology:ideology_eco_plantation_economy
-			has_ideology = ideology:ideology_eco_latifundismo
+			has_ideology = ideology:ideology_eco_export_agrarian
 		}
+	}
+}
+
+REPLACE:bpm_pop_employment_is_rural = {
+	OR = {
+		pop_employment_building_group = bg_rubber
+		pop_employment_building_group = bg_agriculture
+		pop_employment_building_group = bg_ranching
+		pop_employment_building_group = bg_plantations
+		pop_employment_building_group = bg_logging
+		pop_employment_building_group = bg_fishing
+		pop_employment_building_group = bg_whaling
+		pop_employment_building_group = bg_manor_houses
+		is_pop_type = peasants
 	}
 }

@@ -83,7 +83,7 @@
 			if = {
 				limit = { has_ideology = ideology:ideology_eco_conservative_agrarian }
 				bpm_remove_all_eco_ideologies = yes
-				add_ideology = ideology_eco_latifundismo
+				add_ideology = ideology_eco_export_agrarian
 			}
 		}
 	}

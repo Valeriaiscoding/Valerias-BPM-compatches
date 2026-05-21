@@ -214,7 +214,7 @@ ideology_eco_plantation_economy = {
 
 }
 
-ideology_eco_latifundismo = {
+ideology_eco_export_agrarian = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
     lawgroup_economic_system = {
