@@ -4,6 +4,7 @@
 			add_amendment = {
 				type = bpm_amendment_sharecropping
 				sponsor = prev.ig:ig_landowners
+				timeout = 240
 			}
 		}
 	}
