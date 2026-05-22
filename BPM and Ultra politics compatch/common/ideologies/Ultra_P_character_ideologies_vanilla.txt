@@ -1,1 +1,81 @@
-﻿
+﻿INJECT:ideology_nihilist = {
+	lawgroup_health_system = { # VTM
+		law_no_health_system = disapprove
+		law_charitable_health_system = disapprove
+		law_private_health_insurance = neutral
+		law_public_health_insurance = neutral
+	}
+	
+	lawgroup_education_system = { # VTM
+		law_no_schools = disapprove
+		law_religious_schools = strongly_disapprove
+		law_private_schools = disapprove
+		law_public_schools = neutral
+	}
+}
+
+INJECT:ideology_radical = {
+	lawgroup_army_model = {
+		law_mass_conscription = strongly_approve
+		law_professional_army = disapprove
+		law_national_militia = approve
+		law_peasant_levies = disapprove
+	}
+}
+
+INJECT:ideology_social_democrat = {
+	lawgroup_economic_system = {
+		law_command_economy = neutral
+		law_cooperative_ownership = neutral
+		law_interventionism = approve
+		law_agrarianism = disapprove
+		law_traditionalism = strongly_disapprove		
+		law_laissez_faire = disapprove	
+		law_industry_banned = strongly_disapprove	
+	}
+
+	lawgroup_childrens_rights = {
+		law_child_labor_allowed = strongly_disapprove
+		law_restricted_child_labor = disapprove
+		law_compulsory_primary_school = approve
+	}
+}
+
+INJECT:ideology_communist = {
+	lawgroup_childrens_rights = {
+		law_child_labor_allowed = strongly_disapprove
+		law_restricted_child_labor = disapprove
+		law_compulsory_primary_school = approve
+	}
+}
+
+INJECT:ideology_vanguardist = {
+	lawgroup_army_model = {
+		law_mass_conscription = strongly_approve
+		law_professional_army = approve
+		law_national_militia = disapprove
+		law_peasant_levies = disapprove
+	}
+}
+
+INJECT:ideology_anarchist = {
+	lawgroup_army_model = {
+		law_national_militia = approve
+		law_professional_army = neutral
+		law_mass_conscription = disapprove
+		law_peasant_levies = strongly_disapprove
+	}
+}
+
+INJECT:ideology_jacksonian_democrat = {
+	lawgroup_economic_system = {		
+		law_traditionalism = neutral
+		law_agrarianism = strongly_approve
+		law_interventionism = neutral
+		law_industry_banned = disapprove
+		law_extraction_economy = approve
+		law_laissez_faire = neutral
+		law_cooperative_ownership = strongly_disapprove
+		law_command_economy = strongly_disapprove
+	}
+}
