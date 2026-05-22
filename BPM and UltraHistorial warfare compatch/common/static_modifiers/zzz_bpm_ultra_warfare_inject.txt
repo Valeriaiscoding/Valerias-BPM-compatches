@@ -10,8 +10,8 @@ INJECT:bpm_repeatable_law_army_defunding_result = {
 }
 
 INJECT:bpm_repeatable_law_improve_soldier_conditions_result_permanent = {
-	country_military_wages_mult = 0.01
+	#country_military_wages_mult = 0.01
 	unit_morale_recovery_mult = 0.01
-	unit_offense_mult = 0.01
-	unit_defense_mult = 0.01
+	#unit_offense_mult = 0.01
+	#unit_defense_mult = 0.01
 }
