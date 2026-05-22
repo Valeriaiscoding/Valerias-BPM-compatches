@@ -49,16 +49,34 @@ REPLACE_OR_CREATE:officers = {
 					}
 					is_pop_type = soldiers
 				}
-				
+				wealth > 10 #was none
 				literacy_rate > 0.05 #was none
 			}
 			# baseline: ( literacy - 0.2 ) * 10, norm 2 for Soldiers with Literacy 30%
 			add = {
 				value = literacy_rate
-				subtract = 0.1 # was 0.2
+				subtract = 0.2 # was 0.2
 				min = 0
 				multiply = 5 #was 10
 				desc = "QUALIFICATIONS_LITERACY_FACTOR"
+			}
+			if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				multiply = {
+					value = 0.05 #was none
+					desc = "QUALIFICATIONS_FAVORED_TYPE"
+				}
+			}
+			if = {
+				limit = {
+					is_pop_type = laborers
+				}
+				multiply = {
+					value = 0.1 #was none
+					desc = "QUALIFICATIONS_FAVORED_TYPE"
+				}
 			}
 			if = {
 				limit = {
@@ -67,8 +85,8 @@ REPLACE_OR_CREATE:officers = {
 				add = {
 					desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS"
 					value = wealth
-					subtract = 20
-					multiply = 0.1
+					subtract = 25
+					multiply = 0.2
 				}
 			}
 			if = {
@@ -80,7 +98,7 @@ REPLACE_OR_CREATE:officers = {
 				if = {
 					limit = { owner = { has_law_or_variant = law_type:law_noble_officers } }
 					multiply = {
-						value = 15 
+						value = 12 
 						desc = "QUALIFICATIONS_OFFICERS_ARISTOCRATIC_OFFICERS_ARISTOCRATS"
 					}
 				}
@@ -95,7 +113,10 @@ REPLACE_OR_CREATE:officers = {
 						desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS_ARISTOCRATS"
 					}
 				}
-				else = {
+				else_if = {
+					owner = {
+						NOT = { has_law_or_variant = law_type:law_elected_officers }
+					}
 					multiply = {
 						value = 5 #was 10 in ULTRA RE
 						desc = "QUALIFICATIONS_FAVORED_TYPE"
@@ -118,19 +139,25 @@ REPLACE_OR_CREATE:officers = {
 					desc = "QUALIFICATIONS_DEPLOYED_SERVICEMEN"
 				}
 			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+					owner = { has_law_or_variant = law_type:law_elected_officers }
+				}
+				multiply = {
+					value = 4
+					desc = "QUALIFICATIONS_ELECTED_OFFICERS"
+				}
+			}
 			if = {
 				limit = { owner = { has_law_or_variant = law_type:law_political_officers } }
 				if = {
 					limit = {
-						OR = {
-							is_pop_type = aristocrats
-							is_pop_type = capitalists
-							is_pop_type = bureaucrats
-						}
+						is_pop_type = bureaucrats
 					}
 					multiply = {
 						desc = "QUALIFICATIONS_LAW_POLITICAL_OFFICERS"
-						value = 3
+						value = 5
 					}
 				}
 				else = {
@@ -140,7 +167,6 @@ REPLACE_OR_CREATE:officers = {
 					}
 				}
 			}
-			
 			if = {
 				limit = {
 					owner = {
@@ -151,6 +177,20 @@ REPLACE_OR_CREATE:officers = {
 				multiply = {
 					value = 0.1
 					desc = "QUALIFICATIONS_OFFICERS_PEASANT_LEVIES"
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_warrior_caste
+					}
+					NOT = {
+						strata = upper
+					}
+				}
+				multiply = {
+					value = 0
+					desc = "QUALIFICATIONS_OFFICERS_WARRIOR_CASTE"
 				}
 			}
 			if = {

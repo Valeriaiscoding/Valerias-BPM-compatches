@@ -1,0 +1,25 @@
+﻿INJECT:law_noble_officers = {
+	on_activate = {
+		custom_tooltip = QUALIFICATIONS_OFFICERS_PEASANT_LEVIES_DESC
+	}
+}
+
+INJECT:law_purchased_officers = {
+	on_activate = {
+		custom_tooltip = QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS_DESC
+	}
+}
+
+INJECT:law_political_officers = {
+	on_activate = {
+		custom_tooltip = QUALIFICATIONS_POLITICAL_OFFICERS_DESC
+		custom_tooltip = QUALIFICATIONS_POLITICAL_OFFICERS_NON_BUREAUCRATS_DESC
+	}
+}
+
+INJECT:law_elected_officers = {
+	on_activate = {
+		custom_tooltip = QUALIFICATIONS_ELECTED_OFFICERS_DESC
+		custom_tooltip = QUALIFICATIONS_ELECTED_OFFICERS_ARISTOCRATS_DESC
+	}
+}
