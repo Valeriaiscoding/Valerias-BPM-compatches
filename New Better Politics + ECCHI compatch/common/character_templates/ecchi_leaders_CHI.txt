@@ -1144,7 +1144,7 @@ ecchi_chi_mao_zedong_character_template = {
 			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_agrarian_populists
-                #is_interest_group_type = ig_revolutionist_socialists
+                is_interest_group_type = ig_revolutionist_socialists
             }
         }
         earliest_usage_date = 1925.1.1
@@ -1160,7 +1160,7 @@ ecchi_chi_li_dazhao_character_template = {
     historical = yes
     culture = cu:han
     
-    ideology = ideology_communist
+    ideology = ideology_agrarian_socialist_leader
     interest_group = ig_reformist_socialists
 	dna = ecchi_dna_li_dazhao
     birth_date = 1889.10.29
@@ -1182,7 +1182,10 @@ ecchi_chi_li_dazhao_character_template = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_reformist_socialists
+            OR = {
+                is_interest_group_type = ig_reformist_socialists
+                is_interest_group_type = ig_agrarian_populists
+            }
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1927.4.28

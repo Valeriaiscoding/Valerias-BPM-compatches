@@ -1137,7 +1137,7 @@ ecchi_usa_browder_character_template = {
     home_region = STATE_KANSAS
 
     religion = rel:protestant
-    ideology = ideology_communist
+    ideology = ideology_moderate
     interest_group = ig_reformist_socialists
 	dna = ecchi_dna_earl_browder
     birth_date = 1891.5.20
@@ -1589,6 +1589,8 @@ ecchi_usa_capone_character_template = {
     interest_group = ig_intelligentsia
 	dna = ecchi_dna_al_capone
     birth_date = 1899.1.17
+    role = character_role_magnate
+    holding_type = building_financial_district
     traits = { cruel grifter imperious expensive_tastes scarred bandit } # Added bandit 
     interest_group_leader_usage = {
         country_trigger = {
@@ -1596,13 +1598,24 @@ ecchi_usa_capone_character_template = {
             c:USA ?= this
         }
         interest_group_trigger = {
-            bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            bpm_ig_is_establishment = yes # any interest group
+            ideology_market_liberal_valid_trigger = yes
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1947.1.25
-        chance = 25
+        chance = 33
+    }
+    on_created = {
+        owner = {
+            random_interest_group = {
+                limit = {
+                    bpm_ig_enabled = yes
+                    ideology_market_liberal_valid_trigger = yes
+                }
+            }
+            save_scope_as = ig
+        }
+        set_interest_group = scope:ig
     }
 }
 
