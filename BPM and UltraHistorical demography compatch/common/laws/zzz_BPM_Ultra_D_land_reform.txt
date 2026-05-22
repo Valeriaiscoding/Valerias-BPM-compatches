@@ -1,0 +1,7 @@
+﻿INJECT:law_bakuhan_system = {
+	# slightly lower than serfdom
+	modifier = {
+		state_birth_rate_mult = 0.07
+		state_mortality_mult = 0.03
+	}
+}

@@ -13,7 +13,7 @@ REPLACE:bpm_health_system_agpops_modifier = {
 REPLACE:bpm_health_system_anarchists_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     #state_mortality_mult = -0.01
-    state_lower_strata_standard_of_living_add = 0.15
+    state_lower_strata_standard_of_living_add = 0.1
     state_standard_of_living_add = 0.1
 
 }
@@ -105,11 +105,10 @@ REPLACE:bpm_health_system_christdem_modifier = {
 
 REPLACE:bpm_workplace_safety_agpops_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    building_farmers_mortality_mult = -0.01
-    state_peasants_mortality_mult = -0.01
-    building_laborers_mortality_mult = -0.005
-
-    state_pollution_reduction_health_mult = -0.04
+    building_group_bg_agriculture_mortality_mult = -0.01
+    building_group_bg_ranching_mortality_mult = -0.01
+    building_group_bg_plantations_mortality_mult = -0.01
+    state_pollution_reduction_health_mult = -0.02
 }   
 
 REPLACE:bpm_workplace_safety_lefts_modifier = {
@@ -122,9 +121,8 @@ REPLACE:bpm_workplace_safety_lefts_modifier = {
 
 REPLACE:bpm_workplace_safety_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    building_laborers_mortality_mult = -0.005
-    building_machinists_mortality_mult = -0.005
-    building_engineers_mortality_mult = -0.005
+    building_laborers_mortality_mult = -0.01
+    building_machinists_mortality_mult = -0.01
 }
 
 REPLACE:bpm_workplace_safety_ruries_modifier = {
@@ -151,5 +149,4 @@ REPLACE:bpm_workplace_safety_christdem_modifier = {
     building_farmers_mortality_mult = -0.005
 
     state_working_adult_ratio_add = -0.01
-    state_pollution_reduction_health_mult = -0.025 
 }
