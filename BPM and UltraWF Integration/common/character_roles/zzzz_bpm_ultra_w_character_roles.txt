@@ -28,7 +28,7 @@ INJECT:bpm_character_role_minister = {
 		}
 		random_country = {
 			limit = { var:bpm_mindef ?= prev }
-			remove_variable = bpm_minfor
+			remove_variable = bpm_mindef
 			bpm_auto_cabinet_appoint = yes
 		}
 	}					# Effect that fires when a character retires from this role

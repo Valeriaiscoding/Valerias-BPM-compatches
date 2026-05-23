@@ -1,0 +1,10 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Warfare[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+New ministry of defense is added to handle UltraWF constription institution with modifiers added to most igs.
+Said institution was also renamed to military and now used with some bpms law.
+Ministry of defense also has unique interaction with Bakufu law where shogun will also become hereditary defense minister.
+BPMs officers laws, with exeption of noble officers law will now provide various modifier to army institution.
+Also some max level modifiers have been moved from techs to laws.
