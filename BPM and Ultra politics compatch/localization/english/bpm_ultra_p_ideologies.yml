@@ -3,3 +3,5 @@
   ideology_eco_plantation_economy_desc:0 "#lore This group represents economic interests of landowners and agrarian businessmen who benefit from  export-focused agriculture. They generally oppose state intervention and protectionism. #!"
   ideology_eco_export_agrarian:0 "Export Agrarian"
   ideology_eco_export_agrarian_desc:0 "#lore This group represents the interests of the modern aristocratic farmer. They support export-oriented trade policies and may seek to defend their interests through state intervention. #!"
+  ideology_dop_particularist:0  "Particularist"
+  ideology_dop_particularist_desc:0  "#lore This group supports increased local autonomy. #!"
