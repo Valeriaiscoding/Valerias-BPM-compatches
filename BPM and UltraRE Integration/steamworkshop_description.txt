@@ -1,0 +1,12 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Research and Education[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+This mod changes some of modifiers from ministry of education to be more in line with UltraRE balance
+Also this mod Rework officer qualifications to be based on active officer law
+
+Load Order:
+	UltraRE
+	BPM
+	This compatch

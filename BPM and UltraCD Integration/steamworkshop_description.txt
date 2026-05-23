@@ -1,0 +1,14 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Cultures and Discrimination[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+Integrated some of BPM content to work with new laws and Cultures from UltraCD
+Added way for Conservatives with traditional culture to get rid of it; Either by nation formation or on pan-nationalism researched
+Harmonized Changes to Church and State laws made by both mods
+Also added citizenship category stance to natlib movement
+
+Load Order:
+	UlraCD
+	BPM
+	This compatch

@@ -8,3 +8,7 @@ Said institution was also renamed to military and now used with some bpms law.
 Ministry of defense also has unique interaction with Bakufu law where shogun will also become hereditary defense minister.
 BPMs officers laws, with exeption of noble officers law will now provide various modifier to army institution.
 Also some max level modifiers have been moved from techs to laws.
+Load Order:
+	UltraWF
+	BPM
+	This compatch

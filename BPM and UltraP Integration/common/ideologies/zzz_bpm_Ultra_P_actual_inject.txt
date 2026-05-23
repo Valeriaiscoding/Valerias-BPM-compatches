@@ -119,8 +119,8 @@ INJECT:ideology_gov_radical_liberal = {
 INJECT:ideology_sta_national_liberal = {
 	lawgroup_army_model = {
 		law_mass_conscription = strongly_approve
-		law_professional_army = disapprove
-		law_national_militia = approve
-		law_peasant_levies = disapprove
+		law_professional_army = neutral
+		law_national_militia = disapprove
+		law_peasant_levies = strongly_disapprove
 	}
 }

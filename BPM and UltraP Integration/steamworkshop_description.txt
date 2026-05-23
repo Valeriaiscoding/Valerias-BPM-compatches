@@ -1,0 +1,21 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Politics[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+Reworked Some vanilla economic ideologies stances
+Signifcantly Reworked artisan idology based on UltraP changes and gave it to Professional Interest if they dont have other ideology
+Changes for vanilla ideologies and new ideologies from UltraP were implemented with new bpm ideologies
+Added new Ideologies based on New UltraP ideologies:
+	Plantation Economy - based on changes to republican paternalistic supports free trade insted of protectionism and less interventionist
+	Export Agrarian - variant of conservative agrairan supports free trade insted of protectionism
+	Particularist - just supports elected bureaucrats, currently only for rural folk
+Added new statnces on slavery and serfdom to many of BPM left with and liberal movements
+Also added popular militarist to Radlibs in old world, replaced with liberal patriot if they become progressives
+Harmonized Changes to Church and State laws made by both mods
+Reworked sharecropping amendment now it reduces rural collectivization and increses landowners pol supports and applies to peasant proprietorship and its variants
+
+Load Order:
+	UlraP
+	BPM
+	This compatch

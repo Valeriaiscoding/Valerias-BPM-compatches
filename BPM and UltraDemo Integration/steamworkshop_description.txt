@@ -1,0 +1,14 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Demography[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+This mod add birthrate an mortality modfiers to some of BPMs law where appropriate
+Also this mod rebalances minister safety and healthcare institution modifier to be closer to UlraDemo balance
+
+
+
+Load Order:
+	UlraDemo
+	BPM
+	This compatch

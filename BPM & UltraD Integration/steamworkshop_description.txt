@@ -1,0 +1,18 @@
+[h2] Integration For Better Politics Mods and Ultra Historical Diplomacy[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+
+This mod provides compatibility and integration for two affordmentionned mods
+
+This mod combines changes to diplo plays to both mods 
+Also this mod add proper neutrality system to two mods:
+	Countries with Armed Neutrality or Disarmed Nation foreign policy law now can not be targeted by DiploPlays or Enter Alliences
+	This is ignored if ethier country is unrecognized or agressor have pariah level infamy
+	Also decision to break international law from Ultra Diplomacy has been reenabled with new requierments
+	Disarmed nation was rebalanced and Justum bellum law allows aggresion against unrecognized countries
+
+
+
+Load Order:
+	UlraD
+	BPM
+	This compatch
