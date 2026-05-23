@@ -1,6 +1,9 @@
 ﻿REPLACE:ideology_eco_antebellum_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = strongly_approve
+	}
     lawgroup_economic_system = {
 		law_traditionalism = strongly_approve
 		law_agrarianism = strongly_approve
@@ -55,12 +58,16 @@
 REPLACE:ideology_eco_artisan = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/artisan.dds"
 	priority = 1000
+
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = strongly_approve
+	}
     lawgroup_economic_system = {
 		law_traditionalism = strongly_disapprove
 		law_interventionism = neutral #maybe disapprove
 		law_agrarianism = disapprove
-		law_laissez_faire = strongly_approve
-		law_industry_banned = approve # was neutral
+		law_laissez_faire = approve
+		law_industry_banned = neutral # was neutral
 		law_cooperative_ownership = approve
 		law_command_economy = strongly_disapprove
 		law_extraction_economy = strongly_disapprove
@@ -109,6 +116,9 @@ REPLACE:ideology_eco_artisan = {
 REPLACE:ideology_eco_colonial_slavery_supporter = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = strongly_approve
+	}
   	lawgroup_economic_system = {
 		law_traditionalism = disapprove
 		law_interventionism = approve
@@ -163,6 +173,9 @@ REPLACE:ideology_eco_colonial_slavery_supporter = {
 ideology_eco_plantation_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = approve
+	}
     lawgroup_economic_system = {
 		law_traditionalism = disapprove
 		law_agrarianism = approve
@@ -217,6 +230,9 @@ ideology_eco_plantation_economy = {
 ideology_eco_export_agrarian = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = approve
+	}
     lawgroup_economic_system = {
 		law_traditionalism = disapprove
 		law_agrarianism = approve
