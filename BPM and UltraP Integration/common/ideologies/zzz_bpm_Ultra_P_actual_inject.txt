@@ -8,11 +8,21 @@
 	}
 }
 
-INJECT:ideology_wel_laborist = {
+# INJECT:ideology_wel_laborist = {
+# 	lawgroup_slavery = {
+# 		law_slavery_banned = neutral
+# 		law_legacy_slavery = disapprove
+# 		law_colonial_slavery = disapprove
+# 		law_debt_slavery = strongly_disapprove
+# 		law_slave_trade = strongly_disapprove
+# 	}
+# }
+
+INJECT:ideology_gov_constitutional_royalist = {
 	lawgroup_slavery = {
 		law_slavery_banned = neutral
 		law_legacy_slavery = disapprove
-		law_colonial_slavery = disapprove
+		law_colonial_slavery = neutral
 		law_debt_slavery = strongly_disapprove
 		law_slave_trade = strongly_disapprove
 	}
@@ -38,15 +48,6 @@ INJECT:ideology_gov_anarchist = {
 	}
 }
 
-INJECT:ideology_wel_utilitarian = {
-	lawgroup_slavery = {
-		law_slavery_banned = neutral
-		law_legacy_slavery = disapprove
-		law_colonial_slavery = disapprove
-		law_debt_slavery = strongly_disapprove
-		law_slave_trade = strongly_disapprove
-	}
-}
 INJECT:ideology_gov_reformist_socialist = {
 	lawgroup_slavery = {
 		law_slavery_banned = neutral
@@ -122,5 +123,73 @@ INJECT:ideology_sta_national_liberal = {
 		law_professional_army = neutral
 		law_national_militia = disapprove
 		law_peasant_levies = strongly_disapprove
+	}
+}
+
+REPLACE_OR_CREATE:ideology_eco_modernizer_mov = {
+    # Todo: change
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/interventionist.dds"
+
+    lawgroup_slavery = {
+		law_slave_trade = strongly_disapprove
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = neutral
+		law_debt_slavery = strongly_disapprove
+		law_slavery_banned = neutral
+	}
+
+    lawgroup_economic_system = {
+		law_traditionalism = strongly_disapprove
+		law_interventionism = approve
+		law_agrarianism = neutral
+		law_industry_banned = disapprove
+		law_laissez_faire = approve
+		law_cooperative_ownership = strongly_disapprove
+		law_command_economy = strongly_disapprove
+		law_extraction_economy = disapprove
+	}
+
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_disapprove
+		law_oligarchy = neutral
+		law_technocracy = neutral
+		law_military_junta = strongly_disapprove
+		law_landed_voting = neutral
+		law_wealth_voting = approve
+		law_census_voting = approve
+		law_universal_suffrage = neutral
+		law_anarchy = neutral
+	}
+
+    lawgroup_land_reform = {
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = neutral
+		law_peasant_proprietorship = strongly_approve
+		law_commercialized_agriculture = strongly_approve
+		law_collectivized_agriculture = neutral
+	}
+
+	lawgroup_bureaucracy = {
+		law_hereditary_bureaucrats = disapprove
+		law_appointed_bureaucrats = neutral
+		law_elected_bureaucrats = approve
+	}
+
+	lawgroup_centralization = {
+		law_ad_hoc_centralization = strongly_disapprove
+	}
+	# If replacing whole thing 
+	lawgroup_army_model = {
+		law_peasant_levies = strongly_disapprove
+		law_national_militia = strongly_disapprove
+		law_professional_army = neutral
+		law_mass_conscription = approve
+	}
+
+	lawgroup_education_system = {
+		law_no_schools = strongly_disapprove
+		law_religious_schools = disapprove
+		law_private_schools = neutral
+		law_public_schools = approve
 	}
 }
