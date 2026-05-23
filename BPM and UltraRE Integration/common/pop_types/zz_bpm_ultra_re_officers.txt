@@ -86,7 +86,7 @@ REPLACE_OR_CREATE:officers = {
 					desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS"
 					value = wealth
 					subtract = 25
-					multiply = 0.2
+					multiply = 0.2 
 				}
 			}
 			if = {
@@ -118,7 +118,7 @@ REPLACE_OR_CREATE:officers = {
 						NOT = { has_law_or_variant = law_type:law_elected_officers }
 					}
 					multiply = {
-						value = 5 #was 10 in ULTRA RE
+						value = 6 #was 10 in ULTRA RE
 						desc = "QUALIFICATIONS_FAVORED_TYPE"
 					}
 				}
