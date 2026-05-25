@@ -80,13 +80,11 @@ REPLACE:bpm_do_hog_transition = {
 	if = {
 		limit = { has_law = law_type:law_bakufu }
 		var:bpm_headofgov = {
-			prev = {
-				set_variable = {
-					name = mindef_locked_to
-					value = prev
-				}
-			}
 			bpm_appoint_mindef_effect = yes
+		}
+		set_variable = {
+			name = mindef_locked_to
+			value = var:bpm_headofgov.interest_group
 		}
 	}
 }

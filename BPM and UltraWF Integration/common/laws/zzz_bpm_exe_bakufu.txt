@@ -53,6 +53,14 @@ REPLACE_OR_CREATE:law_bakufu = {
 			limit = {has_modifier = modifier_hog_regency}
 			remove_modifier = modifier_hog_regency
 		}
+		if = {
+			limit = { has_variable = bpm_mindef }
+			remove_variable = bpm_mindef
+		}
+		if = {
+			limit = { has_variable = mindef_locked_to }
+			remove_variable = mindef_locked_to
+		}
 	}
 
 	modifier = {

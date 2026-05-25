@@ -4,17 +4,47 @@
 	}
 }
 
+on_monthly_pulse_country = {
+	on_actions = {
+		bpm_ultra_w_hog_mindef_oa		
+	}
+}
+
+bpm_ultra_w_hog_mindef_oa = {
+	effect = {
+		if = {
+			limit = { 
+				modifier:country_hog_functions_as_mindef_bool = yes
+				var:bpm_mindef != var:bpm_headofgov
+			}
+			var:bpm_headofgov ?= {
+				bpm_appoint_mindef_effect = yes
+			}
+			set_variable = {
+				name = mindef_locked_to
+				value = var:bpm_headofgov.interest_group
+			}
+		}
+		if = {
+			limit = {
+				modifier:country_hog_functions_as_mindef_bool = no
+				var:bpm_mindef = var:bpm_headofgov
+			}
+			remove_variable = bpm_mindef
+			remove_variable = mindef_locked_to
+		}
+	}
+}
+
 bpm_ultra_w_conditions_oa = {
 	effect = {
 		c:JAP = {
 			var:bpm_headofgov ?= {
 				bpm_appoint_mindef_effect = yes
-				prev = {
-					set_variable = {
-						name = mindef_locked_to
-						value = prev
-					}
-				}
+			}
+			set_variable = {
+				name = mindef_locked_to
+				value = var:bpm_headofgov.interest_group
 			}
 		}
 	}

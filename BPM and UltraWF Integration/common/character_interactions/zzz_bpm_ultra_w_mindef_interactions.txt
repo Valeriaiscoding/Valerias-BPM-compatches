@@ -7,9 +7,7 @@
 	show_requirements = yes
 
 	possible = {
-		NOT = {
-			has_law = law_type:law_bakufu
-		}
+		modifier:country_hog_functions_as_mindef_bool = no
 		bpm_char_can_be_minister = yes
 		custom_tooltip = {
 			text = bpm_ministry_locked_tt
