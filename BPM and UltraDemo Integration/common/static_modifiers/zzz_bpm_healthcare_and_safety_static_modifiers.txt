@@ -8,6 +8,7 @@ REPLACE:bpm_health_system_agpops_modifier = {
     building_group_bg_agriculture_standard_of_living_add = 0.1
     building_group_bg_ranching_standard_of_living_add = 0.1
     building_group_bg_plantations_standard_of_living_add = 0.1
+    building_group_bg_extraction_standard_of_living_add = 0.1
 }
 
 REPLACE:bpm_health_system_anarchists_modifier = {
@@ -43,8 +44,8 @@ REPLACE:bpm_health_system_military_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     unit_recovery_rate_add = 0.01
     battle_casualties_mult = -0.005
-    building_soldiers_standard_of_living_add = 0.1
-    building_officers_standard_of_living_add = 0.1
+    building_soldiers_standard_of_living_add = 0.2
+    building_officers_standard_of_living_add = 0.2
     # # country_rigidity_baseline_add = 1
 }
 
@@ -57,8 +58,8 @@ REPLACE:bpm_health_system_pb_modifier = {
 
 REPLACE:bpm_health_system_devout_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_lower_strata_standard_of_living_add = 0.25
-    state_conversion_mult = 0.04
+    state_lower_strata_standard_of_living_add = 0.1
+    state_conversion_mult = 0.03
 }
 
 REPLACE:bpm_health_system_capis_modifier = {
@@ -73,9 +74,10 @@ REPLACE:bpm_health_system_ruries_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_farmers_mortality_mult = -0.01
     state_peasants_mortality_mult = -0.01
-    building_group_bg_agriculture_standard_of_living_add = 0.25
-    building_group_bg_ranching_standard_of_living_add = 0.25
-    building_group_bg_plantations_standard_of_living_add = 0.25
+    building_group_bg_agriculture_standard_of_living_add = 0.2
+    building_group_bg_ranching_standard_of_living_add = 0.2
+    building_group_bg_plantations_standard_of_living_add = 0.2
+    building_group_bg_extraction_standard_of_living_add = 0.2
 }
 
 REPLACE:bpm_health_system_unions_modifier = {
@@ -104,6 +106,7 @@ REPLACE:bpm_workplace_safety_agpops_modifier = {
     building_group_bg_agriculture_mortality_mult = -0.01
     building_group_bg_ranching_mortality_mult = -0.01
     building_group_bg_plantations_mortality_mult = -0.01
+    building_group_bg_extraction_mortality_mult = -0.01
     state_pollution_reduction_health_mult = -0.02
 }   
 
@@ -142,7 +145,98 @@ REPLACE:bpm_workplace_safety_christdem_modifier = {
     state_peasants_mortality_mult = -0.01
     building_laborers_mortality_mult = -0.01
     building_machinists_mortality_mult = -0.01
-    building_farmers_mortality_mult = -0.005
+    building_farmers_mortality_mult = -0.01
 
     state_working_adult_ratio_add = -0.01
+}
+
+# -- Social Security -- #
+REPLACE:bpm_social_security_rursocs_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_lower_strata_standard_of_living_add = 0.1
+    state_welfare_payments_add = 0.02
+    country_institution_cost_institution_social_security_mult = 0.02
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLCE:bpm_social_security_cons_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_political_strength_from_welfare_mult = -0.05
+    state_welfare_payments_add = -0.05
+    country_institution_cost_institution_social_security_mult = -0.05
+    # # country_rigidity_baseline_add = -1
+}
+
+bpm_social_security_liberals_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_middle_strata_standard_of_living_add = 0.1
+    state_lower_strata_standard_of_living_add = 0.1
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE:bpm_social_security_lefts_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_welfare_payments_add = 0.1
+    country_institution_cost_institution_social_security_mult = 0.1
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE:bpm_social_security_commies_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_welfare_payments_add = 0.1
+    country_institution_cost_institution_social_security_mult = 0.1
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE:bpm_social_security_pb_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_government_wages_mult = 0.05
+    building_bureaucrats_standard_of_living_add = 0.1
+    building_group_bg_government_standard_of_living_add = 0.1
+    # # country_rigidity_baseline_add = 1
+}   
+
+REPLACE:bpm_social_security_devout_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_lower_strata_standard_of_living_add = 0.1
+    state_political_strength_from_welfare_mult = -0.05
+    state_conversion_mult = 0.03
+    # # country_rigidity_baseline_add = 1
+}
+
+REPLACE:bpm_social_security_capis_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_welfare_payments_add = -0.1
+    country_institution_cost_institution_social_security_mult = -0.1
+    # # country_rigidity_baseline_add = 1
+}
+
+bpm_social_security_ruries_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    building_group_bg_agriculture_standard_of_living_add = 0.2
+    building_group_bg_ranching_standard_of_living_add = 0.2
+    building_group_bg_plantations_standard_of_living_add = 0.2
+    building_group_bg_extraction_standard_of_living_add = 0.2
+    # # country_rigidity_baseline_add = 1
+}
+
+bpm_social_security_unions_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    # Super synergy!
+    building_laborers_standard_of_living_add = 0.2
+    building_engineers_standard_of_living_add = 0.2
+    building_machinists_standard_of_living_add = 0.2
+    building_minimum_wage_mult = 0.03
+    state_welfare_payments_add = 0.05
+    country_institution_cost_institution_social_security_mult = 0.05
+    # # country_rigidity_baseline_add = 1
+}
+
+bpm_social_security_christdems_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_welfare_payments_add = 0.1
+    country_institution_cost_institution_social_security_mult = 0.05
+    state_political_strength_from_welfare_mult = 0.02
+    state_working_adult_ratio_add = -0.005
+    # # country_rigidity_baseline_add = -1
 }

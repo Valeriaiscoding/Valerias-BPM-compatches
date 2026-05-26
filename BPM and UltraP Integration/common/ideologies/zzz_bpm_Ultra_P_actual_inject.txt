@@ -183,7 +183,7 @@ REPLACE_OR_CREATE:ideology_eco_modernizer_mov = {
 		law_peasant_levies = strongly_disapprove
 		law_national_militia = strongly_disapprove
 		law_professional_army = neutral
-		law_mass_conscription = approve
+		law_mass_conscription = strongly_approve
 	}
 
 	lawgroup_education_system = {
