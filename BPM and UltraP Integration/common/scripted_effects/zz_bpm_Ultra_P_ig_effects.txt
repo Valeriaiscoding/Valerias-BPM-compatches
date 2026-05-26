@@ -42,10 +42,10 @@ REPLACE:bpm_ig_make_caudillismo = {
 	bpm_remove_all_dop_ideologies = yes
 	bpm_remove_all_gov_ideologies = yes
 	#bpm_remove_all_mil_ideologies = yes
-	bpm_remove_all_eco_ideologies = yes
+	#bpm_remove_all_eco_ideologies = yes
 	add_ideology = ideology_gov_liberal_republican
 	add_ideology = ideology_dop_oligarch
-	add_ideology = ideology_eco_export_agrarian
+	#add_ideology = ideology_eco_export_agrarian
 	#add_ideology = ideology_mil_plutocratic_militarist
 	bpm_reorder_ideologies = yes
 	hidden_effect = {
@@ -121,76 +121,3 @@ REPLACE:bpm_make_igs_not_pro_slavery_serfdom = {
 	}
 	bpm_make_igs_modern_agrarian = yes
 } 
-
-bpm_ultra_p_purge_military_ideologies_effect = {
-	switch = {
-		trigger = has_ideology
-		ideology_prussian_military = {
-			bpm_remove_all_wel_ideologies = yes
-			bpm_remove_all_gov_ideologies = yes
-			bpm_remove_all_eco_ideologies = yes
-			hidden_effect = {
-				remove_ideology = ideology_prussian_military
-			}
-		}
-		# ideology_military_absolutist = {
-		# 	bpm_remove_all_gov_ideologies = yes
-		# 	bpm_remove_all_dop_ideologies = yes
-		# 	bpm_remove_all_sta_ideologies = yes
-		# 	if = {
-		# 		limit = { NOT = { owner = { has_variable = red_army_var } } }
-		# 		add_ideology = ideology_dop_state_power
-		# 		add_ideology = ideology_sta_institutional_state
-		# 	}
-		# 	hidden_effect = {
-		# 		remove_ideology = ideology_military_absolutist
-		# 	}
-		# }
-		ideology_liberal_praetorian = {
-			bpm_remove_all_cit_ideologies = yes
-			bpm_remove_all_dop_ideologies = yes
-			bpm_remove_all_gov_ideologies = yes
-			if = {
-				limit = { NOT = { owner = { has_variable = red_army_var } } }
-				add_ideology = ideology_dop_state_power
-			}
-			hidden_effect = {
-				remove_ideology = ideology_liberal_praetorian
-			}
-		}
-		ideology_conservative_praetorian = {
-			bpm_remove_all_rel_ideologies = yes
-			bpm_remove_all_gov_ideologies = yes
-			bpm_remove_all_dop_ideologies = yes
-			if = {
-				limit = { NOT = { owner = { has_variable = red_army_var } } }
-				add_ideology = ideology_dop_state_power
-			}
-			hidden_effect = {
-				remove_ideology = ideology_conservative_praetorian
-			}
-		}
-		ideology_caudilismo = {
-			bpm_remove_all_gov_ideologies = yes
-			bpm_remove_all_eco_ideologies = yes
-			bpm_remove_all_dop_ideologies = yes
-			if = {
-				limit = { NOT = { owner = { has_variable = red_army_var } } }
-				add_ideology = ideology_dop_state_power
-			}
-		}
-		ideology_cit_samurai = {
-			bpm_remove_all_gov_ideologies = yes
-			bpm_remove_all_dop_ideologies = yes
-			bpm_remove_all_eco_ideologies = yes
-			bpm_remove_all_cit_ideologies = yes
-			bpm_remove_all_mil_ideologies = es
-			if = {
-				limit = { NOT = { owner = { has_variable = red_army_var } } }
-				add_ideology = ideology_dop_state_power
-				add_ideology = ideology_mil_institutional_militarist
-			}
-		}
-	}
-	bpm_reorder_ideologies = yes
-}

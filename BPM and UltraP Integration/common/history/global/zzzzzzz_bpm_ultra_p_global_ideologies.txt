@@ -56,8 +56,8 @@
 		limit = {
 			OR = {
 				bpm_country_is_in_new_world = yes
+				country_is_colonial_or_company = yes
 				this ?= c:TUR
-				this ?= c:EGY
 			}
 		}
 		every_interest_group = {
