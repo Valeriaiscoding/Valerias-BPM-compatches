@@ -1,0 +1,27 @@
+﻿TRY_INJECT:usa_polk_character_template = {
+	dna = ecchi_dna_james_k_polk
+}
+
+TRY_INJECT:BPM_USA_martin_van_buren_template = {
+	dna = ecchi_dna_martin_van_buren
+	traits = {
+		basic_diplomat
+	}
+}
+
+TRY_INJECT:BPM_USA_martin_van_buren_template = {
+	dna = ecchi_dna_william_henry_harrison
+}
+
+TRY_INJECT:BPM_USA_john_fremont_template = {
+	dna = ecchi_dna_john_c_fremont
+	traits = {
+		explorer
+		war_criminal
+		celebrity_commander
+	}
+}
+
+TRY_INJECT:BPM_USA_john_quincy_adams_template = {
+	dna = ecchi_dna_john_qunicy_adams
+}

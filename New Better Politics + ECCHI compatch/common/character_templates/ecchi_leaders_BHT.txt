@@ -1,6 +1,6 @@
 ﻿# India - politicians
 
-# ecchi_bht_tata_character_template = { 1.8
+# ecchi_bht_tata = { 1.8
 #     first_name = ecchi_Jamsetji
 #     last_name = ecchi_Tata
 #     historical = yes
@@ -49,7 +49,7 @@
 # }
 
 # already in vanilla
-# ecchi_bht_gandhi_character_template = {
+# ecchi_bht_gandhi = {
 #     first_name = ecchi_Mohandas
 #     last_name = ecchi_Gandhi
 #     historical = yes
@@ -97,7 +97,7 @@
 #     }
 # }
 
-ecchi_bht_nehru_character_template = {
+ecchi_bht_nehru = {
     first_name = ecchi_Jawaharlal
     last_name = ecchi_Nehru
     historical = yes
@@ -145,7 +145,7 @@ ecchi_bht_nehru_character_template = {
     }
 }
 
-ecchi_sin_jinnah_character_template = {
+ecchi_sin_jinnah = {
     first_name = Muhammad_Ali
     last_name = ecchi_Jinnah
     historical = yes
@@ -188,7 +188,7 @@ ecchi_sin_jinnah_character_template = {
     }
 }
 
-ecchi_gwa_rani_character_template = {
+ecchi_gwa_rani = {
     first_name = ecchi_Lakshmibai # Rani of Jhansi
     last_name = Newalkar
     historical = yes
@@ -214,7 +214,7 @@ ecchi_gwa_rani_character_template = {
     }
 }
 
-ecchi_awa_hazrat_mahal_character_template = {
+ecchi_awa_hazrat_mahal = {
     first_name = Hazrat
     last_name = ecchi_Mahal
     historical = yes
@@ -246,7 +246,7 @@ ecchi_awa_hazrat_mahal_character_template = {
     }
 }
 
-ecchi_cey_senanayake_character_template = {
+ecchi_cey_senanayake = {
     first_name = ecchi_Don_Stephen
     last_name = ecchi_Senanayake
     historical = yes
@@ -278,7 +278,7 @@ ecchi_cey_senanayake_character_template = {
     }
 }
 
-ecchi_bht_malaviya_character_template = {					
+ecchi_bht_malaviya = {					
     first_name = ecchi_Madan_Mohan					
     last_name = ecchi_Malaviya					
     historical = yes
@@ -323,7 +323,7 @@ ecchi_bht_malaviya_character_template = {
 
 ## Rabindranath Tagore
 
-# mr_hnd_tagore_rabindranath_character_template = { 1.8
+# mr_hnd_tagore_rabindranath = { 1.8
 # 	dna = mr_hnd_tagore_rabindranath
 # 	first_name = ecchi_Rabindranath
 # 	last_name = ecchi_Tagore

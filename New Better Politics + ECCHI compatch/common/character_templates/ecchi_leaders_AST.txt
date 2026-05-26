@@ -1,5 +1,5 @@
 ﻿# Australia
-ecchi_ast_parkes_character_template = {
+ecchi_ast_parkes = {
     first_name = Henry
     last_name = ecchi_Parkes
     historical = yes
@@ -39,7 +39,7 @@ ecchi_ast_parkes_character_template = {
     }
 }
 
-ecchi_ast_hughes_character_template = {
+ecchi_ast_hughes = {
     first_name = Billy
     last_name = Hughes
     historical = yes
@@ -70,7 +70,7 @@ ecchi_ast_hughes_character_template = {
     }
 }
 
-ecchi_ast_barton_character_template = {
+ecchi_ast_barton = {
     first_name = Edmund
     last_name = Barton
     historical = yes
@@ -110,7 +110,7 @@ ecchi_ast_barton_character_template = {
     }
 }
 
-ecchi_ast_deakin_character_template = {
+ecchi_ast_deakin = {
     first_name = Alfred
     last_name = ecchi_Deakin
     historical = yes
@@ -142,7 +142,7 @@ ecchi_ast_deakin_character_template = {
     }
 }
 
-ecchi_ast_curtin_character_template = {
+ecchi_ast_curtin = {
     first_name = John
     last_name = ecchi_Curtin
     historical = yes
@@ -173,7 +173,7 @@ ecchi_ast_curtin_character_template = {
     }
 }
 
-ecchi_ast_kelly_character_template = {
+ecchi_ast_kelly = {
     first_name = ecchi_Ned
     last_name = Kelly
     historical = yes
@@ -201,7 +201,7 @@ ecchi_ast_kelly_character_template = {
 
 # Aboriginal leaders
 
-ecchi_ulr_wonga_character_template = {
+ecchi_ulr_wonga = {
     first_name = Simon
     last_name = Wonga
     historical = yes
@@ -241,7 +241,7 @@ ecchi_ulr_wonga_character_template = {
     }
 }
 
-ecchi_ulr_biraban_character_template = {
+ecchi_ulr_biraban = {
     first_name = ecchi_Biraban
     last_name = ecchi_EmptyBiraban
     historical = yes
@@ -276,7 +276,7 @@ ecchi_ulr_biraban_character_template = {
     }
 }
 
-ecchi_ulr_barak_character_template = {
+ecchi_ulr_barak = {
     first_name = William
     last_name = Barak
     historical = yes
@@ -317,7 +317,7 @@ ecchi_ulr_barak_character_template = {
 }
 
 ## Jack Lang
-ecchi_ast_lang_character_template = {
+ecchi_ast_lang = {
 	first_name = Jack
 	last_name = Lang
 	historical = yes
@@ -356,7 +356,7 @@ ecchi_ast_lang_character_template = {
 }
 
 ## Eric Campbell
-ecchi_ast_campbell_character_template = {
+ecchi_ast_campbell = {
 	first_name = Eric
 	last_name = Campbell
 	historical = yes

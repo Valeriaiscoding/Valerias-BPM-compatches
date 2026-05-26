@@ -1,6 +1,6 @@
 ﻿# Austria
 
-ecchi_aus_lueger_character_template = {
+ecchi_aus_lueger = {
     first_name = Karl
     last_name = ecchi_Lueger
     historical = yes
@@ -46,7 +46,7 @@ ecchi_aus_lueger_character_template = {
     }
 }
 
-ecchi_aus_bauer_character_template = {
+ecchi_aus_bauer = {
     first_name = Otto
     last_name = ecchi_Bauer
     historical = yes
@@ -92,7 +92,7 @@ ecchi_aus_bauer_character_template = {
     }
 }
 
-ecchi_aus_von_suttner_character_template = {
+ecchi_aus_von_suttner = {
     first_name = Bertha
     last_name = ecchi_von_Suttner
     historical = yes
@@ -138,7 +138,7 @@ ecchi_aus_von_suttner_character_template = {
     }
 }
 
-ecchi_aus_porsche_character_template = {
+ecchi_aus_porsche = {
     first_name = Ferdinand
     last_name = ecchi_Porsche
     historical = yes
@@ -184,7 +184,7 @@ ecchi_aus_porsche_character_template = {
 
 ## Engelbert Dollfuss
 
-ecchi_aus_dollfuss_character_template = {
+ecchi_aus_dollfuss = {
     first_name = Engelbert
     last_name = ecchi_Dollfuss
     historical = yes
@@ -221,7 +221,7 @@ ecchi_aus_dollfuss_character_template = {
 
 ## Georg von Trapp
 
-ecchi_aus_von_trapp_character_template = {
+ecchi_aus_von_trapp = {
     first_name = Georg
     last_name = ecchi_von_Trapp
     historical = yes
@@ -257,7 +257,7 @@ ecchi_aus_von_trapp_character_template = {
 
 ## Hans Kudlich
 
-ecchi_aus_kudlich_character_template = {
+ecchi_aus_kudlich = {
     first_name = Hans
     last_name = ecchi_Kudlich
     historical = yes
@@ -300,7 +300,7 @@ ecchi_aus_kudlich_character_template = {
 
 ## Klemens von Metternich
 
-# ecchi_aus_metternich_character_template = {
+# ecchi_aus_metternich = {
 #     first_name = ecchi_Klemens
 #     last_name = ecchi_von_Metternich
 #     historical = yes
@@ -332,7 +332,7 @@ ecchi_aus_kudlich_character_template = {
 
 ## Leopold Berchtold
 
-ecchi_aus_berchtold_character_template = {
+ecchi_aus_berchtold = {
     first_name = Leopold
     last_name = ecchi_Berchtold
     historical = yes
@@ -368,7 +368,7 @@ ecchi_aus_berchtold_character_template = {
 
 ## Theodor Herzel
 
-ecchi_aus_herzel_character_template = {
+ecchi_aus_herzel = {
     first_name = Theodor
     last_name = ecchi_Herzel
     historical = yes
@@ -411,7 +411,7 @@ ecchi_aus_herzel_character_template = {
 
 ## Ivan Franko (Ukraine)
 
-ecchi_aus_franko_character_template = {
+ecchi_aus_franko = {
     first_name = Ivan
     last_name = ecchi_Franko
     historical = yes
@@ -447,7 +447,7 @@ ecchi_aus_franko_character_template = {
 
 ## Josip Broz Tito (Yugoslavia) 
 
-ecchi_aus_tito_character_template = {
+ecchi_aus_tito = {
     first_name = Josip
     last_name = ecchi_Tito
     historical = yes
@@ -493,7 +493,7 @@ ecchi_aus_tito_character_template = {
 
 ## Karl Johann Kautsky
 
-ecchi_aus_kautsky_character_template = {
+ecchi_aus_kautsky = {
     first_name = ecchi_Karl_Johann
     last_name = ecchi_Kautsky
     historical = yes
@@ -525,7 +525,7 @@ ecchi_aus_kautsky_character_template = {
 
 ## Wilhelm Alexander Schoeller
 
-#aus_schoeller_character_template = {
+#aus_schoeller = {
 #    first_name = ecchi_Wilhelm_Alexander
 #    last_name = ecchi_Schoeller
 #    historical = yes
