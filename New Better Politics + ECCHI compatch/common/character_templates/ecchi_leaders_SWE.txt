@@ -54,7 +54,7 @@ ecchi_swe_branting = {
 			}
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_trade_unions
+            is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1889.1.1
         latest_usage_date = 1925.2.24

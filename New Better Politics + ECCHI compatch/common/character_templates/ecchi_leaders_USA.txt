@@ -2263,7 +2263,7 @@ ecchi_usa_moody = {
     home_region = STATE_MASSACHUSETTS
 
     religion = rel:protestant
-    ideology = ideology_reformer # Maybe moderate instead
+    ideology = ideology_reformer
     interest_group = ig_devout
     birth_date = 1837.2.5
     traits = { inspirational_orator charismatic ambitious  }

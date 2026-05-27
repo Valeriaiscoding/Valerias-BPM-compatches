@@ -980,7 +980,6 @@ ecchi_fra_courtot_de_cissey = {
     historical = yes
     culture = cu:french
     home_region = STATE_BURGUNDY
-    home_region = STATE_BURGUNDY
 
     religion = rel:catholic
     ideology = ideology_moderate
@@ -1038,7 +1037,6 @@ ecchi_fra_poincare = {
     last_name = ecchi_Poincare
     historical = yes
     culture = cu:french
-    home_region = STATE_LORRAINE
     home_region = STATE_LORRAINE
 
     religion = rel:catholic
@@ -1219,7 +1217,6 @@ ecchi_fra_groussau = {
     last_name = ecchi_Groussau
     historical = yes
     culture = cu:french
-    home_region = STATE_FRENCH_LOW_COUNTRIES
     home_region = STATE_FRENCH_LOW_COUNTRIES
 
     religion = rel:catholic

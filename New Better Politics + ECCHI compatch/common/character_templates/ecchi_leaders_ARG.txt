@@ -32,8 +32,8 @@ ecchi_arg_de_san_martin = {
 			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_intelligentsia
+                #is_interest_group_type = ig_rural_folk
+                #is_interest_group_type = ig_intelligentsia
             }
         }
         earliest_usage_date = 1836.1.1
@@ -171,7 +171,7 @@ ecchi_arg_peron = {
 
     religion = rel:catholic
     ideology = ideology_modernizer_leader
-    interest_group = ig_national_liberals
+    interest_group = ig_radicals
     dna = ecchi_dna_juan_peron
     birth_date = 1895.10.8
     traits = { charismatic ambitious imperious }
@@ -183,10 +183,7 @@ ecchi_arg_peron = {
         }
         role = general
         interest_group_trigger = {
-			OR = {
-            is_interest_group_type = ig_radicals
-            is_interest_group_type = ig_nationa_liberals
-            }
+			is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1912.1.1
         latest_usage_date = 1974.7.1

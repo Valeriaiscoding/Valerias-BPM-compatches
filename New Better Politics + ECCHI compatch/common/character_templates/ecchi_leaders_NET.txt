@@ -1,4 +1,4 @@
-﻿# Netherlands
+# Netherlands
 
 #ecchi_net_thorbecke = {
 #    first_name = ecchi_Johan_Rudolph
@@ -69,7 +69,7 @@ ecchi_net_kuyper = {
     home_region = STATE_HOLLAND
 
     religion = rel:protestant
-    ideology = ideology_traditionalist
+    ideology = ideology_corporatist_leader
     interest_group = ig_reactionaries
 	dna = ecchi_dna_abraham_kuyper
     birth_date = 1837.10.29
@@ -97,7 +97,7 @@ ecchi_net_troelstra = {
 
     religion = rel:protestant
     ideology = ideology_vanguardist
-    interest_group = ig_reformist_socialists
+    interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_pieter_jelles_troelstra
     birth_date = 1860.4.20
     traits = { reckless romantic persistent }
@@ -110,7 +110,7 @@ ecchi_net_troelstra = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                #is_interest_group_type = ig_trade_unions
+                is_interest_group_type = ig_revolutionist_socialists
                 is_interest_group_type = ig_reformist_socialists
             }
         }
@@ -128,7 +128,7 @@ net_prinsterer = {
     home_region = STATE_HOLLAND
 
     religion = rel:protestant
-    ideology = ideology_theocrat
+    ideology = ideology_traditionalist
     interest_group = ig_devout
 	dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1801.7.21
@@ -206,7 +206,6 @@ net_nieuwenhuis = {
 	historical = yes
 	culture = cu:dutch
     home_region = STATE_FRIESLAND
-    home_region = STATE_FRIESLAND
 	religion = rel:protestant
 	interest_group = ig_anarchists
 	ideology = ideology_pacifist
@@ -220,7 +219,7 @@ net_nieuwenhuis = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_trade_unions
+            is_interest_group_type = ig_anarchists
         }
 		earliest_usage_date = 1879.1.1
 		latest_usage_date = 1919.11.18
@@ -235,7 +234,7 @@ net_van_houten = {
 	culture = cu:dutch
     home_region = STATE_FRIESLAND
 	religion = rel:protestant
-	interest_group = ig_intelligentsia
+	interest_group = ig_liberals
 	ideology = ideology_reformer
 	birth_date = 1837.2.17
 	dna = mr_net_van_houten_samuel
@@ -247,7 +246,7 @@ net_van_houten = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
 		earliest_usage_date = 1864.1.1
 		latest_usage_date = 1924.11.18
@@ -289,10 +288,9 @@ net_snijders = {
 	historical = yes
 	culture = cu:dutch
     home_region = STATE_GELRE
-    home_region = STATE_GELRE
 	religion = rel:protestant
 	interest_group = ig_armed_forces
-	ideology = ideology_royalist
+	ideology = ideology_corporatist_leader
 	birth_date = 1852.9.29
 	dna = mr_net_snijders_cornelius_jacobus
 	traits = { brave honorable popular_commander }
@@ -330,8 +328,6 @@ net_hoevell = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_GELRE
-    home_region = STATE_GELRE
-    home_region = STATE_GELRE
 
     religion = rel:protestant
     ideology = ideology_abolitionist
@@ -359,7 +355,6 @@ net_regout = {
     last_name = Regout
     historical = yes
     culture = cu:dutch
-    home_region = STATE_GELRE
     home_region = STATE_GELRE
 
     religion = rel:catholic
@@ -391,8 +386,9 @@ net_schimmelpenninck = {
 
     religion = rel:protestant
     ideology = ideology_royalist
-    interest_group = ig_petty_bourgeoisie
+    interest_group = ig_conservatives
 	dna = ecchi_net_schimmelpenninck
+    noble = yes
     birth_date = 1794.2.25
     traits = { direct basic_entrepreneur experienced_diplomat }
     interest_group_leader_usage = {
@@ -401,7 +397,7 @@ net_schimmelpenninck = {
             this = c:NET
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1863.10.4
@@ -445,7 +441,7 @@ net_van_der_voo = {
 
     religion = rel:protestant
     ideology = ideology_utopian
-    interest_group = ig_trade_unions
+    interest_group = ig_socialists
 	dna = ecchi_net_van_der_voo
     birth_date = 1806.1.1
     traits = { ambitious persistent }
@@ -455,7 +451,7 @@ net_van_der_voo = {
             this = c:NET
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_trade_unions
+            is_interest_group_type = ig_socialists
         }
         earliest_usage_date = 1845.1.1
         latest_usage_date = 1870.1.1
@@ -468,7 +464,6 @@ net_luzac = {
     last_name = Luzac
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
 
     religion = rel:protestant
@@ -525,9 +520,8 @@ net_cort_van_der_linden = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_moderate
+    ideology = ideology_liberal_leader # introduced universal suffrage
     interest_group = ig_liberals
     dna = ecchi_net_van_der_linden
     birth_date = 1846.5.14
@@ -556,8 +550,9 @@ net_ruijs_de_beerenbrouck = {
     culture = cu:dutch
     home_region = STATE_GELRE
     religion = rel:catholic
-    ideology = ideology_utilitarian #was nicknamed the red junker because of him being a nobleman supporting welfare
-    interest_group = ig_landowners
+    noble = yes
+    ideology = ideology_reformer #was nicknamed the red junker because of him being a nobleman supporting welfare
+    interest_group = ig_conservatives
     birth_date = 1873.7.28
     dna = ecchi_net_ruijs_de_beerenbrouck_charles
     traits = { tactful meticulous experienced_political_operator }
@@ -569,7 +564,10 @@ net_ruijs_de_beerenbrouck = {
             has_state_in_state_region = STATE_GELRE
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            OR = {
+                is_interest_group_type = ig_conservatives
+                is_interest_group_type = ig_christian_democrats
+            }
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1936.6.21
@@ -583,7 +581,6 @@ net_de_visser = {
     last_name = ecchi_de_Visser
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_vanguardist
@@ -615,7 +612,6 @@ net_weitzel = {
     last_name = Weitzel
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_moderate
@@ -657,7 +653,6 @@ net_staal = {
     last_name = Staal
     historical = yes
     culture = cu:dutch
-    home_region = STATE_FRIESLAND
     home_region = STATE_FRIESLAND
     religion = rel:protestant
     ideology = ideology_liberal_leader
@@ -729,7 +724,6 @@ net_drees = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_social_democrat
     interest_group = ig_reformist_socialists
@@ -758,10 +752,9 @@ net_kappeyne_van_de_coppello = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_reformer
-    interest_group = ig_liberals
+    ideology = ideology_modernizer
+    interest_group = ig_radicals
     birth_date = 1822.10.2
     traits = { erudite ambitious }
     interest_group_leader_usage = {
@@ -772,7 +765,7 @@ net_kappeyne_van_de_coppello = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_liberals
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1862.1.1
         latest_usage_date = 1888.1.1
@@ -780,17 +773,16 @@ net_kappeyne_van_de_coppello = {
     }
 }
 
-## Wiel Nolens # TODO
+## Wiel Nolens 
 net_nolens = {
     first_name = ecchi_Wiel
     last_name = ecchi_Nolens
     historical = yes
     culture = cu:dutch
     home_region = STATE_GELRE
-    home_region = STATE_GELRE
     religion = rel:catholic
     ideology = ideology_reformer
-    interest_group = ig_petty_bourgeoisie
+    interest_group = ig_intelligentsia
     birth_date = 1860.9.7
     traits = { pious imposing reserved }
     interest_group_leader_usage = {
@@ -801,7 +793,7 @@ net_nolens = {
             has_state_in_state_region = STATE_GELRE
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
+            is_interest_group_type = ig_intelligentsia
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1931.8.27
@@ -815,7 +807,6 @@ net_van_mierop = {
     last_name = ecchi_van_Mierop
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_pacifist
@@ -847,7 +838,6 @@ net_pannekoek = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_GELRE
-    home_region = STATE_GELRE
     religion = rel:protestant
     ideology = ideology_communist
     interest_group = ig_revolutionist_socialists
@@ -877,12 +867,11 @@ net_lutkie = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_GELRE
-    home_region = STATE_GELRE
     religion = rel:catholic
-    ideology = ideology_fascist
+    ideology = ideology_traditionalist  
     interest_group = ig_fascists
     birth_date = 1887.2.23
-    traits = { literary inspirational_orator }
+    traits = { literary inspirational_orator pious }
     agitator_usage = {
         country_trigger = {
             NOT = {
@@ -893,10 +882,7 @@ net_lutkie = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR  = {
-                is_interest_group_type = ig_devout
-                is_interest_group_type = ig_fascists
-            }
+            is_interest_group_type = ig_fascists
         }
         earliest_usage_date = 1924.1.1
         latest_usage_date = 1965.1.1
@@ -910,7 +896,6 @@ net_jurgens = {
     last_name = ecchi_Jurgens
     historical = yes
     culture = cu:dutch
-    home_region = STATE_GELRE
     home_region = STATE_GELRE
     religion = rel:catholic
     ideology = ideology_moderate
@@ -933,17 +918,17 @@ net_jurgens = {
     }
 }
 
-## Joan Röell # TODO
+## Joan Röell
 net_roell = {
     first_name = Joan
     last_name = Roell
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_liberal_leader
-    interest_group = ig_landowners
+    ideology = ideology_center_leader
+    interest_group = ig_market_liberals
+    noble = yes
     birth_date = 1844.7.21
     traits = { meticulous tactful }
     interest_group_leader_usage = {
@@ -954,7 +939,8 @@ net_roell = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            bpm_ig_enabled = yes
+            is_interest_group_type = ig_market_liberals
         }
         earliest_usage_date = 1877.1.1
         latest_usage_date = 1909.1.1
@@ -962,13 +948,12 @@ net_roell = {
     }
 }
 
-## Charles Theodorus Stork # TODO
+## Charles Theodorus Stork
 net_stork = {
     first_name = ecchi_Charles_Theodorus
     last_name = ecchi_Stork
     historical = yes
     culture = cu:dutch
-    home_region = STATE_GELRE
     home_region = STATE_GELRE
     religion = rel:protestant
     ideology = ideology_moderate
@@ -997,7 +982,6 @@ net_keuchenius = {
     last_name = ecchi_Keuchenius
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_moderate
@@ -1029,7 +1013,7 @@ net_luyben = {
     home_region = STATE_GELRE
     religion = rel:catholic
     ideology = ideology_liberal_leader
-    interest_group = ig_petty_bourgeoisie
+    interest_group = ig_conservatives
     birth_date = 1818.1.20
     traits = { pious direct reckless }
     interest_group_leader_usage = {
@@ -1040,7 +1024,7 @@ net_luyben = {
             has_state_in_state_region = STATE_GELRE
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1859.1.1
         latest_usage_date = 1893.1.1
@@ -1048,14 +1032,12 @@ net_luyben = {
     }
 }
 
-## Jan Westerdijk # TODO
+## Jan Westerdijk 
 net_westerdijk = {
     first_name = Jan
     last_name = ecchi_Westerdijk
     historical = yes
     culture = cu:dutch
-    home_region = STATE_FRIESLAND
-    home_region = STATE_FRIESLAND
     home_region = STATE_FRIESLAND
     religion = rel:protestant
     ideology = ideology_liberal_leader
@@ -1084,8 +1066,6 @@ net_gerretson = {
     last_name = ecchi_Gerretson
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_corporatist_leader
@@ -1120,10 +1100,9 @@ net_van_reenen = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_royalist
-    interest_group = ig_landowners
+    interest_group = ig_petty_bourgeoisie
     birth_date = 1818.9.30
     traits = { honorable meticulous persistent }
     interest_group_leader_usage = {
@@ -1134,7 +1113,7 @@ net_van_reenen = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_petty_bourgeoisie
         }
         earliest_usage_date = 1858.1.1
         latest_usage_date = 1893.5.31
@@ -1149,10 +1128,9 @@ net_de_wilde = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-    home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_royalist
-    interest_group = ig_conservatives
+    ideology = ideology_corporatist_leader
+    interest_group = ig_conservatives # ?
     birth_date = 1879.1.7
     traits = { tactful honorable }
     interest_group_leader_usage = {
@@ -1163,7 +1141,7 @@ net_de_wilde = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_devout
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1953.1.1
@@ -1177,7 +1155,6 @@ net_welt = {
     last_name = ecchi_Welt
     historical = yes
     culture = cu:dutch
-    home_region = STATE_FRIESLAND
     home_region = STATE_FRIESLAND
     religion = rel:protestant
     ideology = ideology_liberal_leader
@@ -1206,7 +1183,6 @@ net_general_roell = {
     last_name = Roell
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_royalist
@@ -1250,7 +1226,8 @@ net_beelaerts_van_blokland = {
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_royalist
-    interest_group = ig_landowners #was not a major landownwer himself but he is a nobleman and was loyal to queen Wilhelmina
+    noble = yes
+    interest_group = ig_petty_bourgeoisie #was not a major landownwer himself but he is a nobleman and was loyal to queen Wilhelmina
     birth_date = 1872.1.21
     traits = { imposing direct experienced_diplomat }
     interest_group_leader_usage = {
@@ -1261,7 +1238,7 @@ net_beelaerts_van_blokland = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_petty_bourgeoisie
         }
         earliest_usage_date = 1823.1.1
         latest_usage_date = 1956.3.27
@@ -1335,7 +1312,7 @@ net_ten_kate = {
     culture = cu:dutch
     home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_theocrat
+    ideology = ideology_moderate
     interest_group = ig_devout
     birth_date = 1819.12.23
     traits = { literary meticulous erudite }
@@ -1372,6 +1349,7 @@ net_da_costa = {
     traits = { literary charismatic persistent }
     agitator_usage = {
         country_trigger = {
+            always = no
             NOT = {
                 country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
             }
@@ -1397,9 +1375,26 @@ net_van_der_wijck = {
     home_region = STATE_GELRE
     religion = rel:protestant
     ideology = ideology_jingoist_leader
-    interest_group = ig_landowners
+    interest_group = ig_national_liberals 
+    noble = yes
     birth_date = 1836.3.30
     traits = { erudite pious direct }
+    interest_group_leader_usage = {
+        country_trigger = {
+            NOT = {
+                country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
+            }
+            has_state_in_state_region = STATE_HOLLAND
+        }
+        interest_group_trigger = {
+            bpm_ig_is_marginal = no
+			bpm_ig_enabled = yes
+            is_interest_group_type = ig_national_liberals
+        }
+        earliest_usage_date = 1868.1.1
+        latest_usage_date = 1925.3.13
+        #chance = 50
+    }
     agitator_usage = {
         country_trigger = {
             NOT = {
@@ -1410,7 +1405,7 @@ net_van_der_wijck = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1868.1.1
         latest_usage_date = 1925.3.13

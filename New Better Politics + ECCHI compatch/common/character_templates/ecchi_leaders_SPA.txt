@@ -168,7 +168,7 @@ ecchi_spa_franco = {
     home_region = STATE_GALICIA
 
     religion = rel:catholic
-    ideology = ideology_fascist
+    ideology = ideology_traditionalist
     interest_group = ig_reactionaries
 	dna = ecchi_dna_francisco_franco
     birth_date = 1892.12.4
@@ -359,8 +359,8 @@ ecchi_spa_silvela = {
     home_region = STATE_NEW_CASTILE
 
     religion = rel:catholic
-    ideology = ideology_moderate
-    interest_group = ig_conservatives
+    ideology = ideology_royalist
+    interest_group = ig_petty_bourgeoisie
     dna = ecchi_dna_francisco_silvela
     birth_date = 1845.12.15
     traits = { charismatic persistent }
@@ -379,10 +379,7 @@ ecchi_spa_silvela = {
             }
         }
         interest_group_trigger = {
-            OR = {
-                is_interest_group_type = ig_conservatives
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_petty_bourgeoisie
         }
         earliest_usage_date = 1870.1.1
         latest_usage_date = 1905.5.29
