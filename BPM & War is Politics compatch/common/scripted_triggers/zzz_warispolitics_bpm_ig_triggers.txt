@@ -1,0 +1,183 @@
+﻿#IG Scope triggers
+#Approves of aggressive diplo plays like conquest, return state, make subject
+REPLACE:warispolitics_ig_approves_aggression = {
+	leader = {
+		NOR = {
+			bpm_leader_is_doveish = yes
+			has_ideology = ideology:ideology_utopian
+		}
+	}
+	OR = {
+		leader = {
+			OR = {
+				has_ideology = ideology:ideology_bonapartist
+				bpm_leader_is_nationalist = yes
+			}	
+		}
+		has_ideology = ideology:ideology_jingoist #I FUCKING LOVE WAR
+		has_ideology = ideology:ideology_mil_ultramilitarist # MORE MEAT TO MEATGRINDER
+		AND = {
+			owner = { has_law = law_type:law_council_republic }
+			leader = { has_ideology = ideology:ideology_revolutionary_hawk }
+		}
+	}
+}
+
+#Disapproves of aggressive diplo plays like conquest, return state, make subject
+REPLACE:warispolitics_ig_disapproves_aggression = {
+	OR = {
+		leader = {
+			OR = {
+				bpm_leader_is_doveish = yes
+				has_ideology = ideology:ideology_utopian
+			}
+		}
+		bpm_leader_is_doveish = yes #Doesn't normally exist outside of leader, but just in case
+		#Crusader Kings Moment: Peasants don't like being levied for offensive wars
+		AND = {
+			owner = {
+				has_law = law_type:law_peasant_levies
+			}
+			bpm_ig_is_peasant = yes
+		}
+
+		has_ideology = ideology:ideology_mil_defensive_patriot
+		has_ideology = ideology:ideology_mil_antimilitarist
+
+		AND = {
+			NOT = { has_law = law_type:law_council_republic }
+			OR = {
+				bpm_ig_is_radical_socialist = yes
+				leader = {
+					bpm_leader_is_radical_socialist = yes
+				}
+			}
+		}
+	}
+}
+
+#Approves of reducing subject autonomy or annexing subjects
+REPLACE:warispolitics_ig_approves_bullying = {
+	OR = {
+		leader = {
+			OR = {
+				has_ideology = ideology:ideology_authoritarian
+				has_ideology = ideology:ideology_bonapartist
+				bpm_leader_is_nationalist = yes
+			}	
+		}
+		AND = {
+			has_law = law_type:law_council_republic
+			leader = {
+				OR = {
+					has_ideology = ideology:ideology_vanguardist
+					has_ideology = ideology:ideology_revolutionary_hawk
+				}
+			}
+		}
+		#has_ideology = ideology:ideology_caudillismo
+	} 
+}
+
+#Disapproves of reducing subject autonomy or annexing subjects
+REPLACE:warispolitics_ig_disapproves_bullying = {
+	OR = {
+		leader = {
+			OR = {
+				bpm_leader_is_doveish = yes
+				bpm_leader_is_anarchist = yes
+				has_ideology = ideology:ideology_humanitarian
+				has_ideology = ideology:ideology_utopian
+			}
+		}
+		has_ideology = ideology:ideology_mil_antimilitarist
+	}
+}
+
+#Disapproves of targeting Council Republics with aggressive plays
+REPLACE:warispolitics_ig_disapproves_attacking_council_republic = {
+	OR = {
+		bpm_ig_is_radical_socialist = yes
+		leader = {
+			bpm_leader_is_radical_socialist = yes
+		}
+		leader = {
+			has_ideology = ideology:ideology_utopian
+		}
+	}
+	trigger_if = {
+		limit = { owner = { has_law = law_type:law_council_republic } }
+		NOR = {
+			has_ideology = ideology:ideology_dop_party_socialist
+		}
+		leader = {
+			NOR = {
+				has_ideology = ideology:ideology_vanguardist
+				has_ideology = ideology:ideology_revolutionary_hawk
+			}
+		}
+	}
+}
+
+#Massively approves of waging an Independence war for FREEDOM!!!
+REPLACE:warispolitics_ig_loves_independence = {
+	warispolitics_ig_disapproves_independence = no
+	OR = {
+		leader = {
+			OR = {
+				bpm_leader_is_anarchist = yes
+				bpm_leader_is_nationalist = yes
+				has_ideology = ideology:ideology_radical
+				has_ideology = ideology:ideology_sovereignist_leader
+			}
+		}
+		
+		# has_ideology = ideology:ideology_jingoist
+		# has_ideology = ideology:ideology_patriotic
+		# has_ideology = ideology:ideology_proletarian
+
+		is_interest_group_type = ig_national_liberals
+		is_interest_group_type = ig_radicals
+		bpm_ig_is_anarchist = yes
+		
+		is_interest_group_type = ig_armed_forces #I FUCKING LOVE WAR
+		is_interest_group_type = ig_intelligentsia #Intelligentsia national pride
+
+		has_ideology = ideology:ideology_mil_ultramilitarist
+		#has_ideology = ideology:ideology_mil_mass_army
+		has_ideology = ideology:ideology_cit_nationalist
+		has_ideology = ideology:ideology_cit_multiethnic_nationalist
+		has_ideology = ideology:ideology_cit_ethnonationalist
+		has_ideology = ideology:ideology_cit_immigrant_nationalist
+
+		#has_ideology = ideology:ideology_sovereignist
+		AND = {
+			overlord = { NOT = { has_law_or_variant = law_type:law_council_republic } }
+			OR = {
+				leader = { bpm_leader_is_radical_socialist = yes }
+				bpm_ig_is_radical_socialist = yes
+			}
+		}
+	}
+}
+
+#Disapproves of waging an independence war (unused by default, hook for possible mod compatibility)
+#Some more complicated logic might be warranted here, like comparing this ig's country to the overlord's
+REPLACE:warispolitics_ig_disapproves_independence = {
+	trigger_if = {
+		limit = { country_is_colonial_or_company = yes }
+		OR = {
+			has_ideology = ideology:ideology_dop_metropole_loyalist
+			has_ideology = ideology:ideology_cit_colonial_segregationist
+			bpm_ig_is_colonialist = yes
+			bpm_ig_is_state_institutional = yes
+		}
+	}
+	trigger_else_if = {
+		limit = { overlord = { has_law_or_variant = law_type:law_council_republic } }
+		OR = {
+			leader = { bpm_leader_is_radical_socialist = yes }
+			bpm_ig_is_radical_socialist = yes
+		}
+	}
+}
