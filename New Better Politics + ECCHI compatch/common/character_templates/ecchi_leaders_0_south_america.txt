@@ -2,10 +2,10 @@
 
 ecchi_chl_o_higgins = {
     first_name = Bernardo
-    last_name = O_Higgins
+    last_name = a
     historical = yes
     culture = cu:south_andean
-    
+    home_region = STATE_LOS_RIOS
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_liberals
@@ -38,7 +38,7 @@ ecchi_uru_artigas = {
     last_name = ecchi_Artigas
     historical = yes
     culture = cu:platinean
-    
+    home_region = STATE_URUGUAY
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_national_liberals
@@ -136,7 +136,7 @@ ecchi_vnz_lopez = {
     last_name = Lopez
     historical = yes
     culture = cu:north_andean
-    
+    home_region = STATE_MIRANDA
     religion = rel:catholic
     ideology = ideology_jingoist_leader
     interest_group = ig_national_liberals

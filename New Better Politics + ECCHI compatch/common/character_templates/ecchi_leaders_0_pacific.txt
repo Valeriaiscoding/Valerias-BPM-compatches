@@ -5,7 +5,7 @@ ecchi_ply_gauguin = {
     last_name = ecchi_Gauguin
     historical = yes
     culture = cu:french
-    
+    home_region = STATE_ILE_DE_FRANCE
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_intelligentsia
@@ -38,7 +38,7 @@ ecchi_haw_malo = {
     last_name = Malo
     historical = yes
     culture = cu:hawaiian
-    
+    home_region = STATE_HAWAIIAN_ISLANDS
     religion = rel:protestant
     ideology = ideology_traditionalist
     interest_group = ig_devout
@@ -64,10 +64,11 @@ ecchi_haw_james_dole = {
     last_name = ecchi_Dole
     historical = yes
     culture = cu:yankee
-    
+    role = character_role_magnate
+    home_region = STATE_HAWAIIAN_ISLANDS
     religion = rel:protestant
-    ideology = ideology_market_liberal
-    interest_group = ig_industrialists
+    ideology = ideology_moderate
+    interest_group = ig_landowners
 	dna = ecchi_dna_james_dole
     birth_date = 1877.9.27
     traits = { meticulous grifter }
@@ -79,10 +80,7 @@ ecchi_haw_james_dole = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_landowners
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1958.5.20
@@ -95,7 +93,7 @@ ecchi_haw_dole = {
     last_name = ecchi_Dole
     historical = yes
     culture = cu:yankee
-    
+    home_region = STATE_HAWAIIAN_ISLANDS
     religion = rel:protestant
     ideology = ideology_republican_leader
     interest_group = ig_landowners
@@ -111,7 +109,6 @@ ecchi_haw_dole = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                is_interest_group_type = ig_landowners
                 is_interest_group_type = ig_devout
                 is_interest_group_type = ig_petty_bourgeoisie
             }

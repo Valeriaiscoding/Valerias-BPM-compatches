@@ -1,5 +1,4 @@
 ﻿# United States - USA - Presidents
-# TODO Add INJECT if ever
 # ecchi_usa_adams = {
 #     first_name = ecchi_John_Quincy
 #     last_name = Adams

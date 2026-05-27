@@ -5,7 +5,7 @@ ecchi_cub_de_cespedes = {
     last_name = de_Cespedes
     historical = yes
     culture = cu:caribeno
-    
+    home_region = STATE_EASTERN_CUBA
     religion = rel:catholic
     ideology = ideology_abolitionist
     interest_group = ig_radicals
@@ -20,10 +20,7 @@ ecchi_cub_de_cespedes = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_radicals
-            }
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1865.1.1
         latest_usage_date = 1874.2.27
@@ -36,7 +33,7 @@ ecchi_cub_marti = {
     last_name = ecchi_Marti
     historical = yes
     culture = cu:caribeno
-    
+    home_region = STATE_CENTRAL_CUBA
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_radicals
@@ -51,10 +48,7 @@ ecchi_cub_marti = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_radicals
-                is_interest_group_type = ig_rural_folk
-            }
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1895.5.19
@@ -125,7 +119,7 @@ ecchi_cub_garcia = {
     last_name = Garcia
     historical = yes
     culture = cu:caribeno
-
+    home_region = STATE_EASTERN_CUBA
     religion = rel:catholic
     ideology = ideology_abolitionist
     interest_group = ig_armed_forces
@@ -154,7 +148,7 @@ ecchi_cub_mella = {
     last_name = Mella
     historical = yes
     culture = cu:caribeno
-
+    home_region = STATE_CENTRAL_CUBA
     religion = rel:catholic
     ideology = ideology_communist
     interest_group = ig_revolutionist_socialists
@@ -172,7 +166,7 @@ ecchi_cub_mella = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_trade_unions
+            is_interest_group_type = ig_revolutionist_socialists
         }
         earliest_usage_date = 1925.1.1
         latest_usage_date = 1929.1.10
@@ -186,10 +180,12 @@ ecchi_cub_aguilera = {
     last_name = ecchi_Vicente_Aguilera
     historical = yes
     culture = cu:caribeno
-
+    home_region = STATE_EASTERN_CUBA
+    role = character_role_magnate
+    holding_type = building_manor_house
     religion = rel:catholic
     ideology = ideology_sovereignist_leader
-    interest_group = ig_landowners
+    interest_group = ig_national_liberals
     dna = ecchi_dna_francisco_vicente_aguilera
     birth_date = 1821.6.23
     traits = { explorer ambitious literary }
@@ -203,7 +199,7 @@ ecchi_cub_aguilera = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1868.1.1
         latest_usage_date = 1873.1.1
@@ -217,7 +213,7 @@ ecchi_cub_palma = {
     last_name = ecchi_Estrada_Palma
     historical = yes
     culture = cu:caribeno
-
+    home_region = STATE_EASTERN_CUBA
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_national_liberals
@@ -248,7 +244,7 @@ ecchi_cub_machado = {
     last_name = Machado
     historical = yes
     culture = cu:caribeno
-
+    home_region = STATE_WESTERN_CUBA
     religion = rel:catholic
     ideology = ideology_authoritarian
     interest_group = ig_national_liberals
@@ -314,7 +310,7 @@ ecchi_hai_soulouque = {
     last_name = Soulouque
     historical = yes
     culture = cu:afro_caribeno
-    
+    home_region = STATE_HAITI
     religion = rel:animist #Vodou
     ideology = ideology_royalist
     interest_group = ig_reactionaries
@@ -345,7 +341,7 @@ ecchi_hai_pierrot = {
     last_name = Pierrot
     historical = yes
     culture = cu:caribeno
-    
+    home_region = STATE_HAITI
     religion = rel:catholic
     ideology = ideology_jingoist_leader
     interest_group = ig_conservatives
@@ -372,7 +368,7 @@ ecchi_jam_garvey = {
     last_name = ecchi_Garvey
     historical = yes
     culture = cu:afro_caribbean
-    
+    home_region = STATE_JAMAICA
     religion = rel:catholic
     ideology = ideology_ethno_nationalist
     interest_group = ig_national_liberals
@@ -403,7 +399,7 @@ ecchi_jam_bogle = {
     last_name = ecchi_Bogle
     historical = yes
     culture = cu:afro_caribbean
-    
+    home_region = STATE_JAMAICA
     religion = rel:protestant
     ideology = ideology_radical
     interest_group = ig_radicals

@@ -4,7 +4,7 @@ ecchi_joh_aw = {
 	last_name = ecchi_Aw
 	historical = yes
 	culture = cu:hakka
-	
+	home_region = STATE_PEGU
 	religion = rel:mahayana
 	ideology = ideology_market_liberal
 	interest_group = ig_industrialists
@@ -46,7 +46,7 @@ ecchi_kaz_bukeikhanov = {
 	last_name = Bukeikhanov
 	historical = yes
 	culture = cu:kazak
-	
+	home_region = STATE_SEMIRECHE
 	religion = rel:sunni
 	ideology = ideology_republican_leader
 	interest_group = ig_national_liberals
@@ -83,7 +83,7 @@ ecchi_geo_chavchavadze = {
 	last_name = ecchi_Chavchavadze
 	historical = yes
 	culture = cu:georgian
-	
+	home_region = STATE_GREATER_CAUCASUS
 	religion = rel:orthodox
 	ideology = ideology_republican_leader
 	interest_group = ig_radicals
@@ -115,7 +115,7 @@ ecchi_geo_cholokashvili = {
 	last_name = Cholokashvili
 	historical = yes
 	culture = cu:georgian
-	
+	home_region = STATE_GREATER_CAUCASUS
 	religion = rel:orthodox
 	ideology = ideology_republican_leader
 	interest_group = ig_radicals
@@ -144,7 +144,7 @@ ecchi_tur_ataturk = {
 	last_name = ecchi_Ataturk
 	historical = yes
 	culture = cu:turkish
-	
+	home_region = STATE_WESTERN_THRACE
 	religion = rel:sunni
 	ideology = ideology_atheist
 	interest_group = ig_national_liberals
@@ -180,6 +180,7 @@ ecchi_tur_halide_edib_adivar = {
 	historical = yes
 	culture = cu:turkish
 	female = yes
+	home_region = STATE_EASTERN_THRACE
 	religion = rel:sunni
 	ideology = ideology_feminist
 	interest_group = ig_national_liberals
@@ -212,7 +213,7 @@ ecchi_tur_talaat_pasha = {
 	last_name = ecchi_Talaat
 	historical = yes
 	culture = cu:turkish
-	
+	home_region = STATE_NORTHERN_THRACE
 	religion = rel:sunni
 	ideology = ideology_liberal_leader
 	interest_group = ig_armed_forces
@@ -277,7 +278,7 @@ ecchi_tur_djemal_pasha = {
 	last_name = ecchi_Djemal
 	historical = yes
 	culture = cu:turkish
-	
+	home_region = STATE_EAST_AEGEAN_ISLANDS
 	religion = rel:sunni
 	ideology = ideology_jingoist_leader
 	interest_group = ig_armed_forces
@@ -337,8 +338,7 @@ ecchi_pal_trumpeldor = {
 	last_name = ecchi_Trumpeldor
 	historical = yes
 	culture = cu:ashkenazi
-	
-	religion = rel:jewish
+	home_region = STATE_STAVROPOL 
 	ideology = ideology_radical
 	interest_group = ig_national_liberals
 	dna = ecchi_dna_joseph_trumpeldor
@@ -380,7 +380,7 @@ ecchi_pal_sholem_aleichem = {
 	last_name = ecchi_Aleichem
 	historical = yes
 	culture = cu:ashkenazi
-	
+	home_region = STATE_KHARKOV
 	religion = rel:jewish
 	ideology = ideology_pacifist
 	interest_group = ig_intelligentsia
@@ -422,9 +422,9 @@ ecchi_pal_kahlil_gibran = {
 	last_name = ecchi_Gibran
 	historical = yes
 	culture = cu:mashriqi
-	
+	home_region = STATE_LEBANON
 	religion = rel:catholic
-	interest_group = ig_intelligentsia
+	interest_group = ig_national_liberals
 	dna = ecchi_dna_kahlil_gibran
 	birth_date = 1883.1.6
 	ideology = ideology_humanitarian
@@ -441,7 +441,7 @@ ecchi_pal_kahlil_gibran = {
 			}
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_national_liberals
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1931.4.10
@@ -458,6 +458,7 @@ ecchi_nep_parijat = {
 	historical = yes
 	culture = cu:nepali
 	female = yes
+	home_region = STATE_HIMALAYAS
 	ideology = ideology_feminist
 	interest_group = ig_intelligentsia
 	dna = ecchi_dna_bishnu_kumari_waiba
@@ -491,8 +492,8 @@ ecchi_afg_mahmud_tarzi = {
 	last_name = ecchi_Tarzi
 	historical = yes
 	culture = cu:pashtun
-	
-	religion = rel:sunni
+	home_region = STATE_KABUL
+	religion = rel:ath
 	ideology = ideology_nihilist
 	interest_group = ig_national_liberals
 	dna = ecchi_dna_mahmud_tarzi
@@ -556,7 +557,6 @@ ecchi_lan_xie_guifang = {
 	last_name = ecchi_Xie
 	historical = yes
 	culture = cu:hakka
-	
 	religion = rel:mahayana
 	interest_group = ig_petty_bourgeoisie
 	age = 40

@@ -102,7 +102,7 @@ ecchi_bht_nehru = {
     last_name = ecchi_Nehru
     historical = yes
     culture = cu:kashmiri
-    
+    home_region = STATE_EASTERN_HIMALAYAS
     religion = rel:hindu
     ideology = ideology_republican_leader
     interest_group = ig_reformist_socialists
@@ -150,7 +150,7 @@ ecchi_sin_jinnah = {
     last_name = ecchi_Jinnah
     historical = yes
     culture = cu:gujarati
-    
+    home_region = STATE_BALUCHISTAN
     religion = rel:sunni
     ideology = ideology_republican_leader
     interest_group = ig_national_liberals
@@ -194,6 +194,7 @@ ecchi_gwa_rani = {
     historical = yes
     culture = cu:marathi
     female = yes
+    home_region = STATE_BUNDELKHAND
     religion = rel:hindu
     ideology = ideology_royalist
     interest_group = ig_landowners
@@ -220,6 +221,7 @@ ecchi_awa_hazrat_mahal = {
     historical = yes
     culture = cu:avadhi
     female = yes
+    home_region = STATE_AWADH
     religion = rel:shiite
     ideology = ideology_traditionalist
     interest_group = ig_landowners
@@ -234,11 +236,7 @@ ecchi_awa_hazrat_mahal = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_petty_bourgeoisie
-                #is_interest_group_type = ig_rural_folk
-            }
+            is_interest_group_type = ig_landowners
         }
         earliest_usage_date = 1855.1.1
         latest_usage_date = 1879.4.7
@@ -251,7 +249,7 @@ ecchi_cey_senanayake = {
     last_name = ecchi_Senanayake
     historical = yes
     culture = cu:sinhala
-    
+    home_region = STATE_CEYLON
     religion = rel:theravada
     ideology = ideology_republican_leader
     interest_group = ig_conservatives
@@ -266,11 +264,7 @@ ecchi_cey_senanayake = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                #is_interest_group_type = ig_rural_folk
-                #is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_conservatives
-            }
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1952.3.22
@@ -283,7 +277,7 @@ ecchi_bht_malaviya = {
     last_name = ecchi_Malaviya					
     historical = yes
     culture = cu:gujarati					
-    					
+    home_region = STATE_GUJARAT	
     religion = rel:hindu					
     ideology = ideology_moderate					
     interest_group = ig_reformist_socialists

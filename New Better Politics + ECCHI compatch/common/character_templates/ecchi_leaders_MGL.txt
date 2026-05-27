@@ -5,7 +5,7 @@ ecchi_mgl_bogd_khan = {
     last_name = Khan
     historical = yes
     culture = cu:tibetan
-    
+    home_region = STATE_LHASA
     religion = rel:gelugpa
     ideology = ideology_theocrat
     interest_group = ig_devout
@@ -20,10 +20,7 @@ ecchi_mgl_bogd_khan = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_devout
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_devout
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1924.5.20
@@ -36,7 +33,7 @@ ecchi_mgl_khanddorj = {
     last_name = ecchi_Mijiddorjiin
     historical = yes
     culture = cu:mongol
-    
+    home_region = STATE_HINGGAN
     religion = rel:gelugpa
     ideology = ideology_moderate
     interest_group = ig_landowners
@@ -67,7 +64,7 @@ ecchi_mgl_namnansuren = {
     last_name = ecchi_Togs-Ochiryn
     historical = yes
     culture = cu:mongol
-    
+    home_region = STATE_HINGGAN
     religion = rel:gelugpa
     ideology = ideology_moderate
     interest_group = ig_landowners
@@ -97,8 +94,8 @@ ecchi_mgl_von_ungern_sternberg = {
     first_name = Roman
     last_name = ecchi_von_Ungern-Sternberg
     historical = yes
-    culture = cu:north_german
-    
+    culture = cu:east_german
+    home_region = STATE_TALINN
     religion = rel:gelugpa
     ideology = ideology_royalist
     interest_group = ig_armed_forces

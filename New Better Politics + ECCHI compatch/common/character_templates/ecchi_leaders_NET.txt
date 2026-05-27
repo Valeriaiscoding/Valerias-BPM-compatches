@@ -1004,7 +1004,7 @@ net_keuchenius = {
     }
 }
 
-## Aloysius Franciscus Xaverius Luyben # TODO
+## Aloysius Franciscus Xaverius Luyben 
 net_luyben = {
     first_name = ecchi_Aloysius
     last_name = ecchi_Luyben

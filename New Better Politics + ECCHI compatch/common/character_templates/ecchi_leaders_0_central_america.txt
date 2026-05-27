@@ -5,7 +5,7 @@ ecchi_hon_de_herrera = {
     last_name = de_Herrera
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_HONDURAS
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_liberals
@@ -62,7 +62,7 @@ ecchi_hon_cabanas = {
     last_name = Cabanas
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_HONDURAS
     religion = rel:catholic
     ideology = ideology_jingoist_leader
     interest_group = ig_liberals
@@ -102,7 +102,7 @@ ecchi_hon_bogran = {
     last_name = ecchi_Bogran
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_HONDURAS
     religion = rel:catholic
     ideology = ideology_humanitarian
     interest_group = ig_liberals
@@ -136,7 +136,7 @@ ecchi_cos_castro = {
     last_name = Castro
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_COSTA_RICA
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_liberals
@@ -164,7 +164,7 @@ ecchi_dom_salcedo = {
     last_name = ecchi_Salcedo
     historical = yes
     culture = cu:spanish
-    
+    home_region = STATE_NEW_CASTILE
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_liberals
@@ -195,7 +195,7 @@ ecchi_dom_duarte = {
     last_name = Duarte
     historical = yes
     culture = cu:caribeno
-    
+    home_region = STATE_SANTO_DOMINGO
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_radicals
@@ -226,7 +226,7 @@ ecchi_dom_polanco = {
     last_name = ecchi_Polanco
     historical = yes
     culture = cu:caribeno
-    
+    home_region = STATE_SANTO_DOMINGO
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_landowners
@@ -253,7 +253,7 @@ ecchi_gua_barrios = {
     last_name = Barrios
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_GUATEMALA
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_liberals
@@ -284,7 +284,7 @@ ecchi_gua_carrera = {
     last_name = Carrera
     historical = yes
     culture = cu:central_american
-    
+    home_region = STATE_GUATEMALA
     religion = rel:catholic
     ideology = ideology_authoritarian
     interest_group = ig_conservatives
