@@ -1379,7 +1379,7 @@ net_van_der_wijck = {
     noble = yes
     birth_date = 1836.3.30
     traits = { erudite pious direct }
-    interest_group_leader_usage = {
+    interest_group_leader_usage = { # Agitator better suits him if there will be another natlib leader he probably shoud be made into agitator again
         country_trigger = {
             NOT = {
                 country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
@@ -1395,22 +1395,22 @@ net_van_der_wijck = {
         latest_usage_date = 1925.3.13
         #chance = 50
     }
-    agitator_usage = {
-        country_trigger = {
-            NOT = {
-                country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
-            }
-            has_state_in_state_region = STATE_HOLLAND
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            is_interest_group_type = ig_national_liberals
-        }
-        earliest_usage_date = 1868.1.1
-        latest_usage_date = 1925.3.13
-        #chance = 50
-    }
+    # agitator_usage = {
+    #     country_trigger = {
+    #         NOT = {
+    #             country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
+    #         }
+    #         has_state_in_state_region = STATE_HOLLAND
+    #     }
+    #     interest_group_trigger = {
+    #         bpm_ig_is_marginal = no
+	# 		bpm_ig_enabled = yes
+    #         is_interest_group_type = ig_national_liberals
+    #     }
+    #     earliest_usage_date = 1868.1.1
+    #     latest_usage_date = 1925.3.13
+    #     #chance = 50
+    # }
 }
 
 ## Conrad Busken Huet
