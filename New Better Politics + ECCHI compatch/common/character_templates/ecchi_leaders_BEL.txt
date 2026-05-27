@@ -151,7 +151,7 @@ ecchi_bel_hamer = {
     culture = cu:wallonian
     religion = rel:protestant
     ideology = ideology_feminist
-    interest_group = ig_radicals
+    interest_group = ig_liberals
     dna = ecchi_dna_eugenie_hamer
     birth_date = 1865.11.15
     traits = { romantic persistent }
@@ -170,7 +170,7 @@ ecchi_bel_hamer = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_radicals
+            is_interest_group_type = ig_liberals
         }   
         earliest_usage_date = 1906.1.1
         latest_usage_date = 1951.4.28
@@ -239,7 +239,7 @@ bel_janson = {
     culture = cu:wallonian
 
     religion = rel:catholic
-    ideology = ideology_modernizer
+    ideology = ideology_social_democrat
     interest_group = ig_radicals
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1840.11.4
@@ -266,8 +266,8 @@ bel_jottrand = {
     home_region = STATE_FLANDERS
 
     religion = rel:catholic
-    ideology = ideology_radical
-    interest_group = ig_national_liberals
+    ideology = ideology_social_democrat
+    interest_group = ig_radicals
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1804.1.31
     traits = { literary aesthete }
@@ -288,7 +288,7 @@ bel_jottrand = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_national_liberals
+            is_interest_group_type = ig_radicals
         }
 		earliest_usage_date = 1836.1.1
 		latest_usage_date = 1877.12.17
@@ -340,7 +340,7 @@ net_popelin = {
 	home_region = STATE_WALLONIA
 	religion = rel:catholic
     female = yes
-	interest_group = ig_intelligentsia
+	interest_group = ig_liberals
 	ideology = ideology_feminist
 	birth_date = 1846.12.16
 	#dna = mr_net_jacobs_aletta
@@ -352,7 +352,7 @@ net_popelin = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
 		earliest_usage_date = 1889.1.1
 		latest_usage_date = 1913.5.6
@@ -510,7 +510,7 @@ bel_daens = {
     home_region = STATE_FLANDERS
 
     religion = rel:catholic
-    ideology = ideology_modernizer
+    ideology = ideology_reformer
     interest_group = ig_christian_democrats
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1804.1.31

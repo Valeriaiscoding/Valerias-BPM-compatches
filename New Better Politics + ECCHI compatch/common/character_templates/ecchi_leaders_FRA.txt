@@ -328,7 +328,6 @@ ecchi_fra_pasteur = {
     culture = cu:french
     home_region = STATE_FRANCHE_COMTE
 
-	historical = yes
     interest_group = ig_intelligentsia
     birth_date = 1822.12.27
     ideology = ideology_positivist
@@ -712,8 +711,6 @@ ecchi_fra_dimier = {
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_christian_democrats
-    role = character_role_magnate
-    holding_type = building_financial_district
     #dna = ecchi_dna_andre_citroen
     birth_date = 1802.5.12
     traits = { pious charismatic }
@@ -892,7 +889,7 @@ ecchi_fra_bourgeois = {
     home_region = STATE_CHAMPAGNE
 
     religion = rel:catholic
-    ideology = ideology_modernizer
+    ideology = ideology_modernizer_leader 
     interest_group = ig_radicals
     #dna = ecchi_dna_andre_citroen
     birth_date = 1851.5.21
@@ -924,6 +921,8 @@ ecchi_fra_harmel = {
     religion = rel:catholic
     ideology = ideology_reformer
     interest_group = ig_christian_democrats
+    role = character_role_magnate
+    holding_type = building_financial_district
     #dna = ecchi_dna_andre_citroen
     birth_date = 1829.2.17
     traits = { pious honorable innovative basic_entrepreneur }
@@ -1100,7 +1099,7 @@ ecchi_fra_de_vogue  = {
     religion = rel:catholic
     female = yes
     ideology = ideology_integralist
-    interest_group = ig_landowners
+    interest_group = ig_reactionaries
     #dna = ecchi_dna_alphonse_de_lamartine
     birth_date = 1860.11.21
     traits = { pious charismatic persistent }
@@ -1112,7 +1111,7 @@ ecchi_fra_de_vogue  = {
             has_state_in_state_region = STATE_ILE_DE_FRANCE
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_landowners
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1903.1.1
         latest_usage_date = 1923.6.9
@@ -1141,6 +1140,7 @@ ecchi_fra_capusde_baudry_d_asson = {
             this = c:FRA
         }
         interest_group_trigger = {
+            ideology_legitimist_valid_trigger = yes
             is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1907.1.1

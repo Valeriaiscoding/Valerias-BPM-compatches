@@ -5,7 +5,7 @@ ecchi_frs_tang_jingsong = {
     last_name = ecchi_Tang
     historical = yes
     culture = cu:han
-    
+    home_region = STATE_GUANGXI
     religion = rel:mahayana
     ideology = ideology_republican_leader
     interest_group = ig_armed_forces
@@ -39,7 +39,7 @@ ecchi_frs_liu_yongfu = {
     last_name = Liu
     historical = yes
     culture = cu:hakka
-    
+    home_region = STATE_GUANGDONG
     religion = rel:mahayana
     ideology = ideology_jingoist_leader
     interest_group = ig_armed_forces
@@ -104,7 +104,7 @@ ecchi_frs_mona_rudao = {
     last_name = ecchi_Mahebo
     historical = yes
     culture = cu:polynesian
-    
+    home_region = STATE_FORMOSA
     religion = rel:animist
     ideology = ideology_radical
     interest_group = ig_rural_folk

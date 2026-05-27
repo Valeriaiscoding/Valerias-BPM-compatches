@@ -753,7 +753,7 @@ net_kappeyne_van_de_coppello = {
     culture = cu:dutch
     home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_modernizer
+    ideology = ideology_modernizer_leader
     interest_group = ig_radicals
     birth_date = 1822.10.2
     traits = { erudite ambitious }
@@ -1141,7 +1141,7 @@ net_de_wilde = {
             has_state_in_state_region = STATE_HOLLAND
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1953.1.1
@@ -1254,7 +1254,7 @@ net_joekes = {
     culture = cu:dutch
     home_region = STATE_HOLLAND
     religion = rel:protestant
-    ideology = ideology_modernizer
+    ideology = ideology_social_democrat
     interest_group = ig_radicals
     birth_date = 1885.5.4
     traits = { literary master_bureaucrat meticulous  }
