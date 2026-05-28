@@ -8,15 +8,15 @@
 	}
 }
 
-# INJECT:ideology_wel_laborist = {
-# 	lawgroup_slavery = {
-# 		law_slavery_banned = neutral
-# 		law_legacy_slavery = disapprove
-# 		law_colonial_slavery = disapprove
-# 		law_debt_slavery = strongly_disapprove
-# 		law_slave_trade = strongly_disapprove
-# 	}
-# }
+INJECT:ideology_wel_laborist = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
 
 INJECT:ideology_gov_constitutional_royalist = {
 	lawgroup_slavery = {
@@ -85,7 +85,7 @@ INJECT:ideology_gov_radical_liberal = {
 
 INJECT:ideology_sta_national_liberal = {
 	lawgroup_land_reform = {
-		law_serfdom = disapprove
+		law_serfdom = strongly_disapprove
 	}
 }
 
@@ -99,14 +99,14 @@ INJECT:ideology_gov_socialist = {
 }
 
 
-# INJECT:ideology_gov_anarchist = {
-# 	lawgroup_army_model = {
-# 		law_national_militia = strongly_approve
-# 		law_professional_army = neutral
-# 		law_mass_conscription = disapprove
-# 		law_peasant_levies = strongly_disapprove
-# 	}
-# }
+INJECT:ideology_gov_anarchist = {
+	lawgroup_army_model = {
+		law_national_militia = strongly_approve
+		law_professional_army = neutral
+		law_mass_conscription = disapprove
+		law_peasant_levies = strongly_disapprove
+	}
+}
 
 INJECT:ideology_gov_radical_liberal = {
 	lawgroup_army_model = {
