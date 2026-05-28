@@ -1,0 +1,167 @@
+﻿CHARACTERS = {
+	c:SAR = {
+		create_character = {
+			template = ecchi_ita_battista_sella
+		}
+		create_character = {
+			template = ecchi_ita_giovanetti
+		}
+		create_character = {
+			template = ecchi_ita_francesetti_di_mezzenile
+		}
+	}
+	c:SIC = {
+		create_character = {
+			template = ecchi_ita_de_leva_gravina
+		}
+		create_character = {
+			template = ecchi_ita_winspeare
+		}
+		create_character = {
+			template = ecchi_ita_guira
+		}
+		create_character = {
+			template = ecchi_ita_florio
+		}
+		create_character = {
+			template = ecchi_ita_russo
+		}
+		create_character = {
+			template = ecchi_ita_settimo
+		}
+		create_character = {
+			template = ecchi_ita_statella_di_cassaro
+			on_created = {
+				bpm_appoint_minfor_effect = yes
+			}
+		}
+	}
+	c:SWI = {
+		create_character = {
+			template = ecchi_swi_von_reding
+		}
+		create_character = {
+			template = swi_von_haller
+		}
+		create_character = {
+			template = mr_swi_dufour_guillaume_henri
+		}
+	}
+	c:WAL = {
+		create_character = {
+			template = ecchi_rom_rusaila
+		}
+		create_character = {
+			template = ecchi_rom_magheru
+		}
+		create_character = {
+			template = ecchi_rom_poenaru
+		}
+		create_character = {
+			template = ecchi_rom
+		}
+		create_character = {
+			template = ecchi_rom_otetelesanu
+		}
+		create_character = {
+			template = ecchi_rom_ghica
+		}
+
+	}
+	c:RUS = {
+		create_character = {
+			template = RUS_kolesov
+		}
+	}
+	c:FIN = {
+		create_character = {
+			template = ecchi_fin_melartin
+		}
+		create_character = {
+			template = ecchi_fin_armfelt
+		}
+		create_character = {
+			template = ecchi_fin_julin
+		}
+		create_character = {
+			template = ecchi_fin_trapp
+		}
+		create_character = {
+			template = ecchi_fin_von_haartman
+		}
+		create_character = {
+			template = ecchi_fin_pipping
+		}
+		create_character = {
+			template = ecchi_fin_von_Kothen
+		}
+	}
+	c:DEN = {
+		create_character = {
+			template = ecchi_den_grundtvig
+		}
+	}
+	c:PRU = {
+		create_character = {
+			template = ecchi_ger_haxthausen
+		}
+		create_character = {
+			template = ecchi_ger_ruge
+		}
+	}
+	c:NET = {
+		create_character = {
+			template = net_prinsterer
+		}
+		create_character = {
+			template = net_d_ablaing_van_giessenburg
+		}
+		create_character = {
+			template = net_schimmelpenninck
+		}
+		create_character = {
+			template = net_teenstra
+		}
+		create_character = {
+			template = net_luzac
+		}
+		create_character = {
+			template = net_de_jonge_van_campensnieuwland
+		}
+		create_character = {
+			template = ecchi_net_fresemann_vietor
+		}
+	}
+	c:BEL = {
+		create_character = {
+			template = bel_eloy
+		}
+		create_character = {
+			template = ecchi_bel_rogier
+		}
+		create_character = {
+			template = bel_dumont
+		}
+		create_character = {
+			template = bel_jottrand
+		}
+	}
+	c:TUR = {
+		create_character = {
+			template = ecchi_tur_dadyan
+		}
+	}
+	c:KOR = {
+		create_character = {
+			template = ecchi_kor_hang_ro
+		}
+		create_character = {
+			template = ecchi_kor_hak_yu
+		}
+	}
+	c:CHI = {
+		create_character = {
+			template = ecchi_chi_ilibu
+		}
+	}
+}

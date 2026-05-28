@@ -907,6 +907,8 @@ ecchi_usa_morgan = {
     religion = rel:protestant
     ideology = ideology_market_liberal
     interest_group = ig_industrialists
+    role = character_role_magnate
+    holding_type = building_financial_district
     birth_date = 1837.4.17
 	dna = ecchi_dna_j_p_morgan
     traits = { meticulous tactful persistent }
@@ -1836,20 +1838,28 @@ ecchi_usa_jefferson_davis = {
     historical = yes
     culture = cu:dixie
     home_region = STATE_KENTUCKY
-
+    role = character_role_magnate
+    holding = building_manor_house
     religion = rel:protestant
     ideology = ideology_slaver
     interest_group = ig_reactionaries
     birth_date = 1808.6.3
 	dna = ecchi_dna_jefferson_davis
     traits = { meticulous arrogant persistent }
-    role = character_role_magnate
-    holding = building_manor_house
     interest_group_leader_usage = {
         country_trigger = {
             is_usfp_active = no
-            exists = c:CSA
-            this = c:CSA
+            OR = {
+                AND = {
+                    exists = c:USA
+                    this = c:USA
+                    NOT = { exists = c:CSA }
+                }
+                AND = {
+                    exists = c:CSA
+                    this = c:CSA
+                }
+            }
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
@@ -1879,8 +1889,17 @@ ecchi_usa_stephens = {
     interest_group_leader_usage = {
         country_trigger = {
             is_usfp_active = no
-            exists = c:CSA
-            this = c:CSA
+            OR = {
+                AND = {
+                    exists = c:USA
+                    this = c:USA
+                    NOT = { exists = c:CSA }
+                }
+                AND = {
+                    exists = c:CSA
+                    this = c:CSA
+                }
+            }
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no

@@ -167,7 +167,7 @@ ecchi_rus_rasputin = {
 		ambitious
 		psychological_affliction
 	}
-	interest_group_leader_usage = { # Realy my stupid idea he should be easter egg character and not actuall politician
+	interest_group_leader_usage = { # Realy my stupid idea reworked him to be easter egg character
 		country_trigger = {
 			exists = c:RUS
 			this = c:RUS
@@ -297,7 +297,7 @@ ecchi_rus_dostoevsky = {
 			this = c:RUS
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_conservatives
 		}
 		earliest_usage_date = 1854.1.1
 		latest_usage_date = 1881.2.9
@@ -443,10 +443,10 @@ ecchi_rus_zinoviev = {
 	first_name = Grigory
 	last_name = ecchi_Zinoviev
 	historical = yes
-	culture = cu:ashenazi
+	culture = cu:russian
 	home_region = STATE_KIEV
 	female = no
-	religion = rel:atheist
+	religion = rel:jewish
 	ideology = ideology_vanguardist
 	interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_grigory_zinoviev
@@ -478,7 +478,7 @@ ecchi_rus_kamenev = {
 	home_region = STATE_MOSCOW
 	female = no
 	religion = rel:atheist
-	ideology = ideology_social_democrat
+	ideology = ideology_center_leader
 	interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_lev_kamenev
 	birth_date = 1883.7.6
@@ -550,7 +550,10 @@ ecchi_rus_bukharin = {
 			c:RUS ?= this
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_revolutionist_socialists
+			OR = {
+				is_interest_group_type = ig_revolutionist_socialists
+				is_interest_group_type = ig_reformist_socialists
+			}
 		}
 		earliest_usage_date = 1917.5.1
 		latest_usage_date = 1938.3.15
@@ -567,7 +570,7 @@ ecchi_rus_balabanoff = {
 	home_region = STATE_CHERNIHIV
 	female = yes
 	religion = rel:jewish
-	ideology = ideology_social_democrat
+	ideology = ideology_center_leader
 	interest_group = ig_revolutionist_socialists
 	dna = ecchi_dna_angelica_balabanoff
 	birth_date = 1878.8.4
@@ -595,7 +598,7 @@ ecchi_rus_balabanoff = {
 			}
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_revolutionist_socialists
 		}
 		earliest_usage_date = 1917.1.1
 		latest_usage_date = 1965.11.25
@@ -1026,6 +1029,7 @@ RUS_kolesov = {
 	culture = cu:russian
 	home_region = STATE_MOSCOW
 	religion = rel:orthodox
+	ig_leader = yes
 	ideology = ideology_moderate
 	interest_group = ig_inteligentsia
 	#dna = mr_net_groen_van_prinsterer_guillaume
@@ -1034,17 +1038,5 @@ RUS_kolesov = {
 		basic_entrepreneur
 		pious
 		honorable
-	}
-	interest_group_leader_usage = {
-		country_trigger = {
-			exists = c:RUS
-			this = c:RUS
-		}
-		interest_group_trigger = {
-			is_interest_group_type = ig_petty_bourgeoisie
-		}
-		earliest_usage_date = 1836.1.1
-		latest_usage_date = 1852.8.31
-		chance = 100
 	}
 }

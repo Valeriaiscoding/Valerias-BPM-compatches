@@ -183,8 +183,8 @@ ecchi_jap_itagaki = {
     culture = cu:japanese
     home_region = STATE_SHIKOKU
     religion = rel:shinto
-    ideology = ideology_radical
-    interest_group = ig_national_liberals
+    ideology = ideology_liberal_leader
+    interest_group = ig_liberals
 	dna = ecchi_dna_itagaki_taisuke
     birth_date = 1837.5.21
     traits = { innovative arrogant experienced_political_operator }
@@ -194,7 +194,7 @@ ecchi_jap_itagaki = {
             this = c:JAP
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_national_liberals
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1869.1.1
         latest_usage_date = 1919.7.16
@@ -208,7 +208,6 @@ ecchi_jap_yoshihisa = {
     historical = yes
     culture = cu:japanese
     home_region = STATE_KYUSHU
-    noble = yes
     noble = yes
     religion = rel:shinto
     ideology = ideology_royalist
@@ -293,31 +292,31 @@ ecchi_jap_yoshihisa = {
 #    }
 #}
 
-ecchi_jap_shibusawa = {
-    first_name = ecchi_Eiichi
-    last_name = ecchi_Shibusawa
-    historical = yes
-    culture = cu:japanese
+# ecchi_jap_shibusawa = {
+#     first_name = ecchi_Eiichi
+#     last_name = ecchi_Shibusawa
+#     historical = yes
+#     culture = cu:japanese
     
-    religion = rel:shinto
-    ideology = ideology_market_liberal
-    interest_group = ig_industrialists
-	dna = ecchi_dna_shibusawa_eiichi
-    birth_date = 1840.3.16
-    traits = { ambitious meticulous }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:JAP
-            this = c:JAP
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1870.1.1
-        latest_usage_date = 1931.11.11
-        #chance = 65
-    }
-}
+#     religion = rel:shinto
+#     ideology = ideology_market_liberal
+#     interest_group = ig_industrialists
+# 	dna = ecchi_dna_shibusawa_eiichi
+#     birth_date = 1840.3.16
+#     traits = { ambitious meticulous }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             exists = c:JAP
+#             this = c:JAP
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_industrialists
+#         }
+#         earliest_usage_date = 1870.1.1
+#         latest_usage_date = 1931.11.11
+#         #chance = 65
+#     }
+# }
 
 ecchi_jap_fukuba = {
     first_name = ecchi_Bisei
@@ -436,7 +435,7 @@ ecchi_jap_okubo_toshimichi = {
     culture = cu:japanese
     home_region = STATE_KYUSHU
     religion = rel:shinto
-    ideology = ideology_reformer
+    ideology = ideology_modernizer_leader
     interest_group = ig_national_liberals
 	dna = ecchi_dna_okubo_toshimichi
     birth_date = 1830.9.26
@@ -499,22 +498,34 @@ ecchi_jap_kido_takayoshi = {
     home_region = STATE_CHUGOKU
     noble = yes
     religion = rel:shinto
-    ideology = ideology_reformer
-    interest_group = ig_national_liberals
+    ideology = ideology_modernizer_leader
+    interest_group = ig_radicals
 	dna = ecchi_dna_kido_takayoshi
     birth_date = 1833.8.11
     traits = { persistent ambitious }
-    agitator_usage = {
-        country_trigger = {
+    # agitator_usage = {
+    #     country_trigger = {
+    #         exists = c:JAP
+    #         this = c:JAP
+    #     }
+    #     interest_group_trigger = {
+    #         is_interest_group_type = ig_national_liberals
+    #     }
+    #     earliest_usage_date = 1868.1.1
+    #     latest_usage_date = 1877.5.26
+    #     chance = 70
+    # }
+    interest_group_leader_usage = {
+         country_trigger = {
             exists = c:JAP
             this = c:JAP
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_national_liberals
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1868.1.1
         latest_usage_date = 1877.5.26
-        chance = 70
+        chance = 100
     }
 }
 
@@ -584,7 +595,7 @@ ecchi_jap_yasunari_kawabata = {
     home_region = STATE_KANSAI
 	dna = ecchi_dna_yasunari_kawabata
     ideology = ideology_reformer
-    interest_group = ig_intelligentsia
+    interest_group = ig_liberals
     birth_date = 1899.6.11
     traits = { persistent literary }
     agitator_usage = {
@@ -595,7 +606,7 @@ ecchi_jap_yasunari_kawabata = {
             has_state_in_state_region = STATE_KANSAI
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1924.10.1
         latest_usage_date = 1972.4.16

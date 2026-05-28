@@ -73,26 +73,13 @@ ecchi_den_grundtvig = {
     historical = yes
     culture = cu:danish
 	home_region = STATE_ZEALAND
-
+	Fredrik_Wilhelm
     religion = rel:protestant
     ideology = ideology_reformer
     interest_group = ig_devout
 	#dna = ecchi_dna_johan_rudolph_thorbecke
     birth_date = 1783.9.8
     traits = { erudite persistent pious literary }
-	agitator_usage = {
-		country_trigger = {
-			c:DEN ?= this
-		}
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            is_interest_group_type = ig_devout
-        }
-		earliest_usage_date = 1836.1.1
-		latest_usage_date = 1873.9.2
-		chance = 100
-	}
 }
 
 ## Matilde Bajer

@@ -191,25 +191,12 @@ ecchi_chi_ilibu = {
     last_name = Aisin_Gioro
     historical = yes
     culture = cu:manchu
-    
+    ig_leader = yes
     ideology = ideology_traditionalist
     interest_group = ig_armed_forces
-    ig_leader = yes
     dna = ecchi_dna_ilibu
     birth_date = 1772.1.1
     traits = { experienced_defensive_strategist persistent pillager opium_addiction }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:CHI
-            this = c:CHI
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_armed_forces
-        }
-        earliest_usage_date = 1801.1.1
-        latest_usage_date = 1843.3.4
-        chance = 100
-    }
 }
 
 ## Zhao Sanduo

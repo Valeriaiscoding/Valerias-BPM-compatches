@@ -126,25 +126,13 @@ net_prinsterer = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_traditionalist
     interest_group = ig_devout
 	dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1801.7.21
     traits = { pious persistent literary }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1866.1.1
-        chance = 100
-    }
 }
 
 net_d_ablaing_van_giessenburg = {
@@ -153,25 +141,13 @@ net_d_ablaing_van_giessenburg = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_royalist
     interest_group = ig_armed_forces
 	dna = mr_net_johan_d_ablaing_van_giessenburg
     birth_date = 1779.5.6
     traits = { brave popular_commander }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_armed_forces
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1859.5.27
-        chance = 100
-    }
 }
 
 #net_mutsaers = {
@@ -383,7 +359,7 @@ net_schimmelpenninck = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_GELRE
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_royalist
     interest_group = ig_conservatives
@@ -391,18 +367,6 @@ net_schimmelpenninck = {
     noble = yes
     birth_date = 1794.2.25
     traits = { direct basic_entrepreneur experienced_diplomat }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1863.10.4
-        chance = 100
-    }
 }
 
 net_teenstra = {
@@ -411,25 +375,13 @@ net_teenstra = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_FRIESLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_abolitionist
     interest_group = ig_rural_folk
 	dna = ecchi_net_teenstra
     birth_date = 1795.9.17
     traits = { literary meticulous }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1864.10.29
-        chance = 100
-    }
 }
 
 net_van_der_voo = {
@@ -465,25 +417,13 @@ net_luzac = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_liberals
 	dna =  ecchi_net_luzac
     birth_date = 1786.8.1
     traits = { experienced_political_operator ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_liberals
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1861.2.18
-        chance = 100
-    }
 }
 
 net_de_jonge_van_campensnieuwland = {
@@ -492,25 +432,13 @@ net_de_jonge_van_campensnieuwland = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_HOLLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_royalist
     interest_group = ig_reactionaries
 	dna = ecchi_net_campensnieuwland
     birth_date = 1786.3.29
     traits = { inspirational_orator persistent }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_reactionaries
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1858.9.11
-        chance = 100
-    }
 }
 
 ## Pieter Cort van der Linden
@@ -694,7 +622,6 @@ net_oud = {
     last_name = ecchi_Oud
     historical = yes
     culture = cu:dutch
-    home_region = STATE_HOLLAND
     home_region = STATE_HOLLAND
     religion = rel:protestant
     ideology = ideology_market_liberal
@@ -1513,23 +1440,11 @@ ecchi_net_fresemann_vietor = {
     historical = yes
     culture = cu:dutch
     home_region = STATE_FRIESLAND
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_industrialists
     #dna = ecchi_dna_andre_citroen
     birth_date = 1784.12.20
     traits = { meticulous experienced_political_operator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NET
-            this = c:NET
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1852.2.6
-        chance = 100
-    }
 }

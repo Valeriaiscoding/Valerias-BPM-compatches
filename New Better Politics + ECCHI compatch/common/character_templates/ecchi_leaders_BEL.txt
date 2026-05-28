@@ -7,32 +7,11 @@ ecchi_bel_rogier = {
     culture = cu:wallonian
     home_region = STATE_WALLONIA
     religion = rel:catholic
-    ideology = ideology_radical
+    ideology = ideology_reformer
     interest_group = ig_liberals
 	dna = ecchi_dna_charles_rogier
     birth_date = 1800.8.17
     traits = { experienced_diplomat reserved }
-    interest_group_leader_usage = {
-        country_trigger = {
-            OR = {
-                AND = {
-                    exists = c:BEL
-                    this = c:BEL
-                    NOT = { exists = c:WLL }
-                }
-                AND = {
-                    exists = c:WLL
-                    this = c:WLL
-                }
-            }
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_liberals
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1885.5.27
-        chance = 100
-    }
 }
 
 ecchi_bel_pirenne = {
@@ -264,36 +243,13 @@ bel_jottrand = {
     historical = yes
     culture = cu:flemish
     home_region = STATE_FLANDERS
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_social_democrat
     interest_group = ig_radicals
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1804.1.31
     traits = { literary aesthete }
-	agitator_usage = {
-		country_trigger = {
-            trigger_if = {
-                limit = { exists = c:UNL }
-                this ?= c:UNL
-            }
-            trigger_else_if = {
-                limit = { exists = c:FLA }
-                this ?= c:FLA
-            }
-			trigger_else = {
-                this ?= c:BEL
-            }
-		}
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            is_interest_group_type = ig_radicals
-        }
-		earliest_usage_date = 1836.1.1
-		latest_usage_date = 1877.12.17
-		#chance = 50
-	}
 }
 
 bel_destree = {
@@ -448,31 +404,19 @@ bel_beernaert = {
 #    }
 #}
 
-bel_dumont = {
+bel_dumont = { # TODO
     first_name = Guillaume
     last_name = Dumont
     historical = yes
     culture = cu:wallonian
     home_region = STATE_WALLONIA
-
+    
     religion = rel:catholic
-    ideology = ideology_market_liberal
+    ideology = ideology_land_reformer
     interest_group = ig_industrialists
     #dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1787.1.26
     traits = { ambitious experienced_entrepreneur }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:BEL
-            this = c:BEL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1855.8.1
-        chance = 100
-    }
 }
 
 bel_eloy = {
@@ -488,18 +432,6 @@ bel_eloy = {
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1776.7.10
     traits = { persistent honorable }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:BEL
-            this = c:BEL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1855.1.15
-        chance = 100
-    }
 }
 
 bel_daens = {

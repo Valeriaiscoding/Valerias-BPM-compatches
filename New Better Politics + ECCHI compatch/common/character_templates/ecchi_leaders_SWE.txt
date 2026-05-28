@@ -41,7 +41,7 @@ ecchi_swe_branting = {
     culture = cu:swedish
     home_region = STATE_SVEALAND
 
-    ideology = ideology_social_democrat
+    ideology = ideology_dove
     interest_group = ig_reformist_socialists
     dna = mr_swe_branting_hjalmar
     birth_date = 1860.11.23

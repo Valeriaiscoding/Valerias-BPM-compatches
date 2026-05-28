@@ -1,0 +1,57 @@
+﻿TRY_INJECT:usa_polk_character_template = {
+	dna = ecchi_dna_james_k_polk
+}
+
+TRY_INJECT:BPM_USA_martin_van_buren_template = {
+	dna = ecchi_dna_martin_van_buren
+	traits = {
+		basic_diplomat
+	}
+}
+
+TRY_INJECT:BPM_USA_martin_van_buren_template = {
+	dna = ecchi_dna_william_henry_harrison
+}
+
+TRY_INJECT:BPM_USA_john_fremont_template = {
+	dna = ecchi_dna_john_c_fremont
+	traits = {
+		explorer
+		war_criminal
+		celebrity_commander
+	}
+}
+
+TRY_INJECT:BPM_USA_john_quincy_adams_template = {
+	dna = ecchi_dna_john_qunicy_adams
+}
+
+REPLACE:BEL_John_Cockerill = { # Revert to Vanilla template
+    # John Cockerill
+    first_name = "John"
+    last_name = "Cockerill"
+    historical = yes
+    dna = dna_john_cockerill
+    culture = cu:british
+    birth_date = 1790.8.3
+    interest_group = ig_industrialists
+    ideology = ideology_moderate
+	company = company:company_john_cockerill
+    home_region = STATE_LANCASHIRE
+    traits = {
+        ambitious
+        basic_political_operator
+        basic_entrepreneur
+    }
+    executive_usage = {
+        country_trigger = {
+            has_dlc_feature = mp1_content
+        }
+        company_trigger = {
+            is_company_type = company_type:company_john_cockerill
+        }
+        earliest_usage_date = 1836.1.1
+        latest_usage_date = 1840.12.27
+        #guaranteed to spawn if possible
+    }
+}

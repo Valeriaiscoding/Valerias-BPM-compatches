@@ -47,7 +47,7 @@ ecchi_ita_mussolini = {
     home_region = STATE_EMILIA
 
     religion = rel:catholic
-    ideology = ideology_fascist
+    ideology = ideology_center_leader
     interest_group = ig_fascists
 	dna = ecchi_dna_benito_mussolini
     birth_date = 1883.7.29
@@ -85,7 +85,6 @@ mr_ita_bugatti_ettore = {
 	last_name = ecchi_bugatti
 	culture = cu:north_italian
 	home_region = STATE_LOMBARDY
-	female = no
 	female = no
 	interest_group = ig_industrialists
 	birth_date = 1881.9.15
@@ -179,7 +178,7 @@ mr_ita_balbo = {
     last_name = ecchi_Balbo
     culture = cu:south_italian
     home_region = STATE_SICILY
-    interest_group = ig_fascists
+    interest_group = ig_armed_forces
     birth_date = 1896.6.6
     historical = yes
     ideology = ideology_fascist
@@ -208,7 +207,10 @@ mr_ita_balbo = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_fascists
+           OR = {
+                is_interest_group_type = ig_fascists
+                is_interest_group_type = ig_armed_forces
+           }
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1940.6.28
@@ -264,7 +266,7 @@ mr_ita_togliatti = {
     first_name = ecchi_Palmiro
     last_name = ecchi_Togliatti
     culture = cu:north_italian
-    home_region = STATE_PIE
+    home_region = STATE_PIEDMONT
     interest_group = ig_revolutionist_socialists
     birth_date = 1893.3.26
     historical = yes
@@ -374,18 +376,6 @@ ecchi_ita_francesetti_di_mezzenile = {
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1776.1.10
     traits = { basic_entrepreneur erudite }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SAR
-            this = c:SAR
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1850.4.20
-        chance = 100
-    }
 }
 
 ## Giovanni Battista Sella
@@ -396,25 +386,13 @@ ecchi_ita_battista_sella = {
     historical = yes
     culture = cu:north_italian
     home_region = STATE_PIEDMONT
-
+    ig_leader = yes
     religion = rel:catholic
-    ideology = ideology_market_liberal
+    ideology = ideology_modernizer_leader
     interest_group = ig_industrialists
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1788.4.5
     traits = { ambitious experienced_entrepreneur }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SAR
-            this = c:SAR
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1878.4.9
-        chance = 100
-    }
 }
 
 ## Giacomo Giovanetti
@@ -425,25 +403,13 @@ ecchi_ita_giovanetti = {
     historical = yes
     culture = cu:north_italian
     home_region = STATE_PIEDMONT
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_market_liberal
     interest_group = ig_petty_bourgeoisie
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1787.5.1
     traits = { direct experienced_political_operator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SAR
-            this = c:SAR
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1849.1.22
-        chance = 100
-    }
 }
 
 ## Giuseppe De Leva Gravina
@@ -454,25 +420,13 @@ ecchi_ita_de_leva_gravina = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_devout
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1786.1.1
     traits = { erudite tactful }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1861.4.31
-        chance = 100
-    }
 }
 
 ## Carlo Filangieri
@@ -512,25 +466,13 @@ ecchi_ita_winspeare = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_royalist
     interest_group = ig_armed_forces
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1783.4.29
     traits = { popular_commander meticulous }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_armed_forces
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1860.4.1
-        chance = 100
-    }
 }
 
 ## Luigi Giura
@@ -541,25 +483,13 @@ ecchi_ita_guira = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_petty_bourgeoisie
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1795.10.14
     traits = { engineer ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1864.10.1
-        chance = 100
-    }
 }
 
 ##  
@@ -570,25 +500,13 @@ ecchi_ita_florio = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_moderate
     interest_group = ig_industrialists
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1799.5.4
     traits = { basic_entrepreneur inspirational_orator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1868.9.11
-        chance = 100
-    }
 }
 
 ## Tommaso Russo, Really obscure. Had no bio anywere so I had piece him together with litte bits of info
@@ -599,25 +517,13 @@ ecchi_ita_russo = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_traditionalist
     interest_group = ig_rural_folk
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1791.11.20
     traits = { pious honorable }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1857.12.13
-        chance = 100
-    }
 }
 
 ## Ruggero Settimo
@@ -628,25 +534,13 @@ ecchi_ita_settimo = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_liberal_leader
     interest_group = ig_intelligentsia
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1778.4.19
     traits = { popular_commander ruthless }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1863.4.2
-        chance = 100
-    }
 }
 
 ## Antonio Statella di Cassaro
@@ -657,28 +551,13 @@ ecchi_ita_statella_di_cassaro = {
     historical = yes
     culture = cu:south_italian
     home_region = STATE_SICILY
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_royalist
     interest_group = ig_landowners
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1785.6.31
     traits = { experienced_diplomat basic_political_operator ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:SIC
-            this = c:SIC
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_landowners
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1864.12.11
-        chance = 100
-    }
-    on_created = {
-        bpm_appoint_minfor_effect = yes
-    }
 }
 
 ## Giovanni Gentile

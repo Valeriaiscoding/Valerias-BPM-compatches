@@ -153,24 +153,12 @@ ecchi_kor_hang_ro = {
     historical = yes
     culture = cu:korean
     home_region = STATE_SARIWON
-
+    ig_leader = yes
     ideology = ideology_theocrat
     interest_group = ig_devout
     #dna = ecchi_dna_ho_hon
     birth_date = 1792.1.1
     traits = { honorable erudite }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:KOR
-            this = c:KOR
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1868.1.1
-        chance = 100
-    }
 }
 
 ## Jeong Hak-yu 정학유
@@ -187,16 +175,4 @@ ecchi_kor_hak_yu = {
     #dna = ecchi_dna_ho_hon
     birth_date = 1786.1.1
     traits = { erudite persistent }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:KOR
-            this = c:KOR
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1855.1.1
-        chance = 100
-    }
 }

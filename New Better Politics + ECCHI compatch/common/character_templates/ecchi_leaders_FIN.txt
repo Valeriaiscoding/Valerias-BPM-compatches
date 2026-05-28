@@ -146,7 +146,6 @@ ecchi_fin_risto_ryti = {
 	culture = cu:finnish
 	home_region = STATE_OSTROBOTHNIA
 	female = no
-	female = no
 	ideology = ideology_republican_leader
 	interest_group = ig_market_liberals
 	dna = ecchi_dna_risto_ryti
@@ -178,7 +177,7 @@ ecchi_fin_melartin = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_UUSIMAA
-	home_region = STATE_UUSIMAA
+	ig_leader = yes
 
     religion = rel:protestant
     ideology = ideology_theocrat
@@ -186,18 +185,6 @@ ecchi_fin_melartin = {
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1780.1.11
     traits = { pious erudite }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1847.6.8
-        chance = 100
-    }
 }
 
 ecchi_fin_armfelt = {
@@ -206,25 +193,13 @@ ecchi_fin_armfelt = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_EAST_KARELIA
-
+	ig_leader = yes
     religion = rel:protestant
     ideology = ideology_royalist
     interest_group = ig_armed_forces
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1792.4.2
     traits = { popular_commander master_bureaucrat }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_armed_forces
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1856.6.8
-        chance = 100
-    }
 }
 
 ecchi_fin_julin = {
@@ -233,25 +208,13 @@ ecchi_fin_julin = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_OSTROBOTHNIA
-
+	ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_industrialists
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1787.8.5
     traits = { ambitious experienced_entrepreneur }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1853.4.11
-        chance = 100
-    }
 }
 
 ecchi_fin_trapp = {
@@ -260,25 +223,13 @@ ecchi_fin_trapp = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_OSTROBOTHNIA
-
+	#ig_leader = yes
     religion = rel:protestant
     ideology = ideology_market_liberal
-    interest_group = ig_intelligentsia
+    interest_group = ig_liberals
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1793.6.1
     traits = { basic_entrepreneur honorable }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1860.4.16
-        chance = 100
-    }
 }
 
 ecchi_fin_von_haartman = {
@@ -287,25 +238,13 @@ ecchi_fin_von_haartman = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_OSTROBOTHNIA
-
+	ig_leader = yes
     religion = rel:protestant
     ideology = ideology_traditionalist
     interest_group = ig_rural_folk
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1789.9.23
     traits = { imposing master_bureaucrat }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_rural_folk
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1859.12.16
-        chance = 100
-    }
 }
 
 ecchi_fin_pipping = {
@@ -314,25 +253,13 @@ ecchi_fin_pipping = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_UUSIMAA
-
+	ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_intelligentsia
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1783.12.14
     traits = { erudite literary }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1866.1.1
-        chance = 100
-    }
 }
 
 ecchi_fin_von_Kothen = {
@@ -341,23 +268,11 @@ ecchi_fin_von_Kothen = {
     historical = yes
     culture = cu:finnish
 	home_region = STATE_UUSIMAA
-
+	ig_leader = yes
     religion = rel:protestant
     ideology = ideology_royalist
     interest_group = ig_landowners
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1778.2.21
     traits = { inspirational_orator tactful }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:FIN
-            this = c:FIN
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_landowners
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1851.1.26
-        chance = 100
-    }
 }

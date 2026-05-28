@@ -125,23 +125,12 @@ ecchi_rom_rusaila = {
     culture = cu:romanian
     home_region = STATE_WALLACHIA
     religion = rel:orthodox
-    ideology = ideology_theocrat
+    ideology = ideology_moderate
     interest_group = ig_devout
+    ig_leader = yes
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1789.1.1
     traits = { pious  }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1875.4.5
-        chance = 100
-    }
 }
 
 ecchi_rom_magheru = {
@@ -150,24 +139,13 @@ ecchi_rom_magheru = {
     historical = yes
     culture = cu:romanian
     home_region = STATE_WALLACHIA
+    ig_leader = yes
     religion = rel:orthodox
     ideology = ideology_liberal_leader
     interest_group = ig_armed_forces
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1802.4.8
     traits = { popular_commander brave }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_armed_forces
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1880.3.23
-        chance = 100
-    }
 }
 
 ecchi_rom_poenaru = {
@@ -177,23 +155,12 @@ ecchi_rom_poenaru = {
     culture = cu:romanian
     home_region = STATE_WALLACHIA
     religion = rel:orthodox
-    ideology = ideology_liberal_leader
-    interest_group = ig_intelligentsia
+    ideology = ideology_moderate
+    interest_group = ig_liberals
+    ig_leader = yes
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1799.1.10
     traits = { erudite engineer }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1875.10.2
-        chance = 100
-    }
 }
 
 ecchi_rom = {
@@ -204,22 +171,11 @@ ecchi_rom = {
     home_region = STATE_WALLACHIA
     religion = rel:orthodox
     ideology = ideology_royalist
-    interest_group = ig_landowners
+    interest_group = ig_conservatives
+    ig_leader = yes
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1790.1.1
     traits = { ruthless ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_landowners
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1877.1.1
-        chance = 100
-    }
 }
 
 ecchi_rom_otetelesanu = {
@@ -231,21 +187,10 @@ ecchi_rom_otetelesanu = {
     religion = rel:orthodox
     ideology = ideology_moderate
     interest_group = ig_petty_bourgeoisie
+    ig_leader = yes
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1795.1.1
     traits = { basic_entrepreneur experienced_political_operator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_petty_bourgeoisie
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1876.1.1
-        chance = 100
-    }
 }
 
 ecchi_rom_ghica = { #leader of the Agriculture Society of Romania 1836, intelligentsia may be more fittig but he best thing i could find for rural folk Romania
@@ -256,22 +201,11 @@ ecchi_rom_ghica = { #leader of the Agriculture Society of Romania 1836, intellig
     home_region = STATE_WALLACHIA
     religion = rel:orthodox
     ideology = ideology_moderate
+    ig_leader = yes
     interest_group = ig_agrarian_populists
 	#dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1794.1.1
     traits = { erudite aesthete }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:WAL
-            this = c:WAL
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_agrarian_populists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1850.1.1
-        chance = 100
-    }
 }
 
 # Belarus
@@ -394,7 +328,7 @@ ecchi_gre_paparrigopoulos = {
     culture = cu:greek
     home_region = STATE_ATTICA
     religion = rel:orthodox
-    ideology = ideology_traditionalist
+    ideology = ideology_moderate
     interest_group = ig_intelligentsia
     dna = ecchi_dna_constantine_paparrigopoulos
     birth_date = 1815.5.18
@@ -538,8 +472,8 @@ ecchi_ukr_petliura = {
     culture = cu:ukrainian
     home_region = STATE_KIEV
     religion = rel:orthodox
-    ideology = ideology_agrarian_socialist
-    interest_group = ig_agrarian_populists
+    ideology = ideology_social_democrat
+    interest_group = ig_national_liberals
     dna = ecchi_dna_symon_petliura
     birth_date = 1879.5.10
     traits = { charismatic basic_diplomat }
@@ -560,7 +494,7 @@ ecchi_ukr_petliura = {
         interest_group_trigger = {
             OR = {
                 is_interest_group_type = ig_agrarian_populists
-                is_interest_group_type = ig_reformist_socialists
+                is_interest_group_type = ig_national_liberals
             }
         }
         earliest_usage_date = 1912.1.1
@@ -615,13 +549,12 @@ ecchi_ukr_bandera = {
         interest_group_trigger = {
             OR = {
                 is_interest_group_type = ig_reactionaries
-                #is_interest_group_type = ig_fascists
+                is_interest_group_type = ig_fascists
             }
-            country_has_primary_culture = cu:ukrainian
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1959.10.15
-        chance = 25
+        chance = 50
     }
 }
 
@@ -764,16 +697,6 @@ mr_swi_dufour_guillaume_henri = {
 	}
 	is_general = yes
     commander_rank = default
-    commander_usage = {
-        country_trigger = {
-            exists = c:SWI
-            this = c:SWI
-        }
-        role = general
-        earliest_usage_date = 1815.1.1
-        latest_usage_date = 1865.7.14
-        #chance = 65
-    }
 }
 
 ## Karl Ludwig von Haller
@@ -785,24 +708,12 @@ swi_von_haller = {
     culture = cu:alemannic
     home_region = STATE_EAST_SWITZERLAND
     religion = rel:catholic
-    ideology = ideology_traditionalist
-    interest_group = ig_landowners
+    ideology = ideology_moderate
+    interest_group = ig_reactionaries
+    ig_leader = yes
     dna = mr_swi_von_haller_karl_ludwig
     birth_date = 1768.8.1
     traits = { master_bureaucrat experienced_diplomat literary }
-    interest_group_leader_usage = {
-        country_trigger = {
-            morgenrote_is_active = no
-            exists = c:SWI
-            this = c:SWI
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_landowners
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1854.5.21
-        chance = 100
-    }
 }
 
 ## Nazar von Reding
@@ -846,23 +757,10 @@ swi_gaussen = {
     religion = rel:protestant
     ideology = ideology_theocrat
     interest_group = ig_devout
+    ig_leader = yes
     #dna = mr_net_groen_van_prinsterer_guillaume
     birth_date = 1790.8.25
     traits = { pious ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            morgenrote_is_active = no
-            exists = c:SWI
-            this = c:SWI
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_devout
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1863.5.18
-        chance = 100
-    }
 }
 
 ## Hans Caspar Escher
@@ -876,23 +774,10 @@ ecchi_swi_von_reding = {
     religion = rel:catholic
     ideology = ideology_market_liberal
     interest_group = ig_industrialists
+    ig_leader = yes
 	#dna = ecchi_dna_johan_rudolph_thorbecke
     birth_date = 1775.8.9
     traits = { ambitious experienced_entrepreneur }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            morgenrote_is_active = no
-            exists = c:SWI
-            this = c:SWI
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1859.8.29
-        chance = 100
-    }
 }
 
 ## Carl Jung
