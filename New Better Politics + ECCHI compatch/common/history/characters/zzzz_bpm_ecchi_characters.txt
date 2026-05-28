@@ -146,6 +146,11 @@
 			template = bel_jottrand
 		}
 	}
+	c:GRE = {
+		create_character = {
+			template = ecchi_gre_paparrigopoulos
+		}
+	}
 	c:TUR = {
 		create_character = {
 			template = ecchi_tur_dadyan

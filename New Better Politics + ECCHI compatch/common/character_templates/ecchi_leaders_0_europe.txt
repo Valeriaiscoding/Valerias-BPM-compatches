@@ -334,18 +334,6 @@ ecchi_gre_paparrigopoulos = {
     birth_date = 1815.5.18
     ig_leader = yes
     traits = { cautious experienced_diplomat }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:GRE
-            this = c:GRE
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1891.2.15
-        chance = 100
-    }
 }
 
 # Hungary
