@@ -1,4 +1,4 @@
-country_bpm_ultra_d_aggressive_diplomacy_agains_recognized_disabled = {
+﻿country_bpm_ultra_d_aggressive_diplomacy_agains_recognized_disabled = {
 	color=bad
 	boolean=yes
 }

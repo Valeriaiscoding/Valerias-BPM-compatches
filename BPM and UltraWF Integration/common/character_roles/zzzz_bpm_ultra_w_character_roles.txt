@@ -1,4 +1,4 @@
-INJECT:bpm_character_role_minister = {
+﻿INJECT:bpm_character_role_minister = {
 	# Root = character
 	on_career_end = {
 		random_country = {

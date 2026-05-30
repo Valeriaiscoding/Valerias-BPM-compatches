@@ -1,4 +1,4 @@
-REPLACE_OR_CREATE:law_bakufu = {
+﻿REPLACE_OR_CREATE:law_bakufu = {
 	group = lawgroup_executive_principles
 	parent = law_answers_to_legislature
 

@@ -1,4 +1,4 @@
-REPLACE:bpm_reload_institution_modifiers = {
+﻿REPLACE:bpm_reload_institution_modifiers = {
     every_interest_group = {
         remove_modifier = bpm_colonial_affairs_attraction_modifier
         remove_modifier = bpm_social_security_attraction_modifier

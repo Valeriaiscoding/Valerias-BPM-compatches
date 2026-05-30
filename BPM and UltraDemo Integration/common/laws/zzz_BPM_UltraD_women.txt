@@ -1,4 +1,4 @@
-INJECT:law_womens_suffrage_upgraded = {
+﻿INJECT:law_womens_suffrage_upgraded = {
 	modifier = {
 		state_birth_rate_mult = -0.05
 	}

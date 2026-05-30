@@ -1,4 +1,4 @@
-building_farmers_mortality_mult={
+﻿building_farmers_mortality_mult={
 	decimals=0
 	color=bad
 	percent=yes

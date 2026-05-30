@@ -1,4 +1,4 @@
-
+﻿
 REPLACE_OR_CREATE:ideology_moderate = {
 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_no_ideology.dds"
 	

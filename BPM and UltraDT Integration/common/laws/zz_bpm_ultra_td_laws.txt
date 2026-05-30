@@ -1,4 +1,4 @@
-INJECT:law_laissez_faire = {
+﻿INJECT:law_laissez_faire = {
 	modifier = {
 		country_loan_interest_rate_mult = -0.25
 	}

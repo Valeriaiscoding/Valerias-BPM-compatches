@@ -1,4 +1,4 @@
-natural_borders.2 = {
+﻿natural_borders.2 = {
 	type = country_event
 	placement = root
 	title = natural_borders.2.t

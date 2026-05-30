@@ -1,4 +1,4 @@
-INJECT:army_reserves = {
+﻿INJECT:army_reserves = {
 	modifier = {
 		country_institution_conscription_max_investment_add = -1 #new
 	}

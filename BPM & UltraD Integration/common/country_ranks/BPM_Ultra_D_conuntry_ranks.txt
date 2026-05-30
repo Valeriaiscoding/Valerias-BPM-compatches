@@ -1,4 +1,4 @@
-INJECT:unrecognized_major_power = {
+﻿INJECT:unrecognized_major_power = {
 	modifier = {
 		country_legitimacy_base_add = 5
 	}

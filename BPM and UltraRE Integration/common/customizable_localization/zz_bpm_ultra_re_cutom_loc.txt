@@ -1,4 +1,4 @@
-REPLACE:bpm_minister_of_schools_modifier = {
+﻿REPLACE:bpm_minister_of_schools_modifier = {
 	type = character
 	random_valid = no
 

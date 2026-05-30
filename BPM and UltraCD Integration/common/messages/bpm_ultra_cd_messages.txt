@@ -1,4 +1,4 @@
-bpm_ultra_cd_unification_ideology = {
+﻿bpm_ultra_cd_unification_ideology = {
 	type = country
 	texture = "gfx/interface/icons/notification_icons/influence.dds"
 

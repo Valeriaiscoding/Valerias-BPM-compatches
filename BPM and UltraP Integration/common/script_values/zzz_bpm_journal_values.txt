@@ -1,4 +1,4 @@
-REPLACE:bpm_indepndence_from_the_church_values = {
+﻿REPLACE:bpm_indepndence_from_the_church_values = {
 	value = 0
 	
 	if = {

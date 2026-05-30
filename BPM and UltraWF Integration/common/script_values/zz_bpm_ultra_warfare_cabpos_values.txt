@@ -1,4 +1,4 @@
-REPLACE:bpm_total_num_positions = {
+﻿REPLACE:bpm_total_num_positions = {
 	value = 0
 	#["colonial_affairs", "social_security", "workplace_safety", "schools", "police", "health_system", "home_affairs", "centralization", "suffrage", "culture", "diplomacy", "economy"]
 

@@ -1,4 +1,4 @@
-REPLACE:bpm_reload_institution_modifiers_schools = {
+﻿REPLACE:bpm_reload_institution_modifiers_schools = {
     institution:institution_schools ?= {
         bpm_remove_institution_modifiers_schools = yes
     }

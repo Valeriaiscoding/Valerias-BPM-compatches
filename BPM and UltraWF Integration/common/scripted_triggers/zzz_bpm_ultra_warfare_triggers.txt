@@ -1,4 +1,4 @@
-# -- Cabinet Register Institutions (8) (Antagonism) --
+﻿# -- Cabinet Register Institutions (8) (Antagonism) --
 REPLACE:bpm_is_antagonistic = {
     trigger_if = {
         limit = {

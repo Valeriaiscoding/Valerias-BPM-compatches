@@ -1,4 +1,4 @@
-INJECT:law_equal_inheritance = {
+﻿INJECT:law_equal_inheritance = {
 	institution = institution_economy 
 	institution_modifier = {
 		building_group_bg_agriculture_allowed_collectivization_add = 0.05

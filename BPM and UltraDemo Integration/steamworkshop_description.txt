@@ -1,4 +1,4 @@
-[h2] Integration For Better Politics Mods and Ultra Historical Demography[/h2]
+﻿[h2] Integration For Better Politics Mods and Ultra Historical Demography[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
 
 This mod provides compatibility and integration for two affordmentionned mods

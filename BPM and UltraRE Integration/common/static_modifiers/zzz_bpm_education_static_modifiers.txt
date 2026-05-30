@@ -1,4 +1,4 @@
-# -- Schools -- #
+﻿# -- Schools -- #
 
 REPLACE_OR_CREATE:bpm_schools_anarchists_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds

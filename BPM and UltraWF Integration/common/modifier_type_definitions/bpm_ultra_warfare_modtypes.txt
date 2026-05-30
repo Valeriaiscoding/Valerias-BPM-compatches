@@ -1,4 +1,4 @@
-country_institution_cost_institution_conscription_mult={
+﻿country_institution_cost_institution_conscription_mult={
 	decimals=0
 	color=bad
 	percent=yes

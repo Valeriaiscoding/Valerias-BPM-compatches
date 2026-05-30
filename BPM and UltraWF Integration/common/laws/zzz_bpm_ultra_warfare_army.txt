@@ -1,4 +1,4 @@
-INJECT:law_peasant_levies = { # same design as with traditionalism
+﻿INJECT:law_peasant_levies = { # same design as with traditionalism
 	modifier = {
 		country_institution_conscription_max_investment_add = -5
 	}

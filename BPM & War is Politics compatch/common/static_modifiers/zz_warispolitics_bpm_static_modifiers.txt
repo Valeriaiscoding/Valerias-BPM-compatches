@@ -1,4 +1,4 @@
-INJECT:warispolitics_lost_war = {
+﻿INJECT:warispolitics_lost_war = {
 	country_rigidity_baseline_add = -25
 	# Base Values
 	# country_legitimacy_base_add = -10.5

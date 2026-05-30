@@ -1,4 +1,4 @@
-#TODO - loc
+﻿#TODO - loc
 REPLACE:bpm_aggressive_diplomacy_permitted = {
 	custom_tooltip = {
 		text = bpm_aggressive_diplomacy_permitted_tt
