@@ -1,11 +1,29 @@
 {
-  "name" : "New Better Politics + ECCHI compatch",
+  "name" : "BPM & ECCHI Integration",
 	"id" : "",
   "version" : "",
-  "supported_game_version" : "",
+  "game_id" : "victoria3",
+  "supported_game_version" : "1.13*",
   "short_description" : "",
-  "tags" : [],
-  "relationships" : [],
+  "tags": [
+    "1.13","Fixes","Gameplay","Interest Groups","Historical"
+  ],
+  "relationships" : [
+    {
+      "rel_type" : "dependency",
+      "id" : "2932134122", 
+      "display_name" : "Better Politics Mod",  
+      "resource_type" : "mod",      
+      "version" : "2.5*"           
+    },
+    {
+      "rel_type" : "dependency",
+      "id" : "ecchi_redux", 
+      "display_name" : "ECCHI Redux",  
+      "resource_type" : "mod",      
+      "version" : "1.10.*"           
+    }
+  ],
   "game_custom_data" : {
     "multiplayer_synchronized" : true
   }

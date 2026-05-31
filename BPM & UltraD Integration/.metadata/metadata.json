@@ -1,11 +1,22 @@
 {
-  "name" : "BPM & UltraDIplomacy Compatch",
+  "name" : "BPM & UltraD Integration",
 	"id" : "",
   "version" : "",
-  "supported_game_version" : "",
+  "game_id" : "victoria3",
+  "supported_game_version" : "1.13*",
   "short_description" : "",
-  "tags" : [],
-  "relationships" : [],
+  "tags": [
+    "1.13","Fixes","Gameplay","Diplomacy","Historical"
+  ],
+  "relationships" : [
+    {
+      "rel_type" : "dependency",
+      "id" : "2932134122", 
+      "display_name" : "Better Politics Mod",  
+      "resource_type" : "mod",      
+      "version" : "2.5*"           
+    }
+  ],
   "game_custom_data" : {
     "multiplayer_synchronized" : true
   }
