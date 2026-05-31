@@ -1,4 +1,4 @@
-﻿REPLACE:ideology_eco_antebellum_economy = {
+﻿REPLACE_OR_CREATE:ideology_eco_antebellum_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
 	lawgroup_box_of_economic_system_amendments = {
@@ -55,7 +55,7 @@
 
 }
 
-REPLACE:ideology_eco_artisan = {
+REPLACE_OR_CREATE:ideology_eco_artisan = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/artisan.dds"
 	priority = 1000
 
@@ -113,7 +113,7 @@ REPLACE:ideology_eco_artisan = {
 	}
 }
 
-REPLACE:ideology_eco_colonial_slavery_supporter = {
+REPLACE_OR_CREATE:ideology_eco_colonial_slavery_supporter = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
 	lawgroup_box_of_economic_system_amendments = {
@@ -174,7 +174,7 @@ ideology_eco_plantation_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
 	priority = 1000
 	lawgroup_box_of_economic_system_amendments = {
-		law_artisanal_economy_amendment = approve
+		law_artisanal_economy_amendment = disapprove
 	}
     lawgroup_economic_system = {
 		law_traditionalism = disapprove

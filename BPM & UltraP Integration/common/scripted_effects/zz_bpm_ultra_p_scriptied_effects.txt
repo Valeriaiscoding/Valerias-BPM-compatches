@@ -64,21 +64,3 @@
 			bpm_rename_igs = yes
 		}
 }
-
-REPLACE_OR_CREATE:bpm_ultra_p_remove_all_dop_ideologies = {
-	remove_ideology = ideology_dop_particularist
-}
-
-REPLACE_OR_CREATE:bpm_ultra_p_remove_all_eco_ideologies = {
-	remove_ideology = ideology_eco_plantation_economy
-	remove_ideology = ideology_eco_export_agrarian
-}
-
-REPLACE_OR_CREATE:bpm_ultra_p_re_add_eco_ideology = {
-	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_plantation_economy }
-	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_export_agrarian }
-}
-
-REPLACE_OR_CREATE:bpm_ultra_p_re_add_dop_ideology = {
-	bpm_re_add_ideology = { TYPE = dop IDEOLOGY = ideology_dop_particularist }
-}

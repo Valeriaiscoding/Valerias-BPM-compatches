@@ -1,0 +1,96 @@
+﻿REPLACE:bpm_remove_all_eco_ideologies = {
+	hidden_effect = {
+		remove_ideology = ideology_eco_placeholder
+		remove_ideology = ideology_eco_laissez_faire
+		remove_ideology = ideology_eco_artisan
+		remove_ideology = ideology_eco_interventionist
+		remove_ideology = ideology_eco_modern_interventionist
+		remove_ideology = ideology_eco_distributist_economy
+		remove_ideology = ideology_eco_centralized_economy
+		remove_ideology = ideology_eco_traditional_agrarian
+		remove_ideology = ideology_eco_modern_agrarian
+		remove_ideology = ideology_eco_agrarian_socialist
+		remove_ideology = ideology_eco_autarky
+		remove_ideology = ideology_eco_agrarian_autarky
+		remove_ideology = ideology_eco_socialist_autarky
+		remove_ideology = ideology_eco_socialist_mixed_economy
+		remove_ideology = ideology_eco_proletarian_economy
+		remove_ideology = ideology_eco_serf_economy
+		remove_ideology = ideology_eco_slave_economy
+		remove_ideology = ideology_eco_modernizer
+		remove_ideology = ideology_eco_conservative_agrarian
+		remove_ideology = ideology_eco_american_system
+		remove_ideology = ideology_eco_trad_isolationist
+		remove_ideology = ideology_eco_antebellum_economy
+		remove_ideology = ideology_eco_colonialist
+		remove_ideology = ideology_eco_debt_serf_economy
+		remove_ideology = ideology_eco_slave_colonialist
+		remove_ideology = ideology_eco_colonial_slavery_supporter
+		# NEW
+		remove_ideology = ideology_eco_plantation_economy
+		remove_ideology = ideology_eco_export_agrarian
+	}
+}
+
+REPLACE:bpm_remove_all_dop_ideologies = {
+	hidden_effect = {
+		remove_ideology = ideology_dop_placeholder
+		remove_ideology = ideology_dop_party_socialist
+		remove_ideology = ideology_dop_anarchist
+		remove_ideology = ideology_dop_anarcho_syndicalist
+		remove_ideology = ideology_dop_party_state
+		remove_ideology = ideology_dop_radical_democrat
+		remove_ideology = ideology_dop_divine_democrat
+		remove_ideology = ideology_dop_christian_democrat
+		remove_ideology = ideology_dop_conservative_democrat
+	#	remove_ideology = ideology_dop_pragmatic_democrat
+		remove_ideology = ideology_dop_moderate_democrat
+		remove_ideology = ideology_dop_authoritarian_democrat
+		remove_ideology = ideology_dop_autocrat
+		remove_ideology = ideology_dop_meritocratic_autocrat
+		remove_ideology = ideology_dop_oligarch
+		remove_ideology = ideology_dop_technocrat
+		remove_ideology = ideology_dop_traditional_power
+		remove_ideology = ideology_dop_state_power
+		remove_ideology = ideology_dop_dissent
+		remove_ideology = ideology_dop_unionist
+		remove_ideology = ideology_dop_syndical_unionist
+		remove_ideology = ideology_dop_state_unionist
+		remove_ideology = ideology_dop_syndicalist
+		remove_ideology = ideology_dop_metropole_loyalist
+		remove_ideology = ideology_dop_organic_power
+		remove_ideology = ideology_dop_organic_democrat
+		#NEW
+		remove_ideology = ideology_dop_particularist
+	}
+}
+
+
+REPLACE:bpm_reorder_ideologies = {
+	hidden_effect = {
+		bpm_remove_all_placeholder_ideologies = yes
+		bpm_re_add_gov_ideology = yes
+		bpm_re_add_exe_ideology = yes
+		bpm_re_add_dop_ideology = yes
+		bpm_ultra_p_re_add_dop_ideology = yes
+		bpm_re_add_sta_ideology = yes
+		bpm_re_add_eco_ideology = yes
+		bpm_ultra_p_re_add_eco_ideology = yes
+		bpm_re_add_wel_ideology = yes
+		bpm_re_add_cit_ideology = yes
+		bpm_re_add_rel_ideology = yes
+		bpm_re_add_mil_ideology = yes
+		bpm_re_add_fem_ideology = yes
+		bpm_re_add_ban_ideology = yes
+	}
+}
+
+
+REPLACE_OR_CREATE:bpm_ultra_p_re_add_eco_ideology = {
+	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_plantation_economy }
+	bpm_re_add_ideology = { TYPE = eco IDEOLOGY = ideology_eco_export_agrarian }
+}
+
+REPLACE_OR_CREATE:bpm_ultra_p_re_add_dop_ideology = {
+	bpm_re_add_ideology = { TYPE = dop IDEOLOGY = ideology_dop_particularist }
+}

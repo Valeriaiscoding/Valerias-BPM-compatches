@@ -15,54 +15,10 @@
 				has_ideology = ideology:ideology_eco_conservative_agrarian
 			}
 			bpm_remove_all_eco_ideologies = yes
-			add_ideology = ideology_eco_plantation_economy
+			add_ideology = ideology_eco_export_agrarian
 		}
 	}
 	
-}
-
-bpm_ultra_p_setup_country_wel_ideologies = {
-	if = {
-		limit = {
-			OR = {
-				country_has_primary_culture = cu:yankee
-				country_has_primary_culture = cu:dixie
-				country_has_primary_culture = cu:north_german
-				country_has_primary_culture = cu:alemannic
-				country_has_primary_culture = cu:swedish
-				country_has_primary_culture = cu:norwegian
-				country_has_primary_culture = cu:danish
-				country_has_primary_culture = cu:finnish
-				country_has_primary_culture = cu:boer
-				this = c:USA
-				this = c:TEX
-				this = c:LIB
-				this = c:WUR
-			}
-		}
-		ig:ig_devout = {
-			bpm_remove_all_wel_ideologies = yes
-			add_ideology = ideology_wel_paternalistic_welfare
-		}
-	}
-	ig:ig_industrialists = {
-		if = {
-			limit = { 
-				owner = { 
-					OR = {
-						NOT = { has_technology_researched = corporatism } 
-						country_is_colonial_or_company = yes
-					}
-				}
-			}
-			bpm_remove_all_wel_ideologies = yes
-			add_ideology = ideology_wel_market_welfare
-		}
-		else = {
-			bpm_remove_all_wel_ideologies = yes
-			add_ideology = ideology_wel_paternalistic_welfare
-		}
-	}
 }
 
 bpm_ultra_p_setup_country_dop_ideologies = {

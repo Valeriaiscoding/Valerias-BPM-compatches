@@ -99,11 +99,4 @@ REPLACE:ideology_bismarckian = { #Bismarck needs its own ideology to allow histo
 		law_disarmed_nation = strongly_disapprove
 		law_premodern_diplomacy = strongly_disapprove
 	}
-
-	# lawgroup_colonization = {
-	# 	law_no_colonial_affairs = neutral
-	# 	law_colonial_exploitation = strongly_disapprove
-	# 	law_colonial_resettlement = strongly_disapprove
-	# 	law_frontier_colonization = strongly_disapprove
-	# }
 }
