@@ -2,5 +2,6 @@
 	state_turmoil_effects_mult = 0.25
 }
 INJECT:bpm_stability_dynamic = {
+	state_turmoil_effects_mult = 0.10
 	state_radicals_from_political_movements_mult = 0.05
 }
