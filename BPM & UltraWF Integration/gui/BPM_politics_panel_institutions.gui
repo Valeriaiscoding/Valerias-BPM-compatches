@@ -724,7 +724,7 @@ types politics_panel_types
                         datacontext = "[GetPlayer.MakeScope.Var('bpm_mineco').GetCharacter]"
                     }
 					blockoverride "background_image" {
-						texture = "gfx/interface/illustrations/institutions/home_affairs.dds"
+						texture = "gfx/interface/illustrations/institutions/workplace_safety.dds"
                 	}
 					blockoverride "visible_institution" {
 						visible = "[GetScriptedGui('bpm_CAB_mineco_institution').IsShown(GuiScope.SetRoot(Institution.MakeScope).End)]"
@@ -752,7 +752,7 @@ types politics_panel_types
                         datacontext = "[GetPlayer.MakeScope.Var('bpm_minint').GetCharacter]"
                     }
 					blockoverride "background_image" {
-						texture = "gfx/interface/illustrations/institutions/health_service.dds"
+						texture = "gfx/interface/illustrations/institutions/home_affairs.dds"
                 	}
 					blockoverride "visible_institution" {
 						visible = "[GetScriptedGui('bpm_CAB_minint_institution').IsShown(GuiScope.SetRoot(Institution.MakeScope).End)]"
@@ -779,7 +779,7 @@ types politics_panel_types
                         datacontext = "[GetPlayer.MakeScope.Var('bpm_minsoc').GetCharacter]"
                     }
 					blockoverride "background_image" {
-						texture = "gfx/interface/illustrations/institutions/health_service.dds"
+						texture = "gfx/interface/illustrations/institutions/social_security.dds"
                 	}
 					blockoverride "visible_institution" {
 						visible = "[GetScriptedGui('bpm_CAB_minsoc_institution').IsShown(GuiScope.SetRoot(Institution.MakeScope).End)]"
@@ -807,7 +807,7 @@ types politics_panel_types
                         datacontext = "[GetPlayer.MakeScope.Var('bpm_minmor').GetCharacter]"
                     }
 					blockoverride "background_image" {
-						texture = "gfx/interface/illustrations/institutions/culture.dds"
+						texture = "gfx/interface/illustrations/institutions/schools.dds"
                 	}
 					blockoverride "visible_institution" {
 						visible = "[GetScriptedGui('bpm_CAB_minmor_institution').IsShown(GuiScope.SetRoot(Institution.MakeScope).End)]"
