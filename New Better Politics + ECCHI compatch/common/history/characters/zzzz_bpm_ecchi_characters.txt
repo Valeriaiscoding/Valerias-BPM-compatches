@@ -169,4 +169,10 @@
 			template = ecchi_chi_ilibu
 		}
 	}
+	every_country = {
+		set_variable = {
+			name = keep_current_ruler_var
+			days = 7
+		}
+	}
 }
