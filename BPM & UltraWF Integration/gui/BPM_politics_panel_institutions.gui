@@ -696,7 +696,7 @@ types politics_panel_types
                         datacontext = "[GetPlayer.MakeScope.Var('bpm_mindef').GetCharacter]"
                     }
 					blockoverride "background_image" {
-						texture = "gfx/interface/illustrations/institutions/home_affairs.dds"
+						texture = "gfx/interface/illustrations/institutions/conscription.dds"
                 	}
 					blockoverride "visible_institution" {
 						visible = "[GetScriptedGui('bpm_CAB_mindef_institution').IsShown(GuiScope.SetRoot(Institution.MakeScope).End)]"
