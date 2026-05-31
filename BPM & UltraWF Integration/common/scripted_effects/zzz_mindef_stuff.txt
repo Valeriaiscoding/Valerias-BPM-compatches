@@ -33,7 +33,7 @@ bpm_fire_mindef_effect = {
 	remove_character_role = bpm_character_role_minister
 }
 
-bpm_auto_cabinet_appoint = {
+REPLACE:bpm_auto_cabinet_appoint = {
 	bpm_auto_cabinet_appoint_pm = yes
 	bpm_auto_cabinet_appoint_subp = { m = mineco }
 	bpm_auto_cabinet_appoint_subp = { m = minint }
