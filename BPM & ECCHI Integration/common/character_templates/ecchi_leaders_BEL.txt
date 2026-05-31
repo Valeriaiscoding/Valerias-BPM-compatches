@@ -405,7 +405,7 @@ bel_beernaert = {
 #    }
 #}
 
-bel_dumont = { # TODO
+bel_dumont = {
     first_name = Guillaume
     last_name = Dumont
     historical = yes
