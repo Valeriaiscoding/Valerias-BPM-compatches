@@ -1,7 +1,7 @@
 {
   "name" : "BPM & UltraCD Integration",
-	"id" : "",
-  "version" : "",
+	"id" : "bpm_ultra_cd_int",
+  "version" : "2.0",
   "game_id" : "victoria3",
   "supported_game_version" : "1.13*",
   "short_description" : "",
