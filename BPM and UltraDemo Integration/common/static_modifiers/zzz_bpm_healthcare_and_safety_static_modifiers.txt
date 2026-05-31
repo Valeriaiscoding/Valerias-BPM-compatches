@@ -1,6 +1,6 @@
 ﻿# -- Health System -- #
 # TODO this thing
-REPLACE:bpm_health_system_agpops_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_agpops_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_farmers_mortality_mult = -0.01
     state_peasants_mortality_mult = -0.01
@@ -11,13 +11,13 @@ REPLACE:bpm_health_system_agpops_modifier = {
     building_group_bg_extraction_standard_of_living_add = 0.1
 }
 
-REPLACE:bpm_health_system_anarchists_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_anarchists_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_mortality_mult = -0.01
     state_standard_of_living_add = 0.1
 }
 
-REPLACE:bpm_health_system_centrists_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_centrists_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_mortality_wealth_mult = -0.001
     state_standard_of_living_add = 0.1
@@ -25,22 +25,20 @@ REPLACE:bpm_health_system_centrists_modifier = {
     state_upper_strata_standard_of_living_add = 0.1
 }
 
-REPLACE:bpm_health_system_lefts_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_lefts_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_standard_of_living_add = 0.1
     state_lower_strata_standard_of_living_add = 0.1
 }
 
-REPLACE:bpm_health_system_commies_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_mortality_mult = -0.01
-    building_laborers_standard_of_living_add = 0.1
-    building_machinists_standard_of_living_add = 0.1
-    building_engineers_standard_of_living_add = 0.1
+    state_standard_of_living_add = 0.1
     state_lower_strata_standard_of_living_add = 0.1
 }
 
-REPLACE:bpm_health_system_military_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_military_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     unit_recovery_rate_add = 0.01
     battle_casualties_mult = -0.005
@@ -49,28 +47,30 @@ REPLACE:bpm_health_system_military_modifier = {
     # # country_rigidity_baseline_add = 1
 }
 
-REPLACE:bpm_health_system_pb_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_pb_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    building_bureaucrats_standard_of_living_add = 0.1
-    building_group_bg_government_mortality_mult = -0.02
+    state_middle_strata_standard_of_living_add = 0.2
+    state_bureaucrats_mortality_mult = -0.02
     # # country_rigidity_baseline_add = 1
 }
 
-REPLACE:bpm_health_system_devout_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_devout_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_lower_strata_standard_of_living_add = 0.1
+    interest_group_ig_devout_pop_attraction_mult = 0.02
     state_conversion_mult = 0.03
 }
 
-REPLACE:bpm_health_system_capis_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_capis_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_upper_strata_standard_of_living_add = 0.2
+    state_middle_strata_standard_of_living_add = 0.1
     state_mortality_mult = 0.01
-    state_mortality_wealth_mult = -0.003
+    state_mortality_wealth_mult = -0.001
     # # country_rigidity_baseline_add = 1
 }
 
-REPLACE:bpm_health_system_ruries_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_ruries_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_farmers_mortality_mult = -0.01
     state_peasants_mortality_mult = -0.01
@@ -80,7 +80,7 @@ REPLACE:bpm_health_system_ruries_modifier = {
     building_group_bg_extraction_standard_of_living_add = 0.2
 }
 
-REPLACE:bpm_health_system_unions_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_unions_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_laborers_mortality_mult = -0.01
     state_machinists_mortality_mult = -0.01
@@ -90,18 +90,18 @@ REPLACE:bpm_health_system_unions_modifier = {
     building_engineers_standard_of_living_add = 0.2
 }
 
-REPLACE:bpm_health_system_christdem_modifier = {
+REPLACE_OR_CREATE:bpm_health_system_christdem_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     
     #state_mortality_wealth_mult = -0.001
     state_pollution_reduction_health_mult = -0.02
-    state_welfare_payments_add = 0.01
-    state_standard_of_living_add = 0.2
+    state_welfare_payments_add = 0.02
+    state_standard_of_living_add = 0.1
 }
 
 # -- Workplace Safety -- #
 
-REPLACE:bpm_workplace_safety_agpops_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_agpops_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     building_group_bg_agriculture_mortality_mult = -0.01
     building_group_bg_ranching_mortality_mult = -0.01
@@ -110,7 +110,7 @@ REPLACE:bpm_workplace_safety_agpops_modifier = {
     state_pollution_reduction_health_mult = -0.05
 }   
 
-REPLACE:bpm_workplace_safety_lefts_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_lefts_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_peasants_mortality_mult = -0.01
     building_laborers_mortality_mult = -0.01
@@ -119,12 +119,12 @@ REPLACE:bpm_workplace_safety_lefts_modifier = {
     building_farmers_mortality_mult = -0.01
 }
 
-REPLACE:bpm_workplace_safety_commies_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_mortality_mult = -0.01 # Там вообще не надо будет умирать
 }
 
-REPLACE:bpm_workplace_safety_ruries_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_ruries_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     building_group_bg_agriculture_mortality_mult = -0.01
     building_group_bg_ranching_mortality_mult = -0.01
@@ -134,26 +134,26 @@ REPLACE:bpm_workplace_safety_ruries_modifier = {
     state_pollution_reduction_health_mult = -0.05
 }
 
-REPLACE:bpm_workplace_safety_unions_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_unions_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     building_laborers_mortality_mult = -0.02
     building_machinists_mortality_mult = -0.02
     building_engineers_mortality_mult = -0.02    
 }
 
-REPLACE:bpm_workplace_safety_christdem_modifier = {
+REPLACE_OR_CREATE:bpm_workplace_safety_christdem_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_peasants_mortality_mult = -0.01
-    building_laborers_mortality_mult = -0.01
-    building_machinists_mortality_mult = -0.01
-    building_engineers_mortality_mult = -0.01
-    building_farmers_mortality_mult = -0.01
+    state_peasants_mortality_mult = -0.02
+    building_laborers_mortality_mult = -0.02
+    building_machinists_mortality_mult = -0.02
+    building_engineers_mortality_mult = -0.02
+    building_farmers_mortality_mult = -0.02
 
     state_working_adult_ratio_add = -0.01
 }
 
 # -- Social Security -- #
-REPLACE:bpm_social_security_rursocs_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_rursocs_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_lower_strata_standard_of_living_add = 0.1
     state_welfare_payments_add = 0.02
@@ -176,21 +176,21 @@ bpm_social_security_liberals_modifier = {
     # # country_rigidity_baseline_add = -1
 }
 
-REPLACE:bpm_social_security_lefts_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_lefts_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_welfare_payments_add = 0.1
     country_institution_cost_institution_social_security_mult = 0.1
     # # country_rigidity_baseline_add = -1
 }
 
-REPLACE:bpm_social_security_commies_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_welfare_payments_add = 0.1
     country_institution_cost_institution_social_security_mult = 0.1
     # # country_rigidity_baseline_add = -1
 }
 
-REPLACE:bpm_social_security_pb_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_pb_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     country_government_wages_mult = 0.05
     building_bureaucrats_standard_of_living_add = 0.1
@@ -198,7 +198,7 @@ REPLACE:bpm_social_security_pb_modifier = {
     # # country_rigidity_baseline_add = 1
 }   
 
-REPLACE:bpm_social_security_devout_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_devout_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_lower_strata_standard_of_living_add = 0.1
     state_political_strength_from_welfare_mult = -0.05
@@ -206,7 +206,7 @@ REPLACE:bpm_social_security_devout_modifier = {
     # # country_rigidity_baseline_add = 1
 }
 
-REPLACE:bpm_social_security_capis_modifier = {
+REPLACE_OR_CREATE:bpm_social_security_capis_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_welfare_payments_add = -0.1
     country_institution_cost_institution_social_security_mult = -0.1

@@ -15,3 +15,9 @@ INJECT:bpm_repeatable_law_improve_soldier_conditions_result_permanent = {
 	#unit_offense_mult = 0.01
 	#unit_defense_mult = 0.01
 }
+
+INJECT:bpm_repeatable_law_parades_and_drills_result = {
+	country_prestige_mult = -0.25
+	country_prestige_from_army_power_projection_mult = 0.07 #0.25+0.07=0.33 total
+	country_prestige_from_navy_power_projection_mult = 0.33
+}

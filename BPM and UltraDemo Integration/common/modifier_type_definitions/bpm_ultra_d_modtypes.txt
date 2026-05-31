@@ -16,6 +16,15 @@ state_engineers_mortality_mult={
 	}
 }
 
+state_bureaucrats_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 building_group_bg_extraction_standard_of_living_add={
 	decimals=1
 	color=good
