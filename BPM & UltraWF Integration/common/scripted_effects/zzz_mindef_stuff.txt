@@ -40,7 +40,10 @@ REPLACE:bpm_auto_cabinet_appoint = {
 	bpm_auto_cabinet_appoint_subp = { m = minsoc }
 	bpm_auto_cabinet_appoint_subp = { m = minmor }
 	bpm_auto_cabinet_appoint_subp = { m = minfor }
-	bpm_auto_cabinet_appoint_subp = { m = mindef }
+	if = {
+		limit = { modifier:country_hog_functions_as_mindef_bool = no }
+		bpm_auto_cabinet_appoint_subp = { m = mindef } # Maybe need replacement to properly work with bakufu not sure
+	}
 }
 
 REPLACE:bpm_do_hog_transition = {
