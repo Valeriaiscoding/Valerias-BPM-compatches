@@ -1,14 +1,14 @@
 ﻿[h2] Integration For Better Politics Mods and Ultra Historical Debts and Taxes[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
-
 This mod provides compatibility and integration for two affordmentionned mods
 
 This mod reworks some of decisions and amendments to use BPMs new igs and harmonizes law changes between two mods
-Also with this mod enabled country loan interst rate will decrease based on prestige rank(works like company bonuses) intended as substitution of vanilla ig traits
+Also with this mod enabled loan interst rate will decrease based on country prestige rank(works like company bonuses) intended as substitution of vanilla ig traits.
 
 
-
+[list]
 Load Order:
-	UltraDT
-	BPM
-	This compatch
+[*]	UltraDT
+[*]	BPM
+[*]	This compatch
+[/list]

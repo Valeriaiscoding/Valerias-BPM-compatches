@@ -1,14 +1,23 @@
-﻿[h2] Integration For Better Politics Mods and Ultra Historical Warfare[/h2]
-Compatible with vanilla 1.13 version and BPM 2.5
+﻿[h2] Integration For Better Politics Mods and Ultra Historical Warfare[/h2] 
+Compatible with vanilla 1.13 version and BPM 2.5 
+This mod provides compatibility and integration for two affordmentionned mods 
+[list]
+[h3]New ministry of defense is added to handle UltraWF constription[/h3]
+[*] Renamed conscription institution to Miliary
+[*] Added Miliatry institution modifiers to most igs.
+[*] BPMs officers laws, with exeption of noble officers law, will now provide various modifier to army institution.
+[*] Bakufu has unique interaction with ministry of defense; position of minister of defense will be held by shogun, and therefore will be hereditary.
+[*] Most of army investment modifiers from techs to laws, most officers laws increases by 1, professional officers increases by 2.
+[/list]  
+[list] [h3]Changes to Repeatable army laws:[/h3]
+[*]  Nerfed and rebalanced Improve soldiers conditions repeatable law
+[*]  Army defunding repeatable law significantly decrease impact of army institution
+[*]  Military Reform effect increased by military institution investment law rather than by having professional officers law enacted
+[*]  Removed general prestige modifier from enforce army discipline law, increased prestige from army power projection modifier, added matching presitge from navy power projections modifier.
+[/list]
 
-This mod provides compatibility and integration for two affordmentionned mods
-
-New ministry of defense is added to handle UltraWF constription institution with modifiers added to most igs.
-Said institution was also renamed to military and now used with some bpms law.
-Ministry of defense also has unique interaction with Bakufu law where shogun will also become hereditary defense minister.
-BPMs officers laws, with exeption of noble officers law will now provide various modifier to army institution.
-Also some max level modifiers have been moved from techs to laws.
-Load Order:
-	UltraWF
-	BPM
-	This compatch
+[list] Load Order: 
+[*] UltraWF 
+[*] BPM 
+[*] This compatch 
+[/list]

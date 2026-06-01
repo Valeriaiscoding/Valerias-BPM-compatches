@@ -1,4 +1,4 @@
-﻿NPolitics ={ # TODO doublecheck
+﻿NPolitics ={
 	#Ultra P values maybe reduce
 	APPROVAL_THRESHOLD_ANGRY = -15	#was -10	# At this or below approval, IG is considered angry
 	APPROVAL_THRESHOLD_UNHAPPY = -7 #was -5		# At this or below approval, IG is considered unhappy

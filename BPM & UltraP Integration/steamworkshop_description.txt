@@ -1,21 +1,40 @@
-﻿[h2] Integration For Better Politics Mods and Ultra Historical Politics[/h2]
+﻿[h1] Integration For Better Politics Mods and Ultra Historical Politics[/h1]
 Compatible with vanilla 1.13 version and BPM 2.5
+This mod provides compatibility and integration for two affordmentionned mods.
+[list]
+[h3]Implemented most of changes to vanilla ideologies and new ideologies from UltraP to BPMs interest groups and movements[/h3]
+[*] Reworked Some BPMs economic ideologies stances.
+[*] Added paternalistic welfare, moderate monarchists and conservative agrarian to Prussian military interests.
+[*] Added Gender Egalitarian to Sikh devout.
+[*] Reworked artisan ideology based on UltraP changes and gave it to Professional Interest as default ideology.
+[*] Added popular militarist to Radlibs in old world, replaced with liberal patriot if they become progressives and their country does not have council republic law enacted.
+[*] Added new stances on slavery and serfdom to many of BPMs leftist and liberal movements.
+[*] Added stances for army model lawgroup to radical and national liberal movements.
+[*] Added stances for citizenship category to national liberal movement.
+[*] Properly Implemented UltraP changes to leaders ideologies.
+[/list]
+[list]
+[h3]Added new Ideologies based on New UltraP ideologies[/h3]
+[*] Slave Plantation Economy - Renamed and Slightly reworked antebellum economy: used by landowners in LatAm countries with slavery and in Turkey
+[*] Plantation Economy - based on changes to republican paternalistic: supports free trade insted of protectionism and neutral towards interventionism. Used by LatAm and Iberian Landowners.
+[*] Export Agrarian - variant of conservative agrarian: supports free trade insted of protectionism, used by LatAm and Iberian Conservatives.
+Used by Latin American and Turkish Landowners.
+[*] Particularist - just supports elected bureaucrats, currently used only by rural folk
+[/list]
 
-This mod provides compatibility and integration for two affordmentionned mods
-
-Reworked Some vanilla economic ideologies stances
-Signifcantly Reworked artisan idology based on UltraP changes and gave it to Professional Interest if they dont have other ideology
-Changes for vanilla ideologies and new ideologies from UltraP were implemented with new bpm ideologies
-Added new Ideologies based on New UltraP ideologies:
-	Plantation Economy - based on changes to republican paternalistic supports free trade insted of protectionism and less interventionist
-	Export Agrarian - variant of conservative agrairan supports free trade insted of protectionism
-	Particularist - just supports elected bureaucrats, currently only for rural folk
-Added new statnces on slavery and serfdom to many of BPM left with and liberal movements
-Also added popular militarist to Radlibs in old world, replaced with liberal patriot if they become progressives
-Harmonized Changes to Church and State laws made by both mods
-Reworked sharecropping amendment now it reduces rural collectivization and increses landowners pol supports and applies to peasant proprietorship and its variants
-
+[list]
+[h3]Other Changes[/h3]
+[*] Added UltraP modifiers to legitimacy to rigidity level
+[*] Harmonized Changes to Church and State laws made by both mods
+[*] Reworked sharecropping amendment now it reduces rural collectivization and increses landowners pol supports and applies to peasant proprietorship and its variants.
+[*] Investement in education institution with public schools law increases bureaucratic interests political strength.
+[*] Pops working on rubber plantations now are considered rural.
+[*] American landoweners start with authoritarian democrat ideology.
+[*] Russian autocratic igs start with meritocratic Autocrat.
+[/list]
+[list]
 Load Order:
-	UlraP
-	BPM
-	This compatch
+[*]     UltraP
+[*]	BPM
+[*]	This compatch
+[/list]

@@ -50,6 +50,7 @@ INJECT:bpm_schools_devout_modifier = {
     state_laborers_education_access_add = 0.01
     interest_group_ig_devout_pop_attraction_mult = 0.02
     state_conversion_mult = 0.02
+    country_bpm_labor_consciousness_target_mult = -0.02
 }
 
 REPLACE_OR_CREATE:bpm_schools_intel_modifier = {
@@ -71,10 +72,12 @@ INJECT:bpm_schools_unions_modifier = {
     state_laborers_education_access_add= -0.01
     state_machinists_education_access_add= -0.01
     state_engineers_education_access_add= 0.02
+    country_bpm_labor_consciousness_target_mult = 0.01
 }
 
 INJECT:bpm_schools_christdems_modifier = {
     state_education_access_add = -0.01
+    
 }
 
 bpm_schools_natlibs_modifier = {

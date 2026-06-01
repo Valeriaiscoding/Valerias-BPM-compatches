@@ -1,14 +1,21 @@
 ﻿[h2] Integration For Better Politics Mods and Ultra Historical Demography[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
-
 This mod provides compatibility and integration for two affordmentionned mods
+[list]
+[h3]Added birthrate and mortality modifiers to some BPM's laws :[/h3]
+[*] Upgraded Female Equlity: Added birth rate reduction modifier
+[*] Bakuhan System: Added birth rate and mortality modifiers, slightly lower than default serfdom.
+[/list]
+[list]
+[h3]This mod also rebalances minister modifiers for labor board, healthcare and welfare isnstitutions :[/h3]
+[*] Healthcare modifiers mortality reduction was decreased.
+[*] Labor Board modifiers .
+[*] Social Security modifiers now affect welfare payments and dependent wage rather than sol directly.
+[/list]
 
-This mod add birthrate an mortality modfiers to some of BPMs law where appropriate
-Also this mod rebalances minister safety and healthcare institution modifier to be closer to UlraDemo balance
-
-
-
+[list]
 Load Order:
-	UlraDemo
-	BPM
-	This compatch
+[*]	UltraDemo
+[*]	BPM
+[*]	This compatch
+[/list]

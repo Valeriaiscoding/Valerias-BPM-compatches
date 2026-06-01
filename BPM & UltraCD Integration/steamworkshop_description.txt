@@ -1,14 +1,27 @@
 ﻿[h2] Integration For Better Politics Mods and Ultra Historical Cultures and Discrimination[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
-
 This mod provides compatibility and integration for two affordmentionned mods
 
-Integrated some of BPM content to work with new laws and Cultures from UltraCD
-Added way for Conservatives with traditional culture to get rid of it; Either by nation formation or on pan-nationalism researched
-Harmonized Changes to Church and State laws made by both mods
-Also added citizenship category stance to natlib movement
+[list]
+[h3]Integrated some of BPM content to work with new laws and Cultures from UltraCD
+[/h3]
+[*] Finishing reconstruction will switch USA from white universalism to cultural exclusion
+[*] France will gain new french cultures as primary, if they are enabled, on natural border completion.
+[h3]Added ways for Conservatives with traditional culture to get rid of it:[/h3]
+[*] When Pan-Nationalism tech is researched conservative will change their citizenship ideology to nationalist.
+[*] They also change it on county formation, with many formables granting multiethnic nationalist instead.
+[/list]
 
+[list]
+[h3]Other Changes[/h3]
+[*] Added citizenship category stance to natlib movement.
+[*] Harmonized Changes to Church and State laws made by both mods.
+
+[/list]
+
+[list]
 Load Order:
-	UlraCD
-	BPM
-	This compatch
+[*]     UltraCD
+[*]	BPM
+[*]	This compatch
+[/list]

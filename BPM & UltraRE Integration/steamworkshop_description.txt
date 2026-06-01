@@ -1,12 +1,27 @@
 ﻿[h2] Integration For Better Politics Mods and Ultra Historical Research and Education[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
-
 This mod provides compatibility and integration for two affordmentionned mods
-
+[list]
 This mod changes some of modifiers from ministry of education to be more in line with UltraRE balance
-Also this mod Rework officer qualifications to be based on active officer law
+[*] Reduced effects of most ministers
+[*]	Added labor consciousness modifiers for conservative and leftist ministers
+[*] Added fervor modifiers for army and fascists
+[*] Added new natlib minister modifier
+[*] Rebalance communist and anarachists minister effects
+[/list]
 
+[list]
+Officers qualifications  were reworked to be based on active officer law:
+[*] Noble officers will significantly increase qualification for aristocrats.
+[*] Noble officers will now significantly decrease non aristocrat qualifications to become officers rather than peasant levies
+[*] Purchased officers will make pop qualification to become officer be depending on wealth 
+[*] Political Officers will increase bureaucrats qualification to become officers and decrease qualification of every other pop type
+[*] Professional Officers will  increase servicemen qualifications even if they are not deployed
+[*] Elected officers will significantly increase servicemen qualifications even if they are not deployed, and significantly reduce qualification of aristocrats
+
+[list]
 Load Order:
-	UltraRE
-	BPM
-	This compatch
+[*]	UltraRE
+[*]	BPM
+[*]	This compatch
+[/list]

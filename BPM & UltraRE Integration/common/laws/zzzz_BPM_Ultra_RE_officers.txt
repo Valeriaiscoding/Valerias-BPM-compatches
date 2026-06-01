@@ -17,6 +17,12 @@ INJECT:law_political_officers = {
 	}
 }
 
+INJECT:law_professional_officers = {
+	on_activate = {
+		custom_tooltip = QUALIFICATIONS_PROFESSIONAL_OFFICERS_DESC
+	}
+}
+
 INJECT:law_elected_officers = {
 	on_activate = {
 		custom_tooltip = QUALIFICATIONS_ELECTED_OFFICERS_DESC
