@@ -1,6 +1,7 @@
 ﻿#IG Scope triggers
 #Approves of aggressive diplo plays like conquest, return state, make subject
 REPLACE:warispolitics_ig_approves_aggression = {
+	bpm_ig_enabled = yes
 	leader = {
 		NOR = {
 			bpm_leader_is_doveish = yes
@@ -25,6 +26,7 @@ REPLACE:warispolitics_ig_approves_aggression = {
 
 #Disapproves of aggressive diplo plays like conquest, return state, make subject
 REPLACE:warispolitics_ig_disapproves_aggression = {
+	bpm_ig_enabled = yes
 	OR = {
 		leader = {
 			OR = {
@@ -58,6 +60,7 @@ REPLACE:warispolitics_ig_disapproves_aggression = {
 
 #Approves of reducing subject autonomy or annexing subjects
 REPLACE:warispolitics_ig_approves_bullying = {
+	bpm_ig_enabled = yes
 	OR = {
 		leader = {
 			OR = {
@@ -81,6 +84,7 @@ REPLACE:warispolitics_ig_approves_bullying = {
 
 #Disapproves of reducing subject autonomy or annexing subjects
 REPLACE:warispolitics_ig_disapproves_bullying = {
+	bpm_ig_enabled = yes
 	OR = {
 		leader = {
 			OR = {
@@ -96,6 +100,7 @@ REPLACE:warispolitics_ig_disapproves_bullying = {
 
 #Disapproves of targeting Council Republics with aggressive plays
 REPLACE:warispolitics_ig_disapproves_attacking_council_republic = {
+	bpm_ig_enabled = yes
 	OR = {
 		bpm_ig_is_radical_socialist = yes
 		leader = {
@@ -121,6 +126,7 @@ REPLACE:warispolitics_ig_disapproves_attacking_council_republic = {
 
 #Massively approves of waging an Independence war for FREEDOM!!!
 REPLACE:warispolitics_ig_loves_independence = {
+	bpm_ig_enabled = yes
 	warispolitics_ig_disapproves_independence = no
 	OR = {
 		leader = {
@@ -164,6 +170,7 @@ REPLACE:warispolitics_ig_loves_independence = {
 #Disapproves of waging an independence war (unused by default, hook for possible mod compatibility)
 #Some more complicated logic might be warranted here, like comparing this ig's country to the overlord's
 REPLACE:warispolitics_ig_disapproves_independence = {
+	bpm_ig_enabled = yes
 	trigger_if = {
 		limit = { country_is_colonial_or_company = yes }
 		OR = {

@@ -1,0 +1,254 @@
+﻿REPLACE:warispolitics_diplo_play_independence = {
+	effect = {
+		if = {
+			limit = { 
+				OR = {
+					is_diplomatic_play_type = dp_independence
+					is_diplomatic_play_type = dp_increase_autonomy
+				}
+			}
+			scope:initiator = {
+				# IG modifiers deprecated in favor of Lobbies
+				# #Positive
+				# every_interest_group = {
+				# 	limit = {
+				# 		warispolitics_ig_loves_independence = yes
+				# 	}
+				# 	if = {
+				# 		limit = { has_modifier = warispolitics_independence_positive }
+				# 		remove_modifier = warispolitics_independence_positive
+				# 	}
+				# 	add_modifier = {
+				# 		name = warispolitics_independence_positive
+				# 		days =  normal_modifier_time
+				# 		is_decaying = yes
+				# 	}
+				# 	post_notification = warispolitics_ig_approves_independence
+				# }
+				# #Negative
+				# every_interest_group = {
+				# 	limit = {
+				# 		warispolitics_ig_disapproves_independence = yes
+				# 	}
+				# 	if = {
+				# 		limit = { has_modifier = warispolitics_independence_negative }
+				# 		remove_modifier = warispolitics_independence_negative
+				# 	}
+				# 	add_modifier = {
+				# 		name = warispolitics_independence_negative
+				# 		days =  normal_modifier_time
+				# 		is_decaying = yes
+				# 	}
+				# 	post_notification = warispolitics_ig_disapproves_independence
+				# }
+				#Pops React
+				bpm_colony_reset_primary_culture = yes
+				if = {
+					limit = { has_law_or_variant = law_type:law_colonial_administration }
+					activate_law = law_type:law_oligarchy
+				}
+				if = {
+					limit = {
+						has_technology_researched = nationalism
+					}
+					every_primary_culture = {
+						save_scope_as = primary_culture_scope
+						#order_by = culture_current_fervor
+						add_fervor = 5
+						scope:initiator = {
+							add_loyalists = {
+								culture = scope:primary_culture_scope
+								value = 0.10
+							}
+						}
+					}
+					post_notification = warispolitics_pops_approve_independence
+				}	
+			}
+		}
+	}
+}
+
+REPLACE:warispolitics_capitulate = {
+	effect = {
+		if = {
+			limit = { has_law_or_variant = law_type:law_answers_to_legislature }
+			var:bpm_headofgov = {
+				save_scope_as = ruler_char
+			}
+		}
+		else = {
+			ruler = {
+				save_scope_as = ruler_char
+			}
+		}
+		if = {
+			limit = { 
+				has_modifier = warispolitics_lost_war
+			}
+			remove_modifier = warispolitics_lost_war
+		}
+		add_modifier = {
+			name = warispolitics_lost_war
+			days = 1825
+			is_decaying = yes
+		}
+		#IGs dinged
+		every_interest_group = {
+			limit = {
+				OR = {
+					is_in_government = yes
+					is_same_interest_group_type = scope:ruler_char.interest_group
+					AND = {
+						owner.var:bpm_headofgov != scope:ruler_char
+						is_same_interest_group_type = owner.var:bpm_headofgov.interest_group
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_modifier = warispolitics_ig_war_loser
+				}
+				remove_modifier = warispolitics_ig_war_loser
+			}
+			add_modifier = {
+				name = warispolitics_ig_war_loser
+				is_decaying = yes
+				days = 1825
+			}
+		}
+		#Ruler dinged
+		scope:ruler_char ?= {
+			if = {
+				limit = {
+					has_modifier = warispolitics_character_lost_war
+				}
+				remove_modifier = warispolitics_character_lost_war
+			}
+			if = {
+				limit = { 
+					OR = {
+						is_ruler_of_own_country = no 
+						owner = { has_law_or_variant = law_type:law_no_separate_hog }
+					}
+				}
+				add_modifier = {
+					name = warispolitics_character_lost_war
+					is_decaying = yes
+					multiplier = 2
+					days = 1825
+				}
+			}
+			else = {
+				add_modifier = {
+					name = warispolitics_character_lost_war
+					is_decaying = yes
+					days = 1825
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_variable = var:bpm_headofgov 
+				ruler != var:bpm_headofgov
+			}
+			add_modifier = {
+				name = warispolitics_character_lost_war
+				is_decaying = yes
+				days = 1825
+			}
+		}
+	}
+}
+
+REPLACE:warispolitics_war_won = {
+	effect = {
+		if = {
+			limit = { has_law_or_variant = law_type:law_answers_to_legislature }
+			var:bpm_headofgov = {
+				save_scope_as = ruler_char
+			}
+		}
+		else = {
+			ruler = {
+				save_scope_as = ruler_char
+			}
+		}
+		if = {
+			limit = { 
+				has_modifier = warispolitics_won_war
+			}
+			remove_modifier = warispolitics_won_war
+		}
+		add_modifier = {
+			name = warispolitics_won_war
+			days = 1825
+			is_decaying = yes
+		}
+		#IGs Rewarded
+		every_interest_group = {
+			limit = {
+				OR = {
+					is_in_government = yes
+					is_same_interest_group_type = scope:ruler_char.interest_group
+					AND = {
+						owner.var:bpm_headofgov != scope:ruler_char
+						is_same_interest_group_type = owner.var:bpm_headofgov.interest_group
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_modifier = warispolitics_ig_war_winner
+				}
+				remove_modifier = warispolitics_ig_war_winner
+			}
+			add_modifier = {
+				name = warispolitics_ig_war_winner
+				is_decaying = yes
+				days = 1825
+			}
+		}
+		#Ruler Rewarded
+		scope:ruler_char ?= {
+			if = {
+				limit = {
+					has_modifier = warispolitics_character_won_war
+				}
+				remove_modifier = warispolitics_character_won_war
+			}
+			if = {
+				limit = { 
+					OR = {
+						is_ruler_of_own_country = no 
+						owner = { has_law_or_variant = law_type:law_no_separate_hog }
+					}
+				}
+				add_modifier = {
+					name = warispolitics_character_won_war
+					is_decaying = yes
+					multiplier = 2
+					days = 1825
+				}
+			}
+			else = {
+				add_modifier = {
+					name = warispolitics_character_won_war
+					is_decaying = yes
+					days = 1825
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_variable = var:bpm_headofgov 
+				ruler != var:bpm_headofgov
+			}
+			add_modifier = {
+				name = warispolitics_character_won_war
+				is_decaying = yes
+				days = 1825
+			}
+		}
+	}
+}

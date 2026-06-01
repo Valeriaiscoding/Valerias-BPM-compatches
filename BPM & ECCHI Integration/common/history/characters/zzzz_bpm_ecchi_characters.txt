@@ -43,9 +43,6 @@
 		create_character = {
 			template = swi_von_haller
 		}
-		create_character = {
-			template = mr_swi_dufour_guillaume_henri
-		}
 	}
 	c:WAL = {
 		create_character = {
