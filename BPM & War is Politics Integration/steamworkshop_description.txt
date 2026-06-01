@@ -1,0 +1,14 @@
+﻿[h2] Integration For Better Politics Mods and War is Politics[/h2]
+Compatible with vanilla 1.13 version and BPM 2.5
+This mod provides compatibility and integration for two affordmentionned mods
+
+War is politics triggers were changed to include new ideologies from BPM
+Anti independence trigger was enabled to be used with colonialist igs in colonies and socialist igs in subjects of Council Republics
+Modifiers gained from winning or losing war were changed to affect political rigidity
+
+[list]
+Load Order:
+[*]	War is Politics
+[*]	BPM
+[*]	This compatch
+[/list]

@@ -1,14 +1,14 @@
 ﻿[h2] Integration For Better Politics Mods and ECCHI Redux[/h2]
 Compatible with vanilla 1.13 version and BPM 2.5
-
 This mod provides compatibility and integration for two affordmentionned mods
 Most of characters interest groups has been changes to better fitting ones from BPM
 Some of characters also had their ideology changed
 This mod also adds magnate role and Home states to some of ECCHI characters and fixes bug with new starting ig leaders missing
 
 This mod is continuation of original compatch by Prof. Lachs Blank
-
+[list]
 Load Order:
-	ECCHI
-	BPM
-	This compatch
+[*]	ECCHI
+[*]	BPM
+[*]	This compatch
+[/list]
