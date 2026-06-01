@@ -113,10 +113,7 @@
 						desc = "QUALIFICATIONS_OFFICERS_PURCHASED_COMISSIONS_ARISTOCRATS"
 					}
 				}
-				else_if = {
-					owner = {
-						NOT = { has_law_or_variant = law_type:law_elected_officers }
-					}
+				else = {
 					multiply = {
 						value = 6 #was 10 in ULTRA RE
 						desc = "QUALIFICATIONS_FAVORED_TYPE"
@@ -142,21 +139,21 @@
 			else_if = {
 				limit = {
 					is_pop_type = soldiers
-					owner = { has_law_or_variant = law_type:law_professional_officers }
-				}
-				multiply = {
-					value = 2
-					desc = "QUALIFICATIONS_PROFESSIONAL_OFFICERS"
-				}
-			}
-			else_if = {
-				limit = {
-					is_pop_type = soldiers
 					owner = { has_law_or_variant = law_type:law_elected_officers }
 				}
 				multiply = {
 					value = 4
 					desc = "QUALIFICATIONS_ELECTED_OFFICERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = soldiers
+					owner = { has_law_or_variant = law_type:law_professional_officers }
+				}
+				multiply = {
+					value = 2
+					desc = "QUALIFICATIONS_PROFESSIONAL_OFFICERS"
 				}
 			}
 			if = {

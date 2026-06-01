@@ -492,7 +492,7 @@ ecchi_fra_blum = {
     home_region = STATE_ILE_DE_FRANCE
 
     religion = rel:jewish
-    ideology = ideology_moderate
+    ideology = ideology_center_leader
     interest_group = ig_reformist_socialists
     #dna = ecchi_dna_andre_citroen
     birth_date = 1872.4.9
@@ -678,7 +678,7 @@ ecchi_fra_grave = {
     home_region = STATE_ILE_DE_FRANCE
 
     religion = rel:catholic
-    ideology = ideology_moderate
+    ideology = ideology_center_leader
     interest_group = ig_anarchists
     #dna = ecchi_dna_alphonse_de_lamartine
     birth_date = 1854.10.16
@@ -741,7 +741,7 @@ ecchi_fra_de_mun = {
     home_region = STATE_BRITTANY
 
     religion = rel:catholic
-    ideology = ideology_moderate
+    ideology = ideology_royalist
     interest_group = ig_reactionaries
     #dna = ecchi_dna_andre_citroen
     birth_date = 1841.2.28
@@ -752,7 +752,10 @@ ecchi_fra_de_mun = {
             this = c:FRA
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_reactionaries
+            OR = {
+                is_interest_group_type = ig_reactionaries
+                is_interest_group_type = ig_christian_democrats
+            }
         }
         earliest_usage_date = 1876.4.1
         latest_usage_date = 1914.10.6
