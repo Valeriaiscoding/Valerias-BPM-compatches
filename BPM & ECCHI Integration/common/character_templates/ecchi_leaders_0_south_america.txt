@@ -12,23 +12,6 @@ ecchi_chl_o_higgins = {
 	dna = ecchi_dna_bernardo_o_higgins
     birth_date = 1778.8.20
     traits = { senile romantic imperious ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:CHL
-            this = c:CHL
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_liberals
-            }
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1842.10.24
-        #chance = 65
-    }
 }
 
 # Uruguay

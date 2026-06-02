@@ -128,6 +128,9 @@
 		create_character = {
 			template = ecchi_net_fresemann_vietor
 		}
+		create_character = {
+			template = ecchi_net_van_den_bosch
+		}
 	}
 	c:BEL = {
 		create_character = {
@@ -146,6 +149,9 @@
 	c:GRE = {
 		create_character = {
 			template = ecchi_gre_paparrigopoulos
+		}
+		create_character = {
+			template = ecchi_gre_kolokotronis
 		}
 	}
 	c:TUR = {
@@ -166,6 +172,97 @@
 			template = ecchi_chi_ilibu
 		}
 	}
+	c:HAI = {
+		create_character = {
+			template = ecchi_hai_pierrot
+		}
+	}
+	c:TEX = {
+		create_character = {
+			template = ecchi_tex_de_zavala
+		}
+		create_character = {
+			template = ecchi_tex_crockett
+		}
+	}
+	c:USA = {
+		create_character = {
+			template = ecchi_usa_tyler
+		}
+		create_character = {
+			template = ecchi_usa_fillmore_template
+		}
+		create_character = {
+			template = ecchi_usa_pierce
+		}
+		create_character = {
+			template = ecchi_usa_buchanan
+		}
+	}
+
+	c:CHL = {
+		create_character = {
+			template = ecchi_chl_o_higgins
+		}
+	}
+	c:BRZ = {
+		create_character = {
+			template = ecchi_brz_de_andrada
+		}
+		create_character = {
+			template = ecchi_brz_franciso_de_sousa
+		}
+	}
+
+	c:QUE = {
+		create_character = {
+			template = ecchi_que_lambton
+		}
+		create_character = {
+			template = ecchi_que_nelson
+		}
+		create_character = {
+			template = ecchi_que_bowen
+		}
+	}
+
+	c:NVS = {
+		create_character = {
+			template = ecchi_nvs_howe
+		}
+	}
+
+	c:ONT = {
+		create_character = {
+			template = ecchi_ont_robinson
+		}
+		create_character = {
+			template = ecchi_ont_johnson
+		}
+	}
+
+	c:GBR = {
+		create_character = {
+			template = ecchi_gbr_elphinstone
+		}
+		create_character = {
+			template = ecchi_gbr_ross
+		}
+		create_character = {
+			template = ecchi_gbr_franklin
+		}
+		create_character = {
+			template = ecchi_gbr_carlyle
+			role = character_role_agitatorc
+		}
+		create_character = {
+			template = ecchi_gbr_wood
+		}
+		create_character = {
+			template = ecchi_gbr_conolly_arthur
+		}
+	}
+
 	every_country = {
 		set_variable = {
 			name = keep_current_ruler_var

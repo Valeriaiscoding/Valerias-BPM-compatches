@@ -448,7 +448,7 @@ ecchi_nep_parijat = {
 	female = yes
 	home_region = STATE_HIMALAYAS
 	ideology = ideology_feminist
-	interest_group = ig_intelligentsia
+	interest_group = ig_liberals
 	dna = ecchi_dna_bishnu_kumari_waiba
 	birth_date = 1937.9.4
 	traits = {
@@ -463,7 +463,7 @@ ecchi_nep_parijat = {
 			has_technology_researched = feminism
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_liberals
 		}
 		earliest_usage_date = 1950.1.1
 		latest_usage_date = 1993.1.1

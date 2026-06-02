@@ -833,7 +833,7 @@ ecchi_fra_durand = {
     home_region = STATE_ILE_DE_FRANCE
 	religion = rel:catholic
     female = yes
-	interest_group = ig_intelligentsia
+	interest_group = ig_radicals
 	ideology = ideology_feminist
 	birth_date = 1864.1.24
 	#dna = mr_net_jacobs_aletta
@@ -845,7 +845,7 @@ ecchi_fra_durand = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_radicals
         }
 		earliest_usage_date = 1891.1.1
 		latest_usage_date = 1936.4.26

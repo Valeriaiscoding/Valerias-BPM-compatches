@@ -238,7 +238,7 @@ net_jacobs = {
     home_region = STATE_FRIESLAND
 	religion = rel:jewish
     female = yes
-	interest_group = ig_intelligentsia
+	interest_group = ig_radicals
 	ideology = ideology_feminist
 	birth_date = 1854.2.9
 	dna = mr_net_jacobs_aletta
@@ -250,7 +250,7 @@ net_jacobs = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_radicals
         }
 		earliest_usage_date = 1881.1.1
 		latest_usage_date = 1929.7.10

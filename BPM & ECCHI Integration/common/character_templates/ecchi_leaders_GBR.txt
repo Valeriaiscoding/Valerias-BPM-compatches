@@ -32,7 +32,7 @@ ecchi_gbr_grey = {
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1845.7.17
-        #chance = 65
+        chance = 45
     }
 }
 
@@ -665,9 +665,8 @@ ecchi_gbr_darby = {
     historical = yes
     culture = cu:british
     home_region = STATE_HOME_COUNTIES
-
     religion = rel:protestant
-    ideology = ideology_theocrat
+    ideology = ideology_moderate
     interest_group = ig_devout
 	dna = ecchi_dna_john_n_darby
     birth_date = 1800.11.18
@@ -1336,8 +1335,6 @@ ecchi_gbr_wood = {
 	dna = ecchi_dna_jemmy_wood
     birth_date = 1756.10.7
     traits = { reserved imperious cautious }
-    role = character_role_magnate
-    holding_type = building_financial_district
     interest_group_leader_usage = {
         country_trigger = {
             exists = c:GBR
@@ -1360,10 +1357,10 @@ ecchi_gbr_cobden = {
     historical = yes
     culture = cu:british
     home_region = STATE_HOME_COUNTIES
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_radical
-    interest_group = ig_liberals
+    interest_group = ig_market_liberals
     dna = ecchi_dna_richard_cobden
     birth_date = 1804.6.3
     traits = { tactful masterful_diplomat }
@@ -1373,10 +1370,8 @@ ecchi_gbr_cobden = {
             this = c:GBR
         }
         interest_group_trigger = {
-            OR = {
-                is_interest_group_type = ig_liberals
-                is_interest_group_type = ig_radicals
-            }
+            bpm_ig_enabled = yes
+            is_interest_group_type = ig_market_liberals
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1865.4.20

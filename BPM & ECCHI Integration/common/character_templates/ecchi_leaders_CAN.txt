@@ -6,25 +6,13 @@ ecchi_que_lambton = {
     historical = yes
     culture = cu:british
     home_region = STATE_QUEBEC
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_reformer
     interest_group = ig_liberals
 	dna = ecchi_dna_john_lambton
     birth_date = 1792.4.12
     traits = { expert_colonial_administrator romantic expensive_tastes }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:QUE
-            this = c:QUE
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_liberals
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1840.7.28
-        #chance = 65
-    }
 }
 
 ecchi_que_nelson = {
@@ -33,30 +21,13 @@ ecchi_que_nelson = {
     historical = yes
     culture = cu:franco_canadian
     home_region = STATE_QUEBEC
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_radical
     interest_group = ig_radicals
 	dna = ecchi_dna_robert_nelson
     birth_date = 1794.8.8
     traits = { persistent reckless ambitious }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:QUE
-            this = c:QUE
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_agrarian_populists
-                is_interest_group_type = ig_radicals
-            }
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1873.3.1
-        #chance = 65
-    }
 }
 
 ecchi_que_bowen = {
@@ -65,30 +36,13 @@ ecchi_que_bowen = {
     historical = yes
     culture = cu:irish
     home_region = STATE_QUEBEC
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_conservatives
 	dna = ecchi_dna_edward_bowen
     birth_date = 1780.12.1
     traits = { expensive_tastes arrogant basic_colonial_administrator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:QUE
-            this = c:QUE
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_conservatives
-                #is_interest_group_type = ig_landowners
-            }
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1866.4.11
-        #chance = 65
-    }
 }
 
 ecchi_que_cartier = {
@@ -228,31 +182,13 @@ ecchi_nvs_howe = {
     historical = yes
     culture = cu:anglo_canadian
     home_region = STATE_NEW_BRUNSWICK
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_reformer
-    interest_group = ig_liberals
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_joseph_howe
     birth_date = 1804.12.13
     traits = { persistent romantic wrathful }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:NVS
-            this = c:NVS
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_agrarian_populists
-				is_interest_group_type = ig_liberals
-            }
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1873.6.1
-        #chance = 65
-    }
 }
 
 # ORG - Oregon & British Columbia
@@ -361,30 +297,13 @@ ecchi_ont_robinson = {
     historical = yes
     culture = cu:anglo_canadian
     home_region = STATE_ONTARIO
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_conservatives
 	dna = ecchi_dna_john_robinson
     birth_date = 1791.7.26
     traits = { expensive_tastes imperious hedonist }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:ONT
-            this = c:ONT
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_conservatives
-                is_interest_group_type = ig_landowners
-            }
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1863.1.31
-        #chance = 65
-    }
 }
 
 ecchi_ont_mowat = {
@@ -427,38 +346,14 @@ ecchi_ont_johnson = {
     last_name = Johnson
     historical = yes
     culture = cu:iroquoian
-    home_region = STATE_ONTARIO
-
+    home_region = STATE_ONTARIO 
+    ig_leader = yes
     religion = rel:animist
 	ideology = ideology_moderate
     interest_group = ig_landowners
     dna = ecchi_dna_john_smoke_johnson
     birth_date = 1792.12.2
     traits = { charismatic }
-    interest_group_leader_usage = {
-        country_trigger = {
-            NOT = {
-                country_average_cultural_acceptance = { target = cu:iroquoian value < acceptance_status_4 }
-            }
-            OR = {
-                AND = {
-                    exists = c:ONT
-                    this = c:ONT
-                }
-                AND = {
-                    exists = c:CAN
-                    this = c:CAN
-                    NOT = { exists = c:ONT }
-                }
-            }
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_landowners
-        }
-        earliest_usage_date = 1836.1.2
-        latest_usage_date = 1886.8.26
-        #chance = 65
-    }
 }
 
 ## John Strachan

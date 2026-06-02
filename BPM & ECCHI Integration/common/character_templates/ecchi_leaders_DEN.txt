@@ -93,7 +93,7 @@ ecchi_den_bajer = {
 	religion = rel:protestant
     female = yes
 	interest_group = ig_intelligentsia # was feminist and pacifist and wasnt involved in anything else
-	ideology = ideology_feminist
+	ideology = ig_liberals
 	birth_date = 1840.1.4
 	#dna = mr_net_jacobs_aletta
 	traits = { charismatic }
@@ -104,7 +104,7 @@ ecchi_den_bajer = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
 		earliest_usage_date = 1871.1.1
 		latest_usage_date = 1934.4.4

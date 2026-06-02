@@ -103,7 +103,7 @@ ecchi_usa_tyler = {
     
     religion = rel:protestant
     ideology = ideology_moderate
-    interest_group = ig_conservatives
+    interest_group = ig_national_liberals
     birth_date = 1790.3.29
 	dna = ecchi_dna_john_tyler
     traits = { arrogant reckless basic_political_operator }
@@ -113,7 +113,7 @@ ecchi_usa_tyler = {
             c:USA ?= this
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1862.1.18
@@ -191,7 +191,7 @@ ecchi_usa_pierce = {
     home_region = STATE_NEW_HAMPSHIRE
 
     religion = rel:protestant #Anglican
-    ideology = ideology_moderate
+    ideology = ideology_slaver
     interest_group = ig_conservatives
     birth_date = 1804.11.23
 	dna = ecchi_dna_franklin_pierce
@@ -1772,7 +1772,7 @@ ecchi_usa_bates = {
     female = yes
     religion = rel:protestant
     ideology = ideology_feminist
-    interest_group = ig_intelligentsia
+    interest_group = ig_liberals
 	dna = ecchi_dna_katharine_lee_bates
     birth_date = 1859.8.12
     traits = { romantic inspirational_orator }
@@ -1793,7 +1793,7 @@ ecchi_usa_bates = {
 			has_technology_researched = feminism
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1929.3.28
@@ -2002,28 +2002,13 @@ ecchi_tex_de_zavala = {
     historical = yes
     culture = cu:mexican
     home_region = STATE_YUCATAN
-
+    ig_leader = yes
     religion = rel:catholic
     ideology = ideology_republican_leader
     interest_group = ig_intelligentsia
     birth_date = 1788.10.3
 	dna = ecchi_dna_lorenzo_de_zavala
     traits = { innovative brave experienced_political_operator }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-			exists = c:TEX
-			this = c:TEX
-		}
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-			is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1836.11.15
-        #chance = 65
-    }
 }
 
 ecchi_tex_crockett = {
@@ -2032,28 +2017,13 @@ ecchi_tex_crockett = {
     historical = yes
     culture = cu:dixie
     home_region = STATE_TENNESSEE
-
+    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_moderate
     interest_group = ig_agrarian_populists
     birth_date = 1786.8.17
 	dna = ecchi_dna_dacy_crockett
     traits = { explorer brave romantic mountain_commander }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-			exists = c:TEX
-			this = c:TEX
-		}
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-			is_interest_group_type = ig_agrarian_populists
-        }
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1836.3.6
-        #chance = 65
-    }
 }
 
 # United States - ASA - Afro-America
@@ -2663,7 +2633,7 @@ ecchi_usa_mott = {
 		if = {
 			limit = {
 				owner = {
-					has_law = law_slavery_banned
+					has_law = law_type:law_slavery_banned
 				}
 			}
 			if = { 

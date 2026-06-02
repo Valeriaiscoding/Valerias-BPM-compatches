@@ -190,10 +190,7 @@ ecchi_brz_franciso_de_sousa = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_landowners
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1849.5.8
