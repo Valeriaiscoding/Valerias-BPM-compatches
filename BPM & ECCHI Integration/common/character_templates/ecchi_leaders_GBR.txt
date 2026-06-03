@@ -422,7 +422,7 @@ ecchi_gbr_baldwin = {
 			bpm_ig_enabled = yes
             OR = {
 				is_interest_group_type = ig_conservatives
-				is_interest_group_type = ig_petty_bourgeoisie
+				#is_interest_group_type = ig_petty_bourgeoisie
 			}
         }
         earliest_usage_date = 1917.6.18
@@ -845,8 +845,9 @@ ecchi_gbr_bertrand_russell = {
         interest_group_trigger = {
             trigger_if = {
                 limit = {
-                any_country = {
-                    country_rank >= rank_value:great_power
+                    any_country = {
+                        has_law_or_variant = law_type:law_council_republic
+                        country_rank >= rank_value:great_power
                     }
                 }
                 is_interest_group_type = ig_liberal
