@@ -99,7 +99,7 @@ ecchi_gbr_grey = {
 #         }
 #         interest_group_trigger = {
 #             bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
+#			bpm_ig_enabled = yes
 # 			OR = {
 # 				is_interest_group_type = ig_conservatives
 # 				is_interest_group_type = ig_petty_bourgeoisie
@@ -1359,7 +1359,7 @@ ecchi_gbr_cobden = {
     home_region = STATE_HOME_COUNTIES
     ig_leader = yes
     religion = rel:protestant
-    ideology = ideology_radical
+    ideology = ideology_pacifist # was radical
     interest_group = ig_market_liberals
     dna = ecchi_dna_richard_cobden
     birth_date = 1804.6.3
