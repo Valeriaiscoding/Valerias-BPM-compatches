@@ -7,7 +7,7 @@ This mod provides compatibility and integration for two affordmentionned mods
 [*] Added Miliatry institution modifiers to most igs.
 [*] BPMs officers laws, with exeption of noble officers law, will now provide various modifier to army institution.
 [*] Bakufu has unique interaction with ministry of defense; position of minister of defense will be held by shogun, and therefore will be hereditary.
-[*] Most of army investment modifiers from techs to laws, most officers laws increases by 1, professional officers increases by 2.
+[*] Most of army investment modifiers were moved from techs to laws, most officers laws increases by 1, professional officers increases by 2.
 [/list]  
 [list] [h3]Changes to Repeatable army laws:[/h3]
 [*]  Nerfed and rebalanced Improve soldiers conditions repeatable law

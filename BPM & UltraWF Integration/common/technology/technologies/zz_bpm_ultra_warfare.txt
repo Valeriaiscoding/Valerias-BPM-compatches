@@ -1,16 +1,16 @@
 ﻿INJECT:army_reserves = {
-	modifier = {
+	modifier = { # moved to army model laws
 		country_institution_conscription_max_investment_add = -1 #new
 	}
 }
 INJECT:enlistment_offices = {
-	modifier = {
+	modifier = { # moved to officer laws
 		country_institution_conscription_max_investment_add = -1 #new
 	}
 }
 
 INJECT:war_propaganda = {
-	modifier = {
+	modifier = { # moved to officer laws
 		country_institution_conscription_max_investment_add = -1
 	}
 }
