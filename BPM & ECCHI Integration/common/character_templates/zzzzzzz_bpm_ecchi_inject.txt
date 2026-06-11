@@ -1,19 +1,19 @@
-﻿TRY_INJECT:usa_polk_character_template = {
+﻿TRY_INJECT:usa_james_polk = {
 	dna = ecchi_dna_james_k_polk
 }
 
-TRY_INJECT:BPM_USA_martin_van_buren_template = {
+TRY_INJECT:usa_martin_van_buren = {
 	dna = ecchi_dna_martin_van_buren
 	traits = {
 		basic_diplomat
 	}
 }
 
-TRY_INJECT:BPM_USA_martin_van_buren_template = {
+TRY_INJECT:usa_william_henry_harrison = {
 	dna = ecchi_dna_william_henry_harrison
 }
 
-TRY_INJECT:BPM_USA_john_fremont_template = {
+TRY_INJECT:usa_john_fremont = {
 	dna = ecchi_dna_john_c_fremont
 	traits = {
 		explorer
@@ -22,7 +22,7 @@ TRY_INJECT:BPM_USA_john_fremont_template = {
 	}
 }
 
-TRY_INJECT:BPM_USA_john_quincy_adams_template = {
+TRY_INJECT:usa_john_quincy_adams = {
 	dna = ecchi_dna_john_qunicy_adams
 }
 
