@@ -1108,7 +1108,7 @@ ecchi_chi_mao_zedong = {
     historical = yes
     culture = cu:han
     
-    ideology = ideology_communist
+    ideology = ideology_vanguardist
     interest_group = ig_agrarian_populists
 	dna = ecchi_dna_mao_zedong
     birth_date = 1893.12.26
@@ -1130,6 +1130,7 @@ ecchi_chi_mao_zedong = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
+            bpm_ig_is_socialist = yes
             OR = {
                 is_interest_group_type = ig_agrarian_populists
                 is_interest_group_type = ig_revolutionist_socialists
