@@ -576,6 +576,7 @@ ecchi_ita_gentile = {
     traits = { erudite charismatic }
     interest_group_leader_usage = {
         country_trigger = {
+            NOT = { has_dlc_feature = voice_of_the_people_content }
             NOT = {
                 country_average_cultural_acceptance = { target = cu:south_italian value < acceptance_status_4 }
             }

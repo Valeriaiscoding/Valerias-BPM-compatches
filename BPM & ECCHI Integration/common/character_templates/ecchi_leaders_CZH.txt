@@ -85,7 +85,6 @@ ecchi_czh_masaryk = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-	    bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_national_liberals
                 is_interest_group_type = ig_agrarian_populists
@@ -157,7 +156,7 @@ ecchi_czh_tiso = {
     home_region = STATE_SLOVAKIA
 
     religion = rel:catholic
-    ideology = ideology_theocrat
+    ideology = ideology_fascist
     interest_group = ig_fascists
 	dna = ecchi_dna_jozef_tiso
     birth_date = 1887.10.13
@@ -189,7 +188,7 @@ ecchi_czh_tiso = {
 			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_fascists
-                #is_interest_group_type = ig_devout
+                is_interest_group_type = ig_devout
             }
         }
         earliest_usage_date = 1920.1.1
@@ -285,14 +284,10 @@ ecchi_czh_gajda = {
             }
         }
         interest_group_trigger = {
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_fascists
-            }
-            
+            is_interest_group_type = ig_fascists
         }
         earliest_usage_date = 1917.1.30
         latest_usage_date = 1947.10.13
-        chance = 45
+        #chance = 45
     }
 }

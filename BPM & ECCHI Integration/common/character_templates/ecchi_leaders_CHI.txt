@@ -1318,7 +1318,6 @@ ecchi_chi_du_yuesheng = {
     first_name = ecchi_Yuesheng
     last_name = Du
     home_region = STATE_SUZHOU
-    home_region = STATE_SUZHOU
     historical = yes
     culture = cu:han
     

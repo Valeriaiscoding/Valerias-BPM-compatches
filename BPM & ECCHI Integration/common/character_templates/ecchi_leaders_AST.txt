@@ -99,10 +99,7 @@ ecchi_ast_barton = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_market_liberals
-                is_interest_group_type = ig_rural_folk
-            }
+            is_interest_group_type = ig_market_liberals
         }
         earliest_usage_date = 1878.1.1
         latest_usage_date = 1920.1.7
@@ -130,11 +127,7 @@ ecchi_ast_deakin = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_liberals
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1878.1.1
         latest_usage_date = 1919.10.7
@@ -149,8 +142,8 @@ ecchi_ast_curtin = {
     culture = cu:australian
     home_region = STATE_VICTORIA
     religion = rel:protestant
-    ideology = ideology_corporatist_leader
-    interest_group = ig_petty_bourgeoisie
+    ideology = ideology_social_democrat
+    interest_group = ig_radicals
 	dna = ecchi_dna_john_curtin
     birth_date = 1885.1.8
     traits = { bigoted innovative experienced_diplomat }
@@ -163,8 +156,8 @@ ecchi_ast_curtin = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                is_interest_group_type = ig_petty_bourgeoisie
-                is_interest_group_type = ig_intelligentsia
+                is_interest_group_type = ig_radicals
+                is_interest_group_type = ig_reformist_socialists
             }
         }
         earliest_usage_date = 1927.1.1

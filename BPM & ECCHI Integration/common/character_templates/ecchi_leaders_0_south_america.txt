@@ -36,11 +36,7 @@ ecchi_uru_artigas = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_national_liberals
-            }
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1850.9.23

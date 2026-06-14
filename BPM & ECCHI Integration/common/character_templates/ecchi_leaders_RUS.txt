@@ -403,7 +403,7 @@ ecchi_rus_goldman = {
 		}
 		earliest_usage_date = 1885.1.1
 		latest_usage_date = 1940.5.14
-		chance = 25
+		chance = 70
 	}
 }
 
