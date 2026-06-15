@@ -114,6 +114,7 @@ REPLACE_OR_CREATE:law_political_officers = {
 		interest_group_ig_armed_forces_pol_str_mult = -0.05
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
 		interest_group_in_government_attraction_mult = 0.02
+		character_commander_loyalty_add = 2
 	}
 
 	on_enact = {
