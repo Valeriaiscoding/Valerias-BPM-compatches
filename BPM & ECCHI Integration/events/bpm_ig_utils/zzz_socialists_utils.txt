@@ -1,0 +1,98 @@
+﻿# Deinitialize independent socialists once split complete
+bpm_socialist_utils.7 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	trigger = {
+		owner = { 
+			has_variable = bpm_deinitialize_socialists_var
+			ig:ig_socialists ?= {
+				ig_clout <= 0.001
+			}
+		}
+	}
+
+	immediate = {
+		owner = {
+			ig:ig_revolutionist_socialist = { save_scope_as = revsoc_ig }
+			ig:ig_reformist_socialists = { save_scope_as = refsoc_ig }
+			if = {
+				limit = { NOT = { has_global_variable = bpm_socialist_characters_cleared_var } }
+				every_scope_character = {
+					limit = {
+						is_interest_group_type = ig_socialists
+					}
+					if = { # Remove irrelevant characters
+						limit = { 
+							is_historical = no
+							prominence < 25
+						}
+						replace_character_roles = { remove = { agitator politician } }
+						retire_character_if_should_be_culled = yes
+					}
+					if = {
+						limit = {
+							bpm_ecchi_historical_revsoc_char = no
+							OR = {
+								has_role_of_type = general
+								has_role_of_type = admiral
+							}
+						}
+						set_interest_group = owner.ig:ig_armed_forces
+						if = {
+							limit = {
+								bpm_leader_is_socialist = no
+							}
+							set_ideology = ideology:ideology_social_democrat
+						}
+					}
+					else_if = {
+						limit = { 
+							OR = {
+								bpm_leader_is_radical_socialist = yes
+								bpm_ecchi_historical_revsoc_char = yes
+							}
+						}
+						set_interest_group = scope:revsoc_ig
+					}
+					else = { set_interest_group = scope:refsoc_ig }
+				}
+				set_global_variable = bpm_socialist_characters_cleared_var
+			}
+			ig:ig_socialists ?= {
+				bpm_remove_all_ideologies = yes
+				leader = {
+					set_ideology = ideology:ideology_center_leader
+				}
+				remove_ruling_interest_group = yes
+				abandon_revolution = yes
+			}
+			trigger_event = { id = bpm_socialist_utils.8 days = 365 }
+		}
+	}
+}
+
+# Disable independent socialists once split complete
+bpm_socialist_utils.8 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	immediate = {
+		owner = {
+			every_character = {
+				limit = {
+					is_interest_group_type = ig_socialists
+					has_role_of_type = agitator
+				}
+				kill_character = yes
+			}
+			ig:ig_socialists ?= {
+				remove_ruling_interest_group = yes
+				abandon_revolution = yes
+			}
+			set_variable = bpm_disable_socialists_var
+		}
+	}
+}

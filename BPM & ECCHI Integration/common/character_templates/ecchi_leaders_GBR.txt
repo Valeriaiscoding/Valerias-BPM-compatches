@@ -1358,7 +1358,6 @@ ecchi_gbr_cobden = {
     historical = yes
     culture = cu:british
     home_region = STATE_HOME_COUNTIES
-    ig_leader = yes
     religion = rel:protestant
     ideology = ideology_pacifist # was radical
     interest_group = ig_market_liberals

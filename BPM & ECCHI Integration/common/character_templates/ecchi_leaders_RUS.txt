@@ -833,7 +833,6 @@ RUS_boris_savinkov = {
 		country_trigger = {
 			exists = c:RUS
 			this = c:RUS
-			has_law = law_type:law_monarchy
 		}
 		interest_group_trigger = {
 			bpm_ig_is_marginal = no

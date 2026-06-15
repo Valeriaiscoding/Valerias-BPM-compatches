@@ -1,0 +1,1554 @@
+﻿bpm_ecchi_socialists_split_set_ig_leader = {
+	hidden_effect = {
+		leader = { kill_character = yes }
+		ordered_scope_character = {
+			limit = {
+				prominence >= 25
+				NOT = { has_role_of_type = leader }
+			}
+			order_by = prominence
+			position = 0
+			check_range_bounds = no
+			if = { 
+				limit = { NOT = { has_role_of_type = politician } }
+				add_character_role = politician
+			}
+			if = {
+				limit = { has_role_of_type = agitator }
+				remove_character_role = agitator
+			}
+			set_as_interest_group_leader = yes
+		}
+	}
+}
+
+REPLACE:create_natlib_start_characters = {
+    if = {
+        limit = {
+            has_variable = brz_republican_coup_country
+        }
+        create_character = {
+            template = BRZ_benjamin_constant
+        }
+        create_character = {
+            template = BRZ_floriano_peixoto
+        }
+    }
+	else_if = {
+		limit = { 
+            has_dlc_feature = ip3_content
+		}
+		if = {
+			limit = { 
+				c:BUL ?= THIS
+				game_date >= 1880.2.3
+				game_date < 1920.4.3
+				NOR = {
+					any_character = {
+						has_template = BUL_stefan_stambolov
+					}
+					any_character_in_exile_pool = {
+						has_template = BUL_stefan_stambolov
+					}
+				}
+			}
+			create_character = {
+				template = BUL_stefan_stambolov
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		
+	}
+	else_if = {
+		limit = {
+			has_dlc_feature = ip4_content
+		}
+		if = {
+			limit = { 
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:spanish
+				}
+				any_scope_state = {
+					state_region = s:STATE_CANARY_ISLANDS
+				}
+				game_date >= 1843.1.1
+				game_date < 1867.11.5
+				NOR = {
+					any_character = {
+						has_template = POR_fontes_pereira_de_melo
+					}
+					any_character_in_exile_pool = {
+						has_template = POR_fontes_pereira_de_melo
+					}
+				}
+			}
+			create_character = {
+				template = POR_fontes_pereira_de_melo
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					c:POR ?= this
+					country_has_primary_culture = cu:portuguese
+				}
+				any_scope_state = {
+					state_region = s:STATE_ESTREMADURA
+				}
+				game_date >= 1856.1.1
+				game_date < 1887.1.22
+				NOR = {
+					any_character = {
+						has_template = POR_fontes_pereira_de_melo
+					}
+					any_character_in_exile_pool = {
+						has_template = POR_fontes_pereira_de_melo
+					}
+				}
+			}
+			create_character = {
+				template = POR_fontes_pereira_de_melo
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	} 
+	else_if = {
+		limit = {
+			 OR = {
+                AND = {
+                    exists = c:ITA
+                    this = c:ITA
+                    NOT = { exists = c:SAR }
+                }
+                AND = {
+                    exists = c:SAR
+                    this = c:SAR
+                }
+            }
+			game_date >= 1847.1.1
+			game_date < 1861.6.6
+			NOR = {
+				any_character = {
+					has_template = mr_ita_cavour
+				}
+				any_character_in_exile_pool = {
+					has_template = mr_ita_cavour
+				}
+			}
+		}
+		create_character = {
+			template = mr_ita_cavour
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+                country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
+            }
+            has_state_in_state_region = STATE_HOLLAND
+			game_date >= 1868.1.1
+			game_date < 1925.3.13
+			NOR = {
+				any_character = {
+					has_template = net_van_der_wijck
+				}
+				any_character_in_exile_pool = {
+					has_template = net_van_der_wijck
+				}
+			}
+		}
+		create_character = {
+			template = net_van_der_wijck
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_state_in_state_region = STATE_WESTERN_CUBA
+			game_date >= 1868.1.1
+			game_date < 1873.1.1
+			NOT = {
+				country_average_cultural_acceptance = { target = cu:caribeno value < acceptance_status_4 }
+			}
+			NOR = {
+				any_character = {
+					has_template = ecchi_cub_aguilera
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_cub_aguilera
+				}
+			}
+		}
+		create_character = {
+			template = ecchi_cub_aguilera
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_state_in_state_region = STATE_WESTERN_CUBA
+			game_date >= 1868.1.1
+			game_date < 1908.11.4
+			NOT = {
+				country_average_cultural_acceptance = { target = cu:caribeno value < acceptance_status_4 }
+			}
+			NOR = {
+				any_character = {
+					has_template = ecchi_cub_palma
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_cub_palma
+				}
+			}
+		}
+		create_character = {
+			template = ecchi_cub_palma
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:QUE
+            this = c:QUE
+			NOR = {
+				any_character = {
+					has_template = ecchi_que_duvernay
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_que_duvernay
+				}
+			}
+			game_date < 1852.11.28
+		}
+		create_character = {
+			template = ecchi_que_duvernay
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:URU
+            this = c:URU
+			NOR = {
+				any_character = {
+					has_template = ecchi_uru_artigas
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_uru_artigas
+				}
+			}
+			game_date < 1850.9.23
+		}
+		create_character = {
+			template = ecchi_uru_artigas
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+}
+
+REPLACE:create_socialist_start_characters = {
+    if = {
+        limit = {
+            exists = c:PRC
+			this = c:PRC
+        }
+        if = {
+            limit = {
+                game_date < 1890.1.1
+            }
+            if = {
+                limit = {
+                    NOR = {
+                        any_character = {
+                            has_template = fra_delescluze_character_template
+                        }
+                        any_character_in_exile_pool = {
+                            has_template = fra_delescluze_character_template
+                        }
+                    }
+                }
+                create_character = {
+                    template = fra_delescluze_character_template
+                    on_created = {
+                        add_character_role = politician
+                        remove_character_role = agitator
+                        set_as_interest_group_leader = yes
+                        #set_character_as_ruler = yes
+                        set_variable = delescluze_var
+                        set_global_variable = delescluze_spawn
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    any_character = {
+                        owner = c:FRA
+                        has_template = fra_delescluze_character_template
+                    }
+                }
+                random_character = {
+                    limit = {
+                        owner = c:FRA
+                        has_template = fra_delescluze_character_template
+                    }
+                    transfer_character = c:PRC
+                    add_character_role = politician
+                    remove_character_role = agitator
+                    set_as_interest_group_leader = yes
+                    set_character_as_ruler = yes
+                }
+            }	
+            else_if = {
+                limit = {
+                    any_character_in_exile_pool = {
+                        has_template = fra_delescluze_character_template
+                    }
+                }
+                random_character_in_exile_pool = {
+                    limit = {
+                        has_template = fra_delescluze_character_template
+                    }
+                    transfer_character = c:PRC
+                    add_character_role = politician
+                    remove_character_role = agitator
+                    set_as_interest_group_leader = yes
+                    set_character_as_ruler = yes
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            exists = c:FRA
+			this = c:FRA
+        }
+		if = {
+            limit = {
+                game_date < 1860.1.1
+            }
+            if = {
+                limit = {
+                    NOR = {
+                        any_character = {
+                            has_template = FRA_francois-vincent_raspail
+                        }
+                        any_character_in_exile_pool = {
+                            has_template = FRA_francois-vincent_raspail
+                        }
+                    }
+                }
+                create_character = {
+                    template = FRA_francois-vincent_raspail
+                }
+            }
+        }
+    }
+	else_if = {
+		limit = {
+			exists = c:NET
+            this = c:NET
+		}
+		if = {
+			limit = { 
+				game_date >= 1845.1.1
+				game_date < 1870.1.1
+				NOR = {
+					any_character = {
+						has_template = net_van_der_voo
+					}
+					any_character_in_exile_pool = {
+						has_template = net_van_der_voo
+					}
+				}
+			}
+			create_character = {
+				template = net_van_der_voo
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+}
+
+REPLACE:create_anarchist_start_characters = {
+    if = {
+        limit = {
+            exists = c:PRC
+			this = c:PRC
+        }
+        if = {
+            limit = {
+                game_date > 1860.1.1
+                game_date < 1900.1.1
+            }
+            if = {
+                limit = {
+                    NOR = {
+                        any_character = {
+                            has_template = agitator_louise_michel
+                        }
+                        any_character_in_exile_pool = {
+                            has_template = agitator_louise_michel
+                        }
+                    }
+                }
+                create_character = {
+                    template = agitator_louise_michel
+                }
+            }
+            else_if = {
+                limit = {
+                    any_character = {
+                        owner = c:FRA
+                        has_template = agitator_louise_michel
+                    }
+                }
+                random_character = {
+                    limit = {
+                        owner = c:FRA
+                        has_template = agitator_louise_michel
+                    }
+                    transfer_character = c:PRC
+                }
+            }	
+            else_if = {
+                limit = {
+                    any_character_in_exile_pool = {
+                        has_template = agitator_louise_michel
+                    }
+                }
+                random_character_in_exile_pool = {
+                    limit = {
+                        has_template = agitator_louise_michel
+                    }
+                    transfer_character = c:PRC
+                }
+            }	
+        }
+        if = {
+            limit = {
+                game_date > 1865.1.1
+                game_date < 1910.1.1
+            }
+            create_character = {
+                first_name = Eugene
+                last_name = Varlin
+                historical = yes
+                birth_date = 1839.10.5
+                culture = cu:french
+                ig_leader = yes
+                interest_group = ig_anarchists
+                ideology = ideology_center_leader
+                traits = {
+                    persistent
+                    brave
+                    charismatic
+                }
+            }
+        }
+    }
+	else_if = {
+		limit = {
+			exists = c:FRA
+            this = c:FRA
+		}
+		if = {
+			limit = {
+				game_date >= 1880.1.1
+				game_date < 1930.1.1
+				NOR = {
+					any_character = {
+						has_template = ecchi_fra_grave
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_fra_grave
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_fra_grave
+				on_created = {
+					remove_character_role = agitator
+					add_character_role = politician
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				game_date >= 1870.1.1
+				game_date < 1905.7.4
+				NOR = {
+					any_character = {
+						has_template = ecchi_fra_reclus
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_fra_reclus
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_fra_reclus
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			has_dlc_feature = ip4_content
+		}
+		if = {
+			limit = {
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:spanish
+				}
+				game_date >= 1870.1.1
+				game_date < 1914.11.30
+				any_scope_state = {
+					state_region = s:STATE_OLD_CASTILE
+				}
+				NOR = {
+					any_character = {
+						has_template = SPA_anselmo_lorenzo
+					}
+					any_character_in_exile_pool = {
+						has_template = SPA_anselmo_lorenzo
+					}
+				}
+			}
+			create_character = {
+				template = SPA_anselmo_lorenzo
+				on_created = {
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_anarchists } }
+						set_interest_group = owner.ig:ig_anarchists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:spanish
+				}
+				game_date >= 1873.1.1
+				game_date < 1907.9.27
+				any_scope_state = {
+					state_region = s:STATE_LOWER_ANDALUSIA
+				}
+				NOR = {
+					any_character = {
+						has_template = SPA_fermin_salvochea
+					}
+					any_character_in_exile_pool = {
+						has_template = SPA_fermin_salvochea
+					}
+				}
+			}
+			create_character = {
+				template = SPA_fermin_salvochea
+				on_created = {
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_anarchists } }
+						set_interest_group = owner.ig:ig_anarchists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:catalan
+				}
+				any_scope_state = {
+					state_region = s:STATE_CATALONIA
+				}
+				game_date >= 1888.1.1
+				game_date < 1931.4.11
+				any_scope_state = {
+					state_region = s:STATE_CATALONIA
+				}
+				NOR = {
+					any_character = {
+						has_template = SPA_teresa_claramunt
+					}
+					any_character_in_exile_pool = {
+						has_template = SPA_teresa_claramunt
+					}
+				}
+			}
+			create_character = {
+				template = SPA_teresa_claramunt
+				on_created = {
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_anarchists } }
+						set_interest_group = owner.ig:ig_anarchists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			c:NET ?= this
+		}
+		if = {
+			limit = { 
+				game_date >= 1879.1.1
+				game_date < 1919.11.18
+				NOR = {
+					any_character = {
+						has_template = net_nieuwenhuis
+					}
+					any_character_in_exile_pool = {
+						has_template = net_nieuwenhuis
+					}
+				}
+			}
+			create_character = {
+				template = net_nieuwenhuis
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				game_date >= 1879.1.1
+				game_date < 1919.11.18
+				NOR = {
+					any_character = {
+						has_template = net_van_mierop
+					}
+					any_character_in_exile_pool = {
+						has_template = net_van_mierop
+					}
+				}
+			}
+			create_character = {
+				template = net_van_mierop
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+}
+
+create_marlib_start_characters = {
+	if = {
+		limit = { 
+			exists = c:GBR
+            this = c:GBR
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = ep1_content
+				game_date > 1845.1.1
+                game_date < 1860.1.1
+				NOR = {
+					any_character = {
+						has_template = GBR_george_hamilton-gordon
+					}
+					any_character_in_exile_pool = {
+						has_template = GBR_george_hamilton-gordon
+					}
+				}
+			}
+			create_character = {
+				template = GBR_george_hamilton-gordon
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+                game_date < 1865.4.20
+				NOR = {
+					any_character = {
+						has_template = ecchi_gbr_cobden
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_gbr_cobden
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_gbr_cobden
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				c:CHL ?= THIS
+				AND = {
+					c:FND ?= THIS
+					any_scope_state = {
+						state_region = s:STATE_SANTIAGO
+					}
+				}
+				AND = {
+					c:PLT ?= THIS
+					country_has_primary_culture = cu:south_andean
+					any_scope_state = {
+						state_region = s:STATE_SANTIAGO
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = rp1_content
+				game_date > 1840.1.1
+                game_date < 1880.1.1
+				NOR = {
+					any_character = {
+						has_template = CHL_manuel_montt
+					}
+					any_character_in_exile_pool = {
+						has_template = CHL_manuel_montt
+					}
+				}
+			}
+			create_character = {
+				template = CHL_manuel_montt
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				has_dlc_feature = rp1_content
+				game_date > 1860.1.1
+                game_date < 1880.1.1
+				NOR = {
+					any_character = {
+						has_template = CHL_jose_joaquin_perez
+					}
+					any_character_in_exile_pool = {
+						has_template = CHL_jose_joaquin_perez
+					}
+				}
+			}
+			create_character = {
+				template = CHL_jose_joaquin_perez
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			exists = c:BRZ
+            this = c:BRZ
+		}
+		if = {
+			limit = { 
+				game_date > 1845.1.1
+                game_date < 1885.1.1
+				has_dlc_feature = rp1_content
+			}
+			if = {
+				limit = {
+					NOR = {
+						any_character = {
+							has_template = BRZ_irineu_evangelista_de_sousa
+						}
+						any_character_in_exile_pool = {
+							has_template = BRZ_irineu_evangelista_de_sousa
+						}
+					}
+				}
+				create_character = {
+					template = BRZ_irineu_evangelista_de_sousa
+					on_created = {
+						set_as_interest_group_leader = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_scope_character = {
+						NOT = { is_interest_group_type = ig_market_liberals }
+						has_template = BRZ_irineu_evangelista_de_sousa
+					}
+				}
+				randon_scope_character = {
+					limit = {
+						has_template = BRZ_irineu_evangelista_de_sousa
+					}
+					set_interest_group = owner.ig:ig_market_liberals
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			exists = c:USA
+            this = c:USA
+		}
+		if = {
+			limit = { 
+				game_date > 1850.1.1
+                game_date < 1890.1.1
+				NOR = {
+					any_character = {
+						has_template = usa_stephen_character_template
+					}
+					any_character_in_exile_pool = {
+						has_template = usa_stephen_character_template
+					}
+				}
+			}
+			create_character = {
+				template = usa_stephen_character_template
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			exists = c:RUS
+          	c:RUS ?= THIS
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = ep1_content
+				game_date > 1870.1.1
+                game_date < 1890.1.1
+				NOR = {
+					any_character = {
+						has_template = RUS_nikolai_christianovich_bunge
+					}
+					any_character_in_exile_pool = {
+						has_template = RUS_nikolai_christianovich_bunge
+					}
+				}
+			}
+			create_character = {
+				template = RUS_nikolai_christianovich_bunge
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			NOT = {
+                country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
+            }
+            has_state_in_state_region = STATE_HOLLAND
+		}
+		if = {
+			limit = { 
+				game_date > 1877.1.1
+                game_date < 1909.1.1
+				NOR = {
+					any_character = {
+						has_template = net_roell
+					}
+					any_character_in_exile_pool = {
+						has_template = net_roell
+					}
+				}
+			}
+			create_character = {
+				template = net_roell
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+}
+
+create_fash_start_characters = {
+	if = {
+		limit = { 
+			OR = {
+				c:CHL ?= THIS
+				AND = {
+					c:FND ?= THIS
+					any_scope_state = {
+						state_region = s:STATE_SANTIAGO
+					}
+				}
+				AND = {
+					c:PLT ?= THIS
+					country_has_primary_culture = cu:south_andean
+					any_scope_state = {
+						state_region = s:STATE_SANTIAGO
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = rp1_content
+				game_date > 1860.1.1
+                game_date < 1936.1.1
+				NOR = {
+					any_character = {
+						has_template = agitator_louise_michel
+					}
+					any_character_in_exile_pool = {
+						has_template = agitator_louise_michel
+					}
+				}
+			}
+			create_character = {
+				template = CHL_jorge_gonzalez_von_marees
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		elseif = {
+			limit = { 
+				has_dlc_feature = rp1_content
+				game_date > 1918.1.1
+                game_date < 1936.1.1
+				NOR = {
+					any_character = {
+						has_template = CHL_joaquin_edwards_bello
+					}
+					any_character_in_exile_pool = {
+						has_template = CHL_joaquin_edwards_bello
+					}
+				}
+			}
+			create_character = {
+				template = CHL_joaquin_edwards_bello
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				c:CLM ?= THIS
+				c:GCO ?= THIS
+				AND = {
+					c:FND ?= THIS
+					any_scope_state = {
+						state_region = s:STATE_CUNDINAMARCA
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				game_date > 1930.1.1
+                game_date < 1936.1.1
+				NOR = {
+					any_character = {
+						has_template = CLM_jose_camacho
+					}
+					any_character_in_exile_pool = {
+						has_template = CLM_jose_camacho
+					}
+				}
+			}
+			create_character = {
+				template = CLM_jose_camacho
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:GBR
+			this = c:GBR
+			
+		}
+		# if = {
+		# 	limit = { 
+		# 		has_dlc_feature = ep1_content
+		# 		has_technology_researched = political_agitation
+		# 		NOT = {
+		# 			has_variable = rotha_lintorn_orman_spawn
+		# 		}
+		# 		game_date > 1923.1.1
+        #         game_date < 1933.12.30
+		# 		NOR = {
+		# 			any_character = {
+		# 				has_template = GBR_rotha_lintorn-orman
+		# 			}
+		# 			any_character_in_exile_pool = {
+		# 				has_template = GBR_rotha_lintorn-orman
+		# 			}
+		# 		}
+		# 	}
+		# 	create_character = {
+		# 		template = GBR_rotha_lintorn-orman
+		# 		on_created = {
+		# 			set_as_interest_group_leader = yes
+		# 		}
+		# 	}
+		# }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				c:URU ?= THIS
+				AND = {
+					c:PLT ?= THIS
+					any_scope_state = {
+						state_region = s:STATE_URUGUAY
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = rp1_content
+				game_date > 1920.1.1
+                game_date < 1936.1.1
+				NOR = {
+					any_character = {
+						has_template = URU_gabriel_terra
+					}
+					any_character_in_exile_pool = {
+						has_template = URU_gabriel_terra
+					}
+				}
+			}
+			create_character = {
+				template = URU_gabriel_terra
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	# Italian Fascists
+	else_if = {
+		limit = {
+			OR = {
+                AND = {
+                    exists = c:ITA
+                    this = c:ITA
+                }
+                AND = {
+                    exists = c:PAP
+                    this = c:PAP
+                    NOT = { exists = c:ITA }
+                }
+            }
+			game_date > 1922.1.1
+			game_date < 1945.4.28
+			NOR = {
+				any_character = {
+					has_template = ecchi_ita_mussolini
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_ita_mussolini
+				}
+			}
+		}
+		create_character = {
+			template = ecchi_ita_mussolini
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				c:ITA ?= this
+				AND = {
+					c:SIC ?= this
+					NOT = { exists = c:ITA }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_dlc_feature = voice_of_the_people_content
+				NOR = {
+					any_character = {
+						has_template = agitator_giovanni_gentile
+					}
+					any_character_in_exile_pool = {
+						has_template = agitator_giovanni_gentile
+					}
+				}
+			}
+			create_character = {
+				template = agitator_giovanni_gentile
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else = {
+			create_character = {
+				template = ecchi_ita_gentile
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			morgenrote_is_active = no
+			OR = {
+				AND = {
+					exists = c:GER
+					this = c:GER
+					NOT = {
+						exists = c:BAV
+						exists = c:SGF
+					}
+				}
+				 AND = {
+					exists = c:SGF
+					this = c:SGF
+					NOT = { exists = c:BAV }
+				}
+				AND = {
+					exists = c:BAV
+					this = c:BAV
+				}
+			}
+		}
+		if = {
+			limit = { 
+				game_date > 1923.1.1
+                game_date < 1945.4.30
+				NOR = {
+					any_character = {
+						has_template = ecchi_ger_hitler
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_ger_hitler
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_ger_hitler
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { 
+			has_dlc_feature = voice_of_the_people_content
+			OR = {
+				c:BAV ?= this
+				c:SGF ?= this
+				c:GER ?= this
+				c:BOL ?= this # Yes, Bolivia.
+			}
+		}
+		if = {
+			limit = { 
+				game_date > 1917.1.1
+                game_date < 1935.12.31
+				NOR = {
+					any_character = {
+						has_template = agitator_ernst_rohm
+					}
+					any_character_in_exile_pool = {
+						has_template = agitator_ernst_rohm
+					}
+				}
+			}
+			create_character = {
+				template = agitator_ernst_rohm
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				c:SPA ?= this
+				country_has_primary_culture = cu:spanish
+			}
+		}
+		if = {
+			limit = {  
+				any_scope_state = {
+					state_region = s:STATE_LOWER_ANDALUSIA
+				}
+				has_dlc_feature = ip4_content
+				game_date > 1902.1.1
+                game_date < 1930.1.16
+				NOR = {
+					any_character = {
+						has_template = SPA_miguel_primo_de_rivera
+					}
+					any_character_in_exile_pool = {
+						has_template = SPA_miguel_primo_de_rivera
+					}
+				}
+			}
+			create_character = {
+				template = SPA_miguel_primo_de_rivera
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			 OR = {
+                AND = {
+                    exists = c:AUS
+                    this = c:AUS
+                }
+                AND = {
+                    exists = c:KUK
+                    this = c:KUK
+                }
+            }
+		}
+		if = {
+			limit = {  
+				game_date > 1929.1.1
+                game_date < 1934.7.25
+				NOR = {
+					any_character = {
+						has_template = ecchi_aus_dollfuss
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_aus_dollfuss
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_aus_dollfuss
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			country_has_primary_culture = cu:french
+            has_state_in_state_region = STATE_BRITTANY
+		}
+		if = {
+			limit = {  
+				game_date > 1925.1.1
+                game_date < 1944.1.7
+				NOR = {
+					any_character = {
+						has_template = ecchi_fra_deloncle
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_fra_deloncle
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_fra_deloncle
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:SLV
+			this = c:SLV
+		}
+		if = {
+			limit = {  
+				game_date > 1917.1.30
+                game_date < 1947.10.13
+				NOR = {
+					any_character = {
+						has_template = ecchi_czhecchi_czecchi_czh_gajdah_gajda_tiso
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_czh_gajda
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_czh_gajda
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:SLV
+			this = c:SLV
+		}
+		if = {
+			limit = {  
+				game_date > 1920.1.1
+                game_date < 1947.4.18
+				NOR = {
+					any_character = {
+						has_template = ecchi_czh_tiso
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_czh_tiso
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_czh_tiso
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_fascists } }
+						set_interest_group = owner.ig:ig_fascists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+                country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
+            }
+            has_state_in_state_region = STATE_HOLLAND
+			game_date > 1911.1.1
+		}
+		if = {
+			limit = {  
+				NOR = {
+					any_character = {
+						has_template = net_gerretson
+					}
+					any_character_in_exile_pool = {
+						has_template = net_gerretson
+					}
+				}
+			}
+			create_character = {
+				template = net_gerretson
+				on_created = {
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_fascists } }
+						set_interest_group = owner.ig:ig_fascists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else = {
+			random_scope_character = {
+				limit = { has_character_template = net_gerretson }
+				if = {
+					limit = { NOT = { is_interest_group_type = ig_fascists } }
+					set_interest_group = owner.ig:ig_fascists
+				}
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:RUS
+			this = c:RUS
+		}
+		if = { # Add other character when possible
+			limit = { 
+				game_date > 1904.1.1
+				has_technology_researched = political_agitation
+				NOR = {
+					any_character = {
+						has_template = RUS_boris_savinkov
+					}
+					any_character_in_exile_pool = {
+						has_template = RUS_boris_savinkov
+					}
+				}
+			}
+			create_character = {
+				template = RUS_boris_savinkov
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_fascists } }
+						set_interest_group = owner.ig:ig_fascists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+
+}
+
+bpm_ecchi_refsoc_split_charactes = {
+	every_scope_character = {
+		limit = { 
+			is_interest_group_type = ig_socialists
+			OR = {
+				bpm_leader_is_radical_socialist = yes
+				bpm_ecchi_historical_revsoc_char = yes
+			}
+			trigger_if = {
+				limit = {
+					OR = {
+						has_role_of_type = general
+						has_role_of_type = admiral
+					}
+				}
+				bpm_ecchi_historical_revsoc_char = yes
+			}			
+		}
+		set_interest_group = prev.ig:ig_reformist_socialists
+	}
+	ig:ig_reformist_socialists = {
+		bpm_ecchi_socialists_split_set_ig_leader = yes
+	}
+}
+
+bpm_ecchi_revsoc_split_charactes = {
+	every_scope_character = {
+		limit = { 
+			is_interest_group_type = ig_socialists
+			bpm_leader_is_radical_socialist = no
+			bpm_ecchi_historical_revsoc_char = no
+			trigger_if = {
+				limit = {
+					OR = {
+						has_role_of_type = general
+						has_role_of_type = admiral
+					}
+				}
+				bpm_ecchi_historical_refsoc_char = yes
+			}
+		}
+		set_interest_group = prev.ig:ig_revolutionist_socialist
+	}
+	ig:ig_revolutionist_socialist = {
+		bpm_ecchi_socialists_split_set_ig_leader = yes
+	}
+}
+
+REPLACE:bpm_do_fascist_split = { 
+	bpm_add_movement_interaction = { int = fascist_split }
+	bpm_initialize_fascists = yes
+	trigger_event = { id = bpm_movement_splits.12 days = 31 }
+	create_fash_start_characters = yes
+}
+
+REPLACE:bpm_do_market_liberal_split = { 
+	bpm_add_movement_interaction = { int = market_liberal_split }
+	bpm_initialize_marlibs = yes
+	trigger_event = { id = bpm_movement_splits.7 days = 31 }
+	if = {
+		limit = {
+			exists = c:BIC
+			this = c:BIC
+		}
+		trigger_event = { id = bpm_marlib_split.2 }
+	}
+	else_if = {
+		limit = {
+			exists = c:GBR
+			this = c:GBR
+		}
+		ig:ig_industrialists ?= { 
+			leader = {
+				remove_variable = conservative_party_leader
+			}
+		}
+		create_marlib_start_characters = yes
+	}
+	else = { create_marlib_start_characters = yes }
+}
+
+REPLACE:bpm_do_revsoc_split = { 
+	ig:ig_socialists ?= {
+		set_interest_group_name = ig_independent_socialists
+	}
+	trigger_event = { id = bpm_socialist_split.3 days = 180 }
+	bpm_add_movement_interaction = { int = revsoc_split }
+	bpm_initialize_revsocs = yes
+	trigger_event = { id = bpm_movement_splits.10 days = 31 }
+	bpm_ecchi_revsoc_split_charactes = yes
+}
+
+REPLACE:bpm_do_refsoc_split = { 
+	ig:ig_socialists ?= {
+		set_interest_group_name = ig_independent_socialists
+	}
+	trigger_event = { id = bpm_socialist_split.3 days = 180 }
+	bpm_add_movement_interaction = { int = refsoc_split }
+	bpm_initialize_refsocs = yes
+	trigger_event = { id = bpm_movement_splits.11 days = 31 }
+	bpm_ecchi_refsoc_split_charactes = yes
+
+}

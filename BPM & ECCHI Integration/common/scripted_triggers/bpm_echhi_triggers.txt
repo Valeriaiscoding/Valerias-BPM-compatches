@@ -1,0 +1,12 @@
+﻿bpm_ecchi_historical_refsoc_char = {
+	always = no
+}
+
+bpm_ecchi_historical_revsoc_char = {
+	OR = {
+		has_character_template = ecchi_ger_engels
+		has_character_template = agitator_karl_liebknecht
+		has_character_template = HUN_leo_frankel
+		has_character_template = GBR_friedrich_engels
+	}
+}
