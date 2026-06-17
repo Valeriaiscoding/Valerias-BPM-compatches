@@ -1,0 +1,14 @@
+INJECT:law_disarmed_nation = {
+	modifier = {
+		country_institution_conscription_max_investment_add = -5
+	}
+	on_activate = {
+		if = {
+			limit = { has_institution = institution_conscription }
+			set_institution_investment_level = {
+				institution = institution_conscription
+				level = 1
+			}
+		}
+	}
+}
