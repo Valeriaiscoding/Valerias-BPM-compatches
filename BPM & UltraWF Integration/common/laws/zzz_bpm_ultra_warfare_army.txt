@@ -22,7 +22,7 @@ INJECT:law_professional_army = {
 		state_conscription_rate_add = -0.01
 		unit_morale_loss_mult = 0.025
 
-		country_institution_cost_institution_conscription_mult = 0.33
+		country_institution_cost_institution_conscription_mult = -0.2
 	}
 	institution = institution_conscription
 	institution_modifier = {

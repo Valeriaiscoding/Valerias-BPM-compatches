@@ -16,7 +16,6 @@ REPLACE_OR_CREATE:law_purchased_officers = {
 	progressiveness = 0
 	
 	modifier = {
-		state_political_strength_from_wealth_mult = 0.1
 		country_institution_conscription_max_investment_add = 1
 	}
 
@@ -26,9 +25,9 @@ REPLACE_OR_CREATE:law_purchased_officers = {
 	}
 	institution = institution_conscription 
 	institution_modifier = {
-		state_political_strength_from_wealth_mult = 0.05
-		interest_group_ig_landowners_pol_str_mult = 0.1
-		interest_group_ig_industrialists_pol_str_mult = 0.1
+		state_political_strength_from_wealth_mult = 0.1
+		interest_group_ig_landowners_pol_str_mult = 0.05
+		interest_group_ig_industrialists_pol_str_mult = 0.05
 	}
 
 	unlocking_technologies = {
@@ -113,8 +112,7 @@ REPLACE_OR_CREATE:law_political_officers = {
 		country_rigidity_baseline_add = 2
 		interest_group_ig_armed_forces_pol_str_mult = -0.05
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
-		interest_group_in_government_attraction_mult = 0.02
-		character_commander_loyalty_add = 2
+		character_commander_loyalty_add = 3
 	}
 
 	on_enact = {
@@ -151,7 +149,7 @@ INJECT:law_elected_officers = {
 		battle_offense_owned_province_mult = -0.1
 		battle_defense_owned_province_mult = 0.1
 		country_institution_conscription_max_investment_add = 1
-		country_populist_movement_support_add = 0.05
+		country_populist_movement_support_add = 0.05 # Moved from political officers
 	}
 	institution = institution_conscription 
 	institution_modifier = {
