@@ -37,8 +37,9 @@ ecchi_per_tahirih_qurrat_al_ayn = {
 	last_name = ecchi_Baraghani
 	historical = yes
 	culture = cu:persian
+	home_region = STATE_IRAKAJEMI
 	female = yes
-	ideology = ideology_feminist
+	ideology = ideology_moderate
 	interest_group = ig_devout
 	dna = ecchi_dna_tahirih_qurrat_al_ayn
 	birth_date = 1817.1.1
@@ -84,7 +85,7 @@ ecchi_per_amin_al_soltan = {
 				country_average_cultural_acceptance = { target = cu:persian value < acceptance_status_4 }
 			}
 			interest_group_trigger = {
-				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_petty_bourgeoisie
 			}
 			earliest_usage_date = 1887.1.1
 			latest_usage_date = 1907.8.31

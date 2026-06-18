@@ -710,7 +710,7 @@ ecchi_usa_long = {
     home_region = STATE_LOUISIANA
 
     religion = rel:protestant
-    ideology = ideology_authoritarian
+    ideology = ideology_social_democrat
     interest_group = ig_radicals
     birth_date = 1893.8.30
 	dna = ecchi_dna_huey_long
@@ -926,33 +926,31 @@ ecchi_usa_morgan = {
     }
 }
 
-ecchi_usa_rockefeller = {
-    first_name = ecchi_John_D
-    last_name = ecchi_Rockefeller
-    historical = yes
-    culture = cu:yankee
-    
-    religion = rel:protestant
-    ideology = ideology_market_liberal
-    interest_group = ig_industrialists
-    role = character_role_magnate
-    holding_type = building_financial_district
-	dna = ecchi_dna_john_rockefeller
-    birth_date = 1839.7.8
-    traits = { pious arrogant expensive_tastes }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            c:USA ?= this
-        }
-        interest_group_trigger = {
-			is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1874.1.1
-        latest_usage_date = 1937.5.23
-        #chance = 65
-    }
-}
+# ecchi_usa_rockefeller = {
+#     first_name = ecchi_John_D
+#     last_name = ecchi_Rockefeller
+#     historical = yes
+#     culture = cu:yankee
+
+#     religion = rel:protestant
+#     ideology = ideology_traditionalist
+#     interest_group = ig_industrialists
+# 	dna = ecchi_dna_john_rockefeller
+#     birth_date = 1839.7.8
+#     traits = { pious arrogant expensive_tastes }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             is_usfp_active = no
+#             c:USA ?= this
+#         }
+#         interest_group_trigger = {
+# 			is_interest_group_type = ig_industrialists
+#         }
+#         earliest_usage_date = 1874.1.1
+#         latest_usage_date = 1937.5.23
+#         chance = 65
+#     }
+# }
 
 ecchi_usa_hearst = {
     first_name = ecchi_William_Randolph
@@ -997,37 +995,37 @@ ecchi_usa_hearst = {
     }
 }
 
-ecchi_usa_edison = {
-    first_name = Thomas
-    last_name = ecchi_Edison
-    historical = yes
-    culture = cu:yankee
-    
-    religion = rel:protestant
-    ideology = ideology_positivist
-    interest_group = ig_industrialists
-    birth_date = 1847.2.11
-	dna = ecchi_dna_thomas_edison
-    traits = { grifter innovative arrogant }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            morgenrote_is_active = no #This character is in Morgenröte and should not spawn if Morgenröte is active
-            c:USA ?= this
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-			OR = {
-				is_interest_group_type = ig_industrialists
-				is_interest_group_type = ig_intelligentsia
-			}
-        }
-        earliest_usage_date = 1877.1.1
-        latest_usage_date = 1931.10.18
-        #chance = 65
-    }
-}
+# ecchi_usa_edison = {
+#     first_name = Thomas
+#     last_name = ecchi_Edison
+#     historical = yes
+#     culture = cu:yankee
+
+#     religion = rel:protestant
+#     ideology = ideology_feminist
+#     interest_group = ig_industrialists
+#     birth_date = 1847.2.11
+# 	dna = ecchi_dna_thomas_edison
+#     traits = { grifter innovative arrogant }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             is_usfp_active = no
+#             morgenrote_is_active = no #This character is in Morgenröte and should not spawn if Morgenröte is active
+#             c:USA ?= this
+# 			has_technology_researched = feminism
+#         }
+#         interest_group_trigger = {
+#             ig_counts_as_marginal = no
+# 			OR = {
+# 				is_interest_group_type = ig_industrialists
+# 				is_interest_group_type = ig_intelligentsia
+# 			}
+#         }
+#         earliest_usage_date = 1877.1.1
+#         latest_usage_date = 1931.10.18
+#         chance = 65
+#     }
+# }
 
 # United States - USA - SOCIALISTS
 
@@ -1454,31 +1452,32 @@ ecchi_usa_hill = {
     }
 }
 
-ecchi_usa_twain = {
-    first_name = Mark
-    last_name = ecchi_Twain
-    historical = yes
-    culture = cu:yankee
-    
-    religion = rel:protestant
-    ideology = ideology_social_democrat
-    interest_group = ig_intelligentsia
-	dna = ecchi_dna_mark_twain
-    birth_date = 1835.11.30
-    traits = { inspirational_orator charismatic }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            c:USA ?= this
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
-        }
-        earliest_usage_date = 1865.1.1
-        latest_usage_date = 1910.4.21
-        #chance = 65
-    }
-}
+#Mark Twain is in the base game now
+# ecchi_usa_twain = {
+#     first_name = Mark
+#     last_name = ecchi_Twain
+#     historical = yes
+#     culture = cu:yankee
+# 
+#     religion = rel:protestant
+#     ideology = ideology_social_democrat
+#     interest_group = ig_intelligentsia
+# 	dna = ecchi_dna_mark_twain
+#     birth_date = 1835.11.30
+#     traits = { inspirational_orator charismatic }
+#     agitator_usage = {
+#         country_trigger = {
+#             is_usfp_active = no
+#             c:USA ?= this
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_intelligentsia
+#         }
+#         earliest_usage_date = 1865.1.1
+#         latest_usage_date = 1910.4.21
+#         chance = 65
+#     }
+# }
 
 ecchi_usa_chrysler = {
     first_name = Walter
@@ -1535,41 +1534,33 @@ ecchi_usa_seward = {
     }
 }
 
-ecchi_usa_colt = {
-    first_name = Samuel
-    last_name = ecchi_Colt
-    historical = yes
-    culture = cu:yankee
-    
-    religion = rel:protestant
-    ideology = ideology_jingoist_leader
-    interest_group = ig_industrialists
-	dna = ecchi_dna_samuel_colt
-    birth_date = 1814.7.19
-    traits = { innovative persistent kidney_stones }
-    interest_group_leader_usage = {
-        country_trigger = {
-            is_usfp_active = no
-            morgenrote_is_active = no #This character is in Morgenröte and should not spawn if Morgenröte is active
-            c:USA ?= this
-        }
-        interest_group_trigger = {
-            is_interest_group_type = ig_industrialists
-        }
-        earliest_usage_date = 1847.1.1
-        latest_usage_date = 1862.1.10
-        #chance = 65
-    }
-    executive_usage = {
-        country_trigger = { has_dlc_feature = mp1_content }
-         company_trigger = {
-			is_company_type = company_type:company_colt_firearms
-        }
-        earliest_usage_date = 1836.2.25
-        latest_usage_date = 1862.1.10
-    }
-}
+# ecchi_usa_colt = {
+#     first_name = Samuel
+#     last_name = ecchi_Colt
+#     historical = yes
+#     culture = cu:yankee
+#     religion = rel:protestant
+#     ideology = ideology_jingoist_leader
+#     interest_group = ig_industrialists
+# 	dna = ecchi_dna_samuel_colt
+#     birth_date = 1814.7.19
+#     traits = { innovative persistent kidney_stones }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             is_usfp_active = no
+#             morgenrote_is_active = no #This character is in Morgenröte and should not spawn if Morgenröte is active
+#             c:USA ?= this
+#         }
+#         interest_group_trigger = {
+#             is_interest_group_type = ig_industrialists
+#         }
+#         earliest_usage_date = 1847.1.1
+#         latest_usage_date = 1862.1.10
+#         chance = 65
+#     }
+# }
 
+#non-political figure
 ecchi_usa_capone = {
     first_name = ecchi_Al
     last_name = ecchi_Capone
@@ -1583,7 +1574,7 @@ ecchi_usa_capone = {
     birth_date = 1899.1.17
     role = character_role_magnate
     holding_type = building_financial_district
-    traits = { cruel grifter imperious expensive_tastes scarred bandit } # Added bandit 
+    traits = { cruel imperious expensive_tastes scarred bandit }
     interest_group_leader_usage = {
         country_trigger = {
             is_usfp_active = no
@@ -1877,7 +1868,8 @@ ecchi_usa_stephens = {
     last_name = ecchi_Stephens
     historical = yes
     culture = cu:dixie
-    
+    home_region = STATE_GEORGIA
+
     religion = rel:protestant
     ideology = ideology_slaver
     interest_group = ig_landowners
@@ -2214,37 +2206,37 @@ ecchi_asa_garnet = {
 #     }
 # }
 
-#ecchi_asa_du_bois = {
-#    first_name = ecchi_W_E_B
-#    last_name = Du_Bois
-#    historical = yes
-#    culture = cu:afro_american
-#    
-#    religion = rel:protestant
-#    ideology = ideology_reformer
-#    interest_group = ig_trade_unions
-#	dna = ecchi_dna_web_du_bois
-#    birth_date = 1868.2.23
-#    traits = { tactful romantic }
-#    interest_group_leader_usage = {
-#        country_trigger = {
-#            is_usfp_active = no
-#            exists = c:ASA
-#            this = c:ASA
-#        }
-#        interest_group_trigger = {
-#            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-#			OR = {
-#				is_interest_group_type = ig_trade_unions
-#				is_interest_group_type = ig_intelligentsia
-#			}
-#        }
-#        earliest_usage_date = 1899.1.1
-#        latest_usage_date = 1963.8.27
-#        #chance = 65
-#    }
-#}
+#WEB Du Bois is a base-game agitator now
+# ecchi_asa_du_bois = {
+#     first_name = ecchi_W_E_B
+#     last_name = Du_Bois
+#     historical = yes
+#     culture = cu:afro_american
+# 
+#     religion = rel:protestant
+#     ideology = ideology_reformer
+#     interest_group = ig_trade_unions
+# 	dna = ecchi_dna_web_du_bois
+#     birth_date = 1868.2.23
+#     traits = { tactful romantic }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             is_usfp_active = no
+#             exists = c:ASA
+#             this = c:ASA
+#         }
+#         interest_group_trigger = {
+#             ig_counts_as_marginal = no
+# 			OR = {
+# 				is_interest_group_type = ig_trade_unions
+# 				is_interest_group_type = ig_intelligentsia
+# 			}
+#         }
+#         earliest_usage_date = 1899.1.1
+#         latest_usage_date = 1963.8.27
+#         chance = 65
+#     }
+# }
 
 # US theologians
 
@@ -2608,6 +2600,7 @@ ecchi_usa_mott = {
     last_name = ecchi_Mott
     historical = yes
     culture = cu:yankee
+    home_region = STATE_MASSACHUSETTS
     female = yes
     religion = rel:protestant
     ideology = ideology_abolitionist
@@ -2685,9 +2678,9 @@ ecchi_usa_spooner = {
     home_region = STATE_MASSACHUSETTS
 
     religion = rel:protestant
-    ideology = ideology_utopian # was abolitionist 
-    # Was anarcho indvidualist but it cant be represented as anarchists in bpm are either communists or syndicalists
-    interest_group = ig_radicals
+    # my attempt to represent his anarcho individualist views
+    ideology = ideology_anarchist
+    interest_group = ig_agrarian_populists
     dna = ecchi_dna_lysander_spooner
     birth_date = 1808.1.19
     traits = { innovative charismatic }
@@ -2699,14 +2692,14 @@ ecchi_usa_spooner = {
         interest_group_trigger = {
             trigger_if = {
                 limit = {
-                    owner.ig_anarchists = {
+                    owner.ig:ig_anarchists = {
                         bpm_ig_enabled = yes
                     }
                 }
                 is_interest_group_type = ig_anarchists
             }
             trigger_else = {
-                is_interest_group_type = ig_radicals
+                is_interest_group_type = ig_agrarian_populists
             }
 			
         } 

@@ -184,8 +184,10 @@ mr_ita_balbo = {
     ideology = ideology_fascist
     traits = {
         ambitious
-        expert_colonial_administrator
-        celebrity_commander
+        grifter
+        brave
+        # expert_colonial_administrator
+        # celebrity_commander
     }
     interest_group_leader_usage = {
         country_trigger = {
@@ -207,10 +209,7 @@ mr_ita_balbo = {
             }
         }
         interest_group_trigger = {
-           OR = {
-                is_interest_group_type = ig_fascists
-                is_interest_group_type = ig_armed_forces
-           }
+           is_interest_group_type = ig_fascists
         }
         earliest_usage_date = 1922.1.1
         latest_usage_date = 1940.6.28

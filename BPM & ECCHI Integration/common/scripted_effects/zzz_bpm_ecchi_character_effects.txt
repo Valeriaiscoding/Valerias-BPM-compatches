@@ -1,10 +1,9 @@
 ﻿bpm_ecchi_socialists_split_set_ig_leader = {
 	hidden_effect = {
-		leader = { kill_character = yes }
 		ordered_scope_character = {
 			limit = {
 				prominence >= 25
-				NOT = { has_role_of_type = leader }
+				is_interest_group_leader = no
 			}
 			order_by = prominence
 			position = 0
@@ -1464,7 +1463,7 @@ bpm_ecchi_refsoc_split_charactes = {
 						has_role_of_type = admiral
 					}
 				}
-				bpm_ecchi_historical_revsoc_char = yes
+				bpm_ecchi_historical_refsoc_char = yes
 			}			
 		}
 		set_interest_group = prev.ig:ig_reformist_socialists
@@ -1487,7 +1486,7 @@ bpm_ecchi_revsoc_split_charactes = {
 						has_role_of_type = admiral
 					}
 				}
-				bpm_ecchi_historical_refsoc_char = yes
+				bpm_ecchi_historical_revsoc_char = yes
 			}
 		}
 		set_interest_group = prev.ig:ig_revolutionist_socialist
