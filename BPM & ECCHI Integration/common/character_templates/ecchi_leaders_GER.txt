@@ -39,7 +39,7 @@ ecchi_ger_hitler = {
 			bpm_ig_enabled = yes
 			is_interest_group_type = ig_fascists
 		}
-		earliest_usage_date = 1923.1.1
+		earliest_usage_date = 1920.4.1
 		latest_usage_date = 1945.4.30
 		#chance = 65
 	}

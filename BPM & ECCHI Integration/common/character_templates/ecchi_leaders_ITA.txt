@@ -71,7 +71,7 @@ ecchi_ita_mussolini = {
 			bpm_ig_enabled = yes
             is_interest_group_type = ig_fascists
         }
-        earliest_usage_date = 1922.1.1
+        earliest_usage_date = 1914.11.5
         latest_usage_date = 1945.4.28
         #chance = 65
     }

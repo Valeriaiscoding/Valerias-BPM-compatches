@@ -1085,7 +1085,7 @@ create_fash_start_characters = {
                     NOT = { exists = c:ITA }
                 }
             }
-			game_date > 1922.1.1
+			game_date >= 1914.11.5
 			game_date < 1945.4.28
 			NOR = {
 				any_character = {
@@ -1168,7 +1168,7 @@ create_fash_start_characters = {
 		}
 		if = {
 			limit = { 
-				game_date > 1923.1.1
+				game_date > 1920.4.1
                 game_date < 1945.4.30
 				NOR = {
 					any_character = {
@@ -1194,7 +1194,7 @@ create_fash_start_characters = {
 				c:BAV ?= this
 				c:SGF ?= this
 				c:GER ?= this
-				c:BOL ?= this # Yes, Bolivia.
+				#c:BOL ?= this # Yes, Bolivia.
 			}
 		}
 		if = {
@@ -1481,7 +1481,7 @@ create_fash_start_characters = {
 	}
 	else_if = {
 		limit = {
-			c:AUS ?= this
+			c:AUS ?= this 
 		}
 		if = {
 			limit = {
