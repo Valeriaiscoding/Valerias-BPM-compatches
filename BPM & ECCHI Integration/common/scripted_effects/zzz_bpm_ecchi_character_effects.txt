@@ -1448,6 +1448,100 @@ create_fash_start_characters = {
 
 }
 
+create_fash_start_characters = {
+	if = {
+		limit = { 
+			exists = c:FRA
+            this = c:FRA
+		}
+		if = {
+			limit = { 
+				game_date >= 1843.3.1
+				game_date <= 1861.11.21
+			}
+			create_character = {
+				template = ecchi_fra_dimier
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				game_date >= 1861.1.1
+				game_date <= 1910.1.1
+			}
+			create_character = {
+				template = ecchi_fra_harmel
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			c:AUS ?= this
+		}
+		if = {
+			limit = {
+				has_dlc_feature = ip3_content
+				game_date >= 1850.1.1
+				game_date <= 1890.11.8 # typo in template
+			}
+			create_character = {
+				template = AUS_karl_freiherr_von_vogelsang
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_dlc_feature = ip4_content
+		}
+		if = {
+			limit = {
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:asturleonese
+				}
+				any_scope_state = {
+					state_region = s:STATE_ASTURIAS
+				}
+				game_date >= 1875.1.1
+				game_date < 1894.11.29
+			}
+			create_character = {
+				template = SPA_ceferino_gonzalez
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					c:SPA ?= this
+					country_has_primary_culture = cu:galician
+				}
+				any_scope_state = {
+					state_region = s:STATE_GALICIA
+				}
+				game_date >= 1860.1.1
+				game_date <= 1893.2.4
+			}
+			create_character = {
+				template = SPA_concepcion_arenal
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+}
+
 bpm_ecchi_refsoc_split_charactes = {
 	every_scope_character = {
 		limit = { 
