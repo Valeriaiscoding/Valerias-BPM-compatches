@@ -1,0 +1,13 @@
+Fininsh with ChatGPT help lol
+
+Prompt draft
+
+Describe to ai BPMs IGs and their code names
+for every character in attrached file you need assing interest group from better politics mod
+using information avaliable online if default interest group is already fitting skip 
+if multiple options fit output them all
+output results as text with explaination and json compatible string in this format with explaination
+"charname":{
+    "set_interest_group": "interest_group"
+},
+where charname is name of character used in code and interest_group is code name of interest group
