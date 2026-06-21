@@ -7,7 +7,7 @@ ecchi_lit_basanavicius = {
     culture = cu:lithuanian
     home_region = STATE_KAUNAS
     religion = rel:catholic
-    ideology = ideology_traditionalist
+    ideology = ideology_moderate
     interest_group = ig_intelligentsia
 	dna = ecchi_dna_jonas_basanavicius
     birth_date = 1851.11.23
@@ -37,10 +37,7 @@ ecchi_lit_basanavicius = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_rural_folk
-            }
+            is_interest_group_type = ig_intelligentsia
         }
         earliest_usage_date = 1905.1.1
         latest_usage_date = 1927.2.16
@@ -57,8 +54,8 @@ ecchi_bul_botev = {
     culture = cu:bulgarian
     home_region = STATE_BULGARIA
     religion = rel:orthodox
-    ideology = ideology_radical
-    interest_group = ig_intelligentsia
+    ideology = ideology_utopian # radical
+    interest_group = ig_radicals # intelligentsia
 	dna = ecchi_dna_hristo_botev
     birth_date = 1848.1.6
     traits = { romantic direct }
@@ -68,7 +65,7 @@ ecchi_bul_botev = {
             this = c:BUL
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1867.1.1
         latest_usage_date = 1876.6.1
@@ -85,8 +82,8 @@ ecchi_rom_radulescu-motru = {
     culture = cu:romanian
     home_region = STATE_WALLACHIA
     religion = rel:catholic
-    ideology = ideology_traditionalist
-    interest_group = ig_intelligentsia
+    ideology = ideology_social_democrat
+    interest_group = ig_national_liberals
 	dna = ecchi_dna_constantin_radulescu_motru
     birth_date = 1868.2.15
     traits = { reckless romantic arrogant }
@@ -107,10 +104,7 @@ ecchi_rom_radulescu-motru = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1890.1.1
         latest_usage_date = 1957.3.6
@@ -218,22 +212,22 @@ ecchi_bye_kalinowski = {
     home_region = STATE_MINSK
     religion = rel:orthodox
     ideology = ideology_reformer
-    interest_group = ig_intelligentsia
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_konstanty_kalinowski
     birth_date = 1838.2.2
     traits = { reckless inspirational_orator }
     interest_group_leader_usage = {
         country_trigger = {
-            exists = c:BYE
-            this = c:BYE
+            OR = {
+                this ?= c:BYE
+                this ?= c:POL
+                this ?= c:LIT
+            }
         }
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_armed_forces
-            }
+            is_interest_group_type = ig_agrarian_populists
         }
         earliest_usage_date = 1860.1.1
         latest_usage_date = 1864.3.22
@@ -387,7 +381,7 @@ ecchi_hun_turr = {
     culture = cu:hungarian
     home_region = STATE_CENTRAL_HUNGARY
     religion = rel:orthodox
-    ideology = ideology_pacifist
+    ideology = ideology_radical
     interest_group = ig_national_liberals
     dna = ecchi_dna_istvan_turr
     birth_date = 1825.8.10
@@ -397,9 +391,20 @@ ecchi_hun_turr = {
             morgenrote_is_active = no #This character is in Morgenröte and should not spawn if Morgenröte is active
             OR = {
                 AND = {
+                    exists = c:KUK
+                    this = c:KUK
+                    NOR = { 
+                        exists = c:HUN 
+                        exists = c:KUK
+                    }
+                }
+                AND = {
                     exists = c:AUS
                     this = c:AUS
-                    NOT = { exists = c:HUN }
+                    NOR = { 
+                        exists = c:HUN 
+                        exists = c:KUK
+                    }
                 }
                 AND = {
                     exists = c:HUN
@@ -410,19 +415,28 @@ ecchi_hun_turr = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_national_liberals
-            }
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1876.1.1
         latest_usage_date = 1899.7.8
         #chance = 50
     }
+    on_created = {
+        if = {
+            limit = { 
+                OR = {
+                    bpm_country_laws_are_liberal_democratic = yes
+                    bpm_country_laws_are_moderately_liberal_democratic = yes
+                }
+            }
+            set_ideology = ideology:ideology_pacifist
+        }
+    }
 }
 
 # Serbia
 
-ecchi_ser_krstic = {
+ecchi_ser_krstic = { # maybe rework him into agitator
     first_name = ecchi_Micko
     last_name = ecchi_Krstic
     historical = yes
@@ -629,7 +643,7 @@ ecchi_bel_wahis = {
     culture = cu:flemish
     home_region = STATE_FLANDERS
     religion = rel:catholic
-    ideology = ideology_ethno_nationalist
+    ideology = ideology_authoritarian # no colonialist ideology unfortunally
     interest_group = ig_petty_bourgeoisie
 	dna = ecchi_dna_theophile_wahis
     birth_date = 1844.4.27
@@ -665,27 +679,27 @@ ecchi_bel_wahis = {
 # Switzerland
 
 ## Dufour, Guillaume Henri by LordR
-mr_swi_dufour_guillaume_henri = {
-	# Guillaume Henri Dufour, one of Switzerland's foremost generals from the 1810s through to the 1860s
-	dna = mr_swi_dufour_guillaume_henri
-	first_name = "Guillaume_Henri"
-	last_name = "Dufour"
-	culture = cu:francoprovencal
-	home_region = STATE_WEST_SWITZERLAND
-	religion = rel:protestant # Not entirely sure, but his family was from Geneva
-	birth_date = 1787.9.15
-	interest_group = ig_armed_forces
-	ideology = ideology_moderate
-	historical = yes
-	traits = {
-		meticulous
-		surveyor
-		engineer
-		basic_diplomat
-	}
-	is_general = yes
-    commander_rank = default
-}
+# mr_swi_dufour_guillaume_henri = {
+# 	# Guillaume Henri Dufour, one of Switzerland's foremost generals from the 1810s through to the 1860s
+# 	dna = mr_swi_dufour_guillaume_henri
+# 	first_name = "Guillaume_Henri"
+# 	last_name = "Dufour"
+# 	culture = cu:francoprovencal
+# 	home_region = STATE_WEST_SWITZERLAND
+# 	religion = rel:protestant # Not entirely sure, but his family was from Geneva
+# 	birth_date = 1787.9.15
+# 	interest_group = ig_armed_forces
+# 	ideology = ideology_moderate
+# 	historical = yes
+# 	traits = {
+# 		meticulous
+# 		surveyor
+# 		engineer
+# 		basic_diplomat
+# 	}
+# 	is_general = yes
+#     commander_rank = default
+# }
 
 ## Karl Ludwig von Haller
 
@@ -696,7 +710,7 @@ swi_von_haller = {
     culture = cu:alemannic
     home_region = STATE_EAST_SWITZERLAND
     religion = rel:catholic
-    ideology = ideology_center_leader
+    ideology = ideology_moderate
     interest_group = ig_reactionaries
     ig_leader = yes
     dna = mr_swi_von_haller_karl_ludwig
@@ -743,7 +757,7 @@ swi_gaussen = {
     culture = cu:francoprovencal
     home_region = STATE_WEST_SWITZERLAND
     religion = rel:protestant
-    ideology = ideology_theocrat
+    ideology = ideology_moderate
     interest_group = ig_devout
     ig_leader = yes
     #dna = mr_net_groen_van_prinsterer_guillaume

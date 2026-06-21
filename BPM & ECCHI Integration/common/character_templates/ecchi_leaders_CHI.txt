@@ -287,7 +287,7 @@ ecchi_chi_zhang_decheng = {
     culture = cu:han
     
     ideology = ideology_ethno_nationalist
-    interest_group = ig_rural_folk
+    interest_group = ig_national_liberals
     birth_date = 1821.1.1
     traits = { experienced_defensive_strategist cautious }
     commander_rank = default
@@ -575,7 +575,7 @@ ecchi_chi_huang_xing = {
     culture = cu:han
     
     ideology = ideology_republican_leader
-    interest_group = ig_radicals
+    interest_group = ig_national_liberals
 	dna = ecchi_dna_huang_xing
     birth_date = 1874.10.25
     traits = { brave direct }
@@ -586,7 +586,7 @@ ecchi_chi_huang_xing = {
             this = c:CHI
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_radicals
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1903.1.1
         latest_usage_date = 1916.10.31
@@ -602,7 +602,7 @@ ecchi_chi_hu_shih = {
     culture = cu:han
     
     ideology = ideology_radical
-    interest_group = ig_radicals
+    interest_group = ig_liberals
 	dna = ecchi_dna_hu_shih
     birth_date = 1891.12.17
     traits = { romantic reserved }
@@ -612,7 +612,7 @@ ecchi_chi_hu_shih = {
             this = c:CHI
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_radicals
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1962.2.24
@@ -687,8 +687,8 @@ ecchi_chi_zhang_zuolin = {
     historical = yes
     culture = cu:han
     
-    ideology = ideology_moderate
-    interest_group = ig_rural_folk
+    ideology = ideology_modernizer_leader
+    interest_group = ig_armed_forces
 	dna = ecchi_dna_zhang_zuolin
     birth_date = 1875.3.19
     traits = { ambitious meticulous experienced_diplomat }
@@ -710,10 +710,7 @@ ecchi_chi_zhang_zuolin = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_armed_forces
-            }
+            is_interest_group_type = ig_armed_forces
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1928.6.4
@@ -745,10 +742,7 @@ ecchi_chi_yan_xishan = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_rural_folk
-            }
+            is_interest_group_type = ig_armed_forces
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1960.7.22
@@ -861,10 +855,7 @@ ecchi_chi_ma_fuxiang = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_intelligentsia
-            }
+            is_interest_group_type = ig_armed_forces
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1932.8.19
@@ -893,10 +884,7 @@ ecchi_chi_li_yuanhong = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_landowners
-            }
+            is_interest_group_type = ig_armed_forces
         }
         earliest_usage_date = 1910.1.1
         latest_usage_date = 1928.6.3
@@ -985,7 +973,8 @@ ecchi_chi_duan_qirui = {
 	dna = ecchi_dna_duan_qirui
     birth_date = 1865.3.6
     traits = { pious reserved ambitious experienced_defensive_strategist }
-    interest_group_leader_usage = {
+    commander_rank = default
+    commander_usage = {
         country_trigger = {
             hga_is_active = no
             OR = {
@@ -1000,17 +989,9 @@ ecchi_chi_duan_qirui = {
                 }
             }
         }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_armed_forces
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_petty_bourgeoisie
-            }
-        }
+        role = general
         earliest_usage_date = 1910.1.1
-        latest_usage_date = 1936.11.2
+        latest_usage_date = 1919.12.12
         #chance = 65
     }
 }
@@ -1241,37 +1222,37 @@ ecchi_chi_zhu_de = {
 
 # China - rebels and rural leaders
 
-ecchi_tpg_hong_xiuquan = {
-    first_name = Xiuquan
-    last_name = Hong
-    home_region = STATE_GUANGDONG
-    historical = yes
-    culture = cu:hakka
+# ecchi_tpg_hong_xiuquan = {
+#     first_name = Xiuquan
+#     last_name = Hong
+#     home_region = STATE_GUANGDONG
+#     historical = yes
+#     culture = cu:hakka
     
-    religion = rel:protestant
-    ideology = ideology_theocrat
-    interest_group = ig_devout
-	dna = ecchi_dna_hong_xiuquan
-    birth_date = 1814.1.1
-    traits = { pious romantic popular_commander psychological_affliction }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:TPG
-            this = c:TPG
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_devout
-                is_interest_group_type = ig_rural_folk
-            }
-        }
-        earliest_usage_date = 1850.1.1
-        latest_usage_date = 1864.6.1
-        #chance = 65
-    }
-}
+#     religion = rel:protestant
+#     ideology = ideology_theocrat
+#     interest_group = ig_devout
+# 	dna = ecchi_dna_hong_xiuquan
+#     birth_date = 1814.1.1
+#     traits = { pious romantic popular_commander psychological_affliction }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             exists = c:TPG
+#             this = c:TPG
+#         }
+#         interest_group_trigger = {
+#             bpm_ig_is_marginal = no
+# 			bpm_ig_enabled = yes
+#             OR = {
+#                 is_interest_group_type = ig_devout
+#                 is_interest_group_type = ig_rural_folk
+#             }
+#         }
+#         earliest_usage_date = 1850.1.1
+#         latest_usage_date = 1864.6.1
+#         #chance = 65
+#     }
+# }
 
 ecchi_chi_cao_futian = {
     first_name = ecchi_Futian
@@ -1338,8 +1319,8 @@ ecchi_chi_tang_caichang = {
     historical = yes
     culture = cu:han
     
-    ideology = ideology_republican_leader
-    interest_group = ig_radicals
+    ideology = ideology_ethno_nationalist
+    interest_group = ig_national_liberals
 	dna = ecchi_dna_tang_caichang
     birth_date = 1867.4.15
     traits = { romantic reckless }
@@ -1548,8 +1529,8 @@ ecchi_chi_zheng_yi_sao = {
     culture = cu:yue
     female = yes
     home_region = STATE_GUANGDONG
-    ideology = ideology_feminist
-    interest_group = ig_rural_folk
+    ideology = ideology_reformer # so she can spawn
+    interest_group = ig_armed_forces
     commander_rank = default
     birth_date = 1775.1.1
     commander_usage = {
@@ -1561,6 +1542,13 @@ ecchi_chi_zheng_yi_sao = {
         earliest_usage_date = 1807.1.1
         latest_usage_date = 1845.1.1
         chance = 25
+    }
+    traits = {
+        bandit
+        ambitious
+        celebrity_commander
+        expert_naval_commander
+        experienced_convoy_raider
     }
 }
 

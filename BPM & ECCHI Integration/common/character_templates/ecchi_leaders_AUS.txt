@@ -35,10 +35,7 @@ ecchi_aus_lueger = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                #is_interest_group_type = ig_petty_bourgeoisie
-                is_interest_group_type = ig_reactionaries
-            }
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1910.3.10
@@ -54,7 +51,7 @@ ecchi_aus_bauer = {
     home_region = STATE_AUSTRIA
 
     religion = rel:jewish
-    ideology = ideology_reformer
+    ideology = ideology_social_democrat
     interest_group = ig_reformist_socialists
 	dna = ecchi_dna_otto_bauer
     birth_date = 1881.9.5
@@ -501,7 +498,7 @@ ecchi_aus_kautsky = {
     home_region = STATE_BOHEMIA
 
     religion = rel:jewish
-    ideology = ideology_center_leader
+    ideology = ideology_moderate
     interest_group = ig_reformist_socialists
     dna = ecchi_dna_karl_johann_kautsky
     birth_date = 1854.10.16

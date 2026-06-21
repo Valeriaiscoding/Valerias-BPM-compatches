@@ -104,7 +104,7 @@ ecchi_bht_nehru = {
     culture = cu:kashmiri
     home_region = STATE_EASTERN_HIMALAYAS
     religion = rel:hindu
-    ideology = ideology_republican_leader
+    ideology = ideology_sovereignist_leader
     interest_group = ig_reformist_socialists
 	dna = ecchi_dna_jawaharlal_nehru
     birth_date = 1889.11.14
@@ -142,6 +142,16 @@ ecchi_bht_nehru = {
         earliest_usage_date = 1912.1.1
         latest_usage_date = 1964.5.27
         #chance = 65
+    }
+    on_created = {
+        if = {
+            limit = { 
+                owner = {
+                    is_subject = no
+                }
+            }
+            set_ideology = ideology:ideology_social_democrat
+        }
     }
 }
 

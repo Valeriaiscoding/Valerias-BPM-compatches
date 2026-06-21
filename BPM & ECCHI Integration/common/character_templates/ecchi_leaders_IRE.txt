@@ -138,7 +138,7 @@ ecchi_ire_parnell = {
     culture = cu:irish
     home_region = STATE_LEINSTER
 
-    religion = rel:catholic
+    religion = rel:protestant
     ideology = ideology_liberal_leader
     interest_group = ig_national_liberals
     dna = ecchi_dna_charles_parnell
@@ -177,8 +177,8 @@ ecchi_ire_butt = {
     home_region = STATE_ULSTER
 
     religion = rel:catholic
-    ideology = ideology_liberal_leader
-    interest_group = ig_devout
+    ideology = ideology_reformer
+    interest_group = ig_conservatives
     dna = ecchi_dna_isaac_butt
     birth_date = 1813.9.6
     traits = { experienced_diplomat }
@@ -197,7 +197,7 @@ ecchi_ire_butt = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_devout
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1852.1.1
         latest_usage_date = 1879.5.5
@@ -253,8 +253,8 @@ ecchi_ire_casement = {
     home_region = STATE_LEINSTER
 
     religion = rel:catholic
-    ideology = ideology_ethno_nationalist
-    interest_group = ig_national_liberals
+    ideology = ideology_humanitarian
+    interest_group = ig_radicals
     dna = ecchi_dna_roger_casement
     birth_date = 1864.9.1
     traits = { charismatic experienced_diplomat expert_colonial_administrator }
@@ -273,7 +273,7 @@ ecchi_ire_casement = {
             }
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_national_liberals
+            is_interest_group_type = ig_radicals
         }
         earliest_usage_date = 1884.1.1
         latest_usage_date = 1916.8.3
