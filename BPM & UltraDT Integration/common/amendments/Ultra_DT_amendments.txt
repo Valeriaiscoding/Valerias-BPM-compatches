@@ -23,6 +23,7 @@ amendment_temporary_income_tax = {
 	}
 
 	modifier = {
+		country_rigidity_baseline_add = -10
 		interest_group_in_government_attraction_mult = -0.25
 	}
 
@@ -62,6 +63,10 @@ amendment_temporary_income_tax = {
 			has_ideology = ideology:ideology_eco_socialist_mixed_economy
 			
 		}
+	}
+
+	on_activate = {
+		bpm_remove_political_stability_normal = yes
 	}
 
 	ai_will_revoke = {
@@ -324,6 +329,7 @@ amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 
 	modifier = {
 		interest_group_in_government_attraction_mult = -0.25
+		country_rigidity_baseline_add = -10
 	}
 
 	tax_modifier_very_low = {
@@ -413,6 +419,10 @@ amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 			has_ideology = ideology:ideology_eco_socialist_autarky
 			has_ideology = ideology:ideology_eco_proletarian_economy
 		}
+	}
+
+	on_activate = {
+		bpm_remove_political_stability_normal = yes
 	}
 
 	ai_will_revoke = {

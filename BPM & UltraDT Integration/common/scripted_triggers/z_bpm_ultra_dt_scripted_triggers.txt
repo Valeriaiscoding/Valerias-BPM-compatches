@@ -1,0 +1,105 @@
+REPLACE_OR_CREATE:bpm_tax_break_rich_sway_valid = {
+	OR = {
+		bpm_ig_is_upper_institutional = yes
+		bpm_ig_is_market_liberal = yes
+	}
+	owner = {
+		OR = {
+			has_law_or_variant = law_type:law_graduated_taxation
+			has_law_or_variant = law_type:law_proportional_taxation
+			currently_enacting_law.type = law_type:law_graduated_taxation
+			currently_enacting_law.type = law_type:law_proportional_taxation
+		}
+		active_law:lawgroup_taxation = {
+			NOR = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+				has_amendment = amendment_type:amendment_dividend_tax_exemption
+				has_amendment = amendment_type:amendment_dividend_tax_reduction
+			}
+		}
+		currently_enacting_law = {
+			NOR = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+				has_amendment = amendment_type:amendment_dividend_tax_exemption
+				has_amendment = amendment_type:amendment_dividend_tax_reduction
+			}
+		}
+	} 
+	NOT = { has_variable = bpm_tax_break_rich_sway_used }
+}
+
+REPLACE_OR_CREATE:bpm_tax_break_middle_sway_valid = {
+	OR = {
+		bpm_ig_is_upper_institutional = yes
+		bpm_ig_is_middle_institutional = yes
+	}
+	owner = {
+		OR = {
+			has_law_or_variant = law_type:law_graduated_taxation
+			has_law_or_variant = law_type:law_proportional_taxation
+			currently_enacting_law.type = law_type:law_graduated_taxation
+			currently_enacting_law.type = law_type:law_proportional_taxation
+			active_law:lawgroup_taxation = {
+				OR = {
+					has_amendment = amendment_type:amendment_temporary_income_tax
+				}
+			}
+		}
+		NOR = {
+			active_law:lawgroup_taxation = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+			currently_enacting_law = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+		}
+	}
+	NOT = { has_variable = bpm_tax_break_middle_sway_used }
+}
+
+REPLACE_OR_CREATE:bpm_tax_break_poor_sway_valid = {
+	is_interest_group_type = ig_trade_unions
+	owner = { 
+		OR = {
+			has_law = law_type:law_per_capita_based_taxation
+			currently_enacting_law.type = law_type:law_per_capita_based_taxation
+			active_law:lawgroup_taxation = {
+				has_amendment = amendment_type:amendment_preserved_traditional_taxation 
+			}
+		}
+		NOR = {
+			active_law:lawgroup_taxation = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+			currently_enacting_law = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+		}
+	}
+	NOT = { has_variable = bpm_tax_break_poor_sway_used }
+}
+
+REPLACE_OR_CREATE:bpm_tax_break_peasants_sway_valid = {
+	OR = {
+		is_interest_group_type = ig_rural_folk
+		has_ideology = ideology:ideology_eco_modern_agrarian
+	}
+	owner = {
+		OR = {
+			has_law = law_type:law_per_capita_based_taxation
+			has_law = law_type:law_land_based_taxation
+			currently_enacting_law.type = law_type:law_land_based_taxation
+			currently_enacting_law.type = law_type:law_per_capita_based_taxation
+			
+		}
+		NOR = {
+			active_law:lawgroup_taxation = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+			currently_enacting_law = {
+				has_amendment = amendment_type:amendment_short_term_tax_cuts
+			}
+		}
+	}
+	NOT = { has_variable = bpm_tax_break_peasant_sway_used }
+}

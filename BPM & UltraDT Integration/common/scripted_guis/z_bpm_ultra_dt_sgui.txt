@@ -1,0 +1,83 @@
+REPLACE:bpm_tax_break_rich_sway_gui = {
+	scope = interest_group
+	is_shown = {
+		bpm_tax_break_rich_sway_valid = yes
+	}
+	is_valid = {
+		owner.var:bpm_law_sway_maneuvers >= bpm_law_enactment_sway_cost
+	}
+	effect = {
+		set_variable = bpm_tax_break_rich_sway_used
+		bpm_subtract_from_law_sways = yes
+		owner = { bpm_update_law_enactment_variables_modifiers = yes }
+		owner = {
+			add_modifier = {
+				name = bpm_law_sway_tax_break_rich_used
+				years = bpm_law_sway_tax_break_duration_years
+			}
+		}
+	}
+}
+
+REPLACE:bpm_tax_break_middle_sway_gui = {
+	scope = interest_group
+	is_shown = {
+		bpm_tax_break_middle_sway_valid = yes
+	}
+	is_valid = {
+		owner.var:bpm_law_sway_maneuvers >= bpm_law_enactment_sway_cost
+	}
+	effect = {
+		set_variable = bpm_tax_break_middle_sway_used
+		bpm_subtract_from_law_sways = yes
+		owner = { bpm_update_law_enactment_variables_modifiers = yes }
+		owner = {
+			add_modifier = {
+				name = bpm_law_sway_tax_break_middle_used
+				years = bpm_law_sway_tax_break_duration_years
+			}
+		}
+	}
+}
+
+REPLACE:bpm_tax_break_poor_sway_gui = {
+	scope = interest_group
+	is_shown = {
+		bpm_tax_break_poor_sway_valid = yes
+	}
+	is_valid = {
+		owner.var:bpm_law_sway_maneuvers >= bpm_law_enactment_sway_cost
+	}
+	effect = {
+		set_variable = bpm_tax_break_poor_sway_used
+		bpm_subtract_from_law_sways = yes
+		owner = { bpm_update_law_enactment_variables_modifiers = yes }
+		owner = {
+			add_modifier = {
+				name = bpm_law_sway_tax_break_poor_used
+				years = bpm_law_sway_tax_break_duration_years
+			}
+		}
+	}
+}
+
+REPLACE:bpm_tax_break_peasant_sway_gui = {
+	scope = interest_group
+	is_shown = {
+		bpm_tax_break_peasants_sway_valid = yes
+	}
+	is_valid = {
+		owner.var:bpm_law_sway_maneuvers >= bpm_law_enactment_sway_cost
+	}
+	effect = {
+		set_variable = bpm_tax_break_peasant_sway_used
+		bpm_subtract_from_law_sways = yes
+		owner = { bpm_update_law_enactment_variables_modifiers = yes }
+		owner = {
+			add_modifier = {
+				name = bpm_law_sway_tax_break_peasant_used
+				years = bpm_law_sway_tax_break_duration_years
+			}
+		}
+	}
+}
