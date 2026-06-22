@@ -1,4 +1,4 @@
-REPLACE:ideology_dop_moderate_democrat = { # similar to change in liberal movement
+REPLACE_OR_CREATE:ideology_dop_moderate_democrat = { # similar to change in liberal movement
 	icon = "gfx/interface/icons/ideology_icons/dop_ideology/moderate_democrat.dds"
 	priority = 1000
 	lawgroup_distribution_of_power = {
