@@ -29,6 +29,9 @@
 	}
 
 	when_taken = {
+		show_as_tooltip = {
+			bpm_remove_political_stability_normal = yes
+		}
 		active_law:lawgroup_taxation ?= {
 			add_amendment = {
 				type = amendment_temporary_income_tax
@@ -81,6 +84,9 @@ implement_extra_dividend_tax = {
 	}
 
 	when_taken = {
+		show_as_tooltip = {
+			bpm_remove_political_stability_normal = yes
+		}
 		active_law:lawgroup_taxation ?= {
 			add_amendment = {
 				type = amendment_extra_dividend_tax
