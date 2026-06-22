@@ -92,8 +92,8 @@ ecchi_den_bajer = {
 	home_region = STATE_ZEALAND
 	religion = rel:protestant
     female = yes
-	interest_group = ig_intelligentsia # was feminist and pacifist and wasnt involved in anything else
-	ideology = ig_liberals
+	interest_group = ig_liberals 
+	ideology = ideology_feminist
 	birth_date = 1840.1.4
 	#dna = mr_net_jacobs_aletta
 	traits = { charismatic }
@@ -109,5 +109,11 @@ ecchi_den_bajer = {
 		earliest_usage_date = 1871.1.1
 		latest_usage_date = 1934.4.4
 		chance = 100
+	}
+	on_created = {
+		if = {
+			limit = { owner = { has_law_or_variant = law_type:law_womens_suffrage } }
+			set_ideology = ideology:ideology_pacifist
+		}
 	}
 }
