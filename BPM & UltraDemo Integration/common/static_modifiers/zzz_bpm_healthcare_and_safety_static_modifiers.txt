@@ -217,9 +217,9 @@ REPLACE_OR_CREATE:bpm_social_security_ruries_modifier = {
 REPLACE_OR_CREATE:bpm_social_security_unions_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     # Super synergy!
-    state_laborers_dependent_wage_mult = 0.1
-    state_machinists_dependent_wage_mult = 0.1
-    state_engineers_dependent_wage_mult = 0.1
+    state_laborers_dependent_wage_mult = 0.05
+    state_machinists_dependent_wage_mult = 0.05
+    state_engineers_dependent_wage_mult = 0.05
     building_minimum_wage_mult = 0.03
     state_welfare_payments_add = 0.05
     # # country_rigidity_baseline_add = 1
