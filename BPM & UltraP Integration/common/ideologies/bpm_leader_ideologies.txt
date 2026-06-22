@@ -9257,7 +9257,6 @@ REPLACE_OR_CREATE:ideology_jacksonian_democrat = {
         interest_group = {
     		ideology_jacksonian_democrat_valid_trigger = yes
     	}
-		always = no
 	}
 
 	non_interest_group_leader_weight = {
