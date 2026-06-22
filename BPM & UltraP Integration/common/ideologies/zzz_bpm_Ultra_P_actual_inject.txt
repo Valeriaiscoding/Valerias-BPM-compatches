@@ -18,35 +18,16 @@ INJECT:ideology_wel_laborist = {
 	}
 }
 
-INJECT:ideology_gov_constitutional_royalist = {
-	lawgroup_slavery = {
-		law_slavery_banned = neutral
-		law_legacy_slavery = disapprove
-		law_colonial_slavery = neutral
-		law_debt_slavery = strongly_disapprove
-		law_slave_trade = strongly_disapprove
-	}
-}
+# INJECT:ideology_gov_constitutional_royalist = {
+# 	lawgroup_slavery = {
+# 		law_slavery_banned = neutral
+# 		law_legacy_slavery = disapprove
+# 		law_colonial_slavery = neutral
+# 		law_debt_slavery = strongly_disapprove
+# 		law_slave_trade = strongly_disapprove
+# 	}
+# }
 
-INJECT:ideology_gov_socialist = {
-	lawgroup_slavery = {
-		law_slavery_banned = neutral
-		law_legacy_slavery = disapprove
-		law_colonial_slavery = disapprove
-		law_debt_slavery = strongly_disapprove
-		law_slave_trade = strongly_disapprove
-	}
-}
-
-INJECT:ideology_gov_anarchist = {
-	lawgroup_slavery = {
-		law_slavery_banned = neutral
-		law_legacy_slavery = disapprove
-		law_colonial_slavery = disapprove
-		law_debt_slavery = strongly_disapprove
-		law_slave_trade = strongly_disapprove
-	}
-}
 
 INJECT:ideology_gov_reformist_socialist = {
 	lawgroup_slavery = {
@@ -68,7 +49,7 @@ INJECT:ideology_eco_liberal = {
 	}
 
 	lawgroup_land_reform = {
-		law_serfdom = disapprove
+		law_serfdom = strongly_disapprove
 		law_tenant_farmers = neutral
 		law_peasant_proprietorship = neutral
 		law_collectivized_agriculture = disapprove
@@ -76,16 +57,19 @@ INJECT:ideology_eco_liberal = {
 	}
 }
 
-INJECT:ideology_gov_radical_liberal = {
-	lawgroup_land_reform = {
-		law_serfdom = strongly_disapprove
-		law_tenant_farmers = disapprove
-	}
-}
-
 INJECT:ideology_sta_national_liberal = {
 	lawgroup_land_reform = {
 		law_serfdom = strongly_disapprove
+		law_tenant_farmers = neutral
+		law_peasant_proprietorship = neutral
+		law_commercialized_agriculture = neutral
+		law_collectivized_agriculture = disapprove
+	}
+	lawgroup_army_model = {
+		law_mass_conscription = strongly_approve
+		law_professional_army = neutral
+		law_national_militia = disapprove
+		law_peasant_levies = strongly_disapprove
 	}
 }
 
@@ -95,6 +79,13 @@ INJECT:ideology_gov_socialist = {
 		law_child_labor_allowed = strongly_disapprove
 		law_restricted_child_labor = disapprove
 		law_compulsory_primary_school = approve
+	}
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
 	}
 }
 
@@ -106,6 +97,13 @@ INJECT:ideology_gov_anarchist = {
 		law_mass_conscription = disapprove
 		law_peasant_levies = strongly_disapprove
 	}
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = strongly_disapprove
+		law_colonial_slavery = strongly_disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
 }
 
 INJECT:ideology_gov_radical_liberal = {
@@ -115,14 +113,19 @@ INJECT:ideology_gov_radical_liberal = {
 		law_national_militia = approve
 		law_peasant_levies = disapprove
 	}
-}
-
-INJECT:ideology_sta_national_liberal = {
-	lawgroup_army_model = {
-		law_mass_conscription = strongly_approve
-		law_professional_army = neutral
-		law_national_militia = disapprove
-		law_peasant_levies = strongly_disapprove
+	lawgroup_land_reform = {
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = disapprove
+		law_peasant_proprietorship = approve
+		law_commercialized_agriculture = neutral
+		law_collectivized_agriculture = disapprove
+	}
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
 	}
 }
 
@@ -177,8 +180,12 @@ REPLACE_OR_CREATE:ideology_eco_modernizer_mov = {
 
 	lawgroup_centralization = {
 		law_ad_hoc_centralization = strongly_disapprove
+		law_confederate = disapprove
+		law_federated = neutral
+		law_devolved = neutral
+		law_unitary = neutral
 	}
-	# If replacing whole thing 
+	# If we are replacing whole thing 
 	lawgroup_army_model = {
 		law_peasant_levies = strongly_disapprove
 		law_national_militia = strongly_disapprove
