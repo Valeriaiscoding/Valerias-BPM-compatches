@@ -151,7 +151,7 @@ REPLACE:warispolitics_ig_loves_independence = {
 		has_ideology = ideology:ideology_cit_immigrant_nationalist
 
 		AND = {
-			overlord = { NOT = { has_law_or_variant = law_type:law_council_republic } }
+			top_overlord = { NOT = { has_law_or_variant = law_type:law_council_republic } }
 			OR = {
 				leader = { bpm_leader_is_radical_socialist = yes }
 				bpm_ig_is_radical_socialist = yes
@@ -175,7 +175,7 @@ REPLACE:warispolitics_ig_disapproves_independence = {
 	}
 	trigger_else_if = {
 		limit = { 
-			any_overlord_or_above = { has_law_or_variant = law_type:law_council_republic } 
+			top_overlord = { has_law_or_variant = law_type:law_council_republic } 
 		}
 		OR = {
 			leader = { bpm_leader_is_radical_socialist = yes }
