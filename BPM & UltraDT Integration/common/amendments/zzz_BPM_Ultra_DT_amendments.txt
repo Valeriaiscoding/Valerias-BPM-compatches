@@ -1,16 +1,4 @@
-﻿INJECT:amendment_economic_regeneration_1 = {
-	modifier = {
-		country_loan_interest_rate_add = -0.05
-	}
-}
-
-INJECT:amendment_economic_regeneration_2 = {
-	modifier = {
-		country_loan_interest_rate_add = -0.025
-	}
-}
-
-amendment_temporary_income_tax = {
+﻿REPLACE_OR_CREATE:amendment_temporary_income_tax = {
 	parent = law_proportional_taxation
 
 	allowed_laws = {
@@ -94,7 +82,7 @@ amendment_temporary_income_tax = {
 	amendment_activism_multiplier = 0.5
 }
 
-amendment_preserved_traditional_taxation = {
+REPLACE_OR_CREATE:amendment_preserved_traditional_taxation = {
 
 	parent = law_per_capita_based_taxation
 
@@ -164,7 +152,7 @@ amendment_preserved_traditional_taxation = {
 	amendment_activism_multiplier = 0.75
 }
 
-amendment_dividend_tax_exemption = {
+REPLACE_OR_CREATE:amendment_dividend_tax_exemption = {
 
 	parent = law_per_capita_based_taxation
 
@@ -242,7 +230,7 @@ amendment_dividend_tax_exemption = {
 	amendment_activism_multiplier = 0.5
 }
 
-amendment_dividend_tax_reduction = {
+REPLACE_OR_CREATE:amendment_dividend_tax_reduction = {
 
 	parent = law_proportional_taxation
 
@@ -320,7 +308,7 @@ amendment_dividend_tax_reduction = {
 	amendment_activism_multiplier = 0.5
 }
 
-amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
+REPLACE_OR_CREATE:amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 	parent = law_command_economy
 
 	allowed_laws = {

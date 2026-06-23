@@ -4,13 +4,4 @@ INJECT:law_disarmed_nation = {
 		building_group_bg_military_employee_mult = 0.5
 		building_training_rate_mult = 0.25
 	}
-	on_activate = {
-		if = {
-			limit = { has_institution = institution_conscription }
-			set_institution_investment_level = {
-				institution = institution_conscription
-				level = 1
-			}
-		}
-	}
 }

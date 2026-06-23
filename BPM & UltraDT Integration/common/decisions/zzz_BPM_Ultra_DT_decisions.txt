@@ -1,4 +1,4 @@
-﻿implement_temporary_income_tax = {
+﻿REPLACE_OR_CREATE:implement_temporary_income_tax = {
 	is_shown = {
 		OR = {
 			has_law = law_type:law_per_capita_based_taxation

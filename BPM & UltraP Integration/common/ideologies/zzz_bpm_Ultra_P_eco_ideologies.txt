@@ -1,4 +1,61 @@
-﻿REPLACE_OR_CREATE:ideology_eco_antebellum_economy = {
+﻿REPLACE_OR_CREATE:ideology_eco_modern_agrarian = {
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/modern_agrarian.dds"
+	priority = 1000
+	lawgroup_box_of_economic_system_amendments = {
+		law_artisanal_economy_amendment = disapprove
+	}
+    lawgroup_economic_system = {
+		law_traditionalism = strongly_disapprove
+		law_interventionism = approve
+		law_agrarianism = approve
+		law_industry_banned = strongly_disapprove
+		law_laissez_faire = neutral
+		law_cooperative_ownership = neutral
+		law_command_economy = strongly_disapprove
+		law_extraction_economy = strongly_disapprove
+	}
+
+    lawgroup_trade_policy = {
+		law_free_trade = neutral
+		law_protectionism = approve
+		law_isolationism = neutral
+		law_mercantilism = disapprove
+	}
+
+    lawgroup_land_reform = {
+		law_serfdom = strongly_disapprove
+		law_tenant_farmers = strongly_disapprove
+		law_peasant_proprietorship = strongly_approve
+		law_commercialized_agriculture = approve
+		law_collectivized_agriculture = strongly_disapprove
+	}
+
+    lawgroup_taxation = {
+		law_consumption_based_taxation = disapprove
+		law_land_based_taxation = strongly_disapprove
+		law_per_capita_based_taxation = neutral
+		law_proportional_taxation = approve
+		law_graduated_taxation = approve
+	}
+
+    lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_debt_slavery = disapprove
+		law_slave_trade = strongly_disapprove
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+	}
+
+	lawgroup_repeatable_economy = {
+		law_repeatable_economy_liberalization = approve
+		law_repeatable_economy_agricultural_investment = strongly_approve
+		law_repeatable_economy_peasant_corvee = disapprove
+		law_repeatable_economy_public_works = disapprove
+		law_repeatable_economy_forced_industrialization = strongly_disapprove
+	}
+}
+
+REPLACE_OR_CREATE:ideology_eco_antebellum_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/slave_economy.dds"
 	priority = 1000
 	lawgroup_box_of_economic_system_amendments = {
@@ -169,6 +226,8 @@ REPLACE_OR_CREATE:ideology_eco_colonial_slavery_supporter = {
 		law_repeatable_economy_forced_industrialization = disapprove
 	}
 }
+
+# NEW
 
 ideology_eco_plantation_economy = {
 	icon = "gfx/interface/icons/ideology_icons/eco_ideology/commercial_agrarian.dds"
