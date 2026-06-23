@@ -1,4 +1,4 @@
-﻿REPLACE:warispolitics_diplo_play_independence = {
+﻿warispolitics_diplo_play_independence = {
 	effect = {
 		if = {
 			limit = { 
@@ -44,21 +44,131 @@
 				#Pops React
 				bpm_colony_reset_primary_culture = yes
 				if = {
-					limit = { has_law_or_variant = law_type:law_colonial_administration }
-					activate_law = law_type:law_oligarchy
-				}
-				if = {
 					limit = {
 						has_technology_researched = nationalism
 					}
-					every_primary_culture = {
-						save_scope_as = primary_culture_scope
-						#order_by = culture_current_fervor
-						add_fervor = 5
-						scope:initiator = {
-							add_loyalists = {
-								culture = scope:primary_culture_scope
-								value = 0.10
+					if = {
+						limit = {
+							this ?= c:BIC
+						}
+						every_scope_culture = {
+							limit = {
+								has_discrimination_trait_group = heritage_group_south_asian
+							}
+							save_scope_as = primary_culture_scope
+							#order_by = culture_current_fervor
+							add_fervor = 10
+							scope:initiator = {
+								add_loyalists = {
+									culture = scope:primary_culture_scope
+									value = 0.10
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							this ?= c:DEI
+						}
+						cu:balinese = {
+							add_fervor = 10
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:batak = {
+							add_fervor = 10
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:bornean = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:dayak = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:javan = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:malay = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:moluccan = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+						cu:sumatran = {
+							add_fervor = 5
+							scope:initiator = {
+								add_loyalists = {
+									culture = prev
+									value = 0.10
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = { this.modifier:country_bpm_change_primary_culture_to_overlord = yes }
+						country_definition = {
+							every_primary_culture = {
+								save_scope_as = primary_culture_scope
+								#order_by = culture_current_fervor
+								add_fervor = 10
+								scope:initiator = {
+									add_loyalists = {
+										culture = scope:primary_culture_scope
+										value = 0.10
+									}
+								}
+							}
+						}
+					}
+					else = {
+						every_primary_culture = {
+							save_scope_as = primary_culture_scope
+							#order_by = culture_current_fervor
+							add_fervor = 10
+							scope:initiator = {
+								add_loyalists = {
+									culture = scope:primary_culture_scope
+									value = 0.10
+								}
 							}
 						}
 					}
@@ -69,7 +179,7 @@
 	}
 }
 
-REPLACE:warispolitics_capitulate = {
+warispolitics_capitulate = {
 	effect = {
 		if = {
 			limit = { has_law_or_variant = law_type:law_answers_to_legislature }
@@ -161,7 +271,7 @@ REPLACE:warispolitics_capitulate = {
 	}
 }
 
-REPLACE:warispolitics_war_won = {
+warispolitics_war_won = {
 	effect = {
 		if = {
 			limit = { has_law_or_variant = law_type:law_answers_to_legislature }

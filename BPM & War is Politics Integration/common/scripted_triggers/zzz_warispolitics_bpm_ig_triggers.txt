@@ -3,8 +3,8 @@
 REPLACE:warispolitics_ig_approves_aggression = {
 	bpm_ig_enabled = yes
 	leader = {
-		NOR = {
-			bpm_leader_is_doveish = yes
+		bpm_leader_is_doveish = no
+		NOT = {
 			has_ideology = ideology:ideology_utopian
 		}
 	}
@@ -137,26 +137,19 @@ REPLACE:warispolitics_ig_loves_independence = {
 				has_ideology = ideology:ideology_sovereignist_leader
 			}
 		}
-		
-		# has_ideology = ideology:ideology_jingoist
-		# has_ideology = ideology:ideology_patriotic
-		# has_ideology = ideology:ideology_proletarian
 
 		is_interest_group_type = ig_national_liberals
-		is_interest_group_type = ig_radicals
 		bpm_ig_is_anarchist = yes
 		
 		is_interest_group_type = ig_armed_forces #I FUCKING LOVE WAR
 		is_interest_group_type = ig_intelligentsia #Intelligentsia national pride
 
 		has_ideology = ideology:ideology_mil_ultramilitarist
-		#has_ideology = ideology:ideology_mil_mass_army
 		has_ideology = ideology:ideology_cit_nationalist
 		has_ideology = ideology:ideology_cit_multiethnic_nationalist
 		has_ideology = ideology:ideology_cit_ethnonationalist
 		has_ideology = ideology:ideology_cit_immigrant_nationalist
 
-		#has_ideology = ideology:ideology_sovereignist
 		AND = {
 			overlord = { NOT = { has_law_or_variant = law_type:law_council_republic } }
 			OR = {
@@ -181,7 +174,9 @@ REPLACE:warispolitics_ig_disapproves_independence = {
 		}
 	}
 	trigger_else_if = {
-		limit = { overlord = { has_law_or_variant = law_type:law_council_republic } }
+		limit = { 
+			any_overlord_or_above = { has_law_or_variant = law_type:law_council_republic } 
+		}
 		OR = {
 			leader = { bpm_leader_is_radical_socialist = yes }
 			bpm_ig_is_radical_socialist = yes
