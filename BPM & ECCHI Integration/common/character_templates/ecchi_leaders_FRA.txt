@@ -708,7 +708,7 @@ ecchi_fra_dimier = {
     home_region = STATE_BURGUNDY
 
     religion = rel:catholic
-    ideology = ideology_reformer
+    ideology = ideology_liberal_leader
     interest_group = ig_christian_democrats
     #dna = ecchi_dna_andre_citroen
     birth_date = 1802.5.12
