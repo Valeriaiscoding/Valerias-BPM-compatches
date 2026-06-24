@@ -1710,8 +1710,8 @@ ecchi_gbr_chesterton = {
     home_region = STATE_HOME_COUNTIES
     female = no
     religion = rel:catholic
-    ideology = ideology_liberal_leader
-    interest_group = ig_devout
+    ideology = ideology_reactionary_anti_capitalist
+    interest_group = ig_conservatives
     dna = mr_gbr_chesterton_gilbert_keith
     birth_date = 1874.5.29
     traits = { literary honorable erudite }
@@ -1722,7 +1722,7 @@ ecchi_gbr_chesterton = {
             this = c:GBR
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_devout
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1936.6.14

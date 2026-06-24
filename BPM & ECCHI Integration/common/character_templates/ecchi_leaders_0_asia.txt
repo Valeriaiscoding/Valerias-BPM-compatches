@@ -371,7 +371,7 @@ ecchi_pal_sholem_aleichem = {
 	home_region = STATE_KHARKOV
 	religion = rel:jewish
 	ideology = ideology_pacifist
-	interest_group = ig_intelligentsia
+	interest_group = ig_liberals
 	dna = ecchi_dna_sholem_aleichem
 	birth_date = 1859.3.2
 	traits = {
@@ -395,7 +395,7 @@ ecchi_pal_sholem_aleichem = {
 			}
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_liberals
 		}
 		earliest_usage_date = 1900.1.1
 		latest_usage_date = 1916.5.13

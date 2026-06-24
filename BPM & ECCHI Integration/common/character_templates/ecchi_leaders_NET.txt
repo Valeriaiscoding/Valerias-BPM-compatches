@@ -311,10 +311,11 @@ net_hoevell = {
     interest_group = ig_intelligentsia
 	dna = ecchi_net_van_hoevell
     birth_date = 1812.6.14
-    traits = { pious inspirational_orator colonial_administrator }
-	agitator_usage = {
+    traits = { pious inspirational_orator basic_colonial_administrator }
+	interest_group_leader_usage = {
 		country_trigger = {
-			c:NET ?= this
+			c:DEI ?= this
+            country_has_state_religion = rel:protestant
 		}
         interest_group_trigger = {
             bpm_ig_is_marginal = no
@@ -1353,7 +1354,7 @@ net_busken_huet_template = {
     interest_group = ig_intelligentsia
     birth_date = 1826.11.28
     traits = { literary direct reckless inspirational_orator }
-    agitator_usage = {
+    interest_group_leader_usage = {
         country_trigger = {
             NOT = {
                 country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
@@ -1385,7 +1386,7 @@ net_heymans_template = {
     dna = mr_net_heymans_gerard
     birth_date = 1857.4.17
     traits = { erudite ambitious innovative }
-    agitator_usage = {
+    interest_group_leader_usage = {
         country_trigger = {
             NOT = {
                 country_average_cultural_acceptance = { target = cu:dutch value < acceptance_status_4 }
@@ -1398,8 +1399,8 @@ net_heymans_template = {
 			bpm_ig_enabled = yes
             is_interest_group_type = ig_intelligentsia
         }
-        earliest_usage_date = 1890.1.1
-        latest_usage_date = 1830.2.18
+        earliest_usage_date = 1830.1.1
+        latest_usage_date = 1890.2.18
         #chance = 50
     }
 }

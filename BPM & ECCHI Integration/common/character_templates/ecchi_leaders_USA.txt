@@ -1127,7 +1127,7 @@ ecchi_usa_browder = {
     home_region = STATE_KANSAS
 
     religion = rel:protestant
-    ideology = ideology_center_leader
+    ideology = ideology_vanguardist
     interest_group = ig_reformist_socialists
 	dna = ecchi_dna_earl_browder
     birth_date = 1891.5.20
@@ -2461,7 +2461,7 @@ ecchi_usa_lovecraft = {
 
     religion = rel:protestant
     ideology = ideology_ethno_nationalist
-    interest_group = ig_intelligentsia
+    interest_group = ig_national_liberals
     dna = ecchi_dna_howard_lovecraft
     birth_date = 1890.8.20
     traits = { literary innovative imperious }
@@ -2470,11 +2470,11 @@ ecchi_usa_lovecraft = {
             c:USA ?= this
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1915.1.1
         latest_usage_date = 1937.3.15
-        chance = 70
+        chance = 25
     }
 }
 
@@ -2489,7 +2489,7 @@ ecchi_usa_thoreau = {
 
     religion = rel:protestant
     ideology = ideology_abolitionist
-    interest_group = ig_intelligentsia
+    interest_group = ig_liberals
     dna = ecchi_dna_henry_thoreau
     birth_date = 1817.7.12
     traits = { romantic pious literary }
@@ -2498,7 +2498,7 @@ ecchi_usa_thoreau = {
             c:USA ?= this
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_intelligentsia
+            is_interest_group_type = ig_liberals
         }
         earliest_usage_date = 1837.1.1
         latest_usage_date = 1862.5.6
@@ -2679,8 +2679,8 @@ ecchi_usa_spooner = {
 
     religion = rel:protestant
     # my attempt to represent his anarcho individualist views
-    ideology = ideology_anarchist
-    interest_group = ig_agrarian_populists
+    ideology = ideology_utopian
+    interest_group = ig_radicals
     dna = ecchi_dna_lysander_spooner
     birth_date = 1808.1.19
     traits = { innovative charismatic }
@@ -2699,7 +2699,7 @@ ecchi_usa_spooner = {
                 is_interest_group_type = ig_anarchists
             }
             trigger_else = {
-                is_interest_group_type = ig_agrarian_populists
+                is_interest_group_type = ig_radicals
             }
 			
         } 

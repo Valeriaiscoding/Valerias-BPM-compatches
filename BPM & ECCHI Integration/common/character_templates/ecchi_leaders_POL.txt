@@ -148,8 +148,8 @@ ecchi_pol_conrad = {
     home_region = STATE_VOLHYNIA
 
     religion = rel:catholic
-    ideology = ideology_traditionalist
-    interest_group = ig_intelligentsia
+    ideology = ideology_humanitarian
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_joseph_conrad
     birth_date = 1857.12.3
     traits = { reserved persistent explorer }
@@ -173,11 +173,7 @@ ecchi_pol_conrad = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_petty_bourgeoisie
-            }
+            is_interest_group_type = ig_agrarian_populists
         }
         earliest_usage_date = 1895.1.1
         latest_usage_date = 1924.8.3
@@ -384,10 +380,7 @@ ecchi_pol_sienkiewicz = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                #is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_conservatives
-            }
+            is_interest_group_type = ig_conservatives
         }
         earliest_usage_date = 1875.1.1
         latest_usage_date = 1916.11.15

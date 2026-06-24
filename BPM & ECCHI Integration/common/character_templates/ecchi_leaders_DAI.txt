@@ -165,7 +165,7 @@ ecchi_dai_huynh_thuc_khang = {
     culture = cu:vietnamese
     home_region = STATE_ANNAM
 
-    ideology = ideology_radical
+    ideology = ideology_sovereignist_leader
     interest_group = ig_reformist_socialists
     dna = ecchi_dna_huynh_thuc_khang
     birth_date = 1876.10.1
@@ -176,10 +176,7 @@ ecchi_dai_huynh_thuc_khang = {
             this = c:DAI
         }
         interest_group_trigger = {
-            OR = {
-               # is_interest_group_type = ig_trade_unions
-                is_interest_group_type = ig_reformist_socialists
-            }
+            is_interest_group_type = ig_reformist_socialists
         }
         earliest_usage_date = 1919.1.1
         latest_usage_date = 1947.4.21

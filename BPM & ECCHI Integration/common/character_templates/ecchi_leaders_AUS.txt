@@ -404,6 +404,12 @@ ecchi_aus_herzel = {
         latest_usage_date = 1904.7.3
         #chance = 60
     }
+    on_created = {
+        if = {
+            limit = { owner = { this ?= c:ISR } }
+            set_ideology = ideology:ideology_ethno_nationalist
+        }
+    }
 }
 
 ## Ivan Franko (Ukraine)

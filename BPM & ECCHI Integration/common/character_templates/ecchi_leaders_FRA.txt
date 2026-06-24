@@ -445,7 +445,6 @@ ecchi_fra_henri_barbusse = {
         }
         interest_group_trigger = {
             is_interest_group_type = ig_revolutionist_socialists
-            is_interest_group_type = ig_trade_unions
         }
         earliest_usage_date = 1916.1.1
         latest_usage_date = 1935.8.30
@@ -1158,8 +1157,16 @@ ecchi_fra_capusde_baudry_d_asson = {
     }
     on_created = {
         if = {
-            interest_group = { ideology_legitimist_valid_trigger = yes }
+            limit = {
+                interest_group = { ideology_legitimist_valid_trigger = yes }
+            }
             set_ideology = ideology:ideology_legitimist
+        }
+        else_if = {
+            limit = {
+                owner = { has_law_or_variant = law_type:law_monarchy }
+            }
+            set_ideology = ideology:ideology_traditionalist
         }
     }
 }
