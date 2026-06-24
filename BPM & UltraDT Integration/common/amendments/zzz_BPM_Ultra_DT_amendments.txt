@@ -38,8 +38,6 @@
 	would_sponsor = {
 		OR = {
 			is_interest_group_type = ig_petty_bourgeoisie
-			is_interest_group_type = ig_armed_forces
-
 			has_ideology = ideology:ideology_eco_interventionist
 			has_ideology = ideology:ideology_eco_autarky
 			has_ideology = ideology:ideology_eco_modern_agrarian
@@ -396,8 +394,6 @@ REPLACE_OR_CREATE:amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 	would_sponsor = {
 		OR = {
 			is_interest_group_type = ig_petty_bourgeoisie
-			is_interest_group_type = ig_armed_forces
-
 			has_ideology = ideology:ideology_eco_centralized_economy
 			has_ideology = ideology:ideology_eco_modern_interventionist
 			has_ideology = ideology:ideology_eco_distributist_economy
