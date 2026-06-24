@@ -71,6 +71,9 @@ ecchi_fra_dreyfus = {
         country_trigger = {
             exists = c:FRA
             this = c:FRA
+            NOT = {
+                has_dlc_feature = voice_of_the_people_content
+            }
         }
         role = general
         earliest_usage_date = 1890.1.1
@@ -740,7 +743,7 @@ ecchi_fra_de_mun = {
     home_region = STATE_BRITTANY
 
     religion = rel:catholic
-    ideology = ideology_royalist
+    ideology = ideology_corporatist
     interest_group = ig_reactionaries
     #dna = ecchi_dna_andre_citroen
     birth_date = 1841.2.28
@@ -751,14 +754,19 @@ ecchi_fra_de_mun = {
             this = c:FRA
         }
         interest_group_trigger = {
-            OR = {
-                is_interest_group_type = ig_reactionaries
-                is_interest_group_type = ig_christian_democrats
-            }
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1876.4.1
         latest_usage_date = 1914.10.6
         #chance = 65
+    }
+    on_created = {
+        if = {
+            limit = {  
+                interest_group = { ideology_legitimist_valid_trigger = yes }
+            }
+            set_ideology = ideology:ideology_legitimist
+        }
     }
 }
 
@@ -1131,7 +1139,7 @@ ecchi_fra_capusde_baudry_d_asson = {
     home_region = STATE_POITOU
 
     religion = rel:catholic
-    ideology = ideology_legitimist
+    ideology = ideology_royalist
     interest_group = ig_reactionaries
     #dna = ecchi_dna_andre_citroen
     birth_date = 1862.10.26
@@ -1142,12 +1150,17 @@ ecchi_fra_capusde_baudry_d_asson = {
             this = c:FRA
         }
         interest_group_trigger = {
-            ideology_legitimist_valid_trigger = yes
             is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1907.1.1
         latest_usage_date = 1937.1.1
         #chance = 65
+    }
+    on_created = {
+        if = {
+            interest_group = { ideology_legitimist_valid_trigger = yes }
+            set_ideology = ideology:ideology_legitimist
+        }
     }
 }
 

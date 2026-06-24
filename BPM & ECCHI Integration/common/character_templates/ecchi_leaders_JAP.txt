@@ -461,9 +461,9 @@ ecchi_jap_okubo_toshimichi = {
         interest_group_trigger = {
             is_interest_group_type = ig_national_liberals
         }
-        earliest_usage_date = 1871.1.1
+        earliest_usage_date = 1860.1.1
         latest_usage_date = 1878.5.14
-        chance = 70
+        #chance = 70
     }
 }
 

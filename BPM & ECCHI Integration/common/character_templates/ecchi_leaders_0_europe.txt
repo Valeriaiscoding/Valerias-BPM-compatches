@@ -230,7 +230,8 @@ ecchi_bye_kalinowski = {
             is_interest_group_type = ig_agrarian_populists
         }
         earliest_usage_date = 1860.1.1
-        latest_usage_date = 1864.3.22
+        #latest_usage_date = 1864.3.22 
+        latest_usage_date = 1890.1.1 # arbitrary so he has chance to show up
         #chance = 65
     }
 }

@@ -139,7 +139,7 @@ ecchi_ire_parnell = {
     home_region = STATE_LEINSTER
 
     religion = rel:protestant
-    ideology = ideology_liberal_leader
+    ideology = ideology_humanitarian
     interest_group = ig_national_liberals
     dna = ecchi_dna_charles_parnell
     birth_date = 1846.6.27

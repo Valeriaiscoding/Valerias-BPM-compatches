@@ -186,6 +186,7 @@ mr_ita_balbo = {
         ambitious
         grifter
         brave
+        mountain_commander
         # expert_colonial_administrator
         # celebrity_commander
     }
@@ -272,7 +273,7 @@ mr_ita_togliatti = {
     ideology = ideology_communist
     traits = {
         charismatic
-        pragmatic
+        tactful
         masterful_diplomat
     }
     interest_group_leader_usage = {
@@ -568,7 +569,7 @@ ecchi_ita_gentile = {
     culture = cu:south_italian
     religion = rel:catholic
     home_region = STATE_SICILY
-    ideology = ideology_center_leader
+    ideology = ideology_nihilist # Could also be Center, but exists as potential representation of his anti-clericalism and Hegelian stuff
     interest_group = ig_fascists
     dna = ecchi_dna_giovanni_gentile
     birth_date = 1875.5.30

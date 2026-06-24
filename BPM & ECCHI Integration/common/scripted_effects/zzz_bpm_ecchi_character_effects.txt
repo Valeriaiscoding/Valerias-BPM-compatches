@@ -264,6 +264,49 @@ REPLACE:create_natlib_start_characters = {
 			}
 		}
 	}
+	else_if = {
+		limit = {
+			exists = c:UKR
+			this = c:UKR
+			NOR = {
+				any_character = {
+					has_template = ecchi_ukr_petliura
+				}
+				any_character_in_exile_pool = {
+					has_template = ecchi_ukr_petliura
+				}
+			}
+			game_date >= 1912.1.1
+			game_date < 1926.5.25
+		}
+		create_character = {
+			template = ecchi_ukr_petliura
+			interest_group = ig_national_liberals
+			on_created = {
+				set_as_interest_group_leader = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				exists = c:JAP
+            	this = c:JAP
+			}
+		}
+		if = {
+			limit = {
+				game_date >= 1860.1.1
+				game_date < 1878.5.14
+			}
+			create_character = {
+				template = ecchi_jap_okubo_toshimichi
+				on_created = {
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
 }
 
 REPLACE:create_socialist_start_characters = {
@@ -1433,6 +1476,38 @@ create_fash_start_characters = {
 			}
 			create_character = {
 				template = RUS_boris_savinkov
+				on_created = {
+					add_character_role = politician
+					remove_character_role = agitator
+					if = {
+						limit = { NOT = { is_interest_group_type = ig_fascists } }
+						set_interest_group = owner.ig:ig_fascists
+					}
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			exists = c:UKR
+			this = c:UKR
+		}
+		if = { # Add other character when possible
+			limit = { 
+				game_date > 1922.1.1
+				has_technology_researched = political_agitation
+				NOR = {
+					any_character = {
+						has_template = ecchi_ukr_bandera
+					}
+					any_character_in_exile_pool = {
+						has_template = ecchi_ukr_bandera
+					}
+				}
+			}
+			create_character = {
+				template = ecchi_ukr_bandera
 				on_created = {
 					add_character_role = politician
 					remove_character_role = agitator
