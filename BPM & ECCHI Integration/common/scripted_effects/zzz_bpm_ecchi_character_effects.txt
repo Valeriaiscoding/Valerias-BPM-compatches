@@ -307,6 +307,16 @@ REPLACE:create_natlib_start_characters = {
 			}
 		}
 	}
+	if = {
+		limit = {
+			bpm_country_is_latin_american = yes
+		}
+		hidden_effect = {
+			ig:ig_national_liberals ?= {  
+				leader = { set_ideology = ideology:ideology_positivist }
+			}
+		}
+	}
 }
 
 REPLACE:create_socialist_start_characters = {
