@@ -1,0 +1,41 @@
+﻿
+
+INJECT:law_millet_system = { # Ottoman Empire
+	modifier = {
+		state_conversion_mult = -0.25
+		state_assimilation_mult = -0.75
+		state_conscription_rate_mult = -0.4
+		country_acceptance_homeland_add = 10
+	}
+}
+
+INJECT:law_people_of_the_book = { # Other Muslim states
+	modifier = {
+		state_assimilation_mult = -0.50
+		country_acceptance_homeland_add = 5
+	}
+}
+
+INJECT:law_freedom_of_conscience = {
+	modifier = {
+		country_acceptance_shared_religious_trait_add = -5
+		country_allow_conversion_second_rate_citizen_bool = yes
+		country_allow_conversion_full_acceptance_bool = yes
+	}
+}
+
+INJECT:law_total_separation = {
+	modifier = {
+		country_acceptance_shared_religious_trait_group_add = -5
+		country_acceptance_no_shared_religious_trait_add = -10
+
+		country_allow_conversion_violent_hostility_bool = yes
+		country_allow_conversion_cultural_erasure_bool = yes
+		country_allow_conversion_open_prejudice_bool = yes
+		country_allow_conversion_second_rate_citizen_bool = yes
+	}
+}
+
+INJECT:law_state_atheism = {
+	progressiveness = 0
+}

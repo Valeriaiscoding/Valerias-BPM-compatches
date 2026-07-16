@@ -21,6 +21,9 @@ bpm_ultra_cd_switch_yakubian_law = {
 		if = {
 			limit = { 
 				has_law = law_type:law_white_universalism 
+				NOT = {
+					currently_enacting_law.type = { is_same_law_group_as = law_type:law_white_universalism }
+				}
 				any_primary_culture = {
 					OR = {
 						NOT = { has_discrimination_trait_group = heritage_group_european }
@@ -33,6 +36,9 @@ bpm_ultra_cd_switch_yakubian_law = {
 		if = {
 			limit = { 
 				has_law = law_type:law_cultural_exclusion
+				NOT = {
+					currently_enacting_law.type = { is_same_law_group_as = law_type:law_cultural_exclusion }
+				}
 				any_primary_culture = { has_discrimination_trait_group = heritage_group_european }
 				NOT = {
 					any_primary_culture = {

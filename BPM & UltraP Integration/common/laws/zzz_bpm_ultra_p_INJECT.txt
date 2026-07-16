@@ -4,3 +4,20 @@
 		law_equal_inheritance
 	}
 }
+
+INJECT:law_equal_inheritance = {
+	institution = institution_economy 
+	institution_modifier = {
+		building_group_bg_agriculture_allowed_collectivization_add = 0.05
+		building_group_bg_ranching_allowed_collectivization_add = 0.05
+
+		state_farmers_investment_pool_efficiency_mult = 0.05
+		state_shopkeepers_investment_pool_efficiency_mult = 0.05
+	}
+}
+
+INJECT:law_public_schools = {
+	institution_modifier = {
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.05
+	}
+}
