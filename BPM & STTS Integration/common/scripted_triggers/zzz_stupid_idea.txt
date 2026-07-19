@@ -1,0 +1,347 @@
+﻿REPLACE:stts_leftist_government = {
+	OR = {
+		has_law_or_variant = law_type:law_council_republic
+		any_interest_group = {
+			is_in_government = yes
+			OR = {
+				bpm_ig_is_socialist = yes
+				leader = { bpm_leader_is_socialist = yes }
+			}
+		}
+	}
+}
+
+REPLACE:stts_liberal_government = {
+	OR = {
+		any_interest_group = {
+			is_in_government = yes
+			OR = {
+				bpm_ig_is_liberal = yes
+				leader = {
+					bpm_leader_is_liberal = yes
+				}
+			}
+		}
+	}
+}
+
+REPLACE:stts_reactionary_government = {
+	OR = {
+		has_law_or_variant = law_type:law_organic_democracy
+		any_interest_group = {
+			is_in_government = yes
+			OR = {
+				bpm_ig_is_radical_right = yes
+				leader = { bpm_leader_is_traditionalist = yes }
+			}
+		}
+	}
+}
+
+# stts_valid_nationalist_movement_target = {
+# 	OR = {
+# 		custom_tooltip = {
+# 			text = stts_nationalist_movement
+# 			any_political_movement = {
+# 				is_political_movement_type = movement_cultural_minority
+# 				culture ?=  {
+# 					OR = {
+# 						is_primary_culture_of = root
+# 						AND = {
+# 							shares_heritage_trait_group_with_any_primary_culture = root
+# 							shares_language_trait_group_with_any_primary_culture = root
+# 						}
+# 					}
+# 				}
+
+# 			}
+# 		}
+# 		AND = {
+# 			root = {
+# 				has_technology_researched = pan-nationalism
+# 			}
+# 			custom_tooltip = {
+# 				text = stts_pan_national_movement
+# 				any_political_movement = {
+# 					is_political_movement_type = movement_cultural_minority
+# 					culture ?= {
+# 						OR = {
+# 							is_primary_culture_of = root
+# 							shares_heritage_trait_group_with_any_primary_culture = root
+# 							shares_language_trait_group_with_any_primary_culture = root
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+	
+# }
+
+REPLACE:stts_movement_is_leftist = {
+	bpm_movement_is_socialist = yes
+}
+
+REPLACE:stts_movement_is_socialist = {
+	bpm_movement_is_socialist = yes
+	NOT = {
+		is_political_movement_type = movement_labor
+	}
+}
+
+REPLACE:stts_movement_is_liberal = {
+	bpm_movement_is_liberal_bourgeois = yes
+}
+
+REPLACE:stts_movement_is_reactionary = {
+	OR = {
+		is_political_movement_type = movement_reactionary
+		is_political_movement_type = movement_fascist
+		is_political_movement_type = movement_legitimist
+		is_political_movement_type = movement_carlist
+		is_political_movement_type = movement_miguelist
+	}
+}
+
+REPLACE:agitator_can_be_made_leader = {
+		trigger_if = {
+			limit = {
+				owner ?= {
+					AND = {
+						has_law_or_variant = law_type:law_multicultural
+						has_law_or_variant = law_type:law_total_separation
+					}
+				}
+			}
+			character_acceptance = { # In light of the Multiculturalism nerf
+				target = owner
+				value >= acceptance_status_3
+			}
+		}
+		trigger_else_if = {
+			limit = { owner ?= { has_law_or_variant = law_type:law_state_atheism } }
+			character_acceptance = {
+				target = owner
+				value >= acceptance_status_4
+			}
+			NOR = {
+				has_ideology = ideology:ideology_theocrat
+				has_ideology = ideology:ideology_integralist
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_traditionalist_minoritarian
+			}
+		}
+		trigger_else = {
+			character_acceptance = {
+				target = owner
+				value >= acceptance_status_4
+			}
+		}
+		trigger_if = {
+			limit = { is_female = yes }
+			interest_group = { NOT = { has_ideology = ideology:ideology_fem_patriarchal } }
+			OR = {
+				AND = {
+					interest_group = { has_ideology = ideology:ideology_fem_gender_egalitarian }
+					owner ?= { has_law_or_variant = law_type:law_women_in_the_workplace }
+				}
+				owner ?= { has_law_or_variant = law_type:law_womens_suffrage }
+			}
+		}
+}
+
+REPLACE:stts_country_has_brewing_funded_revolution = {
+	save_temporary_scope_as = check_country
+	root = {
+		OR = {
+			has_diplomatic_pact = {
+				who = scope:check_country
+				type = stts_fund_leftists
+			}
+			has_diplomatic_pact = {
+				who = scope:check_country
+				type = stts_fund_liberals
+			}	
+			has_diplomatic_pact = {
+				who = scope:check_country
+				type = stts_fund_reactionaries
+			}
+			has_diplomatic_pact = {
+				who = scope:check_country
+				type = stts_fund_nationalists
+			}
+			AND ={
+				has_diplomatic_pact = { who = scope:check_country type = support_separatism }
+				any_primary_culture = {
+					save_temporary_scope_as = check_culture
+					scope:check_country = {
+						any_political_movement = {
+							is_political_movement_type = movement_cultural_minority
+							culture ?= scope:check_culture
+						}	
+					}
+				}
+			}
+		}
+	}
+	OR = {
+		any_political_movement = {
+			political_movement_radicalism >= 0.75
+		}
+		any_interest_group = { 
+			ig_clout >= 0.05
+			is_insurrectionary = yes
+		}
+	}
+	#leftist revolution
+	trigger_if = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = scope:check_country
+					type = stts_fund_leftists
+				}
+			}
+		}
+		OR = {
+			any_political_movement = {
+				political_movement_radicalism >= 0.75
+				stts_movement_is_leftist = yes
+			}
+			any_interest_group = { 
+				bpm_ig_is_socialist = yes
+				ig_clout >= 0.05
+				is_insurrectionary = yes
+			}
+		}
+	}
+	#liberal revolution
+	trigger_if = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = scope:check_country
+					type = stts_fund_liberals
+				}
+			}
+		}
+		OR = {
+			any_political_movement = {
+				political_movement_radicalism >= 0.75
+				stts_movement_is_liberal = yes
+			}
+			any_interest_group = { 
+				bpm_ig_is_liberal = yes
+				ig_clout >= 0.05
+				is_insurrectionary = yes
+			}
+		}
+	}
+	#reactionary revolution
+	trigger_if = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = scope:check_country
+					type = stts_fund_reactionaries
+				}
+			}
+		}
+		OR = {
+			any_political_movement = {
+				political_movement_radicalism >= 0.75
+				stts_movement_is_reactionary = yes
+			}
+			any_interest_group = { 
+				bpm_ig_is_traditionalist = yes
+				ig_clout >= 0.05
+				is_insurrectionary = yes
+			}
+		}
+	}
+	#nationalist uprising
+	trigger_if = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = scope:check_country
+					type = stts_fund_nationalists
+				}
+			}
+		}
+		OR = {
+			any_interest_group = { 
+				is_interest_group_type = ig:ig_national_liberals
+				ig_clout >= 0.05
+				is_insurrectionary = yes
+			}
+			any_political_movement = {
+				political_movement_radicalism >= 0.75
+				OR = {
+					stts_movement_is_pan_national = yes
+					bpm_movement_is_liberal_nationalist = yes
+				}
+			}
+		}
+	}
+	#same-culture uprising
+	trigger_if = {
+		limit = {
+			root = {
+				AND ={
+					has_diplomatic_pact = { who = scope:check_country type = support_separatism }
+					scope:check_country = {
+						any_political_movement = {
+							is_political_movement_type = movement_cultural_minority
+							culture ?= {
+								is_primary_culture_of = root
+							}
+						}	
+					}
+				}
+			}
+		}
+		scope:check_country = {
+			any_political_movement = {
+				political_movement_radicalism >= 0.75
+				is_political_movement_type = movement_cultural_minority
+				culture ?= {
+					is_primary_culture_of = root
+				}
+			}	
+		}
+	}
+}
+
+#NEW 
+
+bpm_stts_leader_is_fascist = {
+	OR = {
+		has_ideology = ideology:ideology_fascist
+		has_ideology = ideology:ideology_integralist
+		is_interest_group_type = ig_fascists
+	}
+}
+
+REPLACE:bpm_law_enactment_ruler_must_accept = {
+	enacting_any_law = yes
+	trigger_if = {
+		limit = { modifier:country_law_enactment_ruler_veto_bypass = yes }
+		always = yes 
+	}
+	trigger_else_if = {
+		limit = {
+			modifier:country_bpm_ruler_complete_veto_enabled = yes
+		}
+		always = no
+	}
+	trigger_else_if = {
+		limit = {
+			modifier:country_bpm_ruler_partial_veto_enabled = yes
+		}
+		var:bpm_law_enactment_yea_votes_cached > 0.6666
+	}
+	trigger_else = {
+		always = yes
+	}
+}

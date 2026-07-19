@@ -1,48 +1,45 @@
-﻿owner_multiethinc_nationalist_unification = {
-	owner = {
-		OR = {
-			this ?= c:ETH
-			this ?= c:PAK
-			this ?= c:AFG
-			this ?= c:TRH
-			this ?= c:MUG
-			this ?= c:LAO
-			this ?= c:IBE
-			this ?= c:PNS
-			this ?= c:ZIM
-			this ?= c:TCS
-			this ?= c:ARA
-			this ?= c:YUG
-			#this ?= c:PLC
-			#this ?= c:MGB
+﻿country_is_multiethnic_nationalist_unification = {
+	OR = {
+		this ?= c:ETH
+		this ?= c:PAK
+		this ?= c:AFG
+		this ?= c:TRH
+		this ?= c:MUG
+		this ?= c:LAO
+		this ?= c:IBE
+		this ?= c:PNS
+		this ?= c:ZIM
+		this ?= c:TCS
+		this ?= c:ARA
+		this ?= c:YUG
+		#this ?= c:PLC
+		#this ?= c:MGB
 
-			this ?= c:IDN
-			this ?= c:BHT
-			this ?= c:ARA
-			this ?= c:MGB
-		}
+		this ?= c:IDN
+		this ?= c:BHT
+		this ?= c:ARA
+		this ?= c:MGB
+		this ?= c:CHI
 	}
 }
 
-owner_nationalist_unification = {
-	owner = {
-		OR = {
-			this ?= c:GER
-			this ?= c:RHN
-			this ?= c:ITA
-			this ?= c:SCA
-			this ?= c:ROM
-			this ?= c:GLM
-			this ?= c:CZH
-			this ?= c:POL
-			this ?= c:MHR
-			this ?= c:BGL
-			this ?= c:UNL
-			this ?= c:YEM
-			this ?= c:LBY
-			this ?= c:DRA
-			this ?= c:UBD
-			this ?= c:PLC
-		}
+country_is_nationalist_unification = {
+	OR = {
+		this ?= c:GER
+		this ?= c:RHN
+		this ?= c:ITA
+		this ?= c:SCA
+		this ?= c:ROM
+		this ?= c:GLM
+		this ?= c:CZH
+		this ?= c:POL
+		this ?= c:MHR
+		this ?= c:BGL
+		this ?= c:UNL
+		this ?= c:YEM
+		this ?= c:LBY
+		this ?= c:DRA
+		this ?= c:UBD
+		this ?= c:PLC
 	}
 }

@@ -1,0 +1,431 @@
+﻿TRY_REPLACE:stts_install_dictator = { #TODO
+    icon = "gfx/interface/icons/war_goals/stts_install_dictator.dds"
+
+    kind = regime_change
+
+    settings = {
+        require_target_be_part_of_war
+
+        # Validation
+        validate_conflicts_war_goals_all
+        # validate_regime_change
+
+        debug
+    }
+
+    execution_priority = 20
+
+    contestion_type = control_target_country_capital
+
+    target_type = country
+
+    possible = {
+        # trigger to determine if a goal with its target data is listed when selecting a war goal in the diplo play panel
+        # scopes: root = holder, creator_country, diplomatic_play, target_country, target_state, stakeholder, target_region, article_options
+    }
+
+    valid = {
+        # trigger in addition to some basic validation code-side
+        # scopes: root = holder, creator_country, diplomatic_play, target_country, target_state, stakeholder, target_region, article_options
+        scope:target_country = {
+            OR = {
+                is_subject_of = root
+                is_subject = no
+            }
+        }
+    }
+
+    maneuvers = {
+        value = 0
+
+        add = {
+            desc = "MANEUVERS_BASE_VALUE"
+            value = 10
+        }
+    }
+
+    infamy = {
+        value = 0
+
+        add = {
+            desc = "INFAMY_BASE_VALUE"
+            value = 0.5
+        }
+
+        scope:target_country = {
+            multiply = {
+                desc = "INFAMY_TARGET_COUNTRY_POPULATION_FACTOR"
+                add = {
+                    every_scope_state = {
+                        add = {
+                            value = state_population
+                            divide = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_FACTOR
+                            multiply = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER
+                            multiply = {
+                                value = 1
+                                if = {
+                                    limit = {
+                                        is_incorporated = no
+                                    }
+                                    add = define:NDiplomacy|WAR_GOAL_INFAMY_UNINCORPORATED_FACTOR
+                                }
+                            }
+                            max = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER_MAX_PER_STATE
+                        }
+                    }
+                }
+                add = 1
+                max = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
+            }
+        }
+
+        multiply = {
+            desc = "country_infamy_generation_against_unrecognized_mult"
+            value = 1
+            if = {
+                limit = {
+                    NOR = {
+                        is_country_type = unrecognized
+                        is_country_type = decentralized
+                    }
+                    scope:target_country = {
+                        OR = {
+                            is_country_type = unrecognized
+                            is_country_type = decentralized
+                        }
+                    }
+                }
+                add = modifier:country_infamy_generation_against_unrecognized_mult
+            }
+        }
+
+        multiply = {
+            desc = "INFAMY_FROM_LOYAL_SUBJECT"
+            value = 1
+
+            if = {
+                limit = {
+                    scope:target_country = {
+                        is_subject_of = root
+                        liberty_desire < define:NDiplomacy|WAR_GOAL_INFAMY_LOW_LIBERTY_DESIRE_THRESHOLD
+                    }
+                }
+                multiply = define:NDiplomacy|WAR_GOAL_INFAMY_LOW_LIBERTY_DESIRE_SUBJECT_MULT
+            }
+        }
+
+        multiply = {
+            desc = "INFAMY_FROM_REBELLIOUS_SUBJECT" # Rebellious as in they are the aggressor in the play
+            value = 1
+
+            if = {
+                limit = {
+                    scope:target_country = {
+                        is_subject_of = root
+                        is_diplomatic_play_enemy_of = root
+                        scope:diplomatic_play ?= {
+                            initiator_is = scope:target_country
+                        }
+                    }
+                }
+                multiply = define:NDiplomacy|WAR_GOAL_INFAMY_REBELLING_SUBJECT_MULT
+            }
+        }
+
+        multiply = {
+            desc = "concept_interest_tier"
+            value = 1
+
+            # Tier 0-1 (none, observant): high infamy increase
+            if = {
+                limit = {
+                    NOT = {
+                        has_strategic_region_interest_tier = {
+                            strategic_region = scope:target_region
+                            value >= 2
+                        }
+                    }
+                }
+                add = interest_tier_effect_infamy_cost_increase_high_value
+            }
+
+            # Tier 2 (engaged): medium infamy increase
+            if = {
+                limit = {
+                    has_strategic_region_interest_tier = {
+                        strategic_region = scope:target_region
+                        value >= 2
+                    }
+                    NOT = {
+                        has_strategic_region_interest_tier = {
+                            strategic_region = scope:target_region
+                            value >= 3
+                        }
+                    }
+                }
+                add = interest_tier_effect_infamy_cost_increase_medium_value
+            }
+
+            # Tier 5 (hegemonic): medium infamy decrease
+            if = {
+                limit = {
+                    has_strategic_region_interest_tier = {
+                        strategic_region = scope:target_region
+                        value >= 5
+                    }
+                }
+                add = interest_tier_effect_infamy_cost_decrease_medium_value
+            }
+        }
+
+        min = {
+            desc = "INFAMY_MINIMUM_VALUE"
+            value = 0.5
+        }
+    }
+
+    on_enforced = {
+        #Match governance principle
+        scope:target_country = {
+            activate_law = root.active_law:lawgroup_governance_principles.law_type
+            # if = {
+            #     limit = {  
+            #         root = { has_law = law_type:law_military_junta }
+            #     }
+            #     activate_law = law_type:law_military_junta
+            # }
+            # else_if = {
+            #     limit = {
+            #         has_law = law_type:law_technocracy
+            #     }
+            #     activate_law = law_type:law_technocracy
+            # }
+            # else_if = {
+            #     limit = { has_law = law_type:law_organic_democracy }
+            #     activate_law = law_type:law_organic_democracy
+            #     activate_law = law_type:law_outlawed_dissent
+            # }
+            # else = {
+            #     activate_law = law_type:law_autocracy
+            # }
+            activate_law = law_type:law_autocracy
+            activate_law = law_type:law_advisory_body
+            activate_law = law_type:law_no_separate_hog
+        }
+        root = {
+            if = {
+                limit = { 
+                    has_law_or_variant = law_type:law_answers_to_legislature
+                    exists = var:bpm_head_of_gov
+                    var:bpm_head_of_gov ?= {
+                        is_character_alive = yes
+                        has_role_of_type = bpm_character_role_hog
+                    }
+                }
+                var:bpm_head_of_gov = {
+                    ideology = {
+                        save_scope_as = leader_ideology
+                    }
+                    interest_group = {
+                        save_scope_as = leader_ig
+                    }
+                    interest_group = {
+                        save_scope_as = leader_ig
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    bpm_has_gov_regency = yes
+                    exists = var:bpm_regent
+                    var:bpm_regent ?= {
+                        is_character_alive = yes
+                        has_role_of_type = bpm_character_role_regent
+                    }
+                }
+                var:bpm_regent = {
+                    ideology = {
+                        save_scope_as = leader_ideology
+                    }
+                    interest_group = {
+                        save_scope_as = leader_ig
+                    }
+                }
+            }
+            else = {
+                ruler = {
+                    if = {
+                        limit = { has_ideology = ideology:ideology_child }
+                        i:ideology_center_leader = { save_scope_as = leader_ideology }
+                    }
+                    else = {
+                        ideology = {
+                            save_scope_as = leader_ideology
+                        }
+                    }
+                    interest_group = {
+                        save_scope_as = leader_ig
+                    }
+                }
+            }
+        }
+        scope:target_country = {
+            random_interest_group = {
+                limit = {
+                    type = root.ruler.interest_group_type
+                }
+                save_scope_as = leader_ig
+            }
+            #Ruler matches your ruler's ideology
+            if = {
+                limit = { has_law = law_type:law_monarchy }
+                create_character = {
+                    ideology = scope:leader_ideology
+                    interest_group = scope:leader_ig
+                    culture = root.leader.culture
+                    ig_leader = yes
+                    noble = yes
+                    on_created = {
+                        add_trait = political_appointee
+                        if = {
+                            limit = { 
+                                root.leader = { has_variable = house_orleans }
+                            }
+                            set_last_name = "d_Orleans"
+                            set_variable = house_orleans
+                            set_ideology = ideology:ideology_orleanist
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_bourbon }
+                            }
+                            set_last_name = "de_Bourbon"
+                            set_variable = house_bourbon
+                            if = {
+                                limit = { root.leader = { has_variable = legitimist_leader } }
+                                set_variable = legitimist_leader
+                                set_ideology = ideology:ideology_legitimist
+                                character_carlist_or_legitimist_switch_effect = yes
+                            }
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_bonaparte }
+                            }
+                            set_last_name = "Bonaparte"
+                            set_variable = house_bonaparte
+                            set_ideology = ideology:ideology_bonapartist
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_braganca }
+                            }
+                            set_last_name = "de_Braganca"
+                            set_variable = house_braganca
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_hohenzollern }
+                            }
+                            set_last_name = "von_Hohenzollern"
+                            set_variable = house_hohenzollern
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_karadordevic }
+                            }
+                            set_last_name = "Karadordevic"
+                            set_variable = house_karadordevic
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_obrenovic }
+                            }
+                            set_last_name = "Obrenovic"
+                            set_variable = house_obrenovic
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_savoy }
+                            }
+                            set_last_name = "Savoy"
+                            set_variable = house_savoy
+                        }
+                        else_if = {
+                            limit = { 
+                                root.leader = { has_variable = house_espartero }
+                            }
+                            set_last_name = "Espartero"
+                            set_variable = house_espartero
+                        }
+                    }
+                }
+            }
+            else = {
+                create_character = {
+                    ideology = scope:leader_ideology
+                    interest_group = scope:leader_ig
+                    ig_leader = yes
+                    on_created = {
+                        add_trait = political_appointee
+                    }
+                }
+            }
+            #Remove other power bloc's leverage
+            if = {
+                limit = {
+                    is_in_power_bloc = yes
+                    NOT = {
+                        is_in_same_power_bloc = root
+                    }
+                }
+                power_bloc = {
+                    add_leverage = {
+                        target = scope:target_country
+                        value = -1000
+                    }
+                }
+            }
+            #New government really likes you for putting them in power
+            change_relations = {
+                country = root
+                value = 200
+            }
+            #New government propped up
+            scope:leader_ig = {
+                add_modifier = {
+                    name = stts_dictator_installed_ig
+                    years = 5
+                    is_decaying = yes
+                }
+            }
+            #Replace all the ruling interest groups, has to be delayed 1 day to work
+            trigger_event = {
+                id = stts_war_goals.1
+                days = 1
+            }
+            add_modifier = {
+                name = stts_dictator_installed_modifier
+                years = 5
+            }
+        }
+        #Add lots of leverage for your power bloc
+        root = {
+            if = {
+                limit = {
+                    is_in_power_bloc = yes
+                }
+                power_bloc = {
+                    add_leverage = {
+                        target = scope:target_country
+                        value = 1000
+                    }
+                }
+            }
+        }
+    }
+
+    ai = {
+        is_significant_demand = no
+    }
+}

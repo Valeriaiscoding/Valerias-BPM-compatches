@@ -1,0 +1,85 @@
+﻿REPLACE:stts_revolutionary_reform = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_legitimacy_min_add = 30
+	country_legitimacy_base_add = 10
+	country_law_enactment_time_mult = -0.50
+	country_law_enactment_stall_mult = -0.50
+	country_law_enactment_ruler_veto_bypass = yes
+	country_rigidity_baseline_add = -25
+}
+
+REPLACE:stts_ig_stopped_brownshirts_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	interest_group_approval_add = -2
+	interest_group_pol_str_mult = -0.2
+}
+
+REPLACE:stts_ig_allowed_brownshirts_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	interest_group_approval_add = 2
+	interest_group_pol_str_mult = 0.2
+}
+
+REPLACE:stts_ze_price_stabilite = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_shopkeepers_investment_pool_efficiency_mult = 0.10
+	state_capitalists_investment_pool_efficiency_mult = 0.10
+	country_law_enactment_time_mult = 1.00
+	political_movement_pop_attraction_mult = -0.20
+	political_movement_radicalism_add = -0.15
+	country_rigidity_baseline_add = 25
+}
+
+REPLACE:stts_the_return = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_pop_support_movement_communist_mult = 1.00
+	state_pop_support_movement_anarchist_mult = 1.00
+	state_pop_support_movement_socialist_mult = 1.00
+	country_bpm_labor_consciousness_target_mult = 0.5
+	interest_group_ig_revolutionist_socialists_pop_attraction_mult = 0.5
+	interest_group_ig_anarchists_pop_attraction_mult = 0.5
+	interest_group_ig_socialists_pop_attraction_mult = 0.5
+	state_education_access_add = 0.05
+	country_rigidity_baseline_add = -10
+}
+
+REPLACE:stts_press_authority_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_authority_cost_add = 1
+}
+
+REPLACE:stts_climate_of_political_violence = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_legitimacy_base_add = -5
+	political_movement_pop_attraction_mult = 0.15
+	state_radicals_from_political_movements_mult = 0.25
+	country_rigidity_baseline_add = -5
+	state_turmoil_effects_mult = 0.20
+}
+
+stts_character_press_tour_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	character_popularity_add = 20
+}
+
+stts_character_smear_campaign_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	character_popularity_add = -20
+}
+
+stts_ig_press_tour_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_approval_add = 1
+}
+
+stts_ig_smear_campaign_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_approval_add = -2
+}
+
+# NEW
+stts_foreign_support_for_revolution_ig = { # TODO loc
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	interest_group_pop_attraction_mult = 0.15
+	interest_group_pol_str_mult = 0.15
+}

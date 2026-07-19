@@ -1,0 +1,331 @@
+﻿stts_tech_progress = {
+	if = {
+		limit = { 
+			can_research = $TECHNOLOGY$
+		}
+		add_technology_progress = {
+			technology = $TECHNOLOGY$
+			progress = 2000
+		}
+	}
+}
+
+REPLACE:stts_movement_government_effect = {
+	scope:coup_movement = {
+		this.most_desired_law ?= {
+			save_scope_as = revolutionaries_law
+		}
+	}
+	every_interest_group = {
+		limit = {
+			is_insurrectionary = yes
+		}
+		owner = {
+			add_loyalists = {
+				value = medium_radicals
+				interest_group = PREV
+			}
+		}
+		add_modifier = {
+			name = stts_ig_coup_modifier
+			years = 1
+		}
+		set_variable = { name = revolutionary_ig days = 30 }
+	}
+	scope:coup_leader = {
+		set_as_interest_group_leader = yes
+	}
+	bpm_disband_cabinet = yes
+	var:bpm_headofgov ?= {
+		bpm_unappoint_as_hog = yes
+	}
+
+	hidden_effect = {
+		set_immune_to_revolutions = yes
+		cancel_enactment = yes
+		start_enactment = scope:revolutionaries_law
+	}
+
+	activate_law = scope:revolutionaries_law
+	
+	
+	if = {
+		limit = {
+			country_has_voting_franchise = yes
+		}
+		call_election = {
+			months = 1
+		}
+	}
+	
+	every_interest_group = {
+		limit = {
+			is_in_government = yes
+		}
+		remove_ruling_interest_group = yes
+		add_modifier = {
+			name = modifier_revolution_defeated_light
+			days = normal_modifier_time
+			is_decaying = yes
+		}
+	}
+	
+	every_interest_group = {
+		limit = {
+			has_variable = revolutionary_ig
+		}
+		hidden_effect = {
+			abandon_revolution = yes
+		}
+		add_modifier = {
+			name = modifier_revolution_victorious_light
+			days = normal_modifier_time
+			is_decaying = yes
+		}
+		if = {
+			limit = {
+				is_insurrectionary = no
+			}
+			add_ruling_interest_group = yes
+		}
+	}
+
+	scope:coup_movement = {
+		add_modifier = {
+			name = stts_movement_couped_modifier
+			months = 6
+		}
+	}
+	scope:impending_civil_war = {
+		add_civil_war_progress = -0.75
+	}
+	add_modifier = {
+		name = stts_revolutionary_reform
+		years = 1
+	}
+	add_modifier = {
+		name = stts_recent_coup_modifier
+		years = 1
+		is_decaying = yes
+	}
+
+	save_scope_as = coup_country
+	every_country = {
+		limit = {
+			has_diplomatic_relevance = root
+			is_player = yes
+		}
+		post_notification = stts_movement_coup
+	}
+
+	set_variable = {
+		name = stts_revolution_fatigue_1
+		years = 10
+	}
+	if = {
+		limit = {
+			has_variable = stts_revolution_fatigue_1
+		}
+		set_variable = {
+			name = stts_revolution_fatigue_2
+			years = 5
+		}
+	}
+	if = {
+		limit = {
+			has_variable = stts_revolution_fatigue_2
+		}
+		set_variable = {
+			name = stts_revolution_fatigue_3
+			years = 5
+		}
+	}
+
+	custom_tooltip = {
+		text = 10_days_until_government
+		trigger_event = {
+			id = stts_movement.17
+			days = 10
+		}
+	}
+}
+
+bpm_disband_cabinet = {
+	var:bpm_mineco ?= {
+		bpm_fire_mineco_effect = yes
+	}
+	var:bpm_minint ?= {
+		bpm_fire_minint_effect = yes
+	}
+	var:bpm_minsoc ?= {
+		bpm_fire_minsoc_effect = yes
+	}
+	var:bpm_minfor ?= {
+		bpm_fire_minfor_effect = yes
+	}
+	var:bpm_minmor ?= {
+		bpm_fire_minmor_effect = yes
+	}
+}
+
+bpm_stts_create_savior_effect = {
+	 if = {
+            limit = {
+                any_scope_character = {
+                    OR = {
+                        has_ideology = ideology:ideology_bonapartist
+						has_ideology = ideology:ideology_legitimist
+                        has_ideology = ideology:ideology_miguelist
+                        has_ideology = ideology:ideology_miguelist_2
+                        has_ideology = ideology:ideology_carlist
+                        has_ideology = ideology:ideology_carlist_2
+                    }
+                }
+            }
+            ordered_scope_character = {
+                limit = {
+                    OR = {
+                        has_ideology = ideology:ideology_bonapartist
+						has_ideology = ideology:ideology_legitimist
+                        has_ideology = ideology:ideology_miguelist
+                        has_ideology = ideology:ideology_miguelist_2
+                        has_ideology = ideology:ideology_carlist
+                        has_ideology = ideology:ideology_carlist_2
+                    }
+                }
+                order_by = prominence
+                position = 0
+                save_scope_as = authoritarian_savior
+            }
+        }
+        else_if = {
+            limit = {
+                has_law_or_variant = law_type:law_council_republic
+            }
+            if = {
+                limit = {
+                    any_scope_character = {
+                        has_ideology = ideology:ideology_vanguardist
+                    }
+                }
+                ordered_scope_character = {
+                    limit = {
+                        has_ideology = ideology:ideology_vanguardist
+                    }
+                    order_by = prominence
+                    position = 0
+                    save_scope_as = authoritarian_savior
+                }
+            }
+            else = {
+				random_interest_group = {
+					limit = {
+						bpm_ig_is_marginal = no
+						bpm_ig_is_ideological = yes
+						ideology_vanguardist_valid_trigger = yes
+					}
+					owner = {
+						create_character = {
+							interest_group = PREV
+							ideology = ideology_vanguardist
+							is_agitator = yes
+							on_created = {
+								save_scope_as = authoritarian_savior
+							}
+						}
+					}
+				}
+            }
+        } 
+		else_if = {
+            limit = {
+                has_technology_researched = political_agitation
+            }
+            if = {
+                limit = {
+                    any_scope_character = {
+                        bpm_stts_leader_is_fascist = yes
+                    }
+                }
+                ordered_scope_character = {
+                    limit = {
+                        bpm_stts_leader_is_fascist = yes
+                    }
+                    order_by = prominence
+                    position = 0
+                    save_scope_as = authoritarian_savior
+                }
+            }
+            else = {
+                random_list = {
+					20 = {
+						trigger = {
+							ig:ig_fascists = {
+								ideology_integralist_valid_trigger = yes
+							}
+						}
+						create_character = {
+							interest_group = ig_fascists
+							ideology = ideology_integralist
+							is_agitator = yes
+							on_created = {
+								save_scope_as = authoritarian_savior
+							}
+						}
+					}
+					80 = {
+						trigger = {
+							ig:ig_fascists = {
+								ideology_fascist_valid_trigger = yes
+							}
+						}
+						create_character = {
+							interest_group = ig_fascists
+							ideology = ideology_fascist
+							is_agitator = yes
+							on_created = {
+								save_scope_as = authoritarian_savior
+							}
+						}
+					}
+				}
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    any_scope_character = {
+                        has_ideology = ideology:ideology_authoritarian
+                    }
+                }
+                ordered_scope_character = {
+                    limit = {
+                        has_ideology = ideology:ideology_authoritarian
+                    }
+                    order_by = prominence
+                    position = 0
+                    save_scope_as = authoritarian_savior
+                }
+            }
+            else = {
+				random_interest_group = {
+					limit = {
+						bpm_ig_is_marginal = no
+						bpm_ig_is_ideological = yes
+						ideology_authoritarian_valid_trigger = yes
+					}
+					owner = {
+						create_character = {
+							interest_group = PREV
+							ideology = ideology_authoritarian
+							is_agitator = yes
+							on_created = {
+								save_scope_as = authoritarian_savior
+							}
+						}
+					}
+				}
+                
+            }
+        }
+}

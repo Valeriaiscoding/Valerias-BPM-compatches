@@ -1,0 +1,39 @@
+﻿REPLACE:stts_home_affairs_value = {
+	value = 0
+	if = {
+		limit = {
+			root = { has_institution = institution_home_affairs }
+		}
+		add = root.institution_investment_level:institution_home_affairs
+	}
+}
+
+ssts_culture_institution_impact = {
+	value = 1
+	if = {
+		limit = {
+			owner ?= { has_institution = institution_culture }
+		}
+		add = {
+			value = owner.institution_investment_level:institution_culture
+			multiply = 0.1
+		}
+	}
+}
+
+stts_authority_cost_value = {
+	if = {
+		owner ?= {has_law_or_variant = law_type:law_protected_speech}
+		value = 100
+	}
+	else_if = {
+		owner ?= {has_law_or_variant = law_type:law_right_of_assembly}
+		value = 75
+	}
+	else_if = {
+		owner ?= {has_law_or_variant = law_type:law_censorship}
+		value = 50
+	}
+	else = { value = 25 }
+	multiply = ssts_culture_institution_impact
+}

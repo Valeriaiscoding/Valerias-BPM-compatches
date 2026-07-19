@@ -1,0 +1,12 @@
+﻿INJECT:mass_propaganda = {
+	modifier = {
+		country_bolster_attraction_factor = 0.30
+	}
+}
+
+INJECT:political_agitation = {
+	modifier = {
+		political_movement_pop_attraction_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.10
+	}
+}

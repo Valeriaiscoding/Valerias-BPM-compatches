@@ -1,0 +1,689 @@
+﻿REPLACE:stts_fund_nationalists = {
+	groups= {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = no
+
+	unlocking_technologies = {
+		nationalism
+	}
+	
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_isolationism
+		}
+	}
+	
+	accept_effect = {
+	
+	}
+	
+	
+	pact = {	
+		cost = 100
+	
+		is_two_sided_pact = no
+			
+		
+		income_transfer = 0.20
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+		income_transfer_to_pops = {
+			allow_non_fully_accepted = yes
+			upper_strata_pops = {
+				value = 0
+				
+				max = 1
+				min = 0
+			}
+			middle_strata_pops = {
+				value = 0.75	
+
+				max = 1
+				min = 0				
+			}
+			lower_strata_pops = {
+				value = 0.25
+					
+
+				max = 1
+				min = 0				
+			}
+		}
+
+		second_modifier = {
+			state_pop_support_movement_german_national_mult = 0.20
+			state_pop_support_movement_italian_national_mult = 0.20
+			state_pop_support_movement_yugoslav_national_mult = 0.20
+			state_pop_support_movement_india_pan_national_mult = 0.20
+			state_pop_support_movement_cultural_minority_mult = 0.20
+			state_pop_support_movement_national_liberal_mult = 0.20
+
+			country_society_tech_spread_mult = 0.10
+
+			interest_group_ig_national_liberals_pop_attraction_mult = 0.25
+			interest_group_ig_conservatives_pop_attraction_mult = 0.25
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+				has_diplomatic_relevance = scope:target_country
+			}
+		}
+
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+					NOT = { is_country_type = decentralized }
+					scope:target_country = {
+						NOT = { is_country_type = decentralized }
+					}				
+				}
+			}
+		}					
+
+		requirement_to_maintain = {
+			trigger = {
+				in_default = no
+			}
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+				scope:target_country = {
+					any_political_movement = {
+						
+					}
+				}
+				OR = {
+					any_political_movement = {
+						OR = {
+							stts_movement_is_pan_national = yes
+							is_political_movement_type = movement_national_liberal
+						}
+						OR = {
+							political_movement_support >= 0.15
+							political_movement_radicalism >= 0.25
+						}
+					}
+					any_interest_group = {
+						OR = {
+							is_powerful = yes
+							interest_group_population_percentage >= 0.2
+						}
+						OR = {
+							is_interest_group_type = ig_conservatives
+							is_interest_group_type = ig_national_liberals
+						}
+					}
+				}
+			 }
+		}
+
+		requirement_to_maintain = {
+			trigger = { 
+				scope:target_country = {
+					stts_not_humiliated = yes
+				}
+			}
+		}
+
+	}
+	
+	ai = {
+		max_influence_spending_fraction = 0.20
+		
+		evaluation_chance = {
+			value = 0.1
+			
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}			
+		}		
+	
+		propose_score = {
+			value = 10
+		}
+	
+		will_propose = { 
+			stts_ai_will_fund_movement = yes
+			#ai should only fund a movement that matters
+			scope:target_country = {
+				any_political_movement = {
+					is_political_movement_type = movement_cultural_minority
+					OR = {
+						political_movement_support >= 0.15
+						political_movement_radicalism >= 0.25
+					}
+				}
+			}
+		}
+		
+		will_break = { 
+			stts_ai_will_break_funding_movement = yes
+		}			
+	}
+}
+
+REPLACE:stts_fund_leftists = {
+	groups= {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = no
+
+	unlocking_technologies = {
+		socialism
+	}
+	
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_isolationism
+		}
+	}
+
+	
+	accept_effect = {
+	
+	}
+	
+
+	pact = {	
+		cost = 100
+	
+		is_two_sided_pact = no
+			
+		
+		income_transfer = 0.20
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+		income_transfer_to_pops = {
+			allow_non_fully_accepted = yes
+			upper_strata_pops = {
+				value = 0
+				
+				max = 1
+				min = 0
+			}
+			middle_strata_pops = {
+				value = 0.2
+
+				max = 1
+				min = 0				
+			}
+			lower_strata_pops = {
+				value = 0.8
+					
+
+				max = 1
+				min = 0				
+			}
+		}
+		
+		weekly_effect = {		
+	
+		} 
+
+		second_modifier = {
+			country_society_tech_spread_mult = 0.15
+
+			state_pop_support_movement_socialist_mult = 0.2
+			state_pop_support_movement_communist_mult = 0.2
+			state_pop_support_movement_anarchist_mult = 0.2
+			state_pop_support_movement_reformist_socialist_mult = 0.2
+			
+			interest_group_ig_socialists_pop_attraction_mult = 0.3
+			interest_group_ig_reformist_socialists_pop_attraction_mult = 0.2
+			interest_group_ig_revolutionist_socialists_pop_attraction_mult = 0.2
+			interest_group_ig_anarchists_pop_attraction_mult = 0.2
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+				has_diplomatic_relevance = scope:target_country
+			}
+		}
+
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+					NOT = { is_country_type = decentralized }
+					scope:target_country = {
+						NOT = { is_country_type = decentralized }
+					}				
+				}
+			}
+		}					
+
+		requirement_to_maintain = {
+			trigger = {
+				in_default = no
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				stts_leftist_government = yes
+			 }
+		}
+
+		requirement_to_maintain = {
+			trigger = { 
+				scope:target_country = {
+					stts_not_humiliated = yes
+				}
+			}
+		}
+		
+	}
+	
+	ai = {
+		max_influence_spending_fraction = 0.20
+		
+		evaluation_chance = {
+			value = 0.1
+			
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}			
+		}		
+	
+		propose_score = {
+			value = 10
+		}
+	
+		will_propose = { 
+			stts_ai_will_fund_movement = yes
+			#ai should only fund a movement that matters
+			scope:target_country = {
+				OR = {
+					any_political_movement = {
+						stts_movement_is_leftist = yes
+						OR = {
+							political_movement_support >= 0.15
+							political_movement_radicalism >= 0.25
+						}
+					}
+					any_interest_group = {
+						OR = {
+							is_powerful = yes
+							interest_group_population_percentage >= 0.2
+						}
+						OR = {
+							is_interest_group_type = ig_socialists
+							is_interest_group_type = ig_reformist_socialists
+							is_interest_group_type = ig_revolutionist_socialists
+							is_interest_group_type = ig_anarchists
+						}
+					}
+				}
+			}
+		}
+		
+		will_break = { 
+			stts_ai_will_break_funding_movement = yes
+		}		
+	}
+}
+
+REPLACE:stts_fund_liberals = {
+	groups= {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = no
+
+	unlocking_technologies = {
+		egalitarianism
+	}
+	
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_isolationism
+		}
+	}
+
+	
+	accept_effect = {
+	
+	}
+	
+
+	pact = {	
+		cost = 100
+	
+		is_two_sided_pact = no
+			
+		
+		income_transfer = 0.20
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+		income_transfer_to_pops = {
+			allow_non_fully_accepted = no
+			upper_strata_pops = {
+				value = 0.15
+				
+				max = 1
+				min = 0
+			}
+			middle_strata_pops = {
+				value = 0.60	
+
+				max = 1
+				min = 0				
+			}
+			lower_strata_pops = {
+				value = 0.25
+					
+
+				max = 1
+				min = 0				
+			}
+		}
+		
+		weekly_effect = {		
+	
+		} 
+
+		second_modifier = {
+			state_pop_support_movement_radical_mult = 0.20
+			state_pop_support_movement_liberal_mult = 0.20
+			state_pop_support_movement_market_liberal_mult = 0.2 #TODO
+			state_pop_support_movement_anti_slavery_mult = 0.20
+			state_pop_support_movement_orleanist_mult = 0.20
+			country_society_tech_spread_mult = 0.15
+			interest_group_ig_liberals_pop_attraction_mult = 0.20
+			interest_group_ig_radicals_pop_attraction_mult = 0.20
+			interest_group_ig_market_liberals_pop_attraction_mult = 0.20
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+				has_diplomatic_relevance = scope:target_country
+			}
+		}
+
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+					NOT = { is_country_type = decentralized }
+					scope:target_country = {
+						NOT = { is_country_type = decentralized }
+					}				
+				}
+			}
+		}					
+
+		requirement_to_maintain = {
+			trigger = {
+				in_default = no
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = { 
+				stts_liberal_government = yes
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				scope:target_country = {
+					stts_not_humiliated = yes
+				}
+			 }
+		}
+		
+	}
+	
+	ai = {
+		max_influence_spending_fraction = 0.20
+		
+		evaluation_chance = {
+			value = 0.1
+			
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}			
+		}		
+	
+		propose_score = {
+			value = 10
+		}
+	
+		will_propose = { 
+			stts_ai_will_fund_movement = yes
+			scope:target_country = {
+				OR = {
+					any_political_movement = {
+						stts_movement_is_liberal = yes
+						OR = {
+							political_movement_support >= 0.15
+							political_movement_radicalism >= 0.25
+						}
+					}
+					any_interest_group = {
+						OR = {
+							is_powerful = yes
+							interest_group_population_percentage >= 0.2
+						}
+						OR = {
+							is_interest_group_type = ig_liberals
+							is_interest_group_type = ig_radicals
+							is_interest_group_type = ig_market_liberals
+						}
+					}
+				}
+			}
+		}
+		
+		will_break = { 
+			stts_ai_will_break_funding_movement = yes
+		}			
+	}
+}
+
+REPLACE:stts_fund_reactionaries = {
+	groups= {
+		general
+	}
+	requires_approval = no
+	should_notify_third_parties = no
+
+	unlocking_technologies = {
+		political_agitation
+	}
+	
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_isolationism
+		}
+	}
+
+	
+	accept_effect = {
+	
+	}
+	
+
+	pact = {	
+		cost = 100
+	
+		is_two_sided_pact = no
+			
+		
+		income_transfer = 0.20
+		max_paying_country_income_to_transfer = 0.10
+		second_country_gets_income_transfer = yes
+		income_transfer_based_on_second_country = yes
+		income_transfer_to_pops = {
+			allow_non_fully_accepted = no
+			upper_strata_pops = {
+				value = 0.5
+				
+				max = 1
+				min = 0
+			}
+			middle_strata_pops = {
+				value = 0.5	
+
+				max = 1
+				min = 0				
+			}
+			lower_strata_pops = {
+				value = 0.0
+					
+
+				max = 1
+				min = 0				
+			}
+		}
+		
+		weekly_effect = {		
+	
+		} 
+
+		second_modifier = {
+			state_pop_support_movement_royalist_absolutist_mult = 0.25
+			state_pop_support_movement_reactionary_mult = 0.25
+			state_pop_support_movement_fascist_mult = 0.25
+			state_pop_support_movement_legitimist_mult = 0.25
+			country_society_tech_spread_mult = 0.15
+			interest_group_ig_reactionaries_pop_attraction_mult = 0.25
+			interest_group_ig_fascists_pop_attraction_mult = 0.25
+		}
+		
+		requirement_to_maintain = {
+			trigger = {
+				has_diplomatic_relevance = scope:target_country
+			}
+		}
+
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+					NOT = { is_country_type = decentralized }
+					scope:target_country = {
+						NOT = { is_country_type = decentralized }
+					}				
+				}
+			}
+		}					
+
+		requirement_to_maintain = {
+			trigger = {
+				in_default = no
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = { 
+				scope:target_country = {
+					stts_not_humiliated = yes
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = { stts_reactionary_government = yes }
+		}
+		
+	}
+	
+	ai = {
+		max_influence_spending_fraction = 0.20
+		
+		evaluation_chance = {
+			value = 0.1
+			
+			add = {
+				value = country_rank
+				multiply = 0.05
+			}			
+		}		
+	
+		propose_score = {
+			value = 10
+		}
+	
+		will_propose = { 
+			stts_ai_will_fund_movement = yes
+			scope:target_country = {
+				OR = {
+					any_political_movement = {
+						stts_movement_is_reactionary = yes
+						OR = {
+							political_movement_support >= 0.15
+							political_movement_radicalism >= 0.25
+						}
+					}
+					any_interest_group = {
+						OR = {
+							is_powerful = yes
+							interest_group_population_percentage >= 0.2
+						}
+						OR = {
+							is_interest_group_type = ig_fascists
+							is_interest_group_type = ig_reactionaries
+						}
+					}
+				}
+			}
+		}
+		
+		will_break = { 
+			stts_ai_will_break_funding_movement = yes
+		}			
+	}
+}

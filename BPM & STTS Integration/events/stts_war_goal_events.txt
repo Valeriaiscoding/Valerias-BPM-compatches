@@ -1,0 +1,32 @@
+﻿namespace = stts_war_goals
+
+stts_war_goals.1 = {
+    hidden = yes
+    immediate = {
+        activate_law = law_type:law_autocracy
+        activate_law = law_type:law_advisory_body
+        activate_law = law_type:law_no_separate_hog
+        every_interest_group_in_government = {
+            remove_ruling_interest_group = yes
+        }
+        if = {
+            limit = {
+                scope:leader_ig = {
+                    has_party = yes
+                }
+            }
+            scope:leader_ig.party = {
+                set_ruling_party = yes
+            }
+        } else = {
+            scope:leader_ig = {
+                add_ruling_interest_group = yes
+            }
+        }
+        scope:leader_ig = {
+            leader = {
+                set_character_as_ruler = yes
+            }
+        }
+    }
+}

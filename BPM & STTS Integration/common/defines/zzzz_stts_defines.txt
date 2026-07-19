@@ -1,0 +1,3 @@
+﻿NPolitics = {
+	MOVEMENT_AGITATOR_STICKYNESS = 1.1 # Agitators apply this multiplier to the score for a movement they are already backing when considering whether to switch movements
+}
