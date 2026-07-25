@@ -11,7 +11,7 @@ INJECT:ideology_sta_national_liberal = {
 }
 
 REPLACE_OR_CREATE:ideology_national_liberal_movement = {
-	icon = "gfx/interface/icons/ideology_icons/sovereignist.dds
+	icon = "gfx/interface/icons/ideology_icons/sovereignist.dds"
 	lawgroup_slavery = {
 		law_slavery_banned = approve
 		law_legacy_slavery = neutral
