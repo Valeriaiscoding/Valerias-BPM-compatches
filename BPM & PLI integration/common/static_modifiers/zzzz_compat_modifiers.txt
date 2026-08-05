@@ -1,0 +1,33 @@
+﻿REPLACE:je_mog_pli_liberal_reaction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_liberal_movement_support_add = 1
+	interest_group_ig_liberals_pop_attraction_mult = 0.5
+	interest_group_ig_radicals_pop_attraction_mult = 0.5
+	interest_group_ig_national_liberals_pop_attraction_mult = 0.5
+	interest_group_ig_market_liberals_pop_attraction_mult = 0.5
+}
+
+REPLACE:je_mog_pli_redistributive_reaction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_pop_support_movement_fascist_mult = 1
+	state_pop_support_movement_positivist_mult = 1
+	country_populist_movement_support_add = 1
+	interest_group_ig_socialists_pop_attraction_mult = 0.5
+	interest_group_ig_revolutionist_socialists_pop_attraction_mult = 0.5
+	interest_group_ig_reformist_socialists_pop_attraction_mult = 0.5
+	interest_group_ig_fascists_pop_attraction_mult = 0.5
+}
+
+# Corruption Modifiers
+# Base modifier provied as example
+# je_mog_pli_corruption_modifier = {		# Investment pool efficiency is more *appropriate*, but that can't simulate foreign investment effects properly.
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+# 	state_construction_mult = -1		# Construction efficiency penalty is the next best option for balance.
+# }
+
+
+REPLACE_OR_CREATE:mog_pli_fought_corruption_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_rigidity_baseline_add = -10
+	country_legitimacy_base_add = -15
+}

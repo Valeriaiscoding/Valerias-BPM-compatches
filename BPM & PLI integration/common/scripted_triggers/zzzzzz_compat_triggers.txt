@@ -1,0 +1,3 @@
+﻿REPLACE_OR_CREATE:BPM_PLI_compatch_is_active_trigger = {
+	always = yes
+}

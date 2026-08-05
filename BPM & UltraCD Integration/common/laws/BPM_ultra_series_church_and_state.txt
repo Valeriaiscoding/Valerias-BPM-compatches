@@ -21,10 +21,6 @@
 					Ultra_P_is_active_trigger = yes
 					country_has_primary_culture = cu:french
 				}
-				NOR = {# Turkey should only unlock this as a possibility if it abolishes the Millet System, likewise other Muslim nations
-					has_law = law_type:law_millet_system
-					has_law = law_type:law_people_of_the_book
-				}
 			}
 			com_law_freedom_of_conscience_alternative_trigger = yes
 		}
@@ -117,10 +113,6 @@ REPLACE_OR_CREATE:law_total_separation = {
 				NAND = {
 					Ultra_P_is_active_trigger = yes
 					country_has_primary_culture = cu:french
-				}
-				NOR = {# Turkey should only unlock this as a possibility if it abolishes the Millet System, likewise other Muslim nations
-					has_law = law_type:law_millet_system
-					has_law = law_type:law_people_of_the_book
 				}
 			}
 			com_law_total_seperation_alternative_trigger = yes

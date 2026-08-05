@@ -1,4 +1,4 @@
-
+﻿
 # REPLACE:ideology_liberal_movement = {
 # 	icon = "gfx/interface/icons/ideology_icons/liberal.dds"
 # 	lawgroup_internal_security = {

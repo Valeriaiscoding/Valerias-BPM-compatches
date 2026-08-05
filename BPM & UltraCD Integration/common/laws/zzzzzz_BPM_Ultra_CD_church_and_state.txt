@@ -14,19 +14,27 @@
 	}
 
 	is_visible = {
-		trigger_if = {
-			limit = {
-				Ultra_P_is_active_trigger = yes
+		OR = {
+			AND = {
+				com_law_freedom_of_conscience_trigger = yes
+				NAND = {
+					Ultra_P_is_active_trigger = yes
+					country_has_primary_culture = cu:french
+				}
 			}
-			NOT = {country_has_primary_culture = cu:french}
+			com_law_freedom_of_conscience_alternative_trigger = yes
 		}
 	}
 	can_enact = {
-		trigger_if = {
-			limit = {
-				Ultra_P_is_active_trigger = yes
+		OR = {
+			AND = {
+				com_law_freedom_of_conscience_trigger = yes
+				NAND = {
+					Ultra_P_is_active_trigger = yes
+					country_has_primary_culture = cu:french
+				}
 			}
-			NOT = {country_has_primary_culture = cu:french}
+			com_law_freedom_of_conscience_alternative_trigger = yes
 		}
 	}
 
@@ -111,22 +119,29 @@ REPLACE_OR_CREATE:law_total_separation = {
 	}
 
 	is_visible = {
-		trigger_if = {
-			limit = {
-				Ultra_P_is_active_trigger = yes
+		OR = {
+			AND = {
+				com_law_total_seperation_trigger = yes
+				NAND = {
+					Ultra_P_is_active_trigger = yes
+					country_has_primary_culture = cu:french
+				}
 			}
-			NOT = {country_has_primary_culture = cu:french}
+			com_law_total_seperation_alternative_trigger = yes
 		}
-		
 		NOT = { has_law = law_type:law_total_separation_upgraded }
 	}
 
 	can_enact = {
-		trigger_if = {
-			limit = {
-				Ultra_P_is_active_trigger = yes
+		OR = {
+			AND = {
+				com_law_total_seperation_trigger = yes
+				NAND = {
+					Ultra_P_is_active_trigger = yes
+					country_has_primary_culture = cu:french
+				}
 			}
-			NOT = {country_has_primary_culture = cu:french}
+			com_law_total_seperation_alternative_trigger = yes
 		}
 		OR = {
 			is_power_bloc_leader = no

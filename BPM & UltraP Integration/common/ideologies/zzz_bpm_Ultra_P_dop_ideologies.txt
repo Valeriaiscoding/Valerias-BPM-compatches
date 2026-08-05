@@ -1,4 +1,4 @@
-REPLACE_OR_CREATE:ideology_dop_moderate_democrat = { # similar to change in liberal movement
+﻿REPLACE_OR_CREATE:ideology_dop_moderate_democrat = { # simular to change in liberal movement
 	icon = "gfx/interface/icons/ideology_icons/dop_ideology/moderate_democrat.dds"
 	priority = 1000
 	lawgroup_distribution_of_power = {
@@ -34,45 +34,6 @@ REPLACE_OR_CREATE:ideology_dop_moderate_democrat = { # similar to change in libe
 		law_syndicalism = strongly_disapprove
 		law_right_to_associate = disapprove
 		law_socialist_labor_unions = strongly_disapprove
-		law_factory_councils = strongly_disapprove
-	}
-}
-
-REPLACE_OR_CREATE:ideology_dop_authoritarian_democrat = { # similar to changes to plutocratic and meritocratic
-	icon = "gfx/interface/icons/ideology_icons/dop_ideology/authoritarian_democrat.dds"
-	priority = 1000
-    lawgroup_distribution_of_power = {
-		law_autocracy = disapprove
-		law_technocracy = neutral
-		law_oligarchy = disapprove
-		law_landed_voting = approve
-		law_wealth_voting = strongly_approve
-		law_census_voting = approve
-		law_universal_suffrage = neutral # disapprove
-		law_anarchy = strongly_disapprove
-		law_military_junta = neutral
-		law_organic_democracy = disapprove
-	}
-
-    lawgroup_bureaucracy = {
-		law_hereditary_bureaucrats = neutral
-		law_appointed_bureaucrats = approve
-		law_elected_bureaucrats = neutral
-	}
-
-	lawgroup_legislative_principles = {
-		law_advisory_body = approve
-		law_separated_powers = approve
-		law_supreme_legislature = disapprove
-	}
-
-	lawgroup_labour_associations = {
-		law_combination_acts = approve
-		law_corporatized_unions = approve
-		law_anti_strike_laws = approve
-		law_right_to_associate = disapprove
-		law_socialist_labor_unions = strongly_disapprove
-		law_syndicalism = strongly_disapprove
 		law_factory_councils = strongly_disapprove
 	}
 }

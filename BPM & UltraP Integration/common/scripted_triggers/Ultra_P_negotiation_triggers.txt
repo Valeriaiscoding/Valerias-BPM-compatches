@@ -1,0 +1,41 @@
+﻿REPLACE:amendment_is_valid_for_promise_quest_degree = { # Inside an any_possible_amendment_type
+    NOR = {
+        this = amendment_type:amendment_generic_sponsor_polstr_increase
+        this = amendment_type:amendment_generic_sponsor_polstr_approval_increase
+    }
+    trigger_if = {
+        limit = {
+            this = amendment_type:amendment_3_class_franchise
+        }
+        always = yes
+    }
+    trigger_else_if = {
+        limit = {
+            scope:ig.var:promise_quest_degree = 1
+        }
+        NOR = { # Enables any amendment for easy negotiations
+            this = amendment_type:amendment_generic_sponsor_polstr_increase_negotiation_2
+            this = amendment_type:amendment_generic_sponsor_polstr_increase_negotiation_3
+        }
+    }
+    trigger_else_if = {
+        limit = {
+            scope:ig.var:promise_quest_degree = 2
+        }
+        OR = {
+            this = amendment_type:amendment_redemption_payments
+            this = amendment_type:amendment_individual_redemption_payments
+            this = amendment_type:amendment_generic_sponsor_polstr_increase_negotiation_2
+        }
+    }
+    trigger_else_if = {
+        limit = {
+            scope:ig.var:promise_quest_degree >= 3
+        }
+        OR = {
+            this = amendment_type:amendment_redemption_payments
+            this = amendment_type:amendment_individual_redemption_payments
+            this = amendment_type:amendment_generic_sponsor_polstr_increase_negotiation_3
+        }
+    }
+}

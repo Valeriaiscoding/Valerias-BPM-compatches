@@ -1,4 +1,4 @@
-REPLACE:bpm_tax_break_rich_sway_gui = {
+﻿REPLACE:bpm_tax_break_rich_sway_gui = {
 	scope = interest_group
 	is_shown = {
 		bpm_tax_break_rich_sway_valid = yes

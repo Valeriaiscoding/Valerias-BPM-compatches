@@ -1,0 +1,10 @@
+﻿bpm_mog_pli_fought_corruption_val_repeatable_law = {
+	add = root.var:mog_pli_corruption_current_value
+	add = {
+		value = root.var:mog_pli_corruption_current_value
+		divide = 80			# Divide by 80, not 100, so that mid-range corruption doesn't feel so bad to fight
+		multiply = root.institution:institution_centralization.investment
+		multiply = -6		# Remove up to 30 corruption scaled based on current corruption and centralization investment
+	}
+	min = 0
+}

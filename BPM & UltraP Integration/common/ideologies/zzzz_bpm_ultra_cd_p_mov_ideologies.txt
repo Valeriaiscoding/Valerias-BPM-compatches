@@ -1,4 +1,4 @@
-# If changed copy to other mod
+﻿# If changed copy to other mod
 INJECT:ideology_sta_national_liberal = {
 	lawgroup_citizenship = {
 		law_ethnostate = approve

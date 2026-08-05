@@ -91,3 +91,172 @@ REPLACE:bpm_do_hog_transition = {
 		}
 	}
 }
+
+bpm_reload_institution_modifiers_loc_mindef = {
+
+	# bpm_reload_institution_modifiers_colonial_affairs_loc = yes
+	# bpm_reload_institution_modifiers_social_security_loc = yes
+	# bpm_reload_institution_modifiers_workplace_safety_loc = yes
+	# bpm_reload_institution_modifiers_schools_loc = yes
+	save_scope_as = selected_char
+	owner = {
+		bpm_reload_institution_modifiers_conscription_loc = yes
+	}
+	# bpm_reload_institution_modifiers_culture_loc = yes
+	# bpm_reload_institution_modifiers_health_system_loc = yes
+	# bpm_reload_institution_modifiers_suffrage_loc = yes
+	# bpm_reload_institution_modifiers_diplomacy_loc = yes
+	# bpm_reload_institution_modifiers_economy_noncr_loc = yes
+
+    # trigger_event = { id = BPM_CAB_DEBUG_UTILS.2 days = 1 }
+}
+
+bpm_reload_institution_modifiers_conscription_loc = {
+    institution:institution_conscription ?= {
+        # bpm_remove_institution_modifiers_culture = yes
+    }
+    if = {
+        limit = {
+            scope:selected_char ?= {
+                OR = {
+                    is_character_alive = no
+                    NOT = { exists = interest_group } 
+                }
+            }
+        }
+        remove_variable = bpm_minister_of_culture
+    }
+    if = {
+        limit = {
+            # has_variable = bpm_minister_of_culture
+            has_institution = institution_conscription
+            exists = scope:selected_char.interest_group
+        }
+		
+        scope:selected_char.interest_group = {
+           bpm_reload_modifier_inst_singlet = {
+                IG1 = reactionaries
+                INST = conscription
+                MOD = bpm_conscription_reacts_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = conservatives
+                INST = conscription
+                MOD = bpm_conscription_cons_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = fascists
+                INST = conscription
+                MOD = bpm_conscription_fash_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = national_liberals
+                INST = conscription
+                MOD = bpm_conscription_natlibs_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = radicals
+                INST = conscription
+                MOD = bpm_conscription_radlibs_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = christian_democrats
+                INST = conscription
+                MOD = bpm_conscription_christdem_modifier
+            }
+
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = petty_bourgeoisie
+                INST = conscription
+                MOD = bpm_conscription_pb_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = armed_forces
+                INST = conscription
+                MOD = bpm_conscription_armed_forces_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = devout
+                INST = conscription
+                MOD = bpm_conscription_devout_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = industrialists
+                INST = conscription
+                MOD = bpm_conscription_capis_modifier
+            }
+			bpm_reload_modifier_inst_singlet = {
+                IG1 = landowners
+                INST = conscription
+                MOD = bpm_conscription_landies_modifier
+            }
+			bpm_reload_modifier_inst_triplet = {
+                IG1 = rural_folk
+                IG2 = ig_agrarian_populists
+				IG3 = trade_unions
+                INST = conscription
+                MOD = bpm_conscription_cons_modifier
+            }
+			bpm_reload_modifier_inst_triplet = {
+                IG1 = socialists
+                IG2 = revolutionist_socialists
+                IG3 = anarchists
+                INST = conscription
+                MOD = bpm_conscription_commies_modifier
+            }
+			bpm_reload_modifier_inst_quartet = {
+                IG1 = liberals
+                IG2 = market_liberals
+                IG3 = reformist_socialists
+                IG4 = intelligentsia
+                INST = workplace_safety
+                MOD = bpm_conscription_neutrals_modifier
+            }
+
+            owner.institution:institution_conscription ?= { save_scope_as = inst_concs }
+            if = {
+                limit = { exists = scope:inst_cul }
+				switch = {
+					trigger = scope:inst_concs.investment
+					1 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 1
+						# }
+					}
+					2 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 2
+						# }
+					}
+					3 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 3
+						# }
+					}
+					4 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 4
+						# }
+					}
+					5 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 5
+						# }
+					}
+					6 = {
+						# add_modifier = {
+						#     name = bpm_conscription_attraction_modifier
+						#     multiplier = 6
+						# }
+					}
+				}
+            }
+            add_modifier = bpm_number_of_cabinet_picks
+        }
+    }
+}

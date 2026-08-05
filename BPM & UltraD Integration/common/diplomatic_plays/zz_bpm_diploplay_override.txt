@@ -6,7 +6,6 @@
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {
@@ -32,7 +31,6 @@ REPLACE:dp_regime_change = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		OR = { 
 			bpm_aggressive_diplomacy_permitted = yes 
 			bpm_exception_regime_change_permitted = yes 
@@ -63,7 +61,6 @@ REPLACE:dp_ban_slavery = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		OR = { 
 			bpm_aggressive_diplomacy_permitted = yes 
 			bpm_exception_ban_slavery_permitted = yes 
@@ -98,7 +95,6 @@ REPLACE:dp_conquer_state = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {
@@ -127,7 +123,6 @@ REPLACE:dp_return_state = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		OR = { 
 			bpm_aggressive_diplomacy_permitted = yes 
 			bpm_exception_return_state_permitted = yes 
@@ -156,7 +151,6 @@ REPLACE:dp_liberate_subject = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {
@@ -184,7 +178,6 @@ REPLACE:dp_liberate_country = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		diplomatic_play_has_no_relations_blockers = yes
@@ -210,7 +203,6 @@ REPLACE:dp_take_treaty_port = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {
@@ -237,7 +229,6 @@ REPLACE:dp_make_tributary = {
 
 	possible = {
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { scope:target_country = { has_modifier = modifier_ryukyu_rivalry_secured_neutrality } }
 	}
@@ -258,7 +249,6 @@ REPLACE:dp_make_protectorate = {
 
 	possible = {
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { scope:target_country = { has_modifier = modifier_ryukyu_rivalry_secured_neutrality } }
 	}
@@ -280,7 +270,6 @@ REPLACE:dp_transfer_subject = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {
@@ -327,7 +316,6 @@ REPLACE:dp_annex_subject = {
 
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
@@ -424,7 +412,6 @@ REPLACE:dp_revolution = {
 	additional_involvement_trigger = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 
 		scope:target_country = {
@@ -478,7 +465,6 @@ REPLACE:dp_secession = {
 	additional_involvement_trigger = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 
 		scope:initiator = {
@@ -514,7 +500,6 @@ REPLACE:dp_contain_threat = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		OR = { 
 			bpm_aggressive_diplomacy_permitted = yes 
 			bpm_exception_contain_threat_permitted = yes 
@@ -538,7 +523,6 @@ REPLACE:dp_contain_threat = {
 		NOT = { is_country_type = decentralized }
 		country_rank >= rank_value:great_power
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		OR = { 
 			bpm_aggressive_diplomacy_permitted = yes 
 			bpm_exception_contain_threat_permitted = yes 
@@ -575,7 +559,6 @@ REPLACE:dp_taiping_rebellion = {
 	additional_involvement_trigger = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 
 		scope:target_country = {
@@ -606,7 +589,6 @@ REPLACE:dp_join_power_bloc = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		is_power_bloc_leader = yes # Also checked by wargoal, but here for performance reasons
 		custom_tooltip = {
@@ -636,7 +618,6 @@ REPLACE:dp_force_nationalization = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		diplomatic_play_has_no_relations_blockers = yes
 	}
@@ -665,13 +646,158 @@ REPLACE:dp_give_foreign_investment_rights = {
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		diplomatic_play_has_no_relations_blockers = yes
 	}
 
 	selectable_in_lens = {
 		has_dlc_feature = foreign_investment
+	}
+
+	ai_acceptance_max = 100
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+REPLACE:dp_demand_strait_access = {
+	war_goal = demand_strait_access
+
+	texture = "gfx/interface/icons/war_goals/enforce_treaty_article.dds"
+
+	add_infamy_for_starting_target_wargoals = yes
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		has_technology_researched = international_relations
+		NOT = { is_subject_of = scope:target_country }
+		OR = {
+			bpm_aggressive_diplomacy_permitted = yes
+			has_law_or_variant = law_type:law_justum_bellum
+		}
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			has_any_strait_province = scope:target_country
+			has_any_strait_control = scope:target_country
+		}
+		custom_tooltip = {
+			text = dp_demand_strait_access_already_has_access_tt
+			NOT = { has_military_strait_access_through = scope:target_country }
+		}
+	}
+
+	ai_acceptance_max = 100
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+REPLACE:dp_demand_toll_exemption = {
+	war_goal = demand_toll_exemption
+
+	texture = "gfx/interface/icons/war_goals/enforce_treaty_article.dds"
+
+	add_infamy_for_starting_target_wargoals = yes
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		has_technology_researched = international_relations
+		NOT = { is_subject_of = scope:target_country }
+		OR = {
+			bpm_aggressive_diplomacy_permitted = yes
+			has_law_or_variant = law_type:law_justum_bellum
+		}
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			charges_strait_toll = yes
+		}
+		custom_tooltip = {
+			text = dp_demand_toll_exemption_already_exempt_tt
+			NOT = { has_strait_toll_exemption_from = scope:target_country }
+		}
+	}
+
+	ai_acceptance_max = 100
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+REPLACE:dp_demand_no_tolls = {
+	war_goal = demand_no_tolls
+
+	texture = "gfx/interface/icons/war_goals/enforce_treaty_article.dds"
+
+	add_infamy_for_starting_target_wargoals = yes
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		has_technology_researched = international_relations
+		NOT = { is_subject_of = scope:target_country }
+		OR = {
+			bpm_aggressive_diplomacy_permitted = yes
+			has_law_or_variant = law_type:law_justum_bellum
+		}
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			charges_strait_toll = yes
+			custom_tooltip = {
+				text = dp_demand_no_tolls_already_bound_tt
+				can_toll_straits = yes
+			}
+		}
+	}
+
+	ai_acceptance_max = 100
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+REPLACE:dp_demand_no_strait_closure = {
+	war_goal = demand_no_strait_closure
+
+	texture = "gfx/interface/icons/war_goals/enforce_treaty_article.dds"
+
+	add_infamy_for_starting_target_wargoals = yes
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		has_technology_researched = international_relations
+		NOT = { is_subject_of = scope:target_country }
+		OR = {
+			bpm_aggressive_diplomacy_permitted = yes
+			has_law_or_variant = law_type:law_justum_bellum
+		}
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { is_subject_of = root }
+			has_any_strait_province = scope:target_country
+			has_any_strait_control = scope:target_country
+			custom_tooltip = {
+				text = dp_demand_no_strait_closure_already_bound_tt
+				can_close_straits = yes
+			}
+		}
 	}
 
 	ai_acceptance_max = 100
@@ -690,7 +816,6 @@ REPLACE:dp_humiliation = {
 
 	possible = {
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 	}
 
@@ -708,14 +833,12 @@ REPLACE:dp_annex_war = {
 
 	selectable_in_lens = {
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 	}
 
 	possible = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
-		bpm_ultra_d_neutral_country_aggression_permitted = yes
 		bpm_aggressive_diplomacy_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
 		scope:target_country = {

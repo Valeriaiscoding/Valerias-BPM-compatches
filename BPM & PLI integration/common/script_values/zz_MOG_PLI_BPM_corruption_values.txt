@@ -1,0 +1,344 @@
+﻿mog_pli_corruption_base_institution_magnitude = {	# Internal affairs excluded (max 0.025 # TODO
+	add = {
+		owner.institution:institution_police ?= {
+			add = 0.01
+			multiply = investment
+		}
+	}
+	add = {
+		owner.institution:institution_schools ?= {
+			add = 0.005
+			multiply = investment
+		}
+	}
+	add = {
+		owner.institution:institution_workplace_safety ?= {
+			add = 0.005
+			multiply = investment
+		}
+	}
+	add = {
+		owner.institution:institution_centralization ?= {
+			add = 0.01
+			multiply = investment
+		}
+	}
+}
+
+mog_pli_corruption_increment = {
+	value = 0
+	if = {
+		limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value } # Target below current state. 
+		add = { 
+			add = {		# At 0 corruption, growth = institution resistance + base rate
+				add = mog_pli_corruption_base_institution_magnitude
+				multiply = -1	# -ve because then multiplied by -ve from inverse %
+			}
+			multiply = {
+				add = var:mog_pli_corruption_current_value	# (current/target)-1 = bigger absolute
+				divide = mog_pli_corruption_target			# value when further from the target
+				add = -1
+
+			}
+			add = 0.125		# Base rate = 0.125 + institution magnitude; as corr approaches target -> min possible rate
+			add = mog_pli_corruption_base_institution_magnitude		# approaches 0 depending on internal security laws
+			desc = PLI_BASE_TREND
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+	}
+	add = {
+		# Accelerators/Decelerators
+		add = {
+			owner.institution:institution_police ?= {
+				add = 0.01
+				multiply = investment
+			}
+			if = {
+				limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+				multiply = -1	# Slow the rise instead of speeding the decline.
+			}
+			desc = PLI_POLICE_INSTITUTION		# Max = 0.05
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+		add = {
+			owner.institution:institution_schools ?= {
+				add = 0.01
+				multiply = investment
+			}
+			if = {
+				limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+				multiply = -1	# Slow the rise instead of speeding the decline.
+			}
+			desc = PLI_SCHOOL_INSTITUTION		# Max = 0.025 #0.05
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+		add = {
+			owner.institution:institution_workplace_safety ?= {
+				add = 0.01
+				multiply = investment
+			}
+			if = {
+				limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+				multiply = -1	# Slow the rise instead of speeding the decline.
+			}
+			desc = PLI_OHS_INSTITUTION			# Max = 0.025 # 0.05
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+		add = {
+			owner.institution:institution_centralization ?= {
+				add = 0.01
+				multiply = investment
+			}
+			# Speeps up both rise and fall
+			# if = {
+			# 	limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+			# 	multiply = -1	# Slow the rise instead of speeding the decline.
+			# }
+			#TODO LOC
+			desc = PLI_CENTRALIZATION_INSTITUTION			# Max = 0.0625
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+
+		add = {		# Depends on the nature of the institution
+			owner.institution:institution_home_affairs ?= {
+				add = owner.mog_pli_cor_internal_security
+				divide = 400	# 10 becomes 0.025
+				multiply = investment
+			}
+			if = {
+				limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+				multiply = -1	# Slow the rise instead of speeding the decline.
+			}
+			desc = PLI_HAFFAIRS_INSTITUTION		# Max = 0.125
+			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+	}
+}
+
+REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
+	if = {
+		limit = { # Absolute Power
+			OR = { 
+				has_law_or_variant = law_type:law_autocracy
+				has_law_or_variant = law_type:law_military_junta
+			}
+		}
+		add = 0
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_colonial_administration
+		}
+		add = 2
+	}
+	else_if = {
+		limit = { # Elite Captured Power
+			OR = { 
+				has_law_or_variant = law_type:law_technocracy 
+				has_law_or_variant = law_type:law_oligarchy
+				has_law_or_variant = law_type:law_elder_council
+			}
+		}
+		add = 5
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_landed_voting }
+		add = 2
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_wealth_voting }
+		add = 3
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_census_voting }
+		add = 7
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_universal_suffrage }
+		add = 10
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_anarchy }
+		add = 5		# Community Accountability
+	}
+	else_if = {
+		limit = { has_law_or_variant = law_type:law_organic_democracy }
+		add = 7
+	}
+	else = {		# For random modded laws
+		add = mog_pli_cor_dist_of_power_modded
+	}
+	if = {
+		limit = {
+			bpm_country_laws_no_voting = no
+		}
+		if = {
+			limit = { has_law_or_variant = law_type:law_advisory_body}
+			multiply = 0.8
+		}
+	}
+}
+
+REPLACE:mog_pli_cor_policing = {				# Max 15 # was 20
+	if = {
+		limit = {	# Gotta Defend your own Investments
+			has_law_or_variant = law_type:law_no_police
+		}
+		add = 0
+	}
+	else_if = {
+		limit = {	# Local police are ok, but prone to injustice and corruption
+			has_law_or_variant = law_type:law_local_police
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_elected_police
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {	# One of the biggest contributors to a healthy investment environment
+			has_law_or_variant = law_type:law_dedicated_police
+		}
+		add = 3
+	}
+	else_if = {
+		limit = {	# The stronger this institution is, the worse it gets...
+			has_law_or_variant = law_type:law_militarized_police
+		}
+		add = 0.5 
+	}
+	else = {	# For Random Modded laws
+		add = mog_pli_cor_policing_modded
+	}
+	multiply = {
+		value = institution:institution_police.investment
+		min = 1
+	}
+}
+
+REPLACE:mog_pli_cor_rights_of_women = {			# Max 5
+	if = {
+		limit = {
+			has_law_or_variant = law_type:law_no_womens_rights
+		}
+		add = 0
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_women_own_property
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_women_in_the_workplace
+		}
+		add = 3
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_womens_suffrage_upgraded
+		}
+		add = 5
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_womens_suffrage
+		}
+		add = 4
+	}
+	else = {	# For Random Modded laws
+		add = mog_pli_cor_rights_of_women_modded
+	}
+}
+
+REPLACE:mog_pli_cor_labour = {					# Max 10
+	if = {
+		limit = {
+			has_law_or_variant = law_type:law_combination_acts
+		}
+		add = 0
+	}
+	else_if = {
+		limit = {
+			OR = {		# These systems are not without some benefits...
+				has_law_or_variant = law_type:law_guild_system
+				has_law_or_variant = law_type:law_corporatized_unions
+				has_law_or_variant = law_type:law_socialist_unions
+			}
+		}
+		add = 4
+	}
+	else_if = {
+		limit = {		# Labour associations still exist after all...
+			has_law_or_variant = law_type:law_anti_strike_laws
+		}
+		add = 6
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_law_or_variant = law_type:law_right_to_associate
+				has_law_or_variant = law_type:law_syndicalysm
+			}
+		}
+		add = 10
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_factory_councils
+		}
+		add = 7
+	}
+	else = {	# For Random Modded laws
+		add = mog_pli_cor_labour_modded
+	}
+}
+
+REPLACE:mog_pli_cor_free_speech = {				# Max 5
+	if = {
+		limit = { # The stronger this institution is, the worse it gets...
+			has_law_or_variant = law_type:law_outlawed_dissent
+		}
+		add = 3
+		divide = {
+			value = institution:institution_culture.investment
+			min = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_censorship
+		}
+		add = 5
+		subtract = {
+			value = institution:institution_culture.investment
+			min = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_right_of_assembly
+		}
+		add = 6
+		subtract = {
+			value = institution:institution_culture.investment
+			multiply = 0.5
+			min = 0.5
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_protected_speech
+		}
+		add = 3	# It's a double-edged sword
+	}
+	else = {	# For Random Modded laws
+		add = mog_pli_cor_free_speech_modded
+	}
+}
+
+# TODO stability

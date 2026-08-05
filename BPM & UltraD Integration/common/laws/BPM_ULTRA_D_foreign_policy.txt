@@ -42,15 +42,15 @@
 
 INJECT:law_armed_neutrality = {
 	modifier = {
-		country_bpm_ultra_d_alliances_disabled = yes
-		country_bpm_ultra_d_country_considered_neutral = yes
+		#country_bpm_ultra_d_alliances_disabled = yes
+		#country_bpm_ultra_d_country_considered_neutral = yes
 	}
 }
 
 INJECT:law_disarmed_nation = {	
 	modifier = {
-		country_bpm_ultra_d_alliances_disabled = yes
-		country_bpm_ultra_d_country_considered_neutral = yes
+		#country_bpm_ultra_d_alliances_disabled = yes
+		#country_bpm_ultra_d_country_considered_neutral = yes
 	}
 
 	institution_modifier = {

@@ -1,0 +1,68 @@
+﻿INJECT:law_national_guard = {
+	can_enact = {
+		NOT = { 
+			has_modifier = bpm_constitutional_issues 
+		}
+	}
+
+	modifier = {
+		country_officers_pol_str_mult = 0.25
+	}
+
+	institution = institution_home_affairs
+	institution_modifier = {
+		#interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.05
+		state_conscription_rate_add = 0.002
+		political_movement_radicalism_add = 0.02
+		country_rigidity_baseline_add = 2
+		country_rigidity_rate_add = 0.1
+		country_bpm_labor_consciousness_target_mult = -0.01
+	}
+}
+
+INJECT:law_secret_police = {
+	
+	can_enact = {
+		NOT = { 
+			has_modifier = bpm_constitutional_issues 
+		}
+	}
+	
+	progressiveness = 0
+
+	unlocking_laws = {
+		law_censorship
+		law_outlawed_dissent
+	}
+
+	disallowing_laws = {
+		law_confederated
+	}
+
+	modifier = {
+		country_officers_pol_str_mult = -0.25
+
+		country_institution_culture_max_investment_add = 1
+	}
+	
+	institution = institution_home_affairs
+	institution_modifier = {
+		country_rigidity_baseline_add = 4
+		country_rigidity_rate_add = 0.2
+		country_bpm_labor_consciousness_target_mult = -0.01
+	}
+}
+
+INJECT:law_guaranteed_liberties = {
+	
+	institution_modifier = {
+		state_loyalists_from_political_movements_mult = -0.05
+		state_radicalism_increases_open_prejudice_mult = -0.05
+		state_radicalism_increases_violent_hostility_mult = -0.05
+		state_radicalism_increases_cultural_erasure_mult = -0.05		
+		country_rigidity_rate_add = -0.05
+		country_rigidity_rate_mult = 0.05
+		country_bpm_labor_consciousness_target_mult = -0.1
+		country_populist_movement_support_add = -0.1
+	}
+}

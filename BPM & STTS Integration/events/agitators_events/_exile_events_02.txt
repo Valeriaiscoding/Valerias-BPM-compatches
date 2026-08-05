@@ -1,4 +1,4 @@
-# Exile attempts to return to break law passage deadlock
+﻿# Exile attempts to return to break law passage deadlock
 exiles_more_events.2 = {
 	type = country_event
 	placement = root

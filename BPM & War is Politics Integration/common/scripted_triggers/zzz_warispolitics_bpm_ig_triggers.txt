@@ -38,7 +38,8 @@ REPLACE:warispolitics_ig_disapproves_aggression = {
 		#Crusader Kings Moment: Peasants don't like being levied for offensive wars
 		AND = {
 			owner = {
-				has_law = law_type:law_peasant_levies
+				NOT = { has_law = law_type:law_warrior_caste }
+				has_law_or_variant = law_type:law_peasant_levies
 			}
 			bpm_ig_is_peasant = yes
 		}

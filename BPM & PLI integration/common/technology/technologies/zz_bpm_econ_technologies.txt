@@ -1,0 +1,49 @@
+﻿INJECT:centralization = {
+	modifier = {
+		country_institution_economy_max_investment_add = 1
+	}
+}
+
+INJECT:central_banking = {
+	modifier = {
+		country_institution_economy_max_investment_add = 1
+	}
+}
+
+INJECT:central_planning = {
+	modifier = {
+		country_institution_economy_max_investment_add = 1
+	}
+}
+
+INJECT:macroeconomics = {
+	modifier = {
+		country_institution_economy_max_investment_add = 1
+	}
+}
+
+
+INJECT:central_archives = {
+	modifier = {
+		country_institution_centralization_max_investment_add = 1
+	}
+}
+
+INJECT:central_planning = {
+	modifier = {
+		country_institution_centralization_max_investment_add = 1
+	}
+}
+
+INJECT:law_enforcement = {
+	modifier = {
+		country_institution_culture_max_investment_add = 2
+	}
+}
+
+INJECT:political_agitation = {
+	modifier = {
+		country_institution_culture_max_investment_add = 1
+	}
+}
+

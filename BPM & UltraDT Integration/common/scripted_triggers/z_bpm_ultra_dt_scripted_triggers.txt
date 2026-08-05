@@ -1,4 +1,4 @@
-REPLACE_OR_CREATE:bpm_tax_break_rich_sway_valid = {
+﻿REPLACE_OR_CREATE:bpm_tax_break_rich_sway_valid = {
 	OR = {
 		bpm_ig_is_upper_institutional = yes
 		bpm_ig_is_market_liberal = yes

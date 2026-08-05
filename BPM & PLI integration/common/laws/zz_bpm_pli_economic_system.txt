@@ -1,0 +1,68 @@
+﻿INJECT:law_interventionism = {
+	modifier = {
+		country_private_construction_allocation_mult = 0.05
+	}
+	institution_modifier = {
+		country_government_dividends_efficiency_add = -0.03
+	}
+}
+
+INJECT:law_agrarianism = {
+	institution_modifier = {
+		state_aristocrats_investment_pool_efficiency_mult = -0.05
+		state_clergymen_investment_pool_efficiency_mult = -0.05
+		state_farmers_investment_pool_efficiency_mult = -0.05
+	}
+}
+
+INJECT:law_cooperative_ownership = {
+	institution_modifier = {
+		state_laborers_investment_pool_efficiency_mult = -0.07
+		state_machinists_investment_pool_efficiency_mult = -0.07
+		state_engineers_investment_pool_efficiency_mult = -0.07
+		state_clerks_investment_pool_efficiency_mult = -0.08
+		state_farmers_investment_pool_efficiency_mult = -0.08
+		state_shopkeepers_investment_pool_efficiency_mult = -0.08
+	}
+}
+
+INJECT:law_laissez_faire = {
+	institution_modifier = {
+		state_capitalists_investment_pool_efficiency_mult  =-0.05
+		state_shopkeepers_investment_pool_efficiency_mult = -0.05
+		interest_group_ig_industrialists_pol_str_mult = -0.3
+	}
+}
+
+INJECT:law_extraction_economy = {
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.1
+		building_group_bg_plantations_throughput_add = -0.1
+		building_group_bg_extraction_throughput_add = -0.1
+
+		state_shopkeepers_investment_pool_efficiency_mult = -0.25
+		state_bureaucrats_investment_pool_efficiency_mult = -0.25
+		state_capitalists_investment_pool_efficiency_mult = -0.25
+
+		state_pop_pol_str_add = -6
+		country_bureaucrats_pol_str_mult = 0.5
+		country_capitalists_pol_str_mult = 1.25
+		state_political_strength_from_wealth_mult = 0.5
+	}
+	institution = institution_economy
+	institution_modifier = {	
+		building_group_bg_agriculture_throughput_add = 0.04
+		building_group_bg_plantations_throughput_add = 0.04
+		building_group_bg_extraction_throughput_add = 0.04
+
+		interest_group_ig_industrialists_pol_str_mult = 0.25
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
+
+		state_shopkeepers_investment_pool_efficiency_mult = 0.1
+		state_bureaucrats_investment_pool_efficiency_mult = 0.1
+		state_capitalists_investment_pool_efficiency_mult = 0.1
+		state_pop_pol_str_add = -1
+
+		country_economic_dependence_on_overlord_add = 0.1
+	}
+}

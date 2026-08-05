@@ -1,0 +1,47 @@
+﻿INJECT:law_interventionism = {
+	modifier = {
+		country_institution_economy_max_investment_add = -2
+	}
+}
+
+INJECT:law_agrarianism = {
+	modifier = {
+		country_institution_economy_max_investment_add = -2
+	}
+}
+
+INJECT:law_laissez_faire = {
+	modifier = {
+		country_institution_economy_max_investment_add = -2
+	}
+}
+
+INJECT:law_command_economy = {
+	modifier = {
+		country_institution_economy_max_investment_add = -4
+	}
+}
+
+INJECT:law_confederated = {
+	modifier = {
+		country_institution_centralization_max_investment_add = -2
+	}
+}
+
+INJECT:law_federated = {
+	modifier = {
+		country_institution_centralization_max_investment_add = -2
+	}
+}
+
+INJECT:law_devolved = {
+	modifier = {
+		country_institution_centralization_max_investment_add = -2
+	}
+}
+
+INJECT:law_unitary = {
+	modifier = {
+		country_institution_centralization_max_investment_add = -2
+	}
+}

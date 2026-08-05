@@ -1,0 +1,317 @@
+﻿### Tools related to Corruption
+
+## Country-Level Effects:
+# Trade legitimacy to fight corruption
+REPLACE:mog_pli_fight_corruption_button = {
+	name = "mog_pli_fight_corruption_button"
+	desc = "mog_pli_fight_corruption_button_desc"
+	
+	visible = {
+		is_ai = yes
+		pli_corruption_tracking_trigger = yes
+	}
+	
+	possible = {
+		NOT = { has_modifier = mog_pli_fought_corruption_modifier }
+		NOT = { has_modifier = mog_pli_curried_favour_modifier }
+		government_legitimacy > 50
+		is_ai = yes
+		bpm_repeatable_law_not_on_cooldown = {
+			LAW = law_repeatable_politics_anti_corruption_drive
+		}
+	}
+	
+	effect = {
+		custom_tooltip = {
+			text = mog_pli_fight_corruption_button_tt
+			je:je_mog_pli_investment = {
+				set_bar_progress = {
+					value = mog_pli_fought_corruption_val
+					name = mog_pli_corruption_tracking_bar
+				}
+			}
+		}
+		add_modifier = {
+			name = mog_pli_fought_corruption_modifier
+			days = short_modifier_time				 # 2.5 years
+			is_decaying = yes
+		}
+		set_variable = {	# Reset progress level variable after changing progress bar.
+			name = mog_pli_corruption_current_value
+			value = "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)"
+		}
+	}
+	
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { is_at_war = yes }
+			add = -100
+		}
+		else_if = {
+			limit = {
+				ig:ig_landowners ?= { is_in_government = yes }
+			}
+			add = -20
+		}
+		
+		if = {
+			limit = { government_legitimacy >= 90 }
+			add = 55
+		}
+		else_if = {
+			limit = { government_legitimacy >= 75 }
+			add = 30
+		}
+		else_if = {
+			limit = { government_legitimacy <= 65 }
+			add = -55
+		}
+		
+		if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" >= 80 }
+			add = 55
+		}
+		else_if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" >= 60 }
+			add = 30
+		}
+		else = {
+			add = 15
+		}
+	}
+}
+
+# Engage in corruption to gain legitimacy
+REPLACE:mog_pli_curry_favour_button = { 
+	name = "mog_pli_curry_favour_button"
+	desc = "mog_pli_curry_favour_button_desc"
+	
+	visible = {
+		pli_corruption_tracking_trigger = yes
+	}
+	
+	possible = {
+		NOT = { has_modifier = mog_pli_fought_corruption_modifier }
+		NOT = { has_modifier = mog_pli_curried_favour_modifier }
+		government_legitimacy < 90
+		bpm_repeatable_law_not_on_cooldown = {
+			LAW = law_repeatable_politics_anti_corruption_drive
+		}
+	}
+	
+	effect = {
+		custom_tooltip = {
+			text = mog_pli_curry_favour_button_tt
+			je:je_mog_pli_investment = {
+				set_bar_progress = {
+					value = mog_pli_curried_favour_val
+					name = mog_pli_corruption_tracking_bar
+				}
+			}
+		}
+		
+		add_modifier = {
+			name = mog_pli_curried_favour_modifier
+			days = short_modifier_time				 # 2.5 years
+			is_decaying = yes
+		}
+		set_variable = {	# Reset progress level variable after changing progress bar.
+			name = mog_pli_corruption_current_value
+			value = "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)"
+		}
+	}
+	
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { in_default = yes }
+			add = -100
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					ig:ig_petty_bourgeoisie = { is_in_government = yes }
+					ig:ig_landowners ?= { is_in_government = yes }
+					ig:ig_industrialists ?= { is_in_government = yes }
+				}
+			}
+			add = -20
+		}
+		
+		if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" <= 40 }
+			add = 55
+		}
+		else_if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" <= 60 }
+			add = 15
+		}
+		else_if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" >= 75 }
+			add = -55
+		}
+		
+		if = {
+			limit = { government_legitimacy <= 25 }
+			add = 55
+		}
+		else_if = {
+			limit = { government_legitimacy <= 50 }
+			add = 15
+		}
+		else_if = {
+			limit = { government_legitimacy >= 75 }
+			add = -55
+		}
+	}
+}
+
+# Exploit Turmoil
+REPLACE:mog_pli_exploit_turmoil_button = {
+	name = "mog_pli_exploit_turmoil_button"
+	desc = "mog_pli_exploit_turmoil_button_desc"
+	
+	visible = {
+		pli_corruption_tracking_trigger = yes
+	}
+	
+	possible = {
+		NOT = { any_scope_state = { has_modifier = mog_pli_turmoil_exploitation_modifier } }
+		government_legitimacy > 50
+		any_scope_state = {
+			turmoil > define:NPolitics|TURMOIL_STATE_EFFECTS_THRESHOLD
+			state_has_building_type_levels = {
+				target = bt:building_government_administration
+				value >= 1
+			}
+			any_scope_building = { is_under_construction = yes }
+		}
+		hidden_trigger = {
+			NOT = { has_variable = mog_pli_state_option_count }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = {
+			text = mog_pli_exploit_turmoil_button_summary
+		}
+		if = {		# Let the player choose.
+			limit = { is_player = yes can_trigger_event = PLI_corruption_button_ev.2 }
+			every_scope_state = {
+				limit = {
+					turmoil > define:NPolitics|TURMOIL_STATE_EFFECTS_THRESHOLD
+					state_has_building_type_levels = {
+						target = bt:building_government_administration
+						value >= 1
+					}
+					any_scope_building = { is_under_construction = yes }
+				}
+				set_variable = PLI_potential_turmoil_exploitation
+			}
+			set_variable = {	# Only set this at the start for the first page - must be done before trigger.
+				name = mog_pli_state_option_count
+				value = mog_pli_state_option_count_val
+			}
+			trigger_event = {
+				id = PLI_corruption_button_ev.2
+				days = 0
+				popup = yes
+			}
+		}
+		else = {	# The AI will just pick a valid state currently being built in at random.
+			random_scope_state = {
+				limit = {
+					turmoil > define:NPolitics|TURMOIL_STATE_EFFECTS_THRESHOLD
+					state_has_building_type_levels = {
+						target = bt:building_government_administration
+						value >= 1
+					}
+					any_scope_building = { is_under_construction = yes }
+				}
+				save_temporary_scope_as = pli_exploited_state
+				add_modifier = {
+					name = mog_pli_turmoil_exploitation_modifier
+					multiplier = scope:pli_exploited_state.mog_pli_turmoil_penalty_val
+					days = short_modifier_time				 	# 2.5 years
+					is_decaying = yes
+				}
+			}
+			custom_tooltip = {
+				text = mog_pli_curry_favour_button_tt
+				je:je_mog_pli_investment = {
+					set_bar_progress = {
+						value = mog_pli_exploited_turmoil_val
+						name = mog_pli_corruption_tracking_bar
+					}
+				}
+			}
+			add_modifier = {
+				name = mog_pli_turmoil_exploited_modifier
+				days = short_modifier_time				 # 2.5 years
+				is_decaying = yes
+			}
+			set_variable = {	# Reset progress level variable after changing progress bar.
+				name = mog_pli_corruption_current_value
+				value = "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)"
+			}
+		}
+	}
+	
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { in_default = yes }
+			add = -100
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					ig:ig_petty_bourgeoisie = { is_in_government = yes }
+					ig:ig_landowners ?= { is_in_government = yes }
+					ig:ig_industrialists ?= { is_in_government = yes }
+				}
+			}
+			add = -20
+		}
+		
+		if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" <= 40 }
+			add = 55
+		}
+		else_if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" <= 60 }
+			add = 15
+		}
+		else_if = {
+			limit = { "je:je_mog_pli_investment.scripted_bar_progress(mog_pli_corruption_tracking_bar)" >= 75 }
+			add = -55
+		}
+		
+		if = {
+			limit = { government_legitimacy >= 90 }
+			add = 55
+		}
+		else_if = {
+			limit = { government_legitimacy >= 80 }
+			add = 15
+		}
+		else_if = {
+			limit = { government_legitimacy <= 75 }
+			add = -55
+		}
+		
+		if = {
+			limit = { construction_queue_government_duration > 52 }
+			add = 100
+		}
+		else_if = {
+			limit = { construction_queue_government_duration > 26 }
+			add = 80
+		}
+		else_if = {
+			limit = { construction_queue_government_duration > 13 }
+			add = 50
+		}
+	}
+}

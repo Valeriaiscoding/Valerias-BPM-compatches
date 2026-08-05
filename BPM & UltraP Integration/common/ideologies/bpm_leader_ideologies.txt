@@ -1122,6 +1122,16 @@ REPLACE_OR_CREATE:ideology_republican_leader = {
 			}
 			add = -50
 		}
+		if = {
+			limit = {
+				OR = {
+					has_role_of_type = general
+					has_role_of_type = admiral
+				}
+				has_variable = spa_liberal_military_var
+			}
+			add = 25
+		}
 
 		# 1848
 		if = {
@@ -1855,7 +1865,7 @@ REPLACE_OR_CREATE:ideology_reformer = {
 				}
 				has_variable = spa_liberal_military_var
 			}
-			add = 50
+			add = 25
 		}
 		# less likely among more progressive IG's if they're angry
 		if = {
@@ -9166,6 +9176,17 @@ REPLACE_OR_CREATE:ideology_humanitarian = {
 				multiply = 8
 			}
 		}
+
+		if = {
+			limit = {
+				OR = {
+					has_role_of_type = general
+					has_role_of_type = admiral
+				}
+				has_variable = spa_liberal_military_var
+			}
+			add = 25
+		}
 		# less likely for angry trade unions outside of Council Republic, they should go communist instead
 		if = {
 			limit = {
@@ -10882,6 +10903,16 @@ REPLACE_OR_CREATE:ideology_liberal_leader = {
 		else = {
 			add = -50
 		}
+		if = {
+			limit = {
+				OR = {
+					has_role_of_type = general
+					has_role_of_type = admiral
+				}
+				has_variable = spa_liberal_military_var
+			}
+			add = 25
+		}
 	}
 }
 
@@ -11374,6 +11405,16 @@ REPLACE_OR_CREATE:ideology_humanitarian_royalist = {
 				value = owner.ideology_humanitarian_royalist_favoured_laws
 				multiply = 8
 			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_role_of_type = general
+					has_role_of_type = admiral
+				}
+				has_variable = spa_liberal_military_var
+			}
+			add = 25
 		}
 	}
 }
