@@ -16,7 +16,6 @@ REPLACE:bpm_country_is_major_unification_candidate = {
 	OR = {
 		is_unification_candidate = GER
 		is_unification_candidate = ITA
-		#is_unification_candidate = SCA
 		is_unification_candidate = YUG
 		is_unification_candidate = FND
 	}
