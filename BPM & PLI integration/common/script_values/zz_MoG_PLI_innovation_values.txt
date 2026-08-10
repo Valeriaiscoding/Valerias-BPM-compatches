@@ -22,7 +22,7 @@ REPLACE:mog_pli_innovation_target = {	# This represents the conditions which sup
 	}
 }
 
-REPLACE:mog_pli_innovation_increment = { # Unchanged for now
+REPLACE:mog_pli_innovation_increment = {
 	value = 0
 	if = {
 		limit = { mog_pli_innovation_target_trend_buffer > var:mog_pli_innovation_current_value } # Target below current state.
@@ -49,18 +49,18 @@ REPLACE:mog_pli_innovation_increment = { # Unchanged for now
 	}
 	add = {
 		owner.institution:institution_police ?= {
-			add = 0.01
+			add = 0.0125
 			multiply = investment
 		}
-		desc = PLI_POLICE_INSTITUTION		# Max = 0.05
+		desc = PLI_POLICE_INSTITUTION		# Max = 0.075
 		format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 	}
 	add = {
 		owner.institution:institution_schools ?= {
-			add = 0.01
+			add = 0.0125
 			multiply = investment
 		}
-		desc = PLI_SCHOOL_INSTITUTION		# Max = 0.05
+		desc = PLI_SCHOOL_INSTITUTION		# Max = 0.075
 		format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 	}
 	add = {
@@ -79,6 +79,20 @@ REPLACE:mog_pli_innovation_increment = { # Unchanged for now
 		desc = PLI_SOCSEC_INSTITUTION		# Max = 0.05
 		format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 	}
+
+	# Stability
+	if = {
+		limit = { owner = { has_variable = var:bpm_political_stability } }
+		add = {
+			# TODO LOC
+			value = owner.var:bpm_political_stability
+			subtract = 50
+			multiply = -0.002 # -0.1 to 0.1
+			desc = "PLI_BPM_POLITICAL_STABILITY"
+			format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
+		}
+	}
+
 	min = 0.01
 	multiply = {
 		add = root.literacy_rate
@@ -345,7 +359,18 @@ REPLACE:mog_pli_proliferation_target = {	# This represents the conditions which 
 	# NEW
 	add = mog_pli_pro_centralization 		# Max 10	- Best: Unitary
 	add = mog_pli_pro_diplomacy				# Max 10	- Best: Armed Neutrality/Disarmed Nation
-	add = mog_pli_pro_stablity				# Max 10	- Best: 55
+	add = mog_pli_pro_stablity				# Max 10	- Best: 55 
+
+	# if = {
+	# 	limit = {
+	# 		has_variable = var:bpm_political_stability 
+	# 	}
+	# 	multiply = {
+	# 		value = var:bpm_political_stability
+	# 		multiply = 0.03
+	# 		max = 1
+	# 	}
+	# }
 
 	multiply = mog_pli_pro_isolationism_mult			# Effectiveness of everything is nerfed by variants of isolationism
 	min = 0												# Min Bonus is 0%, Max Bonus is 100% - realistically getting either should be nearly impossible.
@@ -354,7 +379,7 @@ REPLACE:mog_pli_proliferation_target = {	# This represents the conditions which 
 }
 
 
-mog_pli_proliferation_increment = {
+REPLACE:mog_pli_proliferation_increment = {
 	value = 0
 	if = {
 		limit = { mog_pli_proliferation_target_trend_buffer > var:mog_pli_proliferation_current_value } # Target below current state.
@@ -372,10 +397,10 @@ mog_pli_proliferation_increment = {
 	# Accelerators/Decelerators
 	add = {
 		owner.institution:institution_police ?= {
-			add = 0.05
+			add = 0.06
 			multiply = investment
 		}
-		desc = PLI_POLICE_INSTITUTION		# Max = 0.25
+		desc = PLI_POLICE_INSTITUTION		# Max = 0.3 # 0.25
 		format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 	}
 	add = {
@@ -403,6 +428,19 @@ mog_pli_proliferation_increment = {
 		desc = PLI_CENTRALIZATION_INSTITUTION		# Max = 0.5
 		format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 	}
+	# Stability
+	if = {
+		limit = { owner = { has_variable = var:bpm_political_stability } }
+		add = {
+			# TODO LOC
+			value = owner.var:bpm_political_stability
+			subtract = 50
+			multiply = -0.005 # -0.25 to 0.25
+			desc = "PLI_BPM_POLITICAL_STABILITY"
+			format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
+		}
+	}
+
 	min = 0.01
 	multiply = {
 		add = root.literacy_rate

@@ -22,7 +22,10 @@
 			custom_tooltip = bpm_law_effect_tt_repeatable_different_in_reconstruction
 			trigger_event = bpm_acw_events.314
 		}
-		else = {
+		else_if = {
+			limit = {
+				has_game_rule = mog_pli_corruption_tracking
+			}
 			custom_tooltip = {
 				text = mog_pli_fight_corruption_button_tt
 				je:je_mog_pli_investment = {

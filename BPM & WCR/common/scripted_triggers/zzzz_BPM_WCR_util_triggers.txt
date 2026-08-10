@@ -1,0 +1,82 @@
+﻿TRY_REPLACE:WCR_st_is_part_west_character_westernized_trigger = {
+    scope:character ?= {
+        owner ?= {
+            OR = {
+                # Don't use WCR_has_completed_westernization_trigger (circular dependency, by design)
+                WCR_st_is_country_westernized = yes
+                
+                AND = {
+                    has_variable = WCR_westernization_progress
+                    OR = {
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 0
+                            scope:character = {
+                                OR = {
+                                    is_ruler_of_own_country = yes
+                                    is_heir_of_own_country  = yes
+                                    owner.var:bpm_headofgov ?= this
+                                    owner.var:bpm_hog_heir ?= this
+                                }
+                            }
+                        }
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 5
+                            scope:character = {
+                                OR = {
+                                    has_role_of_type = general
+                                    has_role_of_type = admiral
+                                    interest_group ?= { 
+                                        OR = {
+                                            is_interest_group_type = ig_petty_bourgeoisie
+                                            is_interest_group_type = ig_armed_forces
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 10
+                            scope:character = {
+                                interest_group ?= {
+                                    bpm_ig_is_left_wing = yes
+                                }
+                            }
+                        }
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 30
+                            scope:character = {
+                                interest_group ?= { 
+                                    OR = {
+                                        is_interest_group_type = ig_trade_unions
+                                        is_interest_group_type = ig_intelligentsia
+                                        is_interest_group_type = ig_industrialists
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 60
+                            scope:character = {
+                                interest_group ?= { 
+                                    OR = {
+                                        is_interest_group_type = ig_landowners
+                                        is_interest_group_type = ig_conservatives
+                                        is_interest_group_type = ig_fascists
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            owner.var:WCR_westernization_progress >= 90
+                            scope:character = {
+                                interest_group ?= { 
+                                    is_interest_group_type = ig_reactionaries
+                                }
+                            }
+                        }
+                    }
+                } # AND
+            }
+		} # owner
+    }
+}

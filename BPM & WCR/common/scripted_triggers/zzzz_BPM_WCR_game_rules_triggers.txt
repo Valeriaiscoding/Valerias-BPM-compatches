@@ -1,0 +1,22 @@
+﻿TRY_REPLACE:WCR_st_westernize_traditionalists = {
+    OR = {
+        has_game_rule = WCR_westernize_traditionalists_yes
+        NOR = {
+            has_ideology = ideology:ideology_traditionalist
+            has_ideology = ideology:ideology_traditionalist_minoritarian
+            interest_group = {
+                has_ideology = ideology:ideology_cit_traditional_culture
+            }
+        }
+        has_role_of_type = general # If you're in the armed forces, you can cope and seethe! B)
+        has_role_of_type = admiral
+        AND = {
+            has_role_of_type = politician
+            interest_group ?= { is_interest_group_type = ig_armed_forces }
+        }
+        AND = {
+            has_role_of_type = politician
+            interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie }
+        }
+    }
+}

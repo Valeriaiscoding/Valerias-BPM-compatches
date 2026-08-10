@@ -1,7 +1,7 @@
-﻿mog_pli_corruption_base_institution_magnitude = {	# Internal affairs excluded (max 0.025 # TODO
+﻿REPLACE:mog_pli_corruption_base_institution_magnitude = {	# Internal affairs excluded (max 0.025 
 	add = {
 		owner.institution:institution_police ?= {
-			add = 0.01
+			add = 0.005
 			multiply = investment
 		}
 	}
@@ -17,15 +17,23 @@
 			multiply = investment
 		}
 	}
+
+	# add = {
+	# 	owner.institution:institution_economy ?= {
+	# 		add = 0.005
+	# 		multiply = investment
+	# 	}
+	# }
 	add = {
 		owner.institution:institution_centralization ?= {
 			add = 0.01
 			multiply = investment
 		}
 	}
+	
 }
 
-mog_pli_corruption_increment = {
+REPLACE:mog_pli_corruption_increment = {
 	value = 0
 	if = {
 		limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value } # Target below current state. 
@@ -95,9 +103,24 @@ mog_pli_corruption_increment = {
 			# 	multiply = -1	# Slow the rise instead of speeding the decline.
 			# }
 			#TODO LOC
-			desc = PLI_CENTRALIZATION_INSTITUTION			# Max = 0.0625
+			desc = PLI_CENTRALIZATION_INSTITUTION			# Max = 0.05
 			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
 		}
+
+		# add = {
+		# 	owner.institution:institution_economy ?= {
+		# 		add = 0.005
+		# 		multiply = investment
+		# 	}
+		# 	# Speeps up both rise and fall
+		# 	# if = {
+		# 	# 	limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+		# 	# 	multiply = -1	# Slow the rise instead of speeding the decline.
+		# 	# }
+		# 	#TODO LOC
+		# 	desc = PLI_CENTRALIZATION_INSTITUTION			# Max = 0.05
+		# 	format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		# }
 
 		add = {		# Depends on the nature of the institution
 			owner.institution:institution_home_affairs ?= {
@@ -111,6 +134,23 @@ mog_pli_corruption_increment = {
 			}
 			desc = PLI_HAFFAIRS_INSTITUTION		# Max = 0.125
 			format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+		}
+
+		# Stability
+		if = {
+			limit = { owner = { has_variable = var:bpm_political_stability } }
+			add = {
+				# TODO LOC
+				value = owner.var:bpm_political_stability
+				subtract = 50
+				multiply = -0.002	 # -0.1 to 0.1
+				if = {
+					limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
+					multiply = -1
+				}
+				desc = "PLI_BPM_POLITICAL_STABILITY"
+				format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
+			}
 		}
 	}
 }
@@ -139,7 +179,7 @@ REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
 				has_law_or_variant = law_type:law_elder_council
 			}
 		}
-		add = 5
+		add = 6
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_landed_voting }
@@ -163,7 +203,7 @@ REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_organic_democracy }
-		add = 7
+		add = 6
 	}
 	else = {		# For random modded laws
 		add = mog_pli_cor_dist_of_power_modded
@@ -190,25 +230,25 @@ REPLACE:mog_pli_cor_policing = {				# Max 15 # was 20
 		limit = {	# Local police are ok, but prone to injustice and corruption
 			has_law_or_variant = law_type:law_local_police
 		}
-		add = 1
+		add = 2
 	}
 	else_if = {
 		limit = {
 			has_law_or_variant = law_type:law_elected_police
 		}
-		add = 2
+		add = 3
 	}
 	else_if = {
 		limit = {	# One of the biggest contributors to a healthy investment environment
 			has_law_or_variant = law_type:law_dedicated_police
 		}
-		add = 3
+		add = 4
 	}
 	else_if = {
 		limit = {	# The stronger this institution is, the worse it gets...
 			has_law_or_variant = law_type:law_militarized_police
 		}
-		add = 0.5 
+		add = 1
 	}
 	else = {	# For Random Modded laws
 		add = mog_pli_cor_policing_modded
@@ -340,5 +380,3 @@ REPLACE:mog_pli_cor_free_speech = {				# Max 5
 		add = mog_pli_cor_free_speech_modded
 	}
 }
-
-# TODO stability
