@@ -7,8 +7,8 @@ ecchi_per_jalal_al_din_mirza = {
 	culture = cu:persian
 	home_region = STATE_IRAKAJEMI
 	female = no
-	ideology = ideology_liberal_leader
-	interest_group = ig_landowners
+	ideology = ideology_moderate
+	interest_group = ig_national_liberals
 	dna = ecchi_dna_jalal_al_din_mirza
 	birth_date = 1827.1.1
 	traits = {
@@ -23,7 +23,7 @@ ecchi_per_jalal_al_din_mirza = {
 			}
 		}
 		interest_group_trigger = {
-			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_national_liberals
 		}
 		earliest_usage_date = 1868.1.1
 		latest_usage_date = 1872.1.1
@@ -71,7 +71,7 @@ ecchi_per_amin_al_soltan = {
 	home_region = STATE_IRAKAJEMI
 	female = no
 	ideology = ideology_moderate
-	interest_group = ig_petty_bourgeoisie
+	interest_group = ig_conservatives
 	dna = ecchi_dna_amin_al_soltan
 	birth_date = 1858.1.6
 	traits = {
@@ -85,7 +85,7 @@ ecchi_per_amin_al_soltan = {
 				country_average_cultural_acceptance = { target = cu:persian value < acceptance_status_4 }
 			}
 			interest_group_trigger = {
-				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_conservatives
 			}
 			earliest_usage_date = 1887.1.1
 			latest_usage_date = 1907.8.31

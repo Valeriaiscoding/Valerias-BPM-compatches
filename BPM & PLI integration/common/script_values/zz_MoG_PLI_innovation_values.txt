@@ -123,7 +123,7 @@ mog_pli_inno_stablity = { # Max 20 	best value 30
 			subtract = {
 				value = 30
 				subtract = var:bpm_political_stability
-				multiply = 0.5
+				multiply = 0.25
 			}
 		}
 	}
@@ -361,16 +361,17 @@ REPLACE:mog_pli_proliferation_target = {	# This represents the conditions which 
 	add = mog_pli_pro_diplomacy				# Max 10	- Best: Armed Neutrality/Disarmed Nation
 	add = mog_pli_pro_stablity				# Max 10	- Best: 55 
 
-	# if = {
-	# 	limit = {
-	# 		has_variable = var:bpm_political_stability 
-	# 	}
-	# 	multiply = {
-	# 		value = var:bpm_political_stability
-	# 		multiply = 0.03
-	# 		max = 1
-	# 	}
-	# }
+	if = {
+		limit = {
+			has_variable = var:bpm_political_stability 
+			var:bpm_political_stability <= 0.34
+		}
+		multiply = {
+			value = var:bpm_political_stability
+			multiply = 0.03
+			max = 1
+		}
+	}
 
 	multiply = mog_pli_pro_isolationism_mult			# Effectiveness of everything is nerfed by variants of isolationism
 	min = 0												# Min Bonus is 0%, Max Bonus is 100% - realistically getting either should be nearly impossible.
@@ -435,7 +436,7 @@ REPLACE:mog_pli_proliferation_increment = {
 			# TODO LOC
 			value = owner.var:bpm_political_stability
 			subtract = 50
-			multiply = -0.005 # -0.25 to 0.25
+			multiply = -0.007 # -0.35 to 0.35
 			desc = "PLI_BPM_POLITICAL_STABILITY"
 			format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 		}

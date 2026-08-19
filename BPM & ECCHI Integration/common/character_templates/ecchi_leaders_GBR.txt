@@ -850,7 +850,7 @@ ecchi_gbr_bertrand_russell = {
                         country_rank >= rank_value:great_power
                     }
                 }
-                is_interest_group_type = ig_liberal
+                is_interest_group_type = ig_liberals
             }
             trigger_else = {
                 is_interest_group_type = ig_radicals
@@ -1711,7 +1711,7 @@ ecchi_gbr_chesterton = {
     female = no
     religion = rel:catholic
     ideology = ideology_reactionary_anti_capitalist
-    interest_group = ig_conservatives
+    interest_group = ig_agrarian_populists  # ig_liberals
     dna = mr_gbr_chesterton_gilbert_keith
     birth_date = 1874.5.29
     traits = { literary honorable erudite }
@@ -1722,7 +1722,7 @@ ecchi_gbr_chesterton = {
             this = c:GBR
         }
         interest_group_trigger = {
-            is_interest_group_type = ig_conservatives
+            is_interest_group_type = ig_agrarian_populists
         }
         earliest_usage_date = 1900.1.1
         latest_usage_date = 1936.6.14

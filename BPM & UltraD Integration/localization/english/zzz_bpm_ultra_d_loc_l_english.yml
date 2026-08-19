@@ -1,10 +1,3 @@
 ﻿l_english:
- country_bpm_ultra_d_alliances_disabled:0 "Can Not Have Alliances"
- country_bpm_ultra_d_alliances_disabled_desc:0 "Country Can Not Have [Concept('concept_alliance','$concept_alliances$')] or [Concept('concept_defensive_pact','$concept_defensive_pacts$')]"
- country_bpm_ultra_d_country_considered_neutral:0 "Country Is Considered Neutral"
- country_bpm_ultra_d_country_considered_neutral_desc:0 "Country is considered neutral under international law, no [concept_recognized_power] can use diplomatic plays againts this country, unless their [concept_infamy] level is at $infamy_pariah$."
-
  country_bpm_ultra_d_aggressive_diplomacy_agains_recognized_disabled:0 "Can Not Use Aggressive [Concept('concept_diplomatic_play', 'Diplomatic Plays')] against [Concept('concept_recognized_power', 'Recognized Powers')]"
  country_bpm_ultra_d_aggressive_diplomacy_agains_recognized_disabled_desc:0 "Can not initiate a [Concept('concept_diplomatic_play', 'Diplomatic Play')] against [Concept('concept_recognized_power', 'Recognized Powers')] using most wargoals"
- country_bpm_ultra_d_agression_against_unrecognized_enabled:0 "Can Use [Concept('concept_diplomatic_play', 'Diplomatic Plays')] against [Concept('concept_unrecognized_power','Unrecognized Powers')]"
- country_bpm_ultra_d_agression_against_unrecognized_enabled_desc:0 "Can initiate a [Concept('concept_diplomatic_play', 'Diplomatic Play')] against [Concept('concept_unrecognized_power','Unrecognized Powers')]."

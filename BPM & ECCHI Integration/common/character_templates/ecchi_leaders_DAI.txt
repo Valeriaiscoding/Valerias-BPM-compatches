@@ -1,5 +1,5 @@
 ﻿### Dai Viet / Vietnam
-
+# TODO 
 ecchi_dai_truong_dinh = {
     first_name = ecchi_Dinh
     last_name = Truong
@@ -145,10 +145,7 @@ ecchi_dai_ho_chi_minh = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_revolutionist_socialists
-                #is_interest_group_type = ig_trade_unions
-            }
+            is_interest_group_type = ig_revolutionist_socialists
         }
         earliest_usage_date = 1920.1.1
         latest_usage_date = 1969.9.2

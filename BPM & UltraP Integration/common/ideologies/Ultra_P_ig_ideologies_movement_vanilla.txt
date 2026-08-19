@@ -126,22 +126,22 @@
 # 	}
 # }
 
-INJECT:ideology_vanguardist_movement = {
-	lawgroup_army_model = {
-		law_mass_conscription = strongly_approve
-		law_professional_army = approve
-		law_national_militia = disapprove
-		law_peasant_levies = disapprove
-	}
+# INJECT:ideology_vanguardist_movement = {
+# 	lawgroup_army_model = {
+# 		law_mass_conscription = strongly_approve
+# 		law_professional_army = approve
+# 		law_national_militia = disapprove
+# 		law_peasant_levies = disapprove
+# 	}
 
-	lawgroup_slavery = {
-		law_slavery_banned = strongly_approve
-		law_legacy_slavery = disapprove
-		law_colonial_slavery = disapprove
-		law_debt_slavery = strongly_disapprove
-		law_slave_trade = strongly_disapprove
-	}
-}
+# 	lawgroup_slavery = {
+# 		law_slavery_banned = strongly_approve
+# 		law_legacy_slavery = disapprove
+# 		law_colonial_slavery = disapprove
+# 		law_debt_slavery = strongly_disapprove
+# 		law_slave_trade = strongly_disapprove
+# 	}
+# }
 
 # INJECT:ideology_radical_movement = {
 # 	lawgroup_army_model = {

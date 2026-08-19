@@ -192,6 +192,9 @@ warispolitics_capitulate = {
 				save_scope_as = ruler_char
 			}
 		}
+		var:bpm_headofgov ?= {
+			save_scope_as = hog
+		}
 		if = {
 			limit = { 
 				has_modifier = warispolitics_lost_war
@@ -209,10 +212,7 @@ warispolitics_capitulate = {
 				OR = {
 					is_in_government = yes
 					is_same_interest_group_type = scope:ruler_char.interest_group
-					AND = {
-						owner.var:bpm_headofgov != scope:ruler_char
-						is_same_interest_group_type = owner.var:bpm_headofgov.interest_group
-					}
+					is_same_interest_group_type = scope:hog.interest_group					
 				}
 			}
 			if = {
@@ -239,7 +239,7 @@ warispolitics_capitulate = {
 				limit = { 
 					OR = {
 						is_ruler_of_own_country = no 
-						owner = { has_law_or_variant = law_type:law_no_separate_hog }
+						owner = { bpm_is_hoshog = yes }
 					}
 				}
 				add_modifier = {
@@ -258,16 +258,22 @@ warispolitics_capitulate = {
 			}
 		}
 		if = {
-			limit = { 
-				has_variable = var:bpm_headofgov 
-				ruler != var:bpm_headofgov
-			}
-			add_modifier = {
-				name = warispolitics_character_lost_war
-				is_decaying = yes
-				days = 1825
+			limit = { bpm_is_hoshog = no }
+			scope:hog ?= {
+				if = {
+					limit = {
+						has_modifier = warispolitics_character_lost_war
+					}
+					remove_modifier = warispolitics_character_lost_war
+				}
+				add_modifier = {
+					name = warispolitics_character_lost_war
+					is_decaying = yes
+					days = 1825
+				}
 			}
 		}
+		
 	}
 }
 
@@ -283,6 +289,9 @@ warispolitics_war_won = {
 			ruler = {
 				save_scope_as = ruler_char
 			}
+		}
+		var:bpm_headofgov ?= {
+			save_scope_as = hog
 		}
 		if = {
 			limit = { 
@@ -301,10 +310,7 @@ warispolitics_war_won = {
 				OR = {
 					is_in_government = yes
 					is_same_interest_group_type = scope:ruler_char.interest_group
-					AND = {
-						owner.var:bpm_headofgov != scope:ruler_char
-						is_same_interest_group_type = owner.var:bpm_headofgov.interest_group
-					}
+					is_same_interest_group_type = scope:hog.interest_group
 				}
 			}
 			if = {
@@ -329,9 +335,8 @@ warispolitics_war_won = {
 			}
 			if = {
 				limit = { 
-					OR = {
-						is_ruler_of_own_country = no 
-						owner = { has_law_or_variant = law_type:law_no_separate_hog }
+					owner = {
+						bpm_is_hoshog = yes
 					}
 				}
 				add_modifier = {
@@ -350,14 +355,19 @@ warispolitics_war_won = {
 			}
 		}
 		if = {
-			limit = { 
-				has_variable = var:bpm_headofgov 
-				ruler != var:bpm_headofgov
-			}
-			add_modifier = {
-				name = warispolitics_character_won_war
-				is_decaying = yes
-				days = 1825
+			limit = { bpm_is_hoshog = no  }
+			scope:hog ?= {
+				if = {
+					limit = {
+						has_modifier = warispolitics_character_won_war
+					}
+					remove_modifier = warispolitics_character_won_war
+				}
+				add_modifier = {
+					name = warispolitics_character_won_war
+					is_decaying = yes
+					days = 1825
+				}
 			}
 		}
 	}

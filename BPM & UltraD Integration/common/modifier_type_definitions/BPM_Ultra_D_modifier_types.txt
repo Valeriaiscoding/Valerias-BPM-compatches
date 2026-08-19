@@ -2,18 +2,3 @@
 	color=bad
 	boolean=yes
 }
-
-country_bpm_ultra_d_agression_against_unrecognized_enabled = {
-	color = good
-	boolean = yes
-}
-
-country_bpm_ultra_d_alliances_disabled = {
-	color=bad
-	boolean=yes
-}
-
-country_bpm_ultra_d_country_considered_neutral = {
-	color=neutral
-	boolean=yes
-}

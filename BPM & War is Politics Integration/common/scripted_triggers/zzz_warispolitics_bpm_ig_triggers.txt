@@ -18,7 +18,7 @@ REPLACE:warispolitics_ig_approves_aggression = {
 		has_ideology = ideology:ideology_jingoist #I FUCKING LOVE WAR
 		has_ideology = ideology:ideology_mil_ultramilitarist # MORE MEAT TO MEATGRINDER
 		AND = {
-			owner = { has_law = law_type:law_council_republic }
+			owner = { has_law_or_variant = law_type:law_council_republic }
 			leader = { has_ideology = ideology:ideology_revolutionary_hawk }
 		}
 	}
@@ -48,7 +48,7 @@ REPLACE:warispolitics_ig_disapproves_aggression = {
 		has_ideology = ideology:ideology_mil_antimilitarist
 
 		AND = {
-			NOT = { has_law = law_type:law_council_republic }
+			NOT = { has_law_or_variant = law_type:law_council_republic }
 			OR = {
 				bpm_ig_is_radical_socialist = yes
 				leader = {
@@ -112,8 +112,8 @@ REPLACE:warispolitics_ig_disapproves_attacking_council_republic = {
 		}
 	}
 	trigger_if = {
-		limit = { owner = { has_law = law_type:law_council_republic } }
-		NOR = {
+		limit = { owner = { has_law_or_variant = law_type:law_council_republic } }
+		NOT = {
 			has_ideology = ideology:ideology_dop_party_socialist
 		}
 		leader = {
@@ -178,9 +178,13 @@ REPLACE:warispolitics_ig_disapproves_independence = {
 		limit = { 
 			top_overlord = { has_law_or_variant = law_type:law_council_republic } 
 		}
+		bpm_ig_is_anarchist = no
 		OR = {
 			leader = { bpm_leader_is_radical_socialist = yes }
 			bpm_ig_is_radical_socialist = yes
 		}
+	}
+	trigger_else = {
+		always = no
 	}
 }

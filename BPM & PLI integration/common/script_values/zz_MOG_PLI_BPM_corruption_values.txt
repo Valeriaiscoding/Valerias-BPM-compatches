@@ -169,7 +169,7 @@ REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
 		limit = {
 			has_law_or_variant = law_type:law_colonial_administration
 		}
-		add = 2
+		add = 3
 	}
 	else_if = {
 		limit = { # Elite Captured Power
@@ -203,23 +203,18 @@ REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_organic_democracy }
-		add = 6
+		add = 7
 	}
 	else = {		# For random modded laws
 		add = mog_pli_cor_dist_of_power_modded
 	}
 	if = {
-		limit = {
-			bpm_country_laws_no_voting = no
-		}
-		if = {
-			limit = { has_law_or_variant = law_type:law_advisory_body}
-			multiply = 0.8
-		}
+		limit = { has_law_or_variant = law_type:law_advisory_body}
+		multiply = 0.8
 	}
 }
 
-REPLACE:mog_pli_cor_policing = {				# Max 15 # was 20
+REPLACE:mog_pli_cor_policing = {				# Max 20
 	if = {
 		limit = {	# Gotta Defend your own Investments
 			has_law_or_variant = law_type:law_no_police

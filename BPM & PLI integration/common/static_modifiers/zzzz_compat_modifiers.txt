@@ -31,3 +31,8 @@ REPLACE_OR_CREATE:mog_pli_fought_corruption_modifier = {
 	country_rigidity_baseline_add = -10
 	country_legitimacy_base_add = -15
 }
+
+INJECT:bpm_stability_unstable = {
+	building_throughput_add = 0.2
+	state_construction_mult = 0.2
+}

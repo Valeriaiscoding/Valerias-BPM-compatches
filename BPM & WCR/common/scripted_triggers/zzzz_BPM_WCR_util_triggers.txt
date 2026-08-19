@@ -66,14 +66,14 @@
                                 }
                             }
                         }
-                        AND = {
-                            owner.var:WCR_westernization_progress >= 90
-                            scope:character = {
-                                interest_group ?= { 
-                                    is_interest_group_type = ig_reactionaries
-                                }
-                            }
-                        }
+                        # AND = {
+                        #     owner.var:WCR_westernization_progress >= 90
+                        #     scope:character = {
+                        #         interest_group ?= { 
+                        #             is_interest_group_type = ig_reactionaries
+                        #         }
+                        #     }
+                        # }
                     }
                 } # AND
             }
