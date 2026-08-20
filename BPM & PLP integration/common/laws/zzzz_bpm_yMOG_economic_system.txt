@@ -1,0 +1,49 @@
+﻿INJECT:law_interventionism = {
+	modifier = {
+		country_government_dividends_efficiency_add = -0.25
+	}
+	institution_modifier = {
+		country_government_dividends_reinvestment_add = -0.03
+		country_government_dividends_efficiency_add = 0.05
+	}
+}
+
+INJECT:law_agrarianism = {
+	modifier = {
+		country_government_dividends_efficiency_add = -0.25
+	}
+	institution_modifier = {
+		country_government_dividends_efficiency_add = 0.05
+	}
+}
+
+INJECT:law_laissez_faire = {
+	modifier = {
+		country_government_dividends_efficiency_add = -0.6
+	}
+	institution_modifier = {
+		country_government_dividends_efficiency_add = 0.06
+	}
+}
+
+INJECT:law_cooperative_ownership = {
+	modifier = {
+		country_government_dividends_reinvestment_add = 0.2
+		country_government_dividends_efficiency_add = 0.75
+		state_market_access_price_impact = -0.05
+	}
+	institution_modifier = {
+		country_government_dividends_reinvestment_add = 0.1
+		country_government_dividends_efficiency_add = -0.05
+	}
+}
+
+INJECT:law_command_economy = {
+	modifier = {
+		country_government_dividends_reinvestment_add = 0.35
+		state_bureaucrats_investment_pool_contribution_add = 0.1
+	}
+	institution_modifier = {
+		country_government_dividends_reinvestment_add = -0.05
+	}
+}

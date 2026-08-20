@@ -1,0 +1,9 @@
+﻿
+INJECT:law_guaranteed_liberties = {
+	modifier = {
+		country_authority_add = -100
+	}
+	institution_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.05
+	}
+}

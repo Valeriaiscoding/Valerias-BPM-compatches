@@ -1,0 +1,11 @@
+﻿INJECT:law_no_separate_hog = {
+	modifier = {
+		country_authority_add = -50
+	}
+}
+
+INJECT:law_appointed_by_hos = {
+	modifier = {
+		country_authority_add = -50
+	}
+}

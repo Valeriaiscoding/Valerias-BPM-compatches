@@ -1,0 +1,30 @@
+﻿INJECT:institution_home_affairs = {
+	modifier = {
+		country_authority_add = 30
+	}
+}
+
+
+INJECT:institution_police = {
+	modifier = {
+		country_authority_add = 30
+	}
+}
+
+INJECT:institution_workplace_safety = {
+	modifier = {
+		country_authority_add = 20
+	}
+}
+
+INJECT:institution_social_security = {
+	modifier = {
+		country_authority_add = 10
+	}
+}
+
+INJECT:institution_economy = {
+	modifier = {
+		country_authority_add = 20
+	}
+}

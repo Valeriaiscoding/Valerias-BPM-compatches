@@ -1,0 +1,3 @@
+﻿REPLACE_OR_CREATE:Ultra_D_is_active_trigger = {
+    always = no
+}
