@@ -1,0 +1,48 @@
+﻿INJECT:law_ad_hoc_centralization = {
+	modifier = {
+		state_migration_pull_mult = -0.05
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25
+		state_radicals_from_political_movements_mult = -0.1
+	}
+}
+
+INJECT:law_confederated = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = -0.33
+		state_radicals_from_political_movements_mult = -0.33
+	}
+	institution_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.05
+		state_radicals_from_political_movements_mult = 0.05
+	}
+}
+
+INJECT:law_federated = {
+	modifier = {
+		
+	}
+	institution_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.05
+		state_radicals_from_political_movements_mult = 0.05
+	}
+}
+
+
+INJECT:law_devolved = {
+	modifier = {
+		
+	}
+	institution_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.075
+		state_radicals_from_political_movements_mult = 0.075
+	}
+}
+
+INJECT:law_unitary = {
+	modifier = {
+	}
+	institution_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.1
+		state_radicals_from_political_movements_mult = 0.1
+	}
+}
