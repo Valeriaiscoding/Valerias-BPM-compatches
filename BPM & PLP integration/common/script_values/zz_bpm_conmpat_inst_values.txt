@@ -83,12 +83,19 @@ REPLACE:bpm_number_of_institutitions = {
         add = 1
     }
 
+     if = {
+        limit = {
+            has_institution = institution_border_control
+        }
+        add = 1
+    }
+
 }
 
 REPLACE:bpm_antagonism = {
     value = bpm_antagonism_raw
 
-    divide = 13 # NUMBER OF INSTITUTIONS
+    divide = 14 # NUMBER OF INSTITUTIONS
 
     multiply = 100
 
@@ -210,6 +217,15 @@ REPLACE:bpm_antagonism_raw = {
     if = {
         limit = {
             var:bpm_minister_of_conscription ?= {
+                bpm_is_antagonistic = yes
+            }
+        }
+        add = 1
+    }
+
+    if = {
+        limit = {
+            var:bpm_minister_of_border_control ?= {
                 bpm_is_antagonistic = yes
             }
         }
@@ -442,6 +458,24 @@ REPLACE:bpm_cost_ig_position = {
                 is_interest_group_type = ig_fascists
                 is_interest_group_type = ig_national_liberals
                 is_interest_group_type = ig_revolutionist_socialists
+            }
+        }
+        subtract = {
+            value = 3
+            desc = bpm_ig_wants_position
+        }
+    }
+
+    if = {
+        limit = {
+            bpm_check_has_institution = {OWNER = owner INSTITUTION = institution_border_control}
+            exists = scope:bpm_reference_institution_type
+            owner.institution:institution_border_control.type ?= scope:bpm_reference_institution_type
+            OR = {
+                is_interest_group_type = ig_conservatives
+                is_interest_group_type = ig_reactionaries
+                is_interest_group_type = ig_fascists
+                is_interest_group_type = ig_national_liberals
             }
         }
         subtract = {

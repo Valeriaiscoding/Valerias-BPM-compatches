@@ -21,6 +21,7 @@ REPLACE:bpm_is_antagonistic = {
             bpm_is_antagonistic_inst = { INST = diplomacy }
             bpm_is_antagonistic_inst = { INST = economy }
             bpm_is_antagonistic_inst = { INST = conscription }
+            bpm_is_antagonistic_inst = { INST = border_control }
             interest_group = {
                 ig_approval <= angry
             }
@@ -50,6 +51,7 @@ REPLACE:bpm_is_antagonistic_hypothetical = {
             bpm_is_antagonistic_hypothetical_inst = { INST = diplomacy }
             bpm_is_antagonistic_hypothetical_inst = { INST = economy }
             bpm_is_antagonistic_hypothetical_inst = { INST = conscription }
+            bpm_is_antagonistic_hypothetical_inst = { INST = border_control }
             interest_group = {
                 ig_approval <= angry
             }
@@ -96,7 +98,6 @@ REPLACE:bpm_cab_get_random_inst = {
     bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = suffrage }
     bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = culture }
     #bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = economy }
-    bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = conscription }
     random_in_list = {
         variable = bpm_cab_inst_list
         save_scope_as = bpm_found_inst
@@ -125,5 +126,6 @@ REPLACE:bpm_has_unfilled_cabinet_positions = {
         bpm_has_unfilled_cabinet_positions_subp = { INST = diplomacy }
         bpm_has_unfilled_cabinet_positions_subp = { INST = economy }
         bpm_has_unfilled_cabinet_positions_subp = { INST = conscription }
+        bpm_has_unfilled_cabinet_positions_subp = { INST = border_control }
     }
 }

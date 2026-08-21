@@ -1,0 +1,432 @@
+﻿REPLACE_OR_CREATE:bpm_appoint_minint_effect = {
+	owner = {
+		if = {
+			limit = {
+				has_variable = bpm_minint
+			}
+			var:bpm_minint ?= {
+				remove_character_role = bpm_character_role_minister
+			}
+			if = {
+				limit = {
+					owner = {
+						has_law = law_type:law_bakufu
+					}
+				}
+				var:bpm_minint ?= {
+					remove_character_role = bpm_character_role_rozyu
+				}
+			}
+		}
+		set_variable = { name = bpm_minint value = prev }
+
+		set_variable = { name = bpm_minister_of_centralization value = prev }
+		set_variable = { name = bpm_minister_of_police value = prev }
+		set_variable = { name = bpm_minister_of_home_affairs value = prev }
+		set_variable = { name = bpm_minister_of_border_control value = prev }
+		set_variable = { name = bpm_minint_last_ig value = prev.interest_group }
+	}
+
+	add_character_role = bpm_character_role_minister
+	if = {
+		limit = {
+			owner = {
+				has_law = law_type:law_bakufu
+			}
+		}
+		add_character_role = bpm_character_role_rozyu
+	}
+	show_as_tooltip = {
+		bpm_reload_institution_modifiers_loc_minint = yes
+	}
+	hidden_effect = {
+		owner = {
+			bpm_reload_institution_modifiers = yes
+		}
+	}
+}
+
+bpm_reload_modifier_inst_specific = {
+    owner.institution:institution_$INST$ ?= {
+		save_scope_as = inst
+		switch = {  #few considerations - multiplier runs in scope root apparently, history root is null, explicit scope is required but still spams errors, this does not
+			trigger = scope:inst.investment
+			1 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 1
+				}
+			}
+			2 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 2
+				}
+			}
+			3 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 3
+				}
+			}
+			4 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 4
+				}
+			}
+			5 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 5
+				}
+			}
+			6 = {
+				add_modifier = {
+					name = $MOD$
+					multiplier = 6
+				}
+			}
+		}
+	}
+}
+
+bpm_remove_institution_modifiers_border_control = {
+	remove_modifier = bpm_border_control_traditionalists
+	remove_modifier = bpm_border_control_chuds
+	remove_modifier = bpm_border_control_nationalists
+	remove_modifier = bpm_border_control_sergregationists
+	remove_modifier = bpm_border_control_immigrant_nationalist
+	remove_modifier = bpm_border_control_internationalists
+	remove_modifier = bpm_border_control_liberals
+}
+
+bpm_reload_institution_modifiers_border_control = {
+    institution:institution_border_control ?= {
+        bpm_remove_institution_modifiers_border_control = yes
+    }
+    if = {
+        limit = {
+            var:bpm_minister_of_border_control ?= {
+                OR = {
+                    is_character_alive = no
+                    NOT = { exists = interest_group } 
+                }
+            }
+        }
+        remove_variable = bpm_minister_of_border_control
+    }
+    if = {
+        limit = {
+            has_variable = bpm_minister_of_border_control
+            has_institution = institution_border_control
+            exists = var:bpm_minister_of_border_control.interest_group
+        }
+        var:bpm_minister_of_border_control.interest_group = {
+			if = {
+				limit = { 
+					OR = {
+						has_ideology = ideology:ideology_cit_traditional_culture
+						has_ideology = ideology:ideology_cit_samurai
+					}
+				}
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_traditionalists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_ethnonationalist
+						has_ideology = ideology:ideology_cit_closed_internationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_chuds
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_nationalist
+						has_ideology = ideology:ideology_cit_multiethnic_nationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_nationalists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_sergregationist
+						has_ideology = ideology:ideology_cit_colonial_sergregationist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_sergregationists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_immigrant_nationalist
+					}
+				}
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_immigrant_nationalist
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_liberal_nationalist
+						
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_liberals
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_internationalist
+						has_ideology = ideology:ideology_cit_christian_internationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_internationalists
+				}
+			}
+			else = {
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_neutrals
+				}
+			}
+           
+            owner.institution:institution_border_control ?= { save_scope_as = inst_bc }
+            if = {
+                limit = { exists = scope:inst_bc }
+            switch = {
+                trigger = scope:inst_bc.investment
+                1 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 1
+                    }
+                }
+                2 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 2
+                    }
+                }
+                3 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 3
+                    }
+                }
+                4 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 4
+                    }
+                }
+                5 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 5
+                    }
+                }
+                6 = {
+                    add_modifier = {
+                        name = bpm_border_control_attraction_modifier
+                        multiplier = 6
+                    }
+                }
+            }
+            }
+            change_variable = {
+                name = bpm_number_of_cabpicks
+                add = 1
+            }
+        }
+    }
+}
+
+REPLACE:bpm_reload_institution_modifiers_loc_minint = {
+
+	# bpm_reload_institution_modifiers_colonial_affairs_loc = yes
+	# bpm_reload_institution_modifiers_social_security_loc = yes
+	# bpm_reload_institution_modifiers_workplace_safety_loc = yes
+	# bpm_reload_institution_modifiers_schools_loc = yes
+	save_scope_as = selected_char
+	owner = {
+		bpm_reload_institution_modifiers_police_loc = yes
+		bpm_reload_institution_modifiers_home_affairs_loc = yes
+		bpm_reload_institution_modifiers_centralization_loc = yes
+		bpm_reload_institution_modifiers_border_control_loc = yes
+	}
+	# bpm_reload_institution_modifiers_culture_loc = yes
+	# bpm_reload_institution_modifiers_health_system_loc = yes
+	# bpm_reload_institution_modifiers_suffrage_loc = yes
+	# bpm_reload_institution_modifiers_diplomacy_loc = yes
+	# bpm_reload_institution_modifiers_economy_noncr_loc = yes
+
+    # trigger_event = { id = BPM_CAB_DEBUG_UTILS.2 days = 1 }
+}
+
+bpm_reload_institution_modifiers_border_control_loc = {
+    institution:institution_border_control ?= {
+        # bpm_remove_institution_modifiers_border_control = yes
+    }
+    if = {
+        limit = {
+            scope:selected_char ?= {
+                OR = {
+                    is_character_alive = no
+                    NOT = { exists = interest_group } 
+                }
+            }
+        }
+        remove_variable = bpm_minister_of_border_control
+    }
+    if = {
+        limit = {
+            # has_variable = bpm_minister_of_border_control
+            has_institution = institution_border_control
+            exists = scope:selected_char.interest_group
+        }
+        scope:selected_char.interest_group = {
+           	if = {
+				limit = { 
+					OR = {
+						has_ideology = ideology:ideology_cit_traditional_culture
+						has_ideology = ideology:ideology_cit_samurai
+					}
+				}
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_traditionalists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_ethnonationalist
+						has_ideology = ideology:ideology_cit_closed_internationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_chuds
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_nationalist
+						has_ideology = ideology:ideology_cit_multiethnic_nationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_nationalists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_sergregationist
+						has_ideology = ideology:ideology_cit_colonial_sergregationist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_sergregationists
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_immigrant_nationalist
+					}
+				}
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_immigrant_nationalist
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_liberal_nationalist
+						
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_liberals
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_cit_internationalist
+						has_ideology = ideology:ideology_cit_christian_internationalist
+					}
+				}	
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_internationalists
+				}
+			}
+			else = {
+				bpm_reload_modifier_inst_specific = {
+					INST = border_control
+					MOD = bpm_border_control_neutrals
+				}
+			}
+
+            owner.institution:institution_border_control ?= { save_scope_as = inst_cent }
+            if = {
+                limit = { exists = scope:inst_cent }
+            switch = {
+                trigger = scope:inst_cent.investment
+                1 = {
+                }
+                2 = {
+
+                }
+                3 = {
+
+                }
+                4 = {
+
+                }
+                5 = {
+
+                }
+                6 = {
+
+                }
+            }
+            }
+            change_variable = {
+                name = bpm_number_of_cabpicks
+                add = 1
+            }
+        }
+    }
+}
+

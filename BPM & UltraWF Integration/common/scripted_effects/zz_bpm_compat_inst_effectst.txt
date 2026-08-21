@@ -13,6 +13,7 @@ REPLACE:bpm_cab_shuffle = {
     bpm_cab_shuffle_inst = { INST = diplomacy }
     bpm_cab_shuffle_inst = { INST = economy }
     bpm_cab_shuffle_inst = { INST = conscription }
+	bpm_cab_shuffle_inst = { INST = border_control }
     bpm_cab_update_synergy = yes
 }
 
@@ -31,6 +32,7 @@ REPLACE:bpm_cab_fill_positions = {
     bpm_cab_fill_position_inst = { INST = diplomacy }
     bpm_cab_fill_position_inst = { INST = economy }
     bpm_cab_fill_position_inst = { INST = conscription }
+	bpm_cab_fill_position_inst = { INST = border_control }
     bpm_cab_update_synergy = yes
     bpm_reload_institution_modifiers = yes
     bpm_reload_cabinet_picks_expectation = yes
@@ -53,6 +55,7 @@ REPLACE:bpm_fill_charset_with_cabmins = {
     bpm_fill_charset_with_cabmins_subp = { INST = diplomacy }
     bpm_fill_charset_with_cabmins_subp = { INST = economy }
     bpm_fill_charset_with_cabmins_subp = { INST = conscription }
+	bpm_fill_charset_with_cabmins_subp = { INST = border_control }
 }
 
 # -- Cabinet register institutions (12) --
@@ -70,6 +73,7 @@ REPLACE:bpm_reload_cabinet_max_level_from_skill = {
     bpm_reload_cabinet_max_level_from_skill_inst = { INST = economy }
     bpm_reload_cabinet_max_level_from_skill_inst = { INST = diplomacy }
 	bpm_reload_cabinet_max_level_from_skill_inst = { INST = conscription }
+	bpm_reload_cabinet_max_level_from_skill_inst = { INST = border_control }
 }
 
 # -- Cabinet Register Institutions (13) --
@@ -87,6 +91,7 @@ REPLACE:bpm_reset_unsustainable_positions = {
     bpm_reset_unsustainable_positions_subp = { INST = diplomacy }
     bpm_reset_unsustainable_positions_subp = { INST = economy }
     bpm_reset_unsustainable_positions_subp = { INST = conscription }
+	bpm_reset_unsustainable_positions_subp = { INST = border_control }
     bpm_reset_unsustainable_pm = yes
 }
 
@@ -107,6 +112,7 @@ REPLACE:bpm_addrem_cabinet = {
         bpm_addrem_cabinet_subp = { INST = diplomacy }
         bpm_addrem_cabinet_subp = { INST = economy }
         bpm_addrem_cabinet_subp = { INST = conscription }
+		bpm_addrem_cabinet_subp = { INST = border_control }
     }
     random_country = {
         limit = {
@@ -128,6 +134,8 @@ REPLACE:bpm_cab_get_random_inst = {
     bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = centralization }
     bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = suffrage }
     bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = culture }
+	bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = conscription }
+	bpm_cab_add_inst_to_varlist_if_valid = { VARLIST = bpm_cab_inst_list INST = border_control }
     random_in_list = {
         variable = bpm_cab_inst_list
         save_scope_as = bpm_found_inst
@@ -153,6 +161,7 @@ REPLACE:bpm_get_character_in_cabinet_position = {
     bpm_get_character_in_cabinet_position_subp = { INST = diplomacy }
     bpm_get_character_in_cabinet_position_subp = { INST = economy }
     bpm_get_character_in_cabinet_position_subp = { INST = conscription }
+	bpm_get_character_in_cabinet_position_subp = { INST = border_control }
 }
 # -- Cabinet Register Institutions (10) --
 REPLACE:bpm_update_temporary_cabinet_members_list = {
@@ -170,6 +179,7 @@ REPLACE:bpm_update_temporary_cabinet_members_list = {
     bpm_update_temporary_cabinet_members_list_subp = { INST = diplomacy }
     bpm_update_temporary_cabinet_members_list_subp = { INST = economy }
     bpm_update_temporary_cabinet_members_list_subp = { INST = conscription }
+	bpm_update_temporary_cabinet_members_list_subp = { INST = border_control }
 }
 
 REPLACE:bpm_remove_character_from_cabinet = {
@@ -265,6 +275,7 @@ REPLACE:bpm_remove_character_from_cabinet = {
     bpm_emergency_rem_subp = { INST = diplomacy }
     bpm_emergency_rem_subp = { INST = economy }
 	bpm_emergency_rem_subp = { INST = conscription }
+	bpm_emergency_rem_subp = { INST = border_control }
 
     bpm_update_temporary_cabinet_members_list = yes
 }
@@ -288,6 +299,7 @@ REPLACE:bpm_reset_mandate_used_counter = {
     bpm_reset_mandate_used_counter_subp = { INST = diplomacy }
     bpm_reset_mandate_used_counter_subp = { INST = economy }
     bpm_reset_mandate_used_counter_subp = { INST = conscription }
+	bpm_reset_mandate_used_counter_subp = { INST = border_control }
     bpm_reset_mandate_used_counter_pm = yes
 }
 
@@ -310,6 +322,7 @@ REPLACE:bpm_reset_ig_mandate_used_counter = {
     bpm_reset_ig_mandate_used_counter_subp = { INST = diplomacy }
     bpm_reset_ig_mandate_used_counter_subp = { INST = economy }
     bpm_reset_ig_mandate_used_counter_subp = { INST = conscription }
+	bpm_reset_ig_mandate_used_counter_subp = { INST = border_control }
     bpm_reset_ig_mandate_used_counter_pm = yes
 }
 
@@ -328,6 +341,7 @@ REPLACE:bpm_get_character_in_cabinet_position = {
     bpm_get_character_in_cabinet_position_subp = { INST = diplomacy }
     bpm_get_character_in_cabinet_position_subp = { INST = economy }
     bpm_get_character_in_cabinet_position_subp = { INST = conscription }
+	bpm_get_character_in_cabinet_position_subp = { INST = border_control }
 }
 # -- Cabinet Register Institutions (10) --
 REPLACE:bpm_update_temporary_cabinet_members_list = {
@@ -345,6 +359,7 @@ REPLACE:bpm_update_temporary_cabinet_members_list = {
     bpm_update_temporary_cabinet_members_list_subp = { INST = diplomacy }
     bpm_update_temporary_cabinet_members_list_subp = { INST = economy }
     bpm_update_temporary_cabinet_members_list_subp = { INST = conscription }
+	bpm_update_temporary_cabinet_members_list_subp = { INST = border_control }
 }
 
 TRY_REPLACE:bpm_form_government_oligarchic_systems = {
@@ -403,6 +418,7 @@ REPLACE:bpm_newcab_char_pick = {
             }
         }
     }
+	bpm_newcab_char_pick_subp = { INST = border_control REMAINING = 13 }
     bpm_newcab_char_pick_subp = { INST = conscription REMAINING = 13 }
     bpm_newcab_char_pick_subp = { INST = economy REMAINING = 12 }
     bpm_newcab_char_pick_subp = { INST = diplomacy REMAINING = 11 }
@@ -416,4 +432,98 @@ REPLACE:bpm_newcab_char_pick = {
     bpm_newcab_char_pick_subp = { INST = workplace_safety REMAINING = 3 }
     bpm_newcab_char_pick_subp = { INST = social_security REMAINING = 2 }
     bpm_newcab_char_pick_subp = { INST = culture REMAINING = 1 }
+}
+
+REPLACE:bpm_reload_institution_modifiers = {
+    every_interest_group = {
+        remove_modifier = bpm_colonial_affairs_attraction_modifier
+        remove_modifier = bpm_social_security_attraction_modifier
+        remove_modifier = bpm_workplace_safety_attraction_modifier
+        remove_modifier = bpm_schools_attraction_modifier
+        remove_modifier = bpm_police_attraction_modifier
+        remove_modifier = bpm_home_affairs_attraction_modifier
+        remove_modifier = bpm_centralization_attraction_modifier
+        remove_modifier = bpm_culture_attraction_modifier
+        remove_modifier = bpm_health_system_attraction_modifier
+        remove_modifier = bpm_suffrage_attraction_modifier
+        remove_modifier = bpm_diplomacy_attraction_modifier
+        remove_modifier = bpm_economy_attraction_modifier
+        remove_modifier = bpm_economy_cr_attraction_modifier
+        remove_modifier = bpm_conscription_attraction_modifier
+		remove_modifier = bpm_border_control_attraction_modifier
+        remove_modifier = bpm_number_of_cabinet_picks
+        remove_modifier = bpm_expected_a_cabinet_pick
+        remove_modifier = bpm_hog_attraction_modifier
+        set_variable = {
+            name = bpm_number_of_cabpicks
+            value = 0
+        }
+    }
+    remove_modifier = bpm_cabinet_change_speed_from_full_cabinet
+
+    bpm_reload_institution_modifiers_colonial_affairs = yes
+    bpm_reload_institution_modifiers_social_security = yes
+    bpm_reload_institution_modifiers_workplace_safety = yes
+    bpm_reload_institution_modifiers_schools = yes
+    bpm_reload_institution_modifiers_police = yes
+    bpm_reload_institution_modifiers_home_affairs = yes
+    bpm_reload_institution_modifiers_centralization = yes
+    bpm_reload_institution_modifiers_culture = yes
+    bpm_reload_institution_modifiers_health_system = yes
+    bpm_reload_institution_modifiers_suffrage = yes
+    bpm_reload_institution_modifiers_diplomacy = yes
+	bpm_reload_institution_modifiers_conscription = yes
+	bpm_reload_institution_modifiers_border_control = yes
+    if = {
+        limit = {
+            bpm_has_unfilled_cabinet_positions = no
+            bpm_cab_synergy_value > 40
+            has_variable = bpm_recent_election
+        }
+        add_modifier = {
+            name = bpm_cabinet_change_speed_from_full_cabinet
+        }
+    }
+    else = {}
+    if = {
+        limit = {
+            has_law = law_type:law_council_republic
+        }
+        bpm_reload_institution_modifiers_economy_cr = yes
+    }
+    else = {
+        bpm_reload_institution_modifiers_economy_noncr = yes
+    }
+    bpm_reload_institution_modifiers_hog = yes
+    every_interest_group = {
+        remove_modifier = bpm_hog_attraction_modifier
+    }
+    var:bpm_headofgov ?= {
+        interest_group ?= {
+            add_modifier = { name = bpm_hog_attraction_modifier }
+        }
+    }
+
+    every_interest_group = {
+        limit = { has_variable = bpm_number_of_cabpicks }
+        if = {
+            limit = { 
+                var:bpm_number_of_cabpicks > 0
+            }
+            add_modifier = {
+                name = bpm_number_of_cabinet_picks
+            }
+        }
+        # if = {
+        #     limit = {
+        #         var:bpm_number_of_cabpicks ?= 0
+        #         is_in_government = yes
+        #     }
+        #     add_modifier = bpm_expected_a_cabinet_pick
+        # }
+    }
+
+    bpm_reload_cabinet_max_level_from_skill = yes
+
+    # trigger_event = { id = BPM_CAB_DEBUG_UTILS.2 days = 1 }
 }

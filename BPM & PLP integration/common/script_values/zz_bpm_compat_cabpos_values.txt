@@ -80,6 +80,12 @@
 		}
 		add = 1
 	}
+	if = {
+		limit = {
+			has_institution = institution_border_control
+		}
+		add = 1
+	}
 }
 
 REPLACE:bpm_number_of_positions_ig = {
@@ -209,6 +215,17 @@ REPLACE:bpm_number_of_positions_ig = {
 			owner = {
 				has_institution = institution_conscription
 				has_variable = bpm_minister_of_conscription
+				var:bpm_minister_of_economy.interest_group ?= prev
+			}
+		}
+		add = 1
+	}
+
+	if = {
+		limit = {
+			owner = {
+				has_institution = institution_border_control
+				has_variable = bpm_minister_of_border_control
 				var:bpm_minister_of_economy.interest_group ?= prev
 			}
 		}

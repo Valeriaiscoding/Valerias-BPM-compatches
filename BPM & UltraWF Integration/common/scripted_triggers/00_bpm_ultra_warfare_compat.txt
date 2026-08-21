@@ -1,0 +1,3 @@
+﻿bpm_ultra_wf_compat_is_active_trigger = {
+	always = no
+}

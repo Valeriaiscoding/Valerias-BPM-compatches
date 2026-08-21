@@ -1,0 +1,3 @@
+﻿REPLACE_OR_CREATE:bpm_ultra_w_compat_is_active_trigger = {
+	always = yes
+}

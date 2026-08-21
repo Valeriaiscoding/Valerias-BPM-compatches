@@ -272,7 +272,7 @@ REPLACE_OR_CREATE:law_total_separation_upgraded = {
 
 INJECT:law_total_separation_upgraded = {
 	modifier = {
-		state_migration_pull_mult = 0.1
+		state_migration_pull_mult = 0.08
 		state_assimilation_mult = 0.2
 		
 	}
