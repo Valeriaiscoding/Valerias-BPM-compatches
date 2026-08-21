@@ -1,0 +1,7 @@
+﻿INJECT:law_advisory_body = {
+	modifier = {
+		state_migration_pull_mult = -0.05						# PLP
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25
+		state_radicals_from_political_movements_mult = 0.25
+	}
+}
