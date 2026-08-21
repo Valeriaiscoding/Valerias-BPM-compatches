@@ -418,17 +418,7 @@ REPLACE:movement_german_national = {
 	can_cause_obstinance = yes
 
 	creation_trigger = {
-		OR = {
-			country_has_primary_culture = cu:north_german
-			country_has_primary_culture = cu:south_german
-		}
-		OR = {
-			cu:north_german.culture_current_fervor > 10
-			cu:south_german.culture_current_fervor > 10
-		}
-		NOT = {
-			c:GER ?= this
-		}
+		bpm_compat_movement_german_national_valid_trigger = yes
 	}
 	creation_weight = {
 		value = 100
@@ -471,19 +461,13 @@ REPLACE:movement_german_national = {
 	}
 
 	character_support_trigger = {
-		culture = {
-			has_discrimination_trait = heritage_germanic
-		}
+		bpm_compat_movement_german_national_pop_char_support_trigger = yes
 	}
 	character_support_weight = {
 		value = 100
 		if = {
 			limit = {
-				OR = {
-					has_ideology = ideology:ideology_ethno_nationalist
-					has_liberal_ideology = yes
-					has_progressive_ideology = yes
-				}
+				bpm_compat_character_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 5
@@ -499,10 +483,7 @@ REPLACE:movement_german_national = {
 		}
 		else_if = {
 			limit = {
-				has_reactionary_ideology = yes
-				NOT = {
-					has_ideology = ideology:ideology_ethno_nationalist
-				}
+				bpm_compat_character_not_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 0
@@ -511,9 +492,7 @@ REPLACE:movement_german_national = {
 	}
 
 	pop_support_trigger = {
-		culture = {
-			has_discrimination_trait = heritage_germanic
-		}
+		bpm_compat_movement_german_national_pop_char_support_trigger = yes
 	}
 
 	pop_support_factors = {
@@ -908,37 +887,7 @@ REPLACE:movement_german_national = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				owner ?= {
-					has_technology_researched = pan-nationalism
-				}
-			}
-			if = {
-				limit = {
-					owner ?= {
-						is_unification_candidate = GER
-						NOT = {
-							any_state_region = {
-								OR = {
-									is_homeland = cu:south_german
-									is_homeland = cu:north_german
-								}
-								any_scope_state = {
-									NOT = {
-										owner = ROOT.owner
-									}
-								}
-							}
-						}
-					}
-				}
-				add = {
-					desc = "GERMAN_UNIFICATION"
-					value = 0.10
-				}
-			}
-		}
+		add = german_national_additional_activism_from_unification
 
 		# if = {
 		# 	limit = {
@@ -960,11 +909,7 @@ REPLACE:movement_german_national = {
 		# 	}
 		# }
 
-		add = {
-			desc = "FERVOR_OF_GERMAN_CULTURE_ACTIVISM"
-			value = owner.average_german_fervor
-			divide = 400
-		}
+		add = german_national_additional_activism_from_fervor
 	}
 }
 
@@ -983,20 +928,7 @@ REPLACE:movement_italian_national = {
 	can_cause_obstinance = yes
 
 	creation_trigger = {
-		OR = {
-			country_has_primary_culture = cu:north_italian
-			country_has_primary_culture = cu:south_italian
-		}
-		NOR = {
-			c:AUS ?= this
-			c:KUK ?= this
-			c:HRE ?= this
-			c:ITA ?= this
-		}
-		OR = {
-			cu:north_italian.culture_current_fervor > 10
-			cu:south_italian.culture_current_fervor > 10
-		}
+		bpm_compat_movement_italian_national_valid_trigger = yes
 	}
 	creation_weight = {
 		value = 100
@@ -1051,11 +983,7 @@ REPLACE:movement_italian_national = {
 		value = 100
 		if = {
 			limit = {
-				OR = {
-					has_ideology = ideology:ideology_ethno_nationalist
-					has_liberal_ideology = yes
-					has_progressive_ideology = yes
-				}
+				bpm_compat_character_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 5
@@ -1071,10 +999,7 @@ REPLACE:movement_italian_national = {
 		}
 		else_if = {
 			limit = {
-				has_reactionary_ideology = yes
-				NOT = {
-					has_ideology = ideology:ideology_ethno_nationalist
-				}
+				bpm_compat_character_not_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 0
@@ -1459,37 +1384,7 @@ REPLACE:movement_italian_national = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				owner ?= {
-					has_technology_researched = pan-nationalism
-				}
-			}
-			if = {
-				limit = {
-					owner ?= {
-						is_unification_candidate = ITA
-						NOT = {
-							any_state_region = {
-								OR = {
-									is_homeland = cu:south_italian
-									is_homeland = cu:north_italian
-								}
-								any_scope_state = {
-									NOT = {
-										owner = ROOT.owner
-									}
-								}
-							}
-						}
-					}
-				}
-				add = {
-					desc = "ITALIAN_UNIFICATION"
-					value = 0.10
-				}
-			}
-		}
+		add = italian_national_additional_activism_from_unification
 
 		# if = {
 		# 	limit = {
@@ -1511,11 +1406,7 @@ REPLACE:movement_italian_national = {
 		# 	}
 		# }
 
-		add = {
-			desc = "FERVOR_OF_ITALIAN_CULTURE_ACTIVISM"
-			value = owner.average_italian_fervor
-			divide = 400
-		}
+		add = italian_national_additional_activism_from_fervor
 	}
 }
 
@@ -1603,11 +1494,7 @@ REPLACE:movement_yugoslav_national = {
 		value = 100
 		if = {
 			limit = {
-				OR = {
-					has_ideology = ideology:ideology_ethno_nationalist
-					has_liberal_ideology = yes
-					has_progressive_ideology = yes
-				}
+				bpm_compat_character_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 5
@@ -1623,10 +1510,7 @@ REPLACE:movement_yugoslav_national = {
 		}
 		else_if = {
 			limit = {
-				has_reactionary_ideology = yes
-				NOT = {
-					has_ideology = ideology:ideology_ethno_nationalist
-				}
+				bpm_compat_character_not_support_weight_pan_nat_trigger = yes
 			}
 			multiply = {
 				value = 0
@@ -2073,11 +1957,7 @@ REPLACE:movement_yugoslav_national = {
 		# 	}
 		# }
 
-		add = {
-			desc = "FERVOR_OF_SOUTH_SLAVIC_CULTURE_ACTIVISM"
-			value = owner.average_south_slavic_fervor
-			divide = 400
-		}
+		add = yugoslav_national_additional_activism_from_fervor
 	}
 }
 

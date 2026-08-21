@@ -1,0 +1,53 @@
+﻿bpm_compat_movement_german_national_valid_trigger = {
+	is_in_geographic_region = geographic_region_german_confederation
+	OR = {
+		country_has_primary_culture = cu:north_german
+		country_has_primary_culture = cu:south_german
+	}
+	OR = {
+		cu:north_german.culture_current_fervor > 10
+		cu:south_german.culture_current_fervor > 10
+	}
+	NOT = {
+		c:GER ?= this
+	}
+}
+
+bpm_compat_movement_german_national_pop_char_support_trigger = {
+	culture = {
+		has_discrimination_trait = heritage_germanic
+	}
+}
+
+bpm_compat_movement_italian_national_valid_trigger = {
+	is_in_geographic_region = geographic_region_italy_old
+	OR = {
+		country_has_primary_culture = cu:north_italian
+		country_has_primary_culture = cu:south_italian
+	}
+	OR = {
+		cu:north_italian.culture_current_fervor > 10
+		cu:south_italian.culture_current_fervor > 10
+	}
+	NOR = {
+		c:AUS ?= this
+		c:KUK ?= this
+		c:HRE ?= this
+		c:ITA ?= this
+	}
+}
+
+bpm_compat_character_support_weight_pan_nat_trigger = {
+	OR = {
+		has_ideology = ideology:ideology_ethno_nationalist
+		has_liberal_ideology = yes
+		has_progressive_ideology = yes
+	}
+}
+
+bpm_compat_character_not_support_weight_pan_nat_trigger = {
+	has_reactionary_ideology = yes
+	NOT = {
+		has_ideology = ideology:ideology_ethno_nationalist
+	}
+}

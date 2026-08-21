@@ -1,0 +1,47 @@
+﻿REPLACE:set_cultural_minority_movement_core_ideology_effect = {
+	if = {
+		limit = {
+			culture = {
+				AND = {
+					shares_heritage_trait_with_any_primary_culture = root.owner
+					OR = {
+						shares_language_trait_group_with_any_primary_culture = root.owner
+						shares_tradition_trait_with_any_primary_culture = root.owner
+					}
+				}
+			}
+		}
+		set_core_ideology = ideology_pluralist_movement_1
+	}
+	else_if = {
+		limit = {
+			culture = {
+				shares_heritage_trait_group_with_any_primary_culture = root.owner
+				OR = {
+					shares_language_trait_group_with_any_primary_culture = root.owner
+					shares_tradition_trait_with_any_primary_culture = root.owner
+				}
+			}
+		}
+		set_core_ideology = ideology_pluralist_movement_3
+	}
+	else_if = {
+		limit = {
+			culture = {
+				shares_heritage_trait_group_with_any_primary_culture = root.owner
+			}
+		}
+		set_core_ideology = ideology_pluralist_movement_2
+	}
+	else_if = {
+		limit = {
+			culture = {
+				shares_language_trait_with_any_primary_culture = root.owner
+			}
+		}
+		set_core_ideology = ideology_pluralist_movement_3
+	}
+	else = {
+		set_core_ideology = ideology_pluralist_movement_4
+	}
+}

@@ -1,0 +1,83 @@
+﻿REPLACE_OR_CREATE:bpm_compat_movement_german_national_pop_char_support_trigger = {
+	culture = {
+		has_discrimination_trait = tradition_german
+	}
+}
+
+REPLACE_OR_CREATE:bpm_compat_movement_german_national_valid_trigger = {
+	is_in_geographic_region = geographic_region_german_confederation
+	OR = {
+		country_has_primary_culture = cu:north_german
+		country_has_primary_culture = cu:south_german
+		country_has_primary_culture = cu:low_saxon
+		country_has_primary_culture = cu:pomeranian
+		country_has_primary_culture = cu:prussian
+		country_has_primary_culture = cu:silesian
+		country_has_primary_culture = cu:saxon
+		country_has_primary_culture = cu:westphalian
+		country_has_primary_culture = cu:hessian
+		country_has_primary_culture = cu:rhenish
+		country_has_primary_culture = cu:swabian
+		country_has_primary_culture = cu:alsacian
+	}
+	OR = {
+		cu:north_german.culture_current_fervor > 10
+		cu:south_german.culture_current_fervor > 10
+		cu:low_saxon.culture_current_fervor > 10
+		cu:pomeranian.culture_current_fervor > 10
+		cu:prussian.culture_current_fervor > 10
+		cu:silesian.culture_current_fervor > 10
+		cu:saxon.culture_current_fervor > 10
+		cu:westphalian.culture_current_fervor > 10
+		cu:hessian.culture_current_fervor > 10
+		cu:rhenish.culture_current_fervor > 10
+		cu:swabian.culture_current_fervor > 10
+		cu:alsacian.culture_current_fervor > 10
+	}
+	NOT = {
+		c:GER ?= this
+	}
+}
+
+REPLACE_OR_CREATE:bpm_compat_movement_italian_national_valid_trigger = {
+	is_in_geographic_region = geographic_region_italy_old
+	OR = {
+		country_has_primary_culture = cu:north_italian
+		country_has_primary_culture = cu:south_italian
+		country_has_primary_culture = cu:sardinian
+		country_has_primary_culture = cu:sicilian
+		country_has_primary_culture = cu:central_italian
+		country_has_primary_culture = cu:tuscan
+	}
+	OR = {
+		cu:north_italian.culture_current_fervor > 10
+		cu:south_italian.culture_current_fervor > 10
+		cu:sardinian.culture_current_fervor > 10
+		cu:sicilian.culture_current_fervor > 10
+		cu:central_italian.culture_current_fervor > 10
+		cu:tuscan.culture_current_fervor > 10
+	}
+	NOR = {
+		c:AUS ?= this
+		c:KUK ?= this
+		c:HRE ?= this
+		c:ITA ?= this
+	}
+}
+
+REPLACE_OR_CREATE:bpm_compat_character_support_weight_pan_nat_trigger = {
+	OR = {
+		has_ideology = ideology:ideology_ethno_nationalist
+		has_ideology = ideology:ideology_fascist
+		has_liberal_ideology = yes
+		has_progressive_ideology = yes
+	}
+}
+
+REPLACE_OR_CREATE:bpm_compat_character_not_support_weight_pan_nat_trigger = {
+	has_reactionary_ideology = yes
+	NOR = {
+		has_ideology = ideology:ideology_ethno_nationalist
+		has_ideology = ideology:ideology_fascist
+	}
+}

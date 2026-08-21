@@ -262,13 +262,7 @@
 			}
 		}
 		
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.015
-			add = 1
-		}
+		multiply = cultural_majority_attraction_from_fervor_value
 
 		if = {
 			limit = {
@@ -1041,13 +1035,7 @@ REPLACE:movement_cultural_minority = {
 			}
 		}
 		
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.015
-			add = 1
-		}
+		multiply = cultural_minority_attraction_from_fervor_value
 
 		if = { # Funnel people into Indias unique movements
 			limit = {
@@ -1268,10 +1256,13 @@ REPLACE:movement_cultural_minority = {
 			trigger_else_if = {
 				limit = {
 					owner = {
-						is_country_type = colonial
+						country_is_colonial_or_company = yes
 					}
 				}
-				NOT = {
+				bpm_ig_is_colonialist = no
+				NOR = {
+					has_ideology = ideology:ideology_cit_colonial_segregationist
+					has_ideology = ideology:Ideology_dop_metropole_loyalist
 					has_ideology = ideology:ideology_colonialist
 				}
 			}
