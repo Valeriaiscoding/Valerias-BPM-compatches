@@ -1,19 +1,4 @@
-﻿# INJECT:ideology_anarchist = { # TODO eventually
-# 	lawgroup_migration = {
-# 		law_migration_controls = disapprove
-# 		law_closed_borders = strongly_disapprove
-# 		law_no_migration_controls = neutral
-# 	}
-
-# 	lawgroup_internal_security = {
-# 		law_guaranteed_liberties = approve
-# 		law_no_home_affairs = neutral
-# 		law_national_guard = neutral
-# 		law_secret_police = strongly_disapprove
-# 	}
-# }
-
-INJECT:ideology_gov_anarchist = {
+﻿INJECT:ideology_gov_anarchist = {
 	lawgroup_migration = {
 		law_migration_controls = disapprove
 		law_closed_borders = strongly_disapprove
@@ -28,19 +13,3 @@ INJECT:ideology_gov_anarchist = {
 		law_collectivized_agriculture = approve
 	}
 }
-
-# INJECT:ideology_nihilist = { # TODO eventually
-# 	lawgroup_education_system = {
-# 		law_religious_schools = disapprove
-# 		law_no_schools = neutral
-# 		law_public_schools = neutral
-# 		law_private_schools = neutral
-# 	}
-
-# 	lawgroup_health_system = {
-# 		law_private_health_insurance = neutral
-# 		law_no_health_system = neutral
-# 		law_charitable_health_system = disapprove
-# 		law_public_health_insurance = neutral
-# 	}
-# }

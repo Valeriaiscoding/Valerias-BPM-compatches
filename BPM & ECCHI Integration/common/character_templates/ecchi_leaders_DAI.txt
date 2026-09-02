@@ -1,5 +1,4 @@
 ﻿### Dai Viet / Vietnam
-# TODO 
 ecchi_dai_truong_dinh = {
     first_name = ecchi_Dinh
     last_name = Truong

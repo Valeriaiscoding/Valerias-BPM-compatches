@@ -1,6 +1,6 @@
 ﻿namespace = sul_events
 
-sul_events.1 = {	#TODO
+sul_events.1 = {
 	type = country_event
 	placement = root
 	title = sul_events.1.t
@@ -55,7 +55,11 @@ sul_events.1 = {	#TODO
 		else = {
 			add_loyalists = {
 				value = small_radicals
-				interest_group = ig:ig_trade_unions
+				pop_type = laborers
+			}
+			add_loyalists = {
+				value = small_radicals
+				pop_type = machinists
 			}
 		}
 		ai_chance = {
@@ -71,7 +75,11 @@ sul_events.1 = {	#TODO
 		}
 		add_loyalists = {
 			value = medium_radicals
-			interest_group = ig:ig_trade_unions
+			pop_type = laborers
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = machinists
 		}
 		ai_chance = {
 			base = 50
@@ -94,12 +102,18 @@ sul_events.1 = {	#TODO
 					has_law = law_type:law_factory_councils
 				}
 				any_scope_politician = {
+					OR = {
+						is_interest_group_leader = yes
+						is_ruler_of_own_country = yes
+						has_role_of_type = bpm_character_role_hog
+						prominence >= 50
+					}
 					interest_group = {
 						is_in_government = yes
 					}
-					OR = {
-						has_ideology = ideology:ideology_communist
-						has_ideology = ideology:ideology_anarchist
+					OR = { 
+						has_ideology = ideology:ideology_syndicalist
+						has_ideology = ideology:ideology_anarchist_syndicalist
 					}
 				}
 			}
@@ -119,10 +133,19 @@ sul_events.1 = {	#TODO
 			modifier = {
 				trigger = {
 					any_scope_politician = {
+						OR = {
+							is_interest_group_leader = yes
+							is_ruler_of_own_country = yes
+							has_role_of_type = bpm_character_role_hog
+							prominence >= 50
+						}
 						interest_group = {
 							is_in_government = yes
 						}
-						has_ideology = ideology:ideology_anarchist
+						OR = { 
+							has_ideology = ideology:ideology_syndicalist
+							has_ideology = ideology:ideology_anarchist_syndicalist
+						}
 					}
 				}
 				add = 100
@@ -145,6 +168,12 @@ sul_events.1 = {	#TODO
 					country_has_voting_franchise = no
 				}
 				any_scope_politician = {
+					OR = {
+						is_interest_group_leader = yes
+						is_ruler_of_own_country = yes
+						has_role_of_type = bpm_character_role_hog
+						prominence >= 50
+					}
 					interest_group = {
 						is_in_government = yes
 					}

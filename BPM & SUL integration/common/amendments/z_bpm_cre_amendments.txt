@@ -33,8 +33,8 @@
 	amendment_activism_multiplier = 0
 }
 
-cre_amendment_democratic_centralism = {
-	parent = law_party_socialist_only # TODO? parent law
+cre_amendment_democratic_centralism = { # TODO
+	parent = law_party_socialist_only
 
 	allowed_laws = {
 		law_universal_suffrage

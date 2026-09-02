@@ -231,7 +231,7 @@ je_communism_2 = {
 					limit = {
 						has_diplomatic_relevance = root
 						any_political_movement = {
-							movement_is_socialist = yes
+							bpm_movement_is_socialist = yes
 						}
 					}
 					trigger_event = cre_events.5

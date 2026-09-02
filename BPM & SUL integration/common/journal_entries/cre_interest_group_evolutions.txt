@@ -1,4 +1,5 @@
 ﻿#Intelligentsia replaces republican/constitutionalist with socialist
+# TODO everything
 je_cre_red_intelligentsia = {
 	icon = "gfx/interface/icons/ideology_icons/socialist.dds"
 

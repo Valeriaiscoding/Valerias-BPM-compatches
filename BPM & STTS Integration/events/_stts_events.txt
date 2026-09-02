@@ -324,7 +324,6 @@ stts_movement.2 = {
 		default_option = yes
 		trigger = {
 			is_subject = no 
-			#TODO add something
 		}
 		ai_chance = {
 			base = 100

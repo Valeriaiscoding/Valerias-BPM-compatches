@@ -1,0 +1,8 @@
+state_pop_support_movement_market_liberal_mult={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

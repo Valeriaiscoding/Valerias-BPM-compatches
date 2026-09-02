@@ -1,4 +1,5 @@
-﻿cre_red_intelligentsia_bar = {
+﻿# TODO everything
+cre_red_intelligentsia_bar = {
  	name = "cre_red_intelligentsia_bar"
  	desc = "cre_red_intelligentsia_bar_desc"
 
@@ -180,14 +181,14 @@ cre_undo_evolutions_bar = {
 		if = {
 			limit = {
 				any_political_movement = {
-					movement_is_socialist = yes
+					bpm_movement_is_socialist = yes
 				}
 			}
 			subtract = {
 				desc = "communism_progress_from_movement_support_tt"
 				every_political_movement = {
 					limit = {
-						movement_is_socialist = yes
+						bpm_movement_is_socialist = yes
 					}
 					add = {
 						value = this.political_movement_support
@@ -199,14 +200,14 @@ cre_undo_evolutions_bar = {
 		if = {
 			limit = {
 				any_political_movement = {
-					movement_is_socialist = yes
+					bpm_movement_is_socialist = yes
 				}
 			}
 			subtract = {
 				desc = "communism_progress_from_movement_activism_tt"
 				every_political_movement = {
 					limit = {
-						movement_is_socialist = yes
+						bpm_movement_is_socialist = yes
 					}
 					add = {
 						value = this.political_movement_radicalism

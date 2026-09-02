@@ -571,7 +571,7 @@ cre_events.5 = {
 		}
 		every_political_movement = {
 			limit = {
-				movement_is_socialist = yes
+				bpm_movement_is_socialist = yes
 			}
 			add_modifier = {
 				name = cre_movement_inspired_modifier
@@ -628,7 +628,7 @@ cre_events.5 = {
 		}
 		every_political_movement = {
 			limit = {
-				movement_is_socialist = yes
+				bpm_movement_is_socialist = yes
 			}
 			add_modifier = {
 				name = cre_movement_inspired_modifier
@@ -692,7 +692,7 @@ cre_events.5 = {
 		}
 		every_political_movement = {
 			limit = {
-				movement_is_socialist = yes
+				bpm_movement_is_socialist = yes
 			}
 			add_modifier = {
 				name = cre_movement_inspired_modifier
@@ -743,7 +743,7 @@ cre_events.5 = {
 		}
 		every_political_movement = {
 			limit = {
-				movement_is_socialist = yes
+				bpm_movement_is_socialist = yes
 			}
 			add_modifier = {
 				name = cre_movement_inspired_modifier
@@ -1459,7 +1459,7 @@ cre_events.12 = {
 		name = cre_events.12.b
 		every_political_movement = {
 			limit = {
-				movement_is_socialist = yes
+				bpm_movement_is_socialist = yes
 			}
 			add_modifier = {
 				name = cre_reform_into_revolution_modifier
