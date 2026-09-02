@@ -1,0 +1,231 @@
+﻿cre_purge_academia_button = {
+	name = "cre_purge_academia_button"
+	desc = "cre_purge_academia_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_public_schools
+		OR = {
+			has_law_or_variant = law_type:law_censorship
+			has_law_or_variant = law_type:law_outlawed_dissent
+		}
+		OR = {
+			has_law_or_variant = law_type:law_secret_police
+			has_law_or_variant = law_type:law_national_guard
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_guaranteed_liberties
+		}
+	}
+
+	cooldown = {
+		years = 10
+	}
+
+	effect = {
+		add_loyalists = {
+			value = large_radicals
+			interest_group = ig:ig_intelligentsia
+		}
+		add_radicals = {
+			value = small_radicals
+			pop_type = academics
+		}
+		kill_population_percent = {
+			percent = 0.01
+			pop_type = academics
+		}
+		every_scope_character = {
+			limit = {
+				has_socialist_ideology = no
+				interest_group = {
+					is_interest_group_type = ig_intelligentsia
+				}
+			}
+			exile_character = yes
+		}
+		if = {
+			limit = {
+				ruler = {
+					has_socialist_ideology = yes
+				}
+			 }
+			ruler.ideology = {
+				save_scope_as = party_ideology
+			}
+		} else = {
+			ideology:ideology_communist = {
+				save_scope_as = party_ideology
+			}
+		}
+		create_character = {
+			interest_group = ig:ig_intelligentsia
+			ideology = scope:party_ideology
+			ig_leader = yes
+			on_created = {
+				add_trait = political_appointee
+			}
+		}
+		add_modifier = {
+			name = cre_purged_academia
+			years = 5
+			is_decaying = yes
+		}
+	}
+
+
+}
+
+cre_five_year_plan_extension_button = {
+	name = cre_five_year_plan_extension_button
+	desc = cre_five_year_plan_extension_button_desc
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = already_asked_for_extension_neg_tt
+			NOT = {
+				scope:journal_entry = {
+					has_variable = asked_for_extension_var
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = add_additional_three_years_to_petition_tt
+		scope:journal_entry = {
+			set_variable = asked_for_extension_var
+		}
+		add_modifier = {
+			name = cre_five_year_plan_delay_modifier
+			years = 3
+		}
+	}
+
+	ai_chance = {
+		value = -35
+		if = {
+			limit = {
+				scope:journal_entry = {
+					journal_entry_age > 500 # days
+				}
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				scope:journal_entry = {
+					journal_entry_age > 1000 # days
+				}
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				scope:journal_entry = {
+					journal_entry_age > 1500 # days
+				}
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				scope:journal_entry = {
+					journal_entry_age > 2000 # days
+				}
+			}
+			add = 10
+		}
+	}
+}
+
+cre_five_year_plan_shock_work_button = {
+	name = cre_five_year_plan_shock_work_button
+	desc = cre_five_year_plan_shock_work_button_desc
+
+	visible = {
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+	}
+
+	possible = {
+		scope:journal_entry = {
+			NOT = {
+				has_modifier = cre_shock_work_modifier
+			}
+		}
+	}
+
+	effect = {
+		scope:journal_entry = {
+			add_modifier = cre_shock_work_modifier
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+cre_five_year_fudge_quotas_button = {
+	name = cre_five_year_fudge_quotas_button
+	desc = cre_five_year_fudge_quotas_button_desc
+
+	visible = {
+		has_law_or_variant = law_type:law_command_economy
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_oligarchy
+			has_law_or_variant = law_type:law_technocracy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+		NOT = {
+			has_modifier = cre_falsified_economic_data_modifier
+		}
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_command_economy
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_oligarchy
+			has_law_or_variant = law_type:law_technocracy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			name = cre_falsified_economic_data_modifier
+			years = 10
+		}
+		custom_tooltip = {
+			text = false_gdp_report
+			scope:journal_entry = {
+				set_variable = fudged_quotas
+			}
+		}
+
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				scope:journal_entry = {
+					journal_entry_age > 2000 # days
+				}
+			}
+			add = 10
+		}
+	}
+}

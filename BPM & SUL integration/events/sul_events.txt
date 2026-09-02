@@ -1,0 +1,184 @@
+﻿namespace = sul_events
+
+sul_events.1 = {	#TODO
+	type = country_event
+	placement = root
+	title = sul_events.1.t
+	desc = sul_events.1.d
+	flavor = sul_events.1.f
+	duration = 3
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/labor_movement.dds"
+
+	trigger = {
+		has_law = law_type:law_council_republic
+		NOR = {
+			has_law = law_type:law_socialist_labor_unions
+			has_law = law_type:law_syndicalism
+		}
+		NOT = {
+			has_variable = sul_chose_unions
+		}
+		is_revolutionary = no
+		is_secessionist = no
+		enacting_any_law = no
+	}
+
+	immediate = {
+		set_variable = sul_chose_unions
+	}
+
+	#default right to associate
+	option = {
+		name = sul_events.1.a
+		default_option = yes
+		trigger = {
+			NOT = {
+				has_law_or_variant = law_type:law_factory_councils
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_law_or_variant = law_type:law_right_to_associate
+					has_law_or_variant = law_type:law_factory_councils
+				}
+			 }
+			activate_law = law_type:law_right_to_associate
+		}
+		else = {
+			add_loyalists = {
+				value = small_radicals
+				interest_group = ig:ig_trade_unions
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	#default factory councils
+	option = {
+		name = sul_events.1.e
+		trigger = {
+			has_law = law_type:law_factory_councils
+		}
+		add_loyalists = {
+			value = medium_radicals
+			interest_group = ig:ig_trade_unions
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	#syndicalism
+	option = {
+		name = sul_events.1.b
+		highlighted_option = yes
+		trigger = {
+			OR = {
+				has_law_or_variant = law_type:law_anarchy
+				bpm_country_laws_no_voting = no
+			}
+			OR = {
+				OR = {
+					has_law = law_type:law_anarchy
+					has_law = law_type:law_cooperative_ownership
+					has_law = law_type:law_factory_councils
+				}
+				any_scope_politician = {
+					interest_group = {
+						is_in_government = yes
+					}
+					OR = {
+						has_ideology = ideology:ideology_communist
+						has_ideology = ideology:ideology_anarchist
+					}
+				}
+			}
+		}
+		activate_law = law_type:law_syndicalism
+		if = {
+			limit = {
+				NOR = {
+					has_law_or_variant = law_type:law_cooperative_ownership
+					enacting_any_law = yes
+				}
+			}
+			start_enactment = law_type:law_cooperative_ownership
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				trigger = {
+					any_scope_politician = {
+						interest_group = {
+							is_in_government = yes
+						}
+						has_ideology = ideology:ideology_anarchist
+					}
+				}
+				add = 100
+			}
+		}
+	}
+
+	#party unions
+	option = {
+		name = sul_events.1.c
+		highlighted_option = yes
+		trigger = {
+			NOT = {
+				has_law_or_variant = law_type:law_anarchy
+			}
+			OR = {
+				OR = {
+					has_law = law_type:law_single_party_state
+					has_law = law_type:law_command_economy
+					country_has_voting_franchise = no
+				}
+				any_scope_politician = {
+					interest_group = {
+						is_in_government = yes
+					}
+					OR = {
+						has_ideology = ideology:ideology_communist
+						has_ideology = ideology:ideology_vanguardist
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_law_or_variant = law_type:law_right_to_associate
+					has_law_or_variant = law_type:law_factory_councils
+				}
+			}
+			start_enactment = law_type:law_socialist_labor_unions #important for anti-vanguardist revolutions
+		} else = {
+			activate_law = law_type:law_syndicalism
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					any_scope_politician = {
+						interest_group = {
+							is_in_government = yes
+						}
+						has_ideology = ideology:ideology_vanguardist
+					}
+				}
+				add = 200
+			}
+		}
+	}
+}

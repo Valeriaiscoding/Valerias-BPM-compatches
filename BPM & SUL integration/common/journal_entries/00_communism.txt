@@ -1,0 +1,689 @@
+﻿je_communism_1 = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = communism_1_done }
+		OR = {
+			has_technology_researched = socialism
+			has_technology_researched = anarchism
+		}
+	}
+
+	scripted_progress_bar = communism_1_progress_bar
+
+	possible = {
+		any_political_movement = {
+			OR = {
+				is_political_movement_type = movement_socialist
+				is_political_movement_type = movement_anarchist
+				is_political_movement_type = movement_communist
+			}
+		}
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = root_country
+		}
+		set_communism_vars = yes
+		trigger_event = { id = communism.10 days = 1 popup = yes }
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			calculate_communism_progress = yes
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			5 = communism.7
+		}
+		effect = {
+			calculate_communism_progress = yes
+		}
+	}
+
+	fail = {
+		OR = {
+			custom_tooltip = {
+				text = communism_progress_bar_at_full_tt
+				scope:journal_entry = {
+					"scripted_bar_progress(communism_1_progress_bar)" >= 100
+				}
+			}
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+
+	on_fail = {
+		set_variable = communism_1_done
+		if = {
+			limit = {
+				NOT = {
+					has_law_or_variant = law_type:law_council_republic
+				}
+			}
+			trigger_event = { id = communism.1 popup = yes }
+		}
+		# else = { # Mirrors effects of communism.1, skips je_communism_2
+		# 	if = {
+		# 		limit = {
+		# 			any_interest_group = {
+		# 				law_stance = {
+		# 					law = law_type:law_council_republic
+		# 					value > neutral
+		# 				}
+		# 			}
+		# 		}
+		# 		random_interest_group = {
+		# 			limit = {
+		# 				law_stance = {
+		# 					law = law_type:law_council_republic
+		# 					value > neutral
+		# 				}
+		# 			}
+		# 			set_variable = communist_ig_var
+		# 		}
+		# 	}
+		# 	else = {
+		# 		ig:ig_trade_unions ?= {
+		# 			set_variable = communist_ig_var
+		# 		}
+		# 	}
+		# 	trigger_event = { id = communism.2 popup = yes }
+		# }
+		custom_tooltip = communism_je_1_fail_tt
+	}
+
+	event_outcome_failed_effect_desc = {
+		header = communism.1.a
+		effect = {
+			execute_event_option = { event = communism.1 option = 0 }
+		}
+	}
+
+	event_outcome_failed_effect_desc = {
+		header = communism.1.b
+		effect = {
+			execute_event_option = { event = communism.1 option = 1 }
+		}
+	}
+
+	event_outcome_failed_effect_desc = {
+		header = communism.1.c
+		effect = {
+			execute_event_option = { event = communism.1 option = 2 }
+		}
+	}
+
+	event_outcome_failed_effect_desc = {
+		header = communism.1.d
+		effect = {
+			execute_event_option = { event = communism.1 option = 3 }
+		}
+	}
+
+	timeout = 1095
+
+	on_timeout = {
+		trigger_event = { id = communism.11 popup = yes }
+		custom_tooltip = communism_je_1_complete_tt
+	}
+
+	event_outcome_timeout_effect_desc = {
+		header = communism.11.a
+		effect = { 
+			execute_event_option = { event = communism.11 option = 0 }
+		}
+	}
+
+	event_outcome_timeout_effect_desc = {
+		header = communism.11.b
+		effect = { 
+			execute_event_option = { event = communism.11 option = 1 }
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_communism_2 = {
+	icon = "gfx/interface/icons/invention_icons/socialism.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	is_shown_when_inactive = {
+		OR = {
+			has_technology_researched = socialism
+			has_technology_researched = anarchism
+		}
+	}
+	is_progressing = {
+		has_law_or_variant = law_type:law_council_republic
+		has_revolution = no
+		has_any_secessionists_broken_out = no
+		is_at_war = no
+	}
+	modifiers_while_active = {
+		cre_revolutionary_optimism_modifier
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+		is_revolutionary = no
+		has_revolution = no
+		has_any_secessionists_broken_out = no
+		is_subject = no
+	}
+
+	immediate = {
+		set_variable = {
+			name = je_communism_2_var
+			value = 0
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_law_or_variant = law_type:law_council_republic
+					has_revolution = no
+					has_any_secessionists_broken_out = no
+					is_at_war = no
+				}
+				change_variable = {
+					name = je_communism_2_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		has_law_or_variant = law_type:law_council_republic
+		has_revolution = no
+		has_any_secessionists_broken_out = no
+		is_at_war = no
+	}
+
+	on_complete = {
+		set_variable = completed_je_communism_2
+		trigger_event = { id = communism.2 popup = yes }
+		if = {
+			limit = {
+				NOT = {
+					has_global_variable = actually_existing_socialism
+				}
+				country_rank >= rank_value:major_power
+			 }
+			 custom_tooltip = {
+				text = first_council_republic_established
+				save_scope_as = first_council_republic
+				every_country = {
+					limit = {
+						has_diplomatic_relevance = root
+						any_political_movement = {
+							movement_is_socialist = yes
+						}
+					}
+					trigger_event = cre_events.5
+				}
+				set_global_variable = actually_existing_socialism
+			 }
+		}
+		add_journal_entry = {
+			type = je_5_year_plan
+		}
+		if = {
+			limit = { 
+				OR = {
+					has_law_or_variant = law_type:law_factory_councils
+					has_law_or_variant = law_type:law_cooperative_ownership
+				}
+			}
+			bpm_rename_trade_unions_ig = yes
+		}
+		every_company = {
+			limit = {
+				executive = {
+					NOR = {
+						has_socialist_ideology = yes
+						interest_group ?= {
+							is_interest_group_type = ig_trade_unions
+						}
+						interest_group ?= {
+							is_interest_group_type = ig_petty_bourgeoisie
+						}
+						interest_group ?= {
+							is_interest_group_type = ig_intelligentsia
+						}
+					}		
+				}
+			}
+			executive = {
+				retire_character = yes
+			}
+		}
+		# #coop executives
+		# if = {
+		# 	limit = { 
+		# 		has_law_or_variant = law_type:law_cooperative_ownership
+		# 	}
+		# 	custom_tooltip = {
+		# 		text = new_executives_cooperative
+		# 		every_company = {
+		# 			limit = {
+		# 				executive = {
+		# 					NOR = {
+		# 						has_socialist_ideology = yes
+		# 						interest_group ?= {
+		# 							is_interest_group_type = ig_trade_unions
+		# 						}
+		# 					}
+		# 				}
+		# 			}
+		# 			root = {
+		# 				create_character = {
+		# 					interest_group = ig:ig_trade_unions
+		# 					role = executive
+		# 					save_scope_as = new_executive
+		# 				}
+		# 			}
+		# 			scope:new_executive = {
+		# 				set_character_as_executive = prev
+		# 			}
+		# 		}
+		# 	}
+		# }
+		# #command executives
+		# if = {
+		# 	limit = { 
+		# 		has_law_or_variant = law_type:law_command_economy
+		# 	}
+		# 	custom_tooltip = {
+		# 		text = new_executives_command_eco
+		# 		every_company = {
+		# 			limit = {
+		# 				executive = {
+		# 					has_socialist_ideology = no
+		# 				}
+		# 			}
+		# 			save_scope_as = replace_company
+		# 			root = {
+		# 				random_list = {
+		# 					50 = {
+		# 						create_character = {
+		# 							interest_group = ig:ig_intelligentsia
+		# 							on_created = {
+		# 								set_character_as_executive = scope:replace_company
+		# 							}
+		# 						}
+		# 					}
+		# 					50 = {
+		# 						create_character = {
+		# 							interest_group = ig:ig_petty_bourgeoisie
+		# 							on_created = {
+		# 								set_character_as_executive = scope:replace_company
+		# 							}
+		# 						}
+		# 					}
+		# 				}
+		# 			}
+		# 		}
+		# 	}
+		# }
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.2.a
+		effect = {
+			execute_event_option = { event = communism.2 option = 0 }
+		 }
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.2.b
+		effect = {
+			execute_event_option = { event = communism.2 option = 1 }
+		 }
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.2.c
+		effect = {
+			execute_event_option = { event = communism.2 option = 3 }
+		 }
+	}
+
+	current_value = {
+		value = root.var:je_communism_2_var
+	}
+
+	goal_add_value = {
+		add = 60
+	}
+
+	progressbar = yes
+}
+
+je_anarchy = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	complete = {
+		average_sol >= 16
+		has_law_or_variant = law_type:law_anarchy
+		has_law_or_variant = law_type:law_cooperative_ownership
+		has_law_or_variant = law_type:law_collectivized_agriculture
+		has_law_or_variant = law_type:law_elected_police
+		has_law_or_variant = law_type:law_protected_speech
+		has_law_or_variant = law_type:law_elected_officers
+		NOT = {
+			has_law_or_variant = law_type:law_state_religion
+		}
+		OR = {
+			has_law_or_variant = law_type:law_no_home_affairs
+			has_law_or_variant = law_type:law_guaranteed_liberties
+		}
+		has_law_or_variant = law_type:law_slavery_banned
+		has_revolution = no
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = communism.4
+			popup = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					any_scope_state = {
+						is_incorporated = yes
+						is_capital = no
+						count > 1
+					}
+				 }
+				trigger_event = {
+					id = cre_events.6
+					months = 6
+				}
+			}
+
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.4.a
+		effect = {
+			execute_event_option = { event = communism.4 option = 0 }
+		 }
+	}
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+}
+
+je_vanguard = {
+	icon = "gfx/interface/icons/invention_icons/unused/secret_police.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	complete = {
+		# id you change this, also change options in communism.2
+		any_interest_group = {
+			leader = {
+				OR = {
+					has_ideology = ideology:ideology_vanguardist
+					has_ideology = ideology:ideology_communist
+					has_ideology = ideology:ideology_anarchist
+				}
+			}
+			count >= 3
+		}
+		custom_tooltip = {
+			text = vanguard_custom_tooltip
+			NOT = {
+				any_interest_group = {
+					is_powerful = yes
+					leader = {
+						NOR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_anarchist
+						}
+					}
+				}
+			}
+		}
+		has_law_or_variant = law_type:law_single_party_state
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+		has_law_or_variant = law_type:law_secret_police
+		institution_investment_level = {
+			institution = institution_home_affairs
+			value >= 3
+		}
+		OR = {
+			has_law_or_variant = law_type:law_dedicated_police
+			has_law_or_variant = law_type:law_militarized_police
+		}
+		institution_investment_level = {
+			institution = institution_police
+			value >= 3
+		}
+		OR = {
+			has_law_or_variant = law_type:law_censorship
+			has_law_or_variant = law_type:law_outlawed_dissent
+		}
+		has_revolution = no
+	}
+
+	on_complete = {
+		trigger_event = { id = communism.5 popup = yes }
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.5.a
+		effect = {
+			execute_event_option = { event = communism.5 option = 0 }
+		 }
+	}
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+
+	on_weekly_pulse = {
+		events = {
+			communism.3
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			chance_of_no_event = 50
+			100 = cre_events.8 #Workers' Opposition
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = vanguard_instruction_status
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+}
+
+je_communist_welfare = {
+	icon = "gfx/interface/icons/institution_icons/social_security.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	complete = {
+		average_sol >= 13
+		literacy_rate >= 0.80
+		approaching_bureaucracy_shortage = no
+		has_law_or_variant = law_type:law_public_schools
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_public_health_insurance
+		institution_investment_level = {
+			institution = institution_health_system
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_old_age_pension
+		institution_investment_level = {
+			institution = institution_social_security
+			value >= 2
+		}
+		has_law_or_variant = law_type:law_worker_protections
+		OR = {
+			has_law_or_variant = law_type:law_limited_work_hours
+			has_law_or_variant = law_type:law_protected_leisure
+		}
+		institution_investment_level = {
+			institution = institution_workplace_safety
+			value >= 5
+		}
+		has_revolution = no
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = communism.6
+			popup = yes
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = communism.6.a
+		effect = {
+			execute_event_option = { event = communism.6 option = 0 }
+		 }
+	}
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+}
+
+je_5_year_plan = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	immediate = {
+		root = {
+			save_scope_as = five_year_plan_country
+		}
+	}
+
+	scripted_button = cre_five_year_plan_extension_button
+	scripted_button = cre_five_year_plan_shock_work_button
+	scripted_button = cre_five_year_fudge_quotas_button
+
+    timeout = {
+        value = 1825 # 5 years
+        if = {
+            limit = {
+                scope:journal_entry = {
+                    has_variable = asked_for_extension_var
+                }
+            }
+            add = 1095
+        }
+    }
+
+
+	complete = {
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+		custom_tooltip = {
+			text = custom_loc_five_year_plan_goal
+				scope:journal_entry = {
+				is_goal_complete = yes
+			}
+		}
+		in_default = no
+	}
+
+	on_complete = {
+		trigger_event = cre_events.13
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = cre_events.13.a
+		effect = {
+			execute_event_option = { event = cre_events.13 option = 0 }
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = cre_events.13.b
+		effect = {
+			execute_event_option = { event = cre_events.13 option = 1 }
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = cre_events.13.c
+		effect = {
+			execute_event_option = { event = cre_events.13 option = 2 }
+		}
+	}
+
+
+	current_value = {
+		if = {
+			limit = {
+				scope:journal_entry = {
+					goal_value = 0
+				}
+			}
+			value = 0
+		}
+		else = {
+			value = root.gdp
+		}
+		if = {
+			limit = {
+				scope:journal_entry = {
+					has_variable = fudged_quotas
+				}
+			}
+			multiply = 1.1
+		}
+	}
+
+	goal_add_value = {
+		value = root.gdp
+		multiply = 1.25
+	}
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+
+	progressbar = yes
+}

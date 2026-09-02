@@ -1,0 +1,366 @@
+﻿#Intelligentsia replaces republican/constitutionalist with socialist
+je_cre_red_intelligentsia = {
+	icon = "gfx/interface/icons/ideology_icons/socialist.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	is_shown_when_inactive = {
+		has_law_or_variant = law_type:law_council_republic
+		ig:ig_intelligentsia = {
+			NOT = {
+				has_ideology = ideology:ideology_socialist
+			}
+		}
+		OR = {
+			has_journal_entry = je_communism_2
+			custom_tooltip = {
+				text = council_republic_secured
+				has_variable = completed_je_communism_2
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = council_republic_secured
+			has_variable = completed_je_communism_2
+		}
+		ig:ig_intelligentsia = {
+			ig_counts_as_marginal = no
+		}
+	}
+
+	scripted_progress_bar = cre_red_intelligentsia_bar
+	scripted_button = cre_purge_academia_button
+
+	complete = {
+		custom_tooltip = {
+			text = progress_bar_complete
+			scope:journal_entry = {
+				"scripted_bar_progress(cre_red_intelligentsia_bar)" >= 60
+			}
+		}
+		any_revolution_ongoing = no
+	}
+
+	on_complete = {
+		cre_socialist_intelligentsia_effect = yes
+		add_loyalists = {
+			value = medium_radicals
+			interest_group = ig:ig_intelligentsia
+		}
+		ig:ig_intelligentsia = {
+			leader = {
+				if = {
+					limit = {
+						NOT = {
+							has_socialist_ideology = yes
+						}
+						is_historical = no
+					}
+					set_ideology = root.ruler.ideology
+				} else_if = {
+					limit = {
+						NOT = {
+							has_socialist_ideology = yes
+						}
+						is_historical = yes
+					}
+					exile_character = yes
+					root = {
+						create_character = {
+							interest_group = ig:ig_intelligentsia
+							ideology = root.ruler.ideology
+							ig_leader = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	invalid = {
+		NOT = {
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+#Intelligentsia become Nomenklatura and support an authoritarian state
+je_cre_nomenklatura_develop = {
+	icon = "gfx/interface/icons/invention_icons/central_planning.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	is_shown_when_inactive = {
+		has_law_or_variant = law_type:law_council_republic
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_party_single
+			has_law_or_variant = law_type:law_advisory_body
+			bpm_country_laws_no_voting = no
+		}
+		custom_tooltip = {
+			text = council_republic_secured
+			has_variable = completed_je_communism_2
+		}
+	}
+
+	possible = {
+		ig:ig_intelligentsia = {
+			ig_counts_as_marginal = no
+			has_ideology = ideology:ideology_socialist
+		}
+		has_law_or_variant = law_type:law_appointed_bureaucrats
+	}
+
+	scripted_progress_bar = cre_nomenklatura_bar
+
+	complete = {
+		ig:ig_intelligentsia = {
+			is_in_government = yes
+		}
+		custom_tooltip = {
+			text = progress_bar_complete
+			scope:journal_entry = {
+				"scripted_bar_progress(cre_nomenklatura_bar)" >= 60
+			}
+		}
+		any_revolution_ongoing = no
+	}
+
+	modifiers_while_active = {
+		cre_party_appointments
+	}
+
+	on_complete = {
+		cre_intelligentsia_to_nomenklatura_effect = yes
+		ig:ig_intelligentsia = {
+			leader = {
+				if = {
+					limit = {
+						NOT = {
+							ideology = root.ruler.ideology
+						}
+						is_historical = no
+					}
+					set_ideology = root.ruler.ideology
+				} else_if = {
+					limit = {
+						NOT = {
+							ideology = root.ruler.ideology
+						}
+						is_historical = yes
+					}
+					exile_character = yes
+					root = {
+						create_character = {
+							interest_group = ig:ig_intelligentsia
+							ideology = root.ruler.ideology
+							ig_leader = yes
+							on_created = {
+								add_trait = political_appointee
+							}
+						}
+					}
+				}
+			}
+		}
+		add_loyalists = {
+			value = medium_radicals
+			interest_group = ig:ig_intelligentsia
+		}
+		add_modifier = {
+			name = cre_apparatchiks_modifier
+			years = 20
+			is_decaying = yes
+		}
+	}
+
+	fail = {
+		NOT = {
+			has_law_or_variant = law_type:law_appointed_bureaucrats
+		}
+	}
+
+	invalid = {
+		NOT = {
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+#PB transform into Managers
+je_cre_managerial_revolution = {
+	icon = "gfx/interface/icons/invention_icons/bureaucracy.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	is_shown_when_inactive = {
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+			has_law_or_variant = law_type:law_council_republic
+		}
+		ig:ig_petty_bourgeoisie = {
+			NOR = {
+				has_ideology = ideology:ideology_cre_managerial
+				has_ideology = ideology:ideology_cre_managerial_cooperative
+			}
+		}
+	}
+
+	possible = {
+		ig:ig_petty_bourgeoisie = {
+			ig_counts_as_marginal = no
+		}
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+		custom_tooltip = {
+			text = council_republic_secured
+			has_variable = completed_je_communism_2
+		}
+	}
+
+	scripted_progress_bar = cre_pb_into_managers_bar
+
+	complete = {
+		custom_tooltip = {
+			text = progress_bar_complete
+			scope:journal_entry = {
+				"scripted_bar_progress(cre_pb_into_managers_bar)" >= 100
+			}
+		}
+		any_revolution_ongoing = no
+	}
+
+	on_complete = {
+		cre_pb_to_managers_effect = yes
+		add_loyalists = {
+			value = medium_radicals
+			interest_group = ig:ig_petty_bourgeoisie
+		}
+		ig:ig_petty_bourgeoisie = {
+			leader = {
+				if = {
+					limit = {
+						NOR = {
+							has_socialist_ideology = yes
+							has_ideology = ideology:ideology_moderate
+						}
+						is_historical = no
+					}
+					set_ideology = ideology:ideology_moderate
+				} else_if = {
+					limit = {
+						NOR = {
+							has_socialist_ideology = yes
+							has_ideology = ideology:ideology_moderate
+						}
+						is_historical = yes
+					}
+					exile_character = yes
+					root = {
+						create_character = {
+							interest_group = ig:ig_petty_bourgeoisie
+							ideology = ideology:ideology_moderate
+							ig_leader = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	invalid = {
+		NOR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+	}
+}
+
+#undo socialist evolutions
+je_cre_undo_evolutions = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	#added by deactivating council republic
+	scripted_progress_bar = cre_undo_evolutions_bar
+
+	complete = {
+		custom_tooltip = {
+			text = progress_bar_complete
+			scope:journal_entry = {
+				"scripted_bar_progress(cre_undo_evolutions_bar)" >= 100
+			}
+		}
+		custom_tooltip = {
+			text = pb_not_socialist
+			ig:ig_petty_bourgeoisie ?= {
+				interest_group_has_socialist_ideology = no
+			}
+		}
+		custom_tooltip = {
+			text = intelligentsia_not_socialist
+			ig:ig_intelligentsia ?= {
+				interest_group_has_socialist_ideology = no
+			}
+		}
+		custom_tooltip = {
+			text = armed_forces_not_socialist
+			ig:ig_armed_forces ?= {
+				interest_group_has_socialist_ideology = no
+			}
+		}
+		any_revolution_ongoing = no
+	}
+
+	on_complete = {
+		if = {
+			limit = {
+				ig:ig_petty_bourgeoisie ?= {
+					OR = {
+						has_ideology = ideology:ideology_cre_managerial
+						has_ideology = ideology:ideology_cre_managerial_cooperative
+					}
+				}
+			 }
+			cre_managers_to_pb_effect = yes
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia ?= {
+					has_ideology = ideology:ideology_socialist
+				} 
+			 }
+			 cre_undo_intelligentsia_evolution_effect = yes
+		}
+		cre_reset_armed_forces_effect = yes
+		if = {
+			limit = {
+				ig:ig_agrarian_populists ?= {
+					bpm_ig_is_socialist = yes
+				}
+			}
+			bpm_cre_agsoc_to_agpop_effect = yes
+		}
+		if = {
+			limit = {
+				ig:ig_reformist_socialists ?= {
+					has_ideology = ideology:ideology_gov_moderate_proletarian
+				}
+			}
+			bpm_cre_refsoc_to_socdem_effect = yes
+		}
+		bpm_rename_igs = yes
+	}
+
+	fail = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+}

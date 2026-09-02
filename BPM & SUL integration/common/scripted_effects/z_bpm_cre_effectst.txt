@@ -1,0 +1,472 @@
+REPLACE:cre_ig_into_socialist_effect = {
+	hidden_effect = {
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_republican
+				}
+				remove_ideology = ideology_republican
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_constitutionalist
+				}
+				remove_ideology = ideology_constitutionalist
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_technocratic
+				}
+				remove_ideology = ideology_technocratic
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_ideology = ideology:ideology_socialist
+				}
+			}
+			add_ideology = ideology_socialist
+		}
+	}
+	bpm_remove_all_gov_ideologies = yes
+	add_ideology = ideology_gov_moderate_proletarian
+	bpm_reorder_ideologies = yes
+}
+
+REPLACE:cre_black_army_effect = {
+	ig:ig_armed_forces ?= {
+		set_interest_group_name = ig_black_army
+		bpm_cre_ig_make_black_army = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_conservative_praetorian
+				}
+				remove_ideology = ideology_conservative_praetorian
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_liberal_praetorian
+				}
+				remove_ideology = ideology_liberal_praetorian
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_caudillismo
+				}
+				remove_ideology = ideology_caudillismo
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_patriotic
+				}
+				remove_ideology = ideology_patriotic
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_jingoist
+				}
+				remove_ideology = ideology_jingoist
+			}
+		}
+		cre_ig_into_socialist_effect = yes
+		bpm_remove_all_gov_ideologies = yes
+		bpm_remove_all_sta_ideologies = yes
+		bpm_remove_all_dop_ideologies = yes
+		bpm_remove_all_mil_ideologies = yes
+		bpm_remove_all_eco_ideologies = yes
+		add_ideology = ideology_dop_anarchist
+		add_ideology = ideology_sta_subjugated_state
+		add_ideology = ideology_mil_mass_army
+		bpm_reorder_ideologies = yes
+		
+		hidden_effect = {
+			add_ideology = ideology_cre_black_army
+		}
+	}
+}
+
+REPLACE:cre_red_army_effect = {
+	ig:ig_armed_forces ?= {
+		set_interest_group_name = ig_red_army
+		cre_ig_into_socialist_effect = yes
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_conservative_praetorian
+			}
+			remove_ideology = ideology_conservative_praetorian
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_liberal_praetorian
+			}
+			remove_ideology = ideology_liberal_praetorian
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_caudillismo
+			}
+			remove_ideology = ideology_caudillismo
+		}
+		bpm_remove_all_dop_ideologies = yes
+		bpm_remove_all_cit_ideologies = yes
+		bpm_remove_all_gov_ideologies = yes
+		bpm_remove_all_eco_ideologies = yes
+		bpm_remove_all_mil_ideologies = yes
+		add_ideology = ideology_dop_party_socialist
+		add_ideology = ideology_mil_mass_army
+		bpm_reorder_ideologies = yes
+	}
+}
+
+REPLACE:cre_devolve_commune_effect = {
+	random_scope_state = {
+		limit = {
+			is_incorporated = yes
+			is_capital = no
+		}
+		save_scope_as = new_commune_state
+	}
+	create_dynamic_country = {
+		origin = root
+		country_type = recognized
+		tier = principality
+		capital = scope:new_commune_state
+		on_created = {
+			activate_law = law_type:law_anarchy
+			activate_law = law_type:law_confederated
+			create_political_movement = {
+				type = movement_anarchist
+			}
+			set_ruling_interest_groups = {
+				ig_anarchists
+			}
+			ruler ?= {
+				set_interest_group = ig:ig_anarchists
+				set_ideology = ideology:ideology_anarchist
+			}
+			ig:ig_trade_unions ?= {
+				leader = {
+					set_ideology = ideology:ideology_anarchist
+				}
+			}
+			create_bidirectional_truce = {
+				country = root
+				months = 60
+			}
+			add_modifier = {
+				name = cre_anarchist_center_modifier
+				years = 25
+			}
+		}
+	}
+	hidden_effect = {
+		create_diplomatic_pact = {
+			country = scope:new_commune_state.owner
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = scope:new_commune_state.owner
+			type = da_overlord_grant_investment_rights
+		}
+		create_diplomatic_pact = {
+			country = scope:new_commune_state.owner
+			type = decrease_payments
+		}
+		scope:new_commune_state.owner = {
+			add_liberty_desire = -100
+			change_relations = {
+				country = root
+				value = 200
+			}
+		}
+		if = {
+			limit = {
+				is_in_power_bloc = yes
+			 }
+			 power_bloc = {
+				add_leverage = {
+					target = scope:new_commune_state.owner
+					value = 2000
+				}
+			 }
+		}
+	}
+}
+
+## Democratic/Anarchy:
+# TUs -> Workers' Councils
+# Intelligentsia -> replace republican with socialist
+# PB -> Managers with Elective Managerial
+
+## Autocratic/Single-Party State
+# Intelligentsia -> replace republican with socialist, replace liberal with bureaucratic
+# TUs stay TUs
+# PB -> Managers with Professional-Managerial
+
+cre_pb_to_managers_effect = {
+	ig:ig_petty_bourgeoisie ?= {
+		set_interest_group_name = ig_managers
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_reactionary
+			}
+			remove_ideology = ideology_reactionary
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_modernizer
+			}
+			remove_ideology = ideology_modernizer
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_republican
+			}
+			remove_ideology = ideology_republican
+		}
+		usfp_remove_american_ideologies = yes
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_cooperative_ownership
+				}
+			 }
+			 add_ideology = ideology_cre_managerial_cooperative	
+		} else = {
+			add_ideology = ideology_cre_managerial
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_ethnostate
+						has_law_or_variant = law_type:law_national_supremacy
+					}
+				}
+			 }
+			 add_ideology = ideology_reactionary_supremacist
+		} else_if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_multicultural
+						has_law_or_variant = law_type:law_cultural_exclusion
+					}
+				}
+			}
+			add_ideology = ideology_reactionary_exclusionist
+		} else = {
+			add_ideology = ideology_reactionary_segregationist
+		}
+	}
+}
+
+cre_socialist_intelligentsia_effect = {
+	ig:ig_intelligentsia ?= {
+		cre_ig_into_socialist_effect = yes
+		usfp_remove_american_ideologies = yes
+	}
+}
+
+cre_intelligentsia_to_nomenklatura_effect = {
+	ig:ig_intelligentsia ?= {
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_liberal
+				}
+				remove_ideology = ideology_liberal
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_liberal_modern
+				}
+				remove_ideology = ideology_liberal_modern
+				if = {
+					limit = {
+						NOT = {
+							has_ideology = ideology:ideology_feminist_ig
+						}
+					}
+					add_ideology = ideology_feminist_ig
+				}
+		}
+		set_interest_group_name = ig_nomenklatura
+		add_ideology = ideology_cre_bureaucratic
+		set_variable = chose_vanguardism
+	}
+}
+
+cre_undo_intelligentsia_evolution_effect = {
+	ig:ig_intelligentsia ?= {
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_socialist
+			 }
+			 remove_ideology = ideology_socialist
+			 add_ideology = ideology_republican
+		}
+		if = {
+			limit = { 
+				has_ideology = ideology:ideology_cre_bureaucratic #intelligentsia keep their illiberalism, ie post-soviet russia
+			}
+			set_interest_group_name = ig_intelligentsia
+			remove_variable = chose_vanguardism
+		}
+	}
+}
+
+
+cre_managers_to_pb_effect = {
+	ig:ig_petty_bourgeoisie ?= {
+		set_interest_group_name = ig_petty_bourgeoisie
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_cre_managerial
+			 }
+			remove_ideology = ideology_cre_managerial
+		}
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_cre_managerial_cooperative
+			 }
+			remove_ideology = ideology_cre_managerial_cooperative
+		}
+		add_ideology = ideology_modernizer
+	}
+}
+
+
+REPLACE:cre_reset_armed_forces_effect = {
+	ig:ig_armed_forces ?= {
+		if = {
+			limit = {
+				bpm_ig_is_anarachist = yes
+			}
+			remove_variable = chose_anarchism
+			hidden_effect = {
+				remove_ideology = ideology_socialist
+				remove_ideology = ideology_cre_black_army
+				add_ideology = ideology_jingoist
+				add_ideology = ideology_patriotic
+			}
+			set_interest_group_name = ig_armed_forces
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_instutional_state
+		}
+		if = {
+			limit = {
+				bpm_ig_is_socialist = yes
+				bpm_ig_is_anarachist = no
+				NOT = {
+					has_ideology = ideology:ideology_cre_black_army
+				}
+			 }
+			hidden_effect = {
+				remove_ideology = ideology_socialist
+			}
+			set_interest_group_name = ig_armed_forces
+			remove_variable = chose_vanguardism
+			remove_variable = chose_communism
+		}
+		bpm_remove_all_dop_ideologies = yes
+		bpm_remove_all_gov_ideologies = yes
+		bpm_remove_all_mil_ideologies = yes
+		add_ideology = ideology_dop_state_power
+		add_ideology = ideology_mil_institutional_militarist
+		bpm_reorder_ideologies = yes
+	}
+}
+
+bpm_cre_agsoc_to_agpop_effect = {
+	bpm_remove_all_gov_ideologies = yes
+	add_ideology = ideology_gov_radical_republican
+	bpm_remove_all_eco_ideologies = yes
+	add_ideology = ideology_eco_modern_agrarian
+	bpm_reorder_ideologies = yes
+	leader = {
+		if = {
+			limit = {
+				bpm_leader_is_socialist = yes
+			}
+			set_ideology = ideology:ideology_center_leader
+		}
+	}
+}
+
+bpm_cre_refsoc_to_socdem_effect = {
+	bpm_remove_all_gov_ideologies = yes
+	add_ideology = ideology_gov_radical_republican
+	bpm_remove_all_eco_ideologies = yes
+	add_ideology = ideology_eco_socialist_mixed_economy
+	bpm_remove_all_cit_ideologies = yes
+	add_ideology = ideology_cit_liberal_nationalist
+	bpm_reorder_ideologies = yes
+	leader = {
+		if = {
+			limit = {
+				bpm_leader_is_socialist = yes
+			}
+			set_ideology = ideology:ideology_center_leader
+		}
+	}
+}
+
+# Naming effects 
+
+REPLACE:bpm_rename_trade_unions_ig = {
+	if = {
+		limit = {
+			c:USA ?= THIS
+			OR = {
+				has_variable = bpm_2nd_party_system
+				game_date <= 1836.1.1
+			}
+		}
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_locofocos }
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_combination_acts
+		}
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_labor_radicals }
+	}
+	else_if = {
+		limit = { ig:ig_trade_unions ?= { has_ideology = ideology:ideology_dop_syndical_unionist } }
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_syndicalists }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_law_or_variant = law_type:law_council_republic
+				has_law_or_variant = law_type:law_factory_councils
+			}
+		}
+		set_interest_group_name = ig_workers_councils
+	}
+	else_if = {
+		limit = { has_variable = bpm_solidarity_knights_of_labor }
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_knights_of_labor }
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_right_to_associate
+			NOT = { has_variable = union_law_introduced_var }
+		}
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_urban_workers }
+	}
+	else_if = {
+		limit = { has_variable = bpm_solidarity_national_grange }
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_national_grange }
+	}
+	else_if = {
+		limit = {
+			ig:ig_trade_unions = {
+				has_variable = bpm_conservative_unions
+			}
+		}
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_conservative_unions }
+	}
+	else = {
+		ig:ig_trade_unions ?= { set_interest_group_name = ig_trade_unions }
+	}
+}

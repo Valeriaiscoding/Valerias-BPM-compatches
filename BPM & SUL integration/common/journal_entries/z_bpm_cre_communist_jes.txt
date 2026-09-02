@@ -1,0 +1,384 @@
+﻿REPLACE:je_cre_communist_utopia = {
+	icon = "gfx/interface/icons/invention_icons/socialism.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	immediate = {
+	}
+
+	#check pop stuff on monthly for performance reasons
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = { 
+					NOT = {
+						any_scope_pop = {
+							standard_of_living < 35
+						}
+					}
+				}
+				set_variable = minimum_sol_35
+			} else = {
+				remove_variable = minimum_sol_35
+			}	
+		}
+	}
+	complete = {
+		is_at_war = no
+		average_sol >= 40
+		custom_tooltip = { 
+			text = minimum_sol_35
+			has_variable = minimum_sol_35 #This is not Omelas
+		}
+		literacy_rate >= 0.95
+		scaled_debt < 0.25
+		custom_tooltip = {
+			text = no_peasants_aristocrats_capitalists_slaves
+			pop_type_percent_country = {
+				pop_type = peasants
+				percent = 0
+			}
+			pop_type_percent_country = {
+				pop_type = slaves
+				percent = 0
+			}
+			pop_type_percent_country = {
+				pop_type = aristocrats
+				percent = 0
+			}
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent = 0
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_famine = yes
+			}
+		}
+		country_turmoil < 0.10 
+		any_scope_state = {
+			filter = {
+				is_incorporated = yes
+			}
+			percent = 1
+			has_building = building_power_plant
+			has_building = building_university
+			has_building = building_art_academy
+		}
+		has_law_or_variant = law_type:law_public_schools
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_public_health_insurance
+		institution_investment_level = {
+			institution = institution_health_system
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_old_age_pension
+		institution_investment_level = {
+			institution = institution_social_security
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_worker_protections
+		has_law_or_variant = law_type:law_protected_leisure
+		institution_investment_level = {
+			institution = institution_workplace_safety
+			value >= 5
+		}
+		approaching_bureaucracy_shortage = no
+		OR = {
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+		has_law_or_variant = law_type:law_slavery_banned
+		NOR = {
+			in_default = yes
+			has_modifier = declared_bankruptcy
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = cre_events.9
+			popup = yes
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		effect = { 
+			add_loyalists = {
+				value = 0.75
+				strata = lower
+			}
+			add_loyalists = {
+				value = 0.35
+				strata = middle
+			}
+			add_modifier = cre_hedonic_treadmill
+		}
+	}
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+}
+
+REPLACE:je_cre_workers_of_the_world = {
+	icon = "gfx/interface/icons/invention_icons/civilizing_mission.dds"
+
+	modifiers_while_active = {
+		cre_anti_imperialism_modifier
+	}
+
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	complete = {
+		#has_law_or_variant = law_type:law_multicultural
+		has_law = law_type:law_multicultural_upgraded
+		has_law_or_variant = law_type:law_no_colonial_affairs
+		OR = {
+			has_law_or_variant = law_type:law_no_migration_controls
+			has_law_or_variant = law_type:law_migration_controls
+		}
+		has_law_or_variant = law_type:law_slavery_banned
+		OR = {
+			custom_tooltip = {
+				text = no_subjects
+				any_subject_or_below = {
+					count = 0
+				}
+			}
+			any_subject_or_below = {
+				count = all
+				has_law_or_variant = law_type:law_council_republic
+				has_law_or_variant = law_type:law_multicultural
+				has_law_or_variant = law_type:law_slavery_banned
+			}
+		}
+		NOT = {
+			any_subject_or_below = {
+				is_subject_type = subject_type_chartered_company
+				is_subject_type = subject_type_colony
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				is_split_state = no
+				is_incorporated = no
+			}
+		}
+	}
+
+	on_complete = {
+		activate_law = law_type:law_cre_proletarian_internationalism
+		every_primary_culture = {
+			limit = {
+				NOT = {
+					cu:iberian ?= this
+				}
+			}
+			root = {
+				add_radicals = {
+					value = large_radicals
+					culture = prev
+				}
+			}
+		}
+		if = {
+			limit = { 
+				country_has_primary_culture = cu:iberian
+			}
+			custom_tooltip = {
+				text = 5_percent_iberian
+				every_scope_pop = {
+					limit = {
+						culture = {
+							has_discrimination_trait_group = language_group_romance
+						}
+					}
+					change_pop_culture = {
+						target = cu:iberian
+						value = 0.05
+					}
+				}
+			}
+		}
+		add_modifier = {
+			name = cre_anti_internationalist_backlash_modifier
+			years = 20
+			is_decaying = yes
+		}
+		hidden_effect = {
+			every_subject_or_below = {
+				activate_law = law_type:law_cre_proletarian_internationalism
+				every_primary_culture = {
+					limit = {
+						NOT = {
+							cu:iberian ?= this
+						}
+					}
+					root = {
+						add_radicals = {
+							value = large_radicals
+							culture = prev
+						}
+					}
+				}
+				if = {
+					limit = { 
+						country_has_primary_culture = cu:iberian
+					}
+					custom_tooltip = {
+						text = 5_percent_iberian
+						every_scope_pop = {
+							limit = {
+								culture = {
+									has_discrimination_trait_group = language_group_romance
+								}
+							}
+							change_pop_culture = {
+								target = cu:iberian
+								value = 0.05
+							}
+						}
+					}
+				}
+				add_modifier = {
+					name = cre_anti_internationalist_backlash_modifier
+					years = 20
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+
+	fail = {
+		NOT = { has_law_or_variant = law_type:law_council_republic }
+	}
+}
+
+REPLACE:je_cre_bread_and_roses = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_social_democrat.dds"
+
+	group = je_group_cre_socialism
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	is_shown_when_inactive = {
+		has_technology_researched = socialism
+	}
+
+	possible = {
+		any_interest_group_in_government = {
+			bpm_ig_is_marginal = no
+			OR = {
+				leader = {
+					has_ideology = ideology:ideology_social_democrat
+				}
+				leader = {
+					has_ideology = ideology:ideology_socialist_leader
+				}
+				is_interest_group_type = ig_socialists
+				is_interest_group_type = ig_reformist_socialists
+			}
+		}
+		bpm_country_laws_no_voting = no
+	}
+
+	complete = {
+		average_sol >= 13
+		literacy_rate >= 0.80
+		has_law_or_variant = law_type:law_universal_suffrage
+		NOT = {
+			has_law_or_variant = law_type:law_advisory_body
+		}
+		NOR = {
+			has_law_or_variant = law_type:law_party_single
+			has_law_or_variant = law_type:law_party_anti_socialist
+			has_law_or_variant = law_type:law_party_socialist_only
+			#has_law_or_variant = law_type:law_party_anti_liberal # if re eanabled uncomment
+		}
+		has_law_or_variant = law_type:law_graduated_taxation
+		approaching_bureaucracy_shortage = no
+		has_law_or_variant = law_type:law_public_schools
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_public_health_insurance
+		institution_investment_level = {
+			institution = institution_health_system
+			value >= 5
+		}
+		has_law_or_variant = law_type:law_old_age_pension
+		institution_investment_level = {
+			institution = institution_social_security
+			value >= 2
+		}
+		has_law_or_variant = law_type:law_worker_protections
+		has_law_or_variant = law_type:law_protected_leisure
+		institution_investment_level = {
+			institution = institution_workplace_safety
+			value >= 5
+		}
+		has_revolution = no
+		NOT = {
+			any_political_movement = {
+				political_movement_support > 0.05
+				political_movement_radicalism > 0.50
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = cre_events.12
+		}
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = cre_events.12.a
+		effect = {
+			execute_event_option = { event = cre_events.12 option = 0 }
+		 }
+	}
+
+	event_outcome_completed_effect_desc = {
+		header = cre_events.12.b
+		effect = {
+			execute_event_option = { event = cre_events.12 option = 1 }
+		}
+	}
+
+	fail = {
+		OR = {
+			has_law_or_variant = law_type:law_council_republic
+			has_law_or_variant = law_type:law_organic_democracy
+			has_law_or_variant = law_type:law_advisory_body
+			ig:ig_reformist_socialists ?= {
+				bpm_ig_is_marginal = yes
+			}
+			ig:ig_socialists ?= {
+				bpm_ig_is_marginal = yes
+			}
+			any_political_movement = {
+				OR = {
+					is_political_movement_type = movement_socialist
+        			is_political_movement_type = movement_reformist_socialist
+				}
+				this.days_since_movement_defeated <= very_long_modifier_time
+			}
+		}
+	}
+
+	on_fail = {
+		add_radicals = {
+			value = medium_radicals
+			strata = lower
+		}
+	}
+}

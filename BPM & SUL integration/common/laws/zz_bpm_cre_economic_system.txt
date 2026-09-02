@@ -1,0 +1,11 @@
+﻿INJECT:law_command_economy = {
+	institution_modifier = {
+		state_construction_mult = -0.05
+	}
+}
+
+INJECT:law_cooperative_ownership = {
+	modifier = {
+		country_private_construction_allocation_mult = -0.1
+	}
+}

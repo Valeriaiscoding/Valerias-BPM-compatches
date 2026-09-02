@@ -1,0 +1,97 @@
+﻿REPLACE:ideology_anarchist_valid_trigger = {
+	bpm_interest_group_is_activated = yes
+	owner = { has_technology_researched = anarchism }
+	OR = {
+		bpm_ig_is_radical_socialist = yes
+		bpm_ig_is_lower_institutional = yes
+		is_interest_group_type = ig_agrarian_populists
+		AND = {
+			is_interest_group_type = ig_armed_forces
+			owner ?= {
+				has_law_or_variant = law_type:law_anarchy
+			}
+		}
+	}
+	OR = {
+		bpm_ig_is_labor = yes
+		is_interest_group_type = ig_agrarian_populists
+		AND = {
+			owner = {
+				any_interest_group = {
+					bpm_ig_is_anarchist = yes
+					ig_clout > 0.05
+				}
+			}
+			has_global_variable = first_intl_chain_complete_var
+		}
+		AND = {
+			is_interest_group_type = ig_armed_forces
+			owner ?= {
+				has_law_or_variant = law_type:law_anarchy
+			}
+		}
+	}
+}
+
+REPLACE:ideology_anarchist_syndicalist_valid_trigger = {
+	bpm_interest_group_is_activated = yes
+	owner = { has_technology_researched = anarchism }
+	OR = {
+		bpm_ig_is_radical_socialist = yes
+		bpm_ig_is_lower_institutional = yes
+		is_interest_group_type = ig_agrarian_populists
+		AND = {
+			is_interest_group_type = ig_armed_forces
+			owner ?= {
+				has_law_or_variant = law_type:law_anarchy
+			}
+		}
+	}
+	OR = {
+		bpm_ig_is_labor = yes
+		is_interest_group_type = ig_agrarian_populists
+		AND = {
+			owner = {
+				any_interest_group = {
+					bpm_ig_is_anarchist = yes
+					ig_clout > 0.05
+				}
+			}
+			has_global_variable = first_intl_chain_complete_var
+		}
+		AND = {
+			is_interest_group_type = ig_armed_forces
+			owner ?= {
+				has_law_or_variant = law_type:law_anarchy
+			}
+		}
+	}
+}
+
+REPLACE:ideology_vanguardist_valid_trigger = {
+	bpm_interest_group_is_activated = yes
+	OR = {
+		bpm_ig_is_revolutionary_socialist = yes
+		bpm_ig_is_middle_institutional = yes
+		bpm_ig_is_rural_institutional = yes
+	}
+	OR = {
+		bpm_ig_is_socialist = yes
+		AND = {
+			owner = {
+				any_interest_group = {
+					bpm_ig_is_socialist = yes
+					ig_clout > 0.1
+				}
+			}
+			has_global_variable = second_intl_chain_complete_var
+		}
+		AND = {
+			bpm_ig_is_state_istitutional = yes
+			owner ?= {
+				has_law_or_variant = law_type:law_council_republic
+			}
+		}			
+	}
+	owner = { has_technology_researched = socialism }
+}

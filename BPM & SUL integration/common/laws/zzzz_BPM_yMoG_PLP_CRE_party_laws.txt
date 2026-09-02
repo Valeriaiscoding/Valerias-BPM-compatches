@@ -1,0 +1,46 @@
+﻿INJECT:law_party_anti_reactionary = {
+	modifier = {
+		state_radicals_from_political_movements_mult = 0.15
+		state_migration_pull_mult = -0.02
+	}
+}
+
+INJECT:law_party_reactionary_only = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.3
+		state_migration_pull_mult = -0.05							
+	}
+}
+
+INJECT:law_party_socialist_only = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.3
+		state_migration_pull_mult = -0.05						
+	}
+}
+
+INJECT:law_party_anti_liberal = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.3
+		state_migration_pull_mult = -0.05							
+	}
+}
+
+INJECT:law_party_liberal_only = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.3
+		state_migration_pull_mult = -0.05							
+	}
+}
+
+INJECT:law_party_single = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.75	
+		state_radicals_from_political_movements_mult = 0.75			
+		state_migration_pull_mult = -0.1					
+	}
+}

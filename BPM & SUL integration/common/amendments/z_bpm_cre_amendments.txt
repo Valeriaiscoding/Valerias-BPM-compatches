@@ -1,0 +1,265 @@
+﻿REPLACE:cre_amendment_anarchy_secured = {
+	parent = law_anarchy
+
+	allowed_laws = {
+		law_anarchy
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_anarchy
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		country_rigidity_baseline_add = -10
+		country_cre_legitimacy_from_sol_add = 1
+		state_radicals_and_loyalists_from_sol_change_mult = 0.20
+		state_loyalists_from_political_movements_mult = 0.25
+		state_pop_support_movement_anarchist_mult = 0.33
+		interest_group_ig_anarchists_pop_attraction_mult = 0.33
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+cre_amendment_democratic_centralism = {
+	parent = law_party_socialist_only # TODO? parent law
+
+	allowed_laws = {
+		law_universal_suffrage
+		law_oligarchy
+		law_autocracy
+		law_technocracy
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	sponsor_modifier = {
+		interest_group_pop_attraction_mult = 0.25
+	}
+
+	modifier = {
+		country_rigidity_baseline_add = 5
+		country_agitator_slots_add = -1
+		state_radicals_from_political_movements_mult = -0.25
+		country_bureaucrats_pol_str_mult = 0.20
+		interest_group_amenability_add = 10
+		interest_group_in_government_approval_add = 3
+		interest_group_in_government_attraction_mult = 0.25
+		state_pop_support_movement_communist_mult = 0.33
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+cre_amendment_socialist_institutions = {
+	parent = law_council_republic
+
+	allowed_laws = {
+		law_council_republic
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		country_engineers_pol_str_mult = 0.10
+		country_machinists_pol_str_mult = 0.10
+		country_bureaucrats_pol_str_mult = 0.10
+		country_bureaucracy_mult = 0.15
+		country_bolster_cost_mult = -0.15
+		state_pop_support_movement_communist_mult = 0.50
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+REPLACE_OR_CREATE:cre_amendment_centralized_planning = {
+	parent = law_command_economy
+
+	allowed_laws = {
+		law_command_economy
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		country_bureaucrats_pol_str_mult = 0.25
+		state_bureaucrats_investment_pool_efficiency_mult = 0.10
+		state_shopkeepers_investment_pool_efficiency_mult = -0.10
+	}
+
+	institution = institution_economy 
+	institution_modifier = {
+		country_engineers_pol_str_mult = 0.05
+		state_construction_mult = 0.05
+		state_pop_pol_str_add = -0.5
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+REPLACE_OR_CREATE:cre_amendment_democratic_planning = {
+	parent = law_council_republic
+
+	allowed_laws = {
+		law_command_economy
+		law_cooperative_ownership
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+		
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		state_engineers_investment_pool_efficiency_mult = 0.10
+		country_company_throughput_bonus_add = 0.05
+	}
+	institution = institution_economy 
+	institution_modifier = {
+		country_engineers_pol_str_mult = 0.05
+		state_pop_pol_str_add = 0.5
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+REPLACE_OR_CREATE:cre_amendment_market_socialism = {
+	parent = law_cooperative_ownership
+
+	allowed_laws = {
+		law_cooperative_ownership
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		country_free_charters_add = 1
+	}
+	institution_modifier = {
+		country_private_construction_allocation_mult = 0.05
+		state_bureaucrats_investment_pool_efficiency_mult = -0.05
+		state_shopkeepers_investment_pool_efficiency_mult = 0.05
+		country_shopkeepers_pol_str_mult = 0.05
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}
+
+REPLACE_OR_CREATE:cre_amendment_cybersyn = {
+	parent = law_command_economy
+
+	allowed_laws = {
+		law_cooperative_ownership
+		law_command_economy
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_council_republic
+	}
+
+	would_sponsor = {
+		always = no
+	}
+
+	modifier = {
+		state_engineers_investment_pool_efficiency_mult = 0.25
+		country_engineers_pol_str_mult = 0.25
+		country_bureaucracy_mult = -0.10
+	}
+	institution = institution_economy
+	institution_modifier = {
+		building_throughput_add = 0.02
+		country_engineers_pol_str_mult = 0.05
+		country_private_construction_allocation_mult = -0.05
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 0
+}

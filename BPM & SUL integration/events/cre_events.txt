@@ -1,0 +1,1589 @@
+namespace = cre_events
+
+#Voluntary vs forced collectivization
+cre_events.1 = {
+	type = country_event
+	placement = root
+	title = cre_events.1.t
+	desc = cre_events.1.d
+	flavor = cre_events.1.f
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/invention_icons/enclosure.dds"
+
+	trigger = {
+		#triggered by enacting collectivized agriculture
+	}
+
+	#voluntary
+	option = {
+		name = cre_events.1.a
+		default_option = yes
+		show_as_tooltip = {
+			add_modifier = {
+				name = cre_gradual_collectivization
+				years = 15
+				is_decaying = yes
+			}
+		}
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_collectivized_agriculture
+					value >= approve
+				}
+			}
+			add_modifier = {
+				name = cre_collectivization_frustration
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					any_scope_politician = {
+						OR = {
+							is_interest_group_leader = yes
+							is_ruler_of_own_country = yes
+							has_role_of_type = bpm_character_role_hog
+							prominence >= 50
+						}
+						interest_group = {
+							is_in_government = yes
+						}
+						OR = {
+							bpm_leader_is_anarachist = yes
+							is_interest_group_type = ig_agrarian_populitsts
+						}
+					}
+				}
+				add = 100
+			}
+		}
+	}
+
+	#paid
+	option = {
+		name = cre_events.1.b
+		hidden_effect = {
+			remove_modifier = cre_gradual_collectivization
+		}
+		add_modifier = {
+			name = cre_gradual_collectivization
+			years = 7
+			is_decaying = yes
+		}
+		add_modifier = {
+			name = cre_collectivization_payments
+			multiplier = money_amount_multiplier_medium
+			years = 7
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	#forced
+	option = {
+		name = cre_events.1.c
+		hidden_effect = {
+			remove_modifier = cre_gradual_collectivization
+		}
+		add_radicals = {
+			value = 0.25
+			pop_type = peasants
+		}
+		add_radicals = {
+			value = 0.50
+			pop_type = farmers
+		}
+		add_modifier = {
+			name = cre_resistance_to_collectivization
+			years = 5
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				trigger = {
+					any_scope_politician = {
+						OR = {
+							is_interest_group_leader = yes
+							is_ruler_of_own_country = yes
+							has_role_of_type = bpm_character_role_hog
+							prominence >= 50
+						}
+						interest_group = {
+							is_in_government = yes
+						}
+						has_ideology = ideology:ideology_vanguardist
+					}
+				}
+				add = 200
+			}
+		}
+	}
+}
+
+#Revolutionary Militias
+cre_events.2 = {
+	type = country_event
+	placement = root
+	title = cre_events.2.t
+	desc = cre_events.2.d
+	flavor = cre_events.2.f
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+
+	trigger = {
+		is_revolutionary = yes
+		has_law_or_variant = law_type:law_council_republic
+		has_technology_researched = enlistment_offices
+		NOR = {
+			has_law_or_variant = law_type:law_mass_conscription
+			has_law_or_variant = law_type:law_national_militia
+		}
+	}
+
+	#mass conscription
+	option = {
+		name = cre_events.2.a
+		default_option = yes
+		activate_law = law_type:law_mass_conscription
+		custom_tooltip = {
+			text = socialist_armed_forces_leader
+			if = {
+				limit = {
+					has_law_or_variant = law_type:law_anarchy
+				}
+				create_character = {
+					ig_leader = yes
+					interest_group = ig_armed_forces
+					is_general = yes
+					ideology = ideology:ideology_anarchist
+				}
+			} 
+			else = {
+				create_character = {
+					ig_leader = yes
+					interest_group = ig_armed_forces
+					is_general = yes
+					ideology = root.ruler.ideology
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#keep current law
+	option = {
+		name = cre_events.2.b
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = soldiers
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = officers
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#Women in the military
+cre_events.3 = {
+	type = country_event
+	placement = root
+	title = cre_events.3.t
+	desc = cre_events.3.d
+	flavor = cre_events.3.f
+	duration = 3
+
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+
+	trigger = {
+		has_law_or_variant = law_type:law_council_republic
+		OR = {
+			has_law = law_type:law_womens_suffrage_upgraded
+			AND = {
+				has_law_or_variant = law_type:law_womens_suffrage
+				has_law_or_variant = law_type:law_elected_officers
+			}
+			has_law_or_variant = law_type:law_anarchy
+		}
+		OR = {
+			has_law_or_variant = law_type:law_mass_conscription
+			has_law_or_variant = law_type:law_national_militia
+		}
+		is_at_war = yes
+		NOT = {
+			active_law:lawgroup_army_model ?= {
+				has_amendment = amendment_type:cre_amendment_women_soldiers
+			}
+		}
+		has_technology_researched = feminism
+	}
+
+	#women soldiers
+	option = {
+		name = cre_events.3.a
+		default_option = yes
+		if = {
+			limit = {
+				NOT = {
+					has_law_or_variant = law_type:law_womens_suffrage
+				}
+			 }
+			activate_law = law_type:law_womens_suffrage
+		}
+		active_law:lawgroup_army_model = {
+			add_amendment = {
+				type = cre_amendment_women_soldiers
+				sponsor = prev.ig:ig_anarchists
+				cooldown = 60
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			pop_type = soldiers
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = officers
+		}
+		add_loyalists = {
+			value = small_radicals
+			interest_group = ig:ig_anarchists
+		}
+		every_political_movement = {
+			limit = {
+				OR = {
+					is_political_movement_type = movement_anarchist
+					is_political_movement_type = movement_feminist
+				}
+			}
+			add_modifier = {
+				name = cre_mujeres_libres_movement
+				years = 5
+			}
+		}
+		custom_tooltip = {
+			text = female_anarchist_commander
+			create_character = {
+				female = yes
+				is_general = yes
+				ideology = ideology:ideology_anarchist
+				interest_group = ig:ig_trade_unions
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#women support roles
+	option = {
+		name = cre_events.3.b
+		if = {
+			limit = {
+				NOR = {
+					has_law_or_variant = law_type:law_womens_suffrage
+					has_law_or_variant = law_type:law_women_in_the_workplace
+				}
+			 }
+			 activate_law = law_type:law_women_in_the_workplace
+		}
+		add_modifier = {
+			name = cre_women_military_support
+			years = 4
+		}
+		add_loyalists = {
+			value = small_radicals
+			pop_type = soldiers
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = officers
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = ig:ig_anarchists
+		}
+		every_political_movement = {
+			limit = {
+				OR = {
+					is_political_movement_type = movement_anarchist
+					is_political_movement_type = movement_feminist
+				}
+			}
+			add_modifier = {
+				name = cre_mujeres_libres_movement
+				years = 5
+				multiplier = 0.5
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				trigger = {
+					NOR = {
+						has_law = law_type:law_womens_suffrage_upgraded
+						has_law_or_variant = law_type:law_anarchy
+					}
+				}
+				add = 100
+			}
+		}
+	}
+}
+
+#The Black Army
+cre_events.4 = {
+	type = country_event
+	placement = root
+	title = cre_events.4.t
+	desc = cre_events.4.d
+	flavor = cre_events.4.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "ip3_officer_inspecting_peasant_conscripts"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOR = {	
+			has_variable = red_army_var
+			has_variable = black_army_var
+		}
+		has_law_or_variant = law_type:law_council_republic
+		has_law_or_variant = law_type:law_anarchy
+		OR = {
+			is_revolutionary = yes
+			ig:ig_armed_forces ?= {
+				leader = {
+					bpm_leader_is_anarachist = yes
+				}
+			}
+		}
+		OR = {
+			has_law_or_variant = law_type:law_mass_conscription
+			has_law_or_variant = law_type:law_national_militia
+		}
+	}
+	immediate = {
+		ig:ig_armed_forces ?= {
+			save_scope_as = army_ig
+			leader = {
+				save_scope_as = army_general
+			}
+		}
+		set_variable = black_army_var
+	}
+
+	option = {
+		name = cre_events.4.a
+		default_option = yes
+		cre_black_army_effect = yes
+		# active_law:lawgroup_army_model = {
+		# 	add_amendment = {
+		# 		type = cre_amendment_elected_officers
+		# 		sponsor = prev.ig:ig_armed_forces
+		# 		cooldown = 60
+		# 	}
+		# }
+		
+		show_as_tooltip = {
+			bpm_cre_ig_make_black_army = yes
+		}
+		custom_tooltip = {
+			text = replace_commanders_with_anarchists
+			every_scope_character = {
+				limit = {
+					popularity < 50
+					OR = {
+						has_role_of_type = general
+						has_role_of_type = admiral
+					}
+					NOR = {
+						has_ideology = ideology:ideology_moderate
+						has_socialist_ideology = yes
+					}
+				}
+				commander_military_formation ?= {
+					save_scope_as = replacement_formation
+				}
+				if = {
+					limit = { 
+						has_role_of_type = general
+					}
+					root = {
+						create_character = {
+							is_general = yes
+							interest_group = ig:ig_anarchists
+							ideology = ideology:ideology_anarchist
+							save_scope_as = new_commander
+						}
+						scope:new_commander ?= {
+							transfer_to_formation = scope:replacement_formation
+						}
+					}
+				} else = {
+					root = {
+						create_character = {
+							is_admiral = yes
+							interest_group = ig:ig_anarchists
+							ideology = ideology:ideology_anarchist
+							save_scope_as = new_commander
+						}
+						scope:new_commander ?= {
+							transfer_to_formation = scope:replacement_formation
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_historical = yes
+					 }
+					 exile_character_with_martyrdom = yes
+				} else = {
+					retire_character = yes
+				}
+			}
+		}
+		activate_law = law_type:law_elected_oficers
+		add_modifier = {
+			name = cre_anarchy_in_the_ranks_modifier
+			years = 4
+			is_decaying = yes
+		}
+		add_loyalists = {
+			value = large_radicals
+			pop_type = soldiers
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = officers
+		}
+	}
+}
+
+#Socialist movements look to successful council republic
+cre_events.5 = {
+	type = country_event
+	placement = root
+	title = cre_events.5.t
+	desc = cre_events.5.d
+	flavor = cre_events.5.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "ip3_agitator_reading_manifesto"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		#triggered by first completion of je_communism_2
+	}
+
+	immediate = {
+
+	}
+
+	#cool
+	option = {
+		name = cre_events.5.a
+		default_option = yes
+		if = {
+			limit = {
+				scope:first_council_republic = {
+					has_law_or_variant = law_type:law_anarchy
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_anarchist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_anarchist
+				 }
+			}
+		} else = {
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_communist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_communist
+				 }
+			}
+		}
+		every_political_movement = {
+			limit = {
+				movement_is_socialist = yes
+			}
+			add_modifier = {
+				name = cre_movement_inspired_modifier
+				years = 5
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = lower
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	#bad
+	option = {
+		name = cre_events.5.b
+		change_relations = {
+			country = scope:first_council_republic
+			value = -20
+		}
+		if = {
+			limit = {
+				scope:first_council_republic = {
+					has_law_or_variant = law_type:law_anarchy
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_anarchist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_anarchist
+				 }
+			}
+		} else = {
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_communist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_communist
+				 }
+			}
+		}
+		every_political_movement = {
+			limit = {
+				movement_is_socialist = yes
+			}
+			add_modifier = {
+				name = cre_movement_inspired_modifier
+				years = 5
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = lower
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = middle
+		}
+		add_loyalists = {
+			value = medium_radicals
+			strata = upper
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	#lets get an agitator
+	option = {
+		name = cre_events.5.c
+		trigger = {
+			empty_agitator_slots >= 1
+		}
+		if = {
+			limit = {
+				scope:first_council_republic = {
+					has_law_or_variant = law_type:law_anarchy
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_anarchist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_anarchist
+				 }
+			}
+		} else = {
+			if = {
+				limit = {
+					NOT = {
+						any_political_movement = {
+							is_political_movement_type = movement_communist
+						}
+					}
+				 }
+				 create_political_movement = {
+					type = movement_communist
+				 }
+			}
+		}
+		every_political_movement = {
+			limit = {
+				movement_is_socialist = yes
+			}
+			add_modifier = {
+				name = cre_movement_inspired_modifier
+				years = 5
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = lower
+		}
+		scope:first_council_republic = {
+			random_primary_culture = {
+				save_scope_as = first_council_republic_culture
+			}
+		}
+		if = {
+			limit = { scope:first_council_republic = { has_law_or_variant = law_type:law_anarchy } }
+			create_character = {
+				is_agitator = yes
+				interest_group = ig:ig_anarchists
+				ideology = scope:first_council_republic.ruler.ideology
+				culture = scope:first_council_republic_culture
+			}
+		}
+		else = {
+			create_character = {
+				is_agitator = yes
+				interest_group = ig:ig_revolutionist_socialists
+				ideology = scope:first_council_republic.ruler.ideology
+				culture = scope:first_council_republic_culture
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#we are also a council republic
+	option = {
+		name = cre_events.5.e
+		highlighted_option = yes
+		trigger = {
+			has_law_or_variant = law_type:law_council_republic
+		}
+		change_relations = {
+			country = scope:first_council_republic
+			value = 25
+		}
+		every_political_movement = {
+			limit = {
+				movement_is_socialist = yes
+			}
+			add_modifier = {
+				name = cre_movement_inspired_modifier
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 1000
+		}
+	}
+}
+
+#Devolving the Communes
+cre_events.6 = {
+	type = country_event
+	placement = root
+	title = cre_events.6.t
+	desc = cre_events.6.d
+	flavor = cre_events.6.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "asia_union_leader"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+
+	}
+	immediate = {
+
+	}
+
+	#stay as one tag
+	option = {
+		name = cre_events.6.a
+		default_option = yes
+		active_law:lawgroup_distribution_of_power ?= {
+			add_amendment = {
+				type = cre_amendment_anarchist_defense_council
+				sponsor = root.ig:ig_armed_forces
+				cooldown = 120
+			}
+		}
+		activate_law = law_type:law_federated
+		ig:ig_anarchists = {
+			bpm_remove_all_sta_ideologies = yes
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_sta_subjugated_state
+			add_ideology = ideology_mil_mass_army
+			bpm_reorder_ideologies = yes
+		}
+	}
+
+	#confederalism
+	option = {
+		name = cre_events.6.b
+		custom_tooltip = {
+			text = all_incorporated_states_become_communes
+			cre_devolve_all_communes_effect = yes
+		}
+		every_interest_group = {
+			limit = {
+				OR = {
+					leader = {
+						bpm_leader_is_anarachist = yes
+					}
+					bpm_ig_is_anarchist = yes
+				}
+			}
+			add_modifier = {
+				name = cre_embraced_ideals_ig_modifier
+				years = 5
+			}
+		}
+	}
+}
+
+#Spanish anti-clerical anarchism
+cre_events.7 = { # TODO
+	type = country_event
+	placement = root
+	title = cre_events.7.t
+	desc = cre_events.7.d
+	flavor = cre_events.7.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "ip3_angry_mob_raiding_minorities"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		has_law_or_variant = law_type:law_anarchy
+		NOT = {
+			has_law_or_variant = law_type:law_state_atheism
+		}
+		any_primary_culture = {
+			count = all
+			has_discrimination_trait = heritage_iberian
+		}
+	}
+
+	immediate = {
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+
+	#anti-clerical violence
+	option = {
+		name = cre_events.7.a
+		default_option = yes
+		activate_law = law_type:law_state_atheism
+		custom_tooltip = {
+			text = state_atheism_conversion_tt
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				convert_population = {
+					target = rel:atheist
+					value = 0.1
+				}
+			}
+		}
+		add_radicals = {
+			value = very_large_radicals
+			pop_type = clergymen
+		}
+		add_radicals = {
+			value = very_large_radicals
+			interest_group = ig:ig_devout
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = peasants
+			religion = rel:catholic
+		}
+		kill_population_percent = {
+			percent = 0.1
+			pop_type = clergymen
+			religion = rel:catholic
+		}
+		add_modifier = {
+			name = cre_destruction_of_churches_modifier
+			years = 10
+		}
+		c:PAP ?= {
+			change_relations = {
+				country = root
+				value = -100
+			}
+		}
+		every_country = {
+			limit = {
+				country_has_state_religion = rel:catholic
+				NOT = {
+					this = root
+				}
+				NOT = {
+					c:PAP ?= this
+				}
+				has_diplomatic_relevance = root
+			}
+			change_relations = {
+				country = root
+				value = -15
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#restrain the violence
+	option = {
+		name = cre_events.7.b
+		if = {
+			limit = { 
+				NOT = {
+					has_law_or_variant = law_type:law_total_separation
+				}
+			}
+			activate_law = law_type:law_total_separation
+		}
+		custom_tooltip = {
+			text = state_atheism_conversion_tt
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+				}
+				convert_population = {
+					target = rel:atheist
+					value = 0.1
+				}
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = clergymen
+		}
+		add_radicals = {
+			value = medium_radicals
+			interest_group = ig:ig_devout
+		}
+		kill_population_percent = {
+			percent = 0.05
+			pop_type = clergymen
+			religion = rel:catholic
+		}
+		every_interest_group = {
+			limit = {
+				interest_group_has_socialist_ideology = yes
+			}
+			add_modifier = {
+				name = cre_protected_church_modifier
+				years = 4
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	#christian anarchism
+	option = {
+		name = cre_events.7.c
+		highlighted_option = yes
+		trigger = {
+			ig:ig_devout = {
+				ig_counts_as_marginal = no
+			}
+		}
+		if = {
+			limit = { 
+				NOT = {
+					has_law_or_variant = law_type:law_freedom_of_conscience
+				}
+			}
+			activate_law = law_type:law_freedom_of_conscience
+		}
+		custom_tooltip = {
+			text = christian_anarchist_spawns
+			create_character = {
+				ideology = ideology:ideology_anarchist
+				ig_leader = yes
+				interest_group = ig:ig_devout
+			}
+		}
+		add_loyalists = {
+			value = small_radicals
+			religion = rel:catholic
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+}
+
+#The Workers' Opposition
+cre_events.8 = {	# TODO
+	type = country_event
+	placement = root
+	title = cre_events.8.t
+	desc = cre_events.8.d
+	flavor = cre_events.8.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/invention_icons/socialism.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		any_political_movement = {
+			is_political_movement_type = movement_communist
+		}
+		OR = {
+			has_law_or_variant = law_type:law_secret_police
+			has_law_or_variant = law_type:law_command_economy
+			has_law_or_variant = law_type:law_party_single
+			has_law_or_variant = law_type:law_oligarchy
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_technocracy
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_scope_character = {
+					has_role_of_type = agitator
+					OR = {
+						has_ideology = ideology:ideology_anarchist
+						has_ideology = ideology:ideology_communist
+						has_ideology = ideology:ideology_utopian
+						has_ideology = ideology:ideology_social_democrat
+						AND = {
+							is_interest_group_type = ig_trade_unions
+							has_ideology = ideology:ideology_humanitarian
+						}
+					}
+				}
+			 }
+			 random_scope_character = {
+				limit = {
+					has_role_of_type = agitator
+					OR = {
+						has_ideology = ideology:ideology_anarchist
+						has_ideology = ideology:ideology_communist
+						has_ideology = ideology:ideology_utopian
+						has_ideology = ideology:ideology_social_democrat
+						AND = {
+							is_interest_group_type = ig_trade_unions
+							has_ideology = ideology:ideology_humanitarian
+						}
+					}
+				}
+				save_scope_as = opposition_agitator
+			 }
+		} else = {
+			create_character = {
+				is_agitator = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_communist
+				save_scope_as = opposition_agitator
+			}
+		}
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_communist
+			}
+			save_scope_as = communist_movement
+		}
+		ig:ig_trade_unions = {
+			save_scope_as = unions_ig
+		}	
+	}
+
+	#suppress
+	option = {
+		name = cre_events.8.a
+		default_option = yes
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_communist
+			}
+			set_core_ideology = ideology_vanguardist_movement
+			remove_character_ideology = ideology_communist
+			add_modifier = {
+				name = cre_pure_movement_modifier
+				years = 5
+			}
+		}
+		set_variable = vanguardist_movement
+		scope:opposition_agitator ?= {
+			exile_character_with_martyrdom = yes
+		}
+		add_radicals = {
+			value = large_radicals
+			interest_group = ig:ig_trade_unions
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#tolerate
+	option = {
+		name = cre_events.8.b
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_communist
+			}
+			add_modifier = {
+				name = cre_factionalism_modifier
+				years = 5
+			}
+		}
+		add_loyalists = {
+			value = small_radicals
+			interest_group = ig:ig_trade_unions
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	cancellation_trigger = {
+		has_variable = vanguardist_movement
+	}
+}
+
+#Utopia Achieved
+cre_events.9 = {
+	type = country_event
+	placement = root
+	title = cre_events.9.t
+	desc = cre_events.9.d
+	flavor = cre_events.9.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/invention_icons/socialism.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "ip2_cross_cultural_festival"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+
+	}
+	immediate = {
+
+	}
+
+	option = {
+		name = cre_events.9.a
+		default_option = yes
+		add_loyalists = {
+			value = 0.75
+			strata = lower
+		}
+		add_loyalists = {
+			value = 0.35
+			strata = middle
+		}
+		add_modifier = cre_hedonic_treadmill
+	}
+}
+
+#Workers of the World spawn
+cre_events.10 = {
+	type = country_event
+	placement = root
+	title = cre_events.10.t
+	desc = cre_events.10.d
+	flavor = cre_events.10.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		has_law_or_variant = law_type:law_council_republic
+		NOT = {
+			has_journal_entry = je_cre_workers_of_the_world
+		}
+		NOT = {
+			has_law_or_variant = law_type:law_ethnostate
+		}
+		is_at_war = no
+		has_variable = completed_je_communism_2
+		has_technology_researched = pan-nationalism
+	}
+
+	immediate = {
+
+	}
+
+	#accept
+	option = {
+		name = cre_events.10.a
+		default_option = yes
+		add_journal_entry = {
+			type = je_cre_workers_of_the_world
+		}
+		create_character = {
+			is_agitator = yes
+			interest_group = ig_trade_unions
+			ideology = ideology:ideology_humanitarian
+		}
+	}
+
+	#decline
+	option = {
+		name = cre_events.10.b
+		trigger = {
+			NOR = {
+				has_law_or_variant = law_type:law_multicultural
+				has_law_or_variant = law_type:law_cultural_exclusion
+			}
+		}
+		add_modifier = {
+			name = cre_class_and_race_modifier
+			years = 10
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	cancellation_trigger = {
+		NOT = {
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+#World Revolution spawn
+cre_events.11 = {
+	type = country_event
+	placement = root
+	title = cre_events.11.t
+	desc = cre_events.11.d
+	flavor = cre_events.11.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+	cooldown = {
+		days = never_fire_again_modifier_time
+	}
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		has_law_or_variant = law_type:law_council_republic
+		NOT = {
+			has_journal_entry = je_cre_world_revolution
+		}
+		has_variable = completed_je_communism_2
+		country_rank >= rank_value:major_power
+	}
+
+	immediate = {
+
+	}
+
+	#accept
+	option = {
+		name = cre_events.11.a
+		default_option = yes
+		add_journal_entry = {
+			type = je_cre_world_revolution
+		}
+		ig:ig_revolutionist_socialists = {
+			add_modifier = {
+				name = cre_ig_preparing_for_world_revolution_modifier
+				years = 5
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = cre_ig_preparing_for_world_revolution_modifier
+				years = 5
+			}
+		}
+		every_country = {
+			limit = {
+				NOR = {
+					this = root
+					has_law_or_variant = law_type:law_council_republic
+				}
+				has_diplomatic_relevance = root
+				country_rank >= rank_value:major_power
+			}
+			change_relations = {
+				country = root
+				value = -20
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				trigger = {
+					has_strategy = ai_strategy_socialism_in_one_country
+				}
+				add = -100
+			}
+			modifier = {
+				trigger = {
+					has_strategy = ai_strategy_world_revolution
+				}
+				add = 1000
+			}
+		}
+	}
+
+	#decline
+	option = {
+		name = cre_events.11.b
+		every_country = {
+			limit = {
+				has_law_or_variant = law_type:law_council_republic
+				has_diplomatic_relevance = root
+				NOT = {
+					this = root
+				}
+			}
+			change_relations = {
+				country = root
+				value = -20
+			}
+		}
+		add_loyalists = {
+			value = small_radicals
+			strata = middle
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = {
+					has_strategy = ai_strategy_socialism_in_one_country
+				}
+				add = 100
+			}
+		}
+	}
+
+	cancellation_trigger = {
+		NOT = {
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+#Bread and Roses complete
+cre_events.12 = {
+	type = country_event
+	placement = root
+	title = cre_events.12.t
+	desc = cre_events.12.d
+	flavor = cre_events.12.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	#reformism is the way
+	option = {
+		name = cre_events.12.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			cre_replace_ig_leader_ideology_effect = {
+				INTEREST_GROUP = ig:ig_trade_unions
+				NEW_IDEOLOGY = ideology:ideology_social_democrat
+			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_socialist
+				 }
+				remove_ideology = ideology_socialist
+			}
+		}
+		# trigger_event = {
+		# 	id = bpm_socdem_utils.1
+		# 	popup = yes
+		# }
+		every_interest_group = {
+			limit = {
+				bpm_ig_is_reformist_socialist = yes
+			}
+			bpm_cre_refsoc_to_socdem_effect = yes
+		}
+		add_modifier = {
+			name = cre_electoralism_legitimized_modifier
+			years = 5
+		}
+		add_loyalists = {
+			value = medium_radicals
+			strata = lower
+		}
+		add_radicals = {
+			value = large_radicals
+			strata = upper
+		}
+	}
+
+	#prelude to revolution
+	option = {
+		name = cre_events.12.b
+		every_political_movement = {
+			limit = {
+				movement_is_socialist = yes
+			}
+			add_modifier = {
+				name = cre_reform_into_revolution_modifier
+				years = 5
+			}
+		}
+		add_radicals = {
+			value = very_large_radicals
+			strata = upper
+		}
+		add_radicals = {
+			value = large_radicals
+			strata = middle
+		}
+		add_journal_entry = {
+			type = je_cre_communist_utopia
+		}
+	}
+
+	cancellation_trigger = {
+		 OR = {
+			has_law_or_variant = law_type:law_council_republic
+			has_law_or_variant = law_type:law_organic_democracy
+		}
+	}
+}
+
+#Five-Year Plans complete
+cre_events.13 = {
+	type = country_event
+	placement = root
+	title = cre_events.13.t
+	desc = cre_events.13.d
+	flavor = cre_events.13.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	#central planning
+	option = {
+		name = cre_events.13.a
+		default_option = yes
+		trigger = {
+			has_law_or_variant = law_type:law_command_economy
+		}
+		active_law:lawgroup_economic_system ?= {
+			add_amendment = {
+				type = cre_amendment_centralized_planning
+				sponsor = prev.ig:ig_petty_bourgeoisie	#root.ruler.interest_group
+				cooldown = 120
+			}
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = bureaucrats
+		}
+	}
+
+	#democratic planning
+	option = {
+		name = cre_events.13.b
+		active_law:lawgroup_economic_system ?= {
+			add_amendment = {
+				type = cre_amendment_democratic_planning
+				sponsor = root.ig:ig_trade_unions
+				cooldown = 120
+			}
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = engineers
+		}
+	}
+
+	#market socialism
+	option = {
+		name = cre_events.13.c
+		trigger = {
+			has_law_or_variant = law_type:law_cooperative_ownership
+		}
+		active_law:lawgroup_economic_system ?= {
+			add_amendment = {
+				type = cre_amendment_market_socialism
+				sponsor = root.ig:ig_intelligentsia
+				cooldown = 120
+			}
+		}
+		add_loyalists = {
+			value = medium_radicals
+			pop_type = shopkeepers
+		}
+	}
+
+	#Project Cybersyn about 50 years early
+	option = {
+		name = cre_events.13.e
+		trigger = {
+			has_law_or_variant = law_type:law_technocracy
+			has_technology_researched = electric_telegraph
+			has_technology_researched = electrical_capacitors
+			has_technology_researched = telephone
+			has_technology_researched = central_planning
+			has_technology_researched = macroeconomics
+		}
+		highlighted_option = yes
+
+		active_law:lawgroup_economic_system ?= {
+			add_amendment = {
+				type = cre_amendment_cybersyn
+				sponsor = root.ig:ig_petty_bourgeoisie
+				cooldown = 120
+			}
+		}
+		add_loyalists = {
+			value = large_radicals
+			pop_type = engineers
+		}
+	}
+
+}

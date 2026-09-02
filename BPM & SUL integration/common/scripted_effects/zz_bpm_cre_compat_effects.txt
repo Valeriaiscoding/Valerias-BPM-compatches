@@ -1,0 +1,9 @@
+﻿bpm_cre_set_vanilla_ideologies = {
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_managerial }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_managerial_cooperative }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_bureaucratic }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_segregationist }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_exclusionist }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_supremacist }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_black_army }
+}

@@ -1,0 +1,223 @@
+﻿cre_red_intelligentsia_bar = {
+ 	name = "cre_red_intelligentsia_bar"
+ 	desc = "cre_red_intelligentsia_bar_desc"
+
+ 	default_bad = yes
+
+ 	monthly_progress = {
+ 		add = {
+			value = government_legitimacy
+			divide = 100
+			desc = "[concept_legitimacy]"
+		}
+		add = {
+			value = ig:ig_intelligentsia.ig_approval
+			divide = 10
+			desc = "intelligentsia_approval"
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia = {
+					is_in_government = yes
+				}
+			}
+			add = {
+				value = 0.5
+				desc = "intelligentsia_in_government"
+			}
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia = {
+					interest_group_has_socialist_ideology = yes
+				}
+			}
+			add = {
+				value = ig:ig_intelligentsia.leader.popularity
+				divide = 100
+				desc = "socialist_intelligentsia_leader"
+			}
+		}
+	}
+
+ 	start_value = 0
+ 	min_value = 0
+ 	max_value = 60
+}
+
+cre_nomenklatura_bar = {
+ 	name = "cre_nomenklatura_bar"
+ 	desc = "cre_nomenklatura_bar_desc"
+
+ 	default_bad = yes
+
+ 	monthly_progress = {
+ 		add = {
+			value = government_legitimacy
+			divide = 100
+			desc = "[concept_legitimacy]"
+		}
+		add = {
+			value = ig:ig_intelligentsia.ig_clout
+			multiply = 5
+			desc = "intelligentsia_clout"
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia = {
+					is_in_government = yes
+				}
+			}
+			add = {
+				value = 1.0
+				desc = "intelligentsia_in_government"
+			}
+		}
+	}
+
+ 	start_value = 0
+ 	min_value = 0
+ 	max_value = 60
+}
+
+cre_pb_into_managers_bar = {
+ 	name = "cre_pb_into_managers_bar"
+ 	desc = "cre_pb_into_managers_bar_desc"
+
+ 	default = yes
+
+ 	monthly_progress = {
+		add = {
+			value = average_sol_for_primary_cultures
+			divide = 10
+			desc = "average_sol_for_primary_cultures"
+		}
+ 		add = {
+			value = government_legitimacy
+			divide = 100
+			desc = "[concept_legitimacy]"
+		}
+		add = {
+			value = ig:ig_petty_bourgeoisie.ig_approval
+			divide = 10
+			desc = "pb_approval"
+		}
+		if = {
+			limit = {
+				ig:ig_petty_bourgeoisie = {
+					is_in_government = yes
+				}
+			}
+			add = {
+				value = 0.5
+				desc = "pb_in_government"
+			}
+		}
+		if = {
+			limit = {
+				ig:ig_petty_bourgeoisie = {
+					interest_group_has_socialist_ideology = yes
+				}
+			}
+			add = {
+				value = ig:ig_petty_bourgeoisie.leader.popularity
+				divide = 100
+				desc = "socialist_pb_leader"
+			}
+		}
+	}
+
+ 	start_value = 0
+ 	min_value = 0
+ 	max_value = 100
+}
+
+cre_undo_evolutions_bar = {
+	name = "cre_undo_evolutions_bar"
+ 	desc = "cre_undo_evolutions_bar_desc"
+
+ 	default = yes
+
+ 	monthly_progress = {
+ 		add = {
+			value = government_legitimacy
+			divide = 100
+			desc = "[concept_legitimacy]"
+		}
+		add = {
+			value = ig:ig_intelligentsia.ig_approval
+			divide = 10
+			desc = "intelligentsia_approval"
+		}
+		if = {
+			limit = {
+				owner = {
+					any_scope_state = {
+						is_incorporated = yes
+						loyalist_fraction = {
+							value >= 0.10
+						}
+					}
+				}
+			}
+			owner = {
+				add = {
+					desc = "communism_progress_from_loyalists_tt"
+					every_scope_state = {
+						limit = {
+							is_incorporated = yes
+							loyalist_fraction = {
+								value >= 0.1
+						}
+						}
+						add = this.loyalist_fraction
+					}
+					divide = num_incorporated_states
+					multiply = 3 # Maxes out at -3
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_political_movement = {
+					movement_is_socialist = yes
+				}
+			}
+			subtract = {
+				desc = "communism_progress_from_movement_support_tt"
+				every_political_movement = {
+					limit = {
+						movement_is_socialist = yes
+					}
+					add = {
+						value = this.political_movement_support
+						multiply = 10
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_political_movement = {
+					movement_is_socialist = yes
+				}
+			}
+			subtract = {
+				desc = "communism_progress_from_movement_activism_tt"
+				every_political_movement = {
+					limit = {
+						movement_is_socialist = yes
+					}
+					add = {
+						value = this.political_movement_radicalism
+						multiply = 5
+					}
+				}
+			}
+		}	
+	}
+
+ 	start_value = 0
+ 	min_value = 0
+ 	max_value = 100
+}

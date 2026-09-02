@@ -1,0 +1,387 @@
+namespace = communism
+communism.1 = {
+	type = country_event
+	placement = root
+	title = communism.1.t
+	desc = communism.1.desc
+	flavor = communism.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by communsim JE 1
+	}
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_council_republic
+					value > neutral
+				}
+			}
+			set_variable = communist_ig_var
+			save_scope_as = unions
+			leader = {
+				save_scope_as = union_leader
+			}
+		}
+		set_variable = {
+			name = je_communism_2_var
+			value = 0
+		}
+		add_journal_entry = {
+			type = je_communism_2
+		}
+	}
+
+	option = { # wage controls
+		name = communism.1.a
+		trigger = {
+			NOT = { has_law_or_variant = law_type:law_wage_subsidies }
+			NOT = { has_law_or_variant = law_type:law_old_age_pension }
+		}
+		activate_law = law_type:law_wage_subsidies
+		if = {
+			limit = {
+				any_interest_group = {
+					has_variable = communist_ig_var
+				}
+			}
+			custom_tooltip = communist_unions.tt
+		}
+	}
+	option = { # ban slavery
+		name = communism.1.b
+		trigger = {
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+		activate_law = law_type:law_slavery_banned
+		if = {
+			limit = {
+				any_interest_group = {
+					has_variable = communist_ig_var
+				}
+			}
+			custom_tooltip = communist_unions.tt
+		}
+	}
+	option = { # Regulatory bodies
+		name = communism.1.c
+		trigger = {
+			NOT = { has_law_or_variant = law_type:law_regulatory_bodies }
+			NOT = { has_law_or_variant = law_type:law_worker_protections }
+		}
+		activate_law = law_type:law_regulatory_bodies
+		if = {
+			limit = {
+				any_interest_group = {
+					has_variable = communist_ig_var
+				}
+			}
+			custom_tooltip = communist_unions.tt
+		}
+	}
+	option = { # unions
+		name = communism.1.d
+		trigger = {
+			NOT = { has_law_or_variant = law_type:law_right_to_associate }
+			NOT = { has_law_or_variant = law_type:law_socialist_labor_unions }
+		}
+		activate_law = law_type:law_right_to_associate
+		if = {
+			limit = {
+				any_interest_group = {
+					has_variable = communist_ig_var
+				}
+			}
+			custom_tooltip = communist_unions.tt
+		}
+	}
+	option = {
+		name = communism.1.e
+		default_option = yes
+		if = {
+			limit = {
+				any_interest_group = {
+					has_variable = communist_ig_var
+				}
+			}
+			custom_tooltip = communist_unions.tt
+		}
+		every_interest_group = {
+			limit = {
+				leader = {
+					bpm_leader_is_radical_socialist = yes
+				}
+			}
+			add_modifier = {
+				name = communist_government_modifier
+				days = normal_modifier_time
+			}
+		}
+		add_loyalists = {
+			value = medium_radicals
+			strata = upper
+		}
+	}
+}
+
+communism.8 = {
+	type = country_event
+	placement = root
+	title = communism.8.t
+	desc = communism.8.d
+	flavor = communism.8.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	trigger = {
+		has_law = law_type:law_council_republic
+		NOR = {	
+			has_variable = red_army_var
+			has_variable = black_army_var
+		}
+		ig:ig_armed_forces = {
+			leader = {
+				bpm_leader_is_socialist = yes
+				bpm_leader_is_anarchist = no
+			}
+			bpm_ig_is_anarchist = no
+		}
+	}
+
+	immediate = {
+		ig:ig_armed_forces = {
+			save_scope_as = red_army_ig
+			leader = {
+				save_scope_as = red_army_general
+			}
+		}
+		set_variable = red_army_var
+	}
+
+	option = {
+		name = communism.8.a
+		cre_red_army_effect = yes
+		if = {
+			limit = {
+				ig:ig_armed_forces.leader = {
+					has_ideology = ideology:ideology_vanguardist
+				}
+			 }
+			custom_tooltip = {
+				text = replace_commanders_with_vanguardists
+				every_scope_character = {
+					limit = {
+						OR = {
+							has_role_of_type = general
+							has_role_of_type = admiral
+						}
+						NOR = {
+							has_ideology = ideology:ideology_center_leader
+							has_ideology = ideology:ideology_moderate
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_vanguardist
+						}
+					}
+					commander_military_formation ?= {
+						save_scope_as = replacement_formation
+					}
+					if = {
+						limit = { 
+							has_role_of_type = general
+						}
+						root = {
+							create_character = {
+								is_general = yes
+								ideology = ideology:ideology_vanguardist
+								save_scope_as = new_commander
+							}
+							scope:new_commander ?= {
+								transfer_to_formation = scope:replacement_formation
+							}
+						}
+					} else = {
+						root = {
+							create_character = {
+								is_admiral = yes
+								ideology = ideology:ideology_vanguardist
+								save_scope_as = new_commander
+							}
+							scope:new_commander ?= {
+								transfer_to_formation = scope:replacement_formation
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_historical = yes
+						}
+						exile_character_with_martyrdom = yes
+					} else = {
+						retire_character = yes
+					}
+				}
+			}
+		} 
+		else = {
+			custom_tooltip = {
+				text = replace_commanders_with_communists
+				every_scope_character = {
+					limit = {
+						OR = {
+							has_role_of_type = general
+							has_role_of_type = admiral
+						}
+						NOR = {
+							has_ideology = ideology:ideology_moderate
+							bpm_leader_is_socialist = yes
+						}
+					}
+					commander_military_formation ?= {
+						save_scope_as = replacement_formation
+					}
+					if = {
+						limit = { 
+							has_role_of_type = general
+						}
+						root = {
+							create_character = {
+								is_general = yes
+								ideology = ideology:ideology_communist
+								save_scope_as = new_commander
+							}
+							scope:new_commander ?= {
+								transfer_to_formation = scope:replacement_formation
+							}
+						}
+					} else = {
+						root = {
+							create_character = {
+								is_admiral = yes
+								ideology = ideology:ideology_communist
+								save_scope_as = new_commander
+							}
+							scope:new_commander ?= {
+								transfer_to_formation = scope:replacement_formation
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_historical = yes
+						}
+						exile_character_with_martyrdom = yes
+					} else = {
+						retire_character = yes
+					}
+				}
+			}
+		}
+		add_modifier = {
+			name = cre_politicized_officers_modifier
+			years = 4
+			is_decaying = yes
+		}
+		add_loyalists = {
+			value = large_radicals
+			pop_type = officers
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = soldiers
+		}
+	}
+}
+
+# Completion Event
+communism.11 = {
+	type = country_event
+	placement = root
+	title = communism.11.t
+	desc = communism.11.d
+	flavor = communism.11.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_realist_household"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by communism JE 1
+	}
+
+	immediate = {
+		trigger_event = {
+			id = communism.100
+			days = 1850 # 5 years
+		}
+	}
+
+	option = {
+		name = communism.11.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_defeated_initial_socialist_movement
+			days = normal_modifier_time
+		}
+		add_loyalists = {
+			value = small_radicals
+			strata = upper
+		}
+		add_loyalists = {
+			value = small_radicals
+			strata = middle
+		}
+	}
+	option = {
+		name = communism.11.b
+		add_modifier = {
+			name = modifier_defeated_initial_socialist_movement_worries
+			days = normal_modifier_time
+		}
+		add_loyalists = {
+			value = medium_radicals
+			strata = upper
+		}
+		add_loyalists = {
+			value = medium_radicals
+			strata = middle
+		}
+	}
+}
+
+# Restart
+communism.100 = {
+	type = country_event
+	placement = root
+	hidden = yes
+
+	immediate = {
+		add_journal_entry = {
+			type = je_communism_1
+		}
+	}
+}
