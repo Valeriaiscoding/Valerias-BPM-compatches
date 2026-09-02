@@ -1,4 +1,4 @@
-﻿# group = this is the law_group a law belongs to
+﻿	# group = this is the law_group a law belongs to
 # icon = graphical icon shown in-game
 # modifier = {} modifier on country for having adopted this law
 
@@ -14,7 +14,7 @@ REPLACE_OR_CREATE:law_autocracy = {
 		OR = {
 			AND = {
 				com_law_autocracy_trigger = yes
-				NOR = { # REPLACE_OR_CREATEd by Neo-Absolutism and Bakufu
+				NOR = { # Replaced by Neo-Absolutism and Bakufu
 					has_law = law_type:law_neo_absolutism
 					has_law = law_type:law_bakufu
 				}
@@ -56,7 +56,10 @@ REPLACE_OR_CREATE:law_autocracy = {
 			scripted_effect_parties_emergence = yes
 		}
 		if = {
-			limit = { bpm_country_is_republic = yes	}
+			limit = { 
+				NOT = { has_modifier = bpm_republic_gov_size }
+				bpm_country_is_republic = yes	
+			}
 			
 			add_modifier = bpm_republic_gov_size
 		}
@@ -143,7 +146,14 @@ REPLACE_OR_CREATE:law_neo_absolutism = { # Reward for completing the neo-absolut
 		if = {
 			limit = { bpm_country_is_republic = yes	}
 			scripted_effect_parties_emergence = yes
-			add_modifier = bpm_republic_gov_size
+			if = {
+				limit = { 
+					NOT = { has_modifier = bpm_republic_gov_size }
+					bpm_country_is_republic = yes	
+				}
+				
+				add_modifier = bpm_republic_gov_size
+			}
 		} else = {
 			scripted_effect_parties_disappearence = yes
 		}
@@ -292,8 +302,8 @@ REPLACE_OR_CREATE:law_colonial_administration = {
 		country_electoral_confidence_impact_mult = -1
 		# country_bpm_base_mandate_add = 60
 
-		state_radicals_and_loyalists_from_sol_change_mult = 1	# PLP
-		state_radicals_from_political_movements_mult = 1		# PLP
+		state_radicals_and_loyalists_from_sol_change_mult = 0.75	# PLP
+		state_radicals_from_political_movements_mult = 0.75		# PLP
 	}
 
 	can_impose = {
@@ -356,7 +366,10 @@ law_military_junta = {
 			scripted_effect_parties_emergence = yes
 		}
 		if = {
-			limit = { bpm_country_is_republic = yes	}
+			limit = { 
+				NOT = { has_modifier = bpm_republic_gov_size }
+				bpm_country_is_republic = yes	
+			}
 			
 			add_modifier = bpm_republic_gov_size
 		}
@@ -467,7 +480,10 @@ REPLACE_OR_CREATE:law_oligarchy = {
 			scripted_effect_parties_emergence = yes
 		}
 		if = {
-			limit = { bpm_country_is_republic = yes	}
+			limit = { 
+				NOT = { has_modifier = bpm_republic_gov_size }
+				bpm_country_is_republic = yes	
+			}
 			
 			add_modifier = bpm_republic_gov_size
 		}
@@ -658,8 +674,8 @@ REPLACE_OR_CREATE:law_technocracy = {
 		country_authority_add = 100
 		country_electoral_confidence_impact_mult = -1
 
-		state_radicals_and_loyalists_from_sol_change_mult = 0.6	# PLP
-		state_radicals_from_political_movements_mult = 0.6		# PLP
+		state_radicals_and_loyalists_from_sol_change_mult = 0.5	# PLP
+		state_radicals_from_political_movements_mult = 0.5		# PLP
 	}
 
 	unlocking_technologies = {
@@ -949,7 +965,7 @@ REPLACE_OR_CREATE:law_census_voting = {
 	modifier = {
 		country_voting_power_wealth_threshold_add = 10
 		country_voting_power_from_literacy_add = 25
-		country_authority_add = 100
+		country_authority_add = 50
 		state_political_strength_from_wealth_mult = 0.75
 		state_pop_pol_str_add = -1
 
@@ -958,7 +974,6 @@ REPLACE_OR_CREATE:law_census_voting = {
 		country_legitimacy_govt_total_votes_add = 100
 		country_legitimacy_govt_total_clout_add = 75
 
-		state_radicals_from_political_movements_mult = -0.05
 		country_rigidity_baseline_add = -15
 		country_bpm_labor_consciousness_target_mult = -0.05
 
@@ -1064,13 +1079,11 @@ REPLACE_OR_CREATE:law_universal_suffrage = {
 	
 	modifier = {
 		country_voting_power_base_add = 30
-		country_authority_add = 100
 		state_political_strength_from_wealth_mult = 0.25
 		country_populist_movement_support_add = 0.05
 
 		country_legitimacy_govt_total_votes_add = 150
 		country_legitimacy_govt_total_clout_add = 30
-		state_radicals_from_political_movements_mult = -0.05
 		country_rigidity_baseline_add = -20
 		country_bpm_labor_consciousness_target_mult = -0.2
 

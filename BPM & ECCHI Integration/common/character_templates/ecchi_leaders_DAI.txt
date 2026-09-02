@@ -8,7 +8,7 @@ ecchi_dai_truong_dinh = {
     home_region = STATE_MEKONG
 
     ideology = ideology_traditionalist
-    interest_group = ig_rural_folk
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_truong_dinh
     birth_date = 1820.10.5
     traits = { romantic brave pious resupply_commander }
@@ -21,9 +21,8 @@ ecchi_dai_truong_dinh = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_devout
-                is_interest_group_type = ig_armed_forces
+                is_interest_group_type = ig_national_liberals
+                is_interest_group_type = ig_agrarian_populists
             }
         }
         earliest_usage_date = 1855.1.1
@@ -70,8 +69,8 @@ ecchi_dai_phan_dinh_phung = {
     culture = cu:vietnamese
     home_region = STATE_ANNAM
 
-    ideology = ideology_traditionalist
-    interest_group = ig_intelligentsia
+    ideology = ideology_moderate
+    interest_group = ig_national_liberals
 	dna = ecchi_dna_phan_dinh_phung
     birth_date = 1847.1.21
     traits = { imperious pious resupply_commander forest_commander }
@@ -83,10 +82,7 @@ ecchi_dai_phan_dinh_phung = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_intelligentsia
-            }
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1877.1.1
         latest_usage_date = 1896.1.21
@@ -102,7 +98,7 @@ ecchi_dai_cao_ba_quat = {
     home_region = STATE_TONKIN
 
     ideology = ideology_radical
-    interest_group = ig_rural_folk
+    interest_group = ig_agrarian_populists
 	dna = ecchi_dna_cao_ba_quat
     birth_date = 1809.4.17
     traits = { romantic reckless }
@@ -114,10 +110,7 @@ ecchi_dai_cao_ba_quat = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_intelligentsia
-            }
+            is_interest_group_type = ig_agrarian_populists
         }
         earliest_usage_date = 1847.1.1
         latest_usage_date = 1855.10.12

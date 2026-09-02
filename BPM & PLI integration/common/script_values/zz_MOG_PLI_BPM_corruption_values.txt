@@ -143,7 +143,7 @@ REPLACE:mog_pli_corruption_increment = {
 				# TODO LOC
 				value = owner.var:bpm_political_stability
 				subtract = 50
-				multiply = -0.002	 # -0.1 to 0.1
+				multiply = -0.0015	 # -0.075 to 0.075
 				if = {
 					limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
 					multiply = -1

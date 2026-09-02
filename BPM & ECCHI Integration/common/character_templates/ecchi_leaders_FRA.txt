@@ -9,7 +9,7 @@ ecchi_fra_petain = {
 
     religion = rel:catholic
     ideology = ideology_authoritarian
-    interest_group = ig_armed_forces
+    interest_group = ig_reactionaries
 	dna = ecchi_dna_philippe_petain
     birth_date = 1856.4.24
     traits = { reserved experienced_artillery_commander basic_offensive_planner }
@@ -36,7 +36,7 @@ ecchi_fra_de_gaulle = {
 
     religion = rel:catholic
     ideology = ideology_authoritarian
-    interest_group = ig_conservatives
+    interest_group = ig_national_liberals # conservatives
 	dna = ecchi_dna_charles_de_gaulle
     birth_date = 1890.11.22
     traits = { resupply_commander popular_commander basic_political_operator }

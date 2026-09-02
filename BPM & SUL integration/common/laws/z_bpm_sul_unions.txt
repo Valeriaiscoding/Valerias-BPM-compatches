@@ -1,0 +1,23 @@
+﻿INJECT:law_syndicalism = {
+	modifier = {
+		state_loyalists_from_political_movements_mult = 0.10
+		state_pop_support_movement_labor_mult = -0.10
+		state_pop_support_movement_socialist_mult = 0.15
+		state_pop_support_movement_anarchist_mult = 0.15
+		building_group_bg_manufacturing_allowed_collectivization_add = 0.5
+		building_group_bg_extraction_allowed_collectivization_add = 0.5
+		building_group_bg_power_allowed_collectivization_add = 0.5
+		building_group_bg_private_infrastructure_allowed_collectivization_add = 0.5
+		building_group_bg_arts_allowed_collectivization_add = 0.5
+	}
+}
+
+INJECT:law_socialist_labor_unions = {
+	modifier = {
+		state_pop_support_movement_labor_mult = -0.10
+		state_pop_support_movement_communist_mult = 0.25
+		state_pop_support_movement_socialist_mult = 0.10
+		state_radicals_and_loyalists_from_sol_change_mult = 0.10
+		country_loyalists_from_legitimacy_mult = 0.15
+	}
+}

@@ -2,7 +2,7 @@
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 	country_legitimacy_min_add = 30
 	country_legitimacy_base_add = 10
-	country_law_enactment_time_mult = -0.50
+	country_law_enactment_speed_mult = -0.50
 	country_law_enactment_stall_mult = -0.50
 	country_law_enactment_ruler_veto_bypass = yes
 	country_rigidity_baseline_add = -25
@@ -24,7 +24,7 @@ REPLACE:stts_ze_price_stabilite = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 	state_shopkeepers_investment_pool_efficiency_mult = 0.10
 	state_capitalists_investment_pool_efficiency_mult = 0.10
-	country_law_enactment_time_mult = 1.00
+	country_law_enactment_speed_mult = 1.00
 	political_movement_pop_attraction_mult = -0.20
 	political_movement_radicalism_add = -0.15
 	country_rigidity_baseline_add = 25

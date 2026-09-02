@@ -1,0 +1,3 @@
+﻿GLOBAL = {
+	bpm_cre_set_vanilla_ideologies = yes
+}

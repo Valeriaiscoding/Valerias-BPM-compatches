@@ -60,7 +60,7 @@ ecchi_ast_hughes = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
             OR = {
-                is_interest_group_type = ig_rural_folk
+                #is_interest_group_type = ig_rural_folk
                 is_interest_group_type = ig_conservatives 
             }
         }

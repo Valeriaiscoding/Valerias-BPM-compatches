@@ -25,6 +25,16 @@ INJECT:ideology_dop_positivist = {
 	}
 }
 
+INJECT:ideology_fem_feminist_mov = {
+	lawgroup_slavery = {
+		law_slavery_banned = neutral
+		law_legacy_slavery = disapprove
+		law_colonial_slavery = disapprove
+		law_debt_slavery = strongly_disapprove
+		law_slave_trade = strongly_disapprove
+	}
+}
+
 INJECT:ideology_wel_laborist = {
 	lawgroup_slavery = {
 		law_slavery_banned = neutral

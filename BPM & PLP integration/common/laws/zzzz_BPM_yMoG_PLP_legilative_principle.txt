@@ -5,3 +5,10 @@
 		state_radicals_from_political_movements_mult = 0.25
 	}
 }
+
+INJECT:law_supreme_legislature = {
+	modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = -0.1
+		state_radicals_from_political_movements_mult = -0.1
+	}
+}

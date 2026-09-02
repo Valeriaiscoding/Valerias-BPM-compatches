@@ -1,0 +1,11 @@
+﻿# INJECT:bpm_stability_stagnant = {
+# 	country_authority_add = 100
+# }
+
+# INJECT:bpm_stability_dynamic = {
+# 	#country_authority_add = 50
+# }
+
+# INJECT:bpm_stability_unstable = {
+# 	country_authority_add = -100
+# }
