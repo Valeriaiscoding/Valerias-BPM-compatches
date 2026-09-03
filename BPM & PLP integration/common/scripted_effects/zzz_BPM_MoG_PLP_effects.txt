@@ -45,7 +45,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_council_republic
+					has_law_or_variant = law_type:law_council_republic
 				}
 			}
 			activate_law = law_type:law_council_republic
@@ -59,7 +59,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_monarchy
+					has_law_or_variant = law_type:law_monarchy
 				}
 			}
 			activate_law = law_type:law_monarchy
@@ -73,7 +73,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_parliamentary_republic
 				}
 			}
 			activate_law = law_type:law_parliamentary_republic
@@ -87,7 +87,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_presidential_republic
 				}
 			}
 			activate_law = law_type:law_presidential_republic
@@ -101,7 +101,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_theocracy
+					has_law_or_variant = law_type:law_theocracy
 				}
 			}
 			activate_law = law_type:law_theocracy
@@ -115,7 +115,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_council_republic
+					has_law_or_variant = law_type:law_council_republic
 				}
 			}
 			activate_law = law_type:law_council_republic
@@ -129,7 +129,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_monarchy
+					has_law_or_variant = law_type:law_monarchy
 				}
 			}
 			activate_law = law_type:law_monarchy
@@ -143,7 +143,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_parliamentary_republic
 				}
 			}
 			activate_law = law_type:law_parliamentary_republic
@@ -157,7 +157,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_presidential_republic
 				}
 			}
 			activate_law = law_type:law_presidential_republic
@@ -171,7 +171,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 					}
 				}
 				NOT = {
-					has_law = law_type:law_theocracy
+					has_law_or_variant = law_type:law_theocracy
 				}
 			}
 			activate_law = law_type:law_theocracy
@@ -205,7 +205,7 @@ REPLACE_OR_CREATE:capitulate_to_revolution = {
 	if = {
 		limit = {
 			NOT = {
-				has_law_or_variant = law_type:law_monarchy
+				has_law_or_variant_or_variant = law_type:law_monarchy
 			}
 		}
 		hidden_effect = {
@@ -254,12 +254,8 @@ REPLACE:bpm_disable_elective_laws = {
 	if = {
 		limit = { country_has_voting_franchise = no }
 		if = {
-			limit = { has_law = law_type:law_elected_bureaucrats }
+			limit = { has_law_or_variant = law_type:law_elected_bureaucrats }
 			activate_law = law_type:law_appointed_bureaucrats
-		}
-		if = {
-			limit = { has_law = law_type:law_separated_powers }
-			activate_law = law_type:law_advisory_body
 		}
 	}
 	if = {
@@ -276,11 +272,11 @@ REPLACE:bpm_disable_elective_laws = {
 			}
 		}
 		if = {
-			limit = { has_law = law_type:law_elected_police }
+			limit = { has_law_or_variant = law_type:law_elected_police }
 			activate_law = law_type:law_dedicated_police
 		}
 		if = {
-			limit = { has_law = law_type:law_elected_officers }
+			limit = { has_law_or_variant = law_type:law_elected_officers }
 			activate_law = law_type:law_political_officers
 		}
 	}
