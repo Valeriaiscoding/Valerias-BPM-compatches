@@ -12,7 +12,7 @@
 
 	modifier = {
 		country_rigidity_baseline_add = -10
-		interest_group_in_government_attraction_mult = -0.25
+		#interest_group_in_government_attraction_mult = -0.25
 	}
 
 	tax_modifier_very_low = {
@@ -314,7 +314,7 @@ REPLACE_OR_CREATE:amendment_extra_dividend_tax = { #up to 95% like in USA in WW2
 	}
 
 	modifier = {
-		interest_group_in_government_attraction_mult = -0.25
+		#interest_group_in_government_attraction_mult = -0.25
 		country_rigidity_baseline_add = -10
 	}
 
