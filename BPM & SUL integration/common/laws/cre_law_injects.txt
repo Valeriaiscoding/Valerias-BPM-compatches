@@ -2,9 +2,8 @@
 INJECT:law_anarchy = {
 	modifier = {
 		country_radicals_from_legitimacy_mult = -1.00
-		country_loyalists_from_legitimacy_mult = -1.00
 		country_legitimacy_min_add = 25
-		state_pop_support_movement_anarchist_mult = 0.50
+		state_pop_support_movement_anarchist_mult = 0.25
 		political_movement_pop_attraction_mult = 0.25
 		country_influence_mult = -0.15
 	}

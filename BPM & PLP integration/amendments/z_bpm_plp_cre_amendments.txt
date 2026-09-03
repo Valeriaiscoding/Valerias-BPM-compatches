@@ -1,0 +1,14 @@
+﻿# TRY_INJECT:cre_amendment_anarchy_secured = {
+# 	modifier = {
+# 		state_radicals_and_loyalists_from_sol_change_mult = -0.20
+# 	}
+# }
+
+TRY_INJECT:cre_amendment_anarchist_defense_council = {
+	modifier = {
+		country_legitimacy_ideological_incoherence_mult = 0.25
+		country_law_enactment_speed_mult = 0.1
+		state_radicals_and_loyalists_from_sol_change_mult = -0.25	
+		state_radicals_from_political_movements_mult = -0.25
+	}
+}

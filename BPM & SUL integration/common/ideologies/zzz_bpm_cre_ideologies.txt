@@ -82,17 +82,17 @@ REPLACE:ideology_cre_bureaucratic = {
 	# 	law_council_republic = approve
 	# }
 
-	lawgroup_distribution_of_power = {
-		law_universal_suffrage = disapprove
-		law_census_voting = disapprove
-		law_wealth_voting = neutral
-		law_landed_voting = disapprove
-		law_single_party_state = approve
-		law_technocracy = strongly_approve
-		law_oligarchy = neutral
-		law_autocracy = neutral
-		law_anarchy = strongly_disapprove
-	}
+	# lawgroup_distribution_of_power = {
+	# 	law_universal_suffrage = disapprove
+	# 	law_census_voting = disapprove
+	# 	law_wealth_voting = neutral
+	# 	law_landed_voting = disapprove
+	# 	law_single_party_state = approve
+	# 	law_technocracy = strongly_approve
+	# 	law_oligarchy = neutral
+	# 	law_autocracy = neutral
+	# 	law_anarchy = strongly_disapprove
+	# }
 
 	# lawgroup_economic_system = {
 	# 	law_laissez_faire = disapprove

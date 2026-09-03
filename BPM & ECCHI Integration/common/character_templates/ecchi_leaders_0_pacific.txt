@@ -110,7 +110,7 @@ ecchi_haw_dole = {
 			bpm_ig_enabled = yes
             OR = {
                 is_interest_group_type = ig_devout
-                is_interest_group_type = ig_petty_bourgeoisie
+                is_interest_group_type = ig_landowners
             }
         }
         earliest_usage_date = 1880.1.1

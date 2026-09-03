@@ -43,31 +43,6 @@ cre_dismissed_ig_executive = {
 }
 
 
-
-cre_collectivization_payments = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_expenses_add = 1
-}
-
-cre_collectivization_frustration = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_farmer_negative.dds
-	interest_group_approval_add = -2
-}
-
-cre_resistance_to_collectivization = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_farmer_negative.dds
-	building_group_bg_agriculture_throughput_add = -0.20
-	building_group_bg_ranching_throughput_add = -0.20
-	building_group_bg_agriculture_tax_mult = -0.20
-	state_peasants_consumption_multiplier_add = 0.10
-}
-
-cre_women_military_support = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
-	unit_recovery_rate_add = 0.05
-	unit_morale_recovery_mult = 0.05
-}
-
 cre_mujeres_libres_movement = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 	political_movement_pop_attraction_mult = 0.15
@@ -182,20 +157,6 @@ cre_falsified_economic_data_modifier = {
 	state_construction_mult = -0.10
 	country_legitimacy_base_add = -5
 	country_bureaucracy_mult = -0.10
-}
-
-cre_anarchy_in_the_ranks_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	military_formation_mobilization_speed_mult = -0.15
-	building_training_rate_mult = -0.15
-	unit_experience_gain_mult = -0.15
-}
-
-cre_politicized_officers_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	unit_experience_gain_mult = -0.15
-	unit_morale_recovery_mult = -0.10
-	country_military_tech_research_speed_mult = -0.15
 }
 
 cre_destruction_of_churches_modifier = {

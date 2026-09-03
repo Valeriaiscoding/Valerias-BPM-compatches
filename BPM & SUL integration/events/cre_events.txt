@@ -1,5 +1,5 @@
 namespace = cre_events
-
+# TODO add rigidity
 #Voluntary vs forced collectivization
 cre_events.1 = {
 	type = country_event
@@ -794,7 +794,10 @@ cre_events.6 = {
 				cooldown = 120
 			}
 		}
-		activate_law = law_type:law_federated
+		if = {
+			limit = { NOT = { has_law_or_variant = law_type:law_federated } }
+			activate_law = law_type:law_federated
+		}
 		ig:ig_anarchists = {
 			bpm_remove_all_sta_ideologies = yes
 			bpm_remove_all_mil_ideologies = yes
@@ -829,7 +832,7 @@ cre_events.6 = {
 }
 
 #Spanish anti-clerical anarchism
-cre_events.7 = { # TODO
+cre_events.7 = {
 	type = country_event
 	placement = root
 	title = cre_events.7.t
@@ -851,7 +854,7 @@ cre_events.7 = { # TODO
 	trigger = {
 		has_law_or_variant = law_type:law_anarchy
 		NOT = {
-			has_law_or_variant = law_type:law_state_atheism
+			country_has_state_religion = rel:atheist
 		}
 		any_primary_culture = {
 			count = all
@@ -869,7 +872,6 @@ cre_events.7 = { # TODO
 	option = {
 		name = cre_events.7.a
 		default_option = yes
-		activate_law = law_type:law_state_atheism
 		custom_tooltip = {
 			text = state_atheism_conversion_tt
 			every_scope_state = {
@@ -882,9 +884,13 @@ cre_events.7 = { # TODO
 				}
 			}
 		}
-		add_radicals = {
-			value = very_large_radicals
-			pop_type = clergymen
+		ig:ig_anarchists ?= {
+			if = {
+				limit = { NOT = { has_ideology = ideology:ideology_rel_atheist} }
+				bpm_remove_all_rel_ideologies = yes
+				add_ideology = ideology_rel_atheist
+				bpm_reorder_ideologies = yes
+			}
 		}
 		add_radicals = {
 			value = very_large_radicals
@@ -900,8 +906,59 @@ cre_events.7 = { # TODO
 			pop_type = clergymen
 			religion = rel:catholic
 		}
+		every_interest_group = {
+			save_scope_as = ig
+			if = {
+				limit = { is_interest_group_type = ig_devout }
+				owner = {
+					add_radicals = {
+						value = very_large_radicals
+						interest_group = scope:ig
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_rel_moralist
+						has_ideology = ideology:ideology_rel_radical_moralist
+					}
+				}
+				owner = {
+					add_radicals = {
+						value = medium_radicals
+						interest_group = scope:ig
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_ideology = ideology:ideology_rel_pragmatic_moralist
+						has_ideology = ideology:ideology_rel_modern_moralist
+					}
+				}
+				owner = {
+					add_radicals = {
+						value = small_radicals
+						interest_group = scope:ig
+					}
+				}
+			}
+		}
+		if = {
+			limit = {  
+				NOR = {
+					has_law_or_variant = law_type:law_national_guard
+					has_law_or_variant = law_type:law_secret_police
+				}
+			}
+			activate_law = law_type:law_national_guard
+		}
+		activate_law = law_type:law_state_atheism
 		add_modifier = {
 			name = cre_destruction_of_churches_modifier
+			multiplier = 0.25
 			years = 10
 		}
 		c:PAP ?= {
@@ -941,6 +998,14 @@ cre_events.7 = { # TODO
 				}
 			}
 			activate_law = law_type:law_total_separation
+		}
+		ig:ig_anarchists ?= {
+			if = {
+				limit = { NOT = { has_ideology = ideology:ideology_rel_radical_secularist } }
+				bpm_remove_all_rel_ideologies = yes
+				add_ideology = ideology_rel_radical_secularist
+				bpm_reorder_ideologies = yes
+			}
 		}
 		custom_tooltip = {
 			text = state_atheism_conversion_tt
@@ -986,8 +1051,10 @@ cre_events.7 = { # TODO
 		name = cre_events.7.c
 		highlighted_option = yes
 		trigger = {
-			ig:ig_devout = {
-				ig_counts_as_marginal = no
+			ig:ig_anarchists ?= {
+				NOT = {
+					has_ideology = ideology:ideology_rel_atheist
+				}
 			}
 		}
 		if = {
@@ -998,14 +1065,22 @@ cre_events.7 = { # TODO
 			}
 			activate_law = law_type:law_freedom_of_conscience
 		}
-		custom_tooltip = {
-			text = christian_anarchist_spawns
-			create_character = {
-				ideology = ideology:ideology_anarchist
-				ig_leader = yes
-				interest_group = ig:ig_devout
+		ig:ig_anarchists ?= {
+			if = {
+				limit = { NOT = { has_ideology = ideology:ideology_rel_pragmatic_moralist } }
+				bpm_remove_all_rel_ideologies = yes
+				add_ideology = ideology_rel_pragmatic_moralist
+				bpm_reorder_ideologies = yes
 			}
 		}
+		# custom_tooltip = {
+		# 	text = christian_anarchist_spawns
+		# 	create_character = {
+		# 		ideology = ideology:ideology_anarchist
+		# 		ig_leader = yes
+		# 		interest_group = ig:ig_devout
+		# 	}
+		# }
 		add_loyalists = {
 			value = small_radicals
 			religion = rel:catholic
@@ -1045,9 +1120,8 @@ cre_events.8 = {	# TODO
 			has_law_or_variant = law_type:law_secret_police
 			has_law_or_variant = law_type:law_command_economy
 			has_law_or_variant = law_type:law_party_single
-			has_law_or_variant = law_type:law_oligarchy
-			has_law_or_variant = law_type:law_autocracy
-			has_law_or_variant = law_type:law_technocracy
+			bpm_country_laws_no_voting = yes
+			has_law_or_variant = law_type:law_advisory_body
 		}
 	}
 
