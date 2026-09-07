@@ -1,7 +1,7 @@
 ﻿bpm_border_control_traditionalists = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	state_migration_pull_mult = -0.02
-	state_migration_quota_mult = -0.01
+	state_migration_quota_mult = -0.02
 }
 
 bpm_border_control_chuds = {

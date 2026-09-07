@@ -1,4 +1,4 @@
-﻿REPLACE:cre_gradual_collectivization = {
+REPLACE:cre_gradual_collectivization = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_farmer_negative.dds
 	building_group_bg_agriculture_allowed_collectivization_add = -0.5
 	building_group_bg_ranching_allowed_collectivization_add = -0.5
@@ -8,20 +8,22 @@
 REPLACE:cre_anarchist_center_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_socialism_positive.dds
 	state_pop_support_movement_anarchist_add = 5
-	interest_group_ig_anarchists_pop_attraction_mult = 0.33
+	interest_group_ig_anarchists_pop_attraction_mult = 0.25
 }
 
 REPLACE:cre_communist_center_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_socialism_positive.dds
 	state_pop_support_movement_communist_add = 5
-	interest_group_ig_revolutionist_socialists_pop_attraction_mult = 0.33
+	interest_group_ig_revolutionist_socialists_pop_attraction_mult = 0.25
 }
 
-cre_purged_academia = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_academic_negative.dds
-	country_academics_pol_str_mult = -0.50
-	country_weekly_innovation_mult = -0.35
-	country_tech_spread_mult = -0.15
+REPLACE:cre_electoralism_legitimized_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	political_movement_pop_attraction_mult = -0.10
+	political_movement_radicalism_add = -0.10
+	interest_group_ig_revolutionist_socialists_pop_attraction_mult = -0.25
+	interest_group_ig_anarchists_pop_attraction_mult = -0.25
+	country_rigidity_baseline_add = 10
 }
 
 cre_party_appointments = {
@@ -37,33 +39,6 @@ cre_apparatchiks_modifier = {
 	state_loyalists_from_political_movements_mult = -0.15
 }
 
-cre_dismissed_ig_executive = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	interest_group_approval_add = -2
-}
-
-
-cre_mujeres_libres_movement = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
-	political_movement_pop_attraction_mult = 0.15
-}
-
-cre_chose_movement_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_socialism_positive.dds
-	political_movement_pop_attraction_mult = 0.25
-}
-
-cre_movement_inspired_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_socialism_positive.dds
-	political_movement_pop_attraction_mult = 0.25
-	political_movement_radicalism_add = 0.10
-}
-
-cre_protected_church_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	interest_group_approval_add = -2
-}
-
 cre_factionalism_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 	political_movement_pop_attraction_mult = 0.10
@@ -73,16 +48,6 @@ cre_factionalism_modifier = {
 cre_pure_movement_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
 	political_movement_pop_attraction_mult = -0.15
-}
-
-cre_class_and_race_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	country_loyalism_increases_full_acceptance_mult = 0.10
-	country_loyalism_increases_second_rate_citizen_mult = -0.10
-	country_loyalism_increases_open_prejudice_mult = -0.20
-	country_loyalism_increases_cultural_erasure_mult = -0.30
-	country_loyalism_increases_violent_hostility_mult = -0.50
-	state_pop_support_movement_fascist_mult = 0.15
 }
 
 REPLACE_OR_CREATE:great_purge_modifier = {
@@ -120,27 +85,17 @@ cre_five_year_plan_failure_modifier = {
 	state_pop_support_movement_communist_mult = -0.25
 }
 
-cre_anti_imperialism_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
-	country_infamy_generation_against_unrecognized_mult = 0.50
-}
-
-cre_shock_work_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
-	state_construction_mult = 0.10
-	building_group_bg_heavy_industry_throughput_add = 0.10
-	state_laborers_mortality_mult = 0.02
-	state_machinists_mortality_mult = 0.02
-}
-
-cre_anti_internationalist_backlash_modifier = {
+REPLACE:cre_anti_internationalist_backlash_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_acceptance_shared_heritage_trait_group_add = -15
 	country_acceptance_no_shared_heritage_trait_add = -20
 	country_acceptance_shared_language_trait_group_add = -15
 	country_acceptance_no_shared_language_trait_add = -20
-	state_pop_support_movement_cultural_majority_mult = 0.25
+	interest_group_ig_fascists_pop_support_mult = 0.33
+	interest_group_ig_reactionaries_pop_support_mult = 0.33
 	state_pop_support_movement_fascist_mult = 0.33
+	state_pop_support_movement_cultural_majority_mult = 0.75
+	state_pop_support_movement_cultural_minority_mult = 0.5
 }
 
 cre_new_internationale_modifier = {
@@ -159,8 +114,10 @@ cre_falsified_economic_data_modifier = {
 	country_bureaucracy_mult = -0.10
 }
 
-cre_destruction_of_churches_modifier = {
+REPLACE:cre_destruction_of_churches_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
-	country_clergymen_pol_str_mult = -0.90
-	interest_group_ig_devout_pop_attraction_mult = -0.90
+	country_clergymen_pol_str_mult = -0.50
+	interest_group_ig_devout_pop_attraction_mult = -0.50
 }
+
+# NEW

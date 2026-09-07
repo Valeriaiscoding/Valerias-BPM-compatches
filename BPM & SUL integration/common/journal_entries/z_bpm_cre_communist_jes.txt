@@ -1,4 +1,4 @@
-﻿REPLACE:je_cre_communist_utopia = {
+REPLACE:je_cre_communist_utopia = {
 	icon = "gfx/interface/icons/invention_icons/socialism.dds"
 
 	group = je_group_cre_socialism
@@ -141,6 +141,10 @@ REPLACE:je_cre_workers_of_the_world = {
 		has_law = law_type:law_multicultural_upgraded
 		has_law_or_variant = law_type:law_no_colonial_affairs
 		OR = {
+			has_law = law_type:law_armed_neutrality
+			has_law = law_type:law_bellum_justum
+		}
+		OR = {
 			has_law_or_variant = law_type:law_no_migration_controls
 			has_law_or_variant = law_type:law_migration_controls
 		}
@@ -207,6 +211,9 @@ REPLACE:je_cre_workers_of_the_world = {
 				}
 			}
 		}
+		hidden_effect = {
+			remove_modifier = cre_anti_internationalist_backlash_modifier
+		}
 		add_modifier = {
 			name = cre_anti_internationalist_backlash_modifier
 			years = 20
@@ -247,6 +254,7 @@ REPLACE:je_cre_workers_of_the_world = {
 						}
 					}
 				}
+				remove_modifier = cre_anti_internationalist_backlash_modifier
 				add_modifier = {
 					name = cre_anti_internationalist_backlash_modifier
 					years = 20
@@ -359,12 +367,14 @@ REPLACE:je_cre_bread_and_roses = {
 			has_law_or_variant = law_type:law_council_republic
 			has_law_or_variant = law_type:law_organic_democracy
 			has_law_or_variant = law_type:law_advisory_body
-			ig:ig_reformist_socialists ?= {
-				bpm_ig_is_marginal = yes
-			}
-			ig:ig_socialists ?= {
-				bpm_ig_is_marginal = yes
-			}
+			# any_interest_group = {
+			# 	OR = {
+			# 		is_interest_group_type = ig_reformist_socialists
+			# 		is_interest_group_type = ig_socialists
+			# 	}
+			# 	bpm_ig_is_marginal = yes
+			# 	count = all
+			# }
 			any_political_movement = {
 				OR = {
 					is_political_movement_type = movement_socialist
@@ -381,4 +391,211 @@ REPLACE:je_cre_bread_and_roses = {
 			strata = lower
 		}
 	}
+}
+
+REPLACE:je_bpm_syndicalism = {
+	icon = "gfx/interface/icons/invention_icons/anarchy.dds"
+
+	group = je_group_internal_affairs
+
+	is_shown_when_inactive = {
+		has_variable = bpm_peasant_population_yandev_var
+		has_global_variable = bpm_anarchist_potd_ended_in_gp
+		NOT = { has_law = law_type:law_council_republic }
+		bpm_performance_significant_country = yes
+	}
+
+	immediate = {
+		set_variable = {
+			name = bpm_je_syndicalism
+			value = 0
+		}
+		set_variable = {
+			name = bpm_syndicalist_strikes_failed
+			value = 0
+		}
+	}
+
+	can_deactivate = no
+	possible = {
+		bpm_performance_significant_country = yes
+		custom_tooltip = {
+			text = BPM_VALUE_POTD_ENDED_IN_GP
+			has_global_variable = bpm_anarchist_potd_ended_in_gp
+		}
+		NOT = { has_law = law_type:law_council_republic }
+		bpm_country_proletarian_are_popular = yes
+	}
+
+	complete = {
+		has_law = law_type:law_council_republic
+		custom_tooltip = {
+			text = "bpm_journal_final_stage"
+			has_variable = bpm_je_syndicalism
+			var:bpm_je_syndicalism > 66
+		}
+	}
+
+	on_complete = {
+		# Legitimize Syndicalism worldwide permanently 
+		if = {
+			limit = {
+				country_rank >= rank_value:unrecognized_regional_power
+			}
+			trigger_event = { id = bpm_syndicalism.1 days = 7 popup = yes }
+		} else = {
+			trigger_event = { id = bpm_syndicalism.2 days = 7 popup = yes }
+		}
+
+		# Enact Syndicalism law 
+		activate_law = law_type:law_syndicalism
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = "bpm_je_reached_stage_2"
+			has_variable = bpm_je_syndicalism_reached_stage_2
+		}
+		bpm_journal_progress_zero = {
+			VAR = bpm_je_syndicalism
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# Cache the rate as a variable to avoid calculating multiple times
+			set_variable = {
+				name = bpm_je_syndicalism_rate_temp
+				value = bpm_je_syndicalism_rate
+			}
+			bpm_handle_je_progress_three_stage = {
+				VAR = bpm_je_syndicalism
+				RATE = var:bpm_je_syndicalism_rate_temp
+				RATE_LEVEL_1 = 0
+				RATE_LEVEL_2 = 2
+				RATE_LEVEL_3 = 4
+				TECH_RATE_1 = 60
+				TECH_RATE_2 = 120
+				TECH_RATE_3 = 240
+				TECH1 = anarchism
+				TECH2 = political_agitation
+			}
+
+			# Make characters Syndicalist/Anarcho-Syndicalist at certain level
+			if = {
+				limit = { var:bpm_je_syndicalism > 33.1 }
+				set_variable = bpm_je_syndicalism_reached_stage_2
+				ig:ig_anarchists ?= {
+					if = {
+						limit = { bpm_interest_group_is_activated = yes }
+						leader = { set_ideology = ideology:ideology_anarchist_syndicalist }
+					}
+				}
+				ig:ig_trade_unions ?= {
+					if = {
+						limit = { 
+							bpm_interest_group_is_activated = yes 
+							NOT = { 
+								owner = { has_law = law_type:law_corporatized_unions } 
+							}
+						}
+						leader = { set_ideology = ideology:ideology_syndicalist }
+					}
+				}
+			}
+			if = {
+				limit = { var:bpm_je_syndicalism > 66.1 }
+				every_interest_group = {
+					limit = {
+						bpm_ig_is_anarachist = yes
+						NOT = { has_ideology = ideology:ideology_dop_anarcho_syndicalist }
+					}
+					bpm_remove_all_dop_ideologies = yes
+					add_ideology = ideology_dop_anarcho_syndicalist
+					bpm_reorder_ideologies = yes
+				}
+				ig:ig_anarchists ?= {
+					if = {
+						limit = {
+							bpm_interest_group_is_activated = yes
+						}
+						set_interest_group_name = ig_anarcho_syndicalists
+					}
+				}
+				ig:ig_trade_unions ?= {
+					if = {
+						limit = {
+							bpm_interest_group_is_activated = yes
+							NOR = {
+								has_ideology = ideology:ideology_dop_syndical_unionist
+								has_ideology = ideology:ideology_dop_syndicalist
+								owner = { has_law = law_type:law_corporatized_unions } 
+							}
+						}
+						bpm_remove_all_dop_ideologies = yes
+						add_ideology = ideology_dop_syndicalist
+						bpm_reorder_ideologies = yes
+						set_interest_group_name = ig_syndicalists
+					}
+				}
+				# ig:ig_socialists ?= {
+				# 	if = {
+				# 		limit = { bpm_interest_group_is_activated = yes }
+				# 		leader = { set_ideology = ideology:ideology_syndicalist }
+				# 	}
+				# }
+				# ig:ig_revolutionist_socialists ?= {
+				# 	if = {
+				# 		limit = { bpm_interest_group_is_activated = yes }
+				# 		leader = { set_ideology = ideology:ideology_syndicalist }
+				# 	}
+				# }
+			}
+		}
+	}
+
+	progressbar = yes
+	current_value = {
+		value = var:bpm_je_syndicalism
+	}
+
+	goal_add_value = {
+		add = 100
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_bpm_syndicalism_status_3
+				trigger = {
+					has_variable = bpm_je_syndicalism
+					var:bpm_je_syndicalism > 66
+				}
+			}
+			triggered_desc = {
+				desc = je_bpm_syndicalism_status_2
+				trigger = {
+					has_variable = bpm_je_syndicalism
+					var:bpm_je_syndicalism > 33
+				}
+			}
+			triggered_desc = {
+				desc = je_bpm_syndicalism_status_1
+				trigger = {
+					has_variable = bpm_je_syndicalism
+				}
+			}
+			triggered_desc = {
+				desc = je_bpm_syndicalism_status
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	weight = 75
+
+	should_be_pinned_by_default_uninvolved_or_context = no
+	can_revolution_inherit = yes
 }

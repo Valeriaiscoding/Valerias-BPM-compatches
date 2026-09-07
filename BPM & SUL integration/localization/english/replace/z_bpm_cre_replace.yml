@@ -1,2 +1,3 @@
 ﻿l_english:
   je_cre_nomenklatura_develop_reason: "Our revolution from above has created a great many new positions for [GetPopType('bureaucrats').GetName] within the state apparatus. It won't be long before the [GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetNameWithCountryVariant] grow accustomed to the elevated status bestowed on them."
+  female_anarchist_commander: "An [GetInterestGroupVariant('ig_anarchists',GetPlayer).GetNameWithCountryVariant] miliciana becomes a [ROOT.GetCountry.GetAdjectiveNoFlag] [concept_general]"

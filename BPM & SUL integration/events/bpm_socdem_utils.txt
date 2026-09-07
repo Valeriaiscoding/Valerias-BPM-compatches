@@ -7,6 +7,11 @@ bpm_socdem_utils.1 = { # Make sure reformists become socdems
 
 	trigger = {
 		always = no
+		bpm_country_laws_ok_voting = yes
+		ig:ig_reformist_socialists ?= {
+			is_in_government = yes
+			is_powerful = yes
+		}
 	}
 
 	immediate = {

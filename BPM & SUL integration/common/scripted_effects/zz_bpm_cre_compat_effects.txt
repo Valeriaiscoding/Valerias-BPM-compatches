@@ -5,5 +5,40 @@
 	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_segregationist }
 	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_exclusionist }
 	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_reactionary_supremacist }
-	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_black_army }
+	add_to_global_variable_list = { name = bpm_vanilla_ideologies target = ideology:ideology_cre_black_army }	
+}
+
+bpm_cre_set_amendments_varlists = {
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_anarchy_secured
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_socialist_institutions
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_centralized_planning
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_democratic_planning
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_market_socialism
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_cybersyn
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_amendment_anarchist_defense_council
+	}
+	add_to_global_variable_list = {
+		name = bpm_unrepealable_amendment_types
+		target = amendment_type:cre_cre_amendment_democratic_centralism
+	}
 }

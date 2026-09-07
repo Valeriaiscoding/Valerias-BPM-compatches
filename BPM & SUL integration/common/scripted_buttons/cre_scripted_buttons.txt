@@ -50,7 +50,7 @@
 		if = {
 			limit = {
 				ruler = {
-					has_socialist_ideology = yes
+					bpm_leader_is_socialist = yes
 				}
 			 }
 			ruler.ideology = {
@@ -69,6 +69,7 @@
 				add_trait = political_appointee
 			}
 		}
+		bpm_add_political_stability_normal = yes
 		add_modifier = {
 			name = cre_purged_academia
 			years = 5
@@ -176,7 +177,7 @@ cre_five_year_plan_shock_work_button = {
 	}
 }
 
-cre_five_year_fudge_quotas_button = {
+cre_five_year_fudge_quotas_button = { # TODO
 	name = cre_five_year_fudge_quotas_button
 	desc = cre_five_year_fudge_quotas_button_desc
 

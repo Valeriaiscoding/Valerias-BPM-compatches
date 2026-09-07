@@ -43,7 +43,8 @@
 	}
 
 	effect = {
-		retire_character = yes
+        replace_character_roles = { remove = { executive } }
+		retire_character_if_should_be_culled = yes
 	}
 
 	ai_chance = {
@@ -116,7 +117,8 @@ cre_dismiss_executive = {
                 }
             }
         }
-        retire_character = yes
+        replace_character_roles = { remove = { executive } }
+		retire_character_if_should_be_culled = yes
 	}
 
 	ai_chance = {

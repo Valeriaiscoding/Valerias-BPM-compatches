@@ -8,4 +8,4 @@ INJECT:law_cooperative_ownership = {
 	modifier = {
 		country_private_construction_allocation_mult = -0.1
 	}
-}
+}	 

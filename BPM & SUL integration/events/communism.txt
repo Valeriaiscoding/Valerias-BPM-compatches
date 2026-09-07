@@ -681,7 +681,7 @@ communism.5 = { # TODO
 
 	option = {
 		name = communism.5.a
-		active_law:lawgroup_distribution_of_power ?= {
+		active_law:lawgroup_party_laws ?= {
 			add_amendment = {
 				type = cre_amendment_democratic_centralism
 				sponsor = prev.ig:ig_revolutionist_socialists

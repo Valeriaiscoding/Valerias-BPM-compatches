@@ -1,0 +1,13 @@
+bpm_cre_leader_is_syndicalist = {
+	OR = {
+		has_ideology = ideology:ideology_syndicalist
+		has_ideology = ideology:ideology_anarchist_syndicalist
+	}
+}
+
+bpm_cre_ig_is_syndicalist = {
+	OR = {
+		has_ideology = ideology:ideology_dop_anarcho_syndicalist
+		has_ideology = ideology:ideology_dop_syndicalist
+	}
+}

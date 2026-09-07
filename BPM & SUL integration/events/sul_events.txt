@@ -91,32 +91,8 @@ sul_events.1 = {
 		name = sul_events.1.b
 		highlighted_option = yes
 		trigger = {
-			OR = {
-				has_law_or_variant = law_type:law_anarchy
-				bpm_country_laws_no_voting = no
-			}
-			OR = {
-				OR = {
-					has_law = law_type:law_anarchy
-					has_law = law_type:law_cooperative_ownership
-					has_law = law_type:law_factory_councils
-				}
-				any_scope_politician = {
-					OR = {
-						is_interest_group_leader = yes
-						is_ruler_of_own_country = yes
-						has_role_of_type = bpm_character_role_hog
-						prominence >= 50
-					}
-					interest_group = {
-						is_in_government = yes
-					}
-					OR = { 
-						has_ideology = ideology:ideology_syndicalist
-						has_ideology = ideology:ideology_anarchist_syndicalist
-					}
-				}
-			}
+			has_journal_entry = je_bpm_syndicalism
+			var:bpm_je_syndicalism >= 66
 		}
 		activate_law = law_type:law_syndicalism
 		if = {
@@ -163,9 +139,9 @@ sul_events.1 = {
 			}
 			OR = {
 				OR = {
-					has_law = law_type:law_single_party_state
+					has_law = law_type:law_party_single
 					has_law = law_type:law_command_economy
-					country_has_voting_franchise = no
+					bpm_country_laws_no_voting = yes
 				}
 				any_scope_politician = {
 					OR = {
@@ -193,7 +169,7 @@ sul_events.1 = {
 			}
 			start_enactment = law_type:law_socialist_labor_unions #important for anti-vanguardist revolutions
 		} else = {
-			activate_law = law_type:law_syndicalism
+			activate_law = law_type:law_socialist_labor_unions
 		}
 		ai_chance = {
 			base = 50

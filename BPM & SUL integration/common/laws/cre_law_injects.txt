@@ -24,21 +24,19 @@ INJECT:law_council_republic = {
 		if = {
 			limit = {
 				any_interest_group = {
-					filter = {
-						OR = {
-							is_interest_group_type = ig:ig_armed_forces
-							is_interest_group_type = ig:ig_intelligentsia
-							is_interest_group_type = ig:ig_petty_bourgeoisie
-							is_interest_group_type = ig:ig_agrarian_populists
-							is_interest_group_type = ig:ig_reformist_socialists
-						}
+					OR = {
+						is_interest_group_type = ig:ig_armed_forces
+						is_interest_group_type = ig:ig_intelligentsia
+						is_interest_group_type = ig:ig_petty_bourgeoisie
+						is_interest_group_type = ig:ig_agrarian_populists
+						is_interest_group_type = ig:ig_reformist_socialists
 					}
 					bpm_ig_is_socialist = yes
 				}
 			 }
-			 add_journal_entry = {
+			add_journal_entry = {
 				type = je_cre_undo_evolutions
-			 }
+			}
 		}
 		bpm_rename_igs = yes
 	}

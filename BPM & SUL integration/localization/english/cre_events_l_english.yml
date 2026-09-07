@@ -1,0 +1,92 @@
+﻿l_english:
+
+cre_events.1.t: "The Program of Collectivization"
+cre_events.1.d: "Our ambitious plan of [GetLawType('law_collectivized_agriculture').GetName] is meeting significant resistance from [GetPopType('farmers').GetName] and [GetPopType('peasants').GetName] in the countryside, especially those with significant land holdings to their name. "
+cre_events.1.f: ""No sir, this is my father's father's land, and I intend to keep it for my sons and their sons. It's good land, and I will not be giving it away to anyone. If the lazy louts from the village want to put their meager fields together let them, perhaps they'll finally produce something of worth!""
+cre_events.1.a: "It would be unjust to force collectivization on the unwilling."
+cre_events.1.b: "Material incentives will help ease their fears."
+cre_events.1.c: "We cannot allow the countryside to be infested with petty landlords."
+
+cre_events.2.t: "The Revolutionary Militias"
+cre_events.2.d: "Our [concept_revolution] has thrown the existing military structures into disarray. Able-bodied men, unruly youths, and defecting soldiers alike pour into the streets, ready to take up arms against the old regime."
+cre_events.2.f: ""At the beginning there were frightful scenes of chaos. The recruits were mostly boys of sixteen or seventeen from the back streets of [ROOT.GetCountry.GetCapital.GetCityHubName], full of revolutionary ardour but completely ignorant of the meaning of war. It was impossible even to get them to stand in line."\n\n— George Orwell" #Homage to Catalonia
+cre_events.2.a: "We must mobilize everyone we can, and build a force committed to revolution."
+cre_events.2.b: "Defecting officers of the [GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetNameWithCountryVariant] will see us to victory."
+socialist_armed_forces_leader: "A new [concept_leader] aligned with our [concept_ideology] takes control of the [GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetNameWithCountryVariant]"
+
+cre_events.3.t: "Milicianas"
+cre_events.3.d: "Driven by a spirit of revolutionary equality, thousands of women have volunteered for combat roles in the militias. Many men in the ranks balk at their inclusion, but the volunteers insist that they be given full equality."
+cre_events.3.f: ""It is not our fault that we cannot defeat with feminine niceties or humanitarian reason aggressors organized to destroy us, and armed with cannons, machine-guns, rifles and bombs. We are fighting for life, and it is not our fault that, in this struggle, we have to deal with death."" #Mujeres Libres
+cre_events.3.a: "Women workers, take up your rifles!"
+cre_events.3.b: "Women are better suited to support roles."
+female_anarchist_commander: "An [GetIdeology('ideology_anarchist').GetName] miliciana becomes a [ROOT.GetCountry.GetAdjectiveNoFlag] [concept_general]"
+
+cre_events.4.t: "The Black Army"
+cre_events.4.d: "Under the guidance of [SCOPE.sCharacter('army_general').GetFullName], the [SCOPE.gsInterestGroup('army_ig').GetName] has been reorganized into the [ROOT.GetCountry.GetAdjectiveNoFormatting] Black Army. Structured around soldiers' councils empowered to elect their own officers, the military is now dedicated to defending the libertarian revolution."
+cre_events.4.f: ""Man is only free if he is prepared to kill every hangman and every power magnate if they do not wish to stop their shameful tasks. He must vouch for the establishment of a truly free society based on personal responsibility, the only really free society. His pronouncement on the State must be one of total destruction."\n\n— Nestor Makhno"
+cre_events.4.a: "Death to the oppressors of workers!"
+
+replace_commanders_with_anarchists: "Every [concept_commander] is replaced with a newly-elected [GetIdeology('ideology_anarchist').GetName] officer, unless they are [GetIdeology('ideology_moderate').GetName], #tooltippable;tooltip:[GetPlayer.GetTooltipTag],socialist_ideologies_list_tt Socialist#!, or have a [concept_popularity] of 50 or higher"
+replace_commanders_with_vanguardists: "Every [concept_commander] is replaced with a newly-appointed [GetIdeology('ideology_vanguardist').GetName] officer, unless they are [GetIdeology('ideology_moderate').GetName], [GetIdeology('ideology_communist').GetName], or already [GetIdeology('ideology_vanguardist').GetName]"
+replace_commanders_with_communists: "Every [concept_commander] is replaced with a newly-elected [GetIdeology('ideology_communist').GetName] officer, unless they are [GetIdeology('ideology_moderate').GetName] or already #tooltippable;tooltip:[GetPlayer.GetTooltipTag],socialist_ideologies_list_tt Socialist#!"
+
+cre_events.5.t: "Red [SCOPE.sCountry('first_council_republic').GetName] Rising"
+cre_events.5.d: "The consolidation of the socialist government in [SCOPE.sCountry('first_council_republic').GetName] has energized sympathetic movements across the world. [SCOPE.sCountry('first_council_republic').GetAdjectiveNoFormatting] agitators have begun to arrive in [ROOT.GetCountry.GetName], intent on spreading the revolution."
+cre_events.5.f: ""Tell us, what was it like?"\n"Great things have been done in [SCOPE.sCountry('first_council_republic').GetNameNoFormatting], you have to live it in order to understand it. I saw those comrades who created the collectives, who organized the socialization, without any pay or compensation whatever, just so that the community would have what it needed. I had experiences that would stay with me all my life, such a flowering of ideas-made-reality."" #Pepita Carpena
+cre_events.5.a: "We have nothing to lose but our chains!"
+cre_events.5.b: "The [SCOPE.sCountry('first_council_republic').GetAdjectiveNoFormatting] menace must be stymied."
+cre_events.5.c: "Our friend from [SCOPE.sCountry('first_council_republic').GetNameNoFormatting] is most encouraging."
+cre_events.5.e: "We salute our comrades in their success."
+
+cre_events.6.t: "The Stateless Society"
+cre_events.6.d: "As the institutions of the old [ROOT.GetCountry.GetAdjective] state have been replaced with horizontal organizations, our place as a single entity on the world stage has come into some confusion. As more and more autonomy is devolved to the local level, a unified military and foreign policy becomes harder to justify and maintain."
+cre_events.6.f: ""Every state power, every government, by its very nature places itself outside and over the people and inevitably subordinates them to an organization and to aims which are foreign to and opposed to the real needs and aspirations of the people. We declare ourselves the enemies of every government and every state power, and of governmental organization in general."\n\n— Mikhail Bakunin"
+cre_events.6.a: "Against a world of states, we must present a united front."
+cre_events.6.b: "Long live federation!"
+all_incorporated_states_become_communes: "Each of our [Concept('concept_incorporated_state', '$concept_incorporated_states$')] forms an individual [ROOT.GetCountry.GetGovernment.GetName] and becomes a [ROOT.GetCountry.GetAdjective] [concept_subject]"
+
+cre_events.7.t: "Ni Dios, Ni Estado, Ni Patrón"
+cre_events.7.d: "[ROOT.GetCountry.GetAdjective] anarchism has long held an animosity for religion and the [SCOPE.gsInterestGroup('devout_ig').GetName]. The ascent of [GetLawType('law_anarchy').GetName] has also heralded a widespread campaign of murder and destruction against the church and its clergy."
+cre_events.7.f: ""Practically every building of any size had been seized by the workers and was draped with red flags or with the red and black flag of the Anarchists; every wall was scrawled with the hammer and sickle and with the initials of the revolutionary parties; almost every church had been gutted and its images burnt. Churches here and there were being systematically demolished by gangs of workmen."\n\n— George Orwell"
+cre_events.7.a: "With the guts of the last priest let us strangle the neck of the last king."
+cre_events.7.b: "Regardless of the church's crimes, we must restrain this violence."
+cre_events.7.c: "The Kingdom of God is within us."
+christian_anarchist_spawns: "An [GetIdeology('ideology_anarchist').GetName] [concept_leader] takes control of the [SCOPE.gsInterestGroup('devout_ig').GetName]"
+
+cre_events.8.t: "The Workers' Opposition"
+cre_events.8.d: "A faction of the [SCOPE.sPoliticalMovement('communist_movement').GetName] led by [SCOPE.sCharacter('opposition_agitator').GetFullName] has begun to oppose the creation of a [GetIdeology('ideology_vanguardist').GetName] state, advocating for the supremacy of the [SCOPE.gsInterestGroup('unions_ig').GetName] over the party."
+cre_events.8.f: ""The effort observed at present to evade putting into practice decisions of the party congress on the role and tasks of the trade unions in the government attest to the direct distrust of the strength of the working class. The conscious leading elements of the working class, organized communists, must direct all their energy to overcoming this distrust and the bureaucratic stagnation existing in the party."\n\n— Theses of the Workers' Opposition"
+cre_events.8.a: "Ban factions and enforce party unity."
+cre_events.8.b: "The party can tolerate and channel internal dissent."
+
+cre_events.9.t: "The Highest Phase of Communism"
+cre_events.9.d: "The promise of communism has been fulfilled. The liberated peoples of [ROOT.GetCountry.GetName] now enjoy lives of luxury unimaginable to their ancestors, free from exploitation and want."
+cre_events.9.f: ""After the enslaving subordination of the individual to the division of labor, and therewith also the antithesis between mental and physical labor, has vanished; after labor has become not only a means of life but life's prime want; after the productive forces have also increased with the all-around development of the individual, and all the springs of co-operative wealth flow more abundantly – only then can the narrow horizon of bourgeois right be crossed in its entirety and society inscribe on its banners: From each according to his ability, to each according to his needs!"\n\n— Karl Marx"
+cre_events.9.a: "A utopia made real."
+
+cre_events.10.t: "Workers of the World, Unite?"
+cre_events.10.d: "Since its earliest inception, the socialist movement has been internationalist and anti-imperialist. The rising tide of nationalist consciousness has begun to strain these ideals, with some segments of the movement retreating into a more exclusionary vision of socialism."
+cre_events.10.f: ""The nationalities of the peoples associating themselves in accordance with the principle of community will be compelled to mingle with each other as a result of this association and thereby to dissolve themselves, just as the various estate and class distinctions must disappear through the abolition of their basis, private property."\n\n— Friedrich Engels"
+cre_events.10.a: "All men are brothers."
+cre_events.10.b: "The [ROOT.GetCountry.GetAdjective] workers must come first."
+
+cre_events.11.t: "The Universal Revolution"
+cre_events.11.d: "The consolidation of our [GetLawType('law_council_republic').GetName] poses a serious ideological challenge to the existing world order. Many within the movement argue that a global revolution is necessary to prevent foreign powers from intervening and re-establishing capitalism in [ROOT.GetCountry.GetName]."
+cre_events.11.f: ""By creating the world market, big industry has already brought all the peoples of the Earth, and especially the civilized peoples, into such close relation with one another that none is independent of what happens to the others. It follows that the communist revolution will not merely be a national phenomenon but must take place simultaneously in all civilized countries."\n\n— Friedrich Engels"
+cre_events.11.a: "We must export the revolution to all corners of the world."
+cre_events.11.b: "Better to maintain détente for our own survival."
+
+cre_events.12.t: "A Rising Tide"
+cre_events.12.d: "The careful and effective reform project of the Social Democrats has proven to be a rousing success. The voices calling for violent and dramatic overhauls of society have largely gone quiet, replaced instead with orderly prosperity."
+cre_events.12.f: ""A purple streak colours the extreme verge of the horizon blood red, announcing the new light; mist and clouds gather, roll themselves into a mass, throw themselves against the glow of morning, and succeed in covering its rays for a moment. But no power in the world can avail to hinder the slow and majestic rising of the sun itself, which an hour later stands in the firmament visible to all, and giving light and warmth to all the earth."\n\n— Ferdinand Lassalle"
+cre_events.12.a: "We have steered the ship of state clear of danger."
+cre_events.12.b: "Set course for socialism!"
+
+cre_events.13.t: "Workers’ Power"
+cre_events.13.d: "With [ROOT.GetCountry.GetAdjective] industries growing to ever new heights, the first Five-Year Plan has been declared a success. The crucible of these founding years has given us the opportunity to forge a concrete vision for the future direction of the economy."
+cre_events.13.f: ""Society will take all forces of production and means of commerce, as well as the exchange and distribution of products, out of the hands of private capitalists and will manage them in accordance with a plan based on the availability of resources and the needs of the whole society. In this way, most important of all, the evil consequences which are now associated with the conduct of big industry will be abolished."\n\n— Friedrich Engels"
+cre_events.13.a: "The State Planning Committee will oversee continued growth."
+cre_events.13.b: "Decentralized planning ensures nobody is unaccounted for."
+cre_events.13.c: "Market forces remain more reliable than any pre-calculated plan."
+cre_events.13.e: "Cybernetics unlocks a whole new paradigm of economic management."
+

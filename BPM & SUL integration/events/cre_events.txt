@@ -1,5 +1,4 @@
 namespace = cre_events
-# TODO add rigidity
 #Voluntary vs forced collectivization
 cre_events.1 = {
 	type = country_event
@@ -95,6 +94,7 @@ cre_events.1 = {
 		hidden_effect = {
 			remove_modifier = cre_gradual_collectivization
 		}
+		bpm_remove_political_stability_big = yes
 		add_radicals = {
 			value = 0.25
 			pop_type = peasants
@@ -302,8 +302,8 @@ cre_events.3 = {
 			create_character = {
 				female = yes
 				is_general = yes
-				ideology = ideology:ideology_anarchist
-				interest_group = ig:ig_trade_unions
+				ideology = ideology:ideology_feminist
+				interest_group = ig:ig_anarchists
 			}
 		}
 
@@ -430,9 +430,6 @@ cre_events.4 = {
 		# 	}
 		# }
 		
-		show_as_tooltip = {
-			bpm_cre_ig_make_black_army = yes
-		}
 		custom_tooltip = {
 			text = replace_commanders_with_anarchists
 			every_scope_character = {
@@ -488,7 +485,7 @@ cre_events.4 = {
 				}
 			}
 		}
-		activate_law = law_type:law_elected_oficers
+		activate_law = law_type:law_elected_officers
 		add_modifier = {
 			name = cre_anarchy_in_the_ranks_modifier
 			years = 4
@@ -537,6 +534,7 @@ cre_events.5 = {
 	option = {
 		name = cre_events.5.a
 		default_option = yes
+		bpm_remove_political_stability_normal = yes
 		if = {
 			limit = {
 				scope:first_council_republic = {
@@ -551,9 +549,9 @@ cre_events.5 = {
 						}
 					}
 				 }
-				 create_political_movement = {
-					type = movement_anarchist
-				 }
+				create_political_movement = {
+				type = movement_anarchist
+				}
 			}
 		} else = {
 			if = {
@@ -578,6 +576,31 @@ cre_events.5 = {
 				years = 5
 			}
 		}
+		every_interest_group = {
+			limit = {
+				OR = {
+					bpm_ig_is_revolutionary_socialist = yes
+					AND = {
+						bpm_ig_is_socialist = yes
+						NOT = { has_global_variable = global_revsocs_split_var }
+					}
+					is_interest_group_type = ig_conservatives
+					is_interest_group_type = ig_reactionaries
+				}
+			}
+			hidden_effect = {
+				remove_modifier = bpm_emboldened_ig
+			}
+			add_modifier = {
+				name = bpm_emboldened_ig
+				years = 5
+			}
+			add_modifier = {
+				name = bpm_displeased
+				years = 5
+				multiplier = 0.6
+			}
+		}
 		add_radicals = {
 			value = medium_radicals
 			strata = lower
@@ -590,6 +613,7 @@ cre_events.5 = {
 	#bad
 	option = {
 		name = cre_events.5.b
+		bpm_remove_political_stability_normal = yes
 		change_relations = {
 			country = scope:first_council_republic
 			value = -20
@@ -632,6 +656,26 @@ cre_events.5 = {
 			}
 			add_modifier = {
 				name = cre_movement_inspired_modifier
+				years = 5
+			}
+		}
+		every_interest_group = {
+			limit = {
+				OR = {
+					bpm_ig_is_revolutionary_socialist = yes
+					AND = {
+						bpm_ig_is_socialist = yes
+						NOT = { has_global_variable = global_revsocs_split_var }
+					}
+					is_interest_group_type = ig_conservatives
+					is_interest_group_type = ig_reactionaries
+				}
+			}
+			hidden_effect = {
+				remove_modifier = bpm_emboldened_ig
+			}
+			add_modifier = {
+				name = bpm_emboldened_ig
 				years = 5
 			}
 		}
@@ -794,10 +838,6 @@ cre_events.6 = {
 				cooldown = 120
 			}
 		}
-		if = {
-			limit = { NOT = { has_law_or_variant = law_type:law_federated } }
-			activate_law = law_type:law_federated
-		}
 		ig:ig_anarchists = {
 			bpm_remove_all_sta_ideologies = yes
 			bpm_remove_all_mil_ideologies = yes
@@ -872,6 +912,7 @@ cre_events.7 = {
 	option = {
 		name = cre_events.7.a
 		default_option = yes
+		bpm_remove_political_stability_normal = yes
 		custom_tooltip = {
 			text = state_atheism_conversion_tt
 			every_scope_state = {
@@ -958,7 +999,6 @@ cre_events.7 = {
 		activate_law = law_type:law_state_atheism
 		add_modifier = {
 			name = cre_destruction_of_churches_modifier
-			multiplier = 0.25
 			years = 10
 		}
 		c:PAP ?= {
@@ -1057,6 +1097,7 @@ cre_events.7 = {
 				}
 			}
 		}
+		bpm_add_political_stability_normal = yes
 		if = {
 			limit = { 
 				NOT = {
@@ -1118,7 +1159,7 @@ cre_events.8 = {	# TODO
 		}
 		OR = {
 			has_law_or_variant = law_type:law_secret_police
-			has_law_or_variant = law_type:law_command_economy
+			#has_law_or_variant = law_type:law_command_economy
 			has_law_or_variant = law_type:law_party_single
 			bpm_country_laws_no_voting = yes
 			has_law_or_variant = law_type:law_advisory_body
@@ -1130,9 +1171,11 @@ cre_events.8 = {	# TODO
 			limit = {
 				any_scope_character = {
 					has_role_of_type = agitator
+					NOT = {
+						has_ideology = ideology:ideology_vanguardist
+					}
 					OR = {
-						has_ideology = ideology:ideology_anarchist
-						has_ideology = ideology:ideology_communist
+						bpm_leader_is_radical_socialist = yes
 						has_ideology = ideology:ideology_utopian
 						has_ideology = ideology:ideology_social_democrat
 						AND = {
@@ -1145,9 +1188,11 @@ cre_events.8 = {	# TODO
 			 random_scope_character = {
 				limit = {
 					has_role_of_type = agitator
+					NOT = {
+						has_ideology = ideology:ideology_vanguardist
+					}
 					OR = {
-						has_ideology = ideology:ideology_anarchist
-						has_ideology = ideology:ideology_communist
+						bpm_leader_is_radical_socialist = yes
 						has_ideology = ideology:ideology_utopian
 						has_ideology = ideology:ideology_social_democrat
 						AND = {
@@ -1180,7 +1225,7 @@ cre_events.8 = {	# TODO
 	#suppress
 	option = {
 		name = cre_events.8.a
-		default_option = yes
+		default_option = ye
 		random_political_movement = {
 			limit = {
 				is_political_movement_type = movement_communist
@@ -1389,10 +1434,21 @@ cre_events.11 = {
 		add_journal_entry = {
 			type = je_cre_world_revolution
 		}
-		ig:ig_revolutionist_socialists = {
-			add_modifier = {
-				name = cre_ig_preparing_for_world_revolution_modifier
-				years = 5
+		if = {
+			limit = { has_law = law_type:law_anarchy }
+			ig:ig_anarchists = {
+				add_modifier = {
+					name = cre_ig_preparing_for_world_revolution_modifier
+					years = 5
+				}
+			}
+		}
+		else = {
+			ig:ig_revolutionist_socialists = {
+				add_modifier = {
+					name = cre_ig_preparing_for_world_revolution_modifier
+					years = 5
+				}
 			}
 		}
 		ig:ig_armed_forces = {
@@ -1492,6 +1548,7 @@ cre_events.12 = {
 	option = {
 		name = cre_events.12.a
 		default_option = yes
+		bpm_add_political_stability_big = yes
 		ig:ig_trade_unions = {
 			cre_replace_ig_leader_ideology_effect = {
 				INTEREST_GROUP = ig:ig_trade_unions
@@ -1510,6 +1567,7 @@ cre_events.12 = {
 		# }
 		every_interest_group = {
 			limit = {
+				is_interest_group_type = ig_reformist_socialists
 				bpm_ig_is_reformist_socialist = yes
 			}
 			bpm_cre_refsoc_to_socdem_effect = yes
