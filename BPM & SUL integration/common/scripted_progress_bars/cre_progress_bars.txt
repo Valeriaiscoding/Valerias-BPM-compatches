@@ -1,5 +1,4 @@
-﻿# TODO everything
-cre_red_intelligentsia_bar = {
+﻿cre_red_intelligentsia_bar = {
  	name = "cre_red_intelligentsia_bar"
  	desc = "cre_red_intelligentsia_bar_desc"
 
@@ -7,9 +6,8 @@ cre_red_intelligentsia_bar = {
 
  	monthly_progress = {
  		add = {
-			value = government_legitimacy
-			divide = 100
-			desc = "[concept_legitimacy]"
+			value = owner.bpm_consciousness_beyond_liberal_percent
+			desc = "BPM_CONSCIOUSNESS_LABOR"
 		}
 		add = {
 			value = ig:ig_intelligentsia.ig_approval
@@ -30,7 +28,9 @@ cre_red_intelligentsia_bar = {
 		if = {
 			limit = {
 				ig:ig_intelligentsia = {
-					interest_group_has_socialist_ideology = yes
+					leader = {
+						bpm_leader_is_socialist = yes
+					}
 				}
 			}
 			add = {
@@ -52,26 +52,26 @@ cre_nomenklatura_bar = {
 
  	default_bad = yes
 
- 	monthly_progress = {
+ 	monthly_progress = {	
  		add = {
 			value = government_legitimacy
 			divide = 100
 			desc = "[concept_legitimacy]"
 		}
 		add = {
-			value = ig:ig_intelligentsia.ig_clout
+			value = ig:ig_petty_bourgeoisie.ig_clout
 			multiply = 5
-			desc = "intelligentsia_clout"
+			desc = "petty_bourgeoisie_clout"
 		}
 		if = {
 			limit = {
-				ig:ig_intelligentsia = {
+				ig:ig_petty_bourgeoisie = {
 					is_in_government = yes
 				}
 			}
 			add = {
 				value = 1.0
-				desc = "intelligentsia_in_government"
+				desc = "pb_in_government"
 			}
 		}
 	}
@@ -117,7 +117,9 @@ cre_pb_into_managers_bar = {
 		if = {
 			limit = {
 				ig:ig_petty_bourgeoisie = {
-					interest_group_has_socialist_ideology = yes
+					leader = {
+						bpm_leader_is_socialist = yes
+					}
 				}
 			}
 			add = {
@@ -140,10 +142,10 @@ cre_undo_evolutions_bar = {
  	default = yes
 
  	monthly_progress = {
- 		add = {
-			value = government_legitimacy
-			divide = 100
-			desc = "[concept_legitimacy]"
+		add = {
+			value = owner.bpm_consciousness_liberal_percent
+			#min = 0.5
+			desc = "BPM_CONSCIOUSNESS_LIBERAL"
 		}
 		add = {
 			value = ig:ig_intelligentsia.ig_approval

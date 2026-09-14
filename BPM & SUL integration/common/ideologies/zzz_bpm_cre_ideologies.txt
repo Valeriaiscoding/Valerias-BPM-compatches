@@ -1,4 +1,4 @@
-REPLACE:ideology_cre_managerial = {
+﻿REPLACE:ideology_cre_managerial = {
 	icon = "gfx/interface/icons/ideology_icons/ideology_interventionism.dds"
 
 	#priority = 250
@@ -261,4 +261,56 @@ REPLACE:ideology_cre_black_army = {
 	# 	law_secret_police = strongly_disapprove
 	# }
 
+}
+
+REPLACE_OR_CREATE:ideology_mil_mass_army = {
+	icon = "gfx/interface/icons/ideology_icons/mil_ideology/mass_army.dds"
+	priority = 1000
+    lawgroup_army_model = {
+		law_peasant_levies = disapprove
+		law_national_militia = approve
+		law_mass_conscription = strongly_approve
+		law_professional_army = strongly_disapprove
+	}
+
+	lawgroup_navy_model = {
+		law_merchant_navy = disapprove
+		law_jeune_ecole = neutral
+		law_professional_navy = strongly_approve
+		law_diplomatic_navy = neutral
+	}
+
+    lawgroup_colonization = {
+		law_no_colonial_affairs = neutral # disapprove
+		law_frontier_colonization = neutral
+		law_colonial_resettlement = disapprove
+		law_colonial_exploitation = neutral
+	}
+
+	lawgroup_officers = {
+		law_noble_officers = strongly_disapprove
+		law_purchased_officers = strongly_disapprove
+		law_professional_officers = neutral
+		law_political_officers = strongly_approve
+		law_elected_officers = approve
+	}
+
+	lawgroup_foreign_policy = {
+		law_ultramilitarism = strongly_disapprove
+		law_jingoism = approve
+		law_flexible_foreign_policy = neutral
+		law_justum_bellum = strongly_approve
+		law_dove_politics = disapprove
+		law_armed_neutrality = neutral
+		law_disarmed_nation = strongly_disapprove
+		law_premodern_diplomacy = strongly_disapprove
+	}
+
+	lawgroup_repeatable_military = {
+ 		law_repeatable_military_military_reform = strongly_approve
+ 		law_repeatable_military_parades_and_drills = neutral
+		law_repeatable_military_improve_soldier_conditions = disapprove
+ 		law_repeatable_military_army_defunding = strongly_disapprove
+ 		law_repeatable_military_war_propaganda = strongly_approve
+	}
 }

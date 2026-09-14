@@ -155,9 +155,15 @@ cre_events.2 = {
 		is_revolutionary = yes
 		has_law_or_variant = law_type:law_council_republic
 		has_technology_researched = enlistment_offices
-		NOR = {
-			has_law_or_variant = law_type:law_mass_conscription
-			has_law_or_variant = law_type:law_national_militia
+		NAND = {
+			OR = {
+				has_law_or_variant = law_type:law_noble_officers
+				has_law_or_variant = law_type:law_purchased_officers
+			}
+			OR = {
+				has_law_or_variant = law_type:law_mass_conscription
+				has_law_or_variant = law_type:law_national_militia
+			}
 		}
 	}
 
@@ -165,7 +171,27 @@ cre_events.2 = {
 	option = {
 		name = cre_events.2.a
 		default_option = yes
+		if = {
+			limit = { 
+				NOR = {
+					has_law_or_variant = law_type:law_noble_officers
+					has_law_or_variant = law_type:law_purchased_officers
+				}
+			}
+			activate_law = law_type:law_political_officers
+		}
 		activate_law = law_type:law_mass_conscription
+		custom_tooltip = {
+			text = radsoc_emergency_ideology_tt
+			every_interest_group = {
+				limit = {
+					bpm_ig_is_revolutionary_socialist = yes
+				}
+				bpm_stash_mil_ideology = yes
+				add_ideology = ideology_mil_emergency
+				bpm_reorder_ideologies = yes
+			}
+		}
 		custom_tooltip = {
 			text = socialist_armed_forces_leader
 			if = {
@@ -196,6 +222,15 @@ cre_events.2 = {
 	#keep current law
 	option = {
 		name = cre_events.2.b
+		if = {
+			limit = { 
+				NOR = {
+					has_law_or_variant = law_type:law_noble_officers
+					has_law_or_variant = law_type:law_purchased_officers
+				}
+			}
+			activate_law = law_type:law_professional_officers
+		}
 		add_loyalists = {
 			value = medium_radicals
 			pop_type = soldiers
@@ -265,6 +300,15 @@ cre_events.3 = {
 				}
 			 }
 			activate_law = law_type:law_womens_suffrage
+		}
+		if = {
+			limit = { has_journal_entry = je_bpm_women_rights_upgrade }
+			je:je_bpm_women_rights_upgrade ?= {
+				add_progress = {
+					name = je_bpm_women_rights_upgrade_progress_bar
+					value = 10
+				}
+			}
 		}
 		active_law:lawgroup_army_model = {
 			add_amendment = {
@@ -485,7 +529,10 @@ cre_events.4 = {
 				}
 			}
 		}
-		activate_law = law_type:law_elected_officers
+		if = {
+			limit = { NOT = { has_law_or_variant = law_type:law_elected_officers } }
+			activate_law = law_type:law_elected_officers
+		}
 		add_modifier = {
 			name = cre_anarchy_in_the_ranks_modifier
 			years = 4
@@ -838,7 +885,8 @@ cre_events.6 = {
 				cooldown = 120
 			}
 		}
-		ig:ig_anarchists = {
+		ig:ig_anarchists ?= {
+			remove_variable = bpm_mil_stashed_ideology
 			bpm_remove_all_sta_ideologies = yes
 			bpm_remove_all_mil_ideologies = yes
 			add_ideology = ideology_sta_subjugated_state
@@ -1134,7 +1182,7 @@ cre_events.7 = {
 }
 
 #The Workers' Opposition
-cre_events.8 = {	# TODO
+cre_events.8 = {
 	type = country_event
 	placement = root
 	title = cre_events.8.t
@@ -1206,7 +1254,7 @@ cre_events.8 = {	# TODO
 		} else = {
 			create_character = {
 				is_agitator = yes
-				interest_group = ig_trade_unions
+				interest_group = ig_revolutionist_socialists
 				ideology = ideology_communist
 				save_scope_as = opposition_agitator
 			}
@@ -1225,7 +1273,7 @@ cre_events.8 = {	# TODO
 	#suppress
 	option = {
 		name = cre_events.8.a
-		default_option = ye
+		default_option = yes
 		random_political_movement = {
 			limit = {
 				is_political_movement_type = movement_communist

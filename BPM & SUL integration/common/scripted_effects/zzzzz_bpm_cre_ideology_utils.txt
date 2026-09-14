@@ -1,0 +1,37 @@
+﻿bpm_stash_mil_ideology = {
+	hidden_effect = {
+		bpm_stash_ideology = { TYPE = mil NAME = placeholder }
+		bpm_stash_ideology = { TYPE = mil NAME = ultramilitarist }
+		bpm_stash_ideology = { TYPE = mil NAME = patriotic }
+		bpm_stash_ideology = { TYPE = mil NAME = patriotic_liberal }
+		bpm_stash_ideology = { TYPE = mil NAME = defensive_patriot }
+		bpm_stash_ideology = { TYPE = mil NAME = antimilitarist }
+		bpm_stash_ideology = { TYPE = mil NAME = popular_army }
+		bpm_stash_ideology = { TYPE = mil NAME = frontier_expansion }
+		bpm_stash_ideology = { TYPE = mil NAME = aristocratic_militarist }
+		bpm_stash_ideology = { TYPE = mil NAME = plutocratic_militarist }
+		bpm_stash_ideology = { TYPE = mil NAME = mass_army }
+		bpm_stash_ideology = { TYPE = mil NAME = emergency }
+		bpm_stash_ideology = { TYPE = mil NAME = institutional_militarist }
+		bpm_remove_all_mil_ideologies = yes
+	}
+}
+
+bpm_unstash_mil_ideology = {
+	hidden_effect = {
+		bpm_remove_all_mil_ideologies = yes
+		bpm_unstash_ideology = { TYPE = mil NAME = placeholder }
+		bpm_unstash_ideology = { TYPE = mil NAME = ultramilitarist }
+		bpm_unstash_ideology = { TYPE = mil NAME = patriotic }
+		bpm_unstash_ideology = { TYPE = mil NAME = patriotic_liberal }
+		bpm_unstash_ideology = { TYPE = mil NAME = defensive_patriot }
+		bpm_unstash_ideology = { TYPE = mil NAME = antimilitarist }
+		bpm_unstash_ideology = { TYPE = mil NAME = popular_army }
+		bpm_unstash_ideology = { TYPE = mil NAME = frontier_expansion }
+		bpm_unstash_ideology = { TYPE = mil NAME = aristocratic_militarist }
+		bpm_unstash_ideology = { TYPE = mil NAME = plutocratic_militarist }
+		bpm_unstash_ideology = { TYPE = mil NAME = mass_army }
+		bpm_unstash_ideology = { TYPE = mil NAME = emergency }
+		bpm_unstash_ideology = { TYPE = mil NAME = institutional_militarist }
+	}
+}

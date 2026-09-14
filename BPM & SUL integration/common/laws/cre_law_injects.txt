@@ -1,5 +1,4 @@
-﻿# TODO DOP laws
-INJECT:law_anarchy = {
+﻿INJECT:law_anarchy = {
 	modifier = {
 		country_radicals_from_legitimacy_mult = -1.00
 		country_legitimacy_min_add = 25

@@ -1,0 +1,35 @@
+namespace = bpm_cre_utils
+
+bpm_cre_utils.1 = { 
+	type = country_event
+	placement = root
+	hidden = yes
+
+	trigger = {
+		is_revolutionary = no
+		any_country = {
+			filter = {
+				is_diplomatic_play_enemy_of = root
+			}
+			count = 0
+		}
+		any_interest_group = {
+			bpm_ig_is_revolutionary_socialist = yes
+			has_ideology = ideology:ideology_mil_emergency
+			has_variable = bpm_mil_stashed_ideology
+		}
+	}
+
+	immediate = {
+		every_interest_group = {
+			limit = {
+				bpm_ig_is_revolutionary_socialist = yes
+				has_ideology = ideology:ideology_mil_emergency
+				has_variable = bpm_mil_stashed_ideology
+			}
+			bpm_unstash_mil_ideology = yes
+			remove_variable = bpm_mil_stashed_ideology
+			bpm_reorder_ideologies = yes
+		}
+	}
+}

@@ -177,7 +177,7 @@ cre_five_year_plan_shock_work_button = {
 	}
 }
 
-cre_five_year_fudge_quotas_button = { # TODO
+cre_five_year_fudge_quotas_button = {
 	name = cre_five_year_fudge_quotas_button
 	desc = cre_five_year_fudge_quotas_button_desc
 
@@ -187,7 +187,8 @@ cre_five_year_fudge_quotas_button = { # TODO
 			has_law_or_variant = law_type:law_autocracy
 			has_law_or_variant = law_type:law_oligarchy
 			has_law_or_variant = law_type:law_technocracy
-			has_law_or_variant = law_type:law_single_party_state
+			has_law_or_variant = law_type:law_military_junta
+			has_law_or_variant = law_type:law_party_single
 		}
 		NOT = {
 			has_modifier = cre_falsified_economic_data_modifier
@@ -200,7 +201,8 @@ cre_five_year_fudge_quotas_button = { # TODO
 			has_law_or_variant = law_type:law_autocracy
 			has_law_or_variant = law_type:law_oligarchy
 			has_law_or_variant = law_type:law_technocracy
-			has_law_or_variant = law_type:law_single_party_state
+			has_law_or_variant = law_type:law_military_junta
+			has_law_or_variant = law_type:law_party_single
 		}
 	}
 

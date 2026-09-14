@@ -1,4 +1,4 @@
-REPLACE:cre_ig_into_socialist_effect = {
+﻿REPLACE:cre_ig_into_socialist_effect = {
 	hidden_effect = {
 		if = {
 			limit = {
@@ -62,18 +62,11 @@ REPLACE:cre_black_army_effect = {
 				}
 				remove_ideology = ideology_patriotic
 			}
-			if = {
-				limit = {
-					has_ideology = ideology:ideology_jingoist
-				}
-				remove_ideology = ideology_jingoist
-			}
 		}
 		cre_ig_into_socialist_effect = yes
 		bpm_remove_all_sta_ideologies = yes
 		bpm_remove_all_dop_ideologies = yes
 		bpm_remove_all_mil_ideologies = yes
-		add_ideology = ideology_dop_anarchist
 		if = {
 			limit = { var:bpm_je_syndicalism > 66 }
 			add_ideology = ideology_dop_anarcho_syndicalist
@@ -81,7 +74,7 @@ REPLACE:cre_black_army_effect = {
 		else = {
 			add_ideology = ideology_dop_anarchist
 		}
-		add_ideology = ideology_sta_institutional_state
+		add_ideology = ideology_sta_subjugated_state
 		add_ideology = ideology_mil_mass_army
 		bpm_reorder_ideologies = yes
 		
@@ -95,26 +88,13 @@ REPLACE:cre_red_army_effect = {
 	ig:ig_armed_forces ?= {
 		set_interest_group_name = ig_red_army
 		cre_ig_into_socialist_effect = yes
-		if = {
-			limit = {
-				has_ideology = ideology:ideology_conservative_praetorian
-			}
-			remove_ideology = ideology_conservative_praetorian
-		}
-		if = {
-			limit = {
-				has_ideology = ideology:ideology_liberal_praetorian
-			}
-			remove_ideology = ideology_liberal_praetorian
-		}
-		if = {
-			limit = {
-				has_ideology = ideology:ideology_caudillismo
-			}
-			remove_ideology = ideology_caudillismo
-		}
 		bpm_remove_all_dop_ideologies = yes
 		bpm_remove_all_mil_ideologies = yes
+		if = {
+			limit = { has_ideology = ideology:ideology_sta_decentralized_state }
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_institutional_state
+		}
 		add_ideology = ideology_dop_party_socialist
 		add_ideology = ideology_mil_mass_army
 		bpm_reorder_ideologies = yes
@@ -135,6 +115,7 @@ REPLACE:cre_devolve_commune_effect = {
 		tier = principality
 		capital = scope:new_commune_state
 		on_created = {
+			activate_law = law_type:law_council_republic
 			activate_law = law_type:law_anarchy
 			activate_law = law_type:law_confederated
 			create_political_movement = {
@@ -201,12 +182,14 @@ REPLACE:cre_devolve_commune_effect = {
 # Intelligentsia -> replace republican with socialist
 # PB -> Managers with Elective Managerial
 
-## Autocratic/Single-Party State
+## Autocratic/Single-Party State 
 # Intelligentsia -> replace republican with socialist, replace liberal with bureaucratic
 # TUs stay TUs
 # PB -> Managers with Professional-Managerial
 
-cre_pb_to_managers_effect = {
+
+
+REPLACE:cre_pb_to_managers_effect = {
 	ig:ig_petty_bourgeoisie ?= {
 		set_interest_group_name = ig_managers
 		hidden_effect = {
@@ -228,14 +211,22 @@ cre_pb_to_managers_effect = {
 				}
 				remove_ideology = ideology_republican
 			}
+			if = {
+				limit = {
+					has_ideology = ideology:ideology_patriotic
+				}
+				remove_ideology = ideology_patriotic
+			}
 		}
 		usfp_remove_american_ideologies = yes
+		# bpm_remove_all_dop_ideologies = yes
+		# add_ideology = ideology_dop_party_socialist
 		if = {
 			limit = {
 				owner = {
 					has_law_or_variant = law_type:law_cooperative_ownership
 				}
-			 }
+			}
 			add_ideology = ideology_eco_proletarian_economy
 		} 
 		else = {
@@ -245,7 +236,7 @@ cre_pb_to_managers_effect = {
 	}
 }
 
-cre_socialist_intelligentsia_effect = {
+REPLACE:cre_socialist_intelligentsia_effect = {
 	ig:ig_intelligentsia ?= {
 		cre_ig_into_socialist_effect = yes
 		bpm_remove_all_eco_ideologies = yes
@@ -257,37 +248,25 @@ cre_socialist_intelligentsia_effect = {
 	}
 }
 
-cre_intelligentsia_to_nomenklatura_effect = {
+REPLACE:cre_intelligentsia_to_nomenklatura_effect = {
 	ig:ig_petty_bourgeoisie ?= {
 		set_interest_group_name = ig_nomenklatura
 		bpm_remove_all_dop_ideologies = yes
+		bpm_remove_all_sta_ideologies = yes
+		bpm_remove_all_eco_ideologies = yes
 		add_ideology = ideology_dop_party_socialist
-		if = {
-			if = {
-			limit = {
-				NOT = { has_ideology = ideology:ideology_sta_subjugated_security_state }
-			}
-			bpm_remove_all_sta_ideologies = yes
-			add_ideology = ideology_sta_subjugated_security_state
-		}
-		}
-		if = {
-			limit = {
-				NOT = { has_ideology = ideology:ideology_dop_socialist_autarky }
-			}
-			bpm_remove_all_eco_ideologies = yes
-			add_ideology = ideology_dop_socialist_autarky
-		}
+		add_ideology = ideology_sta_subjugated_security_state
+		add_ideology = ideology_eco_socialist_autarky
 		bpm_reorder_ideologies = yes
 	}
 }
 
-cre_undo_intelligentsia_evolution_effect = {
+REPLACE:cre_undo_intelligentsia_evolution_effect = {
 	ig:ig_intelligentsia ?= {
 		if = {
 			limit = {
 				has_ideology = ideology:ideology_socialist
-			 }
+			}
 			remove_ideology = ideology_socialist
 			add_ideology = ideology_republican
 		}
@@ -296,23 +275,27 @@ cre_undo_intelligentsia_evolution_effect = {
 		bpm_remove_all_eco_ideologies = yes
 		bpm_remove_all_dop_ideologies = yes
 		add_ideology = ideology_gov_anti_proletarian
-		add_ideology = ideology_dop_authoritarian_democrat
+		#add_ideology = ideology_eco_laissez_faire
+		add_ideology = ideology_dop_state_power
 		bpm_reorder_ideologies = yes
 	}
 }
 
-
-cre_managers_to_pb_effect = {
+REPLACE:cre_managers_to_pb_effect = {
 	ig:ig_petty_bourgeoisie ?= {
 		set_interest_group_name = ig_petty_bourgeoisie
 		hidden_effect = {
+			add_ideology = ideology_patriotic
 			add_ideology = ideology_modernizer
 		}
 		bpm_remove_all_gov_ideologies = yes
 		bpm_remove_all_eco_ideologies = yes
 		bpm_remove_all_dop_ideologies = yes
-		bpm_remove_all_sta_ideologies = yes
-		add_ideology = ideology_sta_instutional_state
+		if = {
+			limit = { has_ideology = ideology:ideology_sta_subjugated_security_state }
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_security_state
+		}
 		add_ideology = ideology_dop_state_power
 		add_ideology = ideology_eco_modern_interventionist
 		bpm_reorder_ideologies = yes
@@ -327,31 +310,22 @@ REPLACE:cre_reset_armed_forces_effect = {
 				bpm_ig_is_anarachist = yes
 			}
 			remove_variable = chose_anarchism
-			hidden_effect = {
-				remove_ideology = ideology_socialist
-				remove_ideology = ideology_cre_black_army
-				add_ideology = ideology_jingoist
-				add_ideology = ideology_patriotic
-			}
-			set_interest_group_name = ig_armed_forces
 			bpm_remove_all_sta_ideologies = yes
 			add_ideology = ideology_sta_instutional_state
 		}
-		if = {
+		else_if = {
 			limit = {
 				bpm_ig_is_socialist = yes
-				bpm_ig_is_anarachist = no
-				NOT = {
-					has_ideology = ideology:ideology_cre_black_army
-				}
-			 }
-			hidden_effect = {
-				remove_ideology = ideology_socialist
 			}
-			set_interest_group_name = ig_armed_forces
 			remove_variable = chose_vanguardism
 			remove_variable = chose_communism
 		}
+		hidden_effect = {
+			remove_ideology = ideology_socialist
+			remove_ideology = ideology_cre_black_army
+			add_ideology = ideology_patriotic
+		}
+		set_interest_group_name = ig_armed_forces
 		bpm_remove_all_dop_ideologies = yes
 		bpm_remove_all_gov_ideologies = yes
 		bpm_remove_all_mil_ideologies = yes

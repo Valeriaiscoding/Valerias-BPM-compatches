@@ -1,6 +1,6 @@
-﻿#Intelligentsia replaces republican/constitutionalist with socialist
+#Intelligentsia replaces republican/constitutionalist with socialist
 # TODO everything
-je_cre_red_intelligentsia = {
+REPLACE:je_cre_red_intelligentsia = {
 	icon = "gfx/interface/icons/ideology_icons/socialist.dds"
 
 	group = je_group_cre_socialism
@@ -8,9 +8,7 @@ je_cre_red_intelligentsia = {
 	is_shown_when_inactive = {
 		has_law_or_variant = law_type:law_council_republic
 		ig:ig_intelligentsia = {
-			NOT = {
-				has_ideology = ideology:ideology_socialist
-			}
+			bpm_ig_is_socialist = no
 		}
 		OR = {
 			has_journal_entry = je_communism_2
@@ -55,7 +53,7 @@ je_cre_red_intelligentsia = {
 				if = {
 					limit = {
 						NOT = {
-							has_socialist_ideology = yes
+							bpm_leader_is_socialist = yes
 						}
 						is_historical = no
 					}
@@ -63,7 +61,7 @@ je_cre_red_intelligentsia = {
 				} else_if = {
 					limit = {
 						NOT = {
-							has_socialist_ideology = yes
+							bpm_leader_is_socialist = yes
 						}
 						is_historical = yes
 					}
@@ -108,9 +106,9 @@ je_cre_nomenklatura_develop = {
 	}
 
 	possible = {
-		ig:ig_intelligentsia = {
-			ig_counts_as_marginal = no
-			has_ideology = ideology:ideology_socialist
+		ig:ig_petty_bourgeoisie = {
+			bpm_ig_is_marginal = no
+			bpm_ig_is_socialist = yes
 		}
 		has_law_or_variant = law_type:law_appointed_bureaucrats
 	}
@@ -118,7 +116,7 @@ je_cre_nomenklatura_develop = {
 	scripted_progress_bar = cre_nomenklatura_bar
 
 	complete = {
-		ig:ig_intelligentsia = {
+		ig:ig_petty_bourgeoisie = {
 			is_in_government = yes
 		}
 		custom_tooltip = {
@@ -136,7 +134,7 @@ je_cre_nomenklatura_develop = {
 
 	on_complete = {
 		cre_intelligentsia_to_nomenklatura_effect = yes
-		ig:ig_intelligentsia = {
+		ig:ig_petty_bourgeoisie = {
 			leader = {
 				if = {
 					limit = {
@@ -156,7 +154,7 @@ je_cre_nomenklatura_develop = {
 					exile_character = yes
 					root = {
 						create_character = {
-							interest_group = ig:ig_intelligentsia
+							interest_group = ig:ig_petty_bourgeoisie
 							ideology = root.ruler.ideology
 							ig_leader = yes
 							on_created = {
@@ -169,7 +167,7 @@ je_cre_nomenklatura_develop = {
 		}
 		add_loyalists = {
 			value = medium_radicals
-			interest_group = ig:ig_intelligentsia
+			interest_group = ig:ig_petty_bourgeoisie
 		}
 		add_modifier = {
 			name = cre_apparatchiks_modifier
@@ -300,24 +298,24 @@ je_cre_undo_evolutions = {
 				"scripted_bar_progress(cre_undo_evolutions_bar)" >= 100
 			}
 		}
-		custom_tooltip = {
-			text = pb_not_socialist
-			ig:ig_petty_bourgeoisie ?= {
-				interest_group_has_socialist_ideology = no
-			}
-		}
-		custom_tooltip = {
-			text = intelligentsia_not_socialist
-			ig:ig_intelligentsia ?= {
-				interest_group_has_socialist_ideology = no
-			}
-		}
-		custom_tooltip = {
-			text = armed_forces_not_socialist
-			ig:ig_armed_forces ?= {
-				interest_group_has_socialist_ideology = no
-			}
-		}
+		# custom_tooltip = {
+		# 	text = pb_not_socialist
+		# 	ig:ig_petty_bourgeoisie ?= {
+		# 		interest_group_has_socialist_ideology = no
+		# 	}
+		# }
+		# custom_tooltip = {
+		# 	text = intelligentsia_not_socialist
+		# 	ig:ig_intelligentsia ?= {
+		# 		interest_group_has_socialist_ideology = no
+		# 	}
+		# }
+		# custom_tooltip = {
+		# 	text = armed_forces_not_socialist
+		# 	ig:ig_armed_forces ?= {
+		# 		interest_group_has_socialist_ideology = no
+		# 	}
+		# }
 		any_revolution_ongoing = no
 	}
 
@@ -339,7 +337,7 @@ je_cre_undo_evolutions = {
 					has_ideology = ideology:ideology_socialist
 				} 
 			 }
-			 cre_undo_intelligentsia_evolution_effect = yes
+			cre_undo_intelligentsia_evolution_effect = yes
 		}
 		cre_reset_armed_forces_effect = yes
 		if = {
