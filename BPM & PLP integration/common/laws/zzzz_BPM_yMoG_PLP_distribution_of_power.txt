@@ -1,4 +1,4 @@
-﻿# group = this is the law_group a law belongs to
+# group = this is the law_group a law belongs to
 # icon = graphical icon shown in-game
 # modifier = {} modifier on country for having adopted this law
 
@@ -72,6 +72,9 @@ REPLACE_OR_CREATE:law_autocracy = {
 		country_electoral_confidence_impact_mult = -1
 		country_authority_add = 200
 		# country_bpm_base_mandate_add = 60
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25	# PLP
+		state_radicals_from_political_movements_mult = 0.25		# PLP
 	}
 
 	can_impose = {
@@ -173,6 +176,9 @@ REPLACE_OR_CREATE:law_neo_absolutism = { # Reward for completing the neo-absolut
 		state_pop_pol_str_add = -6
 		country_authority_add = 250
 		# country_bpm_base_mandate_add = 60
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.5	# PLP
+		state_radicals_from_political_movements_mult = 0.5		# PLP
 	}
 
 	can_impose = { 
@@ -297,6 +303,9 @@ REPLACE_OR_CREATE:law_colonial_administration = {
 		country_bpm_change_primary_culture_to_overlord = yes
 		country_electoral_confidence_impact_mult = -1
 		# country_bpm_base_mandate_add = 60
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25 # PLP
+		state_radicals_from_political_movements_mult = 0.75		# PLP
 	}
 
 	can_impose = {
@@ -381,6 +390,9 @@ REPLACE_OR_CREATE:law_military_junta = {
 		country_authority_add = 100
 		country_electoral_confidence_impact_mult = -1
 		# country_bpm_base_mandate_add = 60
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25	# PLP
+		state_radicals_from_political_movements_mult = 0.25		# PLP
 	}
 
 	can_impose = {
@@ -493,6 +505,9 @@ REPLACE_OR_CREATE:law_oligarchy = {
 		country_electoral_confidence_impact_mult = -1
 
 		# country_bpm_base_mandate_add = 60
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25	# PLP
+		state_radicals_from_political_movements_mult = 0.25		# PLP
 	}
 
 	can_impose = {
@@ -572,6 +587,9 @@ REPLACE_OR_CREATE:law_organic_regulation = {
 		country_shopkeepers_pol_str_mult = 0.5
 		country_clerks_pol_str_mult = 0.25
 		country_authority_add = 100
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.25	# PLP
+		state_radicals_from_political_movements_mult = 0.25		# PLP
 	}
 
 	can_impose = {
@@ -695,6 +713,9 @@ REPLACE_OR_CREATE:law_technocracy = {
 		# country_bpm_base_mandate_add = 50
 		country_authority_add = 100
 		country_electoral_confidence_impact_mult = -1
+
+		state_radicals_and_loyalists_from_sol_change_mult = 0.5 # PLP
+		state_radicals_from_political_movements_mult = 0.5		# PLP
 	}
 
 	unlocking_technologies = {

@@ -2,8 +2,8 @@
 	modifier = {
 		country_authority_add = -50
 
-		state_radicals_and_loyalists_from_sol_change_mult = 0.25
-		state_radicals_from_political_movements_mult = 0.25
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.15
 	}
 }
 
@@ -16,7 +16,7 @@ INJECT:law_appointed_by_hos = {
 INJECT:law_bakufu = {
 	modifier = {
 		country_authority_add = -50
-		state_radicals_and_loyalists_from_sol_change_mult = 0.25
-		state_radicals_from_political_movements_mult = 0.25
+		state_radicals_and_loyalists_from_sol_change_mult = 0.15
+		state_radicals_from_political_movements_mult = 0.15
 	}
 }

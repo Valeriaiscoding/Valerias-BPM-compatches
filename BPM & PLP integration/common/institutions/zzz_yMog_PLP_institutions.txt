@@ -4,7 +4,6 @@
 	}
 }
 
-
 INJECT:institution_police = {
 	modifier = {
 		country_authority_add = 30

@@ -1,11 +1,28 @@
-﻿# INJECT:bpm_stability_stagnant = {
-# 	country_authority_add = 100
-# }
+﻿INJECT:bpm_stability_unstable = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.5
+}
 
-# INJECT:bpm_stability_dynamic = {
-# 	#country_authority_add = 50
-# }
+INJECT:institution_ai_centralization_workaround = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
+	state_radicals_from_political_movements_mult = 0.05
+}
 
-# INJECT:bpm_stability_unstable = {
-# 	country_authority_add = -100
-# }
+INJECT:institution_law_confederated_colony_workaround = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
+	state_radicals_from_political_movements_mult = 0.05
+}
+
+INJECT:institution_law_federated_colony_workaround = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
+	state_radicals_from_political_movements_mult = 0.05
+}
+
+INJECT:institution_law_devolved_colony_workaround = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.05
+	state_radicals_from_political_movements_mult = 0.05
+}
+
+INJECT:institution_law_unitary_colony_workaround = {
+	state_radicals_and_loyalists_from_sol_change_mult = 0.07
+	state_radicals_from_political_movements_mult = 0.07
+}
