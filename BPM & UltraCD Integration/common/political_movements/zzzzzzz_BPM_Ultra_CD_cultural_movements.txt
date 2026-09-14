@@ -502,13 +502,7 @@
 			}
 		}
 		
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.02
-			add = 1
-		}
+		multiply = cultural_minority_attraction_from_fervor_value
 
 		if = { # Funnel people into Indias unique movements
 			limit = {

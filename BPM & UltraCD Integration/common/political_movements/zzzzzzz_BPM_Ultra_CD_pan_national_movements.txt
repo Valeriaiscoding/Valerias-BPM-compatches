@@ -264,13 +264,7 @@
 			}
 		}
 
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.02
-			add = 1
-		}
+		multiply = pan_nat_movement_attaction_from_fervor_value
 
 		if = {
 			limit = {
@@ -802,13 +796,7 @@ REPLACE:movement_italian_national = {
 			}
 		}
 
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.02
-			add = 1
-		}
+		multiply = pan_nat_movement_attaction_from_fervor_value
 
 		if = {
 			limit = {
@@ -1304,13 +1292,7 @@ REPLACE:movement_yugoslav_national = {
 			}
 		}
 
-		multiply = { # Range from x0.775 to 2.275
-			desc = "POP_CULTURE_FERVOR"
-			value = culture.culture_current_fervor
-			subtract = 15
-			multiply = 0.02
-			add = 1
-		}
+		multiply = pan_nat_movement_attaction_from_fervor_value
 
 		if = {
 			limit = {
