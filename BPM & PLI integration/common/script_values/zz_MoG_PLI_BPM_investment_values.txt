@@ -1,4 +1,4 @@
-REPLACE:mog_pli_investment_increment = {
+﻿REPLACE:mog_pli_investment_increment = {
 	value = 0
 	if = {
 		limit = { mog_pli_investment_target_trend_buffer > var:mog_pli_investment_current_value } # Target below current state.
@@ -98,16 +98,16 @@ REPLACE:mog_pli_investment_increment = {
 	}
 
 	# Stability
-	if = {
-		limit = { owner = { has_variable = var:bpm_political_stability } }
-		add = {
-			# TODO LOC
-			value = owner.var:bpm_political_stability
-			subtract = 50
-			multiply = -0.008 # -0.4 to 0.4
-			desc = "PLI_BPM_POLITICAL_STABILITY"
-		}
-	}
+	# if = {
+	# 	limit = { owner = { has_variable = var:bpm_political_stability } }
+	# 	add = {
+	# 		# TODO LOC
+	# 		value = owner.var:bpm_political_stability
+	# 		subtract = 50
+	# 		multiply = -0.008 # -0.4 to 0.4
+	# 		desc = "PLI_BPM_POLITICAL_STABILITY"
+	# 	}
+	# }
 
 
 	min = 0.1
@@ -118,7 +118,7 @@ REPLACE:mog_pli_investment_increment = {
 REPLACE:mog_pli_investment_target = {	# This represents the conditions which support investor confidence and capability
 	value = 0
 	add = mog_pli_rank_value				# Max 20
-	add = mog_pli_inv_dist_of_power			# Max 10 # was 20
+	add = mog_pli_inv_dist_of_power			# Max 15 # was 20
 	add = mog_pli_inv_church_and_state		# Max 5
 	add = mog_pli_inv_economic_system		# Max 10 # was 15
 	add = mog_pli_inv_taxation				# Max 20
@@ -129,51 +129,42 @@ REPLACE:mog_pli_investment_target = {	# This represents the conditions which sup
 	add = mog_pli_combo_wombo				# Max 20
 	# NEW
 	add = bpm_mog_pli_inv_party_laws		# Max 5
-	add = mog_pli_inv_stability				# Max 15
 	add = mog_pli_inv_centralization		# Max 10
 	min = mog_pli_min_investment			# Max total intentionally > 100 (140)
-	if = {
-		limit = {
-			has_variable = var:bpm_political_stability 
-			var:bpm_political_stability <= 0.34
-		}
-		multiply = {
-			value = var:bpm_political_stability
-			multiply = 0.03
-			max = 1
-		}
-	}
+
+	multiply = mog_pli_inv_stability
+	
 	max = {									# This can actually take it down to 0, but this is the only thing that should be able to do so.
 		value = 100
 		multiply = mog_pli_max_investment_willingness_from_ip
 	}
 }
 
-mog_pli_inv_stability = {	# Max 15 optimal value 60 
-	if = {
-		limit = { has_variable = var:bpm_political_stability }
-		value = 15
-		if = {
-			limit = { var:bpm_political_stability > 60 }	
-			subtract = {
-				value = var:bpm_political_stability
-				subtract = 60
-				multiply = 0.25
-			}
-		}
-		else_if = {
-			limit = { var:bpm_political_stability < 60 }
-			subtract = {
-				value = 60
-				subtract = var:bpm_political_stability
-				multiply = 0.5
-			}
-		}
-	}
-	else = {
-		value = 10	
-	}
-}
+# mog_pli_inv_stability = { optimal value 60 
+# 	if = {
+# 		limit = { has_variable = var:bpm_political_stability }
+# 		value = 1
+# 		if = {
+# 			limit = { var:bpm_political_stability > 60 }	
+# 			subtract = {
+# 				value = var:bpm_political_stability
+# 				subtract = 60
+# 				multiply = 0.375
+# 			}
+# 		}
+# 		else_if = {
+# 			limit = { var:bpm_political_stability < 60 }
+# 			subtract = {
+# 				value = 60
+# 				subtract = var:bpm_political_stability
+# 				multiply = 0.5
+# 			}
+# 		}
+# 	}
+# 	else = {
+# 		value = 10	
+# 	}
+# }
 
 mog_pli_inv_centralization = { 		# Max 10
 	if = {
@@ -247,7 +238,7 @@ REPLACE:mog_pli_inv_church_and_state = {		# Max 5
 	}
 }
 
-REPLACE:mog_pli_inv_dist_of_power = {			# Max 10 # was 20
+REPLACE:mog_pli_inv_dist_of_power = {			# Max 15 # was 20
 	if = {
 		limit = { # Absolute Power
 			OR = {
@@ -255,7 +246,7 @@ REPLACE:mog_pli_inv_dist_of_power = {			# Max 10 # was 20
 				has_law_or_variant = law_type:law_military_junta
 			}
 		}
-		add = -2
+		add = 0
 	}
 	else_if = {
 		limit = { # Elite Captured Power
@@ -266,27 +257,27 @@ REPLACE:mog_pli_inv_dist_of_power = {			# Max 10 # was 20
 				has_law_or_variant = law_type:law_colonial_administration
 			}
 		}
-		add = 0
+		add = 2
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_landed_voting }
-		add = -2
-	}
-	else_if = {
-		limit = { has_law_or_variant = law_type:law_wealth_voting }
 		add = 0
 	}
 	else_if = {
+		limit = { has_law_or_variant = law_type:law_wealth_voting }
+		add = 2
+	}
+	else_if = {
 		limit = { has_law_or_variant = law_type:law_census_voting }
-		add = 5
+		add = 7
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_universal_suffrage }
-		add = 10
+		add = 12
 	}
 	else_if = {	# Investor Confidence Collapse
 		limit = { has_law_or_variant = law_type:law_anarchy }
-		add = -5
+		add = -3
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_organic_democracy }
@@ -294,6 +285,21 @@ REPLACE:mog_pli_inv_dist_of_power = {			# Max 10 # was 20
 	}
 	else = {		# For random modded laws
 		add = mog_pli_inv_dist_of_power_modded
+	}
+	if = {
+		limit = {
+			has_law_or_variant = law_type:law_advisory_body
+		}
+		add = 0
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_law_or_variant = law_type:law_separted_power
+				has_law_or_variant = law_type:law_supreme_legislature
+			}
+		}
+		add = 3
 	}
 }
 
@@ -472,6 +478,9 @@ REPLACE:mog_pli_combo_wombo = {
 			NOT = {
 				has_law_or_variant = law_type:law_advisory_body
 			}
+			NOT = {
+				has_law_or_variant = law_type:law_party_single
+			}
 			NOR = {
 				has_law_or_variant = law_type:law_ad_hoc_centralization
 				has_law_or_variant = law_type:law_confederated
@@ -486,7 +495,6 @@ REPLACE:mog_pli_combo_wombo = {
 				has_law_or_variant = law_type:law_wealth_voting
 				has_law_or_variant = law_type:law_census_voting
 				has_law_or_variant = law_type:law_universal_suffrage
-				#has_law_or_variant = law_type:law_organic_democracy
 			}
 			OR = {
 				has_law_or_variant = law_type:law_national_guard		# Any supportive home affairs.
