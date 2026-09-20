@@ -1,0 +1,169 @@
+﻿# When bug will be fixed in orginal mod this file should be removed
+UHW_mo_rapid_fire_artillery = {
+    texture = "gfx/interface/icons/production_method_icons/shrapnel_artillery.dds"
+    group   = UHW_mog_artillery
+    
+    possible = {
+        scope:military_formation = {
+            any_combat_unit = {
+                OR = {
+                    has_unit_type = unit_type:combat_unit_type_shrapnel_artillery
+                    has_unit_type = unit_type:combat_unit_type_siege_artillery
+                    has_unit_type = unit_type:combat_unit_type_heavy_tank
+                }
+            }
+            NOT = {
+                any_combat_unit = {
+                    OR = {
+                        has_unit_type = unit_type:combat_unit_type_irregular_infantry
+                        has_unit_type = unit_type:combat_unit_type_line_infantry
+                        has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+                    }
+                }
+            }
+        }
+        market ?= {
+            mg:artillery ?= {
+                has_potential_supply = yes
+            }
+        }
+        market ?= {
+            mg:ammunition ?= {
+                has_potential_supply = yes
+            }
+        }
+    }
+    
+    can_be_turned_off = {
+        scope:military_formation = {
+            NOT = {
+                has_mobilization_option = mobilization_option:UHW_mo_standardized_artillery
+            }
+        }
+    }
+    
+    on_activate = {
+        if = {
+            limit = {
+                game_date >= 1837.1.1
+            }
+            custom_tooltip = {
+                text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+                add_organization = {
+                    value = organization
+                    multiply = -0.5
+                }
+            }
+        }
+    }
+    
+    on_deactivate = {
+        custom_tooltip = {
+            text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+            add_organization = {
+                value = organization
+                multiply = -0.5
+            }
+        }
+    }
+    
+    unlocking_technologies = {
+        trench_works
+    }
+    
+    upkeep_modifier = {
+        goods_input_artillery_add = 3.5
+        goods_input_ammunition_add = 5
+    }
+    
+    unit_modifier = {
+        unit_offense_add = 20
+        unit_defense_add = 5
+        unit_kill_rate_add = 0.4
+    }
+    
+    ai_weight = {
+        value = 2
+    }
+}
+
+UHW_mo_standardized_artillery = {
+    texture = "gfx/interface/icons/production_method_icons/siege_artillery.dds"
+    group   = UHW_mog_artillery
+    
+    possible = {
+        scope:military_formation = {
+            has_mobilization_option = mobilization_option:UHW_mo_rapid_fire_artillery
+             any_combat_unit = {
+                OR = {
+                    has_unit_type = unit_type:combat_unit_type_siege_artillery
+                    has_unit_type = unit_type:combat_unit_type_heavy_tank
+                }
+            }
+            NOT = {
+                any_combat_unit = {
+                    OR = {
+                        has_unit_type = unit_type:combat_unit_type_irregular_infantry
+                        has_unit_type = unit_type:combat_unit_type_line_infantry
+                        has_unit_type = unit_type:combat_unit_type_skirmish_infantry
+                        has_unit_type = unit_type:combat_unit_type_trench_infantry
+                    }
+                }
+            }
+        }
+        market ?= {
+            mg:artillery ?= {
+                has_potential_supply = yes
+            }
+        }
+        market ?= {
+            mg:ammunition ?= {
+                has_potential_supply = yes
+            }
+        }
+    }
+    
+    on_activate = {
+        if = {
+            limit = {
+                game_date >= 1837.1.1
+            }
+            custom_tooltip = {
+                text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+                add_organization = {
+                    value = organization
+                    multiply = -0.5
+                }
+            }
+        }
+    }
+    
+    on_deactivate = {
+        custom_tooltip = {
+            text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+            add_organization = {
+                value = organization
+                multiply = -0.5
+            }
+        }
+    }
+    
+    unlocking_technologies = {
+        concrete_fortifications
+    }
+    
+    upkeep_modifier = {
+        goods_input_artillery_add = 5
+        goods_input_ammunition_add = 10
+    }
+    
+    unit_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 5
+        unit_kill_rate_add = 0.1
+    }
+    
+    ai_weight = {
+        value = 2
+    }
+}
