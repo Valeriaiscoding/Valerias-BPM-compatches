@@ -6,6 +6,7 @@
 	country_law_enactment_stall_mult = -0.50
 	country_law_enactment_ruler_veto_bypass = yes
 	country_rigidity_baseline_add = -25
+	country_rigidity_rate_add = 0.2
 }
 
 REPLACE:stts_ig_stopped_brownshirts_modifier = {
@@ -55,6 +56,15 @@ REPLACE:stts_climate_of_political_violence = {
 	state_radicals_from_political_movements_mult = 0.25
 	country_rigidity_baseline_add = -5
 	state_turmoil_effects_mult = 0.20
+}
+
+INJECT:stts_post_revolutionary_reconciliation_modifier = {
+	country_rigidity_baseline_add = 10
+}
+
+INJECT:stts_revolution_fatigue_modifier = {
+	country_rigidity_baseline_add = 25
+	country_rigidity_rate_add = -0.15
 }
 
 stts_character_press_tour_modifier = {

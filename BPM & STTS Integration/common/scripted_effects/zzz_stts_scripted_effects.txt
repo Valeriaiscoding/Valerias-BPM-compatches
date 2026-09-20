@@ -329,3 +329,28 @@ bpm_stts_create_savior_effect = {
             }
         }
 }
+
+bpm_stts_apply_revolutionary_fatigue_effect = {
+	set_variable = {
+		name = stts_revolution_fatigue_1
+		years = 10
+	}
+	if = {
+		limit = {
+			has_variable = stts_revolution_fatigue_1
+		}
+		set_variable = {
+			name = stts_revolution_fatigue_2
+			years = 5
+		}
+	}
+	if = {
+		limit = {
+			has_variable = stts_revolution_fatigue_2
+		}
+		set_variable = {
+			name = stts_revolution_fatigue_3
+			years = 5
+		}
+	}
+}

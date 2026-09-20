@@ -1,4 +1,4 @@
-REPLACE:bpm_female_commander_spawn_chance = {
+﻿REPLACE:bpm_female_commander_spawn_chance = {
 	value = 0
 
 	if = {

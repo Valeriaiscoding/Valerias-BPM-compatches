@@ -1,6 +1,6 @@
 ﻿REPLACE:je_mog_pli_liberal_reaction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_liberal_movement_support_add = 1
+	country_liberal_movement_support_add = 1 # TODO remove if does not work
 	interest_group_ig_liberals_pop_attraction_mult = 0.5
 	interest_group_ig_radicals_pop_attraction_mult = 0.5
 	interest_group_ig_national_liberals_pop_attraction_mult = 0.5

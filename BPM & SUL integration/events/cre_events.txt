@@ -1,4 +1,4 @@
-namespace = cre_events
+﻿namespace = cre_events
 #Voluntary vs forced collectivization
 cre_events.1 = {
 	type = country_event

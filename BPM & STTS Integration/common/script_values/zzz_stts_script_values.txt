@@ -1,4 +1,4 @@
-﻿REPLACE:stts_home_affairs_value = {
+﻿REPLACE_OR_CREATE:stts_home_affairs_value = {
 	value = 0
 	if = {
 		limit = {
@@ -8,7 +8,7 @@
 	}
 }
 
-ssts_culture_institution_impact = {
+REPLACE_OR_CREATE:ssts_culture_institution_impact = {
 	value = 1
 	if = {
 		limit = {
@@ -21,7 +21,7 @@ ssts_culture_institution_impact = {
 	}
 }
 
-stts_authority_cost_value = {
+REPLACE_OR_CREATE:stts_authority_cost_value = {
 	if = {
 		owner ?= {has_law_or_variant = law_type:law_protected_speech}
 		value = 100

@@ -1,4 +1,4 @@
-INJECT:law_outlawed_dissent = {
+﻿INJECT:law_outlawed_dissent = {
 	institution_modifier = {
 		state_education_access_add = -0.02
 	}

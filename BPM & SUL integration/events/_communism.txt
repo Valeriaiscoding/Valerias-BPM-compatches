@@ -1,4 +1,4 @@
-namespace = communism
+﻿namespace = communism
 communism.1 = {
 	type = country_event
 	placement = root

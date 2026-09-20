@@ -1,4 +1,4 @@
-state_pop_support_movement_reformist_socialist_add={
+﻿state_pop_support_movement_reformist_socialist_add={
 	decimals=1
 	color=neutral
 	game_data={

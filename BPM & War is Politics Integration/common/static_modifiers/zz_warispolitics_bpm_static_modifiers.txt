@@ -1,9 +1,9 @@
 ﻿INJECT:warispolitics_lost_war = {
-	country_rigidity_baseline_add = -25
+	country_rigidity_baseline_add = -10
 }
 INJECT:warispolitics_won_war = {
 	country_rigidity_baseline_add = 10
 }
 INJECT:warispolitics_backed_down = {
-	country_rigidity_baseline_add = -10
+	country_rigidity_baseline_add = -5
 }

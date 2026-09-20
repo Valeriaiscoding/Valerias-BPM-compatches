@@ -2021,7 +2021,7 @@ stts_movement.18 = {
 }
 
 #authoritarian spawns to save the revolution
-stts_movement.19 = { # TODO
+stts_movement.19 = {
 	type = country_event
 	cooldown = {
 		days = never_fire_again_modifier_time #once
@@ -2058,6 +2058,11 @@ stts_movement.19 = { # TODO
 					has_ideology = ideology:ideology_fascist
 					has_ideology = ideology:ideology_authoritarian
 					has_ideology = ideology:ideology_integralist
+				}
+				prominence >= 25
+				interest_group = {
+					bpm_ig_enabled = yes
+					bpm_ig_is_marginal = no
 				}
 			}
 		}
@@ -2133,7 +2138,20 @@ stts_movement.19 = { # TODO
 				remove = { agitator }
 			}
 			set_as_interest_group_leader = yes
-			set_character_as_ruler = yes
+			if = {
+				limit = { 
+					owner = { has_law_or_variant = law_type:law_answers_to_legislature } 
+				}
+				bpm_appoint_as_hog = yes
+				custom_tooltip = {
+					text = "BPM_STTS_NEW_HOG_UNTOUCHABLE"
+					set_variable = bpm_untouchable_char
+					set_variable = bpm_stts_untouchable_savior
+				}
+			}
+			else = {
+				set_character_as_ruler = yes
+			}
 		}
 		add_modifier = {
 			name = stts_decisive_revolution
@@ -2171,7 +2189,7 @@ stts_movement.19 = { # TODO
 
 
 #Revolution fatigue: authoritarian promises stability
-stts_movement.20 = { # TODO
+stts_movement.20 = { 
     type = country_event
     cooldown = {
         days = long_modifier_time #10 years
@@ -2194,7 +2212,7 @@ stts_movement.20 = { # TODO
     trigger = {
         is_revolutionary = no
         OR = {
-			bpm_political_stability <= 0.33
+			bpm_political_stability <= 0.1
 			any_revolution_ongoing = yes
 			has_journal_entry = je_bpm_crisis_of_the_state
 		}
@@ -2210,6 +2228,7 @@ stts_movement.20 = { # TODO
     option = {
         name = stts_movement.20.a
         default_option = yes
+		bpm_add_political_stability_big = yes
         if = {
             limit = {
                 has_technology_researched = central_archives
@@ -2238,39 +2257,31 @@ stts_movement.20 = { # TODO
             }
             activate_law = law_type:law_censorship
         }
-        if = {
+		if = {
             limit = {
-                has_technology_researched = political_agitation
-                scope:authoritarian_savior = {
-                    OR = {
-						interest_group = {
-							OR = {
-								has_ideology = ideology:ideology_dop_party_state
-								has_ideology = ideology:ideology_dop_party_socialist
-							}
-						}
-                        has_ideology = ideology:ideology_vanguardist
-                        has_ideology = ideology:ideology_fascist
-                        has_ideology = ideology:ideology_integralist
-                    }
+                NOT = {
+                    has_law_or_variant = law_type:law_advisory_body
                 }
-                NOR = {
-                    has_law_or_variant = law_type:law_autocracy
-                    has_law_or_variant = law_type:law_party_single
-                }
-                country_has_voting_franchise = yes
             }
-            activate_law = law_type:law_party_single
-        } 
-		else_if = {
-			limit = {
-				
-			}
-		}
-		else_if = {
+            activate_law = law_type:law_advisory_body
+        }
+        # if = {
+        #     limit = {
+        #         NOR = {
+        #             has_law_or_variant = law_type:law_autocracy
+        #             has_law_or_variant = law_type:law_party_single
+        #         }
+        #         bpm_country_laws_no_voting = no
+        #     }
+        #     activate_law = law_type:law_advisory_body
+        # } 
+		if = {
             limit = {
+				bpm_country_is_republic = no
                 bpm_country_laws_no_voting = yes
-                country_has_voting_franchise = yes
+				NOT = {
+					has_law_or_variant = law_type:law_autocracy
+				}
 				NOT = {
 					has_law_or_variant = law_type:law_answers_to_legislature
 				}
@@ -2279,11 +2290,19 @@ stts_movement.20 = { # TODO
         } 
 		else_if = {
             limit = {
-                country_has_monarchy_law = yes
-                bpm_country_laws_no_voting = yes
+				bpm_country_laws_no_voting = yes
+                OR = {
+					bpm_country_is_republic = no
+					has_law_or_variant = law_type:law_answers_to_legislature
+				}
+				NOT = {
+					has_law_or_variant = law_type:law_oligarchy
+				}
             }
             activate_law = law_type:law_oligarchy
         }
+
+		
         every_interest_group_in_government = {
             limit = {
                 NOT = {
@@ -2317,18 +2336,26 @@ stts_movement.20 = { # TODO
             }
         }
         scope:authoritarian_savior = {
-            set_as_interest_group_leader = yes
-        }
-        if = {
-            limit = {
-                country_has_monarchy_law = no
-                scope:authoritarian_savior = {
-                    is_ruler_of_own_country = no
-                }
-            }
-            scope:authoritarian_savior = {
-                set_character_as_ruler = yes
-            }
+			replace_character_role = {
+				add = { politician }
+				remove = { agitator }
+			}
+			set_as_interest_group_leader = yes
+			if = {
+				limit = { 
+					owner = {
+						OR = {
+							has_law_or_variant = law_type:law_parliamentary_republic
+							bpm_country_is_republic = no
+							has_law_or_variant = law_type:law_answers_to_legislature
+						}
+					} 
+				}
+				bpm_appoint_as_hog = yes
+			}
+			else = {
+				set_character_as_ruler = yes
+			}
         }
         ai_chance = {
             base = 100
@@ -2338,6 +2365,7 @@ stts_movement.20 = { # TODO
     #lets reconcile instead
     option = {
         name = stts_movement.20.b
+		bpm_add_political_stability_normal = yes
         if = {
             limit = {
                 NOT = {
@@ -2368,6 +2396,7 @@ stts_movement.20 = { # TODO
         name = stts_movement.20.c
         random_scope_politician = {
             limit = {
+				prominence >= 25
                 interest_group = {
                     is_in_government = yes
                 }

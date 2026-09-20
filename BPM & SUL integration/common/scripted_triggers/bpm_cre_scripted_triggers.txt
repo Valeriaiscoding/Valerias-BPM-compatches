@@ -1,4 +1,4 @@
-bpm_cre_leader_is_syndicalist = {
+﻿bpm_cre_leader_is_syndicalist = {
 	OR = {
 		has_ideology = ideology:ideology_syndicalist
 		has_ideology = ideology:ideology_anarchist_syndicalist

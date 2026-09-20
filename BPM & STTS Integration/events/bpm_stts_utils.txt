@@ -1,0 +1,27 @@
+﻿namespace = bpm_stts_utils
+
+bpm_stts_utils.1 = { 
+	type = country_event
+	placement = root
+	hidden = yes
+
+	trigger = {
+		is_revolutionary = no
+		is_secessionist = no
+		any_scope_character = {
+			has_role_of_type = bpm_character_role_hog
+			has_variable = bpm_stts_untouchable_savior
+		}
+	}
+
+	immediate = {
+		every_scope_character = {
+			limit = {
+				has_role_of_type = bpm_character_role_hog
+				has_variable = bpm_stts_untouchable_savior
+			}
+			remove_variable = bpm_stts_untouchable_savior
+			remove_variable = bpm_untouchable_char
+		}
+	}
+}

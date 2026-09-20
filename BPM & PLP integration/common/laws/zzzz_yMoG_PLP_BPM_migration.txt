@@ -1,0 +1,26 @@
+﻿INJECT:law_no_migration_controls = { 
+	modifier = {
+		interest_group_ig_industrialists_approval_add = 8
+	}
+	institution_modifier = {
+		interest_group_ig_industrialists_approval_add = -2
+	}
+}
+
+INJECT:law_migration_controls = { 
+	modifier = {
+		interest_group_ig_petty_bourgeoisie_approval_add = 8
+	}
+	institution_modifier = {
+		interest_group_ig_petty_bourgeoisie_approval_add = -2
+	}
+}
+
+INJECT:law_no_migration_controls = { 
+	modifier = {
+		interest_group_ig_rural_folk_approval_add = 8
+	}
+	institution_modifier = {
+		interest_group_ig_rural_folk_approval_add = -2
+	}
+}

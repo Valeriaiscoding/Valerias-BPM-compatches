@@ -1,0 +1,18 @@
+﻿INJECT:bpm_character_role_hog = {
+	on_career_end = {
+		random_country = {
+			limit = {
+				var:bpm_headofgov ?= prev
+			}
+			remove_variable = bpm_headofgov
+			bpm_choose_hog = yes
+		}
+		if = {
+			limit = { 
+				has_variable = bpm_stts_untouchable_savior	
+			}
+			remove_variable = bpm_stts_untouchable_savior
+			remove_variable = bpm_untouchable_char
+		}
+	}
+}

@@ -187,27 +187,7 @@
     on_enforced = {
         #Match governance principle
         scope:target_country = {
-            activate_law = root.active_law:lawgroup_governance_principles.law_type
-            # if = {
-            #     limit = {  
-            #         root = { has_law = law_type:law_military_junta }
-            #     }
-            #     activate_law = law_type:law_military_junta
-            # }
-            # else_if = {
-            #     limit = {
-            #         has_law = law_type:law_technocracy
-            #     }
-            #     activate_law = law_type:law_technocracy
-            # }
-            # else_if = {
-            #     limit = { has_law = law_type:law_organic_democracy }
-            #     activate_law = law_type:law_organic_democracy
-            #     activate_law = law_type:law_outlawed_dissent
-            # }
-            # else = {
-            #     activate_law = law_type:law_autocracy
-            # }
+            activate_law = root.active_law:lawgroup_governance_principles.law_type  
             activate_law = law_type:law_autocracy
             activate_law = law_type:law_advisory_body
             activate_law = law_type:law_no_separate_hog
@@ -225,9 +205,6 @@
                 var:bpm_head_of_gov = {
                     ideology = {
                         save_scope_as = leader_ideology
-                    }
-                    interest_group = {
-                        save_scope_as = leader_ig
                     }
                     interest_group = {
                         save_scope_as = leader_ig
@@ -287,77 +264,6 @@
                     noble = yes
                     on_created = {
                         add_trait = political_appointee
-                        if = {
-                            limit = { 
-                                root.leader = { has_variable = house_orleans }
-                            }
-                            set_last_name = "d_Orleans"
-                            set_variable = house_orleans
-                            set_ideology = ideology:ideology_orleanist
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_bourbon }
-                            }
-                            set_last_name = "de_Bourbon"
-                            set_variable = house_bourbon
-                            if = {
-                                limit = { root.leader = { has_variable = legitimist_leader } }
-                                set_variable = legitimist_leader
-                                set_ideology = ideology:ideology_legitimist
-                                character_carlist_or_legitimist_switch_effect = yes
-                            }
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_bonaparte }
-                            }
-                            set_last_name = "Bonaparte"
-                            set_variable = house_bonaparte
-                            set_ideology = ideology:ideology_bonapartist
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_braganca }
-                            }
-                            set_last_name = "de_Braganca"
-                            set_variable = house_braganca
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_hohenzollern }
-                            }
-                            set_last_name = "von_Hohenzollern"
-                            set_variable = house_hohenzollern
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_karadordevic }
-                            }
-                            set_last_name = "Karadordevic"
-                            set_variable = house_karadordevic
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_obrenovic }
-                            }
-                            set_last_name = "Obrenovic"
-                            set_variable = house_obrenovic
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_savoy }
-                            }
-                            set_last_name = "Savoy"
-                            set_variable = house_savoy
-                        }
-                        else_if = {
-                            limit = { 
-                                root.leader = { has_variable = house_espartero }
-                            }
-                            set_last_name = "Espartero"
-                            set_variable = house_espartero
-                        }
                     }
                 }
             }

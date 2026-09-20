@@ -1,60 +1,60 @@
 ﻿# Cuba
 
-ecchi_cub_de_cespedes = {
-    first_name = ecchi_Carlos_Manuel
-    last_name = de_Cespedes
-    historical = yes
-    culture = cu:caribeno
-    home_region = STATE_EASTERN_CUBA
-    religion = rel:catholic
-    ideology = ideology_abolitionist
-    interest_group = ig_radicals
-	dna = ecchi_dna_carlos_manuel_de_cespedes
-    birth_date = 1819.4.18
-    traits = { arrogant persistent forest_commander }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:CUB
-            this = c:CUB
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            is_interest_group_type = ig_radicals
-        }
-        earliest_usage_date = 1865.1.1
-        latest_usage_date = 1874.2.27
-        #chance = 65
-    }
-}
+# ecchi_cub_de_cespedes = {
+#     first_name = ecchi_Carlos_Manuel
+#     last_name = de_Cespedes
+#     historical = yes
+#     culture = cu:caribeno
+#     home_region = STATE_EASTERN_CUBA
+#     religion = rel:catholic
+#     ideology = ideology_abolitionist
+#     interest_group = ig_radicals
+# 	dna = ecchi_dna_carlos_manuel_de_cespedes
+#     birth_date = 1819.4.18
+#     traits = { arrogant persistent forest_commander }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             exists = c:CUB
+#             this = c:CUB
+#         }
+#         interest_group_trigger = {
+#             bpm_ig_is_marginal = no
+# 			bpm_ig_enabled = yes
+#             is_interest_group_type = ig_radicals
+#         }
+#         earliest_usage_date = 1865.1.1
+#         latest_usage_date = 1874.2.27
+#         #chance = 65
+#     }
+# }
 
-ecchi_cub_marti = {
-    first_name = ecchi_Jose
-    last_name = ecchi_Marti
-    historical = yes
-    culture = cu:caribeno
-    home_region = STATE_CENTRAL_CUBA
-    religion = rel:catholic
-    ideology = ideology_reformer
-    interest_group = ig_radicals
-	dna = ecchi_dna_jose_marti
-    birth_date = 1853.1.28
-    traits = { romantic brave reckless }
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:CUB
-            this = c:CUB
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-			bpm_ig_enabled = yes
-            is_interest_group_type = ig_radicals
-        }
-        earliest_usage_date = 1875.1.1
-        latest_usage_date = 1895.5.19
-        #chance = 65
-    }
-}
+# ecchi_cub_marti = {
+#     first_name = ecchi_Jose
+#     last_name = ecchi_Marti
+#     historical = yes
+#     culture = cu:caribeno
+#     home_region = STATE_CENTRAL_CUBA
+#     religion = rel:catholic
+#     ideology = ideology_reformer
+#     interest_group = ig_radicals
+# 	dna = ecchi_dna_jose_marti
+#     birth_date = 1853.1.28
+#     traits = { romantic brave reckless }
+#     interest_group_leader_usage = {
+#         country_trigger = {
+#             exists = c:CUB
+#             this = c:CUB
+#         }
+#         interest_group_trigger = {
+#             bpm_ig_is_marginal = no
+# 			bpm_ig_enabled = yes
+#             is_interest_group_type = ig_radicals
+#         }
+#         earliest_usage_date = 1875.1.1
+#         latest_usage_date = 1895.5.19
+#         #chance = 65
+#     }
+# }
 
 ## Antonio Maceo
 
@@ -325,10 +325,7 @@ ecchi_hai_soulouque = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-                is_interest_group_type = ig_reactionaries
-                is_interest_group_type = ig_armed_forces
-            }
+            is_interest_group_type = ig_reactionaries
         }
         earliest_usage_date = 1845.1.1
         latest_usage_date = 1867.8.3
@@ -383,10 +380,7 @@ ecchi_jam_garvey = {
         interest_group_trigger = {
             bpm_ig_is_marginal = no
 			bpm_ig_enabled = yes
-            OR = {
-               #is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_national_liberals
-            }
+            is_interest_group_type = ig_national_liberals
         }
         earliest_usage_date = 1914.1.1
         latest_usage_date = 1940.6.10

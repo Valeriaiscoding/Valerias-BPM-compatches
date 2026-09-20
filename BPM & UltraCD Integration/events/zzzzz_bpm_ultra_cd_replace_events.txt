@@ -213,7 +213,7 @@ bpm_acw_events.307 = { # Citizenship Amendment
 				has_variable = bpm_amendment_1
 			}
 			set_variable = bpm_amendment_2
-		}
+		}	
 		if = {
 			limit = {
 				NOT = { has_variable = bpm_amendment_1 }

@@ -2,23 +2,14 @@
 	country_acceptance_no_shared_language_trait_add = 5
 }
 
-
-
 INJECT:law_multicultural_upgraded = {
-
 	modifier = {
-
 		country_acceptance_shared_heritage_trait_add = -10
 		country_acceptance_shared_heritage_trait_group_add = -10
-
 		country_acceptance_shared_language_trait_add = -5
-
 		country_acceptance_no_shared_tradition_trait_add = -5
-
 	}
-
 	acceptance_modifier = {
-
 		country_wage_cultural_erasure_mult = -0.05
 		country_wage_open_prejudice_mult = -0.05
 		country_wage_second_rate_citizen_mult = -0.05
@@ -30,21 +21,3 @@ INJECT:law_multicultural_upgraded = {
 	}
 
 }
-
-# INJECT:law_white_universalism = {
-# 	on_activate = {
-# 		if = {
-# 			limit = { this ?= c:BEL NOT = { country_has_primary_culture = cu:flemish } }
-# 			add_primary_culture = cu:flemish
-# 		}
-# 	}
-# }
-
-# INJECT:law_multicultural = {
-# 	on_activate = {
-# 		if = {
-# 			limit = { this ?= c:BEL NOT = { country_has_primary_culture = cu:flemish } }
-# 			add_primary_culture = cu:flemish
-# 		}
-# 	}
-# }

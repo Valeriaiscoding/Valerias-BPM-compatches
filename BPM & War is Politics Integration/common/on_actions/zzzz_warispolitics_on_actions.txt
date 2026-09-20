@@ -355,7 +355,7 @@ warispolitics_war_won = {
 			}
 		}
 		if = {
-			limit = { bpm_is_hoshog = no  }
+			limit = { bpm_is_hoshog = no }
 			scope:hog ?= {
 				if = {
 					limit = {

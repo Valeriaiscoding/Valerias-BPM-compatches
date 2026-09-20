@@ -1,4 +1,4 @@
-namespace = bpm_cre_utils
+﻿namespace = bpm_cre_utils
 
 bpm_cre_utils.1 = { 
 	type = country_event
@@ -7,6 +7,7 @@ bpm_cre_utils.1 = {
 
 	trigger = {
 		is_revolutionary = no
+		is_secessionist = no
 		any_country = {
 			filter = {
 				is_diplomatic_play_enemy_of = root

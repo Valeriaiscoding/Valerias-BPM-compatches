@@ -1,4 +1,4 @@
-REPLACE:movement_orleanist = {  
+﻿REPLACE:movement_orleanist = {  
 	category = movement_category_ideological
 	
 	ideology = ideology_orleanist

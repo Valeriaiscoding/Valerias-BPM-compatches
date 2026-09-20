@@ -1,4 +1,4 @@
-REPLACE:bpm_CAB_minint_institution = {
+﻿REPLACE:bpm_CAB_minint_institution = {
 	scope = institution
 	is_shown = {
         OR = {

@@ -1,3 +1,4 @@
 ﻿l_english:
   stts_foreign_support_for_revolution_ig:"$stts_foreign_support_for_revolution$"
   state_pop_support_movement_market_liberal_mult: " $movement_market_liberal$ $concept_pop$ Attraction"
+  BPM_STTS_NEW_HOG_UNTOUCHABLE: "[SCOPE.sCharacter('new_agitator').GetLastName] will act as head of government until end of revoulution"

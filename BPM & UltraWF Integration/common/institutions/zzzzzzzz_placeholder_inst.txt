@@ -1,4 +1,4 @@
-institution_conscription = {
+﻿institution_conscription = {
 	icon = "gfx/interface/icons/institution_icons/social_security.dds"
 	background_texture = "gfx/interface/illustrations/institutions/social_security.dds"
 }
