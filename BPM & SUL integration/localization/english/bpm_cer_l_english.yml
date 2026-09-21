@@ -1,4 +1,4 @@
 ﻿l_english:
   state_pop_support_movement_reformist_socialist_mult: " $movement_reformist_socialist$ $concept_pop$ Attraction"
 
-  radsoc_emergency_ideology_tt: "As long as the country is at war, every [Concept('concept_bpm_ig_is_revolutionary_socialist', '$concept_bpm_ig_is_revolutionary_socialist$')] [Concept('concept_interest_group', 'Interest Group')] will have [GetIdeology('ideology_mil_emergency').GetName] [Concept('concept_ideology', 'Ideology')]."
+  radsoc_emergency_ideology_tt: "Every [Concept('concept_bpm_ig_is_revolutionary_socialist', '$concept_bpm_ig_is_revolutionary_socialist$')] [Concept('concept_interest_group', 'Interest Group')] will gain [GetIdeology('ideology_mil_emergency').GetName] [Concept('concept_ideology', 'Ideology')] until end of the revolution and all current wars."

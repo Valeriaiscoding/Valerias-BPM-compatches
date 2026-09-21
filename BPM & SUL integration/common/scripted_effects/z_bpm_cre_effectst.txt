@@ -118,6 +118,7 @@ REPLACE:cre_devolve_commune_effect = {
 			activate_law = law_type:law_council_republic
 			activate_law = law_type:law_anarchy
 			activate_law = law_type:law_confederated
+			activate_law = law_type:law_answers_to_legislature
 			create_political_movement = {
 				type = movement_anarchist
 			}

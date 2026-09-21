@@ -173,7 +173,7 @@ cre_events.2 = {
 		default_option = yes
 		if = {
 			limit = { 
-				NOR = {
+				OR = {
 					has_law_or_variant = law_type:law_noble_officers
 					has_law_or_variant = law_type:law_purchased_officers
 				}
@@ -224,7 +224,7 @@ cre_events.2 = {
 		name = cre_events.2.b
 		if = {
 			limit = { 
-				NOR = {
+				OR = {
 					has_law_or_variant = law_type:law_noble_officers
 					has_law_or_variant = law_type:law_purchased_officers
 				}

@@ -13,7 +13,7 @@ INJECT:law_council_republic = {
 		state_pop_support_movement_anarchist_add = 1
 		state_pop_support_movement_socialist_add = 1
 		state_pop_support_movement_communist_add = 1
-		state_pop_support_movement_reformist_socialist_mult = -0.25
+		state_pop_support_movement_reformist_socialist_mult = -0.5
 		state_pop_support_movement_labor_mult = -0.5
 	}
 }
