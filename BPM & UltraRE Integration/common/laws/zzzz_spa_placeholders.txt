@@ -1,0 +1,2 @@
+﻿law_pec_traditional_millet = {}
+law_pec_codified_millet = {}
