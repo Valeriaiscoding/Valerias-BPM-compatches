@@ -115,7 +115,7 @@ state_officers_dependent_wage_mult={
 	}
 }
 
-building_group_bg_military_mortality_mult={
+state_officers_mortality_mult={
 	decimals=0
 	color=bad
 	percent=yes
