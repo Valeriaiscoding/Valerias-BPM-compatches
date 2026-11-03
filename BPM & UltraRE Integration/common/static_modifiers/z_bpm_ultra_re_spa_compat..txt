@@ -1,0 +1,14 @@
+TRY_REPLACE:mog_spa_uhre_diff_religious_schools_literacy = {	# UHRE full law is loaded
+	icon = gfx/interface/icons/generic_icons/literacy.dds
+	# state_education_access_add = 0.05				# Base UHRE is 0.05 (which is < 0.64)
+	state_slaves_education_access_add = -0.05		# Slaves don't get to go to school
+	#state_education_access_wealth_add = 0.0005		# Net 31.25% @ wealth 25 <SPA but slightly >UHRE
+}
+
+TRY_REPLACE:mog_spa_plp_uhre_diff_religious_schools_literacy = {	# PLP full law is loaded
+	icon = gfx/interface/icons/generic_icons/literacy.dds
+	state_education_access_add = -0.039 			# -0.025 + -0.014	# Achieve SPA & UHRE parity
+	state_conversion_mult = -0.125					# Reach UHRE value of 0.075
+	interest_group_ig_devout_pol_str_mult = -0.05	# Reach UHRE value of 0.05
+	state_education_access_wealth_add = -0.0005 
+}

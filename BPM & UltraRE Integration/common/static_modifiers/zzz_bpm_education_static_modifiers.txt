@@ -1,79 +1,137 @@
-﻿# -- Schools -- #
+﻿REPLACE_OR_CREATE:bpm_schools_fallback_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	# # country_rigidity_baseline_add = -1
+    state_education_access_add = 0.02
+}
+
+REPLACE_OR_CREATE:bpm_schools_agpops_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_peasants_education_access_add=0.02
+    state_farmers_education_access_add=0.02
+    state_education_access_add = 0.01
+    # # country_rigidity_baseline_add = -1
+}
 
 REPLACE_OR_CREATE:bpm_schools_anarchists_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_education_access_wealth_add = -0.002
-    state_education_access_add = 0.03
-    country_bpm_labor_consciousness_target_mult = 0.03
+    state_education_access_wealth_add = -0.0005 #  with religious schools 0.005 with public 0.025 private
+    state_education_access_add = 0.035 #
+    # # country_rigidity_baseline_add = -1
+    country_bpm_labor_consciousness_target_mult = 0.025
 }
 
-INJECT:bpm_schools_cons_modifier = {
-    state_education_access_add = -0.01
-}
-
-INJECT:bpm_schools_fash_modifier = { 
-    state_education_access_add = -0.01
-    country_education_fervor_add = 2
+REPLACE_OR_CREATE:bpm_schools_cons_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_wealth_add = 0.001
+    country_bpm_liberal_consciousness_target_mult = -0.01
     country_bpm_labor_consciousness_target_mult = -0.01
+    # # country_rigidity_baseline_add = -1
 }
 
-INJECT:bpm_schools_lefts_modifier = {
-    state_education_access_add = -0.01
-    country_bpm_labor_consciousness_target_mult = 0.02
+REPLACE_OR_CREATE:bpm_schools_fash_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_wealth_add = 0.002
+    state_education_access_add = -0.03
+    country_education_fervor_add = 2
+    country_bpm_liberal_consciousness_target_mult = -0.05
+    country_bpm_labor_consciousness_target_mult = -0.05
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE_OR_CREATE:bpm_schools_libs_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_wealth_add = 0.0005
+    state_education_access_add = 0.01
+    country_bpm_liberal_consciousness_target_mult = 0.02 
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE_OR_CREATE:bpm_schools_putsch_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_bureaucrats_education_access_add=0.03
+    state_education_access_add = 0.01
+    # # country_rigidity_baseline_add = -1
+}
+
+REPLACE_OR_CREATE:bpm_schools_lefts_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_add = 0.02
+    country_bpm_labor_consciousness_target_mult = 0.015
+    # # country_rigidity_baseline_add = -1
 }
 
 REPLACE_OR_CREATE:bpm_schools_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_laborers_education_access_add=0.02
-    state_machinists_education_access_add=0.02
-    state_peasants_education_access_add = 0.02 # was missing
-    state_education_access_add = 0.02
-    state_education_access_wealth_add = -0.003
+    state_laborers_education_access_add=0.04
+    state_machinists_education_access_add=0.04
+    state_education_access_wealth_add = -0.004
     # # country_rigidity_baseline_add = -1
     country_bpm_labor_consciousness_target_mult = 0.02
 }
 
-INJECT:bpm_schools_military_modifier = {
-    country_education_fervor_add = 1
-}
-
-INJECT:bpm_schools_pb_modifier = {
-    state_bureaucrats_education_access_add= -0.02
-    state_engineers_education_access_add= -0.02
-    state_clerks_education_access_add = 0.02
-    state_academics_education_access_add = 0.02
-}
-
-INJECT:bpm_schools_devout_modifier = {
-    state_clergymen_education_access_add= -0.04
-    state_laborers_education_access_add = 0.01
-    interest_group_ig_devout_pop_attraction_mult = 0.02
-    state_conversion_mult = 0.02
-}
-
-REPLACE_OR_CREATE:bpm_schools_intel_modifier = {
+REPLACE_OR_CREATE:bpm_schools_military_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_bureaucrats_education_access_add= 0.01
-    state_academics_education_access_add= 0.01
-    state_clerks_education_access_add =   0.01
-    state_engineers_education_access_add = 0.01
+    state_soldiers_education_access_add=0.04
+    state_officers_education_access_add=0.04
+    country_education_fervor_add = 1
+    # # country_rigidity_baseline_add = 1
+}
+
+REPLACE_OR_CREATE:bpm_schools_pb_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_bureaucrats_education_access_add=0.025
+    state_clerks_education_access_add = 0.025
     state_education_access_add = 0.01
     # # country_rigidity_baseline_add = 1
 }
 
-INJECT:bpm_schools_ruries_modifier = {
-    state_farmers_education_access_add= -0.02
-    state_peasants_education_access_add= -0.01
+REPLACE_OR_CREATE:bpm_schools_devout_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_clergymen_education_access_add=0.06 # net 0.04
+    state_peasants_education_access_add=0.02
+    state_laborers_education_access_add = 0.02
+    interest_group_ig_devout_pop_attraction_mult = 0.01
+    state_conversion_mult = 0.02
+    # # country_rigidity_baseline_add = 1
 }
 
-INJECT:bpm_schools_unions_modifier = {
-    state_laborers_education_access_add= -0.01
-    state_machinists_education_access_add= -0.01
-    state_engineers_education_access_add= 0.02
+REPLACE_OR_CREATE:bpm_schools_capis_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_wealth_add = 0.002
+    state_education_access_add = -0.01 # net -0.03
+    state_pop_qualifications_mult = 0.04
+    # # country_rigidity_baseline_add = 1
+}
+
+REPLACE_OR_CREATE:bpm_schools_intel_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_add = 0.025 # original was kinda poitless
+    state_literacy_growth_add = 0.00002
+    # # country_rigidity_baseline_add = 1
+}
+
+REPLACE_OR_CREATE:bpm_schools_ruries_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_peasants_education_access_add=0.04
+    state_farmers_education_access_add=0.04
+    # # country_rigidity_baseline_add = 1
+}
+
+REPLACE_OR_CREATE:bpm_schools_unions_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_laborers_education_access_add=0.03   # was 0.04
+    state_machinists_education_access_add=0.03 # was 0.04
+    state_engineers_education_access_add = 0.03 # was none 
+    state_clerks_education_access_add = 0.03 # was none
     country_bpm_labor_consciousness_target_mult = 0.01
+    # # country_rigidity_baseline_add = 1
 }
 
-INJECT:bpm_schools_christdems_modifier = {
-    state_education_access_add = -0.01
-    
+
+REPLACE_OR_CREATE:bpm_schools_christdems_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_education_access_add = 0.02
+    state_welfare_payments_add = 0.01
+    state_political_strength_from_welfare_mult = 0.01
+    # # country_rigidity_baseline_add = 1
 }

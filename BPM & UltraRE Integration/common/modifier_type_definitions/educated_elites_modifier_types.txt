@@ -118,3 +118,10 @@ state_shopkeepers_education_access_add={
 INJECT:state_education_access_wealth_add={
 	decimals=2
 }
+
+country_bpm_liberal_consciousness_target_mult = {
+	decimals = 0
+	percent = yes
+	color = good
+}
+

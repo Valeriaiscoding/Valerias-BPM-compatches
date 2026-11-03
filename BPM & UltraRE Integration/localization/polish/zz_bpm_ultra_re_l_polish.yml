@@ -37,3 +37,7 @@
  QUALIFICATIONS_ELECTED_OFFICERS:0 "from [GetLawType('law_elected_officers').GetName]"
  QUALIFICATIONS_ELECTED_OFFICERS_DESC:0 "[concept_pop_qualifications] for non deployed [GetPopType('soldiers').GetName] to become [GetPopType('officers').GetName] will be significantly increased."
  QUALIFICATIONS_ELECTED_OFFICERS_ARISTOCRATS_DESC:0 "[concept_pop_qualifications] for [GetPopType('aristocrats').GetName] to become [GetPopType('officers').GetName] will be significantly decreased."
+ QUALIFICATIONS_ELECTED_OFFICERS:0 "from [GetLawType('law_professional_officers').GetName]"
+ QUALIFICATIONS_PROFESSIONAL_OFFICERS_DESC:0 "[concept_pop_qualifications] for non-deployed [GetPopType('soldiers').GetName] to become [GetPopType('officers').GetName] will be increased."
+ country_bpm_liberal_consciousness_target_mult: "Liberal Consciousness Target"
+ country_bpm_liberal_consciousness_target_mult_desc: "Multiplier for Liberal Consciousness Target"

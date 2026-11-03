@@ -1,0 +1,26 @@
+﻿# moved to minister modifiers
+
+INJECT:law_religious_schools = {
+    institution_modifier = {
+        state_education_access_wealth_add = 0.0005 # borrowed from Grey's SPA
+        state_education_access_add = -0.02
+    }
+}
+
+INJECT:law_private_schools = {
+    institution_modifier = {
+        state_education_access_add = -0.02
+    }
+}
+
+INJECT:law_public_schools = {
+    institution_modifier = {
+        state_education_access_add = -0.02
+    }
+}
+
+TRY_INJECT:law_military_schools = {
+    institution_modifier = {
+        state_education_access_add = -0.02
+    }
+}
