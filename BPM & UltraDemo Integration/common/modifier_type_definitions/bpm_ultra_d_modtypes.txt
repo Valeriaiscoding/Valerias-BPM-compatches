@@ -114,3 +114,12 @@ state_officers_dependent_wage_mult={
 		ai_value=0
 	}
 }
+
+building_group_bg_military_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

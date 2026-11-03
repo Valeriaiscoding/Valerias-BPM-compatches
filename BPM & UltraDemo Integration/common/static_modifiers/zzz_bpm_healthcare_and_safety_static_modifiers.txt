@@ -138,44 +138,45 @@ REPLACE_OR_CREATE:bpm_workplace_safety_christdem_modifier = {
     state_working_adult_ratio_add = -0.01
 }
 
-# -- Social Security -- # # TODO
+# -- Social Security -- # #
+REPLACE_OR_CREATE:bpm_social_security_neutraling_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    # # country_rigidity_baseline_add = 1
+    state_welfare_payments_add = 0.03
+}
+
 REPLACE_OR_CREATE:bpm_social_security_rursocs_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_welfare_payments_add = 0.02
-    country_institution_cost_institution_social_security_mult = 0.05
-    state_dependent_wage_mult = 0.05
+    state_welfare_payments_add = 0.07
     # # country_rigidity_baseline_add = -1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_cons_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     state_dependent_wage_mult = 0.02
-    state_political_strength_from_welfare_mult = -0.04
-    state_welfare_payments_add = -0.03
-    country_institution_cost_institution_social_security_mult = -0.05
+    state_political_strength_from_welfare_mult = -0.03
+    state_welfare_payments_add = 0.02
     # # country_rigidity_baseline_add = -1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_liberals_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_dependent_wage_mult = 0.03
-    building_minimum_wage_mult = 0.02
+    state_welfare_payments_add = 0.03
+    state_middle_strata_standard_of_living_add = 0.1
     # # country_rigidity_baseline_add = -1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_lefts_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_welfare_payments_add = 0.05
-    building_minimum_wage_mult = 0.05
-    country_institution_cost_institution_social_security_mult = 0.1
+    state_welfare_payments_add = 0.07
+    building_minimum_wage_mult = 0.03
     # # country_rigidity_baseline_add = -1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_commies_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_welfare_payments_add = 0.05
-    building_minimum_wage_mult = 0.05
-    country_institution_cost_institution_social_security_mult = 0.1
+    state_welfare_payments_add = 0.08
+    building_minimum_wage_mult = 0.03
     # # country_rigidity_baseline_add = -1
 }
 
@@ -184,11 +185,13 @@ REPLACE_OR_CREATE:bpm_social_security_pb_modifier = {
     country_government_wages_mult = 0.05
     state_bureaucrats_dependent_wage_mult = 0.05
     state_academics_dependent_wage_mult = 0.05
+    state_welfare_payments_add = 0.05
     # # country_rigidity_baseline_add = 1
 }   
 
 REPLACE_OR_CREATE:bpm_social_security_devout_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_welfare_payments_add = 0.04
     country_institution_cost_institution_social_security_mult = -0.03
     state_political_strength_from_welfare_mult = -0.04
     state_conversion_mult = 0.03
@@ -198,34 +201,29 @@ REPLACE_OR_CREATE:bpm_social_security_devout_modifier = {
 REPLACE_OR_CREATE:bpm_social_security_capis_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     building_minimum_wage_mult = -0.03
-    state_welfare_payments_add = -0.05
+    state_political_strength_from_welfare_mult = -0.02
     # # country_rigidity_baseline_add = 1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_ruries_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_farmers_dependent_wage_mult = 0.05
-    state_laborers_dependent_wage_mult = 0.05
-    state_peasants_dependent_wage_mult = 0.05
+    state_welfare_payments_add = 0.05
+    state_lower_strata_standard_of_living_add = 0.1
     # # country_rigidity_baseline_add = 1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_unions_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
     # Super synergy!
-    state_laborers_dependent_wage_mult = 0.05
-    state_machinists_dependent_wage_mult = 0.05
-    state_engineers_dependent_wage_mult = 0.05
-    building_minimum_wage_mult = 0.03
-    state_welfare_payments_add = 0.05
+    state_lower_strata_standard_of_living_add = 0.2
+    building_minimum_wage_mult = 0.05
+    state_welfare_payments_add = 0.1
     # # country_rigidity_baseline_add = 1
 }
 
 REPLACE_OR_CREATE:bpm_social_security_christdems_modifier = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    state_welfare_payments_add = 0.05
-    state_dependent_wage_mult = 0.05
-    state_political_strength_from_welfare_mult = 0.02
-    state_working_adult_ratio_add = -0.005
+    state_welfare_payments_add = 0.08
+    state_standard_of_living_add = 0.1
     # # country_rigidity_baseline_add = -1
 }
