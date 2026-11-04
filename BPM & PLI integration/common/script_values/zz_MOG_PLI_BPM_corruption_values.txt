@@ -15,11 +15,60 @@
 		subtract = mog_pli_cor_labour					# Max 10
 		subtract = mog_pli_cor_free_speech				# Max 5
 		subtract = mog_pli_cor_welfare					# Max 5
-		subtract = bpm_mog_pli_cor_party_laws
 		#add = mog_pli_pec_corruption_add
+		subtract = bpm_mog_pli_cor_centralization
 		multiply = mog_pli_pec_corruption_mult
 		min = 0
 		max = 100		# Economic System excluded because these already have "corruption" penalties built-in
+	}
+}
+
+bpm_mog_pli_cor_centralization = {
+	if = {
+		limit = {
+			has_law_or_variant = law_type:law_ad_hoc_centralization
+		}
+		value = 0
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_confederated
+		}
+		add = 0.75
+		multiply = {
+			value = institution:institution_centralization.investment
+			min = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_federated
+		}
+		add = 2.5
+		multiply = {
+			value = institution:institution_centralization.investment
+			min = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_devolved
+		}
+		add = 1.5
+		multiply = {
+			value = institution:institution_centralization.investment
+			min = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_law_or_variant = law_type:law_unitary
+		}
+		add = 1.25
+		multiply = {
+			value = institution:institution_centralization.investment
+			min = 1
+		}
 	}
 }
 
@@ -160,17 +209,6 @@ REPLACE:mog_pli_corruption_increment = {
 		}
 
 		# Stability
-		# if = {
-		# 	limit = { owner = { has_variable = var:bpm_political_stability } }
-		# 	if = {
-		# 		limit = {
-		# 			owner.var:bpm_political_stability > 50
-		# 		}
-		# 	}
-		# 	else_if = {
-		# 		limit = { owner.var:bpm_political_stability < 50 }
-		# 	}
-		# }
 
 		# if = {
 		# 	limit = { owner = { has_variable = var:bpm_political_stability } }
@@ -191,20 +229,17 @@ REPLACE:mog_pli_corruption_increment = {
 }
 
 REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
+	#TODO
+	# PArties and Legislative principle
 	if = {
 		limit = { # Absolute Power
 			OR = { 
 				has_law_or_variant = law_type:law_autocracy
 				has_law_or_variant = law_type:law_military_junta
+				has_law_or_variant = law_type:law_colonial_administration
 			}
 		}
 		add = 0
-	}
-	else_if = {
-		limit = {
-			has_law_or_variant = law_type:law_colonial_administration
-		}
-		add = 2
 	}
 	else_if = {
 		limit = { # Elite Captured Power
@@ -249,34 +284,6 @@ REPLACE:mog_pli_cor_dist_of_power = {			# Max 10
 	}
 }
 
-bpm_mog_pli_cor_party_laws = {
-	if = {
-		limit = {
-			OR = {
-				has_law_or_variant = law_type:law_no_party_bans
-				has_law_or_variant = law_type:law_party_anti_reactionary
-			}
-		}
-		value = 2
-	}
-	else_if = {
-		limit = {
-			OR = {
-				has_law_or_variant = law_type:law_party_reactionary_only
-				has_law_or_variant = law_type:law_party_socialist_only
-				has_law_or_variant = law_type:law_party_liberal_only
-			}
-		}
-		value = 0
-	}
-	else_if = {
-		limit = {
-			has_law_or_variant = law_type:law_party_single
-		}
-		value = -3
-	}
-}
-
 REPLACE:mog_pli_cor_policing = {				# Max 20
 	if = {
 		limit = {	# Gotta Defend your own Investments
@@ -294,7 +301,7 @@ REPLACE:mog_pli_cor_policing = {				# Max 20
 		limit = {
 			has_law_or_variant = law_type:law_elected_police
 		}
-		add = 3
+		add = 4
 	}
 	else_if = {
 		limit = {	# One of the biggest contributors to a healthy investment environment

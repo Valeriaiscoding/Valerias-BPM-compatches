@@ -1,4 +1,4 @@
-﻿REPLACE:je_mog_pli_liberal_reaction = {
+﻿REPLACE_OR_CREATE:je_mog_pli_liberal_reaction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_liberal_movement_support_add = 1 # TODO remove if does not work
 	interest_group_ig_liberals_pop_attraction_mult = 0.5
@@ -7,7 +7,7 @@
 	interest_group_ig_market_liberals_pop_attraction_mult = 0.5
 }
 
-REPLACE:je_mog_pli_redistributive_reaction = {
+REPLACE_OR_CREATE:je_mog_pli_redistributive_reaction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_pop_support_movement_fascist_mult = 1
 	state_pop_support_movement_positivist_mult = 1

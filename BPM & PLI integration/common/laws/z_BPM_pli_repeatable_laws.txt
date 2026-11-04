@@ -30,7 +30,7 @@
 				text = mog_pli_fight_corruption_button_tt
 				je:je_mog_pli_investment = {
 					set_bar_progress = {
-						value = mog_pli_fought_corruption_val
+						value = bpm_mog_pli_fought_corruption_val_repeatable_law
 						name = mog_pli_corruption_tracking_bar
 					}
 				}
@@ -39,8 +39,11 @@
 				name = mog_pli_fought_corruption_modifier
 				days = short_modifier_time				 # 2.5 years
 				multiplier = {
-					value = institution:institution_centralization.investment
-					multiply = 0.3
+					value = {
+						add = root.institution:institution_centralization.investment
+						add = root.institution:institution_police.investment
+					}
+					multiply = 0.1
 				}
 				is_decaying = yes
 			}
@@ -52,7 +55,8 @@
 		add_loyalists = {
 			value = {
 				value = root.institution:institution_centralization.investment
-				multiply = 0.01
+				add = root.institution:institution_police.investment
+				multiply = 0.005
 			}
 		}
 		if = { 
@@ -71,7 +75,8 @@
 				add_modifier = {
 					multiplier = {
 						value = root.institution:institution_centralization.investment
-						multiply = 0.2
+						add = root.institution:institution_police.investment
+						multiply = 0.1
 					}
 					name = bpm_repeatable_law_anti_corruption_drive_result_ig
 					years = bpm_repeatable_law_result_duration
@@ -87,7 +92,8 @@
 				add_modifier = {
 					multiplier = {
 						value = root.institution:institution_centralization.investment
-						multiply = 0.2
+						add = root.institution:institution_police.investment
+						multiply = 0.1
 					}
 					name = bpm_repeatable_law_anti_corruption_drive_result_ig
 					years = bpm_repeatable_law_result_duration
@@ -118,6 +124,7 @@
 
 	disallowing_laws = {
 		law_ad_hoc_centralization
+		law_no_police
 	}
 	
 	unlocking_laws = { 
