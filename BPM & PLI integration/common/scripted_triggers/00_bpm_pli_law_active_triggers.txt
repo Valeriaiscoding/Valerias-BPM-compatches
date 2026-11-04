@@ -1,0 +1,17 @@
+﻿bpm_pli_has_corporatis_economic_system = {
+    OR = {
+        # Pec Reworks this law so we need this
+        AND = {
+            PEC_is_active = yes	# Already provided by PLI
+            has_law_or_variant = law_type:law_industry_banned
+        }
+        has_law_or_variant = law_type:law_class_collaboration
+    }
+}
+
+bpm_pli_has_state_capitalist_economy = {
+    OR  = {
+        has_law_or_variant = law_type:law_state_capitalism # Laws+
+        has_law_or_variant = law_type:law_pec_mixed_market # PEC
+    }
+}

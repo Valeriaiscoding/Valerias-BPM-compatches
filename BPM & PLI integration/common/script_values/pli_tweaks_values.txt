@@ -1,0 +1,20 @@
+﻿pli_tweaks_electoral_confidence_adjustment = {
+    if = {
+        limit = {
+            has_game_rule = electoral_confidence_used_in_calculations
+        }
+        value = 1
+        subtract = {
+            value = electoral_confidence
+            multiply = {
+                value = 1
+                add = modifier:country_electoral_confidence_impact_mult
+                min = 0
+                max = 1
+            }
+        }
+    }
+    else = {
+        value = 1
+    }
+}

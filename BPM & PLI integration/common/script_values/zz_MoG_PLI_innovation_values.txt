@@ -1,9 +1,9 @@
 ﻿### Innovation Incentive Values
 REPLACE:mog_pli_innovation_target = {	# This represents the conditions which support independent innovation incentives
 	value = 0
-	add = mog_pli_ino_dist_of_power			# Max 15	- Best: Universal Suffrage # was 20
-	add = mog_pli_ino_policing				# Max 10	- Best: Dedicated Police # was 15
-	add = mog_pli_ino_land_reform			# Max 10	- Best: Commercialised Ag # was 15
+	add = mog_pli_ino_dist_of_power			# Max 20	- Best: Universal Suffrage
+	add = mog_pli_ino_policing				# Max 15	- Best: Dedicated Police 
+	add = mog_pli_ino_land_reform			# Max 15	- Best: Commercialised Ag 
 	add = mog_pli_ino_church_and_state		# Max 5		- Best: Total Sep.
 	add = mog_pli_ino_bureaucracy			# Max 5		- Best: Elected
 	add = mog_pli_ino_internal_security		# Max 5		- Best: Guaranteed Liberties
@@ -100,8 +100,14 @@ REPLACE:mog_pli_innovation_increment = {
 	}
 }
 
-REPLACE:mog_pli_ino_dist_of_power = {			# Max 15  # was 20
+REPLACE:mog_pli_ino_dist_of_power = {			# Max 20
 	if = {
+		limit = {
+			has_law_or_variant = law_type:law_colonial_administration
+		}
+		value = 0
+	}
+	else_if = {
 		limit = { # Absolute Power / No Power
 			OR = { 
 				has_law_or_variant = law_type:law_autocracy
@@ -109,23 +115,22 @@ REPLACE:mog_pli_ino_dist_of_power = {			# Max 15  # was 20
 				has_law_or_variant = law_type:law_anarchy
 			}
 		}
-		add = -3
+		add = 2 
 	}
 	else_if = {
 		limit = { # Elite Captured Power
 			OR = { 
-				has_law = law_type:law_colonial_administration
 				has_law_or_variant = law_type:law_oligarchy
 				has_law_or_variant = law_type:law_elder_council
 			}
 		}
-		add = 1
+		add = 6
 	}
 	else_if = {
 		limit = { 
 			has_law_or_variant = law_type:law_landed_voting
 		}
-		add = 5
+		add = 10
 	}
 	else_if = {
 		limit = {
@@ -140,15 +145,16 @@ REPLACE:mog_pli_ino_dist_of_power = {			# Max 15  # was 20
 				has_law_or_variant = law_type:law_organic_democracy
 			}
 		}
-		add = 9
+		add = 14
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_census_voting }
-		add = 13
+		add = 18
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_universal_suffrage }
-		add = 15
+		add = 20
+		
 	}
 	else = {		# For random modded laws
 		add = mog_pli_ino_dist_of_power_modded
@@ -196,32 +202,6 @@ REPLACE:mog_pli_ino_policing = {				# Max 15
 				min = 1
 			}
 		}
-	}
-}
-
-REPLACE:mog_pli_ino_land_reform = {				# Max 10 # was 15
-	if = {
-		limit = { has_law_or_variant = law_type:law_serfdom }
-		add = -5
-	}
-	else_if = {
-		limit = { has_law_or_variant = law_type:law_tenant_farmers }
-		add = -3
-	}
-	else_if = {
-		limit = { has_law_or_variant = law_type:law_collectivized_agriculture }
-		add = 1
-	}
-	else_if = {
-		limit = { has_law_or_variant = law_type:law_peasant_proprietorship }
-		add = 5
-	}
-	else_if = {
-		limit = { has_law_or_variant = law_type:law_commercialized_agriculture }
-		add = 10
-	}
-	else = {	# For Random Modded laws
-		add = mog_pli_ino_land_reform_modded
 	}
 }
 
@@ -311,9 +291,9 @@ REPLACE:mog_pli_ino_economic_system = {			# Max 5		- Best: Coop/LF
 ### Technology Proliferation Values
 REPLACE:mog_pli_proliferation_target = {	# This represents the conditions which support independent innovation incentives
 	value = 0
-	add = mog_pli_pro_governance			# Max 10 	- Best: Parliamentary Republic # was 20
+	add = mog_pli_pro_governance			# Max 20 	- Best: Parliamentary Republic 
 	add = mog_pli_pro_bureaucracy			# Max 15	- Best: Appointed			   
-	add = mog_pli_pro_childrens_rights		# Max 10	- Best: Compulsory P.Schools	# was 15
+	add = mog_pli_pro_childrens_rights		# Max 15	- Best: Compulsory P.Schools
 	add = mog_pli_pro_internal_security		# Max 5		- Best: National Guard
 	add = mog_pli_pro_economic_system		# Max 5		- Best: Interventionism/Command Econ
 	add = mog_pli_pro_trade_policy			# Max 5		- Best: Mercantilism
@@ -324,8 +304,9 @@ REPLACE:mog_pli_proliferation_target = {	# This represents the conditions which 
 	add = mog_pli_pro_labor_rights			# Max 5		- Best: Worker Protections
 	add = mog_pli_pro_women					# Max 5		- Best: Women's Suffrage
 	# NEW
-	add = mog_pli_pro_centralization 		# Max 10	- Best: Unitary
-	add = mog_pli_pro_diplomacy				# Max 10	- Best: Armed Neutrality/Disarmed Nation
+	add = mog_pli_pro_centralization 		# Max 15	- Best: Unitary
+
+	#add = mog_pli_pro_diplomacy				# Max 10	- Best: Armed Neutrality/Disarmed Nation
 
 
 	multiply = mog_pli_pro_isolationism_mult			# Effectiveness of everything is nerfed by variants of isolationism
@@ -406,7 +387,7 @@ REPLACE:mog_pli_proliferation_increment = {
 }
 
 
-REPLACE:mog_pli_pro_governance = {				# Max 10 #was 20	- Best: Parliamentary Republic
+REPLACE:mog_pli_pro_governance = {				# Max 20	- Best: Parliamentary Republic
 	if = {
 		limit = {	# Power upheld through the Cage of Norms
 			OR = { 
@@ -414,25 +395,25 @@ REPLACE:mog_pli_pro_governance = {				# Max 10 #was 20	- Best: Parliamentary Rep
 				has_law_or_variant = law_type:law_theocracy
 			}
 		}
-		add = -5 # 0
+		add = 0
 	}
 	else_if = {		# Power to effect change both provided and constrained by the Cage of Norms
 		limit = { has_law_or_variant = law_type:law_monarchy }
-		add = 0 #8
+		add = 8
 	}
 	else_if = {
 		limit = {	# The voice of ridicule is a limiting threat
 			has_law_or_variant = law_type:law_presidential_republic
 		}
-		add = 4 # 14
+		add = 14 
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_council_republic }
-		add = 8 # 18
+		add = 18 
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_parliamentary_republic }
-		add = 10 #20
+		add = 20 
 	}
 	else = {		# For random modded laws
 		add = mog_pli_pro_governance_modded
@@ -509,26 +490,26 @@ REPLACE:mog_pli_pro_economic_system = {			# Max 5		- Best: Interventionism/Comma
 	}
 }
 
-mog_pli_pro_centralization = { # max 10		- Best: Unitary
+mog_pli_pro_centralization = { # max 15		- Best: Unitary
 	if = {
 		limit = { has_law_or_variant = law_type:law_ad_hoc_centralization }
 		add = 0
 	}
 	else_if = { 
 		limit = { has_law_or_variant = law_type:law_confederated }
-		add = 0.25
+		add = 0.5
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_federated }
-		add = 0.75
+		add = 1
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_devolved }
-		add = 1.5
+		add = 2
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_unitary }
-		add = 2
+		add = 3
 	}
 	owner.institution:institution_centralization ?= {
 		multiply = {
@@ -559,16 +540,16 @@ mog_pli_pro_diplomacy = { # max 10		- Best: Armed Neutrality/Disarmed Nation
 	}
 	else_if = {
 		limit = {
-			OR = {
-				has_law_or_variant = law_type:law_flexible_foreign_policy
-				has_law_or_variant = law_type:law_justum_bellum
-			}
+			has_law_or_variant = law_type:law_flexible_foreign_policy
 		}
 		add = 0.5
 	}
 	else_if = {
 		limit = {
-			has_law_or_variant = law_type:law_dove_politics
+			OR = {
+				has_law_or_variant = law_type:law_dove_politics
+				has_law_or_variant = law_type:law_justum_bellum
+			}
 		}
 		add = 0.75
 	}
@@ -589,7 +570,7 @@ mog_pli_pro_diplomacy = { # max 10		- Best: Armed Neutrality/Disarmed Nation
 	}
 }
 
-REPLACE:mog_pli_pro_childrens_rights = {		# Max 10	- Best: Compulsory P.Schools # was 15
+REPLACE:mog_pli_pro_childrens_rights = {		# Max 15	- Best: Compulsory P.Schools
 	if = {
 		limit = {
 			has_law_or_variant = law_type:law_child_labor_allowed
@@ -606,7 +587,7 @@ REPLACE:mog_pli_pro_childrens_rights = {		# Max 10	- Best: Compulsory P.Schools 
 		limit = {
 			has_law_or_variant = law_type:law_compulsory_primary_school
 		}
-		add = 10 # 15
+		add = 15
 	}
 	else = {	# For Random Modded laws
 		add = mog_pli_pro_childrens_rights_modded
@@ -755,32 +736,5 @@ REPLACE:mog_pli_pro_bureaucracy = {				# Max 15	- Best: Appointed
 }
 
 mog_pli_pro_stablity = { # Max 10	- Best: 55?
-	if = {
-		limit = { has_variable = var:bpm_political_stability }
-		value = 10
-
-		if = {
-			limit = {
-				var:bpm_political_stability > 55
-			}
-			subtract = {
-				value = var:bpm_political_stability
-				subtract = 55
-				multiply = 0.4
-			}
-		}
-		else_if = {
-			limit = {
-				var:bpm_political_stability < 55
-			}
-			subtract = {
-				value = 55
-				subtract = var:bpm_political_stability
-				multiply = 0.4
-			}
-		}
-	}
-	else = {
-		value = 8
-	}
+	value = 0
 }

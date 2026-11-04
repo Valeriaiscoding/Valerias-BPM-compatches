@@ -51,7 +51,8 @@
 	institution_modifier = {
 		state_pop_support_movement_religious_majority_mult = -0.1
 		state_pop_support_movement_religious_minority_mult = -0.1
-		interest_group_ig_devout_pol_str_mult = -0.1
+		#interest_group_ig_devout_pol_str_mult = -0.1
+		country_clergymen_pol_str_mult = -0.1 # state atheism de facto disables devout
 	}
 	
 	on_activate = { #PBF

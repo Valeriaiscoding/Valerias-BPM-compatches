@@ -98,16 +98,18 @@
 	}
 
 	# Stability
-	# if = {
-	# 	limit = { owner = { has_variable = var:bpm_political_stability } }
-	# 	add = {
-	# 		# TODO LOC
-	# 		value = owner.var:bpm_political_stability
-	# 		subtract = 50
-	# 		multiply = -0.008 # -0.4 to 0.4
-	# 		desc = "PLI_BPM_POLITICAL_STABILITY"
-	# 	}
-	# }
+	if = {
+		limit = { owner = { has_variable = var:bpm_political_stability } }
+		add = {
+			# TODO LOC
+			value = owner.var:bpm_political_stability
+			subtract = 66
+			multiply = -0.75  # -0.25 to 0.5
+			floor = yes
+			multiply = 0.01
+			desc = "PLI_BPM_POLITICAL_STABILITY"
+		}
+	}
 
 
 	min = 0.1
@@ -118,21 +120,22 @@
 REPLACE:mog_pli_investment_target = {	# This represents the conditions which support investor confidence and capability
 	value = 0
 	add = mog_pli_rank_value				# Max 20
-	add = mog_pli_inv_dist_of_power			# Max 15 # was 20
+	add = mog_pli_inv_dist_of_power			# Max 20
 	add = mog_pli_inv_church_and_state		# Max 5
 	add = mog_pli_inv_economic_system		# Max 10 # was 15
 	add = mog_pli_inv_taxation				# Max 20
-	add = mog_pli_inv_policing				# Max 15 # was 20
+	add = mog_pli_inv_policing				# Max 20
 	add = mog_pli_inv_internal_security		# Max 10
 	add = mog_pli_inv_rights_of_women		# Max 15
 	add = mog_pli_inv_slavery				# Max 15
 	add = mog_pli_combo_wombo				# Max 20
 	# NEW
-	add = bpm_mog_pli_inv_party_laws		# Max 5
 	add = mog_pli_inv_centralization		# Max 10
-	min = mog_pli_min_investment			# Max total intentionally > 100 (140)
+	min = mog_pli_min_investment			# Max total intentionally > 100 (150)
 
-	multiply = mog_pli_inv_stability
+
+	
+	multiply = mog_pli_inv_stability # maybe should be enabled by game rule
 	
 	max = {									# This can actually take it down to 0, but this is the only thing that should be able to do so.
 		value = 100
@@ -140,31 +143,28 @@ REPLACE:mog_pli_investment_target = {	# This represents the conditions which sup
 	}
 }
 
-# mog_pli_inv_stability = { optimal value 60 
-# 	if = {
-# 		limit = { has_variable = var:bpm_political_stability }
-# 		value = 1
-# 		if = {
-# 			limit = { var:bpm_political_stability > 60 }	
-# 			subtract = {
-# 				value = var:bpm_political_stability
-# 				subtract = 60
-# 				multiply = 0.375
-# 			}
-# 		}
-# 		else_if = {
-# 			limit = { var:bpm_political_stability < 60 }
-# 			subtract = {
-# 				value = 60
-# 				subtract = var:bpm_political_stability
-# 				multiply = 0.5
-# 			}
-# 		}
-# 	}
-# 	else = {
-# 		value = 10	
-# 	}
-# }
+mog_pli_inv_stability = { optimal value 50-66 
+	value = 1
+	if = {
+		limit = { has_variable = var:bpm_political_stability }
+		if = {
+			limit = { var:bpm_political_stability > 66 }	
+			subtract = {
+				value = var:bpm_political_stability
+				subtract = 60
+				multiply = 0.0075
+			}
+		}
+		else_if = {
+			limit = { var:bpm_political_stability < 50 }
+			subtract = {
+				value = 50
+				subtract = var:bpm_political_stability
+				multiply = 0.0125
+			}
+		}
+	}
+}
 
 mog_pli_inv_centralization = { 		# Max 10
 	if = {
@@ -209,6 +209,17 @@ mog_pli_inv_centralization = { 		# Max 10
 }
 
 REPLACE:mog_pli_inv_church_and_state = {		# Max 5
+	# if = {
+	# 	limit = { 
+	# 		has_law_or_variant = law_type:law_state_atheism 
+	# 		has_insitution = institution_culture
+	# 	}
+	# 	add = 3
+	# 	divide = {
+	# 		value = institution:institution_culture.investment
+	# 		min = 1
+	# 	}
+	# }
 	if = {
 		limit = { # Religious/Ideological Authorities have too much power to rent-seek.
 			OR = { 
@@ -238,7 +249,7 @@ REPLACE:mog_pli_inv_church_and_state = {		# Max 5
 	}
 }
 
-REPLACE:mog_pli_inv_dist_of_power = {			# Max 15 # was 20
+REPLACE:mog_pli_inv_dist_of_power = {			# Max 20
 	if = {
 		limit = { # Absolute Power
 			OR = {
@@ -261,31 +272,36 @@ REPLACE:mog_pli_inv_dist_of_power = {			# Max 15 # was 20
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_landed_voting }
-		add = 0
+		add = 3
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_wealth_voting }
-		add = 2
+		add = 5
 	}
 	else_if = {
-		limit = { has_law_or_variant = law_type:law_census_voting }
+		limit = { has_law_or_variant = law_type:law_weighted_universal_voting }
 		add = 7
 	}
 	else_if = {
+		limit = { has_law_or_variant = law_type:law_census_voting }
+		add = 9
+	}
+	else_if = {
 		limit = { has_law_or_variant = law_type:law_universal_suffrage }
-		add = 12
+		add = 13
 	}
 	else_if = {	# Investor Confidence Collapse
 		limit = { has_law_or_variant = law_type:law_anarchy }
-		add = -3
+		add = -6
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_organic_democracy }
-		add = 9
+		add = 10 #  2.5 with no parties allowed
 	}
 	else = {		# For random modded laws
 		add = mog_pli_inv_dist_of_power_modded
 	}
+	multiply = pli_tweaks_electoral_confidence_adjustment
 	if = {
 		limit = {
 			has_law_or_variant = law_type:law_advisory_body
@@ -299,11 +315,9 @@ REPLACE:mog_pli_inv_dist_of_power = {			# Max 15 # was 20
 				has_law_or_variant = law_type:law_supreme_legislature
 			}
 		}
-		add = 3
+		add = 7
 	}
-}
 
-bpm_mog_pli_inv_party_laws = {
 	if = {
 		limit = {
 			OR = {
@@ -311,7 +325,7 @@ bpm_mog_pli_inv_party_laws = {
 				has_law_or_variant = law_type:law_party_anti_reactionary
 			}
 		}
-		value = 5
+		value = 0
 	}
 	else_if = {
 		limit = {
@@ -321,18 +335,26 @@ bpm_mog_pli_inv_party_laws = {
 				has_law_or_variant = law_type:law_party_liberal_only
 			}
 		}
-		value = 2
+		multiply = 0.75
 	}
 	else_if = {
 		limit = {
 			has_law_or_variant = law_type:law_party_single
 		}
-		value = 0
+		multiply = 0.25
 	}
+
+	
 }
 
-REPLACE:mog_pli_inv_economic_system = {			# Max 15 # TODO change
+REPLACE:mog_pli_inv_economic_system = {			# Max 15
 	if = {
+		limit = {	
+			bpm_pli_has_corporatis_economic_system = yes
+		}
+		add = 6
+	}
+	else_if = {
 		limit = { # Efficiency and/or priorities are heavy deterrents
 			OR = { 
 				has_law_or_variant = law_type:law_traditionalism		# Some like traditionalism are obviously far
@@ -341,43 +363,30 @@ REPLACE:mog_pli_inv_economic_system = {			# Max 15 # TODO change
 				has_law_or_variant = law_type:law_extraction_economy	# to double-down on making them even worse.
 			}
 		}
-		add = 0
+		add = 5
+	}
+	else_if = {
+		limit = { 
+			bpm_pli_has_state_capitalist_economy = yes
+		}
+		add = 7
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_interventionism }
-		add = 3 # max 7
-		multiply = {
-			value = institution:insitution_economy.investment
-			min = 1
-		}
+		add = 10
 	}
 	else_if = {
 		limit = { # This is essentially the peak of functional private decision-making.
-			has_law_or_variant = law_type:law_laissez_faire
+			OR = {
+				has_law_or_variant = law_type:law_laissez_faire
+				has_law_or_variant = law_type:law_cooperative_ownership
+			}
 		}
-		add = 4
-		multiply = {
-			value = institution:insitution_economy.investment
-			min = 1
-		}
-	}
-	else_if = {
-		limit = { # This is essentially the peak of functional private decision-making.
-			has_law_or_variant = law_type:law_cooperative_ownership
-		}
-		add = 4
-		multiply = {
-			value = institution:insitution_economy.investment
-			min = 1
-		}
+		add = 12
 	}
 	else_if = {
 		limit = { has_law_or_variant = law_type:law_command_economy } # The pop type (bureaucrats) that *can* invest in CE is highly motivated to - the system is limited by the fact that they're the *only* pops that can invest lol.
-		add = 3 # max 10/13
-		multiply = {
-			value = institution:insitution_economy.investment
-			min = 1
-		}
+		add = 15
 	}
 	else = {		# For random modded laws
 		add = mog_pli_inv_economic_system_modded
@@ -420,7 +429,7 @@ REPLACE:mog_pli_inv_rights_of_women = {			# Max 15
 	}
 }
 
-REPLACE:mog_pli_inv_policing = {				# Max 15 # was 20
+REPLACE:mog_pli_inv_policing = {				# Max 20
 	if = {
 		limit = {	# Gotta Defend your own Investments
 			has_law_or_variant = law_type:law_no_police
@@ -431,7 +440,7 @@ REPLACE:mog_pli_inv_policing = {				# Max 15 # was 20
 		limit = {	# Local police are ok, but prone to injustice and corruption
 			has_law_or_variant = law_type:law_local_police
 		}
-		add = 1		# Max 5 # was 10
+		add = 1		
 		multiply = {
 			value = institution:institution_police.investment
 			min = 1
@@ -441,7 +450,7 @@ REPLACE:mog_pli_inv_policing = {				# Max 15 # was 20
 		limit = {	# One of the biggest contributors to a healthy investment environment
 			has_law_or_variant = law_type:law_dedicated_police
 		}
-		add = 3		# Max 15 # was 20
+		add = 4	
 		multiply = {
 			value = institution:institution_police.investment
 			min = 1
@@ -451,7 +460,7 @@ REPLACE:mog_pli_inv_policing = {				# Max 15 # was 20
 		limit = {	# The stronger this institution is, the worse it gets...
 			has_law_or_variant = law_type:law_militarized_police
 		}
-		add = 12 # was 15
+		add = 15 
 		divide = {
 			value = institution:institution_police.investment
 			min = 1
@@ -461,7 +470,7 @@ REPLACE:mog_pli_inv_policing = {				# Max 15 # was 20
 		limit = {
 			has_law_or_variant = law_type:law_elected_police
 		}
-		add = 2		# Max 10
+		add = 3		# Max 10
 		multiply = {
 			value = institution:institution_police.investment
 			min = 1
@@ -495,17 +504,21 @@ REPLACE:mog_pli_combo_wombo = {
 				has_law_or_variant = law_type:law_wealth_voting
 				has_law_or_variant = law_type:law_census_voting
 				has_law_or_variant = law_type:law_universal_suffrage
+				has_law_or_variant = law_type:law_weighted_universal_voting # laws+
 			}
 			OR = {
 				has_law_or_variant = law_type:law_national_guard		# Any supportive home affairs.
 				has_law_or_variant = law_type:law_guaranteed_liberties
 			}
 		}
-		add = 1.3 #2		# Max 20
 		multiply = {
 			add = institution:institution_police.investment
 			add = institution:institution_home_affairs.investment
 			add = institution:institution_centralization.investment
+			add = {
+				value = electoral_confidence
+				multiply = 6
+			}
 			min = 1
 		}
 		

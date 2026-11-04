@@ -16,7 +16,7 @@
 		subtract = mog_pli_cor_free_speech				# Max 5
 		subtract = mog_pli_cor_welfare					# Max 5
 		subtract = bpm_mog_pli_cor_party_laws
-		add = mog_pli_pec_corruption_add
+		#add = mog_pli_pec_corruption_add
 		multiply = mog_pli_pec_corruption_mult
 		min = 0
 		max = 100		# Economic System excluded because these already have "corruption" penalties built-in
