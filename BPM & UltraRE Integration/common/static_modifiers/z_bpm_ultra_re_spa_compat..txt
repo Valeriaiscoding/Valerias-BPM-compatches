@@ -1,4 +1,4 @@
-TRY_REPLACE:mog_spa_uhre_diff_religious_schools_literacy = {	# UHRE full law is loaded
+﻿TRY_REPLACE:mog_spa_uhre_diff_religious_schools_literacy = {	# UHRE full law is loaded
 	icon = gfx/interface/icons/generic_icons/literacy.dds
 	# state_education_access_add = 0.05				# Base UHRE is 0.05 (which is < 0.64)
 	state_slaves_education_access_add = -0.05		# Slaves don't get to go to school

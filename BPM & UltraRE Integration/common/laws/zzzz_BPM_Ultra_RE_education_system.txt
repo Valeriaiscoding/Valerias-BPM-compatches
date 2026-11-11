@@ -2,7 +2,6 @@
 
 INJECT:law_religious_schools = {
     institution_modifier = {
-        state_education_access_wealth_add = 0.0005 # borrowed from Grey's SPA
         state_education_access_add = -0.02
     }
 }
