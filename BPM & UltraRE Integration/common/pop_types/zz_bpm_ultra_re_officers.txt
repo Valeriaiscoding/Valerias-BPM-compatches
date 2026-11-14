@@ -203,7 +203,7 @@
 					}
 					else = {
 						multiply = {
-							value = 0.01
+							value = 0.05
 							desc = "QUALIFICATIONS_PEC_MILLET_RESTRICTEDGOV"
 						}
 					}

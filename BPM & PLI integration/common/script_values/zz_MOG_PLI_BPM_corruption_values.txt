@@ -210,21 +210,19 @@ REPLACE:mog_pli_corruption_increment = {
 
 		# Stability
 
-		# if = {
-		# 	limit = { owner = { has_variable = var:bpm_political_stability } }
-		# 	add = {
-		# 		# TODO LOC
-		# 		value = owner.var:bpm_political_stability
-		# 		subtract = 50
-		# 		multiply = -0.0015	 # -0.075 to 0.075
-		# 		if = {
-		# 			limit = { mog_pli_corruption_target > var:mog_pli_corruption_current_value }
-		# 			multiply = -1
-		# 		}
-		# 		desc = "PLI_BPM_POLITICAL_STABILITY"
-		# 		format = PLI_3DECIMAL_SCRIPT_VALUE_INVERT_FORMAT
-		# 	}
-		# }
+		if = {
+			limit = { owner = { has_variable = var:bpm_political_stability } }
+			add = {
+				# TODO LOC
+				value = owner.var:bpm_political_stability
+				subtract = 67
+				multiply = -0.75  # -0.25 to 0.5
+				celling = yes
+				multiply = 0.01
+				desc = "PLI_BPM_POLITICAL_STABILITY"
+				format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
+			}
+		}
 	}
 }
 

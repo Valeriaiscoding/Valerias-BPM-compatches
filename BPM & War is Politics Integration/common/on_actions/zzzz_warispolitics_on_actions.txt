@@ -187,6 +187,12 @@ warispolitics_capitulate = {
 				save_scope_as = ruler_char
 			}
 		}
+		else_if = {
+			limit = { bpm_has_regency = yes }
+			var:bpm_regent = {
+				save_scope_as = ruler_char
+			}
+		}
 		else = {
 			ruler = {
 				save_scope_as = ruler_char

@@ -128,7 +128,7 @@ REPLACE:mog_pli_innovation_increment = {
 # TODO
 REPLACE:mog_pli_ino_dist_of_power = {			# Max 20
 	if = {
-		limit = { # Colonial Power
+		limit = {
 			has_law_or_variant = law_type:law_colonial_administration
 		}
 		value = 0

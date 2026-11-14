@@ -103,11 +103,12 @@ REPLACE:mog_pli_investment_increment = {
 		add = {
 			# TODO LOC
 			value = owner.var:bpm_political_stability
-			subtract = 66
+			subtract = 67
 			multiply = -0.75  # -0.25 to 0.5
-			floor = yes
+			celling = yes
 			multiply = 0.01
 			desc = "PLI_BPM_POLITICAL_STABILITY"
+			format = PLI_2DECIMAL_SCRIPT_VALUE_FORMAT
 		}
 	}
 
